@@ -31,12 +31,12 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<string, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XRDepthUsage>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XRDepthDataFormat>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<uint>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XRVisibilityState>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XRRenderState>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XRInputSourceArray>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XRReferenceSpace>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.XRReferenceSpace, global::Iskra.StdWeb.PropertyAccessor>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<uint>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XRHitTestSource>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.XRHitTestSource, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XRTransientInputHitTestSource>,
@@ -44,6 +44,7 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.FunctionParameter>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.FunctionParameter, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CSSFunctionDescriptors>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ContentCategory>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ImageResource>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.ImageResource, global::Iskra.StdWeb.PropertyAccessor>>,
@@ -55,8 +56,8 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ServiceWorkerRegistration>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ServiceWorker>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ContentIndex>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PeriodicSyncManager>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentManager>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PeriodicSyncManager>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CookieStoreManager>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.BackgroundFetchManager>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Notification>,
@@ -78,7 +79,6 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ColorGamut>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.TransferFunction>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaKeysRequirement>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.KeySystemTrackConfiguration>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaDecodingConfiguration>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaEncodingConfiguration>,
@@ -90,11 +90,11 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Permissions>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaSession>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Scheduling>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.VirtualKeyboard>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Geolocation>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WakeLock>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.HID>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Attribution>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Ink>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Clipboard>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Presentation>,
@@ -124,6 +124,7 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.Gamepad?, global::Iskra.StdWeb.PropertyAccessorNullable>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DevicePosture>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.USB>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Attribution>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaKeySystemAccess>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaKeySystemConfiguration>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.MediaKeySystemAccess, global::Iskra.StdWeb.PropertyAccessor>>,
@@ -158,6 +159,7 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DocumentPictureInPicture>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaQueryList>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Screen>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CrashReportContext>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ScreenDetails>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.ScreenDetails, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.FontData>,
@@ -263,6 +265,7 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SummarizerType>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SummarizerFormat>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SummarizerLength>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformancePreference>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<double, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AbortSignal>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CreateMonitorCallback>,
@@ -276,9 +279,11 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RewriterTone>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RewriterFormat>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RewriterLength>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaStreamTrack>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMRectReadOnly>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaStreamTrack, global::Iskra.StdWeb.MediaStreamTrackHandle, global::Iskra.StdWeb.GenericMarshaller.Union>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<ushort>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WritableStream>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaStreamTrack>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.Window, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XREye>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Float32Array>,
@@ -296,7 +301,6 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SVGLength>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SVGAngle>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.TrustedScriptURL, global::Iskra.StdWeb.GenericMarshaller.Union>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMRectReadOnly>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SVGNumberList>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SVGLengthList>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SVGAnimatedLength>,
@@ -334,6 +338,21 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.ObservableArray<global::Iskra.StdWeb.CSSStyleSheet, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XPathExpression>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XPathResult>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDelegation>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDetailsModifier>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentShippingOption>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressErrors>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentMethodData>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentHandlerResponse>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentOptions>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressInit>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaSessionPlaybackState>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ChapterInformation>,
@@ -472,24 +491,12 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.GPUCanvasAlphaMode>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.GPUDeviceLostReason>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.GPUError>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDelegation>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDetailsModifier>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentShippingOption>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressErrors>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentMethodData>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentHandlerResponse>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentOptions>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressInit>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.VideoPlaybackQuality>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PictureInPictureWindow>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PictureInPictureWindow, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ToolExecuteCallback>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ToolAnnotations>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.FlacEncoderConfig>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.BitrateMode>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.OpusEncoderConfig>,
@@ -538,13 +545,16 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Function>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.GeolocationCoordinates>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SFrameCipherSuite>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SFrameType>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SFrameTransformErrorEventType>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<byte>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<uint, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<ulong, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCEncodedVideoFrameMetadata>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCEncodedVideoFrameType>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.EncodedVideoChunkType>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCEncodedAudioFrameMetadata>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Worker>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCRtpScriptTransformType>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCRtpScriptTransformer>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCRtpSendParameters>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCStatsReport>,
@@ -557,7 +567,6 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Uint8Array>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.TextEncoderEncodeIntoResult>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.TaskPriority>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.TaskPriority, global::Iskra.StdWeb.TaskSignal, global::Iskra.StdWeb.GenericMarshaller.Union>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.TaskSignal>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCDataChannelState>,
@@ -588,6 +597,8 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SVGAnimatedInteger>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SVGAnimatedBoolean>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.NavigationTimingType>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformanceTimingConfidence>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformanceTimingConfidenceValue>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformanceTiming>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformanceNavigation>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformanceMark>,
@@ -696,12 +707,6 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RequestDuplex>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RequestPriority>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PrivateToken>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationServices>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionImpressionResult>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionConversionResult>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.CookieListItem?, global::Iskra.StdWeb.PropertyAccessorNullable>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CookieListItem>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.CookieListItem, global::Iskra.StdWeb.PropertyAccessor>>,
@@ -717,8 +722,8 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.URLPatternInit, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.URLPatternComponentResult>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Record<string?, global::Iskra.StdWeb.PropertyAccessorNullable>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Uint32Array>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::System.Numerics.BigInteger>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.Blob, global::Iskra.StdWeb.GenericMarshaller.Union>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.Blob, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PresentationStyle>,
@@ -840,6 +845,7 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WebTransportDatagramsWritable>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WebTransportConnectionStats>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WebTransportConnectionStats, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WebTransportReliabilityMode>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WebTransportCongestionControl>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WebTransportCloseInfo>,
@@ -852,7 +858,6 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WebTransportSendGroup>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WebTransportHash>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.WebTransportHash, global::Iskra.StdWeb.PropertyAccessor>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DatagramsReadableMode>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WebTransportDatagramStats>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WebTransportSendStreamStats>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WebTransportSendStreamStats, global::Iskra.StdWeb.PropertyAccessor>>,
@@ -876,7 +881,6 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Headers>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RequestDestination>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Request>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.FormData>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.FormData, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AccelerometerLocalCoordinateSystem>,
@@ -931,7 +935,6 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.JSCore.ArrayBuffer, global::Iskra.JSCore.SharedArrayBuffer, global::Iskra.JSCore.Int8Array, global::Iskra.JSCore.Int16Array, global::Iskra.JSCore.Int32Array, global::Iskra.JSCore.Uint8Array, global::Iskra.JSCore.Uint16Array, global::Iskra.JSCore.Uint32Array, global::Iskra.JSCore.Uint8ClampedArray, global::Iskra.JSCore.BigInt64Array, global::Iskra.JSCore.BigUint64Array, global::Iskra.JSCore.Float16Array, global::Iskra.JSCore.Float32Array, global::Iskra.JSCore.Float64Array, global::Iskra.JSCore.DataView, global::Iskra.StdWeb.GenericMarshaller.Union>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.VideoColorSpaceInit>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.EncodedAudioChunkType>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.EncodedVideoChunkType>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AudioData>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AudioSampleFormat>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.VideoColorSpace>,
@@ -1036,6 +1039,7 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CanvasGradient>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CanvasLineCap>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CanvasLineJoin>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<double, global::Iskra.StdWeb.DOMPointInit, global::Iskra.StdWeb.GenericMarshaller.Union>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RestrictionTarget>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.RestrictionTarget, global::Iskra.StdWeb.PropertyAccessor>>,
@@ -1097,6 +1101,7 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.DigitalCredentialCreateRequest, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Record<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Record<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Iskra.StdWeb.PropertyAccessor>, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AriaNotifyPriority>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaList>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMPointInit>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMMatrixReadOnly>,
@@ -1108,7 +1113,6 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AuctionAdInterestGroupSize>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Record<global::Iskra.StdWeb.AuctionAdInterestGroupSize, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ProtectedAudiencePrivateAggregationConfig>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::System.Numerics.BigInteger>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<string?, global::Iskra.StdWeb.PropertyAccessorNullable>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Record<string, global::Iskra.StdWeb.PropertyAccessor>?, global::Iskra.StdWeb.PropertyAccessorNullable>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Record<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>?, global::Iskra.StdWeb.PropertyAccessorNullable>>,
@@ -1344,8 +1348,6 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Cache>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.Cache, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MockCapturePromptResult>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.GeolocationSensorReading>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.GeolocationSensorReading, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMException>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCQualityLimitationReason>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCDtlsRole>,
@@ -1359,6 +1361,8 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.NDEFRecordInit, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.NDEFMessage>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.NDEFMessageInit>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.HTMLModelElement>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.HTMLModelElement, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Module>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Instance>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.Module, global::Iskra.StdWeb.PropertyAccessor>>,
@@ -1506,6 +1510,12 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RedEyeReduction>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.FillLightMode>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.FillLightMode, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationProtocol>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationServices>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionImpressionResult>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionConversionResult>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.FocusableAreaSearchMode>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SpatialNavigationDirection>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.JsonLdFramingErrorCode>,
@@ -1559,6 +1569,7 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DataTransferItemList>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.FileList>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DataTransferItem>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Origin>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMStringList>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ScrollRestoration>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.NavigationHistoryEntry>,
@@ -1588,8 +1599,11 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ScriptInvokerType>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ScriptWindowAttribution>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CaptureAction>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ActivationBlockersMixinBlockerReason>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.TaskAttributionTiming>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.TaskAttributionTiming, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CSSContainerCondition>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.CSSContainerCondition, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.FenceReportingDestination>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.FenceReportingDestination, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.FencedFrameConfig>,
@@ -1631,6 +1645,8 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MIDIPortConnectionState>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MIDIPort>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.MIDIPort, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.TextDetector>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.TextDetector, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DetectedText>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.DetectedText, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.DetectedText, global::Iskra.StdWeb.PropertyAccessor>, global::Iskra.StdWeb.PropertyAccessor>>,
@@ -1714,6 +1730,7 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WaveShaperNode>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AudioBuffer, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.AudioSinkInfo, global::Iskra.StdWeb.GenericMarshaller.Union>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AudioPlaybackStats>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AudioTimestamp>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaElementAudioSourceNode>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaStreamAudioSourceNode>,
@@ -1736,8 +1753,11 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DistanceModelType>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.OverSampleType>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AudioParamMap>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AudioSessionType>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AudioSessionState>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XRDOMOverlayType>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.HTMLElement, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.DOMRect, global::Iskra.StdWeb.PropertyAccessor>>,
@@ -2529,6 +2549,36 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
     }
 
+    static uint global::Iskra.JSCore.Generics.IPropertyAccessor<uint>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        uint ___element_0;
+        double ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(obj, propertyIndex);
+        ___element_0 = Convert.ToUInt32(___res_1);
+        return ___element_0;
+    }
+
+    static uint global::Iskra.JSCore.Generics.IPropertyAccessor<uint>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        uint ___element_0;
+        double ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(obj, propertyName);
+        ___element_0 = Convert.ToUInt32(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<uint>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, uint value)
+    {
+        double ___marshalledValue_0;
+        ___marshalledValue_0 = Convert.ToDouble(value);
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<uint>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, uint value)
+    {
+        double ___marshalledValue_0;
+        ___marshalledValue_0 = Convert.ToDouble(value);
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(obj, propertyName, ___marshalledValue_0);
+    }
+
     static global::Iskra.StdWeb.XRVisibilityState global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XRVisibilityState>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.XRVisibilityState ___element_0;
@@ -2677,36 +2727,6 @@ public class PropertyAccessor:
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    static uint global::Iskra.JSCore.Generics.IPropertyAccessor<uint>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        uint ___element_0;
-        double ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(obj, propertyIndex);
-        ___element_0 = Convert.ToUInt32(___res_1);
-        return ___element_0;
-    }
-
-    static uint global::Iskra.JSCore.Generics.IPropertyAccessor<uint>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        uint ___element_0;
-        double ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(obj, propertyName);
-        ___element_0 = Convert.ToUInt32(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<uint>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, uint value)
-    {
-        double ___marshalledValue_0;
-        ___marshalledValue_0 = Convert.ToDouble(value);
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<uint>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, uint value)
-    {
-        double ___marshalledValue_0;
-        ___marshalledValue_0 = Convert.ToDouble(value);
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(obj, propertyName, ___marshalledValue_0);
     }
 
     static global::Iskra.StdWeb.XRHitTestSource global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XRHitTestSource>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
@@ -2917,6 +2937,36 @@ public class PropertyAccessor:
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
     }
 
     static global::Iskra.StdWeb.ContentCategory global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ContentCategory>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
@@ -3249,36 +3299,6 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
     }
 
-    static global::Iskra.StdWeb.PeriodicSyncManager global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PeriodicSyncManager>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.PeriodicSyncManager ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.PeriodicSyncManager>(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.PeriodicSyncManager global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PeriodicSyncManager>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.PeriodicSyncManager ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.PeriodicSyncManager>(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PeriodicSyncManager>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PeriodicSyncManager value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PeriodicSyncManager>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PeriodicSyncManager value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
     static global::Iskra.StdWeb.PaymentManager global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentManager>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.PaymentManager ___element_0;
@@ -3303,6 +3323,36 @@ public class PropertyAccessor:
     }
 
     static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentManager>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PaymentManager value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.PeriodicSyncManager global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PeriodicSyncManager>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.PeriodicSyncManager ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.PeriodicSyncManager>(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.PeriodicSyncManager global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PeriodicSyncManager>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.PeriodicSyncManager ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.PeriodicSyncManager>(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PeriodicSyncManager>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PeriodicSyncManager value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PeriodicSyncManager>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PeriodicSyncManager value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
@@ -3939,36 +3989,6 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
     }
 
-    static global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<string, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
     static global::Iskra.StdWeb.KeySystemTrackConfiguration global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.KeySystemTrackConfiguration>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.KeySystemTrackConfiguration ___element_0;
@@ -4299,6 +4319,36 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
     }
 
+    static global::Iskra.StdWeb.ModelContext global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.ModelContext ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.ModelContext>(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.ModelContext global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.ModelContext ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.ModelContext>(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.ModelContext value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.ModelContext value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
     static global::Iskra.StdWeb.VirtualKeyboard global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.VirtualKeyboard>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.VirtualKeyboard ___element_0;
@@ -4413,36 +4463,6 @@ public class PropertyAccessor:
     }
 
     static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.HID>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.HID value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.StdWeb.Attribution global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Attribution>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.Attribution ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.Attribution>(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.Attribution global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Attribution>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.Attribution ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.Attribution>(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Attribution>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.Attribution value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Attribution>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.Attribution value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
@@ -5313,6 +5333,36 @@ public class PropertyAccessor:
     }
 
     static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.USB>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.USB value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.Attribution global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Attribution>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.Attribution ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.Attribution>(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.Attribution global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Attribution>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.Attribution ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.Attribution>(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Attribution>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.Attribution value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Attribution>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.Attribution value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
@@ -6333,6 +6383,36 @@ public class PropertyAccessor:
     }
 
     static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Screen>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.Screen value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.CrashReportContext global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CrashReportContext>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.CrashReportContext ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.CrashReportContext>(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.CrashReportContext global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CrashReportContext>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.CrashReportContext ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.CrashReportContext>(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CrashReportContext>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.CrashReportContext value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CrashReportContext>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.CrashReportContext value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
@@ -9489,6 +9569,36 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
     }
 
+    static global::Iskra.StdWeb.PerformancePreference global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformancePreference>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.PerformancePreference ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.StdWeb.PerformancePreference.Create(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.PerformancePreference global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformancePreference>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.PerformancePreference ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
+        ___element_0 = global::Iskra.StdWeb.PerformancePreference.Create(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformancePreference>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PerformancePreference value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformancePreference>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PerformancePreference value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
+    }
+
     static global::Iskra.JSCore.Generics.Promise<double, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<double, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.JSCore.Generics.Promise<double, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
@@ -9879,34 +9989,64 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
     }
 
-    static global::Iskra.StdWeb.MediaStreamTrack global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaStreamTrack>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    static global::Iskra.StdWeb.DOMRectReadOnly global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMRectReadOnly>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
-        global::Iskra.StdWeb.MediaStreamTrack ___element_0;
+        global::Iskra.StdWeb.DOMRectReadOnly ___element_0;
         global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.MediaStreamTrack>(___res_1);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.DOMRectReadOnly>(___res_1);
         return ___element_0;
     }
 
-    static global::Iskra.StdWeb.MediaStreamTrack global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaStreamTrack>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    static global::Iskra.StdWeb.DOMRectReadOnly global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMRectReadOnly>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
     {
-        global::Iskra.StdWeb.MediaStreamTrack ___element_0;
+        global::Iskra.StdWeb.DOMRectReadOnly ___element_0;
         global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.MediaStreamTrack>(___res_1);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.DOMRectReadOnly>(___res_1);
         return ___element_0;
     }
 
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaStreamTrack>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.MediaStreamTrack value)
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMRectReadOnly>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.DOMRectReadOnly value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
     }
 
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaStreamTrack>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.MediaStreamTrack value)
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMRectReadOnly>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.DOMRectReadOnly value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaStreamTrack, global::Iskra.StdWeb.MediaStreamTrackHandle, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaStreamTrack, global::Iskra.StdWeb.MediaStreamTrackHandle, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaStreamTrack, global::Iskra.StdWeb.MediaStreamTrackHandle, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaStreamTrack, global::Iskra.StdWeb.MediaStreamTrackHandle, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaStreamTrack, global::Iskra.StdWeb.MediaStreamTrackHandle, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaStreamTrack, global::Iskra.StdWeb.MediaStreamTrackHandle, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaStreamTrack, global::Iskra.StdWeb.MediaStreamTrackHandle, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaStreamTrack, global::Iskra.StdWeb.MediaStreamTrackHandle, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaStreamTrack, global::Iskra.StdWeb.MediaStreamTrackHandle, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaStreamTrack, global::Iskra.StdWeb.MediaStreamTrackHandle, global::Iskra.StdWeb.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaStreamTrack, global::Iskra.StdWeb.MediaStreamTrackHandle, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaStreamTrack, global::Iskra.StdWeb.MediaStreamTrackHandle, global::Iskra.StdWeb.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
     }
 
     static ushort global::Iskra.JSCore.Generics.IPropertyAccessor<ushort>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
@@ -9963,6 +10103,36 @@ public class PropertyAccessor:
     }
 
     static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WritableStream>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.WritableStream value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.MediaStreamTrack global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaStreamTrack>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.MediaStreamTrack ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.MediaStreamTrack>(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.MediaStreamTrack global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaStreamTrack>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.MediaStreamTrack ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.MediaStreamTrack>(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaStreamTrack>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.MediaStreamTrack value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaStreamTrack>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.MediaStreamTrack value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
@@ -10477,36 +10647,6 @@ public class PropertyAccessor:
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
-    }
-
-    static global::Iskra.StdWeb.DOMRectReadOnly global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMRectReadOnly>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.DOMRectReadOnly ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.DOMRectReadOnly>(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.DOMRectReadOnly global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMRectReadOnly>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.DOMRectReadOnly ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.DOMRectReadOnly>(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMRectReadOnly>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.DOMRectReadOnly value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMRectReadOnly>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.DOMRectReadOnly value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
     }
 
     static global::Iskra.StdWeb.SVGNumberList global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SVGNumberList>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
@@ -11613,6 +11753,456 @@ public class PropertyAccessor:
     }
 
     static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XPathResult>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.XPathResult value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.PaymentDelegation global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDelegation>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.PaymentDelegation ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.StdWeb.PaymentDelegation.Create(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.PaymentDelegation global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDelegation>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.PaymentDelegation ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
+        ___element_0 = global::Iskra.StdWeb.PaymentDelegation.Create(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDelegation>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PaymentDelegation value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDelegation>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PaymentDelegation value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.PaymentDetailsModifier global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDetailsModifier>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.PaymentDetailsModifier ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.StdWeb.PaymentDetailsModifier(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.PaymentDetailsModifier global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDetailsModifier>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.PaymentDetailsModifier ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.StdWeb.PaymentDetailsModifier(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDetailsModifier>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PaymentDetailsModifier value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDetailsModifier>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PaymentDetailsModifier value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    static global::Iskra.StdWeb.PaymentShippingOption global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentShippingOption>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.PaymentShippingOption ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.StdWeb.PaymentShippingOption(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.PaymentShippingOption global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentShippingOption>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.PaymentShippingOption ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.StdWeb.PaymentShippingOption(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentShippingOption>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PaymentShippingOption value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentShippingOption>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PaymentShippingOption value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    static global::Iskra.StdWeb.AddressErrors global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressErrors>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.AddressErrors ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.StdWeb.AddressErrors(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.AddressErrors global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressErrors>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.AddressErrors ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.StdWeb.AddressErrors(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressErrors>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.AddressErrors value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressErrors>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.AddressErrors value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.PaymentMethodData global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentMethodData>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.PaymentMethodData ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.StdWeb.PaymentMethodData(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.PaymentMethodData global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentMethodData>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.PaymentMethodData ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.StdWeb.PaymentMethodData(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentMethodData>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PaymentMethodData value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentMethodData>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PaymentMethodData value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    static global::Iskra.StdWeb.PaymentHandlerResponse global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentHandlerResponse>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.PaymentHandlerResponse ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.StdWeb.PaymentHandlerResponse(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.PaymentHandlerResponse global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentHandlerResponse>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.PaymentHandlerResponse ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.StdWeb.PaymentHandlerResponse(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentHandlerResponse>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PaymentHandlerResponse value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentHandlerResponse>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PaymentHandlerResponse value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    static global::Iskra.StdWeb.PaymentOptions global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentOptions>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.PaymentOptions ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.StdWeb.PaymentOptions(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.PaymentOptions global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentOptions>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.PaymentOptions ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.StdWeb.PaymentOptions(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentOptions>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PaymentOptions value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentOptions>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PaymentOptions value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.AddressInit global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressInit>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.AddressInit ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.StdWeb.AddressInit(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.AddressInit global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressInit>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.AddressInit ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.StdWeb.AddressInit(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressInit>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.AddressInit value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressInit>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.AddressInit value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
@@ -15759,456 +16349,6 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
     }
 
-    static global::Iskra.StdWeb.PaymentDelegation global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDelegation>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.PaymentDelegation ___element_0;
-        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
-        ___element_0 = global::Iskra.StdWeb.PaymentDelegation.Create(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.PaymentDelegation global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDelegation>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.PaymentDelegation ___element_0;
-        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
-        ___element_0 = global::Iskra.StdWeb.PaymentDelegation.Create(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDelegation>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PaymentDelegation value)
-    {
-        string ___marshalledValue_0;
-        ___marshalledValue_0 = value.ToString();
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDelegation>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PaymentDelegation value)
-    {
-        string ___marshalledValue_0;
-        ___marshalledValue_0 = value.ToString();
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.StdWeb.PaymentDetailsModifier global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDetailsModifier>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.PaymentDetailsModifier ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.StdWeb.PaymentDetailsModifier(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.PaymentDetailsModifier global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDetailsModifier>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.PaymentDetailsModifier ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.StdWeb.PaymentDetailsModifier(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDetailsModifier>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PaymentDetailsModifier value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentDetailsModifier>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PaymentDetailsModifier value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    static global::Iskra.StdWeb.PaymentShippingOption global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentShippingOption>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.PaymentShippingOption ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.StdWeb.PaymentShippingOption(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.PaymentShippingOption global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentShippingOption>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.PaymentShippingOption ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.StdWeb.PaymentShippingOption(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentShippingOption>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PaymentShippingOption value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentShippingOption>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PaymentShippingOption value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentShippingOption, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    static global::Iskra.StdWeb.AddressErrors global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressErrors>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.AddressErrors ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.StdWeb.AddressErrors(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.AddressErrors global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressErrors>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.AddressErrors ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.StdWeb.AddressErrors(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressErrors>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.AddressErrors value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressErrors>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.AddressErrors value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.StdWeb.PaymentMethodData global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentMethodData>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.PaymentMethodData ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.StdWeb.PaymentMethodData(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.PaymentMethodData global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentMethodData>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.PaymentMethodData ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.StdWeb.PaymentMethodData(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentMethodData>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PaymentMethodData value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentMethodData>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PaymentMethodData value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.PaymentDetailsModifier, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.WindowClient?, global::Iskra.StdWeb.PropertyAccessorNullable> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PaymentRequestDetailsUpdate?, global::Iskra.StdWeb.PropertyAccessorNullable> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    static global::Iskra.StdWeb.PaymentHandlerResponse global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentHandlerResponse>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.PaymentHandlerResponse ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.StdWeb.PaymentHandlerResponse(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.PaymentHandlerResponse global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentHandlerResponse>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.PaymentHandlerResponse ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.StdWeb.PaymentHandlerResponse(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentHandlerResponse>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PaymentHandlerResponse value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentHandlerResponse>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PaymentHandlerResponse value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.PaymentMethodData, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    static global::Iskra.StdWeb.PaymentOptions global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentOptions>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.PaymentOptions ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.StdWeb.PaymentOptions(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.PaymentOptions global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentOptions>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.PaymentOptions ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.StdWeb.PaymentOptions(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentOptions>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PaymentOptions value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PaymentOptions>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PaymentOptions value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.StdWeb.AddressInit global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressInit>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.AddressInit ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.StdWeb.AddressInit(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.AddressInit global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressInit>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.AddressInit ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.StdWeb.AddressInit(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressInit>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.AddressInit value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AddressInit>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.AddressInit value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
     static global::Iskra.StdWeb.VideoPlaybackQuality global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.VideoPlaybackQuality>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.VideoPlaybackQuality ___element_0;
@@ -16294,6 +16434,96 @@ public class PropertyAccessor:
     }
 
     static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PictureInPictureWindow, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.PictureInPictureWindow, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    static global::Iskra.StdWeb.ToolExecuteCallback global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ToolExecuteCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.ToolExecuteCallback ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.StdWeb.ToolExecuteCallback(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.ToolExecuteCallback global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ToolExecuteCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.ToolExecuteCallback ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.StdWeb.ToolExecuteCallback(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ToolExecuteCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.ToolExecuteCallback value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ToolExecuteCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.ToolExecuteCallback value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.ToolAnnotations global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ToolAnnotations>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.ToolAnnotations ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.StdWeb.ToolAnnotations(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.ToolAnnotations global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ToolAnnotations>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.ToolAnnotations ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.StdWeb.ToolAnnotations(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ToolAnnotations>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.ToolAnnotations value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ToolAnnotations>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.ToolAnnotations value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable> value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
@@ -17739,6 +17969,36 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
     }
 
+    static global::Iskra.StdWeb.SFrameType global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SFrameType>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.SFrameType ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.StdWeb.SFrameType.Create(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.SFrameType global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SFrameType>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.SFrameType ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
+        ___element_0 = global::Iskra.StdWeb.SFrameType.Create(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SFrameType>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.SFrameType value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SFrameType>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.SFrameType value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
+    }
+
     static global::Iskra.StdWeb.SFrameTransformErrorEventType global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SFrameTransformErrorEventType>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.SFrameTransformErrorEventType ___element_0;
@@ -17889,30 +18149,30 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
     }
 
-    static global::Iskra.StdWeb.RTCEncodedVideoFrameType global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCEncodedVideoFrameType>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    static global::Iskra.StdWeb.EncodedVideoChunkType global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.EncodedVideoChunkType>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
-        global::Iskra.StdWeb.RTCEncodedVideoFrameType ___element_0;
+        global::Iskra.StdWeb.EncodedVideoChunkType ___element_0;
         string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
-        ___element_0 = global::Iskra.StdWeb.RTCEncodedVideoFrameType.Create(___res_1);
+        ___element_0 = global::Iskra.StdWeb.EncodedVideoChunkType.Create(___res_1);
         return ___element_0;
     }
 
-    static global::Iskra.StdWeb.RTCEncodedVideoFrameType global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCEncodedVideoFrameType>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    static global::Iskra.StdWeb.EncodedVideoChunkType global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.EncodedVideoChunkType>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
     {
-        global::Iskra.StdWeb.RTCEncodedVideoFrameType ___element_0;
+        global::Iskra.StdWeb.EncodedVideoChunkType ___element_0;
         string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
-        ___element_0 = global::Iskra.StdWeb.RTCEncodedVideoFrameType.Create(___res_1);
+        ___element_0 = global::Iskra.StdWeb.EncodedVideoChunkType.Create(___res_1);
         return ___element_0;
     }
 
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCEncodedVideoFrameType>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.RTCEncodedVideoFrameType value)
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.EncodedVideoChunkType>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.EncodedVideoChunkType value)
     {
         string ___marshalledValue_0;
         ___marshalledValue_0 = value.ToString();
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
     }
 
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCEncodedVideoFrameType>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.RTCEncodedVideoFrameType value)
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.EncodedVideoChunkType>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.EncodedVideoChunkType value)
     {
         string ___marshalledValue_0;
         ___marshalledValue_0 = value.ToString();
@@ -17947,6 +18207,66 @@ public class PropertyAccessor:
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.Worker global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Worker>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.Worker ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.Worker>(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.Worker global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Worker>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.Worker ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.Worker>(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Worker>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.Worker value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Worker>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.Worker value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.RTCRtpScriptTransformType global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCRtpScriptTransformType>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.RTCRtpScriptTransformType ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.StdWeb.RTCRtpScriptTransformType.Create(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.RTCRtpScriptTransformType global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCRtpScriptTransformType>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.RTCRtpScriptTransformType ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
+        ___element_0 = global::Iskra.StdWeb.RTCRtpScriptTransformType.Create(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCRtpScriptTransformType>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.RTCRtpScriptTransformType value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCRtpScriptTransformType>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.RTCRtpScriptTransformType value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
     }
 
     static global::Iskra.StdWeb.RTCRtpScriptTransformer global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RTCRtpScriptTransformer>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
@@ -18307,36 +18627,6 @@ public class PropertyAccessor:
         string ___marshalledValue_0;
         ___marshalledValue_0 = value.ToString();
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
     }
 
     static global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.TaskPriority, global::Iskra.StdWeb.TaskSignal, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.TaskPriority, global::Iskra.StdWeb.TaskSignal, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
@@ -19233,6 +19523,66 @@ public class PropertyAccessor:
     }
 
     static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.NavigationTimingType>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.NavigationTimingType value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.PerformanceTimingConfidence global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformanceTimingConfidence>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.PerformanceTimingConfidence ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.PerformanceTimingConfidence>(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.PerformanceTimingConfidence global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformanceTimingConfidence>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.PerformanceTimingConfidence ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.PerformanceTimingConfidence>(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformanceTimingConfidence>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PerformanceTimingConfidence value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformanceTimingConfidence>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PerformanceTimingConfidence value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.PerformanceTimingConfidenceValue global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformanceTimingConfidenceValue>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.PerformanceTimingConfidenceValue ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.StdWeb.PerformanceTimingConfidenceValue.Create(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.PerformanceTimingConfidenceValue global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformanceTimingConfidenceValue>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.PerformanceTimingConfidenceValue ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
+        ___element_0 = global::Iskra.StdWeb.PerformanceTimingConfidenceValue.Create(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformanceTimingConfidenceValue>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.PerformanceTimingConfidenceValue value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.PerformanceTimingConfidenceValue>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.PerformanceTimingConfidenceValue value)
     {
         string ___marshalledValue_0;
         ___marshalledValue_0 = value.ToString();
@@ -22479,186 +22829,6 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
     }
 
-    static global::Iskra.StdWeb.AttributionAggregationServices global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationServices>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.AttributionAggregationServices ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.AttributionAggregationServices>(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.AttributionAggregationServices global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationServices>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.AttributionAggregationServices ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.AttributionAggregationServices>(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationServices>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.AttributionAggregationServices value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationServices>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.AttributionAggregationServices value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.StdWeb.AttributionImpressionResult global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionImpressionResult>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.AttributionImpressionResult ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.StdWeb.AttributionImpressionResult(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.AttributionImpressionResult global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionImpressionResult>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.AttributionImpressionResult ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.StdWeb.AttributionImpressionResult(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionImpressionResult>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.AttributionImpressionResult value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionImpressionResult>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.AttributionImpressionResult value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    static global::Iskra.StdWeb.AttributionConversionResult global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionConversionResult>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.AttributionConversionResult ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.StdWeb.AttributionConversionResult(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.AttributionConversionResult global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionConversionResult>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.AttributionConversionResult ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.StdWeb.AttributionConversionResult(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionConversionResult>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.AttributionConversionResult value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionConversionResult>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.AttributionConversionResult value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    static global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
     static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.CookieListItem?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.CookieListItem?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.CookieListItem?, global::Iskra.StdWeb.PropertyAccessorNullable> ___element_0;
@@ -23109,36 +23279,6 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
     }
 
-    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
     static global::Iskra.JSCore.Uint32Array global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Uint32Array>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.JSCore.Uint32Array ___element_0;
@@ -23167,6 +23307,36 @@ public class PropertyAccessor:
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::System.Numerics.BigInteger global::Iskra.JSCore.Generics.IPropertyAccessor<global::System.Numerics.BigInteger>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::System.Numerics.BigInteger ___element_0;
+        global::System.Numerics.BigInteger ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsBigIntegerV2(obj, propertyIndex);
+        ___element_0 = ___res_1;
+        return ___element_0;
+    }
+
+    static global::System.Numerics.BigInteger global::Iskra.JSCore.Generics.IPropertyAccessor<global::System.Numerics.BigInteger>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::System.Numerics.BigInteger ___element_0;
+        global::System.Numerics.BigInteger ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsBigIntegerV2(obj, propertyName);
+        ___element_0 = ___res_1;
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::System.Numerics.BigInteger>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::System.Numerics.BigInteger value)
+    {
+        global::System.Numerics.BigInteger ___marshalledValue_0;
+        ___marshalledValue_0 = value;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBigIntegerV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::System.Numerics.BigInteger>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::System.Numerics.BigInteger value)
+    {
+        global::System.Numerics.BigInteger ___marshalledValue_0;
+        ___marshalledValue_0 = value;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBigIntegerV2(obj, propertyName, ___marshalledValue_0);
     }
 
     static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.Blob, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.Blob, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
@@ -26799,6 +26969,36 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
     }
 
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
     static global::Iskra.StdWeb.WebTransportReliabilityMode global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WebTransportReliabilityMode>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.WebTransportReliabilityMode ___element_0;
@@ -27157,36 +27357,6 @@ public class PropertyAccessor:
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    static global::Iskra.StdWeb.DatagramsReadableMode global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DatagramsReadableMode>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.DatagramsReadableMode ___element_0;
-        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
-        ___element_0 = global::Iskra.StdWeb.DatagramsReadableMode.Create(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.DatagramsReadableMode global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DatagramsReadableMode>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.DatagramsReadableMode ___element_0;
-        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
-        ___element_0 = global::Iskra.StdWeb.DatagramsReadableMode.Create(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DatagramsReadableMode>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.DatagramsReadableMode value)
-    {
-        string ___marshalledValue_0;
-        ___marshalledValue_0 = value.ToString();
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DatagramsReadableMode>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.DatagramsReadableMode value)
-    {
-        string ___marshalledValue_0;
-        ___marshalledValue_0 = value.ToString();
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
     }
 
     static global::Iskra.StdWeb.WebTransportDatagramStats global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WebTransportDatagramStats>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
@@ -27877,36 +28047,6 @@ public class PropertyAccessor:
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.JSCore.Uint8Array, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
     }
 
     static global::Iskra.StdWeb.FormData global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.FormData>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
@@ -29523,36 +29663,6 @@ public class PropertyAccessor:
     }
 
     static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.EncodedAudioChunkType>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.EncodedAudioChunkType value)
-    {
-        string ___marshalledValue_0;
-        ___marshalledValue_0 = value.ToString();
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.StdWeb.EncodedVideoChunkType global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.EncodedVideoChunkType>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.EncodedVideoChunkType ___element_0;
-        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
-        ___element_0 = global::Iskra.StdWeb.EncodedVideoChunkType.Create(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.EncodedVideoChunkType global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.EncodedVideoChunkType>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.EncodedVideoChunkType ___element_0;
-        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
-        ___element_0 = global::Iskra.StdWeb.EncodedVideoChunkType.Create(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.EncodedVideoChunkType>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.EncodedVideoChunkType value)
-    {
-        string ___marshalledValue_0;
-        ___marshalledValue_0 = value.ToString();
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.EncodedVideoChunkType>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.EncodedVideoChunkType value)
     {
         string ___marshalledValue_0;
         ___marshalledValue_0 = value.ToString();
@@ -32679,6 +32789,36 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
     }
 
+    static global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<double, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
     static global::Iskra.JSCore.Generics.Union<double, global::Iskra.StdWeb.DOMPointInit, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<double, global::Iskra.StdWeb.DOMPointInit, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.JSCore.Generics.Union<double, global::Iskra.StdWeb.DOMPointInit, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
@@ -34509,6 +34649,36 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
     }
 
+    static global::Iskra.StdWeb.AriaNotifyPriority global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AriaNotifyPriority>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.AriaNotifyPriority ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.StdWeb.AriaNotifyPriority.Create(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.AriaNotifyPriority global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AriaNotifyPriority>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.AriaNotifyPriority ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
+        ___element_0 = global::Iskra.StdWeb.AriaNotifyPriority.Create(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AriaNotifyPriority>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.AriaNotifyPriority value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AriaNotifyPriority>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.AriaNotifyPriority value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
+    }
+
     static global::Iskra.StdWeb.MediaList global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaList>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.MediaList ___element_0;
@@ -34837,36 +35007,6 @@ public class PropertyAccessor:
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::System.Numerics.BigInteger global::Iskra.JSCore.Generics.IPropertyAccessor<global::System.Numerics.BigInteger>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::System.Numerics.BigInteger ___element_0;
-        global::System.Numerics.BigInteger ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsBigIntegerV2(obj, propertyIndex);
-        ___element_0 = ___res_1;
-        return ___element_0;
-    }
-
-    static global::System.Numerics.BigInteger global::Iskra.JSCore.Generics.IPropertyAccessor<global::System.Numerics.BigInteger>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::System.Numerics.BigInteger ___element_0;
-        global::System.Numerics.BigInteger ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsBigIntegerV2(obj, propertyName);
-        ___element_0 = ___res_1;
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::System.Numerics.BigInteger>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::System.Numerics.BigInteger value)
-    {
-        global::System.Numerics.BigInteger ___marshalledValue_0;
-        ___marshalledValue_0 = value;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBigIntegerV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::System.Numerics.BigInteger>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::System.Numerics.BigInteger value)
-    {
-        global::System.Numerics.BigInteger ___marshalledValue_0;
-        ___marshalledValue_0 = value;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBigIntegerV2(obj, propertyName, ___marshalledValue_0);
     }
 
     static global::Iskra.JSCore.Generics.Promise<string?, global::Iskra.StdWeb.PropertyAccessorNullable> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<string?, global::Iskra.StdWeb.PropertyAccessorNullable>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
@@ -41919,66 +42059,6 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
     }
 
-    static global::Iskra.StdWeb.GeolocationSensorReading global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.GeolocationSensorReading>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.GeolocationSensorReading ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.StdWeb.GeolocationSensorReading(___res_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.StdWeb.GeolocationSensorReading global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.GeolocationSensorReading>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.GeolocationSensorReading ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.StdWeb.GeolocationSensorReading(___res_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.GeolocationSensorReading>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.GeolocationSensorReading value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.GeolocationSensorReading>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.GeolocationSensorReading value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.GeolocationSensorReading, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.GeolocationSensorReading, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.GeolocationSensorReading, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.GeolocationSensorReading, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.GeolocationSensorReading, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.GeolocationSensorReading, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.GeolocationSensorReading, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.GeolocationSensorReading, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.GeolocationSensorReading, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.GeolocationSensorReading, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.GeolocationSensorReading, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.GeolocationSensorReading, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
     static global::Iskra.StdWeb.DOMException global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMException>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.DOMException ___element_0;
@@ -42367,6 +42447,66 @@ public class PropertyAccessor:
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.HTMLModelElement global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.HTMLModelElement>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.HTMLModelElement ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.HTMLModelElement>(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.HTMLModelElement global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.HTMLModelElement>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.HTMLModelElement ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.HTMLModelElement>(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.HTMLModelElement>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.HTMLModelElement value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.HTMLModelElement>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.HTMLModelElement value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.HTMLModelElement, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.HTMLModelElement, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.HTMLModelElement, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.HTMLModelElement, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.HTMLModelElement, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.HTMLModelElement, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.HTMLModelElement, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.HTMLModelElement, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.HTMLModelElement, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.HTMLModelElement, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.HTMLModelElement, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.HTMLModelElement, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
     }
 
     static global::Iskra.StdWeb.Module global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Module>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
@@ -46779,6 +46919,186 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
     }
 
+    static global::Iskra.StdWeb.AttributionAggregationProtocol global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationProtocol>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.AttributionAggregationProtocol ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.StdWeb.AttributionAggregationProtocol.Create(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.AttributionAggregationProtocol global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationProtocol>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.AttributionAggregationProtocol ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
+        ___element_0 = global::Iskra.StdWeb.AttributionAggregationProtocol.Create(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationProtocol>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.AttributionAggregationProtocol value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationProtocol>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.AttributionAggregationProtocol value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.AttributionAggregationServices global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationServices>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.AttributionAggregationServices ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.AttributionAggregationServices>(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.AttributionAggregationServices global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationServices>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.AttributionAggregationServices ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.AttributionAggregationServices>(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationServices>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.AttributionAggregationServices value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionAggregationServices>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.AttributionAggregationServices value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.StdWeb.AttributionImpressionResult global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionImpressionResult>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.AttributionImpressionResult ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.StdWeb.AttributionImpressionResult(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.AttributionImpressionResult global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionImpressionResult>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.AttributionImpressionResult ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.StdWeb.AttributionImpressionResult(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionImpressionResult>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.AttributionImpressionResult value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionImpressionResult>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.AttributionImpressionResult value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionImpressionResult, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    static global::Iskra.StdWeb.AttributionConversionResult global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionConversionResult>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.AttributionConversionResult ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.StdWeb.AttributionConversionResult(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.AttributionConversionResult global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionConversionResult>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.AttributionConversionResult ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.StdWeb.AttributionConversionResult(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionConversionResult>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.AttributionConversionResult value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AttributionConversionResult>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.AttributionConversionResult value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.AttributionConversionResult, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
     static global::Iskra.StdWeb.FocusableAreaSearchMode global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.FocusableAreaSearchMode>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.FocusableAreaSearchMode ___element_0;
@@ -48369,6 +48689,36 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
     }
 
+    static global::Iskra.StdWeb.Origin global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Origin>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.Origin ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.Origin>(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.Origin global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Origin>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.Origin ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.Origin>(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Origin>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.Origin value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Origin>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.Origin value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
     static global::Iskra.StdWeb.DOMStringList global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DOMStringList>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.DOMStringList ___element_0;
@@ -49239,6 +49589,36 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
     }
 
+    static global::Iskra.StdWeb.ActivationBlockersMixinBlockerReason global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ActivationBlockersMixinBlockerReason>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.ActivationBlockersMixinBlockerReason ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.StdWeb.ActivationBlockersMixinBlockerReason.Create(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.ActivationBlockersMixinBlockerReason global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ActivationBlockersMixinBlockerReason>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.ActivationBlockersMixinBlockerReason ___element_0;
+        string ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
+        ___element_0 = global::Iskra.StdWeb.ActivationBlockersMixinBlockerReason.Create(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ActivationBlockersMixinBlockerReason>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.ActivationBlockersMixinBlockerReason value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ActivationBlockersMixinBlockerReason>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.ActivationBlockersMixinBlockerReason value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
+    }
+
     static global::Iskra.StdWeb.TaskAttributionTiming global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.TaskAttributionTiming>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.TaskAttributionTiming ___element_0;
@@ -49294,6 +49674,66 @@ public class PropertyAccessor:
     }
 
     static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.TaskAttributionTiming, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.TaskAttributionTiming, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    static global::Iskra.StdWeb.CSSContainerCondition global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CSSContainerCondition>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.CSSContainerCondition ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.StdWeb.CSSContainerCondition(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.CSSContainerCondition global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CSSContainerCondition>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.CSSContainerCondition ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.StdWeb.CSSContainerCondition(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CSSContainerCondition>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.CSSContainerCondition value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CSSContainerCondition>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.CSSContainerCondition value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.CSSContainerCondition, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.CSSContainerCondition, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.CSSContainerCondition, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.CSSContainerCondition, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.CSSContainerCondition, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.CSSContainerCondition, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.CSSContainerCondition, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.CSSContainerCondition, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.CSSContainerCondition, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.CSSContainerCondition, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.CSSContainerCondition, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.StdWeb.CSSContainerCondition, global::Iskra.StdWeb.PropertyAccessor> value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
@@ -50524,6 +50964,66 @@ public class PropertyAccessor:
     }
 
     static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.MIDIPort, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.MIDIPort, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    static global::Iskra.StdWeb.TextDetector global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.TextDetector>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.TextDetector ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.TextDetector>(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.TextDetector global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.TextDetector>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.TextDetector ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.TextDetector>(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.TextDetector>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.TextDetector value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.TextDetector>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.TextDetector value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.TextDetector, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.TextDetector, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.TextDetector, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.TextDetector, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.TextDetector, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.TextDetector, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.TextDetector, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.TextDetector, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.TextDetector, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.TextDetector, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.TextDetector, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.TextDetector, global::Iskra.StdWeb.PropertyAccessor> value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
@@ -53019,6 +53519,36 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
     }
 
+    static global::Iskra.StdWeb.AudioPlaybackStats global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AudioPlaybackStats>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.AudioPlaybackStats ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.AudioPlaybackStats>(___res_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.StdWeb.AudioPlaybackStats global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AudioPlaybackStats>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.AudioPlaybackStats ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.AudioPlaybackStats>(___res_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AudioPlaybackStats>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.AudioPlaybackStats value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AudioPlaybackStats>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.AudioPlaybackStats value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
     static global::Iskra.StdWeb.AudioTimestamp global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AudioTimestamp>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.AudioTimestamp ___element_0;
@@ -53679,6 +54209,36 @@ public class PropertyAccessor:
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
     }
 
+    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Float32Array, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
     static global::Iskra.StdWeb.AudioSessionType global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.AudioSessionType>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.AudioSessionType ___element_0;
@@ -53737,6 +54297,66 @@ public class PropertyAccessor:
         string ___marshalledValue_0;
         ___marshalledValue_0 = value.ToString();
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.FrozenArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Iskra.StdWeb.GenericMarshaller.Union>?, global::Iskra.StdWeb.PropertyAccessorNullable>, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
     }
 
     static global::Iskra.StdWeb.XRDOMOverlayType global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.XRDOMOverlayType>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
