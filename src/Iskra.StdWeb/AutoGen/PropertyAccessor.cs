@@ -90,7 +90,6 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Permissions>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.MediaSession>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Scheduling>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.VirtualKeyboard>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Geolocation>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.WakeLock>,
@@ -310,6 +309,7 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SVGAnimatedLengthList>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SVGAnimatedNumberList>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SVGAnimatedAngle>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.DocumentTimeline>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.StdWeb.Element, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.NamedFlowMap>,
@@ -1543,6 +1543,16 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.NavigationScrollBehavior>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.NotRestoredReasonDetails>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.NotRestoredReasons>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SanitizerConfig>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>>,
+    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Plugin>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ImageDataPixelFormat>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.JSCore.Uint8ClampedArray, global::Iskra.JSCore.Float16Array, global::Iskra.StdWeb.GenericMarshaller.Union>>,
@@ -1581,16 +1591,6 @@ public class PropertyAccessor:
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.MediaList, string, global::Iskra.StdWeb.GenericMarshaller.Union>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CSSPageDescriptors>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.CSSStyleDeclaration>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SanitizerConfig>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>>,
-    global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.TokenVersion>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.OperationType>,
     global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.RefreshPolicy>,
@@ -4614,40 +4614,6 @@ public class PropertyAccessor:
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Scheduling>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.Scheduling value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.StdWeb.ModelContext global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.ModelContext ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.ModelContext>(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.StdWeb.ModelContext global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.ModelContext ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.ModelContext>(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.ModelContext value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.ModelContext value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
@@ -12094,6 +12060,40 @@ public class PropertyAccessor:
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SVGAnimatedAngle>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.SVGAnimatedAngle value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.StdWeb.ModelContext global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.ModelContext ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.ModelContext>(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.StdWeb.ModelContext global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.ModelContext ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Iskra.JSCore.JSObjectProxyFactory.GetProxy<global::Iskra.StdWeb.ModelContext>(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.ModelContext value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.ModelContext>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.ModelContext value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
@@ -54023,6 +54023,346 @@ public class PropertyAccessor:
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.StdWeb.SanitizerConfig global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SanitizerConfig>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.StdWeb.SanitizerConfig ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.StdWeb.SanitizerConfig(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.StdWeb.SanitizerConfig global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SanitizerConfig>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.StdWeb.SanitizerConfig ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.StdWeb.SanitizerConfig(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SanitizerConfig>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.SanitizerConfig value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SanitizerConfig>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.SanitizerConfig value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     static global::Iskra.StdWeb.Plugin global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.Plugin>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Iskra.StdWeb.Plugin ___element_0;
@@ -55312,346 +55652,6 @@ public class PropertyAccessor:
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
         ___marshalledValue_0 = value.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Union<global::Iskra.StdWeb.Sanitizer, global::Iskra.StdWeb.SanitizerConfig, global::Iskra.StdWeb.SanitizerPresets, global::Iskra.StdWeb.GenericMarshaller.Union> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.StdWeb.SanitizerConfig global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SanitizerConfig>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.StdWeb.SanitizerConfig ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.StdWeb.SanitizerConfig(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.StdWeb.SanitizerConfig global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SanitizerConfig>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.StdWeb.SanitizerConfig ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.StdWeb.SanitizerConfig(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SanitizerConfig>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.StdWeb.SanitizerConfig value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.StdWeb.SanitizerConfig>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.StdWeb.SanitizerConfig value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerAttributeNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespaceWithAttributes, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerElementNamespace, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Iskra.JSCore.Generics.IPropertyAccessor<global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Iskra.JSCore.Generics.JSArray<global::Iskra.JSCore.Generics.Union<string, global::Iskra.StdWeb.SanitizerProcessingInstruction, global::Iskra.StdWeb.GenericMarshaller.Union>, global::Iskra.StdWeb.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
