@@ -4,15 +4,15 @@ namespace Iskra.StdWeb;
 
 #nullable enable
 
-public partial class ModelContext: global::Iskra.StdWeb.EventTarget
+public partial class CrossOriginStorageManager: global::Iskra.JSCore.JSObjectProxy
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public ModelContext(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
+    public CrossOriginStorageManager(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Iskra.JSCore.Promise RegisterTool(global::Iskra.StdWeb.ModelContextTool tool)
+    public global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.FileSystemFileHandle, global::Iskra.StdWeb.PropertyAccessor> RequestFileHandle(global::Iskra.StdWeb.CrossOriginStorageRequestFileHandleHash hash)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -20,19 +20,19 @@ public partial class ModelContext: global::Iskra.StdWeb.EventTarget
 
         // Argument 1
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_3;
-        ___marshalledValue_3 = tool.JSObject;
+        ___marshalledValue_3 = hash.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
 
         using global::Iskra.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Iskra.JSCore.FunctionResPool.Shared.Rent();
 
-        global::Iskra.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "registerTool", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
+        global::Iskra.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "requestFileHandle", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Iskra.JSCore.Generics.PropertyAccessor.Get<global::Iskra.JSCore.Promise, global::Iskra.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Iskra.JSCore.Generics.PropertyAccessor.Get<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.FileSystemFileHandle, global::Iskra.StdWeb.PropertyAccessor>, global::Iskra.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Iskra.JSCore.Promise RegisterTool(global::Iskra.StdWeb.ModelContextTool tool, global::Iskra.StdWeb.ModelContextRegisterToolOptions options)
+    public global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.FileSystemFileHandle, global::Iskra.StdWeb.PropertyAccessor> RequestFileHandle(global::Iskra.StdWeb.CrossOriginStorageRequestFileHandleHash hash, global::Iskra.StdWeb.CrossOriginStorageRequestFileHandleOptions options)
     {
         int ___argsArrayLength_2 = 2;
 
@@ -40,7 +40,7 @@ public partial class ModelContext: global::Iskra.StdWeb.EventTarget
 
         // Argument 1
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_3;
-        ___marshalledValue_3 = tool.JSObject;
+        ___marshalledValue_3 = hash.JSObject;
         global::Iskra.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
 
         // Argument 2
@@ -50,17 +50,10 @@ public partial class ModelContext: global::Iskra.StdWeb.EventTarget
 
         using global::Iskra.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Iskra.JSCore.FunctionResPool.Shared.Rent();
 
-        global::Iskra.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "registerTool", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
+        global::Iskra.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "requestFileHandle", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Iskra.JSCore.Generics.PropertyAccessor.Get<global::Iskra.JSCore.Promise, global::Iskra.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Iskra.StdWeb.EventHandlerNonNull? Ontoolchange
-    {
-        get => global::Iskra.JSCore.Generics.PropertyAccessor.Get<global::Iskra.StdWeb.EventHandlerNonNull?, global::Iskra.StdWeb.PropertyAccessorNullable>(JSObject, "ontoolchange");
-        set => global::Iskra.JSCore.Generics.PropertyAccessor.Set<global::Iskra.StdWeb.EventHandlerNonNull?, global::Iskra.StdWeb.PropertyAccessorNullable>(JSObject, "ontoolchange", value);
+        return global::Iskra.JSCore.Generics.PropertyAccessor.Get<global::Iskra.JSCore.Generics.Promise<global::Iskra.StdWeb.FileSystemFileHandle, global::Iskra.StdWeb.PropertyAccessor>, global::Iskra.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
     }
 }
 
