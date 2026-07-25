@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class ResizeObserverBoxOptions
+{
+    private readonly string _value;
+
+    private ResizeObserverBoxOptions(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly ResizeObserverBoxOptions Border_box = new("border-box");
+    public static readonly ResizeObserverBoxOptions Content_box = new("content-box");
+    public static readonly ResizeObserverBoxOptions Device_pixel_content_box = new("device-pixel-content-box");
+
+    public override string ToString() => _value;
+
+    public static ResizeObserverBoxOptions Create(string value) => value switch
+    {
+        "border-box" => Border_box,
+        "content-box" => Content_box,
+        "device-pixel-content-box" => Device_pixel_content_box,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for ResizeObserverBoxOptions", nameof(value)),
+    };
+}
+
+#nullable disable

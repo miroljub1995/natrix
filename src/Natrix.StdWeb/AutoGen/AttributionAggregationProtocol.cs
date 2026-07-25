@@ -1,0 +1,27 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class AttributionAggregationProtocol
+{
+    private readonly string _value;
+
+    private AttributionAggregationProtocol(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly AttributionAggregationProtocol Dap_18_histogram = new("dap-18-histogram");
+
+    public override string ToString() => _value;
+
+    public static AttributionAggregationProtocol Create(string value) => value switch
+    {
+        "dap-18-histogram" => Dap_18_histogram,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for AttributionAggregationProtocol", nameof(value)),
+    };
+}
+
+#nullable disable

@@ -1,0 +1,15 @@
+using Natrix.StdWeb;
+
+namespace Natrix.Dom.Components;
+
+public class H1Props : GlobalHtmlComponentProps<HTMLHeadingElement>
+{
+}
+
+public class H1Events : HtmlElementComponentEvents<HTMLHeadingElement>
+{
+}
+
+public class H1() : BaseNonVoidDomComponent<HTMLHeadingElement, H1Props, H1Events>("h1")
+{
+}

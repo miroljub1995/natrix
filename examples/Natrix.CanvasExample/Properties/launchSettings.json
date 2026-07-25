@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Natrix.CanvasExample": {
+      "commandName": "Project",
+      "launchBrowser": true
+    }
+  }
+}

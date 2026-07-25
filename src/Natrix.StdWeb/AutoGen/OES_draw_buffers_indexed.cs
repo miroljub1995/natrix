@@ -1,0 +1,195 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public partial class OES_draw_buffers_indexed: global::Natrix.JSCore.JSObjectProxy
+{
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public OES_draw_buffers_indexed(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
+    {
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void EnableiOES(uint target, uint index)
+    {
+        int ___argsArrayLength_2 = 2;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        double ___marshalledValue_3;
+        ___marshalledValue_3 = Convert.ToDouble(target);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        // Argument 2
+        double ___marshalledValue_4;
+        ___marshalledValue_4 = Convert.ToDouble(index);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 1, ___marshalledValue_4);
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "enableiOES", JSObject, ___argsArray_0.JSObject);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void DisableiOES(uint target, uint index)
+    {
+        int ___argsArrayLength_2 = 2;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        double ___marshalledValue_3;
+        ___marshalledValue_3 = Convert.ToDouble(target);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        // Argument 2
+        double ___marshalledValue_4;
+        ___marshalledValue_4 = Convert.ToDouble(index);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 1, ___marshalledValue_4);
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "disableiOES", JSObject, ___argsArray_0.JSObject);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void BlendEquationiOES(uint buf, uint mode)
+    {
+        int ___argsArrayLength_2 = 2;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        double ___marshalledValue_3;
+        ___marshalledValue_3 = Convert.ToDouble(buf);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        // Argument 2
+        double ___marshalledValue_4;
+        ___marshalledValue_4 = Convert.ToDouble(mode);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 1, ___marshalledValue_4);
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "blendEquationiOES", JSObject, ___argsArray_0.JSObject);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void BlendEquationSeparateiOES(uint buf, uint modeRGB, uint modeAlpha)
+    {
+        int ___argsArrayLength_2 = 3;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        double ___marshalledValue_3;
+        ___marshalledValue_3 = Convert.ToDouble(buf);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        // Argument 2
+        double ___marshalledValue_4;
+        ___marshalledValue_4 = Convert.ToDouble(modeRGB);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 1, ___marshalledValue_4);
+
+        // Argument 3
+        double ___marshalledValue_5;
+        ___marshalledValue_5 = Convert.ToDouble(modeAlpha);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 2, ___marshalledValue_5);
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "blendEquationSeparateiOES", JSObject, ___argsArray_0.JSObject);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void BlendFunciOES(uint buf, uint src, uint dst)
+    {
+        int ___argsArrayLength_2 = 3;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        double ___marshalledValue_3;
+        ___marshalledValue_3 = Convert.ToDouble(buf);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        // Argument 2
+        double ___marshalledValue_4;
+        ___marshalledValue_4 = Convert.ToDouble(src);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 1, ___marshalledValue_4);
+
+        // Argument 3
+        double ___marshalledValue_5;
+        ___marshalledValue_5 = Convert.ToDouble(dst);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 2, ___marshalledValue_5);
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "blendFunciOES", JSObject, ___argsArray_0.JSObject);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void BlendFuncSeparateiOES(uint buf, uint srcRGB, uint dstRGB, uint srcAlpha, uint dstAlpha)
+    {
+        int ___argsArrayLength_2 = 5;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        double ___marshalledValue_3;
+        ___marshalledValue_3 = Convert.ToDouble(buf);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        // Argument 2
+        double ___marshalledValue_4;
+        ___marshalledValue_4 = Convert.ToDouble(srcRGB);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 1, ___marshalledValue_4);
+
+        // Argument 3
+        double ___marshalledValue_5;
+        ___marshalledValue_5 = Convert.ToDouble(dstRGB);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 2, ___marshalledValue_5);
+
+        // Argument 4
+        double ___marshalledValue_6;
+        ___marshalledValue_6 = Convert.ToDouble(srcAlpha);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 3, ___marshalledValue_6);
+
+        // Argument 5
+        double ___marshalledValue_7;
+        ___marshalledValue_7 = Convert.ToDouble(dstAlpha);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 4, ___marshalledValue_7);
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "blendFuncSeparateiOES", JSObject, ___argsArray_0.JSObject);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void ColorMaskiOES(uint buf, bool r, bool g, bool b, bool a)
+    {
+        int ___argsArrayLength_2 = 5;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        double ___marshalledValue_3;
+        ___marshalledValue_3 = Convert.ToDouble(buf);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        // Argument 2
+        bool ___marshalledValue_4;
+        ___marshalledValue_4 = r;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBooleanV2(___argsArray_0.JSObject, 1, ___marshalledValue_4);
+
+        // Argument 3
+        bool ___marshalledValue_5;
+        ___marshalledValue_5 = g;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBooleanV2(___argsArray_0.JSObject, 2, ___marshalledValue_5);
+
+        // Argument 4
+        bool ___marshalledValue_6;
+        ___marshalledValue_6 = b;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBooleanV2(___argsArray_0.JSObject, 3, ___marshalledValue_6);
+
+        // Argument 5
+        bool ___marshalledValue_7;
+        ___marshalledValue_7 = a;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBooleanV2(___argsArray_0.JSObject, 4, ___marshalledValue_7);
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "colorMaskiOES", JSObject, ___argsArray_0.JSObject);
+    }
+}
+
+#nullable disable

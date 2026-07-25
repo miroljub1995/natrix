@@ -1,0 +1,33 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class AnimationPlayState
+{
+    private readonly string _value;
+
+    private AnimationPlayState(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly AnimationPlayState Idle = new("idle");
+    public static readonly AnimationPlayState Running = new("running");
+    public static readonly AnimationPlayState Paused = new("paused");
+    public static readonly AnimationPlayState Finished = new("finished");
+
+    public override string ToString() => _value;
+
+    public static AnimationPlayState Create(string value) => value switch
+    {
+        "idle" => Idle,
+        "running" => Running,
+        "paused" => Paused,
+        "finished" => Finished,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for AnimationPlayState", nameof(value)),
+    };
+}
+
+#nullable disable

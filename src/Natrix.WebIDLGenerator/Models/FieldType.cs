@@ -1,0 +1,14 @@
+using System.Text.Json.Serialization;
+
+namespace Natrix.WebIDLGenerator.Models;
+
+public record FieldType : AbstractBase
+{
+    [JsonPropertyName("name")] public required string Name { get; set; }
+
+    [JsonPropertyName("required")] public required bool Required { get; set; }
+
+    [JsonPropertyName("idlType")] public required IDLTypeDescription IdlType { get; set; }
+
+    [JsonPropertyName("default")] public required ValueDescription? Default { get; set; }
+}

@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class USBTransferStatus
+{
+    private readonly string _value;
+
+    private USBTransferStatus(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly USBTransferStatus Ok = new("ok");
+    public static readonly USBTransferStatus Stall = new("stall");
+    public static readonly USBTransferStatus Babble = new("babble");
+
+    public override string ToString() => _value;
+
+    public static USBTransferStatus Create(string value) => value switch
+    {
+        "ok" => Ok,
+        "stall" => Stall,
+        "babble" => Babble,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for USBTransferStatus", nameof(value)),
+    };
+}
+
+#nullable disable

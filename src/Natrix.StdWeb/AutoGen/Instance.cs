@@ -1,0 +1,58 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public partial class Instance: global::Natrix.JSCore.JSObjectProxy
+{
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public Instance(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
+    {
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
+    public static global::Natrix.StdWeb.Instance New(global::Natrix.StdWeb.Module module)
+    {
+        int ___argsArrayLength_3 = 1;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_3);
+
+        // Argument 1
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_4;
+        ___marshalledValue_4 = module.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___argsArray_0.JSObject, 0, ___marshalledValue_4);
+
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_2 = global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectNonEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Instance", ___argsArray_0.JSObject);
+        return new global::Natrix.StdWeb.Instance(___res_2);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
+    public static global::Natrix.StdWeb.Instance New(global::Natrix.StdWeb.Module module, global::System.Runtime.InteropServices.JavaScript.JSObject importObject)
+    {
+        int ___argsArrayLength_3 = 2;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_3);
+
+        // Argument 1
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_4;
+        ___marshalledValue_4 = module.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___argsArray_0.JSObject, 0, ___marshalledValue_4);
+
+        // Argument 2
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_5;
+        ___marshalledValue_5 = importObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___argsArray_0.JSObject, 1, ___marshalledValue_5);
+
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_2 = global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectNonEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Instance", ___argsArray_0.JSObject);
+        return new global::Natrix.StdWeb.Instance(___res_2);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::System.Runtime.InteropServices.JavaScript.JSObject Exports
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "exports");
+    }
+}
+
+#nullable disable

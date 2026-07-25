@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RTCIceTcpCandidateType
+{
+    private readonly string _value;
+
+    private RTCIceTcpCandidateType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RTCIceTcpCandidateType Active = new("active");
+    public static readonly RTCIceTcpCandidateType Passive = new("passive");
+    public static readonly RTCIceTcpCandidateType So = new("so");
+
+    public override string ToString() => _value;
+
+    public static RTCIceTcpCandidateType Create(string value) => value switch
+    {
+        "active" => Active,
+        "passive" => Passive,
+        "so" => So,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RTCIceTcpCandidateType", nameof(value)),
+    };
+}
+
+#nullable disable

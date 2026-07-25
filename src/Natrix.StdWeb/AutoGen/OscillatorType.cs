@@ -1,0 +1,35 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class OscillatorType
+{
+    private readonly string _value;
+
+    private OscillatorType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly OscillatorType Sine = new("sine");
+    public static readonly OscillatorType Square = new("square");
+    public static readonly OscillatorType Sawtooth = new("sawtooth");
+    public static readonly OscillatorType Triangle = new("triangle");
+    public static readonly OscillatorType Custom = new("custom");
+
+    public override string ToString() => _value;
+
+    public static OscillatorType Create(string value) => value switch
+    {
+        "sine" => Sine,
+        "square" => Square,
+        "sawtooth" => Sawtooth,
+        "triangle" => Triangle,
+        "custom" => Custom,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for OscillatorType", nameof(value)),
+    };
+}
+
+#nullable disable

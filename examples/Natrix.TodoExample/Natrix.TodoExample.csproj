@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\Natrix.StdWeb\Natrix.StdWeb.csproj"/>
+    </ItemGroup>
+</Project>

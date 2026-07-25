@@ -1,0 +1,27 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class TokenVersion
+{
+    private readonly string _value;
+
+    private TokenVersion(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly TokenVersion _1 = new("1");
+
+    public override string ToString() => _value;
+
+    public static TokenVersion Create(string value) => value switch
+    {
+        "1" => _1,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for TokenVersion", nameof(value)),
+    };
+}
+
+#nullable disable

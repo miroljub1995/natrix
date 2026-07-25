@@ -1,0 +1,78 @@
+using Natrix.WebIDLGenerator.Extensions;
+using Natrix.WebIDLGenerator.Models;
+
+namespace Natrix.WebIDLGenerator.Generators;
+
+public class EnumTypeGenerator(
+    GenSettings genSettings
+)
+{
+    public string Generate(EnumType input)
+    {
+        var props = input.Values.Select(value => $$"""
+                                                   public static readonly {{input.Name}} {{GetPropName(value.Value)}} = new("{{value.Value}}");
+                                                   """
+        );
+
+        var propsBody = string.Join("\n", props);
+
+        var switchCases = input.Values.Select(value => $$"""
+                                                         "{{value.Value}}" => {{GetPropName(value.Value)}},
+                                                         """
+        );
+
+        var switchCasesBody = string.Join("\n", switchCases);
+
+        var content = $$"""
+                        // ReSharper disable All
+
+                        namespace {{genSettings.Namespace}};
+
+                        #nullable enable
+
+                        public sealed partial class {{input.Name}}
+                        {
+                            private readonly string _value;
+
+                            private {{input.Name}}(string value)
+                            {
+                                _value = value;
+                            }
+
+                        {{propsBody.IndentLines(4)}}
+
+                            public override string ToString() => _value;
+
+                            public static {{input.Name}} Create(string value) => value switch
+                            {
+                        {{switchCasesBody.IndentLines(8)}}
+                                _ => throw new ArgumentException($"Invalid value \"{value}\" for {{input.Name}}", nameof(value)),
+                            };
+                        }
+
+                        #nullable disable
+                        """;
+
+        return content;
+    }
+
+    private static string GetPropName(string value)
+    {
+        if (string.IsNullOrEmpty(value))
+        {
+            return "Empty";
+        }
+
+        if (char.IsDigit(value[0]))
+        {
+            value = "_" + value;
+        }
+
+        return value.CapitalizeFirstLetter()
+            .Replace("@", "")
+            .Replace(' ', '_')
+            .Replace('-', '_')
+            .Replace('/', '_')
+            .Replace('+', '_');
+    }
+}

@@ -1,0 +1,33 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class AnimationTriggerBehavior
+{
+    private readonly string _value;
+
+    private AnimationTriggerBehavior(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly AnimationTriggerBehavior Once = new("once");
+    public static readonly AnimationTriggerBehavior Repeat = new("repeat");
+    public static readonly AnimationTriggerBehavior Alternate = new("alternate");
+    public static readonly AnimationTriggerBehavior State = new("state");
+
+    public override string ToString() => _value;
+
+    public static AnimationTriggerBehavior Create(string value) => value switch
+    {
+        "once" => Once,
+        "repeat" => Repeat,
+        "alternate" => Alternate,
+        "state" => State,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for AnimationTriggerBehavior", nameof(value)),
+    };
+}
+
+#nullable disable

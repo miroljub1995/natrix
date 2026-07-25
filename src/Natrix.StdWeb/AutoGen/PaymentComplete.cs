@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class PaymentComplete
+{
+    private readonly string _value;
+
+    private PaymentComplete(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly PaymentComplete Fail = new("fail");
+    public static readonly PaymentComplete Success = new("success");
+    public static readonly PaymentComplete Unknown = new("unknown");
+
+    public override string ToString() => _value;
+
+    public static PaymentComplete Create(string value) => value switch
+    {
+        "fail" => Fail,
+        "success" => Success,
+        "unknown" => Unknown,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for PaymentComplete", nameof(value)),
+    };
+}
+
+#nullable disable

@@ -1,0 +1,33 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class CompressionFormat
+{
+    private readonly string _value;
+
+    private CompressionFormat(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly CompressionFormat Brotli = new("brotli");
+    public static readonly CompressionFormat Deflate = new("deflate");
+    public static readonly CompressionFormat Deflate_raw = new("deflate-raw");
+    public static readonly CompressionFormat Gzip = new("gzip");
+
+    public override string ToString() => _value;
+
+    public static CompressionFormat Create(string value) => value switch
+    {
+        "brotli" => Brotli,
+        "deflate" => Deflate,
+        "deflate-raw" => Deflate_raw,
+        "gzip" => Gzip,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for CompressionFormat", nameof(value)),
+    };
+}
+
+#nullable disable

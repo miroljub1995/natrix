@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class OpusSignal
+{
+    private readonly string _value;
+
+    private OpusSignal(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly OpusSignal Auto = new("auto");
+    public static readonly OpusSignal Music = new("music");
+    public static readonly OpusSignal Voice = new("voice");
+
+    public override string ToString() => _value;
+
+    public static OpusSignal Create(string value) => value switch
+    {
+        "auto" => Auto,
+        "music" => Music,
+        "voice" => Voice,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for OpusSignal", nameof(value)),
+    };
+}
+
+#nullable disable

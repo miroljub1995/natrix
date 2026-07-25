@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
   packages: read
+  id-token: write
 
 concurrency:
   group: release-core-package-${{ github.ref }}
@@ -18,7 +19,7 @@ jobs:
     name: Release Core Family Packages
     runs-on: ubuntu-latest
     env:
-      MINIMUM_ISKRA_API_VERSION: 0.3.0
+      MINIMUM_NATRIX_API_VERSION: 0.1.0
 
     steps:
       - name: Checkout repository
@@ -35,9 +36,9 @@ jobs:
         run: |
           set -euo pipefail
 
-          version=$(dotnet msbuild src/Iskra.Core/Iskra.Core.csproj -nologo -v:q -getProperty:IskraCoreVersion | tr -d '\r\n')
+          version=$(dotnet msbuild src/Natrix.Core/Natrix.Core.csproj -nologo -v:q -getProperty:NatrixCoreVersion | tr -d '\r\n')
           if [[ -z "$version" ]]; then
-            echo "Failed to resolve Version from src/Iskra.Core/Iskra.Core.csproj"
+            echo "Failed to resolve Version from src/Natrix.Core/Natrix.Core.csproj"
             exit 1
           fi
 
@@ -88,20 +89,20 @@ jobs:
         run: |
           mkdir -p artifacts/nuget
 
-          dotnet pack src/Iskra.Signals/Iskra.Signals.csproj -c Release -o artifacts/nuget \
-            -p:IskraApiVersion=$MINIMUM_ISKRA_API_VERSION
-          dotnet pack src/Iskra.Core/Iskra.Core.csproj -c Release -o artifacts/nuget \
-            -p:IskraApiVersion=$MINIMUM_ISKRA_API_VERSION
-          dotnet pack src/Iskra.Browser.Abstractions/Iskra.Browser.Abstractions.csproj -c Release -o artifacts/nuget \
-            -p:IskraApiVersion=$MINIMUM_ISKRA_API_VERSION
-          dotnet pack src/Iskra.Browser/Iskra.Browser.csproj -c Release -o artifacts/nuget \
-            -p:IskraApiVersion=$MINIMUM_ISKRA_API_VERSION
-          dotnet pack src/Iskra.Dom/Iskra.Dom.csproj -c Release -o artifacts/nuget \
-            -p:IskraApiVersion=$MINIMUM_ISKRA_API_VERSION
-          dotnet pack src/Iskra.Ssr.Abstractions/Iskra.Ssr.Abstractions.csproj -c Release -o artifacts/nuget \
-            -p:IskraApiVersion=$MINIMUM_ISKRA_API_VERSION
-          dotnet pack src/Iskra.Ssr/Iskra.Ssr.csproj -c Release -o artifacts/nuget \
-            -p:IskraApiVersion=$MINIMUM_ISKRA_API_VERSION
+          dotnet pack src/Natrix.Signals/Natrix.Signals.csproj -c Release -o artifacts/nuget \
+            -p:NatrixApiVersion=$MINIMUM_NATRIX_API_VERSION
+          dotnet pack src/Natrix.Core/Natrix.Core.csproj -c Release -o artifacts/nuget \
+            -p:NatrixApiVersion=$MINIMUM_NATRIX_API_VERSION
+          dotnet pack src/Natrix.Browser.Abstractions/Natrix.Browser.Abstractions.csproj -c Release -o artifacts/nuget \
+            -p:NatrixApiVersion=$MINIMUM_NATRIX_API_VERSION
+          dotnet pack src/Natrix.Browser/Natrix.Browser.csproj -c Release -o artifacts/nuget \
+            -p:NatrixApiVersion=$MINIMUM_NATRIX_API_VERSION
+          dotnet pack src/Natrix.Dom/Natrix.Dom.csproj -c Release -o artifacts/nuget \
+            -p:NatrixApiVersion=$MINIMUM_NATRIX_API_VERSION
+          dotnet pack src/Natrix.Ssr.Abstractions/Natrix.Ssr.Abstractions.csproj -c Release -o artifacts/nuget \
+            -p:NatrixApiVersion=$MINIMUM_NATRIX_API_VERSION
+          dotnet pack src/Natrix.Ssr/Natrix.Ssr.csproj -c Release -o artifacts/nuget \
+            -p:NatrixApiVersion=$MINIMUM_NATRIX_API_VERSION
 
       - name: Upload package artifacts
         if: steps.release_check.outputs.exists != 'true'
@@ -110,10 +111,15 @@ jobs:
           name: nuget-packages-${{ steps.version.outputs.version }}
           path: artifacts/nuget/*
 
+      - name: NuGet login (OIDC)
+        if: steps.release_check.outputs.exists != 'true'
+        id: nuget_login
+        uses: NuGet/login@v1
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
       - name: Publish packages to NuGet
         if: steps.release_check.outputs.exists != 'true'
-        env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         shell: bash
         run: |
           set -euo pipefail
@@ -129,7 +135,7 @@ jobs:
           for package in "${packages[@]}"; do
             dotnet nuget push "$package" \
               --source https://api.nuget.org/v3/index.json \
-              --api-key "$NUGET_API_KEY" \
+              --api-key "${{ steps.nuget_login.outputs.NUGET_API_KEY }}" \
               --skip-duplicate
           done
 

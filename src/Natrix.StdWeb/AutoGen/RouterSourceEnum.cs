@@ -1,0 +1,33 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RouterSourceEnum
+{
+    private readonly string _value;
+
+    private RouterSourceEnum(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RouterSourceEnum Cache = new("cache");
+    public static readonly RouterSourceEnum Fetch_event = new("fetch-event");
+    public static readonly RouterSourceEnum Network = new("network");
+    public static readonly RouterSourceEnum Race_network_and_fetch_handler = new("race-network-and-fetch-handler");
+
+    public override string ToString() => _value;
+
+    public static RouterSourceEnum Create(string value) => value switch
+    {
+        "cache" => Cache,
+        "fetch-event" => Fetch_event,
+        "network" => Network,
+        "race-network-and-fetch-handler" => Race_network_and_fetch_handler,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RouterSourceEnum", nameof(value)),
+    };
+}
+
+#nullable disable

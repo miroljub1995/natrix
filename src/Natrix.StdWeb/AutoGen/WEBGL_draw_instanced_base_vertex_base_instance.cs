@@ -1,0 +1,95 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public partial class WEBGL_draw_instanced_base_vertex_base_instance: global::Natrix.JSCore.JSObjectProxy
+{
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public WEBGL_draw_instanced_base_vertex_base_instance(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
+    {
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void DrawArraysInstancedBaseInstanceWEBGL(uint mode, int first, int count, int instanceCount, uint baseInstance)
+    {
+        int ___argsArrayLength_2 = 5;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        double ___marshalledValue_3;
+        ___marshalledValue_3 = Convert.ToDouble(mode);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        // Argument 2
+        double ___marshalledValue_4;
+        ___marshalledValue_4 = Convert.ToDouble(first);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 1, ___marshalledValue_4);
+
+        // Argument 3
+        double ___marshalledValue_5;
+        ___marshalledValue_5 = Convert.ToDouble(count);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 2, ___marshalledValue_5);
+
+        // Argument 4
+        double ___marshalledValue_6;
+        ___marshalledValue_6 = Convert.ToDouble(instanceCount);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 3, ___marshalledValue_6);
+
+        // Argument 5
+        double ___marshalledValue_7;
+        ___marshalledValue_7 = Convert.ToDouble(baseInstance);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 4, ___marshalledValue_7);
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "drawArraysInstancedBaseInstanceWEBGL", JSObject, ___argsArray_0.JSObject);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void DrawElementsInstancedBaseVertexBaseInstanceWEBGL(uint mode, int count, uint type, long offset, int instanceCount, int baseVertex, uint baseInstance)
+    {
+        int ___argsArrayLength_2 = 7;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        double ___marshalledValue_3;
+        ___marshalledValue_3 = Convert.ToDouble(mode);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        // Argument 2
+        double ___marshalledValue_4;
+        ___marshalledValue_4 = Convert.ToDouble(count);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 1, ___marshalledValue_4);
+
+        // Argument 3
+        double ___marshalledValue_5;
+        ___marshalledValue_5 = Convert.ToDouble(type);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 2, ___marshalledValue_5);
+
+        // Argument 4
+        double ___marshalledValue_6;
+        ___marshalledValue_6 = Convert.ToDouble(offset);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 3, ___marshalledValue_6);
+
+        // Argument 5
+        double ___marshalledValue_7;
+        ___marshalledValue_7 = Convert.ToDouble(instanceCount);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 4, ___marshalledValue_7);
+
+        // Argument 6
+        double ___marshalledValue_8;
+        ___marshalledValue_8 = Convert.ToDouble(baseVertex);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 5, ___marshalledValue_8);
+
+        // Argument 7
+        double ___marshalledValue_9;
+        ___marshalledValue_9 = Convert.ToDouble(baseInstance);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 6, ___marshalledValue_9);
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "drawElementsInstancedBaseVertexBaseInstanceWEBGL", JSObject, ___argsArray_0.JSObject);
+    }
+}
+
+#nullable disable

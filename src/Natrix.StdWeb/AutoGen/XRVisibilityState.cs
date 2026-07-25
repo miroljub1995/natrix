@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class XRVisibilityState
+{
+    private readonly string _value;
+
+    private XRVisibilityState(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly XRVisibilityState Visible = new("visible");
+    public static readonly XRVisibilityState Visible_blurred = new("visible-blurred");
+    public static readonly XRVisibilityState Hidden = new("hidden");
+
+    public override string ToString() => _value;
+
+    public static XRVisibilityState Create(string value) => value switch
+    {
+        "visible" => Visible,
+        "visible-blurred" => Visible_blurred,
+        "hidden" => Hidden,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for XRVisibilityState", nameof(value)),
+    };
+}
+
+#nullable disable

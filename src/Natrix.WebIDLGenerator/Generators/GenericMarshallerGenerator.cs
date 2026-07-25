@@ -1,0 +1,275 @@
+using Natrix.WebIDLGenerator.Extensions;
+using Natrix.WebIDLGenerator.Models;
+using Natrix.WebIDLGenerator.Utils;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Natrix.WebIDLGenerator.Generators;
+
+public class GenericMarshallerGenerator(
+    IServiceProvider provider,
+    GenSettings genSettings
+)
+{
+    private readonly List<KeyValuePair<IDLTypeDescription, string>> _marshallers = [];
+
+    public async Task GenerateAsync(CancellationToken cancellationToken = default)
+    {
+        var content = $$"""
+                        // ReSharper disable All
+
+                        namespace {{genSettings.Namespace}};
+
+                        #nullable enable
+
+                        public static partial class GenericMarshaller
+                        {
+                            [global::System.Runtime.InteropServices.JavaScript.JSImportAttribute("construct", "natrix")]
+                            private static partial global::System.Runtime.InteropServices.JavaScript.JSObject ConstructObject(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string constructorName);
+
+                        {{GenerateUnionClass().IndentLines(4)}}
+                        }
+
+                        #nullable disable
+                        """;
+
+        var outputFile = Path.GetFullPath(Path.Combine(genSettings.Output, "GenericMarshaller.cs"));
+        if (File.Exists(outputFile))
+        {
+            throw new Exception($"Output file {outputFile} already exists.");
+        }
+
+        await File.WriteAllTextAsync(outputFile, content, cancellationToken);
+    }
+
+    public string GetOrCreateMarshaller(IDLTypeDescription input)
+    {
+        var found = TryFind(input);
+        if (found is not null)
+        {
+            return found;
+        }
+
+        var name = input switch
+        {
+            UnionTypeDescription => $"global::{genSettings.Namespace}.GenericMarshaller.Union",
+            _ => throw new NotSupportedException($"Type {input} is not supported.")
+        };
+
+        _marshallers.Add(new KeyValuePair<IDLTypeDescription, string>(input, name));
+
+        return name;
+    }
+
+    private string? TryFind(IDLTypeDescription input)
+    {
+        foreach (var kvp in _marshallers)
+        {
+            if (IDLTypeDescriptionEqualityComparer.Instance.Equals(input, kvp.Key))
+            {
+                return kvp.Value;
+            }
+        }
+
+        return null;
+    }
+
+    private string GenerateUnionClass()
+    {
+        var toTypeDeclarationGenerator = provider.GetRequiredService<IDLTypeDescriptionToTypeDeclarationGenerator>();
+
+        List<IDLTypeDescription> distinctItems = [];
+        List<string> interfaceParts = [];
+        List<string> bodyParts = [];
+        foreach (var marshaller in _marshallers)
+        {
+            if (marshaller.Key is not UnionTypeDescription unionTypeDescription)
+            {
+                continue;
+            }
+
+            foreach (var itemType in unionTypeDescription.IdlType)
+            {
+                if (distinctItems.Any(x => IDLTypeDescriptionEqualityComparer.Instance.Equals(x, itemType)))
+                {
+                    continue;
+                }
+
+                distinctItems.Add(itemType);
+
+                var toManaged = GenerateToManagedUnion(itemType);
+                var toJS = GenerateToJSUnion(itemType);
+
+                var marshalledType = toTypeDeclarationGenerator.Generate(itemType);
+
+                var interfacePart = $"global::Natrix.JSCore.Generics.IUnionTypeMarshaller<{marshalledType}>";
+                interfaceParts.Add(interfacePart);
+
+                var bodyPart = $$"""
+                                 [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+                                 static bool {{interfacePart}}.TryToManaged(global::System.Runtime.InteropServices.JavaScript.JSObject input, [global::System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out {{marshalledType}} value)
+                                 {
+                                 {{toManaged.IndentLines(4)}}
+                                 }
+
+                                 [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+                                 static global::System.Runtime.InteropServices.JavaScript.JSObject {{interfacePart}}.ToJS({{marshalledType}} input)
+                                 {
+                                 {{toJS.IndentLines(4)}}
+                                 }
+                                 """;
+
+                bodyParts.Add(bodyPart);
+            }
+        }
+
+        var interfaces = string.Join(",\n", interfaceParts);
+        var body = string.Join("\n\n", bodyParts);
+
+        var inheritance = interfaceParts.Count > 0
+            ? $$"""
+                :
+                {{interfaces.IndentLines(4)}}
+                """
+            : string.Empty;
+
+        var content = $$"""
+                        public class Union{{inheritance}}
+                        {
+                        {{body.IndentLines(4)}}
+                        }
+                        """;
+
+        return content;
+    }
+
+    private string GenerateToManagedUnion(IDLTypeDescription input)
+    {
+        var typeVar = VariableName.Current.GetNext("type");
+        string typeCheckContent;
+        if (input is SingleTypeDescription { IdlType: BuiltinTypes.Boolean })
+        {
+            typeCheckContent = $$"""
+                                 if ({{typeVar}} != 1)
+                                 {
+                                     value = default;
+                                     return false;
+                                 }
+                                 """;
+        }
+        else if (input is SingleTypeDescription
+                 {
+                     IdlType: BuiltinTypes.Byte or
+                     BuiltinTypes.SignedByte or
+                     BuiltinTypes.Short or
+                     BuiltinTypes.UnsignedShort or
+                     BuiltinTypes.Int32 or
+                     BuiltinTypes.UnsignedInt32 or
+                     BuiltinTypes.Int64 or
+                     BuiltinTypes.UnsignedInt64 or
+                     BuiltinTypes.Float or
+                     BuiltinTypes.UnrestrictedFloat or
+                     BuiltinTypes.Double or
+                     BuiltinTypes.UnrestrictedDouble
+                 })
+        {
+            typeCheckContent = $$"""
+                                 if ({{typeVar}} != 2)
+                                 {
+                                     value = default;
+                                     return false;
+                                 }
+                                 """;
+        }
+        else if (input is SingleTypeDescription { IdlType: BuiltinTypes.BigInt })
+        {
+            typeCheckContent = $$"""
+                                 if ({{typeVar}} != 3)
+                                 {
+                                     value = default;
+                                     return false;
+                                 }
+                                 """;
+        }
+        else if (input is SingleTypeDescription { IdlType: BuiltinTypes.String })
+        {
+            typeCheckContent = $$"""
+                                 if ({{typeVar}} != 4)
+                                 {
+                                     value = default;
+                                     return false;
+                                 }
+                                 """;
+        }
+        else if (input is SingleTypeDescription { IdlType: BuiltinTypes.ManagedObject })
+        {
+            typeCheckContent = $$"""
+                                 if ({{typeVar}} != 8)
+                                 {
+                                     value = default;
+                                     return false;
+                                 }
+                                 """;
+        }
+        else
+        {
+            typeCheckContent = $$"""
+                                 if ({{typeVar}} != 7)
+                                 {
+                                     value = default;
+                                     return false;
+                                 }
+                                 """;
+        }
+
+        var toTypeDeclarationGenerator = provider.GetRequiredService<IDLTypeDescriptionToTypeDeclarationGenerator>();
+        var getPropertyValueGenerator = provider.GetRequiredService<GetPropertyValueGenerator>();
+
+        var valueVar = VariableName.Current.GetNext("value");
+        var getElementContent = getPropertyValueGenerator.Generate(
+            inputVar: "input",
+            type: input,
+            propertyNameVar: "\"value\"",
+            outputVar: valueVar
+        );
+
+        var typeDeclaration = toTypeDeclarationGenerator.Generate(input);
+
+        return $$"""
+                 double {{typeVar}} = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(input, "type");
+                 {{typeCheckContent}}
+
+                 try
+                 {
+                     {{typeDeclaration}} {{valueVar}};
+                 {{getElementContent.IndentLines(4)}}
+
+                     value = {{valueVar}};
+                     return true;
+                 }
+                 catch
+                 {
+                     value = default;
+                     return false;
+                 }
+                 """;
+    }
+
+    private string GenerateToJSUnion(IDLTypeDescription input)
+    {
+        var setPropertyValueGenerator = provider.GetRequiredService<SetPropertyValueGenerator>();
+        var jsUnionVar = VariableName.Current.GetNext("jsUnion");
+
+        var setValueContent = setPropertyValueGenerator.Generate(
+            inputVar: jsUnionVar,
+            valueVar: "input",
+            type: input,
+            propertyNameVar: "\"value\""
+        );
+
+        return $$"""
+                 global::System.Runtime.InteropServices.JavaScript.JSObject {{jsUnionVar}} = ConstructObject(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object");
+                 {{setValueContent}}
+                 return {{jsUnionVar}};
+                 """;
+    }
+}

@@ -1,0 +1,71 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public partial class OVR_multiview2: global::Natrix.JSCore.JSObjectProxy
+{
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public OVR_multiview2(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
+    {
+    }
+
+    public const uint FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR = 0x9630;
+
+    public const uint FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR = 0x9632;
+
+    public const uint MAX_VIEWS_OVR = 0x9631;
+
+    public const uint FRAMEBUFFER_INCOMPLETE_VIEW_TARGETS_OVR = 0x9633;
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void FramebufferTextureMultiviewOVR(uint target, uint attachment, global::Natrix.StdWeb.WebGLTexture? texture, int level, int baseViewIndex, int numViews)
+    {
+        int ___argsArrayLength_2 = 6;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        double ___marshalledValue_3;
+        ___marshalledValue_3 = Convert.ToDouble(target);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        // Argument 2
+        double ___marshalledValue_4;
+        ___marshalledValue_4 = Convert.ToDouble(attachment);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 1, ___marshalledValue_4);
+
+        // Argument 3
+        global::System.Runtime.InteropServices.JavaScript.JSObject? ___marshalledValue_5;
+        if (texture is null)
+        {
+            ___marshalledValue_5 = null;
+        }
+        else
+        {
+            global::Natrix.StdWeb.WebGLTexture ___notNullable_6 = (global::Natrix.StdWeb.WebGLTexture)texture;
+            ___marshalledValue_5 = ___notNullable_6.JSObject;
+        }
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2AsNullable(___argsArray_0.JSObject, 2, ___marshalledValue_5);
+
+        // Argument 4
+        double ___marshalledValue_7;
+        ___marshalledValue_7 = Convert.ToDouble(level);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 3, ___marshalledValue_7);
+
+        // Argument 5
+        double ___marshalledValue_8;
+        ___marshalledValue_8 = Convert.ToDouble(baseViewIndex);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 4, ___marshalledValue_8);
+
+        // Argument 6
+        double ___marshalledValue_9;
+        ___marshalledValue_9 = Convert.ToDouble(numViews);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 5, ___marshalledValue_9);
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "framebufferTextureMultiviewOVR", JSObject, ___argsArray_0.JSObject);
+    }
+}
+
+#nullable disable

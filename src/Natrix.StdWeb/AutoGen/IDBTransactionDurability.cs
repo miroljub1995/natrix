@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class IDBTransactionDurability
+{
+    private readonly string _value;
+
+    private IDBTransactionDurability(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly IDBTransactionDurability Default = new("default");
+    public static readonly IDBTransactionDurability Strict = new("strict");
+    public static readonly IDBTransactionDurability Relaxed = new("relaxed");
+
+    public override string ToString() => _value;
+
+    public static IDBTransactionDurability Create(string value) => value switch
+    {
+        "default" => Default,
+        "strict" => Strict,
+        "relaxed" => Relaxed,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for IDBTransactionDurability", nameof(value)),
+    };
+}
+
+#nullable disable

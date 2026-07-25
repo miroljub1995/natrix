@@ -1,0 +1,27 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RTCRtcpMuxPolicy
+{
+    private readonly string _value;
+
+    private RTCRtcpMuxPolicy(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RTCRtcpMuxPolicy Require = new("require");
+
+    public override string ToString() => _value;
+
+    public static RTCRtcpMuxPolicy Create(string value) => value switch
+    {
+        "require" => Require,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RTCRtcpMuxPolicy", nameof(value)),
+    };
+}
+
+#nullable disable

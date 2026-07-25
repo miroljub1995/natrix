@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class UnderlineThickness
+{
+    private readonly string _value;
+
+    private UnderlineThickness(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly UnderlineThickness None = new("none");
+    public static readonly UnderlineThickness Thin = new("thin");
+    public static readonly UnderlineThickness Thick = new("thick");
+
+    public override string ToString() => _value;
+
+    public static UnderlineThickness Create(string value) => value switch
+    {
+        "none" => None,
+        "thin" => Thin,
+        "thick" => Thick,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for UnderlineThickness", nameof(value)),
+    };
+}
+
+#nullable disable

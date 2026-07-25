@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class PublicKeyCredentialHint
+{
+    private readonly string _value;
+
+    private PublicKeyCredentialHint(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly PublicKeyCredentialHint Security_key = new("security-key");
+    public static readonly PublicKeyCredentialHint Client_device = new("client-device");
+    public static readonly PublicKeyCredentialHint Hybrid = new("hybrid");
+
+    public override string ToString() => _value;
+
+    public static PublicKeyCredentialHint Create(string value) => value switch
+    {
+        "security-key" => Security_key,
+        "client-device" => Client_device,
+        "hybrid" => Hybrid,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for PublicKeyCredentialHint", nameof(value)),
+    };
+}
+
+#nullable disable

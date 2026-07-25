@@ -1,0 +1,33 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class CaptureAction
+{
+    private readonly string _value;
+
+    private CaptureAction(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly CaptureAction Next = new("next");
+    public static readonly CaptureAction Previous = new("previous");
+    public static readonly CaptureAction First = new("first");
+    public static readonly CaptureAction Last = new("last");
+
+    public override string ToString() => _value;
+
+    public static CaptureAction Create(string value) => value switch
+    {
+        "next" => Next,
+        "previous" => Previous,
+        "first" => First,
+        "last" => Last,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for CaptureAction", nameof(value)),
+    };
+}
+
+#nullable disable

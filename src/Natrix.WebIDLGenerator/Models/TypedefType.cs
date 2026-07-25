@@ -1,0 +1,10 @@
+using System.Text.Json.Serialization;
+
+namespace Natrix.WebIDLGenerator.Models;
+
+public record TypedefType : IDLRootType
+{
+    [JsonPropertyName("name")] public required string Name { get; set; }
+
+    [JsonPropertyName("idlType")] public required IDLTypeDescription IdlType { get; set; }
+}

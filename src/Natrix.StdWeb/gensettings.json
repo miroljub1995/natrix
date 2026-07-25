@@ -1,0 +1,12 @@
+{
+  "references": [
+    "../Natrix.JSCore/gensettings.json"
+  ],
+  "inputs": [
+    "../../submodules/webref/curated/ed/idlparsed",
+    "./AdditionalIdlparsed"
+  ],
+  "output": "./AutoGen",
+  "namespace": "Natrix.StdWeb",
+  "proxyFactoryName": "StdWebProxyFactory"
+}

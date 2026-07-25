@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
   packages: read
+  id-token: write
 
 concurrency:
   group: release-web-api-packages-${{ github.ref }}
@@ -15,7 +16,7 @@ concurrency:
 
 jobs:
   release:
-    name: Release Iskra.JSCore and Iskra.StdWeb
+    name: Release Natrix.JSCore and Natrix.StdWeb
     runs-on: ubuntu-latest
 
     steps:
@@ -33,9 +34,9 @@ jobs:
         run: |
           set -euo pipefail
 
-          version=$(dotnet msbuild src/Iskra.StdWeb/Iskra.StdWeb.csproj -nologo -v:q -getProperty:Version | tr -d '\r\n')
+          version=$(dotnet msbuild src/Natrix.StdWeb/Natrix.StdWeb.csproj -nologo -v:q -getProperty:Version | tr -d '\r\n')
           if [[ -z "$version" ]]; then
-            echo "Failed to resolve Version from src/Iskra.StdWeb/Iskra.StdWeb.csproj"
+            echo "Failed to resolve Version from src/Natrix.StdWeb/Natrix.StdWeb.csproj"
             exit 1
           fi
 
@@ -84,15 +85,15 @@ jobs:
         if: steps.release_check.outputs.exists != 'true'
         shell: bash
         run: |
-          dotnet restore src/Iskra.JSCore/Iskra.JSCore.csproj
-          dotnet restore src/Iskra.StdWeb/Iskra.StdWeb.csproj
+          dotnet restore src/Natrix.JSCore/Natrix.JSCore.csproj
+          dotnet restore src/Natrix.StdWeb/Natrix.StdWeb.csproj
 
       - name: Build packages
         if: steps.release_check.outputs.exists != 'true'
         shell: bash
         run: |
-          dotnet build src/Iskra.JSCore/Iskra.JSCore.csproj -c Release --no-restore
-          dotnet build src/Iskra.StdWeb/Iskra.StdWeb.csproj -c Release --no-restore
+          dotnet build src/Natrix.JSCore/Natrix.JSCore.csproj -c Release --no-restore
+          dotnet build src/Natrix.StdWeb/Natrix.StdWeb.csproj -c Release --no-restore
 
       - name: Pack NuGet packages
         if: steps.release_check.outputs.exists != 'true'
@@ -100,8 +101,8 @@ jobs:
         run: |
           mkdir -p artifacts/nuget
 
-          dotnet pack src/Iskra.JSCore/Iskra.JSCore.csproj -c Release --no-build -o artifacts/nuget
-          dotnet pack src/Iskra.StdWeb/Iskra.StdWeb.csproj -c Release --no-build -o artifacts/nuget
+          dotnet pack src/Natrix.JSCore/Natrix.JSCore.csproj -c Release --no-build -o artifacts/nuget
+          dotnet pack src/Natrix.StdWeb/Natrix.StdWeb.csproj -c Release --no-build -o artifacts/nuget
 
       - name: Upload package artifacts
         if: steps.release_check.outputs.exists != 'true'
@@ -110,10 +111,15 @@ jobs:
           name: nuget-packages-${{ steps.version.outputs.version }}
           path: artifacts/nuget/*
 
+      - name: NuGet login (OIDC)
+        if: steps.release_check.outputs.exists != 'true'
+        id: nuget_login
+        uses: NuGet/login@v1
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
       - name: Publish packages to NuGet
         if: steps.release_check.outputs.exists != 'true'
-        env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         shell: bash
         run: |
           set -euo pipefail
@@ -129,7 +135,7 @@ jobs:
           for package in "${packages[@]}"; do
             dotnet nuget push "$package" \
               --source https://api.nuget.org/v3/index.json \
-              --api-key "$NUGET_API_KEY" \
+              --api-key "${{ steps.nuget_login.outputs.NUGET_API_KEY }}" \
               --skip-duplicate
           done
 

@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class ScrollBehavior
+{
+    private readonly string _value;
+
+    private ScrollBehavior(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly ScrollBehavior Auto = new("auto");
+    public static readonly ScrollBehavior Instant = new("instant");
+    public static readonly ScrollBehavior Smooth = new("smooth");
+
+    public override string ToString() => _value;
+
+    public static ScrollBehavior Create(string value) => value switch
+    {
+        "auto" => Auto,
+        "instant" => Instant,
+        "smooth" => Smooth,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for ScrollBehavior", nameof(value)),
+    };
+}
+
+#nullable disable

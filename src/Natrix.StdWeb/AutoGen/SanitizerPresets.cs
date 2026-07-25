@@ -1,0 +1,27 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class SanitizerPresets
+{
+    private readonly string _value;
+
+    private SanitizerPresets(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly SanitizerPresets Default = new("default");
+
+    public override string ToString() => _value;
+
+    public static SanitizerPresets Create(string value) => value switch
+    {
+        "default" => Default,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for SanitizerPresets", nameof(value)),
+    };
+}
+
+#nullable disable

@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class OperationType
+{
+    private readonly string _value;
+
+    private OperationType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly OperationType Token_request = new("token-request");
+    public static readonly OperationType Send_redemption_record = new("send-redemption-record");
+    public static readonly OperationType Token_redemption = new("token-redemption");
+
+    public override string ToString() => _value;
+
+    public static OperationType Create(string value) => value switch
+    {
+        "token-request" => Token_request,
+        "send-redemption-record" => Send_redemption_record,
+        "token-redemption" => Token_redemption,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for OperationType", nameof(value)),
+    };
+}
+
+#nullable disable

@@ -1,0 +1,34 @@
+<Solution>
+  <Folder Name="/docs/">
+    <Project Path="docs/Natrix.Docs/Natrix.Docs.csproj" />
+    <Project Path="docs/Natrix.Docs.Client/Natrix.Docs.Client.csproj" />
+  </Folder>
+  <Folder Name="/examples/">
+    <Project Path="examples/Natrix.CanvasExample/Natrix.CanvasExample.csproj" />
+    <Project Path="examples/Natrix.TodoExample/Natrix.TodoExample.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/Natrix.Browser.Abstractions/Natrix.Browser.Abstractions.csproj" />
+    <Project Path="src/Natrix.Browser/Natrix.Browser.csproj" />
+    <Project Path="src/Natrix.BrowserTestsRunner/Natrix.BrowserTestsRunner.csproj" />
+    <Project Path="src/Natrix.Browser.Tests/Natrix.Browser.Tests.csproj" />
+    <Project Path="src/Natrix.Core.Generators.Tests/Natrix.Core.Generators.Tests.csproj" />
+    <Project Path="src/Natrix.Core.Generators/Natrix.Core.Generators.csproj" />
+    <Project Path="src/Natrix.Ssr.Tests/Natrix.Ssr.Tests.csproj" />
+    <Project Path="src/Natrix.Core/Natrix.Core.csproj" />
+    <Project Path="src/Natrix.CoreExample/Natrix.CoreExample.csproj" />
+    <Project Path="src/Natrix.Dom/Natrix.Dom.csproj" />
+    <Project Path="src/Natrix.JSCore/Natrix.JSCore.csproj" />
+    <Project Path="src/Natrix.Signals.Tests/Natrix.Signals.Tests.csproj" />
+    <Project Path="src/Natrix.Signals/Natrix.Signals.csproj" />
+    <Project Path="src/Natrix.Ssr.Abstractions/Natrix.Ssr.Abstractions.csproj" />
+    <Project Path="src/Natrix.Ssr/Natrix.Ssr.csproj" />
+    <Project Path="src/Natrix.StdWeb/Natrix.StdWeb.csproj" />
+    <Project Path="src/Natrix.TailwindCss.Generators/Natrix.TailwindCss.Generators.csproj" />
+    <Project Path="src/Natrix.TailwindCss/Natrix.TailwindCss.csproj" />
+    <Project Path="src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj" />
+    <Project Path="src/Natrix.Templates/Natrix.Templates.csproj" />
+    <Project Path="src/Natrix.WebIDLGenerator.Tests/Natrix.WebIDLGenerator.Tests.csproj" />
+    <Project Path="src/Natrix.WebIDLGenerator/Natrix.WebIDLGenerator.csproj" />
+  </Folder>
+</Solution>

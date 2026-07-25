@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RTCBundlePolicy
+{
+    private readonly string _value;
+
+    private RTCBundlePolicy(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RTCBundlePolicy Balanced = new("balanced");
+    public static readonly RTCBundlePolicy Max_compat = new("max-compat");
+    public static readonly RTCBundlePolicy Max_bundle = new("max-bundle");
+
+    public override string ToString() => _value;
+
+    public static RTCBundlePolicy Create(string value) => value switch
+    {
+        "balanced" => Balanced,
+        "max-compat" => Max_compat,
+        "max-bundle" => Max_bundle,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RTCBundlePolicy", nameof(value)),
+    };
+}
+
+#nullable disable

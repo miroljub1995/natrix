@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RTCIceServerTransportProtocol
+{
+    private readonly string _value;
+
+    private RTCIceServerTransportProtocol(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RTCIceServerTransportProtocol Udp = new("udp");
+    public static readonly RTCIceServerTransportProtocol Tcp = new("tcp");
+    public static readonly RTCIceServerTransportProtocol Tls = new("tls");
+
+    public override string ToString() => _value;
+
+    public static RTCIceServerTransportProtocol Create(string value) => value switch
+    {
+        "udp" => Udp,
+        "tcp" => Tcp,
+        "tls" => Tls,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RTCIceServerTransportProtocol", nameof(value)),
+    };
+}
+
+#nullable disable

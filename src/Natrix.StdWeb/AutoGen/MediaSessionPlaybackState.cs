@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class MediaSessionPlaybackState
+{
+    private readonly string _value;
+
+    private MediaSessionPlaybackState(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly MediaSessionPlaybackState None = new("none");
+    public static readonly MediaSessionPlaybackState Paused = new("paused");
+    public static readonly MediaSessionPlaybackState Playing = new("playing");
+
+    public override string ToString() => _value;
+
+    public static MediaSessionPlaybackState Create(string value) => value switch
+    {
+        "none" => None,
+        "paused" => Paused,
+        "playing" => Playing,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for MediaSessionPlaybackState", nameof(value)),
+    };
+}
+
+#nullable disable

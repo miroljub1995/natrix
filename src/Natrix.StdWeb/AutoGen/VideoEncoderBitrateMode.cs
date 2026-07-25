@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class VideoEncoderBitrateMode
+{
+    private readonly string _value;
+
+    private VideoEncoderBitrateMode(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly VideoEncoderBitrateMode Constant = new("constant");
+    public static readonly VideoEncoderBitrateMode Variable = new("variable");
+    public static readonly VideoEncoderBitrateMode Quantizer = new("quantizer");
+
+    public override string ToString() => _value;
+
+    public static VideoEncoderBitrateMode Create(string value) => value switch
+    {
+        "constant" => Constant,
+        "variable" => Variable,
+        "quantizer" => Quantizer,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for VideoEncoderBitrateMode", nameof(value)),
+    };
+}
+
+#nullable disable

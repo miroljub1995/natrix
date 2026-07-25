@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class PresentationStyle
+{
+    private readonly string _value;
+
+    private PresentationStyle(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly PresentationStyle Unspecified = new("unspecified");
+    public static readonly PresentationStyle Inline = new("inline");
+    public static readonly PresentationStyle Attachment = new("attachment");
+
+    public override string ToString() => _value;
+
+    public static PresentationStyle Create(string value) => value switch
+    {
+        "unspecified" => Unspecified,
+        "inline" => Inline,
+        "attachment" => Attachment,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for PresentationStyle", nameof(value)),
+    };
+}
+
+#nullable disable

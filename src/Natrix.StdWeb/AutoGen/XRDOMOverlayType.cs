@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class XRDOMOverlayType
+{
+    private readonly string _value;
+
+    private XRDOMOverlayType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly XRDOMOverlayType Screen = new("screen");
+    public static readonly XRDOMOverlayType Floating = new("floating");
+    public static readonly XRDOMOverlayType Head_locked = new("head-locked");
+
+    public override string ToString() => _value;
+
+    public static XRDOMOverlayType Create(string value) => value switch
+    {
+        "screen" => Screen,
+        "floating" => Floating,
+        "head-locked" => Head_locked,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for XRDOMOverlayType", nameof(value)),
+    };
+}
+
+#nullable disable

@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RequestCredentials
+{
+    private readonly string _value;
+
+    private RequestCredentials(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RequestCredentials Omit = new("omit");
+    public static readonly RequestCredentials Same_origin = new("same-origin");
+    public static readonly RequestCredentials Include = new("include");
+
+    public override string ToString() => _value;
+
+    public static RequestCredentials Create(string value) => value switch
+    {
+        "omit" => Omit,
+        "same-origin" => Same_origin,
+        "include" => Include,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RequestCredentials", nameof(value)),
+    };
+}
+
+#nullable disable

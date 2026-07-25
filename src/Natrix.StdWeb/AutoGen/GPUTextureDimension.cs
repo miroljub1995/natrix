@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class GPUTextureDimension
+{
+    private readonly string _value;
+
+    private GPUTextureDimension(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly GPUTextureDimension _1d = new("1d");
+    public static readonly GPUTextureDimension _2d = new("2d");
+    public static readonly GPUTextureDimension _3d = new("3d");
+
+    public override string ToString() => _value;
+
+    public static GPUTextureDimension Create(string value) => value switch
+    {
+        "1d" => _1d,
+        "2d" => _2d,
+        "3d" => _3d,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for GPUTextureDimension", nameof(value)),
+    };
+}
+
+#nullable disable

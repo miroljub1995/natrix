@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class XRHitTestTrackableType
+{
+    private readonly string _value;
+
+    private XRHitTestTrackableType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly XRHitTestTrackableType Point = new("point");
+    public static readonly XRHitTestTrackableType Plane = new("plane");
+    public static readonly XRHitTestTrackableType Mesh = new("mesh");
+
+    public override string ToString() => _value;
+
+    public static XRHitTestTrackableType Create(string value) => value switch
+    {
+        "point" => Point,
+        "plane" => Plane,
+        "mesh" => Mesh,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for XRHitTestTrackableType", nameof(value)),
+    };
+}
+
+#nullable disable

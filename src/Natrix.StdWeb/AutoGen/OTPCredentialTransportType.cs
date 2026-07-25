@@ -1,0 +1,27 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class OTPCredentialTransportType
+{
+    private readonly string _value;
+
+    private OTPCredentialTransportType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly OTPCredentialTransportType Sms = new("sms");
+
+    public override string ToString() => _value;
+
+    public static OTPCredentialTransportType Create(string value) => value switch
+    {
+        "sms" => Sms,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for OTPCredentialTransportType", nameof(value)),
+    };
+}
+
+#nullable disable

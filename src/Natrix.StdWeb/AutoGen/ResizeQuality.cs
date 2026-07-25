@@ -1,0 +1,33 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class ResizeQuality
+{
+    private readonly string _value;
+
+    private ResizeQuality(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly ResizeQuality Pixelated = new("pixelated");
+    public static readonly ResizeQuality Low = new("low");
+    public static readonly ResizeQuality Medium = new("medium");
+    public static readonly ResizeQuality High = new("high");
+
+    public override string ToString() => _value;
+
+    public static ResizeQuality Create(string value) => value switch
+    {
+        "pixelated" => Pixelated,
+        "low" => Low,
+        "medium" => Medium,
+        "high" => High,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for ResizeQuality", nameof(value)),
+    };
+}
+
+#nullable disable

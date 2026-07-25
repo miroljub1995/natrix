@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class PermissionState
+{
+    private readonly string _value;
+
+    private PermissionState(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly PermissionState Granted = new("granted");
+    public static readonly PermissionState Denied = new("denied");
+    public static readonly PermissionState Prompt = new("prompt");
+
+    public override string ToString() => _value;
+
+    public static PermissionState Create(string value) => value switch
+    {
+        "granted" => Granted,
+        "denied" => Denied,
+        "prompt" => Prompt,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for PermissionState", nameof(value)),
+    };
+}
+
+#nullable disable

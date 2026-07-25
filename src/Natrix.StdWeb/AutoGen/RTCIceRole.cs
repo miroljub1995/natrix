@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RTCIceRole
+{
+    private readonly string _value;
+
+    private RTCIceRole(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RTCIceRole Unknown = new("unknown");
+    public static readonly RTCIceRole Controlling = new("controlling");
+    public static readonly RTCIceRole Controlled = new("controlled");
+
+    public override string ToString() => _value;
+
+    public static RTCIceRole Create(string value) => value switch
+    {
+        "unknown" => Unknown,
+        "controlling" => Controlling,
+        "controlled" => Controlled,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RTCIceRole", nameof(value)),
+    };
+}
+
+#nullable disable

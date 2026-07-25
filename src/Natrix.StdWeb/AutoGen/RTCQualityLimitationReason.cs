@@ -1,0 +1,33 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RTCQualityLimitationReason
+{
+    private readonly string _value;
+
+    private RTCQualityLimitationReason(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RTCQualityLimitationReason None = new("none");
+    public static readonly RTCQualityLimitationReason Cpu = new("cpu");
+    public static readonly RTCQualityLimitationReason Bandwidth = new("bandwidth");
+    public static readonly RTCQualityLimitationReason Other = new("other");
+
+    public override string ToString() => _value;
+
+    public static RTCQualityLimitationReason Create(string value) => value switch
+    {
+        "none" => None,
+        "cpu" => Cpu,
+        "bandwidth" => Bandwidth,
+        "other" => Other,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RTCQualityLimitationReason", nameof(value)),
+    };
+}
+
+#nullable disable

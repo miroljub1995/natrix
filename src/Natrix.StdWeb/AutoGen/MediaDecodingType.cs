@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class MediaDecodingType
+{
+    private readonly string _value;
+
+    private MediaDecodingType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly MediaDecodingType File = new("file");
+    public static readonly MediaDecodingType Media_source = new("media-source");
+    public static readonly MediaDecodingType Webrtc = new("webrtc");
+
+    public override string ToString() => _value;
+
+    public static MediaDecodingType Create(string value) => value switch
+    {
+        "file" => File,
+        "media-source" => Media_source,
+        "webrtc" => Webrtc,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for MediaDecodingType", nameof(value)),
+    };
+}
+
+#nullable disable

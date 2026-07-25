@@ -1,0 +1,43 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public partial class EXT_disjoint_timer_query_webgl2: global::Natrix.JSCore.JSObjectProxy
+{
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public EXT_disjoint_timer_query_webgl2(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
+    {
+    }
+
+    public const uint QUERY_COUNTER_BITS_EXT = 0x8864;
+
+    public const uint TIME_ELAPSED_EXT = 0x88BF;
+
+    public const uint TIMESTAMP_EXT = 0x8E28;
+
+    public const uint GPU_DISJOINT_EXT = 0x8FBB;
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void QueryCounterEXT(global::Natrix.StdWeb.WebGLQuery query, uint target)
+    {
+        int ___argsArrayLength_2 = 2;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_3;
+        ___marshalledValue_3 = query.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        // Argument 2
+        double ___marshalledValue_4;
+        ___marshalledValue_4 = Convert.ToDouble(target);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 1, ___marshalledValue_4);
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "queryCounterEXT", JSObject, ___argsArray_0.JSObject);
+    }
+}
+
+#nullable disable

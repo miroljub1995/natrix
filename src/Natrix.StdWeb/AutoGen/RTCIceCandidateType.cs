@@ -1,0 +1,33 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RTCIceCandidateType
+{
+    private readonly string _value;
+
+    private RTCIceCandidateType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RTCIceCandidateType Host = new("host");
+    public static readonly RTCIceCandidateType Srflx = new("srflx");
+    public static readonly RTCIceCandidateType Prflx = new("prflx");
+    public static readonly RTCIceCandidateType Relay = new("relay");
+
+    public override string ToString() => _value;
+
+    public static RTCIceCandidateType Create(string value) => value switch
+    {
+        "host" => Host,
+        "srflx" => Srflx,
+        "prflx" => Prflx,
+        "relay" => Relay,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RTCIceCandidateType", nameof(value)),
+    };
+}
+
+#nullable disable

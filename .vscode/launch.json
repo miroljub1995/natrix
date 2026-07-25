@@ -2,33 +2,33 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run: Iskra.Browser.Tests (Browser)",
+            "name": "Run: Natrix.Browser.Tests (Browser)",
             "type": "coreclr",
             "request": "launch",
-            "program": "${workspaceFolder}/src/Iskra.BrowserTestsRunner/bin/Debug/net10.0/Iskra.BrowserTestsRunner",
+            "program": "${workspaceFolder}/src/Natrix.BrowserTestsRunner/bin/Debug/net10.0/Natrix.BrowserTestsRunner",
             "args": [],
-            "cwd": "${workspaceFolder}/src/Iskra.BrowserTestsRunner",
+            "cwd": "${workspaceFolder}/src/Natrix.BrowserTestsRunner",
             "stopAtEntry": false,
             "env": {
-                "RunnerBundlePath": "../../../../Iskra.Browser.Tests/bin/Debug/net10.0/browser-wasm/AppBundle/"
+                "RunnerBundlePath": "../../../../Natrix.Browser.Tests/bin/Debug/net10.0/browser-wasm/AppBundle/"
             },
-            "preLaunchTask": "build: Iskra.Browser.Tests"
+            "preLaunchTask": "build: Natrix.Browser.Tests"
         },
         {
-            "name": "Run: Iskra.WebIDLGenerator.Tests (Browser)",
+            "name": "Run: Natrix.WebIDLGenerator.Tests (Browser)",
             "type": "coreclr",
             "request": "launch",
-            "program": "${workspaceFolder}/src/Iskra.BrowserTestsRunner/bin/Debug/net10.0/Iskra.BrowserTestsRunner",
+            "program": "${workspaceFolder}/src/Natrix.BrowserTestsRunner/bin/Debug/net10.0/Natrix.BrowserTestsRunner",
             "args": [],
-            "cwd": "${workspaceFolder}/src/Iskra.BrowserTestsRunner",
+            "cwd": "${workspaceFolder}/src/Natrix.BrowserTestsRunner",
             "stopAtEntry": false,
             "env": {
-                "RunnerBundlePath": "../../../../Iskra.WebIDLGenerator.Tests/bin/Debug/net9.0/browser-wasm/AppBundle/"
+                "RunnerBundlePath": "../../../../Natrix.WebIDLGenerator.Tests/bin/Debug/net9.0/browser-wasm/AppBundle/"
             },
-            "preLaunchTask": "build: Iskra.WebIDLGenerator.Tests"
+            "preLaunchTask": "build: Natrix.WebIDLGenerator.Tests"
         },
         {
-            "name": "Run: Iskra.TodoExample (Browser)",
+            "name": "Run: Natrix.TodoExample (Browser)",
             "type": "coreclr",
             "request": "launch",
             "program": "dotnet",
@@ -37,12 +37,12 @@
                 "--framework",
                 "net10.0"
             ],
-            "cwd": "${workspaceFolder}/examples/Iskra.TodoExample",
+            "cwd": "${workspaceFolder}/examples/Natrix.TodoExample",
             "stopAtEntry": false,
-            "preLaunchTask": "build: Iskra.TodoExample"
+            "preLaunchTask": "build: Natrix.TodoExample"
         },
         {
-            "name": "Run: Iskra.CanvasExample (Browser)",
+            "name": "Run: Natrix.CanvasExample (Browser)",
             "type": "coreclr",
             "request": "launch",
             "program": "dotnet",
@@ -51,58 +51,58 @@
                 "--framework",
                 "net10.0"
             ],
-            "cwd": "${workspaceFolder}/examples/Iskra.CanvasExample",
+            "cwd": "${workspaceFolder}/examples/Natrix.CanvasExample",
             "stopAtEntry": false,
-            "preLaunchTask": "build: Iskra.CanvasExample"
+            "preLaunchTask": "build: Natrix.CanvasExample"
         },
         {
             "name": "Run: Generate JSCore",
             "type": "coreclr",
             "request": "launch",
-            "program": "${workspaceFolder}/src/Iskra.WebIDLGenerator/bin/Debug/net10.0/Iskra.WebIDLGenerator",
+            "program": "${workspaceFolder}/src/Natrix.WebIDLGenerator/bin/Debug/net10.0/Natrix.WebIDLGenerator",
             "args": [
                 "generate",
-                "${workspaceFolder}/src/Iskra.JSCore/gensettings.json"
+                "${workspaceFolder}/src/Natrix.JSCore/gensettings.json"
             ],
-            "cwd": "${workspaceFolder}/src/Iskra.WebIDLGenerator",
+            "cwd": "${workspaceFolder}/src/Natrix.WebIDLGenerator",
             "stopAtEntry": false,
-            "preLaunchTask": "build: Iskra.WebIDLGenerator"
+            "preLaunchTask": "build: Natrix.WebIDLGenerator"
         },
         {
             "name": "Run: Generate Std.Web",
             "type": "coreclr",
             "request": "launch",
-            "program": "${workspaceFolder}/src/Iskra.WebIDLGenerator/bin/Debug/net10.0/Iskra.WebIDLGenerator",
+            "program": "${workspaceFolder}/src/Natrix.WebIDLGenerator/bin/Debug/net10.0/Natrix.WebIDLGenerator",
             "args": [
                 "generate",
-                "${workspaceFolder}/src/Iskra.StdWeb/gensettings.json"
+                "${workspaceFolder}/src/Natrix.StdWeb/gensettings.json"
             ],
-            "cwd": "${workspaceFolder}/src/Iskra.WebIDLGenerator",
+            "cwd": "${workspaceFolder}/src/Natrix.WebIDLGenerator",
             "stopAtEntry": false,
-            "preLaunchTask": "build: Iskra.WebIDLGenerator"
+            "preLaunchTask": "build: Natrix.WebIDLGenerator"
         },
         {
             "name": "Run: Generate WebIDLGenerator.Tests",
             "type": "coreclr",
             "request": "launch",
-            "program": "${workspaceFolder}/src/Iskra.WebIDLGenerator/bin/Debug/net10.0/Iskra.WebIDLGenerator",
+            "program": "${workspaceFolder}/src/Natrix.WebIDLGenerator/bin/Debug/net10.0/Natrix.WebIDLGenerator",
             "args": [
                 "generate",
-                "${workspaceFolder}/src/Iskra.WebIDLGenerator.Tests/gensettings.json"
+                "${workspaceFolder}/src/Natrix.WebIDLGenerator.Tests/gensettings.json"
             ],
-            "cwd": "${workspaceFolder}/src/Iskra.WebIDLGenerator",
+            "cwd": "${workspaceFolder}/src/Natrix.WebIDLGenerator",
             "stopAtEntry": false,
-            "preLaunchTask": "build: Iskra.WebIDLGenerator"
+            "preLaunchTask": "build: Natrix.WebIDLGenerator"
         },
         {
-            "name": "Run: Iskra.Docs",
+            "name": "Run: Natrix.Docs",
             "type": "coreclr",
             "request": "launch",
-            "program": "${workspaceFolder}/docs/Iskra.Docs/bin/Debug/net10.0/Iskra.Docs",
+            "program": "${workspaceFolder}/docs/Natrix.Docs/bin/Debug/net10.0/Natrix.Docs",
             "args": [],
-            "cwd": "${workspaceFolder}/docs/Iskra.Docs",
+            "cwd": "${workspaceFolder}/docs/Natrix.Docs",
             "stopAtEntry": false,
-            "preLaunchTask": "build: Iskra.Docs",
+            "preLaunchTask": "build: Natrix.Docs",
             "serverReadyAction": {
                 "action": "openExternally",
                 "pattern": "\\bNow listening on:\\s+(https?://\\S+)"

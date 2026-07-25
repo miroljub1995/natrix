@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class MLPowerPreference
+{
+    private readonly string _value;
+
+    private MLPowerPreference(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly MLPowerPreference Default = new("default");
+    public static readonly MLPowerPreference High_performance = new("high-performance");
+    public static readonly MLPowerPreference Low_power = new("low-power");
+
+    public override string ToString() => _value;
+
+    public static MLPowerPreference Create(string value) => value switch
+    {
+        "default" => Default,
+        "high-performance" => High_performance,
+        "low-power" => Low_power,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for MLPowerPreference", nameof(value)),
+    };
+}
+
+#nullable disable

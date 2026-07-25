@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+    <PropertyGroup>
+        <PublishAot Condition="'$(Configuration)' != 'Debug'">true</PublishAot>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Natrix.Docs.Client\Natrix.Docs.Client.csproj" />
+        <ProjectReference Include="..\..\src\Natrix.Ssr\Natrix.Ssr.csproj" />
+    </ItemGroup>
+
+    <Import Project="..\..\src\Natrix.Core\targets\Natrix.Core.StaticAssets.targets" />
+</Project>

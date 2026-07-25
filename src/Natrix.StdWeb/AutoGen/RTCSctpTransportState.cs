@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RTCSctpTransportState
+{
+    private readonly string _value;
+
+    private RTCSctpTransportState(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RTCSctpTransportState Connecting = new("connecting");
+    public static readonly RTCSctpTransportState Connected = new("connected");
+    public static readonly RTCSctpTransportState Closed = new("closed");
+
+    public override string ToString() => _value;
+
+    public static RTCSctpTransportState Create(string value) => value switch
+    {
+        "connecting" => Connecting,
+        "connected" => Connected,
+        "closed" => Closed,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RTCSctpTransportState", nameof(value)),
+    };
+}
+
+#nullable disable

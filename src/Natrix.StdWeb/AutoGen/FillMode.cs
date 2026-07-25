@@ -1,0 +1,35 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class FillMode
+{
+    private readonly string _value;
+
+    private FillMode(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly FillMode None = new("none");
+    public static readonly FillMode Forwards = new("forwards");
+    public static readonly FillMode Backwards = new("backwards");
+    public static readonly FillMode Both = new("both");
+    public static readonly FillMode Auto = new("auto");
+
+    public override string ToString() => _value;
+
+    public static FillMode Create(string value) => value switch
+    {
+        "none" => None,
+        "forwards" => Forwards,
+        "backwards" => Backwards,
+        "both" => Both,
+        "auto" => Auto,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for FillMode", nameof(value)),
+    };
+}
+
+#nullable disable

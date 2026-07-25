@@ -1,0 +1,97 @@
+using Natrix.WebIDLGenerator.Extensions;
+using Natrix.WebIDLGenerator.Models;
+
+namespace Natrix.WebIDLGenerator.Generators;
+
+public class JSProxyFactoryGenerator(
+    GenSettings genSettings,
+    GenTypeDescriptors genTypeDescriptors
+)
+{
+    public async Task GenerateAsync(CancellationToken cancellationToken = default)
+    {
+        if (genSettings.ProxyFactoryName is null)
+        {
+            return;
+        }
+
+        List<string> initStatements = [];
+
+        if (genSettings.OnBeforeInitializeAsync is not null)
+        {
+            initStatements.Add(genSettings.OnBeforeInitializeAsync + "\n");
+        }
+
+        foreach (var reference in genSettings.References)
+        {
+            var referenceSettings = await GenSettings.ReadFromFileAsync(reference, cancellationToken);
+            initStatements.Add(
+                $"await global::{referenceSettings.Namespace}.{referenceSettings.ProxyFactoryName}.InitializeAsync();"
+            );
+        }
+
+        if (genSettings.References.Count != 0)
+        {
+            initStatements.Add("");
+        }
+
+        foreach (var desc in genTypeDescriptors.Descriptors)
+        {
+            if (!desc.IsMain)
+            {
+                continue;
+            }
+
+            if (desc.RootType is not InterfaceType)
+            {
+                continue;
+            }
+
+            initStatements.Add($$"""
+                                 global::Natrix.JSCore.JSObjectProxyFactory.AddConstructorFromProp(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "{{desc.Name}}", obj => new {{desc.Name}}(obj));
+                                 """
+            );
+        }
+
+        if (genSettings.OnAfterInitializeAsync is not null)
+        {
+            initStatements.Add("\n" + genSettings.OnAfterInitializeAsync);
+        }
+
+        var initStatementsBody = string.Join("\n", initStatements);
+
+        var content = $$"""
+                        // ReSharper disable All
+
+                        namespace {{genSettings.Namespace}};
+
+                        #nullable enable
+
+                        public static partial class {{genSettings.ProxyFactoryName}}
+                        {
+                            private static int _isInitialized;
+
+                            [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+                            public static async Task InitializeAsync()
+                            {
+                                if (Interlocked.CompareExchange(ref _isInitialized, 1, 0) != 0)
+                                {
+                                    return;
+                                }
+
+                        {{initStatementsBody.IndentLines(8)}}
+                            }
+                        }
+
+                        #nullable disable
+                        """;
+
+        var outputFile = Path.GetFullPath(Path.Combine(genSettings.Output, genSettings.ProxyFactoryName + ".cs"));
+        if (File.Exists(outputFile))
+        {
+            throw new Exception($"Output file {outputFile} already exists.");
+        }
+
+        await File.WriteAllTextAsync(outputFile, content, cancellationToken);
+    }
+}

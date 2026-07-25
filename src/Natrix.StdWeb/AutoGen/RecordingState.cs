@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RecordingState
+{
+    private readonly string _value;
+
+    private RecordingState(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RecordingState Inactive = new("inactive");
+    public static readonly RecordingState Recording = new("recording");
+    public static readonly RecordingState Paused = new("paused");
+
+    public override string ToString() => _value;
+
+    public static RecordingState Create(string value) => value switch
+    {
+        "inactive" => Inactive,
+        "recording" => Recording,
+        "paused" => Paused,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RecordingState", nameof(value)),
+    };
+}
+
+#nullable disable

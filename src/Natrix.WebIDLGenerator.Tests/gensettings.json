@@ -1,0 +1,11 @@
+{
+  "references": [
+    "../Natrix.JSCore/gensettings.json"
+  ],
+  "inputs": [
+    "./IDLModules"
+  ],
+  "output": "./AutoGen",
+  "namespace": "Natrix.WebIDLGenerator.Tests",
+  "proxyFactoryName": "WebIDLGeneratorTestsProxyFactory"
+}

@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class GPUBufferBindingType
+{
+    private readonly string _value;
+
+    private GPUBufferBindingType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly GPUBufferBindingType Uniform = new("uniform");
+    public static readonly GPUBufferBindingType Storage = new("storage");
+    public static readonly GPUBufferBindingType Read_only_storage = new("read-only-storage");
+
+    public override string ToString() => _value;
+
+    public static GPUBufferBindingType Create(string value) => value switch
+    {
+        "uniform" => Uniform,
+        "storage" => Storage,
+        "read-only-storage" => Read_only_storage,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for GPUBufferBindingType", nameof(value)),
+    };
+}
+
+#nullable disable

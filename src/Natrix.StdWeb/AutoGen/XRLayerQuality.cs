@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class XRLayerQuality
+{
+    private readonly string _value;
+
+    private XRLayerQuality(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly XRLayerQuality Default = new("default");
+    public static readonly XRLayerQuality Text_optimized = new("text-optimized");
+    public static readonly XRLayerQuality Graphics_optimized = new("graphics-optimized");
+
+    public override string ToString() => _value;
+
+    public static XRLayerQuality Create(string value) => value switch
+    {
+        "default" => Default,
+        "text-optimized" => Text_optimized,
+        "graphics-optimized" => Graphics_optimized,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for XRLayerQuality", nameof(value)),
+    };
+}
+
+#nullable disable

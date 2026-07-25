@@ -1,5 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
-    <ItemGroup>
-        <ProjectReference Include="..\..\src\Iskra.StdWeb\Iskra.StdWeb.csproj"/>
-    </ItemGroup>
-</Project>

@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class CaptureStartFocusBehavior
+{
+    private readonly string _value;
+
+    private CaptureStartFocusBehavior(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly CaptureStartFocusBehavior Focus_capturing_application = new("focus-capturing-application");
+    public static readonly CaptureStartFocusBehavior Focus_captured_surface = new("focus-captured-surface");
+    public static readonly CaptureStartFocusBehavior No_focus_change = new("no-focus-change");
+
+    public override string ToString() => _value;
+
+    public static CaptureStartFocusBehavior Create(string value) => value switch
+    {
+        "focus-capturing-application" => Focus_capturing_application,
+        "focus-captured-surface" => Focus_captured_surface,
+        "no-focus-change" => No_focus_change,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for CaptureStartFocusBehavior", nameof(value)),
+    };
+}
+
+#nullable disable

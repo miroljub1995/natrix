@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class XRDepthDataFormat
+{
+    private readonly string _value;
+
+    private XRDepthDataFormat(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly XRDepthDataFormat Luminance_alpha = new("luminance-alpha");
+    public static readonly XRDepthDataFormat Float32 = new("float32");
+    public static readonly XRDepthDataFormat Unsigned_short = new("unsigned-short");
+
+    public override string ToString() => _value;
+
+    public static XRDepthDataFormat Create(string value) => value switch
+    {
+        "luminance-alpha" => Luminance_alpha,
+        "float32" => Float32,
+        "unsigned-short" => Unsigned_short,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for XRDepthDataFormat", nameof(value)),
+    };
+}
+
+#nullable disable

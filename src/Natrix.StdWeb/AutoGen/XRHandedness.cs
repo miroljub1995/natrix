@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class XRHandedness
+{
+    private readonly string _value;
+
+    private XRHandedness(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly XRHandedness None = new("none");
+    public static readonly XRHandedness Left = new("left");
+    public static readonly XRHandedness Right = new("right");
+
+    public override string ToString() => _value;
+
+    public static XRHandedness Create(string value) => value switch
+    {
+        "none" => None,
+        "left" => Left,
+        "right" => Right,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for XRHandedness", nameof(value)),
+    };
+}
+
+#nullable disable

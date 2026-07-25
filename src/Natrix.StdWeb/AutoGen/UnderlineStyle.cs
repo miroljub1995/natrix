@@ -1,0 +1,35 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class UnderlineStyle
+{
+    private readonly string _value;
+
+    private UnderlineStyle(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly UnderlineStyle None = new("none");
+    public static readonly UnderlineStyle Solid = new("solid");
+    public static readonly UnderlineStyle Dotted = new("dotted");
+    public static readonly UnderlineStyle Dashed = new("dashed");
+    public static readonly UnderlineStyle Wavy = new("wavy");
+
+    public override string ToString() => _value;
+
+    public static UnderlineStyle Create(string value) => value switch
+    {
+        "none" => None,
+        "solid" => Solid,
+        "dotted" => Dotted,
+        "dashed" => Dashed,
+        "wavy" => Wavy,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for UnderlineStyle", nameof(value)),
+    };
+}
+
+#nullable disable

@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class WindowAudioPreferenceEnum
+{
+    private readonly string _value;
+
+    private WindowAudioPreferenceEnum(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly WindowAudioPreferenceEnum System = new("system");
+    public static readonly WindowAudioPreferenceEnum Window = new("window");
+    public static readonly WindowAudioPreferenceEnum Exclude = new("exclude");
+
+    public override string ToString() => _value;
+
+    public static WindowAudioPreferenceEnum Create(string value) => value switch
+    {
+        "system" => System,
+        "window" => Window,
+        "exclude" => Exclude,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for WindowAudioPreferenceEnum", nameof(value)),
+    };
+}
+
+#nullable disable

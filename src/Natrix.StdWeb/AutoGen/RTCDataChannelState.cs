@@ -1,0 +1,33 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RTCDataChannelState
+{
+    private readonly string _value;
+
+    private RTCDataChannelState(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RTCDataChannelState Connecting = new("connecting");
+    public static readonly RTCDataChannelState Open = new("open");
+    public static readonly RTCDataChannelState Closing = new("closing");
+    public static readonly RTCDataChannelState Closed = new("closed");
+
+    public override string ToString() => _value;
+
+    public static RTCDataChannelState Create(string value) => value switch
+    {
+        "connecting" => Connecting,
+        "open" => Open,
+        "closing" => Closing,
+        "closed" => Closed,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RTCDataChannelState", nameof(value)),
+    };
+}
+
+#nullable disable

@@ -8,6 +8,7 @@ on:
 permissions:
   contents: write
   packages: read
+  id-token: write
 
 concurrency:
   group: release-tailwind-package-${{ github.ref }}
@@ -15,7 +16,7 @@ concurrency:
 
 jobs:
   release:
-    name: Release Iskra.TailwindCss
+    name: Release Natrix.TailwindCss
     runs-on: ubuntu-latest
 
     steps:
@@ -33,9 +34,9 @@ jobs:
         run: |
           set -euo pipefail
 
-          version=$(dotnet msbuild src/Iskra.TailwindCss/Iskra.TailwindCss.csproj -nologo -v:q -getProperty:IskraTailwindVersion | tr -d '\r\n')
+          version=$(dotnet msbuild src/Natrix.TailwindCss/Natrix.TailwindCss.csproj -nologo -v:q -getProperty:NatrixTailwindVersion | tr -d '\r\n')
           if [[ -z "$version" ]]; then
-            echo "Failed to resolve Version from src/Iskra.TailwindCss/Iskra.TailwindCss.csproj"
+            echo "Failed to resolve Version from src/Natrix.TailwindCss/Natrix.TailwindCss.csproj"
             exit 1
           fi
 
@@ -84,13 +85,13 @@ jobs:
         if: steps.release_check.outputs.exists != 'true'
         shell: bash
         run: |
-          dotnet restore src/Iskra.TailwindCss/Iskra.TailwindCss.csproj
+          dotnet restore src/Natrix.TailwindCss/Natrix.TailwindCss.csproj
 
       - name: Build packages
         if: steps.release_check.outputs.exists != 'true'
         shell: bash
         run: |
-          dotnet build src/Iskra.TailwindCss/Iskra.TailwindCss.csproj -c Release --no-restore
+          dotnet build src/Natrix.TailwindCss/Natrix.TailwindCss.csproj -c Release --no-restore
 
       - name: Pack NuGet package
         if: steps.release_check.outputs.exists != 'true'
@@ -98,7 +99,7 @@ jobs:
         run: |
           mkdir -p artifacts/nuget
 
-          dotnet pack src/Iskra.TailwindCss/Iskra.TailwindCss.csproj -c Release --no-build -o artifacts/nuget
+          dotnet pack src/Natrix.TailwindCss/Natrix.TailwindCss.csproj -c Release --no-build -o artifacts/nuget
 
       - name: Upload package artifacts
         if: steps.release_check.outputs.exists != 'true'
@@ -107,10 +108,15 @@ jobs:
           name: nuget-packages-${{ steps.version.outputs.version }}
           path: artifacts/nuget/*
 
+      - name: NuGet login (OIDC)
+        if: steps.release_check.outputs.exists != 'true'
+        id: nuget_login
+        uses: NuGet/login@v1
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
       - name: Publish package to NuGet
         if: steps.release_check.outputs.exists != 'true'
-        env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
         shell: bash
         run: |
           set -euo pipefail
@@ -126,7 +132,7 @@ jobs:
           for package in "${packages[@]}"; do
             dotnet nuget push "$package" \
               --source https://api.nuget.org/v3/index.json \
-              --api-key "$NUGET_API_KEY" \
+              --api-key "${{ steps.nuget_login.outputs.NUGET_API_KEY }}" \
               --skip-duplicate
           done
 

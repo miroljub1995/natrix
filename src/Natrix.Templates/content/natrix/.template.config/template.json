@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "miroljub1995",
+  "classifications": [
+    "Web",
+    "WASM",
+    "Natrix",
+    "Tailwind"
+  ],
+  "name": "Natrix Web App",
+  "identity": "Natrix.Templates.WebApp",
+  "shortName": "natrix",
+  "sourceName": "MyNatrixApp",
+  "defaultName": "MyNatrixApp",
+  "preferNameDirectory": false,
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  }
+}

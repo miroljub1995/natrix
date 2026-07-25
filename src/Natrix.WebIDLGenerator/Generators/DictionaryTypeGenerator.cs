@@ -1,0 +1,73 @@
+using Natrix.WebIDLGenerator.Extensions;
+using Natrix.WebIDLGenerator.Models;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Natrix.WebIDLGenerator.Generators;
+
+public class DictionaryTypeGenerator(
+    IServiceProvider provider,
+    GenSettings genSettings,
+    GenTypeDescriptors descriptors
+)
+{
+    public string Generate(DictionaryType input)
+    {
+        var fieldTypeGenerator = provider.GetRequiredService<FieldTypeGenerator>();
+
+        var baseTypeName = GetInheritance(input);
+        var defaultBaseConstructor = input.Inheritance is null
+            ? "base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, \"Object\"))"
+            : "base()";
+
+        List<string> bodyParts = [];
+
+        foreach (var fieldType in input.Members)
+        {
+            var part = fieldTypeGenerator.Generate(fieldType);
+            bodyParts.Add(part);
+        }
+
+        var body = string.Join("\n\n", bodyParts);
+
+        var content = $$"""
+                        // ReSharper disable All
+
+                        namespace {{genSettings.Namespace}};
+
+                        #nullable enable
+
+                        public partial class {{input.Name}}: {{baseTypeName}}
+                        {
+                        #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
+                            [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
+                            [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+                            public {{input.Name}}(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
+                            {
+                            }
+                        #pragma warning restore CS8618
+
+                            [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+                            public {{input.Name}}(): {{defaultBaseConstructor}}
+                            {
+                            }
+
+                        {{body.IndentLines(4)}}
+                        }
+
+                        #nullable disable
+                        """;
+
+        return content;
+    }
+
+    private string GetInheritance(DictionaryType input)
+    {
+        if (input.Inheritance is null)
+        {
+            return "global::Natrix.JSCore.JSObjectProxy";
+        }
+
+        var desc = descriptors.GetRequired(input.Inheritance);
+        return $"global::{desc.Namespace}.{desc.Name}";
+    }
+}

@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class DocumentReadyState
+{
+    private readonly string _value;
+
+    private DocumentReadyState(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly DocumentReadyState Loading = new("loading");
+    public static readonly DocumentReadyState Interactive = new("interactive");
+    public static readonly DocumentReadyState Complete = new("complete");
+
+    public override string ToString() => _value;
+
+    public static DocumentReadyState Create(string value) => value switch
+    {
+        "loading" => Loading,
+        "interactive" => Interactive,
+        "complete" => Complete,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for DocumentReadyState", nameof(value)),
+    };
+}
+
+#nullable disable

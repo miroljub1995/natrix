@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "Generate JSCore": {
+      "commandName": "Project",
+      "commandLineArgs": "generate \"../../../../Natrix.JSCore/gensettings.json\""
+    },
+    "Generate Std.Web": {
+      "commandName": "Project",
+      "commandLineArgs": "generate \"../../../../Natrix.StdWeb/gensettings.json\""
+    },
+    "Generate WebIDLGenerator.Tests": {
+      "commandName": "Project",
+      "commandLineArgs": "generate \"../../../../Natrix.WebIDLGenerator.Tests/gensettings.json\""
+    }
+  }
+}

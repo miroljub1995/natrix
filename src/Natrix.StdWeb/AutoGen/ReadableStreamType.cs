@@ -1,0 +1,27 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class ReadableStreamType
+{
+    private readonly string _value;
+
+    private ReadableStreamType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly ReadableStreamType Bytes = new("bytes");
+
+    public override string ToString() => _value;
+
+    public static ReadableStreamType Create(string value) => value switch
+    {
+        "bytes" => Bytes,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for ReadableStreamType", nameof(value)),
+    };
+}
+
+#nullable disable

@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class CodecState
+{
+    private readonly string _value;
+
+    private CodecState(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly CodecState Unconfigured = new("unconfigured");
+    public static readonly CodecState Configured = new("configured");
+    public static readonly CodecState Closed = new("closed");
+
+    public override string ToString() => _value;
+
+    public static CodecState Create(string value) => value switch
+    {
+        "unconfigured" => Unconfigured,
+        "configured" => Configured,
+        "closed" => Closed,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for CodecState", nameof(value)),
+    };
+}
+
+#nullable disable

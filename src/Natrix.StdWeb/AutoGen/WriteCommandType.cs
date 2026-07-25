@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class WriteCommandType
+{
+    private readonly string _value;
+
+    private WriteCommandType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly WriteCommandType Write = new("write");
+    public static readonly WriteCommandType Seek = new("seek");
+    public static readonly WriteCommandType Truncate = new("truncate");
+
+    public override string ToString() => _value;
+
+    public static WriteCommandType Create(string value) => value switch
+    {
+        "write" => Write,
+        "seek" => Seek,
+        "truncate" => Truncate,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for WriteCommandType", nameof(value)),
+    };
+}
+
+#nullable disable

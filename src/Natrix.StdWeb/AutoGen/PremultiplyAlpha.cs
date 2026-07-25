@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class PremultiplyAlpha
+{
+    private readonly string _value;
+
+    private PremultiplyAlpha(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly PremultiplyAlpha None = new("none");
+    public static readonly PremultiplyAlpha Premultiply = new("premultiply");
+    public static readonly PremultiplyAlpha Default = new("default");
+
+    public override string ToString() => _value;
+
+    public static PremultiplyAlpha Create(string value) => value switch
+    {
+        "none" => None,
+        "premultiply" => Premultiply,
+        "default" => Default,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for PremultiplyAlpha", nameof(value)),
+    };
+}
+
+#nullable disable

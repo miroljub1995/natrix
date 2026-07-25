@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class USBEndpointType
+{
+    private readonly string _value;
+
+    private USBEndpointType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly USBEndpointType Bulk = new("bulk");
+    public static readonly USBEndpointType Interrupt = new("interrupt");
+    public static readonly USBEndpointType Isochronous = new("isochronous");
+
+    public override string ToString() => _value;
+
+    public static USBEndpointType Create(string value) => value switch
+    {
+        "bulk" => Bulk,
+        "interrupt" => Interrupt,
+        "isochronous" => Isochronous,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for USBEndpointType", nameof(value)),
+    };
+}
+
+#nullable disable

@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RewriterLength
+{
+    private readonly string _value;
+
+    private RewriterLength(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RewriterLength As_is = new("as-is");
+    public static readonly RewriterLength Shorter = new("shorter");
+    public static readonly RewriterLength Longer = new("longer");
+
+    public override string ToString() => _value;
+
+    public static RewriterLength Create(string value) => value switch
+    {
+        "as-is" => As_is,
+        "shorter" => Shorter,
+        "longer" => Longer,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RewriterLength", nameof(value)),
+    };
+}
+
+#nullable disable

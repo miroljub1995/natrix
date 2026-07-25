@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <NoWarn>$(NoWarn);CS0108</NoWarn>
+        
+        <!-- NuGet Package Configuration -->
+        <IsPackable>true</IsPackable>
+        <PackageId>Natrix.StdWeb</PackageId>
+        <Version>$(NatrixApiVersion)</Version>
+        <Authors>miroljub1995</Authors>
+        <Description>Auto-generated strongly-typed C# wrappers for standard Web APIs (DOM, Fetch, Canvas, WebGL, etc.) for Natrix WebAssembly framework. Based on official W3C WebIDL specifications.</Description>
+        <PackageTags>webassembly;wasm;javascript;webapi;dom;webidl;blazor;dotnet</PackageTags>
+        <PackageProjectUrl>https://github.com/miroljub1995/natrix</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/miroljub1995/natrix</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>icon.png</PackageIcon>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="..\Natrix.JSCore\Natrix.JSCore.csproj"/>
+    </ItemGroup>
+    
+    <ItemGroup>
+        <SupportedPlatform Include="browser" />
+    </ItemGroup>
+</Project>

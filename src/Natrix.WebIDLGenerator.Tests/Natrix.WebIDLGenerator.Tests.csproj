@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
+        <RunAOTCompilation>true</RunAOTCompilation>
+        <PublishTrimmed>true</PublishTrimmed>
+        <TrimMode>full</TrimMode>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="TUnit"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <WasmExtraFilesToDeploy Include="init-tests.js" />
+        <WasmExtraFilesToDeploy Include="init-tests-issues.js" />
+        <WasmExtraFilesToDeploy Include="test-extension-init.js"/>
+        <WasmExtraFilesToDeploy Include="Tests\**\*.js" TargetPath="Tests\%(RecursiveDir)%(FileName)%(Extension)"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Natrix.JSCore\Natrix.JSCore.csproj"/>
+    </ItemGroup>
+
+</Project>

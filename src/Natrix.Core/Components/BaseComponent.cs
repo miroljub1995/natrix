@@ -1,0 +1,171 @@
+using Natrix.Core.Features;
+using Natrix.Core.HotReload;
+using Natrix.Core.RenderRoot;
+using Natrix.Signals;
+
+namespace Natrix.Core.Components;
+
+public abstract class BaseComponent<TProps, TEvents, TSlots, TExpose> : IComponent
+    where TProps : notnull
+    where TEvents : BaseEmits
+    where TSlots : notnull
+    where TExpose : notnull
+{
+    // The component's reactive scope. With hot reload enabled this is the "hot
+    // reload scope": it hosts the subscription (which must outlive mount teardowns)
+    // plus a mount scope that is recreated on each delta and nested inside it.
+    // With hot reload disabled it is simply the component's mount scope.
+    private EffectScope? _effectScope;
+
+    private readonly List<Action<Action<Action>>> _onMountedCallbacks = [];
+    private readonly List<Action> _onUnmountedActions = [];
+
+    public required TProps Props { get; init; }
+    public TEvents? Events { get; init; }
+    public TSlots? Slots { get; init; }
+    public ISignal<TExpose?>? Ref { get; init; }
+
+    protected void OnMounted(Action<Action<Action>> callback)
+    {
+        if (OperatingSystem.IsBrowser())
+        {
+            _onMountedCallbacks.Add(callback);
+        }
+    }
+
+    protected void OnUnmounted(Action callback)
+    {
+        if (OperatingSystem.IsBrowser())
+        {
+            _onUnmountedActions.Add(callback);
+        }
+    }
+
+    public void Mount(IRenderSlot slot)
+    {
+        var parentFeatures = AppFeatures.Current
+            ?? throw new InvalidOperationException(
+                "AppFeatures.Current must be set before mounting a component. " +
+                "Components must be mounted via NatrixHost.Mount or as a child of another mounting component.");
+
+        if (_effectScope is not null)
+        {
+            throw new InvalidOperationException("Component is already mounted.");
+        }
+
+        if (!HotReloadManager.IsSupported)
+        {
+            // No hot reload: the component scope IS the mount scope.
+            _effectScope = RunMountScope(slot, parentFeatures);
+        }
+        else
+        {
+            // Hot reload: the scope hosts the subscription. The mount scope is created,
+            // disposed, and recreated by the hot reload manager on each delta, nested
+            // under this scope so a real unmount (disposing the scope) tears it down too.
+            _effectScope = new();
+            _effectScope.Run(() =>
+                parentFeatures.SetupComponentHotReload(
+                    this,
+                    () => RunMountScope(slot, parentFeatures)));
+        }
+    }
+
+    private EffectScope RunMountScope(IRenderSlot slot, IFeatureCollection parentFeatures)
+    {
+        var mountScope = new EffectScope();
+        mountScope.Run(() =>
+        {
+            // Each component gets its own layer that falls back to the parent's features.
+            // Writes inside Setup land only in this layer, so siblings are isolated.
+            var ownFeatures = new FeatureCollection(parentFeatures);
+
+            ComposedComponent composedComponent;
+
+            var prevFeatures = AppFeatures.Current;
+            AppFeatures.Current = ownFeatures;
+            try
+            {
+                var setupResult = Setup(out TExpose exposed);
+
+                var (openBound, closeBound) = slot.CreateComponentBounds();
+
+                var extraCount = (openBound is not null ? 1 : 0) + (closeBound is not null ? 1 : 0);
+                var children = new IComponent[setupResult.Length + extraCount];
+                var idx = 0;
+                if (openBound is not null)
+                {
+                    children[idx++] = openBound;
+                }
+
+                setupResult.CopyTo(children, idx);
+                idx += setupResult.Length;
+
+                if (closeBound is not null)
+                {
+                    children[idx] = closeBound;
+                }
+
+                composedComponent = new ComposedComponent(children);
+
+
+                if (Ref is not null)
+                {
+                    Ref.Value = exposed;
+                    new Effect(onCleanup => onCleanup(() => Ref.Value = default));
+                }
+
+                composedComponent.Mount(slot);
+            }
+            finally
+            {
+                AppFeatures.Current = prevFeatures;
+            }
+
+            new Effect(onCleanup =>
+            {
+                if (slot.AreLifecycleHooksEnabled)
+                {
+                    foreach (var callback in _onMountedCallbacks)
+                    {
+                        callback(OnUnmounted);
+                    }
+                }
+
+                _onMountedCallbacks.Clear();
+
+                onCleanup(() =>
+                {
+                    Events?.Disable();
+
+                    composedComponent.Unmount();
+
+                    if (slot.AreLifecycleHooksEnabled)
+                    {
+                        foreach (var action in _onUnmountedActions)
+                        {
+                            action();
+                        }
+                    }
+
+                    _onUnmountedActions.Clear();
+                });
+            });
+        });
+
+        return mountScope;
+    }
+
+    public void Unmount()
+    {
+        if (_effectScope is null)
+        {
+            throw new InvalidOperationException("Component is not mounted.");
+        }
+
+        _effectScope.Dispose();
+        _effectScope = null;
+    }
+
+    protected abstract IComponent[] Setup(out TExpose exposed);
+}

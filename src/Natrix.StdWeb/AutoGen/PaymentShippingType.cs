@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class PaymentShippingType
+{
+    private readonly string _value;
+
+    private PaymentShippingType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly PaymentShippingType Shipping = new("shipping");
+    public static readonly PaymentShippingType Delivery = new("delivery");
+    public static readonly PaymentShippingType Pickup = new("pickup");
+
+    public override string ToString() => _value;
+
+    public static PaymentShippingType Create(string value) => value switch
+    {
+        "shipping" => Shipping,
+        "delivery" => Delivery,
+        "pickup" => Pickup,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for PaymentShippingType", nameof(value)),
+    };
+}
+
+#nullable disable

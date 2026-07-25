@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class ImageSmoothingQuality
+{
+    private readonly string _value;
+
+    private ImageSmoothingQuality(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly ImageSmoothingQuality Low = new("low");
+    public static readonly ImageSmoothingQuality Medium = new("medium");
+    public static readonly ImageSmoothingQuality High = new("high");
+
+    public override string ToString() => _value;
+
+    public static ImageSmoothingQuality Create(string value) => value switch
+    {
+        "low" => Low,
+        "medium" => Medium,
+        "high" => High,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for ImageSmoothingQuality", nameof(value)),
+    };
+}
+
+#nullable disable

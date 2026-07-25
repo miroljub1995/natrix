@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WebAssembly">
+    <ItemGroup>
+      <ProjectReference Include="..\Natrix.Browser\Natrix.Browser.csproj" />
+      <ProjectReference Include="..\Natrix.Core\Natrix.Core.csproj" />
+      <ProjectReference Include="..\Natrix.Dom\Natrix.Dom.csproj" />
+      <ProjectReference Include="..\Natrix.StdWeb\Natrix.StdWeb.csproj" />
+      <ProjectReference Include="..\Natrix.Core.Generators\Natrix.Core.Generators.csproj"
+                        OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+    </ItemGroup>
+</Project>

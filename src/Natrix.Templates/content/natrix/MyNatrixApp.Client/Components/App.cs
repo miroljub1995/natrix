@@ -1,0 +1,50 @@
+using Natrix.Core.Components;
+using Natrix.Dom.Components;
+using Natrix.Core.Features.Routing;
+using Natrix.Signals;
+
+namespace MyNatrixApp.Client.Components;
+
+public class AppProps { }
+
+public class App : BaseComponent<AppProps, NoEvents, NoSlots, NoExpose>
+{
+    protected override IComponent[] Setup(out NoExpose exposed)
+    {
+        exposed = default;
+
+        return
+        [
+            new AppHeader
+            {
+                Props = new AppHeaderProps(),
+            },
+            new Main
+            {
+                Props = new MainProps
+                {
+                    Class = "min-h-[calc(100vh-4rem)] bg-white dark:bg-gray-950".ToConstSignal(),
+                },
+                Children =
+                [
+                    new Routes
+                    {
+                        Items =
+                        [
+                            new Route
+                            {
+                                Pattern = "/",
+                                Render = () => [new HomePage { Props = new HomePageProps() }],
+                            },
+                            new Route
+                            {
+                                Pattern = "/about",
+                                Render = () => [new AboutPage { Props = new AboutPageProps() }],
+                            },
+                        ],
+                    },
+                ],
+            },
+        ];
+    }
+}

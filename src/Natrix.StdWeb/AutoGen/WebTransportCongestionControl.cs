@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class WebTransportCongestionControl
+{
+    private readonly string _value;
+
+    private WebTransportCongestionControl(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly WebTransportCongestionControl Default = new("default");
+    public static readonly WebTransportCongestionControl Throughput = new("throughput");
+    public static readonly WebTransportCongestionControl Low_latency = new("low-latency");
+
+    public override string ToString() => _value;
+
+    public static WebTransportCongestionControl Create(string value) => value switch
+    {
+        "default" => Default,
+        "throughput" => Throughput,
+        "low-latency" => Low_latency,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for WebTransportCongestionControl", nameof(value)),
+    };
+}
+
+#nullable disable

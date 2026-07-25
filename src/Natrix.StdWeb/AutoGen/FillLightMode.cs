@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class FillLightMode
+{
+    private readonly string _value;
+
+    private FillLightMode(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly FillLightMode Auto = new("auto");
+    public static readonly FillLightMode Off = new("off");
+    public static readonly FillLightMode Flash = new("flash");
+
+    public override string ToString() => _value;
+
+    public static FillLightMode Create(string value) => value switch
+    {
+        "auto" => Auto,
+        "off" => Off,
+        "flash" => Flash,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for FillLightMode", nameof(value)),
+    };
+}
+
+#nullable disable

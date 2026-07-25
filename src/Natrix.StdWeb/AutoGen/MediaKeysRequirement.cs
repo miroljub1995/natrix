@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class MediaKeysRequirement
+{
+    private readonly string _value;
+
+    private MediaKeysRequirement(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly MediaKeysRequirement Required = new("required");
+    public static readonly MediaKeysRequirement Optional = new("optional");
+    public static readonly MediaKeysRequirement Not_allowed = new("not-allowed");
+
+    public override string ToString() => _value;
+
+    public static MediaKeysRequirement Create(string value) => value switch
+    {
+        "required" => Required,
+        "optional" => Optional,
+        "not-allowed" => Not_allowed,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for MediaKeysRequirement", nameof(value)),
+    };
+}
+
+#nullable disable

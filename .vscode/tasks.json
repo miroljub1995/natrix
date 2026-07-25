@@ -2,9 +2,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build: Iskra.Browser.Tests",
+            "label": "build: Natrix.Browser.Tests",
             "type": "shell",
-            "command": "dotnet build Iskra.Browser.Tests/Iskra.Browser.Tests.csproj -f net10.0",
+            "command": "dotnet build Natrix.Browser.Tests/Natrix.Browser.Tests.csproj -f net10.0",
             "options": {
                 "cwd": "${workspaceFolder}/src"
             },
@@ -16,9 +16,9 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "build: Iskra.WebIDLGenerator.Tests",
+            "label": "build: Natrix.WebIDLGenerator.Tests",
             "type": "shell",
-            "command": "dotnet build Iskra.WebIDLGenerator.Tests/Iskra.WebIDLGenerator.Tests.csproj -f net9.0",
+            "command": "dotnet build Natrix.WebIDLGenerator.Tests/Natrix.WebIDLGenerator.Tests.csproj -f net9.0",
             "options": {
                 "cwd": "${workspaceFolder}/src"
             },
@@ -30,9 +30,9 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "build: Iskra.WebIDLGenerator",
+            "label": "build: Natrix.WebIDLGenerator",
             "type": "shell",
-            "command": "dotnet build Iskra.WebIDLGenerator/Iskra.WebIDLGenerator.csproj -f net10.0",
+            "command": "dotnet build Natrix.WebIDLGenerator/Natrix.WebIDLGenerator.csproj -f net10.0",
             "options": {
                 "cwd": "${workspaceFolder}/src"
             },
@@ -44,9 +44,9 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "build: Iskra.StdWeb",
+            "label": "build: Natrix.StdWeb",
             "type": "shell",
-            "command": "dotnet build Iskra.StdWeb/Iskra.StdWeb.csproj -f net10.0",
+            "command": "dotnet build Natrix.StdWeb/Natrix.StdWeb.csproj -f net10.0",
             "options": {
                 "cwd": "${workspaceFolder}/src"
             },
@@ -58,9 +58,9 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "build: Iskra.Ssr",
+            "label": "build: Natrix.Ssr",
             "type": "shell",
-            "command": "dotnet build Iskra.Ssr/Iskra.Ssr.csproj -f net10.0",
+            "command": "dotnet build Natrix.Ssr/Natrix.Ssr.csproj -f net10.0",
             "options": {
                 "cwd": "${workspaceFolder}/src"
             },
@@ -72,9 +72,9 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "build: Iskra.Templates",
+            "label": "build: Natrix.Templates",
             "type": "shell",
-            "command": "dotnet build Iskra.Templates/Iskra.Templates.csproj -f net10.0",
+            "command": "dotnet build Natrix.Templates/Natrix.Templates.csproj -f net10.0",
             "options": {
                 "cwd": "${workspaceFolder}/src"
             },
@@ -86,11 +86,11 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "build: Iskra.TodoExample",
+            "label": "build: Natrix.TodoExample",
             "type": "shell",
-            "command": "dotnet build Iskra.TodoExample.csproj",
+            "command": "dotnet build Natrix.TodoExample.csproj",
             "options": {
-                "cwd": "${workspaceFolder}/examples/Iskra.TodoExample"
+                "cwd": "${workspaceFolder}/examples/Natrix.TodoExample"
             },
             "group": "build",
             "presentation": {
@@ -100,11 +100,11 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "build: Iskra.CanvasExample",
+            "label": "build: Natrix.CanvasExample",
             "type": "shell",
-            "command": "dotnet build Iskra.CanvasExample.csproj",
+            "command": "dotnet build Natrix.CanvasExample.csproj",
             "options": {
-                "cwd": "${workspaceFolder}/examples/Iskra.CanvasExample"
+                "cwd": "${workspaceFolder}/examples/Natrix.CanvasExample"
             },
             "group": "build",
             "presentation": {
@@ -114,11 +114,11 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "build: Iskra.Docs",
+            "label": "build: Natrix.Docs",
             "type": "shell",
-            "command": "dotnet build Iskra.Docs.csproj -f net10.0",
+            "command": "dotnet build Natrix.Docs.csproj -f net10.0",
             "options": {
-                "cwd": "${workspaceFolder}/docs/Iskra.Docs"
+                "cwd": "${workspaceFolder}/docs/Natrix.Docs"
             },
             "group": "build",
             "presentation": {
@@ -128,11 +128,11 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "watch: Iskra.Docs",
+            "label": "watch: Natrix.Docs",
             "type": "shell",
             "command": "dotnet watch run --non-interactive --framework net10.0",
             "options": {
-                "cwd": "${workspaceFolder}/docs/Iskra.Docs"
+                "cwd": "${workspaceFolder}/docs/Natrix.Docs"
             },
             "isBackground": true,
             "presentation": {

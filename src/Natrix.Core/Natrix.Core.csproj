@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- NuGet Package Configuration -->
+    <IsPackable>true</IsPackable>
+    <PackageId>Natrix.Core</PackageId>
+    <Version>$(NatrixCoreVersion)</Version>
+    <Authors>miroljub1995</Authors>
+    <Description>Core framework for building reactive WebAssembly UIs with C# and .NET — component model, rendering, signals, and source generators.</Description>
+    <PackageTags>webassembly;wasm;dotnet;components;reactive;ui;blazor</PackageTags>
+    <PackageProjectUrl>https://github.com/miroljub1995/natrix</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/miroljub1995/natrix</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Natrix.Signals\Natrix.Signals.csproj" />
+    <!-- Generator: no output reference needed at compile time; bundled into NuGet for consumers -->
+    <ProjectReference Include="..\Natrix.Core.Generators\Natrix.Core.Generators.csproj"
+                      ReferenceOutputAssembly="false" />
+  </ItemGroup>
+  <!-- Bundle generator DLL into the NuGet package so consumers get it automatically -->
+  <ItemGroup>
+    <None Include="..\Natrix.Core.Generators\bin\$(Configuration)\netstandard2.0\Natrix.Core.Generators.dll"
+          Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+  <!-- Bundle static asset targets for NuGet consumers -->
+  <ItemGroup>
+    <None Include="targets\Natrix.Core.StaticAssets.targets" Pack="true" PackagePath="build/Natrix.Core.targets" Visible="false" />
+    <None Include="targets\Natrix.Core.StaticAssets.targets" Pack="true" PackagePath="buildTransitive/Natrix.Core.targets" Visible="false" />
+  </ItemGroup>
+</Project>

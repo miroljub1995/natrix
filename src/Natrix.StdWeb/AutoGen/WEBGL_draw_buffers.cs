@@ -1,0 +1,97 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public partial class WEBGL_draw_buffers: global::Natrix.JSCore.JSObjectProxy
+{
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public WEBGL_draw_buffers(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
+    {
+    }
+
+    public const uint COLOR_ATTACHMENT0_WEBGL = 0x8CE0;
+
+    public const uint COLOR_ATTACHMENT1_WEBGL = 0x8CE1;
+
+    public const uint COLOR_ATTACHMENT2_WEBGL = 0x8CE2;
+
+    public const uint COLOR_ATTACHMENT3_WEBGL = 0x8CE3;
+
+    public const uint COLOR_ATTACHMENT4_WEBGL = 0x8CE4;
+
+    public const uint COLOR_ATTACHMENT5_WEBGL = 0x8CE5;
+
+    public const uint COLOR_ATTACHMENT6_WEBGL = 0x8CE6;
+
+    public const uint COLOR_ATTACHMENT7_WEBGL = 0x8CE7;
+
+    public const uint COLOR_ATTACHMENT8_WEBGL = 0x8CE8;
+
+    public const uint COLOR_ATTACHMENT9_WEBGL = 0x8CE9;
+
+    public const uint COLOR_ATTACHMENT10_WEBGL = 0x8CEA;
+
+    public const uint COLOR_ATTACHMENT11_WEBGL = 0x8CEB;
+
+    public const uint COLOR_ATTACHMENT12_WEBGL = 0x8CEC;
+
+    public const uint COLOR_ATTACHMENT13_WEBGL = 0x8CED;
+
+    public const uint COLOR_ATTACHMENT14_WEBGL = 0x8CEE;
+
+    public const uint COLOR_ATTACHMENT15_WEBGL = 0x8CEF;
+
+    public const uint DRAW_BUFFER0_WEBGL = 0x8825;
+
+    public const uint DRAW_BUFFER1_WEBGL = 0x8826;
+
+    public const uint DRAW_BUFFER2_WEBGL = 0x8827;
+
+    public const uint DRAW_BUFFER3_WEBGL = 0x8828;
+
+    public const uint DRAW_BUFFER4_WEBGL = 0x8829;
+
+    public const uint DRAW_BUFFER5_WEBGL = 0x882A;
+
+    public const uint DRAW_BUFFER6_WEBGL = 0x882B;
+
+    public const uint DRAW_BUFFER7_WEBGL = 0x882C;
+
+    public const uint DRAW_BUFFER8_WEBGL = 0x882D;
+
+    public const uint DRAW_BUFFER9_WEBGL = 0x882E;
+
+    public const uint DRAW_BUFFER10_WEBGL = 0x882F;
+
+    public const uint DRAW_BUFFER11_WEBGL = 0x8830;
+
+    public const uint DRAW_BUFFER12_WEBGL = 0x8831;
+
+    public const uint DRAW_BUFFER13_WEBGL = 0x8832;
+
+    public const uint DRAW_BUFFER14_WEBGL = 0x8833;
+
+    public const uint DRAW_BUFFER15_WEBGL = 0x8834;
+
+    public const uint MAX_COLOR_ATTACHMENTS_WEBGL = 0x8CDF;
+
+    public const uint MAX_DRAW_BUFFERS_WEBGL = 0x8824;
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void DrawBuffersWEBGL(global::Natrix.JSCore.Generics.JSArray<uint, global::Natrix.StdWeb.PropertyAccessor> buffers)
+    {
+        int ___argsArrayLength_2 = 1;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_3 = buffers.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___argsArray_0.JSObject, 0, ___propObject_3);
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "drawBuffersWEBGL", JSObject, ___argsArray_0.JSObject);
+    }
+}
+
+#nullable disable

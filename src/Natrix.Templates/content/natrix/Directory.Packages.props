@@ -1,0 +1,8 @@
+<Project>
+  <!-- Replaced with concrete versions during Natrix.Templates pack. -->
+  <ItemGroup>
+    <PackageVersion Include="Natrix.Browser" Version="__NATRIX_CORE_VERSION__" />
+    <PackageVersion Include="Natrix.Ssr" Version="__NATRIX_CORE_VERSION__" />
+    <PackageVersion Include="Natrix.TailwindCss" Version="__NATRIX_TAILWIND_VERSION__" />
+  </ItemGroup>
+</Project>

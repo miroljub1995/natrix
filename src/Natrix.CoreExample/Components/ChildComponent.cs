@@ -1,0 +1,146 @@
+using Natrix.Core.Components;
+using Natrix.Dom.Components;
+using Natrix.Signals;
+using Natrix.StdWeb;
+
+namespace Natrix.CoreExample.Components;
+
+public class ChildComponentProps
+{
+    public required IReadOnlySignal<string> FirstName { get; init; }
+    public required IReadOnlySignal<string> LastName { get; init; }
+}
+
+[GeneratedEvents]
+public partial class ChildComponentEvents
+{
+    public partial void UpdateFirstName(string firstName);
+    public partial void UpdateLastName(string lastName);
+}
+
+public record ChildComponentExpose(
+    IReadOnlySignal<HTMLDivElement?> DivElement
+);
+
+public class ChildComponent : BaseComponent<ChildComponentProps, ChildComponentEvents, NoSlots, ChildComponentExpose>
+{
+    protected override IComponent[] Setup(
+        out ChildComponentExpose exposed)
+    {
+        var divRef = new Signal<HTMLDivElement?>(null);
+        var index = new Signal<int>(0);
+
+        OnMounted(onUnmounted =>
+        {
+            var timer = new PeriodicTimer(TimeSpan.FromSeconds(1));
+            _ = Task.Run(async () =>
+            {
+                while (await timer.WaitForNextTickAsync())
+                {
+                    Console.WriteLine("Incrementing index...");
+                    index.Value++;
+                }
+            });
+
+            onUnmounted(timer.Dispose);
+        });
+
+        var fullnameWithIndex = new Computed<string>(() => $"{Props.FirstName.Value} {Props.LastName.Value} ({index.Value})");
+
+        exposed = new ChildComponentExpose(divRef);
+
+        void HandleDivClick(PointerEvent ev)
+        {
+            if (!OperatingSystem.IsBrowser())
+            {
+                return;
+            }
+
+            Console.WriteLine("Div clicked! {0}", ev.Target is HTMLDivElement div ? div.InnerText : "null");
+        }
+
+        return
+        [
+            new DomText { Text = fullnameWithIndex },
+            new Label
+            {
+                Children = [new DomText { Text = new Signal<string>("First name") }],
+            },
+            new Br(),
+            new Input
+            {
+                Props = new InputProps { Value = Props.FirstName },
+                Events = new InputEvents
+                {
+                    OnInput = ev =>
+                    {
+                        if (!OperatingSystem.IsBrowser()) return;
+                        if (ev.Target is HTMLInputElement input)
+                        {
+                            Events?.UpdateFirstName(input.Value);
+                        }
+                    },
+                },
+            },
+            new Br(),
+            new Br(),
+            new Label
+            {
+                Children = [new DomText { Text = new Signal<string>("Last name") }],
+            },
+            new Br(),
+            new Input
+            {
+                Props = new InputProps { Value = Props.LastName },
+                Events = new InputEvents
+                {
+                    OnInput = ev =>
+                    {
+                        if (!OperatingSystem.IsBrowser()) return;
+                        if (ev.Target is HTMLInputElement input)
+                        {
+                            Events?.UpdateLastName(input.Value);
+                        }
+                    },
+                },
+            },
+            new Br(),
+            new Br(),
+            new Div
+            {
+                Ref = divRef,
+                Props = new DivProps
+                {
+                    Class = new Computed<string>(() => index.Value % 2 == 0 ? "even" : "odd"),
+                    Draggable = new Computed<bool>(() => index.Value % 2 == 0),
+                    Data = new Computed<IDictionary<string, string>>(() => new Dictionary<string, string>
+                    {
+                        ["custom-index"] = index.Value.ToString(),
+                    }),
+                },
+                Events = new DivEvents
+                {
+                    OnClick = HandleDivClick,
+                },
+                Children =
+                [
+                    new DomText { Text = new Signal<string>("Click me!") },
+                ]
+            },
+            new ForEach<(int Index, char Char), (int Index, char Char)>
+            {
+                Items = new Computed<IList<(int Index, char Char)>>(() =>
+                    fullnameWithIndex.Value.Select((c, i) => (Index: i, Char: c)).ToList()),
+                Key = item => item,
+                ElementSetup = item =>
+                [
+                    new Span
+                    {
+                        Children = [new DomText { Text = new Computed<string>(() => item.Value.Char.ToString()) }],
+                    }
+                ],
+            }
+        ];
+    }
+}
+

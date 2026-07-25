@@ -1,0 +1,33 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class PresentationConnectionState
+{
+    private readonly string _value;
+
+    private PresentationConnectionState(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly PresentationConnectionState Connecting = new("connecting");
+    public static readonly PresentationConnectionState Connected = new("connected");
+    public static readonly PresentationConnectionState Closed = new("closed");
+    public static readonly PresentationConnectionState Terminated = new("terminated");
+
+    public override string ToString() => _value;
+
+    public static PresentationConnectionState Create(string value) => value switch
+    {
+        "connecting" => Connecting,
+        "connected" => Connected,
+        "closed" => Closed,
+        "terminated" => Terminated,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for PresentationConnectionState", nameof(value)),
+    };
+}
+
+#nullable disable

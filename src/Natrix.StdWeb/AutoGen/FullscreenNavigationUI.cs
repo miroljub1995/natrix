@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class FullscreenNavigationUI
+{
+    private readonly string _value;
+
+    private FullscreenNavigationUI(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly FullscreenNavigationUI Auto = new("auto");
+    public static readonly FullscreenNavigationUI Show = new("show");
+    public static readonly FullscreenNavigationUI Hide = new("hide");
+
+    public override string ToString() => _value;
+
+    public static FullscreenNavigationUI Create(string value) => value switch
+    {
+        "auto" => Auto,
+        "show" => Show,
+        "hide" => Hide,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for FullscreenNavigationUI", nameof(value)),
+    };
+}
+
+#nullable disable

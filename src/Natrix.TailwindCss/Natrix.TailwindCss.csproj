@@ -1,0 +1,50 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- NuGet Package Configuration -->
+    <IsPackable>true</IsPackable>
+    <PackageId>Natrix.TailwindCss</PackageId>
+    <Version>$(NatrixTailwindVersion)</Version>
+    <Authors>miroljub1995</Authors>
+    <Description>Tailwind CSS integration for Natrix with source generator support for strongly-typed utility usage.</Description>
+    <PackageTags>tailwindcss;css;webassembly;wasm;dotnet;natrix</PackageTags>
+    <PackageProjectUrl>https://github.com/miroljub1995/natrix</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/miroljub1995/natrix</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Natrix.TailwindCss.Generators\Natrix.TailwindCss.Generators.csproj"
+                      ReferenceOutputAssembly="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\Natrix.TailwindCss.Generators\bin\$(Configuration)\netstandard2.0\Natrix.TailwindCss.Generators.dll"
+          Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+  </ItemGroup>
+
+  <!-- Bundle targets so generator runtime path is configured transitively for consumers -->
+  <ItemGroup>
+    <None Include="..\Natrix.TailwindCss.Generators\targets\Natrix.TailwindCss.Generators.targets"
+          Pack="true" PackagePath="build/Natrix.TailwindCss.targets" Visible="false" />
+    <None Include="..\Natrix.TailwindCss.Generators\targets\Natrix.TailwindCss.Generators.targets"
+          Pack="true" PackagePath="buildTransitive/Natrix.TailwindCss.targets" Visible="false" />
+  </ItemGroup>
+
+  <!-- Bundle native Tailwind compiler runtimes consumed by the source generator -->
+  <ItemGroup>
+    <None Include="..\Natrix.TailwindCss.Generators\runtimes\**\*"
+      Pack="true" PackagePath="runtimes/" Visible="false" />
+  </ItemGroup>
+
+</Project>

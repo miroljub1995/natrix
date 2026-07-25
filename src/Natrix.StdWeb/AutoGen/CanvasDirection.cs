@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class CanvasDirection
+{
+    private readonly string _value;
+
+    private CanvasDirection(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly CanvasDirection Ltr = new("ltr");
+    public static readonly CanvasDirection Rtl = new("rtl");
+    public static readonly CanvasDirection Inherit = new("inherit");
+
+    public override string ToString() => _value;
+
+    public static CanvasDirection Create(string value) => value switch
+    {
+        "ltr" => Ltr,
+        "rtl" => Rtl,
+        "inherit" => Inherit,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for CanvasDirection", nameof(value)),
+    };
+}
+
+#nullable disable

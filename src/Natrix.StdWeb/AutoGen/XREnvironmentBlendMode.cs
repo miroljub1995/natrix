@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class XREnvironmentBlendMode
+{
+    private readonly string _value;
+
+    private XREnvironmentBlendMode(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly XREnvironmentBlendMode Opaque = new("opaque");
+    public static readonly XREnvironmentBlendMode Alpha_blend = new("alpha-blend");
+    public static readonly XREnvironmentBlendMode Additive = new("additive");
+
+    public override string ToString() => _value;
+
+    public static XREnvironmentBlendMode Create(string value) => value switch
+    {
+        "opaque" => Opaque,
+        "alpha-blend" => Alpha_blend,
+        "additive" => Additive,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for XREnvironmentBlendMode", nameof(value)),
+    };
+}
+
+#nullable disable

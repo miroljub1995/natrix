@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Natrix.TodoExample": {
+      "commandName": "Project",
+      "launchBrowser": true
+    }
+  }
+}

@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class TaskPriority
+{
+    private readonly string _value;
+
+    private TaskPriority(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly TaskPriority User_blocking = new("user-blocking");
+    public static readonly TaskPriority User_visible = new("user-visible");
+    public static readonly TaskPriority Background = new("background");
+
+    public override string ToString() => _value;
+
+    public static TaskPriority Create(string value) => value switch
+    {
+        "user-blocking" => User_blocking,
+        "user-visible" => User_visible,
+        "background" => Background,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for TaskPriority", nameof(value)),
+    };
+}
+
+#nullable disable

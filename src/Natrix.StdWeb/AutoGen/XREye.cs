@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class XREye
+{
+    private readonly string _value;
+
+    private XREye(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly XREye None = new("none");
+    public static readonly XREye Left = new("left");
+    public static readonly XREye Right = new("right");
+
+    public override string ToString() => _value;
+
+    public static XREye Create(string value) => value switch
+    {
+        "none" => None,
+        "left" => Left,
+        "right" => Right,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for XREye", nameof(value)),
+    };
+}
+
+#nullable disable

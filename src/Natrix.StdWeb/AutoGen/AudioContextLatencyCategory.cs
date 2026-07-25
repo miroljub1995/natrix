@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class AudioContextLatencyCategory
+{
+    private readonly string _value;
+
+    private AudioContextLatencyCategory(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly AudioContextLatencyCategory Balanced = new("balanced");
+    public static readonly AudioContextLatencyCategory Interactive = new("interactive");
+    public static readonly AudioContextLatencyCategory Playback = new("playback");
+
+    public override string ToString() => _value;
+
+    public static AudioContextLatencyCategory Create(string value) => value switch
+    {
+        "balanced" => Balanced,
+        "interactive" => Interactive,
+        "playback" => Playback,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for AudioContextLatencyCategory", nameof(value)),
+    };
+}
+
+#nullable disable

@@ -1,0 +1,33 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class PositionAlignSetting
+{
+    private readonly string _value;
+
+    private PositionAlignSetting(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly PositionAlignSetting Line_left = new("line-left");
+    public static readonly PositionAlignSetting Center = new("center");
+    public static readonly PositionAlignSetting Line_right = new("line-right");
+    public static readonly PositionAlignSetting Auto = new("auto");
+
+    public override string ToString() => _value;
+
+    public static PositionAlignSetting Create(string value) => value switch
+    {
+        "line-left" => Line_left,
+        "center" => Center,
+        "line-right" => Line_right,
+        "auto" => Auto,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for PositionAlignSetting", nameof(value)),
+    };
+}
+
+#nullable disable

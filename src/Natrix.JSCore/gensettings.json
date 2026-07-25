@@ -1,0 +1,9 @@
+{
+  "inputs": [
+    "./idlparsed"
+  ],
+  "output": "./AutoGen",
+  "namespace": "Natrix.JSCore",
+  "proxyFactoryName": "JSCoreProxyFactory",
+  "onBeforeInitializeAsync": "await global::Natrix.JSCore.JSCoreShims.InitializeAsync();"
+}

@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class ReadyState
+{
+    private readonly string _value;
+
+    private ReadyState(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly ReadyState Closed = new("closed");
+    public static readonly ReadyState Open = new("open");
+    public static readonly ReadyState Ended = new("ended");
+
+    public override string ToString() => _value;
+
+    public static ReadyState Create(string value) => value switch
+    {
+        "closed" => Closed,
+        "open" => Open,
+        "ended" => Ended,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for ReadyState", nameof(value)),
+    };
+}
+
+#nullable disable

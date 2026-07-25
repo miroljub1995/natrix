@@ -1,0 +1,27 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class PublicKeyCredentialType
+{
+    private readonly string _value;
+
+    private PublicKeyCredentialType(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly PublicKeyCredentialType Public_key = new("public-key");
+
+    public override string ToString() => _value;
+
+    public static PublicKeyCredentialType Create(string value) => value switch
+    {
+        "public-key" => Public_key,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for PublicKeyCredentialType", nameof(value)),
+    };
+}
+
+#nullable disable

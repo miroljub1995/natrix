@@ -1,0 +1,31 @@
+// ReSharper disable All
+
+namespace Natrix.StdWeb;
+
+#nullable enable
+
+public sealed partial class RTCIceGatheringState
+{
+    private readonly string _value;
+
+    private RTCIceGatheringState(string value)
+    {
+        _value = value;
+    }
+
+    public static readonly RTCIceGatheringState New = new("new");
+    public static readonly RTCIceGatheringState Gathering = new("gathering");
+    public static readonly RTCIceGatheringState Complete = new("complete");
+
+    public override string ToString() => _value;
+
+    public static RTCIceGatheringState Create(string value) => value switch
+    {
+        "new" => New,
+        "gathering" => Gathering,
+        "complete" => Complete,
+        _ => throw new ArgumentException($"Invalid value \"{value}\" for RTCIceGatheringState", nameof(value)),
+    };
+}
+
+#nullable disable
