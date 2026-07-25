@@ -7,8 +7,6 @@
         <PublishRelease>true</PublishRelease>
         <IsAotCompatible>true</IsAotCompatible>
 
-        <WarningsNotAsErrors>CS8620;CS8625;IL3000</WarningsNotAsErrors>
-
         <NatrixApiVersion Condition="'$(NatrixApiVersion)' == ''">0.2.0</NatrixApiVersion>
         <NatrixCoreVersion Condition="'$(NatrixCoreVersion)' == ''">0.2.0</NatrixCoreVersion>
         <NatrixTailwindVersion Condition="'$(NatrixTailwindVersion)' == ''">0.2.0</NatrixTailwindVersion>

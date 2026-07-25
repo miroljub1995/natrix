@@ -7,6 +7,7 @@
         <PublishTrimmed>true</PublishTrimmed>
         <TrimMode>full</TrimMode>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <WarningsNotAsErrors>$(WarningsNotAsErrors);CS8620;CS8625</WarningsNotAsErrors>
     </PropertyGroup>
 
     <ItemGroup>
