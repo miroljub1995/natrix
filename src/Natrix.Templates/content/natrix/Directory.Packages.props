@@ -1,5 +1,8 @@
 <Project>
-  <!-- Replaced with concrete versions during Natrix.Templates pack. -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageVersion Include="Natrix.Browser" Version="__NATRIX_CORE_VERSION__" />
     <PackageVersion Include="Natrix.Ssr" Version="__NATRIX_CORE_VERSION__" />

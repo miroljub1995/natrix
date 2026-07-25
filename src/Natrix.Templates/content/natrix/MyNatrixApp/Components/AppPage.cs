@@ -2,6 +2,7 @@ using Natrix.Core.Components;
 using Natrix.Dom.Components;
 using Natrix.Ssr.Features.HydrationState;
 using Natrix.Ssr.Components;
+using Natrix.Ssr.HotReload;
 using MyNatrixApp.Client;
 using MyNatrixApp.Client.Components;
 using Natrix.Signals;
