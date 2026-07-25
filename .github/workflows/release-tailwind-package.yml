@@ -28,6 +28,13 @@ jobs:
         with:
           global-json-file: global.json
 
+      - name: Setup Node.js
+        # Provides npm/npx so the generator's MSBuild target can build the
+        # `tailwind-compiler` binaries that get packed into the NuGet package.
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
       - name: Resolve release version from Tailwind package
         id: version
         shell: bash

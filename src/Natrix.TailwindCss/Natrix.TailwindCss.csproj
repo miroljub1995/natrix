@@ -41,10 +41,15 @@
           Pack="true" PackagePath="buildTransitive/Natrix.TailwindCss.targets" Visible="false" />
   </ItemGroup>
 
-  <!-- Bundle native Tailwind compiler runtimes consumed by the source generator -->
+  <!-- Bundle native Tailwind compiler runtimes consumed by the source generator.
+       Listed explicitly (not via wildcard) so every RID is required in the
+       package; the binaries are produced on demand by the generator's build. -->
   <ItemGroup>
-    <None Include="..\Natrix.TailwindCss.Generators\runtimes\**\*"
-      Pack="true" PackagePath="runtimes/" Visible="false" />
+    <None Include="..\Natrix.TailwindCss.Generators\runtimes\osx-arm64\tailwind-compiler" Pack="true" PackagePath="runtimes/osx-arm64/" Visible="false" />
+    <None Include="..\Natrix.TailwindCss.Generators\runtimes\osx-x64\tailwind-compiler" Pack="true" PackagePath="runtimes/osx-x64/" Visible="false" />
+    <None Include="..\Natrix.TailwindCss.Generators\runtimes\linux-arm64\tailwind-compiler" Pack="true" PackagePath="runtimes/linux-arm64/" Visible="false" />
+    <None Include="..\Natrix.TailwindCss.Generators\runtimes\linux-x64\tailwind-compiler" Pack="true" PackagePath="runtimes/linux-x64/" Visible="false" />
+    <None Include="..\Natrix.TailwindCss.Generators\runtimes\win-x64\tailwind-compiler.exe" Pack="true" PackagePath="runtimes/win-x64/" Visible="false" />
   </ItemGroup>
 
 </Project>

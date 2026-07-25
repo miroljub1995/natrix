@@ -18,8 +18,38 @@
     <PackageReference Include="System.Text.Json" />
   </ItemGroup>
 
+  <!--
+    The platform-specific `tailwind-compiler` binaries are produced from
+    tailwind-compiler.ts with Bun and are gitignored. They are listed explicitly
+    (not via a wildcard) so a missing binary is a build error rather than a
+    silent skip, and so nothing else under runtimes/ can leak into the output.
+  -->
   <ItemGroup>
-    <None Include="runtimes\**\*" CopyToOutputDirectory="PreserveNewest" Link="runtimes\%(RecursiveDir)%(Filename)%(Extension)" />
+    <None Include="runtimes/osx-arm64/tailwind-compiler" Link="runtimes/osx-arm64/tailwind-compiler" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="runtimes/osx-x64/tailwind-compiler" Link="runtimes/osx-x64/tailwind-compiler" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="runtimes/linux-arm64/tailwind-compiler" Link="runtimes/linux-arm64/tailwind-compiler" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="runtimes/linux-x64/tailwind-compiler" Link="runtimes/linux-x64/tailwind-compiler" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="runtimes/win-x64/tailwind-compiler.exe" Link="runtimes/win-x64/tailwind-compiler.exe" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
+
+  <!--
+    Build the binaries on demand (when the `.bundled` marker is missing) so a
+    fresh checkout can build and test without a manual bundling step. Requires
+    Node.js/npm on PATH; Bun and Tailwind are installed as npm devDependencies.
+    `npm run bundle` builds every RID. The target runs before the binaries are
+    copied to the output.
+  -->
+  <PropertyGroup>
+    <TailwindBundledMarker>$(MSBuildProjectDirectory)/runtimes/.bundled</TailwindBundledMarker>
+  </PropertyGroup>
+
+  <Target Name="BundleTailwindCompiler"
+          BeforeTargets="AssignTargetPaths"
+          Condition="!Exists('$(TailwindBundledMarker)')">
+    <Message Importance="high" Text="Bundling tailwind-compiler binaries for all runtimes..." />
+    <Exec Command="npm ci" WorkingDirectory="$(MSBuildProjectDirectory)" />
+    <Exec Command="npm run bundle" WorkingDirectory="$(MSBuildProjectDirectory)" />
+    <Touch Files="$(TailwindBundledMarker)" AlwaysCreate="true" />
+  </Target>
 
 </Project>

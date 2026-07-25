@@ -37,6 +37,14 @@ jobs:
             9.0.x
             10.0.x
 
+      - name: Setup Node.js
+        # Provides npm/npx so the generator's MSBuild target can build the
+        # `tailwind-compiler` binary on demand (Natrix.Docs.Client uses
+        # [GeneratedTailwindCss]).
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
       - name: Restore workloads
         run: dotnet workload restore Natrix.slnx
 
@@ -67,6 +75,14 @@ jobs:
           dotnet-version: |
             9.0.x
             10.0.x
+
+      - name: Setup Node.js
+        # Provides npm/npx so the generator's MSBuild target can build the
+        # `tailwind-compiler` binary on demand for the Tailwind generator tests.
+        if: matrix.project == 'src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
 
       - name: Test ${{ matrix.project }}
         run: dotnet test ${{ matrix.project }} -c Release
