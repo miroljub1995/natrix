@@ -21,7 +21,7 @@ error: Unknown stylesheet import: 'nonexistent/module'
       at wf (/$bunfs/root/tailwind-compiler:6483:49)
       at /$bunfs/root/tailwind-compiler:6495:24
 
-Bun v1.3.14 (macOS arm64)
+Bun v{version} ({platform})
 ,
       Severity: Error,
       Descriptor: {

@@ -151,7 +151,14 @@ public class TailwindCssGeneratorTests
             .Create(new TailwindCssGenerator())
             .RunGenerators(CreateCompilation(source));
 
-        return Verify(driver);
+        // The compiler error text embeds Bun's version and host platform
+        // (e.g. "Bun v1.3.14 (Linux x64)"), which differs per OS. Normalize it
+        // so the snapshot is stable across platforms.
+        return Verify(driver)
+            .ScrubLinesWithReplace(line =>
+                line.StartsWith("Bun v", StringComparison.Ordinal)
+                    ? "Bun v{version} ({platform})"
+                    : line);
     }
 
     [Test]
