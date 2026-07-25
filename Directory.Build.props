@@ -12,7 +12,7 @@
         <NatrixApiVersion Condition="'$(NatrixApiVersion)' == ''">0.1.0</NatrixApiVersion>
         <NatrixCoreVersion Condition="'$(NatrixCoreVersion)' == ''">0.1.0</NatrixCoreVersion>
         <NatrixTailwindVersion Condition="'$(NatrixTailwindVersion)' == ''">0.1.0</NatrixTailwindVersion>
-        <NatrixTemplatesVersion Condition="'$(NatrixTemplatesVersion)' == ''">0.1.0</NatrixTemplatesVersion>
+        <NatrixTemplatesVersion Condition="'$(NatrixTemplatesVersion)' == ''">0.2.0</NatrixTemplatesVersion>
 
         <!-- By default, don't create NuGet packages for projects -->
         <IsPackable>false</IsPackable>

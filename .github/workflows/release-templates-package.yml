@@ -122,7 +122,7 @@ jobs:
           set -euo pipefail
 
           shopt -s nullglob
-          packages=(artifacts/nuget/*.nupkg artifacts/nuget/*.snupkg)
+          packages=(artifacts/nuget/*.nupkg)
 
           if [[ ${#packages[@]} -eq 0 ]]; then
             echo "No packages found to publish."
@@ -145,7 +145,6 @@ jobs:
           generate_release_notes: true
           files: |
             artifacts/nuget/*.nupkg
-            artifacts/nuget/*.snupkg
 
       - name: Workflow summary
         shell: bash
