@@ -34,23 +34,6 @@ var url = new Uri(app.Urls.Single());
 
 var isDebug = Debugger.IsAttached;
 
-string[] gpuArgs;
-if (OperatingSystem.IsLinux())
-{
-    gpuArgs =
-    [
-        // https://developer.chrome.com/blog/supercharge-web-ai-testing#enable-webgpu
-        "--use-angle=vulkan",
-        "--enable-features=Vulkan",
-        "--disable-vulkan-surface",
-        "--enable-unsafe-webgpu",
-    ];
-}
-else
-{
-    gpuArgs = ["--enable-gpu"];
-}
-
 LaunchOptions options = new()
 {
     ExecutablePath = ChromeForTestingInstance.ChromePath,
@@ -58,7 +41,6 @@ LaunchOptions options = new()
     [
         "--no-sandbox",
         "--no-zygote",
-        ..gpuArgs
         // "--disable-web-security",
     ],
     DumpIO = true,
