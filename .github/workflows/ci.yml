@@ -62,6 +62,9 @@ jobs:
           - src/Natrix.Ssr.Tests/Natrix.Ssr.Tests.csproj
           - src/Natrix.Core.Generators.Tests/Natrix.Core.Generators.Tests.csproj
           - src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj
+        tfm:
+          - net9.0
+          - net10.0
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -84,8 +87,8 @@ jobs:
         with:
           node-version: 22
 
-      - name: Test ${{ matrix.project }}
-        run: dotnet test ${{ matrix.project }} -c Release
+      - name: Test ${{ matrix.project }} (${{ matrix.tfm }})
+        run: dotnet test ${{ matrix.project }} -c Release -f ${{ matrix.tfm }}
 
   browser-tests:
     name: Browser (WASM) tests
@@ -96,6 +99,9 @@ jobs:
         profile:
           - Natrix.WebIDLGenerator.Tests
           - Natrix.Browser.Tests
+        tfm:
+          - net9.0
+          - net10.0
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -113,7 +119,7 @@ jobs:
       - name: Restore workloads
         run: dotnet workload restore Natrix.slnx
 
-      - name: Run ${{ matrix.profile }}
-        # The runner builds the browser-wasm test bundle and executes it in
-        # headless Chromium (via ChromeForTesting + PuppeteerSharp).
-        run: dotnet run --project src/Natrix.BrowserTestsRunner -f net10.0 --launch-profile ${{ matrix.profile }}
+      - name: Run ${{ matrix.profile }} (${{ matrix.tfm }})
+        # The runner builds the browser-wasm test bundle for its own TFM and
+        # executes it in headless Chromium (ChromeForTesting + PuppeteerSharp).
+        run: dotnet run --project src/Natrix.BrowserTestsRunner -f ${{ matrix.tfm }} --launch-profile ${{ matrix.profile }}

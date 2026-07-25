@@ -13,7 +13,7 @@ To run tests, use the following command from the workspace root — it will auto
 dotnet run --project src/Natrix.BrowserTestsRunner -f <tfm> --launch-profile <profile>
 ```
 
-The `-f` flag is required because `Natrix.BrowserTestsRunner` multi-targets; use the latest .NET version installed on the system.
+The `-f` flag is required because `Natrix.BrowserTestsRunner` multi-targets; the tests run on both `net9.0` and `net10.0`, and the runner serves the bundle built for the chosen TFM.
 
 Available profiles:
 - `Natrix.Browser.Tests`

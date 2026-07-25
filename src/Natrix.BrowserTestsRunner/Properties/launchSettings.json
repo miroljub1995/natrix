@@ -3,13 +3,13 @@
     "Natrix.WebIDLGenerator.Tests": {
       "commandName": "Project",
       "environmentVariables": {
-        "RunnerBundlePath": "../../../../Natrix.WebIDLGenerator.Tests/bin/Debug/net9.0/browser-wasm/AppBundle/"
+        "RunnerBundlePath": "../../../../Natrix.WebIDLGenerator.Tests/bin/Debug/{tfm}/browser-wasm/AppBundle/"
       }
     },
     "Natrix.Browser.Tests": {
       "commandName": "Project",
       "environmentVariables": {
-        "RunnerBundlePath": "../../../../Natrix.Browser.Tests/bin/Debug/net10.0/browser-wasm/AppBundle/"
+        "RunnerBundlePath": "../../../../Natrix.Browser.Tests/bin/Debug/{tfm}/browser-wasm/AppBundle/"
       }
     }
   }

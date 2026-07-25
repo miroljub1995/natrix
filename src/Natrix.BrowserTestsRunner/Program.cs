@@ -11,6 +11,11 @@ app.MapGet("index.html",
 );
 
 var appBundlePath = app.Configuration["RunnerBundlePath"] ?? throw new Exception("RunnerBundlePath is not set.");
+// The runner and the test bundle are built for the same target framework, so
+// resolve the "{tfm}" placeholder from the runner's own output folder (e.g.
+// ".../bin/Debug/net9.0/") to serve the matching bundle.
+var tfm = new DirectoryInfo(AppContext.BaseDirectory.TrimEnd(Path.DirectorySeparatorChar)).Name;
+appBundlePath = appBundlePath.Replace("{tfm}", tfm);
 var appBundleFullPath = Path.GetFullPath(Path.Join(AppDomain.CurrentDomain.BaseDirectory, appBundlePath));
 
 app.UseStaticFiles(new StaticFileOptions
