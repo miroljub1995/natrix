@@ -25,6 +25,7 @@
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
     <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\icon.svg" Pack="true" PackagePath="content/natrix/MyNatrixApp.Client/wwwroot/assets/icon.svg" />
   </ItemGroup>
 
   <ItemGroup>

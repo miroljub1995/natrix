@@ -494,6 +494,9 @@ public class PropertyAccessor:
     global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.StdWeb.VideoPlaybackQuality>,
     global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.StdWeb.PictureInPictureWindow>,
     global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PictureInPictureWindow, global::Natrix.StdWeb.PropertyAccessor>>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.StdWeb.RegisteredTool>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>>,
     global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.StdWeb.ToolExecuteCallback>,
     global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.StdWeb.ToolAnnotations>,
     global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.StdWeb.FlacEncoderConfig>,
@@ -18368,6 +18371,108 @@ public class PropertyAccessor:
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PictureInPictureWindow, global::Natrix.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PictureInPictureWindow, global::Natrix.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.StdWeb.RegisteredTool global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.StdWeb.RegisteredTool>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.StdWeb.RegisteredTool ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Natrix.StdWeb.RegisteredTool(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.StdWeb.RegisteredTool global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.StdWeb.RegisteredTool>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.StdWeb.RegisteredTool ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Natrix.StdWeb.RegisteredTool(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.StdWeb.RegisteredTool>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.StdWeb.RegisteredTool value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.StdWeb.RegisteredTool>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.StdWeb.RegisteredTool value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RegisteredTool, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
         global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
