@@ -1,0 +1,103 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+# Read-only token is sufficient for build + test. Using the `pull_request`
+# trigger (instead of `pull_request_target`) means PRs from forks run in the
+# context of the fork with a read-only GITHUB_TOKEN and no access to secrets,
+# so external contributions are validated safely.
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build solution
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+          dotnet-version: |
+            9.0.x
+            10.0.x
+
+      - name: Restore workloads
+        run: dotnet workload restore Natrix.slnx
+
+      - name: Build
+        run: dotnet build Natrix.slnx -c Release
+
+  unit-tests:
+    name: Unit tests
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        project:
+          - src/Natrix.Signals.Tests/Natrix.Signals.Tests.csproj
+          - src/Natrix.Ssr.Tests/Natrix.Ssr.Tests.csproj
+          - src/Natrix.Core.Generators.Tests/Natrix.Core.Generators.Tests.csproj
+          - src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+          dotnet-version: |
+            9.0.x
+            10.0.x
+
+      - name: Test ${{ matrix.project }}
+        run: dotnet test ${{ matrix.project }} -c Release
+
+  browser-tests:
+    name: Browser (WASM) tests
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        profile:
+          - Natrix.WebIDLGenerator.Tests
+          - Natrix.Browser.Tests
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v5
+        with:
+          global-json-file: global.json
+          dotnet-version: |
+            9.0.x
+            10.0.x
+
+      - name: Restore workloads
+        run: dotnet workload restore Natrix.slnx
+
+      - name: Run ${{ matrix.profile }}
+        # The runner builds the browser-wasm test bundle and executes it in
+        # headless Chromium (via ChromeForTesting + PuppeteerSharp).
+        run: dotnet run --project src/Natrix.BrowserTestsRunner -f net10.0 --launch-profile ${{ matrix.profile }}
