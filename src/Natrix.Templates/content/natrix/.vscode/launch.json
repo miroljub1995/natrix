@@ -10,6 +10,7 @@
             "cwd": "${workspaceFolder}/MyNatrixApp",
             "stopAtEntry": false,
             "env": {
+                "ASPNETCORE_URLS": "https://localhost:5100",
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "preLaunchTask": "build: MyNatrixApp",

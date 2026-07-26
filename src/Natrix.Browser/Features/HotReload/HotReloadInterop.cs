@@ -17,14 +17,9 @@ internal static partial class HotReloadInterop
     {
         try
         {
-            Console.WriteLine("[Natrix] BeforeUpdate...");
-            var sw = System.Diagnostics.Stopwatch.StartNew();
-
             EnsureTypeCache();
             var types = ResolveUpdatedTypes(deltasJson);
             HotReloadManager.Default.FireBeforeUpdate(types);
-
-            Console.WriteLine($"[Natrix] BeforeUpdate done in {sw.ElapsedMilliseconds} ms.");
         }
         catch (Exception ex)
         {

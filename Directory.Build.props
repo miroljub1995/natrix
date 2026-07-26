@@ -7,9 +7,9 @@
         <IsAotCompatible>true</IsAotCompatible>
 
         <NatrixApiVersion Condition="'$(NatrixApiVersion)' == ''">0.2.0</NatrixApiVersion>
-        <NatrixCoreVersion Condition="'$(NatrixCoreVersion)' == ''">0.2.0</NatrixCoreVersion>
+        <NatrixCoreVersion Condition="'$(NatrixCoreVersion)' == ''">0.3.0</NatrixCoreVersion>
         <NatrixTailwindVersion Condition="'$(NatrixTailwindVersion)' == ''">0.3.0</NatrixTailwindVersion>
-        <NatrixTemplatesVersion Condition="'$(NatrixTemplatesVersion)' == ''">0.8.0</NatrixTemplatesVersion>
+        <NatrixTemplatesVersion Condition="'$(NatrixTemplatesVersion)' == ''">0.9.0</NatrixTemplatesVersion>
 
         <!-- By default, don't create NuGet packages for projects -->
         <IsPackable>false</IsPackable>

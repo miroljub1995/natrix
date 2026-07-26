@@ -3,8 +3,14 @@
     "tasks": [
         {
             "label": "build: Natrix.Browser.Tests",
-            "type": "shell",
-            "command": "dotnet build Natrix.Browser.Tests/Natrix.Browser.Tests.csproj -f net10.0",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Natrix.Browser.Tests/Natrix.Browser.Tests.csproj",
+                "-f",
+                "net10.0"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}/src"
             },
@@ -17,8 +23,14 @@
         },
         {
             "label": "build: Natrix.WebIDLGenerator.Tests",
-            "type": "shell",
-            "command": "dotnet build Natrix.WebIDLGenerator.Tests/Natrix.WebIDLGenerator.Tests.csproj -f net9.0",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Natrix.WebIDLGenerator.Tests/Natrix.WebIDLGenerator.Tests.csproj",
+                "-f",
+                "net9.0"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}/src"
             },
@@ -31,8 +43,14 @@
         },
         {
             "label": "build: Natrix.WebIDLGenerator",
-            "type": "shell",
-            "command": "dotnet build Natrix.WebIDLGenerator/Natrix.WebIDLGenerator.csproj -f net10.0",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Natrix.WebIDLGenerator/Natrix.WebIDLGenerator.csproj",
+                "-f",
+                "net10.0"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}/src"
             },
@@ -45,8 +63,14 @@
         },
         {
             "label": "build: Natrix.StdWeb",
-            "type": "shell",
-            "command": "dotnet build Natrix.StdWeb/Natrix.StdWeb.csproj -f net10.0",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Natrix.StdWeb/Natrix.StdWeb.csproj",
+                "-f",
+                "net10.0"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}/src"
             },
@@ -59,8 +83,14 @@
         },
         {
             "label": "build: Natrix.Ssr",
-            "type": "shell",
-            "command": "dotnet build Natrix.Ssr/Natrix.Ssr.csproj -f net10.0",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Natrix.Ssr/Natrix.Ssr.csproj",
+                "-f",
+                "net10.0"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}/src"
             },
@@ -73,8 +103,14 @@
         },
         {
             "label": "build: Natrix.Templates",
-            "type": "shell",
-            "command": "dotnet build Natrix.Templates/Natrix.Templates.csproj -f net10.0",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Natrix.Templates/Natrix.Templates.csproj",
+                "-f",
+                "net10.0"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}/src"
             },
@@ -87,8 +123,12 @@
         },
         {
             "label": "build: Natrix.TodoExample",
-            "type": "shell",
-            "command": "dotnet build Natrix.TodoExample.csproj",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Natrix.TodoExample.csproj"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}/examples/Natrix.TodoExample"
             },
@@ -101,8 +141,12 @@
         },
         {
             "label": "build: Natrix.CanvasExample",
-            "type": "shell",
-            "command": "dotnet build Natrix.CanvasExample.csproj",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Natrix.CanvasExample.csproj"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}/examples/Natrix.CanvasExample"
             },
@@ -115,8 +159,14 @@
         },
         {
             "label": "build: Natrix.Docs",
-            "type": "shell",
-            "command": "dotnet build Natrix.Docs.csproj -f net10.0",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "build",
+                "Natrix.Docs.csproj",
+                "-f",
+                "net10.0"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}/docs/Natrix.Docs"
             },
@@ -129,8 +179,17 @@
         },
         {
             "label": "watch: Natrix.Docs",
-            "type": "shell",
-            "command": "dotnet watch run --non-interactive --framework net10.0",
+            "type": "process",
+            "command": "dotnet",
+            "args": [
+                "watch",
+                "run",
+                "--non-interactive",
+                "--framework",
+                "net10.0",
+                "--launch-profile",
+                "Natrix.Docs"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}/docs/Natrix.Docs"
             },

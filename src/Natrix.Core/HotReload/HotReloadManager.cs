@@ -20,7 +20,6 @@ public sealed class HotReloadManager : IHotReloadManager
 
     public void FireBeforeUpdate(Type[]? types)
     {
-        Console.WriteLine("[Natrix] BeforeUpdate — old code still in memory 2");
         OnBeforeDeltaApplied?.Invoke(types);
     }
 
