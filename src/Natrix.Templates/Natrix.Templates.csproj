@@ -1,6 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net10.0</TargetFrameworks>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
 
     <!-- Ensure hidden template directories like .template.config are packable. -->
@@ -10,6 +9,11 @@
     <IsPackable>true</IsPackable>
     <PackageType>Template</PackageType>
     <PackageId>Natrix.Templates</PackageId>
+
+    <!-- Template packages carry no assemblies and take no dependencies. -->
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+
     <Version>$(NatrixTemplatesVersion)</Version>
     <Authors>miroljub1995</Authors>
     <Description>dotnet new templates for Natrix applications, including a docs-style server + client scaffold with Tailwind CSS.</Description>
