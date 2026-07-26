@@ -1,5 +1,5 @@
 {
-  "$schema": "http://json.schemastore.org/template",
+  "$schema": "https://json.schemastore.org/template",
   "author": "miroljub1995",
   "classifications": [
     "Web",
@@ -16,5 +16,27 @@
   "tags": {
     "language": "C#",
     "type": "project"
+  },
+  "symbols": {
+    "Framework": {
+      "type": "parameter",
+      "description": "The target framework for the project.",
+      "datatype": "choice",
+      "choices": [
+        {
+          "choice": "net10.0",
+          "description": "Target net10.0",
+          "displayName": ".NET 10.0"
+        },
+        {
+          "choice": "net9.0",
+          "description": "Target net9.0",
+          "displayName": ".NET 9.0"
+        }
+      ],
+      "defaultValue": "net10.0",
+      "replaces": "net10.0",
+      "displayName": "Framework"
+    }
   }
 }

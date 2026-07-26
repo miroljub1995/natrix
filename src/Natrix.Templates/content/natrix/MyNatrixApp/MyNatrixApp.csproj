@@ -1,11 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-    <PropertyGroup>
-        <TargetFrameworks>net10.0</TargetFrameworks>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <PublishAot Condition="'$(Configuration)' != 'Debug'">true</PublishAot>
-    </PropertyGroup>
-
     <ItemGroup>
         <ProjectReference Include="..\MyNatrixApp.Client\MyNatrixApp.Client.csproj" />
     </ItemGroup>

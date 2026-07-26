@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run: MyNatrixApp",
+            "type": "coreclr",
+            "request": "launch",
+            "program": "${workspaceFolder}/MyNatrixApp/bin/Debug/net10.0/MyNatrixApp.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/MyNatrixApp",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "preLaunchTask": "build: MyNatrixApp",
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(https?://\\S+)"
+            }
+        }
+    ]
+}
