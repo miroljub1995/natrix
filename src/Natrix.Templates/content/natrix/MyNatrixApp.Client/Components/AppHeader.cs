@@ -81,6 +81,29 @@ public class AppHeader : BaseComponent<AppHeaderProps, NoEvents, NoSlots, NoExpo
                                     },
                                 ],
                             },
+                            // Desktop navigation
+                            new Nav
+                            {
+                                Props = new NavProps
+                                {
+                                    Class = "hidden md:flex items-center gap-1".ToConstSignal(),
+                                },
+                                Children =
+                                [
+                                    new NavItems
+                                    {
+                                        Props = new NavItemsProps
+                                        {
+                                            LinkClass = "px-3 py-2 rounded-lg text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors".ToConstSignal(),
+                                            ActiveLinkClass = "px-3 py-2 rounded-lg text-sm font-medium text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950 transition-colors".ToConstSignal(),
+                                        },
+                                        Events = new NavItemsEvents
+                                        {
+                                            OnNavigate = () => mobileMenuOpen.Value = false,
+                                        },
+                                    },
+                                ],
+                            },
                             // Mobile burger button
                             new Button
                             {
@@ -133,9 +156,9 @@ public class AppHeader : BaseComponent<AppHeaderProps, NoEvents, NoSlots, NoExpo
                         ],
                     },
                     // Mobile menu
-                    new Div
+                    new Nav
                     {
-                        Props = new DivProps
+                        Props = new NavProps
                         {
                             Class = mobileMenuClass,
                         },

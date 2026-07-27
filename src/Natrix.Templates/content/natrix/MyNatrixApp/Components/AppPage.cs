@@ -39,6 +39,23 @@ public class AppPage : BaseComponent<AppPageProps, NoEvents, NoSlots, NoExpose>
                                     Content = "text/html; charset=utf-8".ToConstSignal(),
                                 },
                             },
+                            new Meta
+                            {
+                                Props = new MetaProps
+                                {
+                                    Name = "viewport".ToConstSignal(),
+                                    Content = "width=device-width, initial-scale=1".ToConstSignal(),
+                                },
+                            },
+                            new Link
+                            {
+                                Props = new LinkProps
+                                {
+                                    Rel = "icon".ToConstSignal(),
+                                    Type = "image/svg+xml".ToConstSignal(),
+                                    Href = WwwRoot.Assets_Icon_Svg.ToConstSignal(),
+                                },
+                            },
                             new Title
                             {
                                 Props = new TitleProps(),
