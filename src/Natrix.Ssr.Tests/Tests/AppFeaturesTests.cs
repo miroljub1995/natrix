@@ -269,7 +269,7 @@ public class AppFeaturesTests
     public async Task ForEach_per_item_layering_no_bleed()
     {
         var observedByKey = new Dictionary<int, User?>();
-        var items = new Signal<IList<int>>([1, 2]);
+        var items = new Signal<IReadOnlyList<int>>([1, 2]);
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(new SsrRenderRoot())
@@ -317,7 +317,7 @@ public class AppFeaturesTests
     public async Task ForEach_item_added_after_outermost_mount_sees_parent_features()
     {
         var observedByKey = new Dictionary<int, Theme?>();
-        var items = new Signal<IList<int>>([1]);
+        var items = new Signal<IReadOnlyList<int>>([1]);
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(new SsrRenderRoot())

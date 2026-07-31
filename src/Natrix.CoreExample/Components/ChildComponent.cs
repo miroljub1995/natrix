@@ -129,7 +129,7 @@ public class ChildComponent : BaseComponent<ChildComponentProps, ChildComponentE
             },
             new ForEach<(int Index, char Char), (int Index, char Char)>
             {
-                Items = new Computed<IList<(int Index, char Char)>>(() =>
+                Items = new Computed<IReadOnlyList<(int Index, char Char)>>(() =>
                     fullnameWithIndex.Value.Select((c, i) => (Index: i, Char: c)).ToList()),
                 Key = item => item,
                 ElementSetup = item =>

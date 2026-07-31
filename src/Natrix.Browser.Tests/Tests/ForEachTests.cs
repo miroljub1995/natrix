@@ -13,7 +13,7 @@ public class ForEachTests
     private sealed class Harness : IDisposable
     {
         public required Element Container { get; init; }
-        public required Signal<IList<string>> Items { get; init; }
+        public required Signal<IReadOnlyList<string>> Items { get; init; }
         public required Dictionary<string, int> MountedCounts { get; init; }
         public required Dictionary<string, int> UnmountedCounts { get; init; }
         public required Dictionary<string, int> SetupCounts { get; init; }
@@ -22,10 +22,10 @@ public class ForEachTests
         public void Dispose() => Host.Dispose();
     }
 
-    private static Harness BuildHost(IList<string> initial)
+    private static Harness BuildHost(IReadOnlyList<string> initial)
     {
         var container = DomHelpers.CreateContainer();
-        var items = new Signal<IList<string>>(initial);
+        var items = new Signal<IReadOnlyList<string>>(initial);
         var mounted = new Dictionary<string, int>();
         var unmounted = new Dictionary<string, int>();
         var setupCounts = new Dictionary<string, int>();
@@ -309,16 +309,16 @@ public class ForEachTests
     private sealed class MultiSlotHarness : IDisposable
     {
         public required Element Container { get; init; }
-        public required Signal<IList<string>> Items { get; init; }
+        public required Signal<IReadOnlyList<string>> Items { get; init; }
         public required IDisposable Host { get; init; }
 
         public void Dispose() => Host.Dispose();
     }
 
-    private static MultiSlotHarness BuildMultiSlotHost(IList<string> initial)
+    private static MultiSlotHarness BuildMultiSlotHost(IReadOnlyList<string> initial)
     {
         var container = DomHelpers.CreateContainer();
-        var items = new Signal<IList<string>>(initial);
+        var items = new Signal<IReadOnlyList<string>>(initial);
 
         var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
@@ -444,7 +444,7 @@ public class ForEachTests
     {
         // Use (key, payload) tuples so we can change the element payload while keeping the key.
         var container = DomHelpers.CreateContainer();
-        var items = new Signal<IList<(string Key, string Payload)>>(
+        var items = new Signal<IReadOnlyList<(string Key, string Payload)>>( 
             [("a", "A1"), ("b", "B1")]);
         var setupCounts = new Dictionary<string, int>();
         var mountedCounts = new Dictionary<string, int>();
@@ -526,7 +526,7 @@ public class ForEachTests
     {
         var container = DomHelpers.CreateContainer();
         var condition = new Signal<bool>(true);
-        var items = new Signal<IList<string>>(["a", "b", "c"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b", "c"]);
         var mounted = new Dictionary<string, int>();
         var unmounted = new Dictionary<string, int>();
 
@@ -599,7 +599,7 @@ public class ForEachTests
         // tracked by ForEach's effect, that write would re-enter the effect while the
         // list is still being built and mount the items a second time.
         var container = DomHelpers.CreateContainer();
-        var items = new Signal<IList<string>>(["a", "b"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b"]);
         var count = new Signal<int>(0);
         var mounted = new Dictionary<string, int>();
 

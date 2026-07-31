@@ -88,7 +88,7 @@ public class HydrationOnMountedTests
         });
     }
 
-    private static ForEach<string, string> CreateForEach(IReadOnlySignal<IList<string>> items) => new()
+    private static ForEach<string, string> CreateForEach(IReadOnlySignal<IReadOnlyList<string>> items) => new()
     {
         Items = items,
         Key = s => s,
@@ -108,7 +108,7 @@ public class HydrationOnMountedTests
         // SSR: <!--[--><ul><!--[--><li>a</li><li>b</li><!--]--></ul><!--]-->
         var container = CreateContainerWithHtml(
             "<!--[--><ul><!--[--><li>a</li><li>b</li><!--]--></ul><!--]-->");
-        var items = new Signal<IList<string>>(["a", "b"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b"]);
 
         using var _ = BuildMutatingHost(
             container,
@@ -129,7 +129,7 @@ public class HydrationOnMountedTests
     {
         var container = CreateContainerWithHtml(
             "<!--[--><ul><!--[--><li>a</li><li>b</li><li>c</li><!--]--></ul><!--]-->");
-        var items = new Signal<IList<string>>(["a", "b", "c"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b", "c"]);
 
         using var _ = BuildMutatingHost(
             container,
@@ -243,7 +243,7 @@ public class HydrationOnMountedTests
         var cssClass = new Signal<string>("initial");
         var text = new Signal<string>("initial");
         var condition = new Signal<bool>(false);
-        var items = new Signal<IList<string>>(["a", "b"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b"]);
 
         using var _ = BuildMutatingHost(
             container,

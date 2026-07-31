@@ -41,7 +41,7 @@ public class HydrationForEachTests
             .Build();
     }
 
-    private static ForEach<string, string> CreateForEach(Signal<IList<string>> items) => new()
+    private static ForEach<string, string> CreateForEach(Signal<IReadOnlyList<string>> items) => new()
     {
         Items = items,
         Key = s => s,
@@ -60,7 +60,7 @@ public class HydrationForEachTests
     {
         // SSR output: <ul><!--[--><li>a</li><li>b</li><li>c</li><!--]--></ul>
         var container = CreateContainerWithHtml("<ul><!--[--><li>a</li><li>b</li><li>c</li><!--]--></ul>");
-        var items = new Signal<IList<string>>(["a", "b", "c"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b", "c"]);
 
         using var _ = BuildHydrationHost(container, () => new Ul
         {
@@ -82,7 +82,7 @@ public class HydrationForEachTests
     {
         // SSR output with no items: <ul><!--[--><!--]--></ul>
         var container = CreateContainerWithHtml("<ul><!--[--><!--]--></ul>");
-        var items = new Signal<IList<string>>([]);
+        var items = new Signal<IReadOnlyList<string>>([]);
 
         using var _ = BuildHydrationHost(container, () => new Ul
         {
@@ -100,7 +100,7 @@ public class HydrationForEachTests
         // SSR output: <ul><!--[--><li>a</li><li>b</li><!--]--><li>static</li></ul>
         var container = CreateContainerWithHtml(
             "<ul><!--[--><li>a</li><li>b</li><!--]--><li>static</li></ul>");
-        var items = new Signal<IList<string>>(["a", "b"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b"]);
 
         using var _ = BuildHydrationHost(container, () => new Ul
         {
@@ -127,7 +127,7 @@ public class HydrationForEachTests
     public async Task Hydrated_ForEach_stays_reactive()
     {
         var container = CreateContainerWithHtml("<ul><!--[--><li>a</li><li>b</li><!--]--></ul>");
-        var items = new Signal<IList<string>>(["a", "b"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b"]);
 
         using var _ = BuildHydrationHost(container, () => new Ul
         {
@@ -155,7 +155,7 @@ public class HydrationForEachTests
     {
         // SSR rendered 2 items but the client has 3.
         var container = CreateContainerWithHtml("<ul><!--[--><li>a</li><li>b</li><!--]--></ul>");
-        var items = new Signal<IList<string>>(["a", "b", "c"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b", "c"]);
 
         var act = () =>
         {

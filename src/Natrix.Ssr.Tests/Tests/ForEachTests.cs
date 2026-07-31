@@ -11,7 +11,7 @@ public class ForEachTests
 {
     // Each item renders two <span> elements so that ComposedComponent holds
     // multiple slots per item — the same configuration that exercises MoveRangeAfter.
-    private static ForEach<string, string> MultiSlotForEach(IReadOnlySignal<IList<string>> items) =>
+    private static ForEach<string, string> MultiSlotForEach(IReadOnlySignal<IReadOnlyList<string>> items) =>
         new()
         {
             Items = items,
@@ -27,7 +27,7 @@ public class ForEachTests
     public async Task Renders_initial_multi_slot_items()
     {
         var root = new SsrRenderRoot();
-        var items = new Signal<IList<string>>(["a", "b", "c"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b", "c"]);
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(root)
@@ -49,7 +49,7 @@ public class ForEachTests
     public async Task Reorder_moves_all_slots_for_each_item()
     {
         var root = new SsrRenderRoot();
-        var items = new Signal<IList<string>>(["a", "b", "c"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b", "c"]);
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(root)
@@ -73,7 +73,7 @@ public class ForEachTests
     public async Task Reorder_to_start_moves_all_slots()
     {
         var root = new SsrRenderRoot();
-        var items = new Signal<IList<string>>(["b", "c"]);
+        var items = new Signal<IReadOnlyList<string>>(["b", "c"]);
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(root)
@@ -97,7 +97,7 @@ public class ForEachTests
     public async Task Reverse_order_moves_all_slots()
     {
         var root = new SsrRenderRoot();
-        var items = new Signal<IList<string>>(["a", "b", "c"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b", "c"]);
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(root)
@@ -121,7 +121,7 @@ public class ForEachTests
     public async Task Remove_item_with_multiple_slots()
     {
         var root = new SsrRenderRoot();
-        var items = new Signal<IList<string>>(["a", "b", "c"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b", "c"]);
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(root)
@@ -144,7 +144,7 @@ public class ForEachTests
     public async Task Insert_in_middle_places_all_slots_correctly()
     {
         var root = new SsrRenderRoot();
-        var items = new Signal<IList<string>>(["a", "c"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "c"]);
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(root)

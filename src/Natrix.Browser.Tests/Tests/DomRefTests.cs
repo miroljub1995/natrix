@@ -145,7 +145,7 @@ public class DomRefTests
         // SSR: <!--[--><div>content</div><ul><!--[--><li>a</li><li>b</li><!--]--></ul><!--]-->
         var container = CreateContainerWithHtml(
             "<!--[--><div>content</div><ul><!--[--><li>a</li><li>b</li><!--]--></ul><!--]-->");
-        var items = new Signal<IList<string>>(["a", "b"]);
+        var items = new Signal<IReadOnlyList<string>>(["a", "b"]);
 
         using var _ = BuildHydrationHost(container, () => new RefProbe
         {
