@@ -34,6 +34,8 @@ public class If : IComponent
             {
                 var value = Condition.Value;
 
+                using var untracked = new UntrackedScope();
+
                 if (current is not null && current.Value == value)
                 {
                     return;

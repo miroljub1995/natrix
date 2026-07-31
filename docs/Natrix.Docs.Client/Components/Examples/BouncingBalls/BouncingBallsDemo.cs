@@ -18,20 +18,7 @@ public class BouncingBallsDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExp
         exposed = default;
 
         var canvasRef = new Signal<HTMLCanvasElement?>(null);
-        var ballCount = new Signal<int>(0);
         var field = new BallField { Width = CanvasWidth, Height = CanvasHeight };
-
-        void AddBall()
-        {
-            field.Add();
-            ballCount.Value = field.Count;
-        }
-
-        void ClearBalls()
-        {
-            field.Clear();
-            ballCount.Value = field.Count;
-        }
 
         OnMounted(onUnmounted =>
         {
@@ -40,13 +27,13 @@ public class BouncingBallsDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExp
                 return;
             }
 
-            var canvas = canvasRef.Value;
-            if (canvas is null)
+            for (var i = 0; i < 5; i++)
             {
-                return;
+                field.Add();
             }
 
-            StartAnimation(canvas, field, AddBall, ClearBalls, onUnmounted);
+            var canvas = canvasRef.Value ?? throw new InvalidOperationException("Canvas ref was null on mount.");
+            StartAnimation(canvas, field, onUnmounted);
         });
 
         return
@@ -68,7 +55,7 @@ public class BouncingBallsDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExp
                             {
                                 Width = CanvasWidth.ToConstSignal(),
                                 Height = CanvasHeight.ToConstSignal(),
-                                Class = "block w-full h-auto rounded-md border border-gray-200 dark:border-gray-700 bg-white".ToConstSignal(),
+                                Class = "mx-auto block w-full md:w-3/4 lg:w-2/3 xl:w-1/2 lg:max-h-[41vh] h-auto rounded-md border border-gray-200 dark:border-gray-700 bg-white".ToConstSignal(),
                             },
                         },
                         new Div
@@ -85,7 +72,7 @@ public class BouncingBallsDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExp
                                     {
                                         Label = "Add Ball".ToConstSignal(),
                                     },
-                                    Events = new DemoButtonEvents { OnClick = AddBall },
+                                    Events = new DemoButtonEvents { OnClick = field.Add },
                                 },
                                 new DemoButton
                                 {
@@ -94,7 +81,7 @@ public class BouncingBallsDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExp
                                         Label = "Clear All".ToConstSignal(),
                                         Variant = DemoButtonVariant.Secondary.ToConstSignal(),
                                     },
-                                    Events = new DemoButtonEvents { OnClick = ClearBalls },
+                                    Events = new DemoButtonEvents { OnClick = field.Clear },
                                 },
                                 new Span
                                 {
@@ -106,7 +93,7 @@ public class BouncingBallsDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExp
                                     [
                                         new DomText
                                         {
-                                            Text = new Computed<string>(() => $"Balls: {ballCount.Value}"),
+                                            Text = new Computed<string>(() => $"Balls: {field.Balls.Count}"),
                                         },
                                     ],
                                 },
@@ -122,8 +109,6 @@ public class BouncingBallsDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExp
     private static void StartAnimation(
         HTMLCanvasElement canvas,
         BallField field,
-        Action addBall,
-        Action clearBalls,
         Action<Action> onUnmounted)
     {
         CanvasRenderingContext2D? ctx = null;
@@ -133,11 +118,6 @@ public class BouncingBallsDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExp
         }
 
         var window = JSObjectProxyFactory.GetProxy<Window>(JSHost.GlobalThis);
-
-        for (var i = 0; i < 5; i++)
-        {
-            addBall();
-        }
 
         var stopped = false;
         uint handle = 0;
@@ -163,7 +143,6 @@ public class BouncingBallsDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExp
         {
             stopped = true;
             window.CancelAnimationFrame(handle);
-            clearBalls();
         });
     }
 

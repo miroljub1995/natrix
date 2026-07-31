@@ -129,6 +129,8 @@ public sealed class Teleport : IComponent
 
                 var wantTarget = !disabled; // ts is non-null whenever wantTarget is true
 
+                using var untracked = new UntrackedScope();
+
                 // Move the bracket slots to the desired location.
                 // On first render the slots are empty so this only relinks the
                 // list — no DOM nodes are touched. On subsequent renders this

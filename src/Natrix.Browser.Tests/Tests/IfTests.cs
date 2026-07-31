@@ -413,4 +413,50 @@ public class IfTests
             ["odd"] = 1,
         });
     }
+
+    [Test]
+    public async Task Branch_writing_its_own_signal_from_mounted_hook_does_not_remount()
+    {
+        // The branch renders `count` and a mounted hook writes it. If mounting were
+        // tracked by If's effect, that write would re-enter the effect and mount the
+        // branch a second time into the same slot.
+        var container = DomHelpers.CreateContainer();
+        var count = new Signal<int>(0);
+        var mountedCount = 0;
+
+        using var host = new NatrixHostBuilder()
+            .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
+            .UseRootComponent(() => new If
+            {
+                Condition = new Signal<bool>(true),
+                Then = () =>
+                [
+                    new Span
+                    {
+                        Children =
+                        [
+                            new DomText { Text = new Computed<string>(() => $"count: {count.Value}") },
+                        ],
+                    },
+                    new LifecycleProbe
+                    {
+                        Props = new LifecycleProbeProps
+                        {
+                            OnMounted = () =>
+                            {
+                                mountedCount++;
+                                count.Value = 5;
+                            },
+                        },
+                    },
+                ],
+            })
+            .Build()
+            .Mount();
+
+        await Assert.That(mountedCount).IsEqualTo(1);
+        await Assert.That(container.ChildElementCount).IsEqualTo(1u);
+        await Assert.That(container.TextContent).IsEqualTo("count: 5");
+    }
 }

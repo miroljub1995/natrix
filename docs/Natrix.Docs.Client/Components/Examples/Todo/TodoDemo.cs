@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using Natrix.Core.Components;
 using Natrix.Dom.Components;
 using Natrix.Signals;
@@ -10,34 +11,29 @@ public class TodoDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpose>
     {
         exposed = default;
 
-        var nextId = 0;
+        TodoItem Create(string text) => new(Guid.NewGuid(), text);
 
-        TodoItem Create(string text) => new(nextId++, text);
-
-        var todos = new Signal<IList<TodoItem>>(
+        var todos = new Signal<ImmutableList<TodoItem>>(
         [
             Create("Learn Natrix framework"),
             Create("Build awesome WebAssembly apps"),
             Create("Share with the community"),
         ]);
 
-        var draft = new Signal<string>("");
-
-        void AddTodo()
+        void AddTodo(string draftValue)
         {
-            var text = draft.Value.Trim();
+            var text = draftValue.Trim();
             if (text.Length == 0)
             {
                 return;
             }
 
-            todos.Value = [.. todos.Value, Create(text)];
-            draft.Value = "";
+            todos.Value = todos.Value.Add(Create(text));
         }
 
-        void RemoveTodo(int id)
+        void RemoveTodo(Guid id)
         {
-            todos.Value = [.. todos.Value.Where(t => t.Id != id)];
+            todos.Value = todos.Value.RemoveAll(t => t.Id == id);
         }
 
         return
@@ -54,8 +50,11 @@ public class TodoDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpose>
                     [
                         new TodoInput
                         {
-                            Props = new TodoInputProps { Draft = draft },
-                            Events = new TodoInputEvents { OnSubmit = AddTodo },
+                            Props = new TodoInputProps(),
+                            Events = new TodoInputEvents
+                            {
+                                OnSubmit = AddTodo,
+                            },
                         },
                         new Ul
                         {
@@ -65,7 +64,7 @@ public class TodoDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpose>
                             },
                             Children =
                             [
-                                new ForEach<TodoItem, int>
+                                new ForEach<TodoItem, Guid>
                                 {
                                     Items = todos,
                                     Key = item => item.Id,

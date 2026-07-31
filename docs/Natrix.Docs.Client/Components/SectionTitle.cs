@@ -28,7 +28,7 @@ public class SectionTitle : BaseComponent<SectionTitleProps, NoEvents, SectionTi
                 Props = new H2Props
                 {
                     Id = Props.Id,
-                    Class = "group text-2xl font-bold text-gray-900 dark:text-white mt-4 border-t border-gray-200 dark:border-gray-700 pt-4 mb-4".ToConstSignal(),
+                    Class = "group relative text-2xl font-bold text-gray-900 dark:text-white mt-4 border-t border-gray-200 dark:border-gray-700 pt-4 mb-4".ToConstSignal(),
                 },
                 Children =
                 [
@@ -37,7 +37,7 @@ public class SectionTitle : BaseComponent<SectionTitleProps, NoEvents, SectionTi
                         Props = new AProps
                         {
                             Href = new Computed<string>(() => $"#{Props.Id.Value}"),
-                            Class = "opacity-0 group-hover:opacity-100 text-indigo-400 dark:text-indigo-500 no-underline transition-opacity mr-2".ToConstSignal(),
+                            Class = "absolute -left-6 opacity-0 group-hover:opacity-100 text-indigo-400 dark:text-indigo-500 no-underline transition-opacity".ToConstSignal(),
                         },
                         Children = [new DomText { Text = "#".ToConstSignal() }],
                     },
@@ -48,7 +48,7 @@ public class SectionTitle : BaseComponent<SectionTitleProps, NoEvents, SectionTi
             {
                 Props = new DivProps
                 {
-                    Class = "pl-7".ToConstSignal(),
+                    Class = "".ToConstSignal(),
                 },
                 Children = Slots?.Default() ?? [],
             },

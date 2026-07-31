@@ -187,4 +187,63 @@ public class TeleportTests
         await Assert.That(innerDiv.TextContent).IsEqualTo("neighbor");
         await Assert.That(container.TextContent).IsEqualTo("contentneighbor");
     }
+
+    [Test]
+    public async Task Child_writing_its_own_signal_from_mounted_hook_does_not_remount()
+    {
+        // Teleported children render `count` and a mounted hook writes it. If mounting
+        // were tracked by Teleport's effect, that write would re-enter the effect and
+        // mount the children a second time.
+        var container = DomHelpers.CreateContainer();
+        var count = new Signal<int>(0);
+        var mountedCount = 0;
+
+        using var host = new NatrixHostBuilder()
+            .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
+            .UseTeleport()
+            .UseRootComponent(() =>
+            {
+                var teleportSlot = Teleport.CreateTeleport();
+                return new Div
+                {
+                    Children =
+                    [
+                        new Teleport
+                        {
+                            Children =
+                            [
+                                new Span
+                                {
+                                    Children =
+                                    [
+                                        new DomText
+                                        {
+                                            Text = new Computed<string>(() => $"count: {count.Value}"),
+                                        },
+                                    ],
+                                },
+                                new LifecycleProbe
+                                {
+                                    Props = new LifecycleProbeProps
+                                    {
+                                        OnMounted = () =>
+                                        {
+                                            mountedCount++;
+                                            count.Value = 5;
+                                        },
+                                    },
+                                },
+                            ],
+                        },
+                        teleportSlot,
+                    ],
+                };
+            })
+            .Build()
+            .Mount();
+
+        await Assert.That(mountedCount).IsEqualTo(1);
+        await Assert.That(container.TextContent).IsEqualTo("count: 5");
+    }
 }

@@ -12,7 +12,7 @@ public class TodoItemRowProps
 [GeneratedEvents]
 public partial class TodoItemRowEvents
 {
-    public partial void Remove(int id);
+    public partial void Remove(Guid id);
 }
 
 /// <summary>
@@ -48,7 +48,7 @@ public class TodoItemRow : BaseComponent<TodoItemRowProps, TodoItemRowEvents, No
                         Props = new DemoButtonProps
                         {
                             Label = "Remove".ToConstSignal(),
-                            Variant = DemoButtonVariant.Ghost.ToConstSignal(),
+                            Variant = DemoButtonVariant.Secondary.ToConstSignal(),
                             Title = "Remove task".ToConstSignal(),
                             ExtraClass = "shrink-0".ToConstSignal(),
                         },

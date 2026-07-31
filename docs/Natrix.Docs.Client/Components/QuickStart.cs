@@ -19,7 +19,7 @@ public class QuickStart : BaseComponent<QuickStartProps, NoEvents, NoSlots, NoEx
                 Props = new H1Props
                 {
                     Id = "quick-start".ToConstSignal(),
-                    Class = "group text-4xl font-bold text-gray-900 dark:text-white mb-6".ToConstSignal(),
+                    Class = "group relative text-4xl font-bold text-gray-900 dark:text-white mb-6".ToConstSignal(),
                 },
                 Children =
                 [
@@ -28,7 +28,7 @@ public class QuickStart : BaseComponent<QuickStartProps, NoEvents, NoSlots, NoEx
                         Props = new AProps
                         {
                             Href = "#quick-start".ToConstSignal(),
-                            Class = "opacity-0 group-hover:opacity-100 text-indigo-400 dark:text-indigo-500 no-underline transition-opacity mr-2".ToConstSignal(),
+                            Class = "absolute -left-6 opacity-0 group-hover:opacity-100 text-indigo-400 dark:text-indigo-500 no-underline transition-opacity".ToConstSignal(),
                         },
                         Children = [new DomText { Text = "#".ToConstSignal() }],
                     },

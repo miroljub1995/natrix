@@ -24,6 +24,7 @@ public class HtmlElementComponentEvents<TElement> : ElementComponentEvents<TElem
     public Action<CommandEvent>? OnCommand { get; init; }
     public Action<ErrorEvent>? OnError { get; init; }
     public Action<Event>? OnLoad { get; init; }
+    public Action<SubmitEvent>? OnSubmit { get; init; }
 
     [SupportedOSPlatform("browser")]
     protected internal override void RegisterClientEffects(Action<Func<TElement, Action>> register)
@@ -61,5 +62,7 @@ public class HtmlElementComponentEvents<TElement> : ElementComponentEvents<TElem
             RegisterEventListener(register, OnError, "error");
         if (OnLoad is not null)
             RegisterEventListener(register, OnLoad, "load");
+        if (OnSubmit is not null)
+            RegisterEventListener(register, OnSubmit, "submit");
     }
 }

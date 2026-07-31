@@ -6,7 +6,7 @@ namespace Natrix.Core.Components;
 
 public class ForEach<TElement, TKey> : IComponent where TKey : notnull
 {
-    public required IReadOnlySignal<IList<TElement>> Items { get; init; }
+    public required IReadOnlySignal<IReadOnlyList<TElement>> Items { get; init; }
     public required Func<TElement, TKey> Key { get; init; }
     public required Func<IReadOnlySignal<TElement>, IComponent[]> ElementSetup { get; init; }
     public IEqualityComparer<TKey> Comparer { get; init; } = EqualityComparer<TKey>.Default;
@@ -65,6 +65,8 @@ public class ForEach<TElement, TKey> : IComponent where TKey : notnull
             new Effect(_ =>
             {
                 var newItems = Items.Value;
+
+                using var untracked = new UntrackedScope();
 
                 // Throw on duplicate keys
                 var seenKeys = new HashSet<TKey>(Comparer);

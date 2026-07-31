@@ -591,4 +591,60 @@ public class ForEachTests
             ["c"] = 1,
         });
     }
+
+    [Test]
+    public async Task Item_writing_a_shared_signal_from_mounted_hook_does_not_remount()
+    {
+        // Items render `count` and their mounted hook writes it. If mounting were
+        // tracked by ForEach's effect, that write would re-enter the effect while the
+        // list is still being built and mount the items a second time.
+        var container = DomHelpers.CreateContainer();
+        var items = new Signal<IList<string>>(["a", "b"]);
+        var count = new Signal<int>(0);
+        var mounted = new Dictionary<string, int>();
+
+        using var host = new NatrixHostBuilder()
+            .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
+            .UseRootComponent(() => new ForEach<string, string>
+            {
+                Items = items,
+                Key = s => s,
+                ElementSetup = s =>
+                {
+                    var key = s.Value;
+                    return
+                    [
+                        new Span
+                        {
+                            Children =
+                            [
+                                new DomText { Text = new Computed<string>(() => $"{key}{count.Value}") },
+                            ],
+                        },
+                        new LifecycleProbe
+                        {
+                            Props = new LifecycleProbeProps
+                            {
+                                OnMounted = () =>
+                                {
+                                    mounted[key] = mounted.GetValueOrDefault(key) + 1;
+                                    count.Value++;
+                                },
+                            },
+                        },
+                    ];
+                },
+            })
+            .Build()
+            .Mount();
+
+        await Assert.That(container.ChildElementCount).IsEqualTo(2u);
+        await Assert.That(mounted).IsEquivalentTo(new Dictionary<string, int>
+        {
+            ["a"] = 1,
+            ["b"] = 1,
+        });
+        await Assert.That(container.TextContent).IsEqualTo("a2b2");
+    }
 }
