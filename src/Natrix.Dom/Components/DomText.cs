@@ -2,7 +2,9 @@ using System.Runtime.InteropServices.JavaScript;
 using System.Runtime.Versioning;
 using Natrix.Core;
 using Natrix.Core.Components;
+using Natrix.Core.Features;
 using Natrix.Core.RenderRoot;
+using Natrix.Ssr.Abstractions.Features.RawText;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.JSCore;
 using Natrix.Signals;
@@ -54,7 +56,11 @@ public class DomText : IComponent
         }
         else if (root is ISsrRenderSlot ssrRenderSlot)
         {
-            var node = new SsrTextNode { TextContent = Text };
+            // Inside raw text elements (script, style) the HTML parser does not decode
+            // character references, so the content must be written verbatim.
+            var raw = AppFeatures.Current?.Get<ISsrRawTextFeature>()?.IsRawText ?? false;
+
+            var node = new SsrTextNode { TextContent = Text, Raw = raw };
 
             ssrRenderSlot.Populate(node);
         }

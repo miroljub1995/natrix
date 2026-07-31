@@ -1,4 +1,5 @@
 using System.Runtime.Versioning;
+using Natrix.Core.Components;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -60,4 +61,12 @@ public class StyleEvents : HtmlElementComponentEvents<HTMLStyleElement>
 
 public class Style() : BaseNonVoidDomComponent<HTMLStyleElement, StyleProps, StyleEvents>("style")
 {
+    protected override IComponent[]? GetChildren()
+    {
+        var children = base.GetChildren();
+
+        return children is { Length: > 0 }
+            ? [new SsrRawTextScope { Children = children }]
+            : children;
+    }
 }

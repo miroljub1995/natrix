@@ -32,6 +32,7 @@ public class ForEachTests
 
         var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new ForEach<string, string>
             {
                 Items = items,
@@ -321,6 +322,7 @@ public class ForEachTests
 
         var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new ForEach<string, string>
             {
                 Items = items,
@@ -450,6 +452,7 @@ public class ForEachTests
 
         using var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new ForEach<(string Key, string Payload), string>
             {
                 Items = items,
@@ -529,6 +532,7 @@ public class ForEachTests
 
         using var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new If
             {
                 Condition = condition,

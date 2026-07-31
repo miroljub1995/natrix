@@ -41,6 +41,7 @@ public class DomComponentChildOrderTests
 
         using var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new Div
             {
                 Children =
@@ -69,6 +70,7 @@ public class DomComponentChildOrderTests
 
         using var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new Div
             {
                 Children =

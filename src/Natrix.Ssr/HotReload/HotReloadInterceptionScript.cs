@@ -82,7 +82,7 @@ public sealed class HotReloadInterceptionScript : IComponent
             var childRoot = ssrRenderSlot.CreateChildRoot(scriptNode);
             if (childRoot.CreateFirstSlot() is ISsrRenderSlot textSlot)
             {
-                textSlot.Populate(new SsrTextNode { TextContent = new Signal<string>(ScriptContent) });
+                textSlot.Populate(new SsrTextNode { TextContent = new Signal<string>(ScriptContent), Raw = true });
             }
             ssrRenderSlot.Populate(scriptNode);
         }

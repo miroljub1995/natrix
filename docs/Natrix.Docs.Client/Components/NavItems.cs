@@ -8,6 +8,8 @@ namespace Natrix.Docs.Client.Components;
 
 internal record NavItem(string Label, string Href);
 
+internal record NavGroup(string? Label, NavItem[] Items);
+
 public class NavItemsProps
 {
     public required string LinkClass { get; init; }
@@ -22,10 +24,18 @@ public partial class NavItemsEvents
 
 public class NavItems : BaseComponent<NavItemsProps, NavItemsEvents, NoSlots, NoExpose>
 {
-    internal static readonly NavItem[] All =
+    internal static readonly NavGroup[] Groups =
     [
-        new("Home", "/"),
-        new("Quick Start", "/quick-start"),
+        new(null,
+        [
+            new("Home", "/"),
+            new("Quick Start", "/quick-start"),
+        ]),
+        new("Examples",
+        [
+            new("Todo List", "/examples/todo"),
+            new("Canvas", "/examples/canvas"),
+        ]),
     ];
 
     protected override IComponent[] Setup(out NoExpose exposed)
@@ -35,32 +45,51 @@ public class NavItems : BaseComponent<NavItemsProps, NavItemsEvents, NoSlots, No
         var navigation = AppFeatures.Features.Get<INavigationFeature>()
             ?? throw new InvalidOperationException("INavigationFeature is not registered.");
 
-        return All.Select(item =>
-        {
-            var computedClass = new Computed<string>(() =>
-                navigation.CurrentPath.Value == item.Href
-                    ? Props.ActiveLinkClass
-                    : Props.LinkClass);
+        var components = new List<IComponent>();
 
-            return (IComponent)new A
+        foreach (var group in Groups)
+        {
+            if (group.Label is { } label)
             {
-                Props = new AProps
+                components.Add(new Div
                 {
-                    Href = item.Href.ToConstSignal(),
-                    Class = computedClass,
-                },
-                Events = new AEvents
-                {
-                    OnClick = (e) =>
+                    Props = new DivProps
                     {
-                        if (!OperatingSystem.IsBrowser()) return;
-                        e.PreventDefault();
-                        Events?.Navigate();
-                        navigation.PushAsync(item.Href);
+                        Class = "px-3 pt-4 pb-1 text-xs font-semibold uppercase tracking-wide text-gray-400 dark:text-gray-500".ToConstSignal(),
                     },
-                },
-                Children = [new DomText { Text = item.Label.ToConstSignal() }],
-            };
-        }).ToArray();
+                    Children = [new DomText { Text = label.ToConstSignal() }],
+                });
+            }
+
+            foreach (var item in group.Items)
+            {
+                var computedClass = new Computed<string>(() =>
+                    navigation.CurrentPath.Value == item.Href
+                        ? Props.ActiveLinkClass
+                        : Props.LinkClass);
+
+                components.Add(new A
+                {
+                    Props = new AProps
+                    {
+                        Href = item.Href.ToConstSignal(),
+                        Class = computedClass,
+                    },
+                    Events = new AEvents
+                    {
+                        OnClick = (e) =>
+                        {
+                            if (!OperatingSystem.IsBrowser()) return;
+                            e.PreventDefault();
+                            Events?.Navigate();
+                            navigation.PushAsync(item.Href);
+                        },
+                    },
+                    Children = [new DomText { Text = item.Label.ToConstSignal() }],
+                });
+            }
+        }
+
+        return [.. components];
     }
 }

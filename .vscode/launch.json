@@ -28,34 +28,6 @@
             "preLaunchTask": "build: Natrix.WebIDLGenerator.Tests"
         },
         {
-            "name": "Run: Natrix.TodoExample (Browser)",
-            "type": "coreclr",
-            "request": "launch",
-            "program": "dotnet",
-            "args": [
-                "run",
-                "--framework",
-                "net10.0"
-            ],
-            "cwd": "${workspaceFolder}/examples/Natrix.TodoExample",
-            "stopAtEntry": false,
-            "preLaunchTask": "build: Natrix.TodoExample"
-        },
-        {
-            "name": "Run: Natrix.CanvasExample (Browser)",
-            "type": "coreclr",
-            "request": "launch",
-            "program": "dotnet",
-            "args": [
-                "run",
-                "--framework",
-                "net10.0"
-            ],
-            "cwd": "${workspaceFolder}/examples/Natrix.CanvasExample",
-            "stopAtEntry": false,
-            "preLaunchTask": "build: Natrix.CanvasExample"
-        },
-        {
             "name": "Run: Generate JSCore",
             "type": "coreclr",
             "request": "launch",

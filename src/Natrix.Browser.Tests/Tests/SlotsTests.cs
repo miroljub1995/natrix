@@ -102,6 +102,7 @@ public class SlotsTests
 
         using var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new CardWithDefault
             {
                 Props = new CardProps(),
@@ -132,6 +133,7 @@ public class SlotsTests
 
         var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new CardWithDefault
             {
                 Props = new CardProps(),
@@ -169,6 +171,7 @@ public class SlotsTests
 
         using var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new CardWithDefault
             {
                 Props = new CardProps(),
@@ -197,6 +200,7 @@ public class SlotsTests
 
         using var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new CardWithNamedSlots
             {
                 Props = new CardProps { Title = new Signal<string>("body") },
@@ -232,6 +236,7 @@ public class SlotsTests
 
         using var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new CardWithDefault
             {
                 Props = new CardProps(),
@@ -253,6 +258,7 @@ public class SlotsTests
 
         using var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new CardWithDefaultSignal
             {
                 Props = new NoProps(),

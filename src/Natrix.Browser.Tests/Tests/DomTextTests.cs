@@ -14,6 +14,7 @@ public class DomTextTests
         var text = new Signal<string>("hello");
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new DomText { Text = text })
             .Build()
             .Mount();
@@ -29,6 +30,7 @@ public class DomTextTests
         var text = new Signal<string>("hello");
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new DomText { Text = text })
             .Build()
             .Mount();

@@ -122,42 +122,6 @@
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "build: Natrix.TodoExample",
-            "type": "process",
-            "command": "dotnet",
-            "args": [
-                "build",
-                "Natrix.TodoExample.csproj"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/examples/Natrix.TodoExample"
-            },
-            "group": "build",
-            "presentation": {
-                "reveal": "silent",
-                "panel": "shared"
-            },
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "build: Natrix.CanvasExample",
-            "type": "process",
-            "command": "dotnet",
-            "args": [
-                "build",
-                "Natrix.CanvasExample.csproj"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/examples/Natrix.CanvasExample"
-            },
-            "group": "build",
-            "presentation": {
-                "reveal": "silent",
-                "panel": "shared"
-            },
-            "problemMatcher": "$msCompile"
-        },
-        {
             "label": "build: Natrix.Docs",
             "type": "process",
             "command": "dotnet",

@@ -56,6 +56,7 @@ public class RoutesTests
 
         var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .SetFeature<INavigationFeature>(navigation)
             .UseRootComponent(() => new Routes
             {

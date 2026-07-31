@@ -33,6 +33,7 @@ public class TeleportTests
 
         var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseTeleport()
             .UseRootComponent(() =>
             {
@@ -153,6 +154,7 @@ public class TeleportTests
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseTeleport()
             .UseRootComponent(() =>
             {

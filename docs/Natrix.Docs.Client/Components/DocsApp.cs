@@ -1,6 +1,8 @@
 using Natrix.Core.Components;
 using Natrix.Dom.Components;
 using Natrix.Core.Features.Routing;
+using Natrix.Docs.Client.Components.Examples.BouncingBalls;
+using Natrix.Docs.Client.Components.Examples.Todo;
 using Natrix.Signals;
 
 namespace Natrix.Docs.Client.Components;
@@ -53,6 +55,16 @@ public class DocsApp : BaseComponent<DocsAppProps, NoEvents, NoSlots, NoExpose>
                                     {
                                         Pattern = "/quick-start",
                                         Render = () => [new QuickStart { Props = new QuickStartProps() }],
+                                    },
+                                    new Route
+                                    {
+                                        Pattern = "/examples/todo",
+                                        Render = () => [new TodoExamplePage { Props = new NoProps() }],
+                                    },
+                                    new Route
+                                    {
+                                        Pattern = "/examples/canvas",
+                                        Render = () => [new BouncingBallsExamplePage { Props = new NoProps() }],
                                     },
                                 ],
                             },

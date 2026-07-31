@@ -45,6 +45,7 @@ public class IfTests
 
         var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new If
             {
                 Condition = condition,
@@ -193,6 +194,7 @@ public class IfTests
 
         using var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new If
             {
                 Condition = new Computed<bool>(() => counter.Value % 2 == 0),
@@ -279,6 +281,7 @@ public class IfTests
 
         using var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new If
             {
                 Condition = outer,
@@ -377,6 +380,7 @@ public class IfTests
 
         using var host = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new If
             {
                 Condition = new Computed<bool>(() => counter.Value % 2 == 0),

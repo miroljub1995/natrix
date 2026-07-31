@@ -4,7 +4,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Natrix.Browser\Natrix.Browser.csproj" Watch="false" />
+        <ProjectReference Include="..\..\src\Natrix.Browser\Natrix.Browser.csproj" />
         <ProjectReference Include="..\..\src\Natrix.Core.Generators\Natrix.Core.Generators.csproj"
             OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
         <ProjectReference Include="..\..\src\Natrix.TailwindCss\Natrix.TailwindCss.csproj" />

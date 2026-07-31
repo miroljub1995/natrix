@@ -36,8 +36,6 @@ public class DomRenderSlot : IDomRenderSlot
         return new DomRenderRoot(parent);
     }
 
-    public bool AreLifecycleHooksEnabled => true;
-
     public DomRenderRoot Root => _root;
 
     public (IComponent? Open, IComponent? Close) CreateComponentBounds()

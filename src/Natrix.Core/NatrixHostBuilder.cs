@@ -36,6 +36,20 @@ public sealed class NatrixHostBuilder
         return this;
     }
 
+    /// <summary>
+    /// Enables component lifecycle hooks and defers mounted hooks until the mount pass has
+    /// finished building the tree.
+    /// </summary>
+    /// <remarks>
+    /// Registering <see cref="ILifecycleHooksFeature"/> is what gives an app lifecycle hooks at
+    /// all: where the feature is absent, mounted hooks are dropped instead of run. Hosts that
+    /// mount into a live tree opt in by calling this; server rendering deliberately does not.
+    /// </remarks>
+    public NatrixHostBuilder UseLifecycleHooks()
+    {
+        return SetFeature<ILifecycleHooksFeature>(new LifecycleHooksFeature());
+    }
+
     public NatrixHost Build()
     {
         if (_rootComponentFactory is null)

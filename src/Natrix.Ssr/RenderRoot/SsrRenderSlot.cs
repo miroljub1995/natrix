@@ -50,8 +50,6 @@ public sealed class SsrRenderSlot : ISsrRenderSlot, IRenderSlot
         _node = null;
     }
 
-    public bool AreLifecycleHooksEnabled => false;
-
     public void MoveRangeAfter(ISsrRenderSlot rangeEnd, ISsrRenderSlot anchor)
     {
         var endSlot = (SsrRenderSlot)rangeEnd;

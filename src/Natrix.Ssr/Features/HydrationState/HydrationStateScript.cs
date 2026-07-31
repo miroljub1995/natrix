@@ -42,7 +42,7 @@ public sealed class HydrationStateScript : IComponent
         var childRoot = ssrRenderSlot.CreateChildRoot(scriptNode);
         if (childRoot.CreateFirstSlot() is ISsrRenderSlot textSlot)
         {
-            textSlot.Populate(new SsrTextNode { TextContent = new Signal<string>(jsonText) });
+            textSlot.Populate(new SsrTextNode { TextContent = new Signal<string>(jsonText), Raw = true });
         }
 
         ssrRenderSlot.Populate(scriptNode);

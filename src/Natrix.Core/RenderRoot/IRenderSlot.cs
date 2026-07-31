@@ -6,8 +6,6 @@ public interface IRenderSlot : IDisposable
 {
     IRenderSlot CreateSlotAfter();
 
-    bool AreLifecycleHooksEnabled { get; }
-
     /// <summary>
     /// Moves the contiguous range of slots [this .. <paramref name="rangeEnd"/>] (inclusive)
     /// to immediately after <paramref name="anchor"/> in slot-list order, preserving the

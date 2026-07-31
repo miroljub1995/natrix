@@ -22,6 +22,13 @@ public sealed class NatrixHost
         var scope = new Signals.EffectScope();
         scope.Run(() =>
         {
+            // Own the mount pass so that queued mounted hooks run only once the whole
+            // tree is in place. This has to sit outside the root component's Mount:
+            // hydration only ends when HydrationRoot.Mount returns, and a hook running
+            // before that would re-render against markup still being claimed.
+            var lifecycleHooks = _rootFeatures.Get<ILifecycleHooksFeature>();
+            var ownedPass = lifecycleHooks?.TryBeginPass() == true ? lifecycleHooks : null;
+
             var prevFeatures = AppFeatures.Current;
             AppFeatures.Current = _rootFeatures;
             IComponent rootComponent;
@@ -34,6 +41,8 @@ public sealed class NatrixHost
             {
                 AppFeatures.Current = prevFeatures;
             }
+
+            ownedPass?.EndPassAndFlush();
 
             new Signals.Effect(onCleanup => onCleanup(() => rootComponent.Unmount()));
         });

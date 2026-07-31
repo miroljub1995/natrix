@@ -1,4 +1,5 @@
 using System.Runtime.Versioning;
+using Natrix.Core.Components;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -137,4 +138,12 @@ public class ScriptEvents : HtmlElementComponentEvents<HTMLScriptElement>
 
 public class Script() : BaseNonVoidDomComponent<HTMLScriptElement, ScriptProps, ScriptEvents>("script")
 {
+    protected override IComponent[]? GetChildren()
+    {
+        var children = base.GetChildren();
+
+        return children is { Length: > 0 }
+            ? [new SsrRawTextScope { Children = children }]
+            : children;
+    }
 }

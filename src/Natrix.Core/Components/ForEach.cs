@@ -41,10 +41,16 @@ public class ForEach<TElement, TKey> : IComponent where TKey : notnull
             var closeSlot = slot.CreateSlotAfter();
 
             openBound?.Mount(slot);
-            closeBound?.Mount(closeSlot);
 
             new Effect(onCleanup => onCleanup(() =>
             {
+                foreach (var item in orderedItems)
+                {
+                    item.Scope.Dispose();
+                }
+
+                orderedItems.Clear();
+
                 openBound?.Unmount();
                 closeBound?.Unmount();
                 closeSlot.Dispose();
@@ -159,16 +165,7 @@ public class ForEach<TElement, TKey> : IComponent where TKey : notnull
                 orderedItems.AddRange(newList);
             });
 
-            // Cleanup Effect: no signals tracked — only registers teardown for when this component is unmounted.
-            new Effect(onCleanup => onCleanup(() =>
-            {
-                foreach (var item in orderedItems)
-                {
-                    item.Scope.Dispose();
-                }
-
-                orderedItems.Clear();
-            }));
+            closeBound?.Mount(closeSlot);
         });
     }
 

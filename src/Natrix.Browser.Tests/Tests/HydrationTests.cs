@@ -45,6 +45,7 @@ public class HydrationTests
     {
         return new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .SetFeature<IClientHydrationStateFeature>(new TestHydrationState())
             .UseRootComponent(() => new HydrationRoot { Children = [componentFactory()] })
             .Build();

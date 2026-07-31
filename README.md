@@ -16,7 +16,7 @@ The repository is split into a few focused projects:
 
 - [src/Natrix.StdWeb/README.md](src/Natrix.StdWeb/README.md) explains the generated browser API bindings and direct DOM-style usage.
 - [src/Natrix.Core/README.md](src/Natrix.Core/README.md) explains the component framework and rendering model.
-- [examples/README.md](examples/README.md) describes the runnable sample applications.
+- [docs/Natrix.Docs](docs/Natrix.Docs/) is the documentation site, including runnable examples.
 
 ## Quick Start
 
@@ -53,20 +53,6 @@ You can also bootstrap a docs-style Natrix app (server + client + Tailwind) with
 dotnet new install Natrix.Templates
 dotnet new natrix -n MyNatrixApp
 dotnet run --project MyNatrixApp/MyNatrixApp.csproj
-```
-
-## Examples
-
-The [examples](examples/) directory contains package-based examples:
-
-- [examples/Natrix.TodoExample](examples/Natrix.TodoExample/) shows dynamic DOM rendering and keyboard events.
-- [examples/Natrix.CanvasExample](examples/Natrix.CanvasExample/) shows Canvas API usage and animation.
-
-Run an example from its directory:
-
-```bash
-cd examples/Natrix.TodoExample
-dotnet run
 ```
 
 ## Requirements

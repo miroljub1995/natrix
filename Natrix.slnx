@@ -3,10 +3,6 @@
     <Project Path="docs/Natrix.Docs/Natrix.Docs.csproj" />
     <Project Path="docs/Natrix.Docs.Client/Natrix.Docs.Client.csproj" />
   </Folder>
-  <Folder Name="/examples/">
-    <Project Path="examples/Natrix.CanvasExample/Natrix.CanvasExample.csproj" />
-    <Project Path="examples/Natrix.TodoExample/Natrix.TodoExample.csproj" />
-  </Folder>
   <Folder Name="/src/">
     <Project Path="src/Natrix.Browser.Abstractions/Natrix.Browser.Abstractions.csproj" />
     <Project Path="src/Natrix.Browser/Natrix.Browser.csproj" />

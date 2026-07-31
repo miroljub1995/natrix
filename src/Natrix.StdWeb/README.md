@@ -76,8 +76,10 @@ The generated sources live under [AutoGen](AutoGen/) and are produced by [../Nat
 
 ## Examples
 
-- [../../examples/Natrix.TodoExample](../../examples/Natrix.TodoExample/) creates and updates DOM nodes directly through StdWeb.
-- [../../examples/Natrix.CanvasExample](../../examples/Natrix.CanvasExample/) uses generated Canvas bindings for animation.
+- The [Todo List](https://github.com/miroljub1995/natrix/tree/main/docs/Natrix.Docs.Client/Components/Examples) example creates and updates DOM nodes reactively.
+- The Canvas example uses generated Canvas bindings for animation.
+
+Both are published as live pages on the docs site under **Examples**.
 
 ## Requirements
 

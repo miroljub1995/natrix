@@ -1,6 +1,8 @@
 using System.Runtime.InteropServices.JavaScript;
 using Natrix.Core;
 using Natrix.Core.Components;
+using Natrix.Core.Features;
+using Natrix.Core.Hooks;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.JSCore;
@@ -17,6 +19,7 @@ public abstract class BaseDomComponent<TElement, TProps, TEvents>(string tagName
     private IRenderSlot? _slot;
     private ComposedComponent? _childrenComposed;
     private readonly List<Action> _eventCleanups = [];
+    private bool _isUnmounted;
 
     protected abstract IComponent[]? GetChildren();
 
@@ -25,10 +28,27 @@ public abstract class BaseDomComponent<TElement, TProps, TEvents>(string tagName
     public TProps? Props { get; init; }
     public TEvents? Events { get; init; }
 
+    /// <summary>
+    /// Optional signal the framework fills with the underlying element, and resets to
+    /// <c>null</c> on unmount.
+    /// </summary>
+    /// <remarks>
+    /// Populated only once the whole mount pass has completed, so it is <c>null</c>
+    /// throughout <c>Setup</c> and readable from <c>OnMounted</c>. Writing it while the tree
+    /// is still being built would let a watcher of the ref mutate state mid-mount: during
+    /// hydration that re-render competes with the server-rendered markup still being
+    /// claimed, surfacing as a <see cref="HydrationMismatchException"/>.
+    /// </remarks>
     public ISignal<TElement?>? Ref { get; init; }
 
     public void Mount(IRenderSlot slot)
     {
+        // Taken before the children mount so they queue into this pass rather than each
+        // opening one of their own. During the initial mount the host already owns it, and
+        // on the server there is no pass at all.
+        var pass = AppFeatures.Current?.Get<ILifecycleHooksFeature>();
+        var ownedPass = pass?.TryBeginPass() == true ? pass : null;
+
         var children = GetChildren();
 
         if (slot is IDomRenderSlot domRenderSlot)
@@ -83,10 +103,7 @@ public abstract class BaseDomComponent<TElement, TProps, TEvents>(string tagName
                 domRenderSlot.Populate(element);
             }
 
-            if (Ref is not null)
-            {
-                Ref.Value = element;
-            }
+            PublishRef(pass, element);
         }
         else if (slot is ISsrRenderSlot ssrRenderSlot)
         {
@@ -106,10 +123,52 @@ public abstract class BaseDomComponent<TElement, TProps, TEvents>(string tagName
         }
 
         _slot = slot;
+
+        ownedPass?.EndPassAndFlush();
+    }
+
+    /// <summary>
+    /// Hands the ref assignment to the mount pass so it lands at the same moment mounted
+    /// hooks do — once the tree is in place — instead of mid-mount.
+    /// </summary>
+    /// <remarks>
+    /// The pass queue is FIFO and this element is a child of the component that owns the
+    /// ref, so the assignment is always queued before that component's own hooks: a hook
+    /// reading the ref sees the element.
+    /// </remarks>
+    private void PublishRef(ILifecycleHooksFeature? pass, TElement element)
+    {
+        var refSignal = Ref;
+        if (refSignal is null)
+        {
+            return;
+        }
+
+        if (pass is null)
+        {
+            // No pass to defer to. Unlike a lifecycle hook a ref cannot simply be dropped,
+            // so hosts that opt out of the pass keep the immediate assignment.
+            refSignal.Value = element;
+            return;
+        }
+
+        pass.QueueMountedHook(() =>
+        {
+            // An earlier hook in the same batch may have torn this element down; publishing
+            // it now would leave the ref pointing at a detached element for good.
+            if (_isUnmounted)
+            {
+                return;
+            }
+
+            DetachedContext.Run(() => refSignal.Value = element);
+        });
     }
 
     public void Unmount()
     {
+        _isUnmounted = true;
+
         if (_slot is IDomRenderSlot domRenderSlot)
         {
             if (!OperatingSystem.IsBrowser())
@@ -133,5 +192,10 @@ public abstract class BaseDomComponent<TElement, TProps, TEvents>(string tagName
         _childrenComposed?.Unmount();
         _childrenComposed = null;
         _slot = null;
+
+        if (Ref is not null)
+        {
+            Ref.Value = null;
+        }
     }
 }

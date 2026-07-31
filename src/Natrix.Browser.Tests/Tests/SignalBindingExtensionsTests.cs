@@ -15,6 +15,7 @@ public class SignalBindingExtensionsTests
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new Input
             {
                 Props = new InputProps { Value = text },
@@ -41,6 +42,7 @@ public class SignalBindingExtensionsTests
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new Input
             {
                 Props = new InputProps { Value = text },
@@ -87,6 +89,7 @@ public class SignalBindingExtensionsTests
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new Input
             {
                 Props = new InputProps { Value = text },
@@ -113,6 +116,7 @@ public class SignalBindingExtensionsTests
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new Input
             {
                 Props = new InputProps { Value = text },
@@ -139,6 +143,7 @@ public class SignalBindingExtensionsTests
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new TextArea
             {
                 Props = new TextAreaProps { Value = text },
@@ -165,6 +170,7 @@ public class SignalBindingExtensionsTests
 
         using var _ = new NatrixHostBuilder()
             .UseRootRenderer(new DomRenderRoot(container))
+            .UseLifecycleHooks()
             .UseRootComponent(() => new Select
             {
                 Props = new SelectProps { Value = selected },

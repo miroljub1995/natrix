@@ -27,6 +27,7 @@ var hydration = new ClientHydrationStateFeature();
 var _ = new NatrixHostBuilder()
     .UseRootElement(appElement)
     .UseTeleport()
+    .UseLifecycleHooks()
     .SetFeature<IClientHydrationStateFeature>(hydration)
     .SetFeature<INavigationFeature>(new ClientNavigationFeature(window))
     .UseRootComponent(() => new HydrationRoot { Children = [new App { Props = new AppProps() }] })

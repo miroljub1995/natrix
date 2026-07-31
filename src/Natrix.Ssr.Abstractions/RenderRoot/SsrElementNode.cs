@@ -85,7 +85,7 @@ public sealed class SsrElementNode : ISsrNode
         if (value is not null)
         {
             Write(writer, "=\"");
-            Write(writer, value);
+            SsrHtmlEncoder.WriteEscaped(writer, value, escapeQuotes: true);
             Write(writer, "\"");
         }
     }
