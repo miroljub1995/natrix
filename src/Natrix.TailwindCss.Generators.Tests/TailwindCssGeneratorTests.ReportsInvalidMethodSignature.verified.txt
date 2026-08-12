@@ -1,0 +1,17 @@
+﻿{
+  Diagnostics: [
+    {
+      Location: \proj\Source0.cs: (6,5)-(6,43),
+      Message: 'Styles.GetCss' must be a partial method that returns string and takes no parameters,
+      Severity: Error,
+      Descriptor: {
+        Id: TWCSS005,
+        Title: Invalid [GeneratedTailwindCss] method,
+        MessageFormat: '{0}' must be a partial method that returns string and takes no parameters,
+        Category: TailwindCss,
+        DefaultSeverity: Error,
+        IsEnabledByDefault: true
+      }
+    }
+  ]
+}

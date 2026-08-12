@@ -11,8 +11,8 @@ partial class Styles
 /*! tailwindcss v4.3.0 | MIT License | https://tailwindcss.com */
 @layer theme {
   :root, :host {
-    --spacing-4: 1rem;
-    --color-red-500: red;
+    --color-red-500: oklch(63.7% 0.237 25.331);
+    --spacing: 0.25rem;
   }
 }
 @layer utilities {
@@ -20,7 +20,7 @@ partial class Styles
     background-color: var(--color-red-500);
   }
   .p-4 {
-    padding: var(--spacing-4);
+    padding: calc(var(--spacing) * 4);
   }
 }
 """;

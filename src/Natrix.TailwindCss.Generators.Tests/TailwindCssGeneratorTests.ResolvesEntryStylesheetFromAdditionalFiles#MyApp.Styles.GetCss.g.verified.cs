@@ -6,7 +6,7 @@ namespace MyApp;
 
 partial class Styles
 {
-    internal partial string GetCss() =>
+    public static partial string GetCss() =>
 """
 /*! tailwindcss v4.3.0 | MIT License | https://tailwindcss.com */
 @layer theme, base, components, utilities;
@@ -16,6 +16,7 @@ partial class Styles
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --spacing: 0.25rem;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -171,6 +172,12 @@ partial class Styles
 @layer utilities {
   .flex {
     display: flex;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .p-4 {
+    padding: calc(var(--spacing) * 4);
   }
 }
 """;

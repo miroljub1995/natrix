@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    The bridge between the netstandard2.0 analyzer and ClearScript.
+
+    ClearScript ships no netstandard2.0 asset, and a netstandard2.0 compilation
+    cannot reference its netstandard2.1 one (CS1705). On top of that, the
+    .NET Framework compiler host (devenv.exe / VBCSCompiler.exe on Windows)
+    cannot *load* a netstandard2.1 assembly at all. So this project is built
+    twice, and the analyzer reflection-loads whichever flavor matches the host it
+    finds itself running in.
+
+    net8.0 rather than netstandard2.1 for the modern host: the compiler host is
+    always .NET 8 or later, and NativeLibrary.SetDllImportResolver - the only way
+    to point ClearScript at a native library outside the application directory -
+    does not exist in netstandard.
+
+    Its entire public surface is BCL-only (string, string[], Func<...>) so those
+    types unify across assembly load contexts without a shared contract assembly.
+  -->
+  <PropertyGroup>
+    <!-- Overrides Directory.Build.props: these are the two compiler-host runtimes. -->
+    <TargetFrameworks>net462;net8.0</TargetFrameworks>
+    <IsAotCompatible>false</IsAotCompatible>
+    <!-- Loaded by reflection from the analyzer; never referenced by consumers. -->
+    <IsPackable>false</IsPackable>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <!--
+      Put the full dependency closure in bin/, so the generator can ship whatever
+      this project actually needs rather than a hand-picked list. ClearScript's
+      net462 asset pulls in Microsoft.Bcl.AsyncInterfaces, System.Memory,
+      System.ValueTuple and friends, and missing any one of them breaks the
+      .NET Framework compiler host at runtime.
+    -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ClearScript.V8" />
+  </ItemGroup>
+
+  <!-- The contract the analyzer casts to. Shipped next to the analyzer, not in
+       the engine payload, so only one copy is ever loaded. -->
+  <ItemGroup>
+    <ProjectReference Include="..\Natrix.TailwindCss.Engine.Abstractions\Natrix.TailwindCss.Engine.Abstractions.csproj" />
+  </ItemGroup>
+
+  <!-- Lets the net462 flavor build on macOS and Linux. -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

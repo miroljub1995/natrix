@@ -1,0 +1,17 @@
+﻿{
+  Diagnostics: [
+    {
+      Location: \proj\Source0.cs: (6,5)-(6,43),
+      Message: Tailwind CSS compilation failed: Could not resolve the import './nope.css' from '/proj/Styles'. Stylesheets are the ones the project lists as AdditionalFiles; add an <AdditionalFiles Include="..." /> item for this file, or give a package's entry stylesheet TailwindModule="..." metadata to expose it as a module.,
+      Severity: Error,
+      Descriptor: {
+        Id: TWCSS001,
+        Title: Tailwind CSS compilation failed,
+        MessageFormat: Tailwind CSS compilation failed: {0},
+        Category: TailwindCss,
+        DefaultSeverity: Error,
+        IsEnabledByDefault: true
+      }
+    }
+  ]
+}

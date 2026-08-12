@@ -3,4 +3,10 @@
         <PackageReference Include="Natrix.Browser" />
         <PackageReference Include="Natrix.TailwindCss" />
     </ItemGroup>
+
+    <ItemGroup>
+        <!-- The stylesheets the Tailwind generator can see. Add any directory
+             holding CSS you want to @import. -->
+        <AdditionalFiles Include="Styles\**\*.css" />
+    </ItemGroup>
 </Project>

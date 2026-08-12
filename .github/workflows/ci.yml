@@ -38,12 +38,13 @@ jobs:
             10.0.x
 
       - name: Setup Node.js
-        # Provides npm/npx so the generator's MSBuild target can build the
-        # `tailwind-compiler` binary on demand (Natrix.Docs.Client uses
-        # [GeneratedTailwindCss]).
+        # The Tailwind generator builds its embedded JavaScript bundle from
+        # source; Resources/ is generated output, not committed.
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+          cache-dependency-path: src/Natrix.TailwindCss.Generators/js/package-lock.json
 
       - name: Restore workloads
         run: dotnet workload restore Natrix.slnx
@@ -53,10 +54,12 @@ jobs:
 
   unit-tests:
     name: Unit tests
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
+        os:
+          - ubuntu-latest
         project:
           - src/Natrix.Signals.Tests/Natrix.Signals.Tests.csproj
           - src/Natrix.Ssr.Tests/Natrix.Ssr.Tests.csproj
@@ -65,6 +68,28 @@ jobs:
         tfm:
           - net9.0
           - net10.0
+
+        # Everything above is portable managed code and runs on Linux only.
+        #
+        # The Tailwind generator is the one exception in the repository: it loads
+        # a per-RID native V8 library, picks its ClearScript flavor from the
+        # compiler host's runtime, and resolves stylesheet paths with
+        # host-dependent case sensitivity. So it also runs on Windows and macOS.
+        # These entries conflict with the single `os` value above, so Actions
+        # appends them as extra jobs rather than merging them in.
+        #
+        # One TFM is enough there: the test host's framework does not change
+        # which engine flavor is selected. And note what this still does *not*
+        # cover - `dotnet test` on Windows runs VBCSCompiler on modern .NET, so
+        # the `net462` flavor stays unexercised. That needs MSBuild.exe or
+        # devenv.exe from a Visual Studio install.
+        include:
+          - os: windows-latest
+            project: src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj
+            tfm: net10.0
+          - os: macos-latest
+            project: src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj
+            tfm: net10.0
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -80,12 +105,13 @@ jobs:
             10.0.x
 
       - name: Setup Node.js
-        # Provides npm/npx so the generator's MSBuild target can build the
-        # `tailwind-compiler` binary on demand for the Tailwind generator tests.
+        # Only the Tailwind generator needs it, to build its embedded bundle.
         if: matrix.project == 'src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj'
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+          cache-dependency-path: src/Natrix.TailwindCss.Generators/js/package-lock.json
 
       - name: Test ${{ matrix.project }} (${{ matrix.tfm }})
         run: dotnet test ${{ matrix.project }} -c Release -f ${{ matrix.tfm }}
