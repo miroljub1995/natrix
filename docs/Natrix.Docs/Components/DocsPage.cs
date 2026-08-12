@@ -57,7 +57,7 @@ public class DocsPage : BaseComponent<DocsPageProps, NoEvents, NoSlots, NoExpose
                     {
                         Props = new BodyProps
                         {
-                            Class = "bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100".ToConstSignal(),
+                            Class = Styles.Body.ToConstSignal(),
                         },
                         Children =
                         [
