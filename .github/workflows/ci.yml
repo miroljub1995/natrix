@@ -25,12 +25,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
       - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v5
+        uses: actions/setup-dotnet@v6
         with:
           global-json-file: global.json
           dotnet-version: |
@@ -40,9 +40,9 @@ jobs:
       - name: Setup Node.js
         # The Tailwind generator builds its embedded JavaScript bundle from
         # source; Resources/ is generated output, not committed.
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
           cache-dependency-path: src/Natrix.TailwindCss.Generators/js/package-lock.json
 
@@ -92,12 +92,12 @@ jobs:
             tfm: net10.0
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
       - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v5
+        uses: actions/setup-dotnet@v6
         with:
           global-json-file: global.json
           dotnet-version: |
@@ -107,9 +107,9 @@ jobs:
       - name: Setup Node.js
         # Only the Tailwind generator needs it, to build its embedded bundle.
         if: matrix.project == 'src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj'
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
           cache: npm
           cache-dependency-path: src/Natrix.TailwindCss.Generators/js/package-lock.json
 
@@ -130,12 +130,12 @@ jobs:
           - net10.0
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: recursive
 
       - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v5
+        uses: actions/setup-dotnet@v6
         with:
           global-json-file: global.json
           dotnet-version: |
