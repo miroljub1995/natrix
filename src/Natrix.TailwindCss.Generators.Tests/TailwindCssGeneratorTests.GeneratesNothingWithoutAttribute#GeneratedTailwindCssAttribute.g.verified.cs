@@ -4,8 +4,20 @@
 
 namespace Natrix.TailwindCss;
 
-[System.AttributeUsage(System.AttributeTargets.Method)]
+/// <summary>
+/// Generates the body of a partial method, returning the Tailwind CSS
+/// compiled from an entry stylesheet.
+/// </summary>
+[System.AttributeUsage(System.AttributeTargets.Method, AllowMultiple = false, Inherited = false)]
 public sealed class GeneratedTailwindCssAttribute : System.Attribute
 {
-    public GeneratedTailwindCssAttribute(string css, params string[] pairs) { }
+    /// <param name="stylesheetPath">
+    /// Path to the entry stylesheet, relative to the source file this
+    /// attribute is written in, for example "Styles/app.css".
+    /// </param>
+    public GeneratedTailwindCssAttribute(string stylesheetPath)
+        => StylesheetPath = stylesheetPath;
+
+    /// <summary>Path to the entry stylesheet, relative to the declaring source file.</summary>
+    public string StylesheetPath { get; }
 }

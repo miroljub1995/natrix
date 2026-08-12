@@ -1,6 +1,15 @@
 <Project>
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+
+    <!--
+      A property, not just a PackageVersion, because the Tailwind generator needs
+      this version for PackageDownload items too (Central Package Management does
+      not apply to those). It has to be the property that is authoritative:
+      MSBuild evaluates all properties before any items, so the reverse - a
+      property reading @(PackageVersion) - is not expressible.
+    -->
+    <ClearScriptVersion>7.5.1</ClearScriptVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,5 +22,7 @@
     <PackageVersion Include="PuppeteerSharp" Version="20.2.2" />
     <PackageVersion Include="System.CommandLine" Version="2.0.0-rc.1.25451.107" />
     <PackageVersion Include="TUnit" Version="0.70.7" />
+    <PackageVersion Include="Microsoft.ClearScript.V8" Version="$(ClearScriptVersion)" />
+    <PackageVersion Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" />
   </ItemGroup>
 </Project>

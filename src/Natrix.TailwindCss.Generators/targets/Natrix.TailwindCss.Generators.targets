@@ -1,8 +1,68 @@
 <Project>
+
   <PropertyGroup>
-    <TailwindCssGeneratorRuntimesDir>$([MSBuild]::NormalizePath('$(MSBuildThisFileDirectory)../runtimes'))</TailwindCssGeneratorRuntimesDir>
+    <!--
+      Where the Tailwind engine, native V8 binaries and Tailwind's own stylesheets
+      live. In the package this file is imported from build/ or buildTransitive/,
+      so the payload sits at ../tools/tailwind/. Projects in this repository that
+      import the file directly set the property themselves.
+    -->
+    <NatrixTailwindEngineDir Condition="'$(NatrixTailwindEngineDir)' == ''">$([MSBuild]::NormalizeDirectory('$(MSBuildThisFileDirectory)..', 'tools', 'tailwind'))</NatrixTailwindEngineDir>
   </PropertyGroup>
+
   <ItemGroup>
-    <CompilerVisibleProperty Include="TailwindCssGeneratorRuntimesDir" />
+    <CompilerVisibleProperty Include="NatrixTailwindEngineDir" />
+
+    <!--
+      The module ids a stylesheet is exported as, comma-separated, so
+      `@import "<id>"` resolves to it. Matching is exact: this is an exports list,
+      like a package.json "exports" map, not a directory that can be browsed.
+      Files a package does not export stay unreachable from outside, though its
+      own stylesheets can still reach them by relative import, because the base
+      handed back is the module's own directory.
+
+      Comma-separated, NOT semicolon-separated as MSBuild lists usually are. The
+      metadata reaches the compiler through a generated editorconfig, and Roslyn's
+      reader strips ";" and "#" as inline comments, truncating the value there.
+      MSBuild itself writes the value out intact - and unescapes "%3B" back into a
+      ";" - so escaping does not help. Measured: "a;b" arrives as "a". The failure
+      is silent, because the first id still works.
+
+      This is for packages that ship stylesheets - the tailwindcss module below is
+      the reference example, added by these targets rather than by the consumer.
+      An application has no reason to set it: its own stylesheets are reached by
+      relative import.
+    -->
+    <CompilerVisibleItemMetadata Include="AdditionalFiles" MetadataName="TailwindModule" />
   </ItemGroup>
+
+  <!--
+    Tailwind's own stylesheets, shipped with the package and supplied exactly like
+    any other stylesheet. The ids mirror the CSS entries of the tailwindcss
+    package's own "exports" map, which declares each subpath both with and without
+    the .css extension rather than inferring one from the other.
+
+    The consuming project's own stylesheets are deliberately NOT globbed here. A
+    project declares them itself:
+
+      <AdditionalFiles Include="Styles\**\*.css" />
+
+    That keeps the set of visible stylesheets - and therefore what invalidates the
+    compilation - under the project's control, and avoids this file re-adding a
+    stylesheet that is already an AdditionalFile. Item metadata reaches the
+    compiler through a generated editorconfig keyed by file path, so a duplicate
+    item collapses into the same section and erases whatever metadata was on it,
+    including metadata belonging to some unrelated analyzer.
+  -->
+  <ItemGroup>
+    <AdditionalFiles Include="$(NatrixTailwindEngineDir)css\index.css"
+                     TailwindModule="tailwindcss,tailwindcss/index,tailwindcss/index.css" />
+    <AdditionalFiles Include="$(NatrixTailwindEngineDir)css\theme.css"
+                     TailwindModule="tailwindcss/theme,tailwindcss/theme.css" />
+    <AdditionalFiles Include="$(NatrixTailwindEngineDir)css\preflight.css"
+                     TailwindModule="tailwindcss/preflight,tailwindcss/preflight.css" />
+    <AdditionalFiles Include="$(NatrixTailwindEngineDir)css\utilities.css"
+                     TailwindModule="tailwindcss/utilities,tailwindcss/utilities.css" />
+  </ItemGroup>
+
 </Project>

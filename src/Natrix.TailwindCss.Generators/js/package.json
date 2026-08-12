@@ -1,0 +1,15 @@
+{
+  "name": "natrix-tailwindcss-bundle",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bundles Tailwind CSS into a single plain-JS file executed by ClearScript V8 inside the Natrix source generator.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "bundle": "node build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10",
+    "tailwindcss": "4.3.0"
+  }
+}

@@ -28,8 +28,16 @@
                       ReferenceOutputAssembly="false" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <NatrixGeneratorOutputDir>..\Natrix.TailwindCss.Generators\bin\$(Configuration)\netstandard2.0</NatrixGeneratorOutputDir>
+  </PropertyGroup>
+
+  <!-- The analyzer and the engine contract it casts to. The contract ships here,
+       and only here, so exactly one copy is ever loaded. -->
   <ItemGroup>
-    <None Include="..\Natrix.TailwindCss.Generators\bin\$(Configuration)\netstandard2.0\Natrix.TailwindCss.Generators.dll"
+    <None Include="$(NatrixGeneratorOutputDir)\Natrix.TailwindCss.Generators.dll"
+          Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(NatrixGeneratorOutputDir)\Natrix.TailwindCss.Engine.Abstractions.dll"
           Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
   </ItemGroup>
 
@@ -41,15 +49,33 @@
           Pack="true" PackagePath="buildTransitive/Natrix.TailwindCss.targets" Visible="false" />
   </ItemGroup>
 
-  <!-- Bundle native Tailwind compiler runtimes consumed by the source generator.
-       Listed explicitly (not via wildcard) so every RID is required in the
-       package; the binaries are produced on demand by the generator's build. -->
-  <ItemGroup>
-    <None Include="..\Natrix.TailwindCss.Generators\runtimes\osx-arm64\tailwind-compiler" Pack="true" PackagePath="runtimes/osx-arm64/" Visible="false" />
-    <None Include="..\Natrix.TailwindCss.Generators\runtimes\osx-x64\tailwind-compiler" Pack="true" PackagePath="runtimes/osx-x64/" Visible="false" />
-    <None Include="..\Natrix.TailwindCss.Generators\runtimes\linux-arm64\tailwind-compiler" Pack="true" PackagePath="runtimes/linux-arm64/" Visible="false" />
-    <None Include="..\Natrix.TailwindCss.Generators\runtimes\linux-x64\tailwind-compiler" Pack="true" PackagePath="runtimes/linux-x64/" Visible="false" />
-    <None Include="..\Natrix.TailwindCss.Generators\runtimes\win-x64\tailwind-compiler.exe" Pack="true" PackagePath="runtimes/win-x64/" Visible="false" />
-  </ItemGroup>
+  <!--
+    The Tailwind engine: ClearScript for both compiler-host runtimes, plus the
+    native V8 library per RID. Packed straight from the layout the generator's
+    build already produced, so the tree is defined in one place.
+
+    Under tools/ rather than analyzers/ on purpose: NuGet hands every assembly
+    below analyzers/ to Roslyn as an analyzer, which would try to load ClearScript
+    into a compiler that cannot run it.
+  -->
+  <!--
+    Globbed inside a target rather than a top-level ItemGroup: on a clean tree the
+    generator has not been built when this project is evaluated, and a top-level
+    glob would match nothing and silently produce a package with no engine in it.
+
+    NuGet preserves %(RecursiveDir) under PackagePath on its own; repeating it
+    would nest the tree inside itself.
+  -->
+  <!-- _GetPackageFiles, not GenerateNuspec: the latter runs after package files
+       have already been collected, so items added there are silently dropped. -->
+  <Target Name="AddTailwindPayloadToPackage" BeforeTargets="_GetPackageFiles">
+    <ItemGroup>
+      <None Include="$(NatrixGeneratorOutputDir)\tailwind\**\*"
+            Pack="true" PackagePath="tools/tailwind" Visible="false" />
+    </ItemGroup>
+
+    <Error Condition="!Exists('$(NatrixGeneratorOutputDir)\tailwind\engine')"
+           Text="The Tailwind engine payload is missing from $(NatrixGeneratorOutputDir). Build Natrix.TailwindCss.Generators before packing." />
+  </Target>
 
 </Project>

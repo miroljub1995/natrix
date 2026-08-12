@@ -20,6 +20,8 @@
     <Project Path="src/Natrix.Ssr.Abstractions/Natrix.Ssr.Abstractions.csproj" />
     <Project Path="src/Natrix.Ssr/Natrix.Ssr.csproj" />
     <Project Path="src/Natrix.StdWeb/Natrix.StdWeb.csproj" />
+    <Project Path="src/Natrix.TailwindCss.Engine.Abstractions/Natrix.TailwindCss.Engine.Abstractions.csproj" />
+    <Project Path="src/Natrix.TailwindCss.Engine/Natrix.TailwindCss.Engine.csproj" />
     <Project Path="src/Natrix.TailwindCss.Generators/Natrix.TailwindCss.Generators.csproj" />
     <Project Path="src/Natrix.TailwindCss/Natrix.TailwindCss.csproj" />
     <Project Path="src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj" />

@@ -29,11 +29,13 @@ jobs:
           global-json-file: global.json
 
       - name: Setup Node.js
-        # Provides npm/npx so the generator's MSBuild target can build the
-        # `tailwind-compiler` binaries that get packed into the NuGet package.
+        # Builds the embedded Tailwind bundle that gets packed into the analyzer;
+        # Resources/ is generated output, not committed.
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+          cache-dependency-path: src/Natrix.TailwindCss.Generators/js/package-lock.json
 
       - name: Resolve release version from Tailwind package
         id: version
@@ -107,6 +109,22 @@ jobs:
           mkdir -p artifacts/nuget
 
           dotnet pack src/Natrix.TailwindCss/Natrix.TailwindCss.csproj -c Release --no-build -o artifacts/nuget
+
+      - name: Check package size
+        # The package carries the native V8 library for every supported build
+        # host. nuget.org rejects anything over 250 MB, so fail here rather than
+        # at push time; the fix is per-RID sub-packages.
+        if: steps.release_check.outputs.exists != 'true'
+        shell: bash
+        run: |
+          for pkg in artifacts/nuget/*.nupkg; do
+            size_mb=$(( $(stat -c%s "$pkg") / 1048576 ))
+            echo "$pkg: ${size_mb} MB" | tee -a "$GITHUB_STEP_SUMMARY"
+            if [ "$size_mb" -gt 240 ]; then
+              echo "::error::$pkg is ${size_mb} MB, too close to nuget.org's 250 MB limit"
+              exit 1
+            fi
+          done
 
       - name: Upload package artifacts
         if: steps.release_check.outputs.exists != 'true'

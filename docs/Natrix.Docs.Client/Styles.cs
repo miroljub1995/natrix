@@ -4,10 +4,6 @@ namespace Natrix.Docs.Client;
 
 public static partial class Styles
 {
-    [GeneratedTailwindCss(
-        """
-        @import "tailwindcss";
-        """,
-        "tailwindcss", TailwindCssDefaults.IndexCss)]
+    [GeneratedTailwindCss("Styles/app.css")]
     public static partial string GetCss();
 }

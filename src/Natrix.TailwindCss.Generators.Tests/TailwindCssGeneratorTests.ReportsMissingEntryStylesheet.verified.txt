@@ -1,0 +1,17 @@
+﻿{
+  Diagnostics: [
+    {
+      Location: \proj\Source0.cs: (6,5)-(6,47),
+      Message: The entry stylesheet 'Styles/missing.css' was not found. The path is relative to this source file, and stylesheets are the ones the project lists as AdditionalFiles; add <AdditionalFiles Include="Styles\**\*.css" /> or an item for this file.,
+      Severity: Error,
+      Descriptor: {
+        Id: TWCSS002,
+        Title: Tailwind CSS entry stylesheet not found,
+        MessageFormat: The entry stylesheet '{0}' was not found. The path is relative to this source file, and stylesheets are the ones the project lists as AdditionalFiles; add <AdditionalFiles Include="Styles\**\*.css" /> or an item for this file.,
+        Category: TailwindCss,
+        DefaultSeverity: Error,
+        IsEnabledByDefault: true
+      }
+    }
+  ]
+}

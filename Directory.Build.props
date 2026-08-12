@@ -8,8 +8,8 @@
 
         <NatrixApiVersion Condition="'$(NatrixApiVersion)' == ''">0.2.0</NatrixApiVersion>
         <NatrixCoreVersion Condition="'$(NatrixCoreVersion)' == ''">0.4.0</NatrixCoreVersion>
-        <NatrixTailwindVersion Condition="'$(NatrixTailwindVersion)' == ''">0.3.0</NatrixTailwindVersion>
-        <NatrixTemplatesVersion Condition="'$(NatrixTemplatesVersion)' == ''">0.11.0</NatrixTemplatesVersion>
+        <NatrixTailwindVersion Condition="'$(NatrixTailwindVersion)' == ''">0.4.0</NatrixTailwindVersion>
+        <NatrixTemplatesVersion Condition="'$(NatrixTemplatesVersion)' == ''">0.12.0</NatrixTemplatesVersion>
 
         <!-- By default, don't create NuGet packages for projects -->
         <IsPackable>false</IsPackable>

@@ -1,0 +1,18 @@
+﻿{
+  Diagnostics: [
+    {
+      Location: \proj\Source0.cs: (6,5)-(6,43),
+      Message: '@source' is ignored: Natrix collects candidates from the string literals in the compilation, not from files on disk,
+      Severity: Warning,
+      WarningLevel: 1,
+      Descriptor: {
+        Id: TWCSS004,
+        Title: @source directive is ignored,
+        MessageFormat: '@source' is ignored: Natrix collects candidates from the string literals in the compilation, not from files on disk,
+        Category: TailwindCss,
+        DefaultSeverity: Warning,
+        IsEnabledByDefault: true
+      }
+    }
+  ]
+}

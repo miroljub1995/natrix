@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <!-- Assembly.Location is fine here: tests never run as a single-file app. -->
     <WarningsNotAsErrors>$(WarningsNotAsErrors);IL3000</WarningsNotAsErrors>
   </PropertyGroup>
 
@@ -13,6 +14,19 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Natrix.TailwindCss.Generators\Natrix.TailwindCss.Generators.csproj" />
+  </ItemGroup>
+
+  <!--
+    Point the tests at the payload staged in the generator's own output instead of
+    copying a quarter of a gigabyte of native V8 into every test configuration.
+    This is the same property the packaged targets file sets for consumers, so the
+    tests exercise the production lookup path.
+  -->
+  <ItemGroup>
+    <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
+      <_Parameter1>TailwindEngineDir</_Parameter1>
+      <_Parameter2>$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)', '..', 'Natrix.TailwindCss.Generators', 'bin', '$(Configuration)', 'netstandard2.0', 'tailwind'))</_Parameter2>
+    </AssemblyAttribute>
   </ItemGroup>
 
 </Project>

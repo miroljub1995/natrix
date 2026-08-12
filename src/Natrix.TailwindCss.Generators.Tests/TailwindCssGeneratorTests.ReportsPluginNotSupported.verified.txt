@@ -1,0 +1,17 @@
+﻿{
+  Diagnostics: [
+    {
+      Location: \proj\Source0.cs: (6,5)-(6,43),
+      Message: Tailwind CSS compilation failed: JavaScript plugins are not supported by Natrix.TailwindCss (`@plugin`/`@config` referencing '@tailwindcss/typography'). Express the customisation in CSS instead.,
+      Severity: Error,
+      Descriptor: {
+        Id: TWCSS001,
+        Title: Tailwind CSS compilation failed,
+        MessageFormat: Tailwind CSS compilation failed: {0},
+        Category: TailwindCss,
+        DefaultSeverity: Error,
+        IsEnabledByDefault: true
+      }
+    }
+  ]
+}
