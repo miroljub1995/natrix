@@ -1,0 +1,32 @@
+<Project>
+
+  <!--
+    Keeps a WebAssembly client's static assets serveable by a server process that is already
+    running — the situation `dotnet watch` puts you in every time the client is rebuilt.
+
+    MapStaticAssets() reads the endpoint manifest once, at startup. The dev-time static asset
+    handler re-reads file *contents* from disk, but it cannot invent routes, so anything whose
+    URL or compressed representation changed after the server started is unreachable:
+
+      * Fingerprinted assets are routed under a content hash. Rebuild the client and every
+        changed assembly gets a new hash, a new URL, and a 404 from the running server — while
+        dotnet.js, served fresh from disk, asks for exactly those new URLs. The app fails to
+        boot with an integrity error before any of it reaches the page.
+
+      * Precompressed assets are separate endpoints carrying the original file's length and
+        ETag. Once the underlying file changes, that endpoint answers a browser's
+        `Accept-Encoding: gzip` with an empty body and no content type, so the entry module
+        fails "Expected a JavaScript-or-Wasm module script" and nothing runs at all.
+
+    Turning both off in Debug gives every asset a stable URL and a single representation, so a
+    rebuilt client is picked up on the next page load without restarting the server. Release
+    and publish are untouched, and keep fingerprinting and compression.
+
+    Set either property explicitly in your project to override this.
+  -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <WasmFingerprintAssets Condition="'$(WasmFingerprintAssets)' == ''">false</WasmFingerprintAssets>
+    <DisableBuildCompression Condition="'$(DisableBuildCompression)' == ''">true</DisableBuildCompression>
+  </PropertyGroup>
+
+</Project>

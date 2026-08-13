@@ -24,7 +24,7 @@ public sealed class MainScript : IComponent
         var httpContext = AppFeatures.Features.Get<HttpContext>()
             ?? throw new InvalidOperationException("HttpContext is not registered as a feature.");
 
-        var dotnetJsPath = ResolveFingerprintedDotnetJsPath(httpContext);
+        var dotnetJsPath = ResolveDotnetJsPath(httpContext);
 
         _script = new Script
         {
@@ -45,9 +45,19 @@ public sealed class MainScript : IComponent
         _script = null;
     }
 
-    private static string ResolveFingerprintedDotnetJsPath(HttpContext httpContext)
+    private const string DotnetJsAssetPath = "_framework/dotnet.js";
+
+    private static string ResolveDotnetJsPath(HttpContext httpContext)
     {
         var dataSources = httpContext.RequestServices.GetRequiredService<EndpointDataSource>();
+
+        // A fingerprinted asset is routed under its content hash and carries a "label" property
+        // holding the name it was built from. An unfingerprinted one — which is what you get when
+        // WasmFingerprintAssets is off, as it is under `dotnet watch` — has no label and is routed
+        // under that name directly. Accept either, preferring the fingerprinted route when both
+        // are mapped, so production keeps its immutable, cacheable URL.
+        string? unfingerprinted = null;
+
         foreach (var endpoint in dataSources.Endpoints)
         {
             var descriptor = endpoint.Metadata.GetMetadata<StaticAssetDescriptor>();
@@ -55,11 +65,14 @@ public sealed class MainScript : IComponent
                 continue;
 
             var label = descriptor.Properties.FirstOrDefault(p => p.Name == "label");
-            if (label is not null && label.Value == "_framework/dotnet.js")
+            if (label is not null && label.Value == DotnetJsAssetPath)
                 return "/" + descriptor.Route;
+
+            if (label is null && descriptor.Route == DotnetJsAssetPath)
+                unfingerprinted = "/" + descriptor.Route;
         }
 
-        throw new InvalidOperationException(
-            "Could not find a fingerprinted _framework/dotnet.js endpoint. Ensure MapStaticAssets() is called before mounting.");
+        return unfingerprinted ?? throw new InvalidOperationException(
+            $"Could not find a '{DotnetJsAssetPath}' endpoint. Ensure MapStaticAssets() is called before mounting.");
     }
 }
