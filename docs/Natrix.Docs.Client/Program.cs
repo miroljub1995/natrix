@@ -7,9 +7,11 @@ using Natrix.Browser.Features.HydrationState;
 using Natrix.Browser.Abstractions.Features.HydrationState;
 using Natrix.Core.Features.Routing;
 using Natrix.Core.HotReload;
+using Natrix.Docs.Client;
 using Natrix.Docs.Client.Components;
 using Natrix.JSCore;
 using Natrix.StdWeb;
+using Natrix.TailwindCss;
 
 if (!OperatingSystem.IsBrowser())
 {
@@ -32,6 +34,7 @@ var _ = new NatrixHostBuilder()
     .SetFeature<INavigationFeature>(new ClientNavigationFeature(window))
     .UseRootComponent(() => new HydrationRoot { Children = [new DocsApp { Props = new DocsAppProps() }] })
     .UseDefaultHotReloadManager()
+    .UseTailwindCssHotReload(Styles.GetCss)
     .Build()
     .Mount();
 

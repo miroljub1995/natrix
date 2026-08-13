@@ -24,7 +24,7 @@
     <Project Path="src/Natrix.TailwindCss.Engine/Natrix.TailwindCss.Engine.csproj" />
     <Project Path="src/Natrix.TailwindCss.Generators/Natrix.TailwindCss.Generators.csproj" />
     <Project Path="src/Natrix.TailwindCss/Natrix.TailwindCss.csproj" />
-    <Project Path="src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj" />
+    <Project Path="src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj" />
     <Project Path="src/Natrix.Templates/Natrix.Templates.csproj" />
     <Project Path="src/Natrix.WebIDLGenerator.Tests/Natrix.WebIDLGenerator.Tests.csproj" />
     <Project Path="src/Natrix.WebIDLGenerator/Natrix.WebIDLGenerator.csproj" />

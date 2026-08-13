@@ -1,6 +1,6 @@
 using System.Runtime.CompilerServices;
 
-namespace Natrix.TailwindCss.Generators.Tests;
+namespace Natrix.TailwindCss.Tests;
 
 public static class ModuleInitializer
 {

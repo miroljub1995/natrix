@@ -23,6 +23,14 @@
     <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
   </ItemGroup>
 
+  <!-- The runtime half of the package: the <style> element component and the hot reload
+       glue that pushes a regenerated stylesheet into it. Natrix.Dom supplies the element
+       components (and Natrix.Core transitively), Natrix.StdWeb the browser DOM. -->
+  <ItemGroup>
+    <ProjectReference Include="..\Natrix.Dom\Natrix.Dom.csproj" />
+    <ProjectReference Include="..\Natrix.StdWeb\Natrix.StdWeb.csproj" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Natrix.TailwindCss.Generators\Natrix.TailwindCss.Generators.csproj"
                       ReferenceOutputAssembly="false" />

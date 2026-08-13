@@ -88,6 +88,38 @@ Two consequences worth knowing:
 There is no file scanning, so `@source` is ignored and reports a warning
 (`TWCSS004`).
 
+## Hot reload
+
+Because candidates come from string literals, adding or removing a class name is
+a source edit — so hot reload regenerates `GetCss()` and hands the new stylesheet
+to the running app. To have it applied without a page reload, render the
+stylesheet with `TailwindCssStyle`, which marks the element so the browser can
+find it again:
+
+```csharp
+new TailwindCssStyle { Css = Styles.GetCss() }
+```
+
+and opt in from the browser host, after the hot reload manager it builds on:
+
+```csharp
+new NatrixHostBuilder()
+    // ...
+    .UseDefaultHotReloadManager()
+    .UseTailwindCssHotReload(Styles.GetCss)
+    .Build()
+    .Mount();
+```
+
+This is a no-op when hot reload is unavailable, so it costs nothing in a published
+app — the updater and its DOM calls trim away entirely — and it creates the
+element if the id is not on the page.
+
+Two edits take the slower rebuild-and-reload path rather than this one: changing a
+`const` that holds class names, and editing a stylesheet, since it is an
+`AdditionalFiles` entry rather than source. The result is the same, just not
+instant.
+
 ## Controlling which stylesheets are visible
 
 The package adds no stylesheets of its own beyond Tailwind's. Whatever you list

@@ -1,7 +1,7 @@
 using Microsoft.CodeAnalysis;
 using static VerifyTUnit.Verifier;
 
-namespace Natrix.TailwindCss.Generators.Tests;
+namespace Natrix.TailwindCss.Tests;
 
 public class TailwindCssGeneratorTests
 {

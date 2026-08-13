@@ -64,7 +64,7 @@ jobs:
           - src/Natrix.Signals.Tests/Natrix.Signals.Tests.csproj
           - src/Natrix.Ssr.Tests/Natrix.Ssr.Tests.csproj
           - src/Natrix.Core.Generators.Tests/Natrix.Core.Generators.Tests.csproj
-          - src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj
+          - src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj
         tfm:
           - net9.0
           - net10.0
@@ -85,10 +85,10 @@ jobs:
         # devenv.exe from a Visual Studio install.
         include:
           - os: windows-latest
-            project: src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj
+            project: src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj
             tfm: net10.0
           - os: macos-latest
-            project: src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj
+            project: src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj
             tfm: net10.0
     steps:
       - name: Checkout repository
@@ -106,7 +106,7 @@ jobs:
 
       - name: Setup Node.js
         # Only the Tailwind generator needs it, to build its embedded bundle.
-        if: matrix.project == 'src/Natrix.TailwindCss.Generators.Tests/Natrix.TailwindCss.Generators.Tests.csproj'
+        if: matrix.project == 'src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj'
         uses: actions/setup-node@v7
         with:
           node-version: 24
