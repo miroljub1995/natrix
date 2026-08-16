@@ -26,4 +26,11 @@
     <ProjectReference Include="..\Natrix.Browser.Abstractions\Natrix.Browser.Abstractions.csproj" />
     <ProjectReference Include="..\Natrix.Dom\Natrix.Dom.csproj" />
   </ItemGroup>
+
+  <!-- Dev-time static asset settings for consumers. A .props so it lands before the
+       WebAssembly SDK reads these properties, and so a project can still override them. -->
+  <ItemGroup>
+    <None Include="targets\Natrix.Browser.DevAssets.props" Pack="true" PackagePath="build/Natrix.Browser.props" Visible="false" />
+    <None Include="targets\Natrix.Browser.DevAssets.props" Pack="true" PackagePath="buildTransitive/Natrix.Browser.props" Visible="false" />
+  </ItemGroup>
 </Project>

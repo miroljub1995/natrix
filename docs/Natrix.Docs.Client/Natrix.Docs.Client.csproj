@@ -28,6 +28,9 @@
             OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     </ItemGroup>
 
+    <!-- Referencing Natrix.Browser as a project, so its build assets have to be imported by
+         hand; the package delivers this one as build/Natrix.Browser.props. -->
+    <Import Project="..\..\src\Natrix.Browser\targets\Natrix.Browser.DevAssets.props" />
     <Import Project="..\..\src\Natrix.Core\targets\Natrix.Core.StaticAssets.targets" />
     <Import
         Project="..\..\src\Natrix.TailwindCss.Generators\targets\Natrix.TailwindCss.Generators.targets" />
