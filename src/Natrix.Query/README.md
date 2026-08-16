@@ -73,16 +73,20 @@ that is already on screen.
 
 ## Query keys
 
-A key is a collection expression, and anything serializable can be a segment:
+A key is a collection expression of JSON values — the same thing the JavaScript original's
+array keys are. Primitives convert implicitly, so an everyday key reads exactly as it does
+there, and anything richer is written out as JSON:
 
 ```csharp
-QueryKey key = ["todos", todoId, new Dictionary<string, object?> { ["page"] = 1 }];
+QueryKey key = ["todos", todoId];
+QueryKey filtered = ["todos", new JsonObject { ["page"] = 1, ["sort"] = "asc" }];
 ```
 
-Keys are compared by a deterministic hash, so dictionary entry order never affects identity.
-Primitives, strings, enums, `Guid`, dates, records, tuples, sequences and string-keyed
-dictionaries all work; a type that does not override `ToString()` is rejected rather than
-silently colliding with every other instance of itself.
+Keys are compared with `JsonNode.DeepEquals`, so equal values are one key however they were
+built and object member order never affects identity. Cache lookup goes through `Hash`, a
+canonical rendering that sorts object members for exactly that reason. Treat a key as immutable
+once used — mutating a segment afterwards changes what the key means without changing the entry
+it already addressed.
 
 Filters use prefix matching, so `["todos"]` selects `["todos", 1]` too:
 
