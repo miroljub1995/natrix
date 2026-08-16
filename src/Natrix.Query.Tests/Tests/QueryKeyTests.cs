@@ -197,4 +197,21 @@ public class QueryKeyTests
 
         await Assert.That(key.ToString()).IsEqualTo("""["todos",5,{"page":1}]""");
     }
+
+    [Test]
+    public async Task A_segment_parsed_from_json_matches_the_same_value_written_directly()
+    {
+        // JSON number text is not canonical — 1, 1.0 and 1.0e0 are one value spelled three
+        // ways — and a parsed node keeps whichever spelling it arrived with. A key restored
+        // from a serialized payload still has to address the entry the running app created.
+        QueryKey written = ["todos", 1];
+
+        foreach (var spelling in new[] { "1", "1.0", "1.0e0", "1.000" })
+        {
+            QueryKey parsed = [JsonNode.Parse("\"todos\""), JsonNode.Parse(spelling)];
+
+            await Assert.That(parsed == written).IsTrue();
+            await Assert.That(parsed.GetHashCode()).IsEqualTo(written.GetHashCode());
+        }
+    }
 }
