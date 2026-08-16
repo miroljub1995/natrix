@@ -530,4 +530,57 @@ public class MutationTests
             await Assert.That(harness.Client.MutationCache.GetAll().Count).IsEqualTo(0);
         });
     }
+
+    [Test]
+    public async Task UseMutationState_reports_what_is_being_saved_across_the_tree()
+    {
+        await QueryTestHarness.RunAsync(async harness =>
+        {
+            var gate = new TaskCompletionSource<string>(TaskCreationOptions.RunContinuationsAsynchronously);
+            UseMutationResult<string, string>? addTodo = null;
+            IReadOnlySignal<IReadOnlyList<string?>>? saving = null;
+
+            using var app = new NatrixHostBuilder()
+                .UseRootRenderer(new SsrRenderRoot())
+                .UseLifecycleHooks()
+                .UseQueryClient(harness.Client)
+                .UseRootComponent(() => new Probe
+                {
+                    Props = new ProbeProps
+                    {
+                        Setup = () =>
+                        {
+                            saving = UseMutationState(
+                                state => (string?)state.Variables,
+                                new MutationFilters
+                                {
+                                    MutationKey = ["todos"],
+                                    Status = MutationStatus.Pending,
+                                });
+
+                            addTodo = UseMutation(new UseMutationOptions<string, string>
+                            {
+                                MutationKey = ["todos", "add"],
+                                MutationFn = _ => gate.Task,
+                            });
+                        },
+                    },
+                })
+                .Build()
+                .Mount();
+
+            await Assert.That(saving!.Value.Count).IsEqualTo(0);
+
+            addTodo!.Mutate("buy milk");
+            await harness.SettleAsync();
+
+            await Assert.That(saving.Value.Select(v => v ?? string.Empty).ToArray())
+                .IsEquivalentTo(new[] { "buy milk" });
+
+            gate.TrySetResult("saved");
+            await harness.SettleAsync();
+
+            await Assert.That(saving.Value.Count).IsEqualTo(0);
+        });
+    }
 }

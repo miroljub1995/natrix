@@ -7,8 +7,8 @@ window-focus and reconnect revalidation, polling, garbage collection, infinite q
 mutations with optimistic updates.
 
 The API follows the Vue Query surface closely: `UseQuery`, `UseQueries`, `UseInfiniteQuery`,
-`UseMutation`, `UseIsFetching`, `UseIsMutating`, `UseQueryClient`, a `QueryClient` with the same
-methods, and the same option names and defaults.
+`UseMutation`, `UseIsFetching`, `UseIsMutating`, `UseMutationState`, `UseQueryClient`, a
+`QueryClient` with the same methods, and the same option names and defaults.
 
 ## Getting started
 
@@ -155,7 +155,8 @@ var toggle = UseMutation(new UseMutationOptions<Todo, int, Todo[]?>
 A mutation fired while offline pauses instead of failing, and resumes when the connection
 returns — automatically for a live client, or through `ResumePausedMutationsAsync` for one
 restored from a dehydrated snapshot. Give two mutations the same `Scope` and they queue instead
-of racing. `UseIsMutating()` counts what is in flight.
+of racing. `UseIsMutating()` counts what is in flight, and `UseMutationState(…)` projects the
+state of each — the variables of everything currently saving, wherever it was fired from.
 
 ## Infinite queries
 

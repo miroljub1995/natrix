@@ -331,6 +331,46 @@ public static class NatrixQuery
         return UseMutationCore(optionsFactory, client);
     }
 
+    /// <summary>
+    /// The state of every mutation matching <paramref name="filters"/>, projected through
+    /// <paramref name="select"/>. What renders "3 items being saved" from the variables of the
+    /// mutations in flight, wherever in the tree they were fired.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// var saving = UseMutationState(
+    ///     state => (string?)state.Variables,
+    ///     new MutationFilters { MutationKey = ["todos"], Status = MutationStatus.Pending });
+    /// </code>
+    /// </example>
+    public static IReadOnlySignal<IReadOnlyList<TResult>> UseMutationState<TResult>(
+        Func<MutationState, TResult> select,
+        MutationFilters? filters = null,
+        QueryClient? client = null)
+    {
+        ArgumentNullException.ThrowIfNull(select);
+
+        var queryClient = client ?? UseQueryClient();
+
+        IReadOnlyList<TResult> Current() => queryClient.MutationCache
+            .FindAll(filters)
+            .Select(mutation => select(mutation.State))
+            .ToArray();
+
+        var states = new Signal<IReadOnlyList<TResult>>(Current());
+        var subscription = queryClient.MutationCache.Subscribe(_ => states.Value = Current());
+
+        new Effect(onCleanup => onCleanup(subscription.Dispose));
+
+        return states;
+    }
+
+    /// <summary>The state of every mutation matching <paramref name="filters"/>.</summary>
+    public static IReadOnlySignal<IReadOnlyList<MutationState>> UseMutationState(
+        MutationFilters? filters = null,
+        QueryClient? client = null) =>
+        UseMutationState(static state => state, filters, client);
+
     /// <summary>How many mutations are running right now.</summary>
     public static IReadOnlySignal<int> UseIsMutating(MutationFilters? filters = null, QueryClient? client = null)
     {
