@@ -51,6 +51,11 @@ public sealed class MainScript : IComponent
     {
         var dataSources = httpContext.RequestServices.GetRequiredService<EndpointDataSource>();
 
+        // An asset is mapped once per representation it was built with: an identity endpoint plus
+        // one per compression format, all sharing a route. Skipping everything with a selector
+        // leaves exactly one endpoint per route, so neither branch below depends on the order
+        // endpoints happen to be enumerated in.
+        //
         // A fingerprinted asset is routed under its content hash and carries a "label" property
         // holding the name it was built from. An unfingerprinted one — which is what you get when
         // WasmFingerprintAssets is off, as it is under `dotnet watch` — has no label and is routed
@@ -61,10 +66,10 @@ public sealed class MainScript : IComponent
         foreach (var endpoint in dataSources.Endpoints)
         {
             var descriptor = endpoint.Metadata.GetMetadata<StaticAssetDescriptor>();
-            if (descriptor is null)
+            if (descriptor is null || descriptor.Selectors.Count > 0)
                 continue;
 
-            var label = descriptor.Properties.FirstOrDefault(p => p.Name == "label");
+            var label = descriptor.Properties.SingleOrDefault(p => p.Name == "label");
             if (label is not null && label.Value == DotnetJsAssetPath)
                 return "/" + descriptor.Route;
 
