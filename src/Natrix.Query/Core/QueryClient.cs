@@ -9,9 +9,6 @@ public sealed class QueryClientConfig
     /// </summary>
     public QueryCache? QueryCache { get; init; }
 
-    /// <summary>The mutation record to use. Supply one to share it between clients.</summary>
-    public MutationCache? MutationCache { get; init; }
-
     /// <summary>Defaults applied to every query that does not override them.</summary>
     public QueryClientDefaultOptions? DefaultOptions { get; init; }
 
@@ -40,9 +37,7 @@ public sealed class QueryClientConfig
 public sealed class QueryClient : IDisposable
 {
     private readonly List<(QueryKey Key, DefaultQueryOptions Options)> _queryDefaults = [];
-    private readonly List<(QueryKey Key, DefaultMutationOptions Options)> _mutationDefaults = [];
     private readonly bool _ownsQueryCache;
-    private readonly bool _ownsMutationCache;
 
     private IDisposable? _focusSubscription;
     private IDisposable? _onlineSubscription;
@@ -50,12 +45,10 @@ public sealed class QueryClient : IDisposable
 
     public QueryClient(QueryClientConfig? config = null)
     {
-        // A shared cache outlives the client that borrowed it, so only the caches this client
-        // created itself are emptied on disposal.
+        // A shared cache outlives the client that borrowed it, so it is only emptied on
+        // disposal when this client created it.
         _ownsQueryCache = config?.QueryCache is null;
-        _ownsMutationCache = config?.MutationCache is null;
         QueryCache = config?.QueryCache ?? new QueryCache();
-        MutationCache = config?.MutationCache ?? new MutationCache();
         DefaultOptions = config?.DefaultOptions;
         FocusManager = config?.FocusManager ?? FocusManager.Default;
         OnlineManager = config?.OnlineManager ?? OnlineManager.Default;
@@ -64,9 +57,6 @@ public sealed class QueryClient : IDisposable
 
     /// <summary>The cache this client reads and writes.</summary>
     public QueryCache QueryCache { get; }
-
-    /// <summary>The record of every mutation this client has run.</summary>
-    public MutationCache MutationCache { get; }
 
     /// <summary>Defaults applied to every query that does not override them.</summary>
     public QueryClientDefaultOptions? DefaultOptions { get; set; }
@@ -103,9 +93,6 @@ public sealed class QueryClient : IDisposable
         {
             if (isOnline)
             {
-                // Mutations first: a write that was queued while offline should land before the
-                // reads that are about to be refetched, so the refetch sees its effect.
-                _ = ResumePausedMutationsAsync();
                 QueryCache.OnOnline();
             }
         });
@@ -159,8 +146,8 @@ public sealed class QueryClient : IDisposable
 
     /// <summary>
     /// Writes data into the cache, creating the entry if needed. Every observer of the key
-    /// sees it immediately — the mechanism behind optimistic updates and writing a mutation's
-    /// response straight into the cache.
+    /// sees it immediately — the mechanism behind optimistic updates and behind writing a
+    /// server response straight into the cache.
     /// </summary>
     /// <remarks>
     /// A <c>null</c> value means "no data" and is ignored, mirroring how TanStack Query treats
@@ -337,7 +324,7 @@ public sealed class QueryClient : IDisposable
 
     /// <summary>
     /// Marks matching queries stale and refetches the active ones. The everyday way to say
-    /// "this data just changed" after a mutation.
+    /// "this data just changed" after a write.
     /// </summary>
     public Task InvalidateQueriesAsync(QueryFilters? filters = null, InvalidateQueryOptions? options = null)
     {
@@ -420,64 +407,8 @@ public sealed class QueryClient : IDisposable
             new RefetchQueryOptions { CancelRefetch = options?.CancelRefetch ?? true });
     }
 
-    /// <summary>How many mutations matching <paramref name="filters"/> are running.</summary>
-    public int IsMutating(MutationFilters? filters = null)
-    {
-        var effective = new MutationFilters
-        {
-            MutationKey = filters?.MutationKey,
-            Exact = filters?.Exact ?? false,
-            Status = filters?.Status ?? MutationStatus.Pending,
-            Predicate = filters?.Predicate,
-        };
-
-        return MutationCache.FindAll(effective).Count;
-    }
-
-    /// <summary>
-    /// Resumes every mutation that paused while offline. Called automatically when the
-    /// connection returns.
-    /// </summary>
-    public Task ResumePausedMutationsAsync() => MutationCache.ResumePausedMutationsAsync();
-
-    /// <summary>Registers defaults for every mutation whose key starts with <paramref name="mutationKey"/>.</summary>
-    public void SetMutationDefaults(QueryKey mutationKey, DefaultMutationOptions options)
-    {
-        ArgumentNullException.ThrowIfNull(mutationKey);
-        ArgumentNullException.ThrowIfNull(options);
-
-        _mutationDefaults.RemoveAll(entry => entry.Key.Hash == mutationKey.Hash);
-        _mutationDefaults.Add((mutationKey, options));
-    }
-
-    /// <summary>
-    /// The defaults registered for <paramref name="mutationKey"/>. When several registrations
-    /// match, they are merged in registration order and the last one wins.
-    /// </summary>
-    public DefaultMutationOptions? GetMutationDefaults(QueryKey mutationKey)
-    {
-        ArgumentNullException.ThrowIfNull(mutationKey);
-
-        DefaultMutationOptions? result = null;
-        foreach (var (key, options) in _mutationDefaults)
-        {
-            if (!mutationKey.PartiallyMatches(key))
-            {
-                continue;
-            }
-
-            result = result is null ? options : MergeMutationDefaults(result, options);
-        }
-
-        return result;
-    }
-
     /// <summary>Empties the cache.</summary>
-    public void Clear()
-    {
-        QueryCache.Clear();
-        MutationCache.Clear();
-    }
+    public void Clear() => QueryCache.Clear();
 
     /// <summary>
     /// Registers defaults for every query whose key starts with <paramref name="queryKey"/>.
@@ -522,11 +453,6 @@ public sealed class QueryClient : IDisposable
         if (_ownsQueryCache)
         {
             QueryCache.Clear();
-        }
-
-        if (_ownsMutationCache)
-        {
-            MutationCache.Clear();
         }
     }
 
@@ -620,76 +546,6 @@ public sealed class QueryClient : IDisposable
             Behavior = options.Behavior,
         };
     }
-
-    /// <summary>
-    /// Merges client defaults, key defaults and the caller's options into the single defaulted
-    /// options object a mutation runs on.
-    /// </summary>
-    internal ResolvedMutationOptions ResolveMutationOptions<TData, TVariables, TContext>(
-        UseMutationOptions<TData, TVariables, TContext> options)
-    {
-        ArgumentNullException.ThrowIfNull(options);
-
-        var keyDefaults = options.MutationKey is { } key ? GetMutationDefaults(key) : null;
-        var clientDefaults = DefaultOptions?.Mutations;
-
-        // A mutation may bring its own function or inherit one registered for its key, which is
-        // what lets a persisted mutation be replayed by a client that only knows its key.
-        var fallbackFn = keyDefaults?.MutationFn ?? clientDefaults?.MutationFn;
-        var mutationFn = options.MutationFn is { } typedFn
-            ? async (object? variables) => (object?)await typedFn((TVariables)variables!).ConfigureAwait(true)
-            : fallbackFn ?? (_ => Task.FromException<object?>(new MissingMutationFunctionException()));
-
-        return new ResolvedMutationOptions
-        {
-            MutationKey = options.MutationKey,
-            MutationFn = mutationFn,
-            OnMutate = options.OnMutate is null
-                ? null
-                : async variables => await options.OnMutate((TVariables)variables!).ConfigureAwait(true),
-            OnSuccess = options.OnSuccess is null
-                ? null
-                : (data, variables, context) =>
-                    options.OnSuccess((TData)data!, (TVariables)variables!, (TContext?)context),
-            OnError = options.OnError is null
-                ? null
-                : (error, variables, context) => options.OnError(error, (TVariables)variables!, (TContext?)context),
-            OnSettled = options.OnSettled is null
-                ? null
-                : (data, error, variables, context) => options.OnSettled(
-                    data is TData typed ? typed : default,
-                    error,
-                    (TVariables)variables!,
-                    (TContext?)context),
-
-            // A mutation has side effects, so repeating one is opt-in rather than the default.
-            Retry = options.Retry ?? keyDefaults?.Retry ?? clientDefaults?.Retry ?? RetryOption.FromBool(false),
-            RetryDelay = options.RetryDelay
-                ?? keyDefaults?.RetryDelay
-                ?? clientDefaults?.RetryDelay
-                ?? QueryDefaults.ExponentialBackoff,
-            NetworkMode = options.NetworkMode
-                ?? keyDefaults?.NetworkMode
-                ?? clientDefaults?.NetworkMode
-                ?? NetworkMode.Online,
-            GcTime = options.GcTime ?? keyDefaults?.GcTime ?? clientDefaults?.GcTime ?? QueryDefaults.GcTime,
-            Scope = options.Scope ?? keyDefaults?.Scope ?? clientDefaults?.Scope,
-            Meta = options.Meta ?? keyDefaults?.Meta ?? clientDefaults?.Meta,
-        };
-    }
-
-    private static DefaultMutationOptions MergeMutationDefaults(
-        DefaultMutationOptions baseOptions,
-        DefaultMutationOptions overrides) => new()
-    {
-        MutationFn = overrides.MutationFn ?? baseOptions.MutationFn,
-        Retry = overrides.Retry ?? baseOptions.Retry,
-        RetryDelay = overrides.RetryDelay ?? baseOptions.RetryDelay,
-        NetworkMode = overrides.NetworkMode ?? baseOptions.NetworkMode,
-        GcTime = overrides.GcTime ?? baseOptions.GcTime,
-        Scope = overrides.Scope ?? baseOptions.Scope,
-        Meta = overrides.Meta ?? baseOptions.Meta,
-    };
 
     private static Func<QueryFunctionContext, Task<object?>>? WrapQueryFn<TQueryFnData>(
         Func<QueryFunctionContext, Task<TQueryFnData>>? queryFn)
