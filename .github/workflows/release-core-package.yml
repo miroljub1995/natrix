@@ -103,6 +103,8 @@ jobs:
             -p:NatrixApiVersion=$MINIMUM_NATRIX_API_VERSION
           dotnet pack src/Natrix.Ssr/Natrix.Ssr.csproj -c Release -o artifacts/nuget \
             -p:NatrixApiVersion=$MINIMUM_NATRIX_API_VERSION
+          dotnet pack src/Natrix.Query/Natrix.Query.csproj -c Release -o artifacts/nuget \
+            -p:NatrixApiVersion=$MINIMUM_NATRIX_API_VERSION
 
       - name: Upload package artifacts
         if: steps.release_check.outputs.exists != 'true'

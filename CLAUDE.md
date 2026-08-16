@@ -24,6 +24,11 @@ Tailwind CSS integration.
   it is for constraints that are not obvious from the code. Diagrams live
   alongside it in `src/Natrix.TailwindCss.Generators/ARCHITECTURE.md`.
 
+- **Server-state queries** — `src/Natrix.Query`, a port of TanStack Query on top of
+  `Natrix.Signals`. `src/Natrix.Query/README.md` documents the API and, at the end, every
+  place the port deliberately diverges from the original; read that section before
+  "fixing" one of those divergences.
+
 - **Browser-WASM tests** — `.github/instructions/testing.instructions.md`,
   imported below. `Natrix.Browser.Tests` and `Natrix.WebIDLGenerator.Tests`
   cannot be run with `dotnet test`.

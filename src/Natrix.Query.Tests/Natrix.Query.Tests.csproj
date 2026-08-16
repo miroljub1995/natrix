@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+        <PackageReference Include="TUnit"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Natrix.Query\Natrix.Query.csproj"/>
+        <ProjectReference Include="..\Natrix.Ssr\Natrix.Ssr.csproj"/>
+    </ItemGroup>
+
+</Project>
