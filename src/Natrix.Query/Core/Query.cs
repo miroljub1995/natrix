@@ -34,7 +34,6 @@ public sealed class Query
         _scheduler = scheduler;
         Client = client;
         QueryKey = options.QueryKey;
-        QueryHash = options.QueryHash;
         Options = options;
         _gcTime = TimeSpan.Zero;
         UpdateGcTime(options.GcTime);
@@ -50,9 +49,6 @@ public sealed class Query
 
     /// <summary>The key this query was registered under.</summary>
     public QueryKey QueryKey { get; }
-
-    /// <summary>The hash the cache indexes this query under.</summary>
-    public string QueryHash { get; }
 
     /// <summary>The query's current options, last written by whichever observer set them.</summary>
     public ResolvedQueryOptions Options { get; private set; }
@@ -351,7 +347,7 @@ public sealed class Query
             () => _abortSignalConsumed = true);
 
         Task<object?> Fetch() => options2.QueryFn is null
-            ? Task.FromException<object?>(new MissingQueryFunctionException(QueryHash))
+            ? Task.FromException<object?>(new MissingQueryFunctionException(QueryKey))
             : options2.QueryFn(context);
 
         Func<Task<object?>> fetchFn = Fetch;

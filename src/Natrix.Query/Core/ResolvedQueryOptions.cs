@@ -11,9 +11,6 @@ public sealed class ResolvedQueryOptions
     /// <summary>The query's key.</summary>
     public required QueryKey QueryKey { get; init; }
 
-    /// <summary>The hash the cache indexes this query under.</summary>
-    public required string QueryHash { get; init; }
-
     /// <summary>
     /// The function that produces the data. <c>null</c> means the query cannot fetch on its
     /// own — the "skipToken" case — and stays pending until data is written to it.

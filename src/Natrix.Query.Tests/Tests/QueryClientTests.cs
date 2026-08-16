@@ -219,7 +219,7 @@ public class QueryClientTests
             await harness.Client.InvalidateQueriesAsync(new QueryFilters { QueryKey = ["todos"] });
             await harness.SettleAsync();
 
-            var query = harness.Client.QueryCache.Get(new QueryKey("todos").Hash)!;
+            var query = harness.Client.QueryCache.Get(["todos"])!;
             await Assert.That(query.State.IsInvalidated).IsTrue();
             await Assert.That(query.State.Data).IsEqualTo("cached");
         });
@@ -532,6 +532,20 @@ public class QueryClientTests
                 Predicate = query => Equals(query.State.Data, "c"),
             });
             await Assert.That(byPredicate.Count).IsEqualTo(1);
+        });
+    }
+
+    [Test]
+    public async Task Keys_that_compare_equal_address_one_cache_entry()
+    {
+        await QueryTestHarness.RunAsync(async harness =>
+        {
+            harness.Client.SetQueryData<string>(["todos", 1], "written");
+
+            // The same key, written with a different numeric type and with the object members
+            // in another order, must find what the first one wrote.
+            await Assert.That(harness.Client.GetQueryData<string>(["todos", 1.0m])).IsEqualTo("written");
+            await Assert.That(harness.Client.QueryCache.GetAll().Count).IsEqualTo(1);
         });
     }
 }

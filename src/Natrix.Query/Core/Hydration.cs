@@ -2,9 +2,8 @@ namespace Natrix.Query;
 
 /// <summary>One cache entry, extracted so it can be moved between clients.</summary>
 /// <param name="QueryKey">The key the entry was stored under.</param>
-/// <param name="QueryHash">The hash the entry was indexed by.</param>
 /// <param name="State">The entry's state, with any in-flight fetch reset to idle.</param>
-public sealed record DehydratedQuery(QueryKey QueryKey, string QueryHash, QueryState State);
+public sealed record DehydratedQuery(QueryKey QueryKey, QueryState State);
 
 /// <summary>A snapshot of a cache, ready to be transferred and restored.</summary>
 /// <param name="Queries">The entries worth transferring.</param>
@@ -46,7 +45,6 @@ public static class Hydration
             .Where(shouldDehydrate)
             .Select(query => new DehydratedQuery(
                 query.QueryKey,
-                query.QueryHash,
                 query.State with
                 {
                     // Whatever was in flight belonged to the other client; the receiving one
@@ -77,7 +75,7 @@ public static class Hydration
                 FetchMeta = null,
             };
 
-            var existing = client.QueryCache.Get(dehydrated.QueryHash);
+            var existing = client.QueryCache.Get(dehydrated.QueryKey);
 
             if (existing is not null)
             {

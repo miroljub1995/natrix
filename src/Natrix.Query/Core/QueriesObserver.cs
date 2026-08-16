@@ -6,7 +6,7 @@ namespace Natrix.Query;
 /// <c>QueriesObserver</c>, behind <see cref="NatrixQuery.UseQueries{TQueryFnData}(Func{IReadOnlyList{UseQueryOptions{TQueryFnData}}})"/>.
 /// </summary>
 /// <remarks>
-/// Reuse is matched on the query hash: a list that keeps a key and adds another one leaves the
+/// Reuse is matched on the query key: a list that keeps one key and adds another leaves the
 /// first query untouched — no re-mount, no refetch — while the new one starts loading.
 /// </remarks>
 public sealed class QueriesObserver<TQueryFnData> : IDisposable
@@ -52,8 +52,8 @@ public sealed class QueriesObserver<TQueryFnData> : IDisposable
         {
             foreach (var options in queries)
             {
-                var hash = options.QueryKey.Hash;
-                var match = previous.FirstOrDefault(entry => entry.Hash == hash);
+                var key = options.QueryKey;
+                var match = previous.FirstOrDefault(entry => entry.Key == key);
 
                 if (match is not null)
                 {
@@ -64,7 +64,7 @@ public sealed class QueriesObserver<TQueryFnData> : IDisposable
                 }
 
                 var observer = new QueryObserver<TQueryFnData, TQueryFnData>(_client, options);
-                var entry = new Entry(hash, observer);
+                var entry = new Entry(key, observer);
                 entry.Subscription = observer.Subscribe(_ => Notify());
                 reordered.Add(entry);
             }
@@ -127,9 +127,9 @@ public sealed class QueriesObserver<TQueryFnData> : IDisposable
         }
     }
 
-    private sealed class Entry(string hash, QueryObserver<TQueryFnData, TQueryFnData> observer)
+    private sealed class Entry(QueryKey key, QueryObserver<TQueryFnData, TQueryFnData> observer)
     {
-        public string Hash { get; } = hash;
+        public QueryKey Key { get; } = key;
 
         public QueryObserver<TQueryFnData, TQueryFnData> Observer { get; } = observer;
 

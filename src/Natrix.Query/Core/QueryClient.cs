@@ -133,7 +133,7 @@ public sealed class QueryClient : IDisposable
     {
         ArgumentNullException.ThrowIfNull(queryKey);
 
-        var state = QueryCache.Get(queryKey.Hash)?.State;
+        var state = QueryCache.Get(queryKey)?.State;
         return state is { HasData: true } ? (TData?)state.Data : default;
     }
 
@@ -141,7 +141,7 @@ public sealed class QueryClient : IDisposable
     public QueryState? GetQueryState(QueryKey queryKey)
     {
         ArgumentNullException.ThrowIfNull(queryKey);
-        return QueryCache.Get(queryKey.Hash)?.State;
+        return QueryCache.Get(queryKey)?.State;
     }
 
     /// <summary>
@@ -166,7 +166,7 @@ public sealed class QueryClient : IDisposable
         ArgumentNullException.ThrowIfNull(queryKey);
         ArgumentNullException.ThrowIfNull(updater);
 
-        var existing = QueryCache.Get(queryKey.Hash);
+        var existing = QueryCache.Get(queryKey);
         var previous = existing is { State.HasData: true } ? (TData?)existing.State.Data : default;
         var next = updater(previous);
 
@@ -259,7 +259,7 @@ public sealed class QueryClient : IDisposable
     {
         ArgumentNullException.ThrowIfNull(options);
 
-        var query = QueryCache.Get(options.QueryKey.Hash);
+        var query = QueryCache.Get(options.QueryKey);
         if (query is { State.HasData: true })
         {
             return (InfiniteData<TPage, TPageParam>?)query.State.Data;
@@ -419,7 +419,7 @@ public sealed class QueryClient : IDisposable
         ArgumentNullException.ThrowIfNull(queryKey);
         ArgumentNullException.ThrowIfNull(options);
 
-        _queryDefaults.RemoveAll(entry => entry.Key.Hash == queryKey.Hash);
+        _queryDefaults.RemoveAll(entry => entry.Key == queryKey);
         _queryDefaults.Add((queryKey, options));
     }
 
@@ -493,7 +493,6 @@ public sealed class QueryClient : IDisposable
         return new ResolvedQueryOptions
         {
             QueryKey = options.QueryKey,
-            QueryHash = options.QueryKey.Hash,
             QueryFn = queryFn,
             Enabled = enabled,
             StaleTime = options.StaleTime

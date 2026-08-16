@@ -52,7 +52,7 @@ public sealed class QueryFilters
         {
             if (Exact)
             {
-                if (query.QueryHash != QueryKey.Hash)
+                if (query.QueryKey != QueryKey)
                 {
                     return false;
                 }

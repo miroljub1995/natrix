@@ -58,7 +58,7 @@ public class HydrationTests
             });
 
             await Assert.That(dehydrated.Queries.Count).IsEqualTo(1);
-            await Assert.That(dehydrated.Queries[0].QueryKey.Hash).IsEqualTo(new QueryKey("todos").Hash);
+            await Assert.That(dehydrated.Queries[0].QueryKey == new QueryKey("todos")).IsTrue();
         });
     }
 

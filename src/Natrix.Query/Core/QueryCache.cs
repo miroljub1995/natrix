@@ -22,9 +22,9 @@ public sealed class QueryCacheConfig
 }
 
 /// <summary>
-/// The store behind a <see cref="QueryClient"/>: every query, indexed by the hash of its key,
-/// plus the notification stream describing what happens to them. The counterpart of TanStack
-/// Query's <c>QueryCache</c>.
+/// The store behind a <see cref="QueryClient"/>: every query, indexed by its key, plus the
+/// notification stream describing what happens to them. The counterpart of TanStack Query's
+/// <c>QueryCache</c>.
 /// </summary>
 /// <remarks>
 /// Sharing one cache between clients is how a server-rendered request hands its data to
@@ -32,7 +32,7 @@ public sealed class QueryCacheConfig
 /// </remarks>
 public sealed class QueryCache(QueryCacheConfig? config = null)
 {
-    private readonly Dictionary<string, Query> _queries = new(StringComparer.Ordinal);
+    private readonly Dictionary<QueryKey, Query> _queries = [];
     private readonly List<Action<QueryCacheNotifyEvent>> _listeners = [];
 
     /// <summary>The callbacks that fire for every query here.</summary>
@@ -41,11 +41,11 @@ public sealed class QueryCache(QueryCacheConfig? config = null)
     /// <summary>Every query currently in the cache.</summary>
     public IReadOnlyList<Query> GetAll() => _queries.Values.ToArray();
 
-    /// <summary>The query stored under <paramref name="queryHash"/>, if any.</summary>
-    public Query? Get(string queryHash)
+    /// <summary>The query stored under <paramref name="queryKey"/>, if any.</summary>
+    public Query? Get(QueryKey queryKey)
     {
-        ArgumentNullException.ThrowIfNull(queryHash);
-        return _queries.GetValueOrDefault(queryHash);
+        ArgumentNullException.ThrowIfNull(queryKey);
+        return _queries.GetValueOrDefault(queryKey);
     }
 
     /// <summary>
@@ -58,7 +58,7 @@ public sealed class QueryCache(QueryCacheConfig? config = null)
         ArgumentNullException.ThrowIfNull(client);
         ArgumentNullException.ThrowIfNull(options);
 
-        if (_queries.TryGetValue(options.QueryHash, out var existing))
+        if (_queries.TryGetValue(options.QueryKey, out var existing))
         {
             return existing;
         }
@@ -73,12 +73,12 @@ public sealed class QueryCache(QueryCacheConfig? config = null)
     {
         ArgumentNullException.ThrowIfNull(query);
 
-        if (_queries.ContainsKey(query.QueryHash))
+        if (_queries.ContainsKey(query.QueryKey))
         {
             return;
         }
 
-        _queries[query.QueryHash] = query;
+        _queries[query.QueryKey] = query;
         Notify(new QueryCacheNotifyEvent(QueryCacheNotifyEventType.Added, query, null));
     }
 
@@ -87,15 +87,15 @@ public sealed class QueryCache(QueryCacheConfig? config = null)
     {
         ArgumentNullException.ThrowIfNull(query);
 
-        if (_queries.TryGetValue(query.QueryHash, out var stored))
+        if (_queries.TryGetValue(query.QueryKey, out var stored))
         {
             query.Destroy();
 
             // Only drop the entry when it is still the one being removed: a rebuild may
-            // already have replaced it under the same hash.
+            // already have replaced it under the same key.
             if (ReferenceEquals(stored, query))
             {
-                _queries.Remove(query.QueryHash);
+                _queries.Remove(query.QueryKey);
             }
 
             Notify(new QueryCacheNotifyEvent(QueryCacheNotifyEventType.Removed, query, null));
@@ -119,7 +119,7 @@ public sealed class QueryCache(QueryCacheConfig? config = null)
         // An exact-key lookup is the common case and does not need a scan.
         if (filters is { QueryKey: { } key, Exact: true, Type: QueryTypeFilter.All, Stale: null, FetchStatus: null, Predicate: null })
         {
-            return Get(key.Hash);
+            return Get(key);
         }
 
         return _queries.Values.FirstOrDefault(filters.Matches);

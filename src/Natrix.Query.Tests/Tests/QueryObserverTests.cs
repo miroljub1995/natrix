@@ -276,7 +276,7 @@ public class QueryObserverTests
             await Assert.That(observer.CurrentResult.Data).IsEqualTo("todo 2");
 
             // The first entry is still cached and nobody is watching it.
-            var first = harness.Client.QueryCache.Get(new QueryKey("todos", 1).Hash);
+            var first = harness.Client.QueryCache.Get(["todos", 1]);
             await Assert.That(first).IsNotNull();
             await Assert.That(first!.ObserversCount).IsEqualTo(0);
         });
@@ -626,7 +626,7 @@ public class QueryObserverTests
             var subscription = observer.Subscribe(_ => { });
             await harness.SettleAsync();
 
-            var query = harness.Client.QueryCache.Get(new QueryKey("todos").Hash);
+            var query = harness.Client.QueryCache.Get(["todos"]);
             await Assert.That(query!.ObserversCount).IsEqualTo(1);
 
             subscription.Dispose();
@@ -634,10 +634,10 @@ public class QueryObserverTests
 
             // Still cached: another observer mounting within the collection window reuses it.
             await harness.AdvanceAsync(TimeSpan.FromMinutes(4));
-            await Assert.That(harness.Client.QueryCache.Get(query.QueryHash)).IsNotNull();
+            await Assert.That(harness.Client.QueryCache.Get(query.QueryKey)).IsNotNull();
 
             await harness.AdvanceAsync(TimeSpan.FromMinutes(2));
-            await Assert.That(harness.Client.QueryCache.Get(query.QueryHash)).IsNull();
+            await Assert.That(harness.Client.QueryCache.Get(query.QueryKey)).IsNull();
         });
     }
 

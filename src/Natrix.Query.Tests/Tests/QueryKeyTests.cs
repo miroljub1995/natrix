@@ -10,7 +10,6 @@ public class QueryKeyTests
         QueryKey first = ["todos", 5];
         var second = new QueryKey("todos", 5);
 
-        await Assert.That(second.Hash).IsEqualTo(first.Hash);
         await Assert.That(first == second).IsTrue();
         await Assert.That(second.GetHashCode()).IsEqualTo(first.GetHashCode());
     }
@@ -22,7 +21,7 @@ public class QueryKeyTests
         QueryKey constructed = [JsonValue.Create("todos"), JsonValue.Create(5)];
 
         await Assert.That(constructed == literal).IsTrue();
-        await Assert.That(constructed.Hash).IsEqualTo(literal.Hash);
+        await Assert.That(constructed.GetHashCode()).IsEqualTo(literal.GetHashCode());
     }
 
     [Test]
@@ -34,8 +33,6 @@ public class QueryKeyTests
 
         await Assert.That(todos == todo).IsFalse();
         await Assert.That(todo == other).IsFalse();
-        await Assert.That(todos.Hash).IsNotEqualTo(todo.Hash);
-        await Assert.That(todo.Hash).IsNotEqualTo(other.Hash);
     }
 
     [Test]
@@ -45,7 +42,6 @@ public class QueryKeyTests
         QueryKey text = ["todos", "5"];
 
         await Assert.That(number == text).IsFalse();
-        await Assert.That(number.Hash).IsNotEqualTo(text.Hash);
     }
 
     [Test]
@@ -56,8 +52,9 @@ public class QueryKeyTests
 
         await Assert.That(second == first).IsTrue();
 
-        // The hash has to agree with equality, or the two would address different cache entries.
-        await Assert.That(second.Hash).IsEqualTo(first.Hash);
+        // The hash code has to agree with equality, or the two would land in different buckets
+        // and address different cache entries.
+        await Assert.That(second.GetHashCode()).IsEqualTo(first.GetHashCode());
     }
 
     [Test]
@@ -67,7 +64,6 @@ public class QueryKeyTests
         QueryKey second = ["todos", new JsonObject { ["page"] = 2 }];
 
         await Assert.That(second == first).IsFalse();
-        await Assert.That(second.Hash).IsNotEqualTo(first.Hash);
     }
 
     [Test]
@@ -79,7 +75,7 @@ public class QueryKeyTests
 
         await Assert.That(same == key).IsTrue();
         await Assert.That(different == key).IsFalse();
-        await Assert.That(same.Hash).IsEqualTo(key.Hash);
+        await Assert.That(same.GetHashCode()).IsEqualTo(key.GetHashCode());
     }
 
     [Test]
@@ -172,5 +168,33 @@ public class QueryKeyTests
 
         await Assert.That(seen[["todos", 1]]).IsEqualTo("first");
         await Assert.That(seen.ContainsKey(["todos", 2])).IsFalse();
+    }
+
+    [Test]
+    public async Task A_number_is_the_same_segment_whatever_type_it_arrived_as()
+    {
+        QueryKey asInt = ["page", 1];
+        QueryKey asLong = ["page", 1L];
+        QueryKey asDouble = ["page", 1.0];
+        QueryKey asDecimal = ["page", 1.0m];
+
+        // DeepEquals compares numbers by value, so the hash code has to as well — otherwise
+        // equal keys would land in different buckets.
+        foreach (var equivalent in new[] { asLong, asDouble, asDecimal })
+        {
+            await Assert.That(equivalent == asInt).IsTrue();
+            await Assert.That(equivalent.GetHashCode()).IsEqualTo(asInt.GetHashCode());
+        }
+
+        QueryKey asText = ["page", "1"];
+        await Assert.That(asText == asInt).IsFalse();
+    }
+
+    [Test]
+    public async Task A_key_renders_as_the_json_array_it_is()
+    {
+        QueryKey key = ["todos", 5, new JsonObject { ["page"] = 1 }];
+
+        await Assert.That(key.ToString()).IsEqualTo("""["todos",5,{"page":1}]""");
     }
 }

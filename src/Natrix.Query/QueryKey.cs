@@ -1,5 +1,6 @@
 using System.Buffers;
 using System.Collections;
+using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.Json;
@@ -20,9 +21,9 @@ namespace Natrix.Query;
 /// </para>
 /// <para>
 /// Keys are compared with <see cref="JsonNode.DeepEquals"/>, so equal values are one key
-/// however they were built, and object member order never affects identity. Cache lookup goes
-/// through <see cref="Hash"/>, a canonical rendering that sorts object members for exactly that
-/// reason.
+/// however they were built: object member order does not matter, and neither does the CLR type
+/// a number arrived as. The cache indexes keys directly, so that comparison is the only notion
+/// of identity there is.
 /// </para>
 /// <para>
 /// A key is expected to be immutable once used: mutating a segment afterwards changes what the
@@ -40,7 +41,7 @@ namespace Natrix.Query;
 public sealed class QueryKey : IReadOnlyList<JsonNode?>, IEquatable<QueryKey>
 {
     private readonly JsonNode?[] _segments;
-    private string? _hash;
+    private int? _hashCode;
 
     public QueryKey(params JsonNode?[] segments)
     {
@@ -50,13 +51,6 @@ public sealed class QueryKey : IReadOnlyList<JsonNode?>, IEquatable<QueryKey>
 
     /// <summary>Collection-expression factory, so <c>QueryKey key = ["todos", id];</c> compiles.</summary>
     public static QueryKey Create(ReadOnlySpan<JsonNode?> segments) => new(segments.ToArray());
-
-    /// <summary>
-    /// The canonical rendering used to address the cache: the segments as a JSON array, with
-    /// the members of every object sorted by name so that two keys
-    /// <see cref="JsonNode.DeepEquals"/> considers equal render identically.
-    /// </summary>
-    public string Hash => _hash ??= ComputeHash();
 
     public JsonNode? this[int index] => _segments[index];
 
@@ -112,9 +106,40 @@ public sealed class QueryKey : IReadOnlyList<JsonNode?>, IEquatable<QueryKey>
 
     public override bool Equals(object? obj) => Equals(obj as QueryKey);
 
-    public override int GetHashCode() => Hash.GetHashCode(StringComparison.Ordinal);
+    /// <remarks>
+    /// Structural, and built to agree with <see cref="JsonNode.DeepEquals"/> rather than with
+    /// any particular rendering: object members are combined unordered, and a number is hashed
+    /// by its value, so <c>1</c>, <c>1.0</c> and <c>1.0m</c> land in the same bucket the way
+    /// they compare.
+    /// </remarks>
+    public override int GetHashCode() => _hashCode ??= ComputeHashCode();
 
-    public override string ToString() => Hash;
+    /// <summary>The segments as a JSON array — for logs, error messages and debugging.</summary>
+    public override string ToString()
+    {
+        var buffer = new ArrayBufferWriter<byte>();
+
+        using (var writer = new Utf8JsonWriter(buffer))
+        {
+            writer.WriteStartArray();
+
+            foreach (var segment in _segments)
+            {
+                if (segment is null)
+                {
+                    writer.WriteNullValue();
+                }
+                else
+                {
+                    segment.WriteTo(writer);
+                }
+            }
+
+            writer.WriteEndArray();
+        }
+
+        return Encoding.UTF8.GetString(buffer.WrittenSpan);
+    }
 
     public static bool operator ==(QueryKey? left, QueryKey? right) =>
         left is null ? right is null : left.Equals(right);
@@ -167,60 +192,67 @@ public sealed class QueryKey : IReadOnlyList<JsonNode?>, IEquatable<QueryKey>
         return false;
     }
 
-    private string ComputeHash()
+    private int ComputeHashCode()
     {
-        var buffer = new ArrayBufferWriter<byte>();
+        var hash = new HashCode();
+        hash.Add(_segments.Length);
 
-        using (var writer = new Utf8JsonWriter(buffer))
+        foreach (var segment in _segments)
         {
-            writer.WriteStartArray();
-
-            foreach (var segment in _segments)
-            {
-                WriteCanonical(writer, segment);
-            }
-
-            writer.WriteEndArray();
+            hash.Add(HashNode(segment));
         }
 
-        return Encoding.UTF8.GetString(buffer.WrittenSpan);
+        return hash.ToHashCode();
     }
 
-    private static void WriteCanonical(Utf8JsonWriter writer, JsonNode? node)
+    private static int HashNode(JsonNode? node)
     {
         switch (node)
         {
             case null:
-                writer.WriteNullValue();
-                break;
+                return 0;
 
             case JsonObject obj:
-                // Sorted, so that two objects with the same members hash identically no matter
-                // in which order they were written — the point of TanStack Query's sorted
-                // JSON.stringify replacer, and what keeps the hash agreeing with DeepEquals.
-                writer.WriteStartObject();
-                foreach (var (name, value) in obj.OrderBy(static member => member.Key, StringComparer.Ordinal))
+            {
+                // Combined with XOR so member order cannot change the result — DeepEquals does
+                // not care about it, so neither may the hash.
+                var combined = 0;
+                foreach (var (name, value) in obj)
                 {
-                    writer.WritePropertyName(name);
-                    WriteCanonical(writer, value);
+                    combined ^= HashCode.Combine(name, HashNode(value));
                 }
 
-                writer.WriteEndObject();
-                break;
+                return HashCode.Combine("object", obj.Count, combined);
+            }
 
             case JsonArray array:
-                writer.WriteStartArray();
+            {
+                var hash = new HashCode();
+                hash.Add("array");
                 foreach (var item in array)
                 {
-                    WriteCanonical(writer, item);
+                    hash.Add(HashNode(item));
                 }
 
-                writer.WriteEndArray();
-                break;
+                return hash.ToHashCode();
+            }
 
             default:
-                node.WriteTo(writer);
-                break;
+            {
+                var text = node.ToJsonString();
+
+                // Numbers compare by value, so 1, 1.0 and 1.0m have to hash alike even though
+                // they render differently. Everything else — strings, booleans — is its own
+                // JSON text, which is already canonical.
+                if (decimal.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out var asDecimal))
+                {
+                    return asDecimal.GetHashCode();
+                }
+
+                return double.TryParse(text, NumberStyles.Float, CultureInfo.InvariantCulture, out var asDouble)
+                    ? asDouble.GetHashCode()
+                    : text.GetHashCode(StringComparison.Ordinal);
+            }
         }
     }
 }

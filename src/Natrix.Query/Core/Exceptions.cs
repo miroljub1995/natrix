@@ -27,8 +27,8 @@ public sealed class QueryCancelledException : OperationCanceledException
 /// </summary>
 public sealed class MissingQueryFunctionException : InvalidOperationException
 {
-    internal MissingQueryFunctionException(string queryHash)
-        : base($"Missing query function for query with key {queryHash}.")
+    internal MissingQueryFunctionException(QueryKey queryKey)
+        : base($"Missing query function for query with key {queryKey}.")
     {
     }
 }

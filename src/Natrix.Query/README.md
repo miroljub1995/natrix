@@ -82,11 +82,11 @@ QueryKey key = ["todos", todoId];
 QueryKey filtered = ["todos", new JsonObject { ["page"] = 1, ["sort"] = "asc" }];
 ```
 
-Keys are compared with `JsonNode.DeepEquals`, so equal values are one key however they were
-built and object member order never affects identity. Cache lookup goes through `Hash`, a
-canonical rendering that sorts object members for exactly that reason. Treat a key as immutable
-once used — mutating a segment afterwards changes what the key means without changing the entry
-it already addressed.
+Keys are compared with `JsonNode.DeepEquals`, and the cache is indexed by them directly, so
+that comparison is the only notion of identity there is: object member order does not matter,
+and neither does the CLR type a number arrived as. Treat a key as immutable once used —
+mutating a segment afterwards changes what the key means without changing the entry it already
+addressed.
 
 Filters use prefix matching, so `["todos"]` selects `["todos", 1]` too:
 

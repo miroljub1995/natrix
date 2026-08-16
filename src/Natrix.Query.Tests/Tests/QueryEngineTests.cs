@@ -165,7 +165,7 @@ public class QueryEngineTests
             await Assert.That(seen is not null).IsTrue();
             await Assert.That(seen!["errorMessage"]).IsEqualTo("could not load todos");
 
-            var query = harness.Client.QueryCache.Get(new QueryKey("todos").Hash)!;
+            var query = harness.Client.QueryCache.Get(["todos"])!;
             await Assert.That(query.Meta!["errorMessage"]).IsEqualTo("could not load todos");
         });
     }
@@ -193,16 +193,16 @@ public class QueryEngineTests
             var longSubscription = longLived.Subscribe(_ => { });
             await harness.SettleAsync();
 
-            var hash = new QueryKey("todos").Hash;
+            QueryKey key = ["todos"];
 
             shortSubscription.Dispose();
             longSubscription.Dispose();
 
             await harness.AdvanceAsync(TimeSpan.FromMinutes(5));
-            await Assert.That(harness.Client.QueryCache.Get(hash)).IsNotNull();
+            await Assert.That(harness.Client.QueryCache.Get(key)).IsNotNull();
 
             await harness.AdvanceAsync(TimeSpan.FromMinutes(6));
-            await Assert.That(harness.Client.QueryCache.Get(hash)).IsNull();
+            await Assert.That(harness.Client.QueryCache.Get(key)).IsNull();
         });
     }
 

@@ -219,7 +219,7 @@ public class ComposableTests
 
             await harness.SettleAsync();
 
-            var query = harness.Client.QueryCache.Get(new QueryKey("todos").Hash)!;
+            var query = harness.Client.QueryCache.Get(["todos"])!;
             await Assert.That(query.ObserversCount).IsEqualTo(1);
 
             app.Dispose();
