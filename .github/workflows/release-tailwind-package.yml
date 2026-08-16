@@ -18,6 +18,9 @@ jobs:
   release:
     name: Release Natrix.TailwindCss
     runs-on: ubuntu-latest
+    env:
+      MINIMUM_NATRIX_CORE_VERSION: 0.4.0
+      MINIMUM_NATRIX_API_VERSION: 0.1.0
 
     steps:
       - name: Checkout repository
@@ -108,7 +111,9 @@ jobs:
         run: |
           mkdir -p artifacts/nuget
 
-          dotnet pack src/Natrix.TailwindCss/Natrix.TailwindCss.csproj -c Release --no-build -o artifacts/nuget
+          dotnet pack src/Natrix.TailwindCss/Natrix.TailwindCss.csproj -c Release --no-build -o artifacts/nuget \
+            -p:NatrixCoreVersion=$MINIMUM_NATRIX_CORE_VERSION \
+            -p:NatrixApiVersion=$MINIMUM_NATRIX_API_VERSION
 
       - name: Check package size
         # The package carries the native V8 library for every supported build

@@ -1,6 +1,6 @@
 using Microsoft.CodeAnalysis;
 
-namespace Natrix.TailwindCss.Generators.Tests;
+namespace Natrix.TailwindCss.Tests;
 
 /// <summary>
 /// Guards the pipeline's caching behaviour.

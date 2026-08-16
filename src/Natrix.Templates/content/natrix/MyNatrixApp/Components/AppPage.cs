@@ -6,6 +6,7 @@ using Natrix.Ssr.HotReload;
 using MyNatrixApp.Client;
 using MyNatrixApp.Client.Components;
 using Natrix.Signals;
+using Natrix.TailwindCss;
 
 namespace MyNatrixApp.Components;
 
@@ -63,11 +64,7 @@ public class AppPage : BaseComponent<AppPageProps, NoEvents, NoSlots, NoExpose>
                             },
                             new MainScript(),
                             new HydrationStateScript(),
-                            new Style
-                            {
-                                Props = new StyleProps(),
-                                Children = [new DomText { Text = Styles.GetCss().ToConstSignal() }],
-                            },
+                            new TailwindCssStyle { Css = Styles.GetCss() },
                         ],
                     },
                     new Body

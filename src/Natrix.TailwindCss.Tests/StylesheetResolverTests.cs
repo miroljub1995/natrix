@@ -1,6 +1,6 @@
 using System.Collections.Immutable;
 
-namespace Natrix.TailwindCss.Generators.Tests;
+namespace Natrix.TailwindCss.Tests;
 
 public class StylesheetResolverTests
 {

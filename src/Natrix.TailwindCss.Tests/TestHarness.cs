@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Text;
 
-namespace Natrix.TailwindCss.Generators.Tests;
+namespace Natrix.TailwindCss.Tests;
 
 /// <summary>A stylesheet supplied to the generator without touching disk.</summary>
 internal sealed class InMemoryAdditionalText(string path, string text) : AdditionalText

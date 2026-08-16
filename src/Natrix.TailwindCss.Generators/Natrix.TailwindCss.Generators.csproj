@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="Natrix.TailwindCss.Generators.Tests" />
+    <InternalsVisibleTo Include="Natrix.TailwindCss.Tests" />
   </ItemGroup>
 
   <!--

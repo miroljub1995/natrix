@@ -6,6 +6,7 @@ using Natrix.Docs.Client;
 using Natrix.Docs.Client.Components;
 using Natrix.Ssr.Components;
 using Natrix.Signals;
+using Natrix.TailwindCss;
 
 namespace Natrix.Docs.Components;
 
@@ -46,11 +47,7 @@ public class DocsPage : BaseComponent<DocsPageProps, NoEvents, NoSlots, NoExpose
                             },
                             new MainScript(),
                             new HydrationStateScript(),
-                            new Style
-                            {
-                                Props = new StyleProps(),
-                                Children = [new DomText { Text = Styles.GetCss().ToConstSignal() }],
-                            },
+                            new TailwindCssStyle { Css = Styles.GetCss() },
                         ],
                     },
                     new Body

@@ -1,6 +1,6 @@
 using Natrix.TailwindCss.Engine.Abstractions;
 
-namespace Natrix.TailwindCss.Generators.Tests;
+namespace Natrix.TailwindCss.Tests;
 
 /// <summary>
 /// Exercises the ClearScript layer directly.

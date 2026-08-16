@@ -3,7 +3,7 @@
 Covers five projects that are one subsystem: `Natrix.TailwindCss` (the package),
 `Natrix.TailwindCss.Generators` (this one), `Natrix.TailwindCss.Engine.Abstractions`
 (the contract), `Natrix.TailwindCss.Engine` (the ClearScript bridge) and
-`Natrix.TailwindCss.Generators.Tests`. Read this before changing any of them.
+`Natrix.TailwindCss.Tests`. Read this before changing any of them.
 [`ARCHITECTURE.md`](ARCHITECTURE.md) has the same structure as diagrams if you
 prefer to see it.
 
@@ -16,11 +16,11 @@ via ClearScript — during the build. Consumers need no Node, no CLI and no watc
 
 | Project | Target frameworks | Role |
 | --- | --- | --- |
-| `Natrix.TailwindCss` | `net9.0;net10.0` | The shipped package. **Contains no source** — it only assembles the analyzer, targets and engine payload. |
+| `Natrix.TailwindCss` | `net9.0;net10.0` | The shipped package. Assembles the analyzer, targets and engine payload, and carries the only runtime code in the subsystem: `HotReload/`, which pushes a regenerated stylesheet into the browser. That is why it — and only it — references `Natrix.Core` and `Natrix.StdWeb`. |
 | `Natrix.TailwindCss.Generators` | `netstandard2.0` | The incremental generator: Roslyn pipeline, stylesheet resolution, embedded Tailwind bundle. |
 | `Natrix.TailwindCss.Engine.Abstractions` | `netstandard2.0` | `ITailwindEngine`, `StylesheetResult` and the two exception types. |
 | `Natrix.TailwindCss.Engine` | `net462;net8.0` | The bridge. The **only** code that names a ClearScript type. Built once per compiler-host runtime. |
-| `Natrix.TailwindCss.Generators.Tests` | `net9.0;net10.0` | TUnit + Verify. 66 tests. |
+| `Natrix.TailwindCss.Tests` | `net9.0;net10.0` | TUnit + Verify. 70 tests, covering the generator and the package's runtime half. |
 
 Plus `src/Natrix.TailwindCss.Generators/js/` — the esbuild bundle sources
 (`tailwindcss` and `esbuild` are the only npm dependencies).

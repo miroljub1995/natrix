@@ -5,6 +5,12 @@
     <WarningsNotAsErrors>$(WarningsNotAsErrors);IL3000</WarningsNotAsErrors>
   </PropertyGroup>
 
+  <!-- The tests used to sit in Natrix.TailwindCss.Generators.Tests and pick the generator's
+       types up by parent-namespace lookup. They no longer do. -->
+  <ItemGroup>
+    <Using Include="Natrix.TailwindCss.Generators" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp" />
     <PackageReference Include="TUnit" />
@@ -14,6 +20,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Natrix.TailwindCss.Generators\Natrix.TailwindCss.Generators.csproj" />
+    <!-- For the package's runtime half: the hot reload updater. -->
+    <ProjectReference Include="..\Natrix.TailwindCss\Natrix.TailwindCss.csproj" />
   </ItemGroup>
 
   <!--
