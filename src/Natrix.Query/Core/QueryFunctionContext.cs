@@ -15,12 +15,12 @@ namespace Natrix.Query;
 /// finish. This mirrors how TanStack Query watches for access to <c>signal</c>.
 /// </para>
 /// </remarks>
-public sealed class QueryFunctionContext
+public class QueryFunctionContext
 {
     private readonly CancellationToken _signal;
     private readonly Action _onSignalConsumed;
 
-    internal QueryFunctionContext(
+    internal protected QueryFunctionContext(
         QueryClient client,
         QueryKey queryKey,
         CancellationToken signal,
@@ -52,4 +52,13 @@ public sealed class QueryFunctionContext
 
     /// <summary>Arbitrary metadata attached through the <c>Meta</c> option.</summary>
     public IReadOnlyDictionary<string, object?>? Meta { get; }
+
+    /// <summary>
+    /// The token without the side effect of marking the query function as cancellation-aware.
+    /// For derived contexts that pass it on rather than consuming it themselves.
+    /// </summary>
+    internal CancellationToken RawSignal => _signal;
+
+    /// <summary>The callback that records access to <see cref="Signal"/>.</summary>
+    internal Action SignalConsumedCallback => _onSignalConsumed;
 }

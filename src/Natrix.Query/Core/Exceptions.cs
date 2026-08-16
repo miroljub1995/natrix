@@ -32,3 +32,15 @@ public sealed class MissingQueryFunctionException : InvalidOperationException
     {
     }
 }
+
+/// <summary>
+/// Raised when a mutation is fired but neither it nor its defaults supply a mutation function.
+/// </summary>
+public sealed class MissingMutationFunctionException : InvalidOperationException
+{
+    internal MissingMutationFunctionException()
+        : base("No mutation function found. Set MutationFn on the mutation, or register one for its " +
+               "key with QueryClient.SetMutationDefaults.")
+    {
+    }
+}

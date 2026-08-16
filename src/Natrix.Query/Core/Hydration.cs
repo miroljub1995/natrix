@@ -6,9 +6,17 @@ namespace Natrix.Query;
 /// <param name="State">The entry's state, with any in-flight fetch reset to idle.</param>
 public sealed record DehydratedQuery(QueryKey QueryKey, string QueryHash, QueryState State);
 
+/// <summary>One mutation, extracted so it can be resumed elsewhere.</summary>
+/// <param name="MutationKey">The key its function is registered under, if it has one.</param>
+/// <param name="State">The mutation's state, including the variables it was called with.</param>
+public sealed record DehydratedMutation(QueryKey? MutationKey, MutationState State);
+
 /// <summary>A snapshot of a cache, ready to be transferred and restored.</summary>
 /// <param name="Queries">The entries worth transferring.</param>
-public sealed record DehydratedState(IReadOnlyList<DehydratedQuery> Queries);
+/// <param name="Mutations">The mutations worth transferring — by default, the paused ones.</param>
+public sealed record DehydratedState(
+    IReadOnlyList<DehydratedQuery> Queries,
+    IReadOnlyList<DehydratedMutation> Mutations);
 
 /// <summary>Which entries <see cref="Hydration.Dehydrate"/> takes.</summary>
 public sealed class DehydrateOptions
@@ -19,6 +27,12 @@ public sealed class DehydrateOptions
     /// client should adopt.
     /// </summary>
     public Func<Query, bool>? ShouldDehydrateQuery { get; init; }
+
+    /// <summary>
+    /// Whether a mutation should be transferred. By default only paused ones are — a write
+    /// that never got out because the app was offline, which the next session should finish.
+    /// </summary>
+    public Func<Mutation, bool>? ShouldDehydrateMutation { get; init; }
 }
 
 /// <summary>
@@ -56,7 +70,15 @@ public static class Hydration
                 }))
             .ToArray();
 
-        return new DehydratedState(queries);
+        var shouldDehydrateMutation = options?.ShouldDehydrateMutation
+            ?? (static mutation => mutation.State.IsPaused);
+
+        var mutations = client.MutationCache.GetAll()
+            .Where(shouldDehydrateMutation)
+            .Select(mutation => new DehydratedMutation(mutation.Options.MutationKey, mutation.State))
+            .ToArray();
+
+        return new DehydratedState(queries, mutations);
     }
 
     /// <summary>
@@ -91,6 +113,30 @@ public static class Hydration
 
             var options = client.ResolveOptions(new UseQueryOptions<object> { QueryKey = dehydrated.QueryKey });
             client.QueryCache.Build(client, options, restored);
+        }
+
+        foreach (var dehydrated in state.Mutations)
+        {
+            // A restored mutation carries no function of its own — the receiving client
+            // supplies one through SetMutationDefaults, which is what makes a mutation that
+            // was queued offline replayable in a later session.
+            var defaults = dehydrated.MutationKey is { } key ? client.GetMutationDefaults(key) : null;
+
+            client.MutationCache.Build(
+                client,
+                new ResolvedMutationOptions
+                {
+                    MutationKey = dehydrated.MutationKey,
+                    MutationFn = defaults?.MutationFn
+                        ?? (_ => Task.FromException<object?>(new MissingMutationFunctionException())),
+                    Retry = defaults?.Retry ?? RetryOption.FromBool(false),
+                    RetryDelay = defaults?.RetryDelay ?? QueryDefaults.ExponentialBackoff,
+                    NetworkMode = defaults?.NetworkMode ?? NetworkMode.Online,
+                    GcTime = defaults?.GcTime ?? QueryDefaults.GcTime,
+                    Scope = defaults?.Scope,
+                    Meta = defaults?.Meta,
+                },
+                dehydrated.State);
         }
     }
 }

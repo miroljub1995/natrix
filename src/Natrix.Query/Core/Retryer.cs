@@ -16,7 +16,6 @@ internal sealed class Retryer
     private readonly TaskCompletionSource<object?> _completion =
         new(TaskCreationOptions.RunContinuationsAsynchronously);
 
-    private readonly CancellationTokenSource _abort = new();
     private TaskCompletionSource? _pause;
     private int _failureCount;
     private bool _isRetryCancelled;
@@ -34,9 +33,6 @@ internal sealed class Retryer
             TaskContinuationOptions.OnlyOnFaulted | TaskContinuationOptions.ExecuteSynchronously,
             TaskScheduler.Default);
     }
-
-    /// <summary>The token handed to the query function, aborted when the fetch is cancelled.</summary>
-    public CancellationToken Signal => _abort.Token;
 
     /// <summary>Settles when the fetch succeeds, gives up, or is cancelled.</summary>
     public Task<object?> Promise => _completion.Task;
@@ -63,7 +59,7 @@ internal sealed class Retryer
         }
 
         Reject(new QueryCancelledException(revert, silent));
-        _abort.Cancel();
+        _config.Abort.Cancel();
     }
 
     /// <summary>Stops retrying after the current attempt, without cancelling it.</summary>
@@ -135,7 +131,7 @@ internal sealed class Retryer
                     // attempt — four requests in total.
                     var shouldRetry = !_isRetryCancelled
                         && error is not QueryCancelledException
-                        && !_abort.IsCancellationRequested
+                        && !_config.Abort.IsCancellationRequested
                         && _config.Retry.ShouldRetry(_failureCount, error);
 
                     if (!shouldRetry)
@@ -190,7 +186,7 @@ internal sealed class Retryer
     /// very first request back; <see cref="NetworkMode.OfflineFirst"/> exists precisely to
     /// let it through.
     /// </summary>
-    private bool CanStart() =>
+    public bool CanStart() =>
         _config.CanRun() && (_config.NetworkMode != NetworkMode.Online || _config.OnlineManager.IsOnline);
 
     /// <summary>
@@ -206,6 +202,12 @@ internal sealed class Retryer
 internal sealed class RetryerConfig
 {
     public required Func<Task<object?>> Fetch { get; init; }
+
+    /// <summary>
+    /// Signals the running request to stop. Owned by the caller, which needs it before the
+    /// retryer exists in order to hand its token to the query function.
+    /// </summary>
+    public required CancellationTokenSource Abort { get; init; }
 
     public required QueryScheduler Scheduler { get; init; }
 

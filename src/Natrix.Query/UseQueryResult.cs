@@ -18,7 +18,7 @@ namespace Natrix.Query;
 /// Signals are created on first access, so an unread property costs nothing.
 /// </para>
 /// </remarks>
-public sealed class UseQueryResult<TData>
+public class UseQueryResult<TData>
 {
     private readonly IReadOnlySignal<QueryObserverResult<TData>> _result;
     private readonly Func<RefetchOptions?, Task<QueryObserverResult<TData>>> _refetch;

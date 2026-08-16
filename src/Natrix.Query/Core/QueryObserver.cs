@@ -11,7 +11,7 @@ namespace Natrix.Query;
 /// Use it directly only outside a component — a background poller, a test — and dispose it
 /// when done, since an undisposed observer keeps its query alive and polling.
 /// </remarks>
-public sealed class QueryObserver<TQueryFnData, TData> : QueryObserverBase, IDisposable
+public class QueryObserver<TQueryFnData, TData> : QueryObserverBase, IDisposable
 {
     private readonly QueryClient _client;
     private readonly List<Action<QueryObserverResult<TData>>> _listeners = [];
@@ -59,6 +59,9 @@ public sealed class QueryObserver<TQueryFnData, TData> : QueryObserverBase, IDis
     public Query CurrentQuery => _currentQuery;
 
     internal override ResolvedQueryOptions Options => _resolvedOptions;
+
+    /// <summary>The options this observer currently runs with, after defaulting.</summary>
+    protected ResolvedQueryOptions ResolvedOptions => _resolvedOptions;
 
     /// <summary>
     /// Starts watching. The first subscriber is what makes the observer live: it attaches to
@@ -248,7 +251,11 @@ public sealed class QueryObserver<TQueryFnData, TData> : QueryObserverBase, IDis
         }
     }
 
-    private async Task ExecuteFetchAsync(FetchOptions? fetchOptions = null)
+    /// <summary>
+    /// Runs a fetch through the current query, swallowing failure — a failed fetch is a result,
+    /// recorded in the query's state rather than thrown at whoever triggered it.
+    /// </summary>
+    protected async Task ExecuteFetchAsync(FetchOptions? fetchOptions = null)
     {
         UpdateQuery();
 
@@ -263,7 +270,8 @@ public sealed class QueryObserver<TQueryFnData, TData> : QueryObserverBase, IDis
         }
     }
 
-    private void UpdateResult()
+    /// <summary>Recomputes the result and notifies listeners when it changed.</summary>
+    protected void UpdateResult()
     {
         var prevResult = _currentResult;
         var nextResult = CreateResult(_currentQuery, _resolvedOptions);
@@ -386,7 +394,7 @@ public sealed class QueryObserver<TQueryFnData, TData> : QueryObserverBase, IDis
             }
         }
 
-        return new QueryObserverResult<TData>
+        var result = new QueryObserverResult<TData>
         {
             Data = data,
             HasData = hasData,
@@ -405,7 +413,17 @@ public sealed class QueryObserver<TQueryFnData, TData> : QueryObserverBase, IDis
                 || state.ErrorUpdateCount > queryInitialState.ErrorUpdateCount,
             IsEnabled = options.Enabled.Resolve(query),
         };
+
+        return AugmentResult(result, query);
     }
+
+    /// <summary>
+    /// Lets a specialised observer widen the result — how an infinite query adds its page
+    /// state. Called for every result, including the first one built during construction, so it
+    /// must not depend on state a derived constructor has yet to set.
+    /// </summary>
+    protected virtual QueryObserverResult<TData> AugmentResult(QueryObserverResult<TData> result, Query query) =>
+        result;
 
     private void UpdateTimers()
     {

@@ -42,4 +42,7 @@ public sealed class QueryClientDefaultOptions
 {
     /// <summary>Defaults for every query.</summary>
     public DefaultQueryOptions? Queries { get; init; }
+
+    /// <summary>Defaults for every mutation.</summary>
+    public DefaultMutationOptions? Mutations { get; init; }
 }

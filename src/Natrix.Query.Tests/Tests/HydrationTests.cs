@@ -113,4 +113,50 @@ public class HydrationTests
             await Assert.That(calls).IsEqualTo(0);
         });
     }
+
+    [Test]
+    public async Task A_mutation_paused_offline_can_be_resumed_by_another_client()
+    {
+        await QueryTestHarness.RunAsync(async harness =>
+        {
+            await harness.SetOnlineAsync(false);
+
+            var observer = new MutationObserver<string, string, object>(
+                harness.Client,
+                new UseMutationOptions<string, string>
+                {
+                    MutationKey = ["todos", "add"],
+                    MutationFn = title => Task.FromResult($"saved {title}"),
+                });
+
+            using var subscription = observer.Subscribe(_ => { });
+
+            observer.Mutate("buy milk");
+            await harness.SettleAsync();
+
+            await Assert.That(observer.CurrentResult.IsPaused).IsTrue();
+
+            var dehydrated = Hydration.Dehydrate(harness.Client);
+            await Assert.That(dehydrated.Mutations.Count).IsEqualTo(1);
+            await Assert.That(dehydrated.Mutations[0].State.Variables).IsEqualTo("buy milk");
+
+            // The receiving client supplies the function; the snapshot only carries what to
+            // call it with.
+            var resumed = new List<string>();
+            using var client = new QueryClient();
+            client.SetMutationDefaults(["todos"], new DefaultMutationOptions
+            {
+                MutationFn = variables =>
+                {
+                    resumed.Add((string)variables!);
+                    return Task.FromResult<object?>("saved");
+                },
+            });
+
+            Hydration.Hydrate(client, dehydrated);
+            await client.ResumePausedMutationsAsync();
+
+            await Assert.That(resumed).IsEquivalentTo(new[] { "buy milk" });
+        });
+    }
 }

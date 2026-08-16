@@ -3,10 +3,12 @@
 Asynchronous server-state management for [Natrix](https://github.com/miroljub1995/natrix) —
 a port of [TanStack Query](https://tanstack.com/query/latest/docs/framework/vue/guides/queries)
 built on Natrix signals. Caching, deduplication, background refetching, retries with backoff,
-window-focus and reconnect revalidation, polling, and garbage collection.
+window-focus and reconnect revalidation, polling, garbage collection, infinite queries, and
+mutations with optimistic updates.
 
-The API follows the Vue Query surface closely: `UseQuery`, `UseQueries`, `UseIsFetching`,
-`UseQueryClient`, a `QueryClient` with the same methods, and the same option names and defaults.
+The API follows the Vue Query surface closely: `UseQuery`, `UseQueries`, `UseInfiniteQuery`,
+`UseMutation`, `UseIsFetching`, `UseIsMutating`, `UseQueryClient`, a `QueryClient` with the same
+methods, and the same option names and defaults.
 
 ## Getting started
 
@@ -104,6 +106,82 @@ var todo = UseQuery(() => new UseQueryOptions<Todo>
 });
 ```
 
+## Mutations
+
+Reads are queries; writes are mutations. Nothing runs until you fire one, and nothing is cached
+by key — what the result tracks is the run in flight and the one before it:
+
+```csharp
+var client = UseQueryClient();
+
+var addTodo = UseMutation(new UseMutationOptions<Todo, string>
+{
+    MutationFn = title => api.CreateTodoAsync(title),
+    OnSettled = (_, _, _, _) =>
+        client.InvalidateQueriesAsync(new QueryFilters { QueryKey = ["todos"] }),
+});
+
+// from an event handler — Mutate never throws; the outcome lands in the signals
+addTodo.Mutate("buy milk");
+
+// or await it, and handle failure yourself
+var todo = await addTodo.MutateAsync("buy milk");
+```
+
+`OnMutate` runs first and its return value becomes the context every other callback receives,
+which is what an optimistic update rolls back to:
+
+```csharp
+var toggle = UseMutation(new UseMutationOptions<Todo, int, Todo[]?>
+{
+    MutationFn = id => api.ToggleAsync(id),
+    OnMutate = async id =>
+    {
+        await client.CancelQueriesAsync(new QueryFilters { QueryKey = ["todos"] });
+        var previous = client.GetQueryData<Todo[]>(["todos"]);
+        client.SetQueryData<Todo[]>(["todos"], todos => Toggled(todos, id));
+        return previous;
+    },
+    OnError = (_, _, previous) =>
+    {
+        client.SetQueryData<Todo[]>(["todos"], previous);
+        return Task.CompletedTask;
+    },
+    OnSettled = (_, _, _, _) =>
+        client.InvalidateQueriesAsync(new QueryFilters { QueryKey = ["todos"] }),
+});
+```
+
+A mutation fired while offline pauses instead of failing, and resumes when the connection
+returns — automatically for a live client, or through `ResumePausedMutationsAsync` for one
+restored from a dehydrated snapshot. Give two mutations the same `Scope` and they queue instead
+of racing. `UseIsMutating()` counts what is in flight.
+
+## Infinite queries
+
+A list that grows a page at a time lives in one cache entry, under one key:
+
+```csharp
+var projects = UseInfiniteQuery(new UseInfiniteQueryOptions<ProjectPage, int>
+{
+    QueryKey = ["projects"],
+    InitialPageParam = 0,
+    QueryFn = ctx => api.GetProjectsAsync(ctx.PageParam, ctx.Signal),
+    GetNextPageParam = (lastPage, _, _, _) => lastPage.NextCursor is { } next
+        ? next
+        : NextPageParam<int>.None,
+});
+
+// projects.Pages.Value.Pages   — every page fetched so far
+// projects.HasNextPage.Value   — whether "load more" has anything to load
+// projects.IsFetchingNextPage  — a "load more" specifically, not a refetch
+await projects.FetchNextPageAsync();
+```
+
+Refetching replays every page it already had, in order, so the list refreshes rather than
+collapsing back to its first page. `MaxPages` bounds it, `GetPreviousPageParam` lets it grow
+upwards too, and `Select` flattens the pages into whatever the component actually renders.
+
 ## The client
 
 `UseQueryClient()` returns the client serving the current subtree; everything TanStack Query
@@ -125,6 +203,8 @@ Scope a different client to part of the tree with the `QueryClientProvider` comp
 Queries register themselves with `IServerPrefetchFeature`, so a server-rendered page waits for
 its data before producing markup — no extra wiring. Move the resulting cache to the client with
 `Hydration.Dehydrate` / `Hydration.Hydrate`, serializing the snapshot with your own serializer.
+The same pair carries mutations that paused offline: the snapshot holds their variables, and the
+receiving client supplies the function through `SetMutationDefaults`.
 
 ## Differences from TanStack Query
 
@@ -137,7 +217,11 @@ its data before producing markup — no extra wiring. Move the resulting cache t
 - **`Select` must be present when the observed type differs** from what the query function
   returns; there is no structural typing to fall back on.
 - **No `notifyOnChangeProps`.** Signals already deliver per-field subscriptions.
-- **Mutations and infinite queries are not part of this package** — it ports the query side.
+- **"No more pages" is `NextPageParam<T>.None`**, not `null`. A cursor is often an `int` or a
+  `DateTime`, where `0` and `default` are perfectly good page params, so the absence has to be
+  its own value.
+- **Mutation callbacks return `Task`.** They are awaited before the mutation counts as settled
+  — which is the point, since `OnSettled` usually awaits an invalidation.
 - **Cancellation is a `CancellationToken`** (`ctx.Signal`) rather than an `AbortSignal`, and
   reading it marks the query function as honouring cancellation, exactly as TanStack Query
   watches for access to `signal`.

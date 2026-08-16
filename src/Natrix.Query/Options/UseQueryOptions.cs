@@ -65,6 +65,12 @@ public class UseQueryOptions<TQueryFnData, TData> : QueryOptionsBase
     /// when there is none) and the incoming data, and returns what to store.
     /// </summary>
     public Func<TQueryFnData?, TQueryFnData, TQueryFnData>? StructuralSharingFn { get; init; }
+
+    /// <summary>
+    /// Replaces what a fetch does while leaving caching, retrying and deduplication in place.
+    /// Set by <c>UseInfiniteQuery</c>; ordinary queries have none.
+    /// </summary>
+    internal IQueryBehavior? Behavior { get; init; }
 }
 
 /// <summary>

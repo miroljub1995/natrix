@@ -77,6 +77,12 @@ public sealed class ResolvedQueryOptions
 
     /// <summary>Arbitrary metadata, handed to the query function and available on the query.</summary>
     public IReadOnlyDictionary<string, object?>? Meta { get; init; }
+
+    /// <summary>
+    /// Replaces what a fetch does while leaving caching, retrying and deduplication in place.
+    /// Set by <c>UseInfiniteQuery</c>; ordinary queries have none.
+    /// </summary>
+    public IQueryBehavior? Behavior { get; init; }
 }
 
 /// <summary>The framework's own defaults, matching TanStack Query's.</summary>

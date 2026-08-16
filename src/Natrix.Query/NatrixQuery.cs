@@ -177,6 +177,174 @@ public static class NatrixQuery
     }
 
     /// <summary>
+    /// Subscribes the component to a query that accumulates pages, exposing what the list can
+    /// still be extended with alongside the ordinary result.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// var projects = UseInfiniteQuery(new UseInfiniteQueryOptions&lt;ProjectPage, int&gt;
+    /// {
+    ///     QueryKey = ["projects"],
+    ///     InitialPageParam = 0,
+    ///     QueryFn = ctx => api.GetProjectsAsync(ctx.PageParam, ctx.Signal),
+    ///     GetNextPageParam = (lastPage, _, _, _) => lastPage.NextCursor is { } next
+    ///         ? next
+    ///         : NextPageParam&lt;int&gt;.None,
+    /// });
+    ///
+    /// // …and on a "load more" click, when HasNextPage says there is one:
+    /// await projects.FetchNextPageAsync();
+    /// </code>
+    /// </example>
+    public static UseInfiniteQueryResult<TPage, TPageParam, InfiniteData<TPage, TPageParam>> UseInfiniteQuery<TPage, TPageParam>(
+        UseInfiniteQueryOptions<TPage, TPageParam> options,
+        QueryClient? client = null)
+    {
+        ArgumentNullException.ThrowIfNull(options);
+        return UseInfiniteQuery(() => options, client);
+    }
+
+    /// <summary>
+    /// Subscribes the component to an infinite query whose options are reactive, so the list
+    /// starts over when the key it depends on changes.
+    /// </summary>
+    public static UseInfiniteQueryResult<TPage, TPageParam, InfiniteData<TPage, TPageParam>> UseInfiniteQuery<TPage, TPageParam>(
+        Func<UseInfiniteQueryOptions<TPage, TPageParam>> optionsFactory,
+        QueryClient? client = null)
+    {
+        ArgumentNullException.ThrowIfNull(optionsFactory);
+        return UseInfiniteQueryCore<TPage, TPageParam, InfiniteData<TPage, TPageParam>>(optionsFactory, client);
+    }
+
+    /// <summary>
+    /// Subscribes the component to an infinite query and projects the accumulated pages —
+    /// flattening them into a single list, usually.
+    /// </summary>
+    public static UseInfiniteQueryResult<TPage, TPageParam, TData> UseInfiniteQuery<TPage, TPageParam, TData>(
+        UseInfiniteQueryOptions<TPage, TPageParam, TData> options,
+        QueryClient? client = null)
+    {
+        ArgumentNullException.ThrowIfNull(options);
+        return UseInfiniteQuery(() => options, client);
+    }
+
+    /// <summary>
+    /// Subscribes the component to an infinite query with reactive options and projects the
+    /// accumulated pages.
+    /// </summary>
+    public static UseInfiniteQueryResult<TPage, TPageParam, TData> UseInfiniteQuery<TPage, TPageParam, TData>(
+        Func<UseInfiniteQueryOptions<TPage, TPageParam, TData>> optionsFactory,
+        QueryClient? client = null)
+    {
+        ArgumentNullException.ThrowIfNull(optionsFactory);
+        return UseInfiniteQueryCore(optionsFactory, client);
+    }
+
+    /// <summary>
+    /// Gives the component a mutation to fire — a create, update or delete, as opposed to the
+    /// reads <c>UseQuery</c> manages.
+    /// </summary>
+    /// <remarks>
+    /// Nothing runs until <c>Mutate</c> is called, and nothing is cached by key: what the
+    /// result tracks is the run in flight and the one before it.
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// var client = UseQueryClient();
+    ///
+    /// var addTodo = UseMutation(new UseMutationOptions&lt;Todo, string&gt;
+    /// {
+    ///     MutationFn = title => api.CreateTodoAsync(title),
+    ///     OnSettled = (_, _, _, _) =>
+    ///         client.InvalidateQueriesAsync(new QueryFilters { QueryKey = ["todos"] }),
+    /// });
+    ///
+    /// // in a click handler:
+    /// addTodo.Mutate("buy milk");
+    /// </code>
+    /// </example>
+    public static UseMutationResult<TData, TVariables> UseMutation<TData, TVariables>(
+        UseMutationOptions<TData, TVariables> options,
+        QueryClient? client = null)
+    {
+        ArgumentNullException.ThrowIfNull(options);
+        return UseMutation(() => options, client);
+    }
+
+    /// <summary>
+    /// Gives the component a mutation whose options are reactive — the form to use when a
+    /// callback closes over signals that change.
+    /// </summary>
+    public static UseMutationResult<TData, TVariables> UseMutation<TData, TVariables>(
+        Func<UseMutationOptions<TData, TVariables>> optionsFactory,
+        QueryClient? client = null)
+    {
+        ArgumentNullException.ThrowIfNull(optionsFactory);
+        return UseMutationCore<TData, TVariables, object>(optionsFactory, client);
+    }
+
+    /// <summary>
+    /// Gives the component a mutation that carries a context from <c>OnMutate</c> through to
+    /// its other callbacks — how an optimistic update remembers what to roll back to.
+    /// </summary>
+    /// <example>
+    /// <code>
+    /// var client = UseQueryClient();
+    ///
+    /// var toggle = UseMutation(new UseMutationOptions&lt;Todo, int, Todo[]?&gt;
+    /// {
+    ///     MutationFn = id => api.ToggleAsync(id),
+    ///     OnMutate = async id =>
+    ///     {
+    ///         await client.CancelQueriesAsync(new QueryFilters { QueryKey = ["todos"] });
+    ///         var previous = client.GetQueryData&lt;Todo[]&gt;(["todos"]);
+    ///         client.SetQueryData&lt;Todo[]&gt;(["todos"], todos => Toggled(todos, id));
+    ///         return previous;
+    ///     },
+    ///     OnError = (_, _, previous) =>
+    ///     {
+    ///         client.SetQueryData&lt;Todo[]&gt;(["todos"], previous);
+    ///         return Task.CompletedTask;
+    ///     },
+    ///     OnSettled = (_, _, _, _) =>
+    ///         client.InvalidateQueriesAsync(new QueryFilters { QueryKey = ["todos"] }),
+    /// });
+    /// </code>
+    /// </example>
+    public static UseMutationResult<TData, TVariables> UseMutation<TData, TVariables, TContext>(
+        UseMutationOptions<TData, TVariables, TContext> options,
+        QueryClient? client = null)
+    {
+        ArgumentNullException.ThrowIfNull(options);
+        return UseMutation(() => options, client);
+    }
+
+    /// <summary>
+    /// Gives the component a mutation with reactive options that carries a context from
+    /// <c>OnMutate</c> through to its other callbacks.
+    /// </summary>
+    public static UseMutationResult<TData, TVariables> UseMutation<TData, TVariables, TContext>(
+        Func<UseMutationOptions<TData, TVariables, TContext>> optionsFactory,
+        QueryClient? client = null)
+    {
+        ArgumentNullException.ThrowIfNull(optionsFactory);
+        return UseMutationCore(optionsFactory, client);
+    }
+
+    /// <summary>How many mutations are running right now.</summary>
+    public static IReadOnlySignal<int> UseIsMutating(MutationFilters? filters = null, QueryClient? client = null)
+    {
+        var queryClient = client ?? UseQueryClient();
+
+        var count = new Signal<int>(queryClient.IsMutating(filters));
+        var subscription = queryClient.MutationCache.Subscribe(_ => count.Value = queryClient.IsMutating(filters));
+
+        new Effect(onCleanup => onCleanup(subscription.Dispose));
+
+        return count;
+    }
+
+    /// <summary>
     /// How many queries are fetching right now — the global loading indicator in one line.
     /// </summary>
     public static IReadOnlySignal<int> UseIsFetching(QueryFilters? filters = null, QueryClient? client = null)
@@ -197,6 +365,92 @@ public static class NatrixQuery
     {
         var queryClient = client ?? UseQueryClient();
 
+        var binding = Bind(
+            optionsFactory,
+            options => new QueryObserver<TQueryFnData, TData>(queryClient, options),
+            static (observer, options) => observer.SetOptions(options));
+
+        return new UseQueryResult<TData>(
+            binding.Result,
+            options => binding.Observer().RefetchAsync(options),
+            () => binding.Observer().SuspenseAsync());
+    }
+
+    private static UseInfiniteQueryResult<TPage, TPageParam, TData> UseInfiniteQueryCore<TPage, TPageParam, TData>(
+        Func<UseInfiniteQueryOptions<TPage, TPageParam, TData>> optionsFactory,
+        QueryClient? client)
+    {
+        var queryClient = client ?? UseQueryClient();
+
+        var binding = Bind<InfiniteData<TPage, TPageParam>, TData, UseInfiniteQueryOptions<TPage, TPageParam, TData>>(
+            optionsFactory,
+            options => new InfiniteQueryObserver<TPage, TPageParam, TData>(queryClient, options),
+            static (observer, options) => ((InfiniteQueryObserver<TPage, TPageParam, TData>)observer).SetOptions(options));
+
+        InfiniteQueryObserver<TPage, TPageParam, TData> Observer() =>
+            (InfiniteQueryObserver<TPage, TPageParam, TData>)binding.Observer();
+
+        return new UseInfiniteQueryResult<TPage, TPageParam, TData>(
+            binding.Result,
+            options => Observer().RefetchAsync(options),
+            () => Observer().SuspenseAsync(),
+            () => Observer().FetchNextPageAsync(),
+            () => Observer().FetchPreviousPageAsync());
+    }
+
+    private static UseMutationResult<TData, TVariables> UseMutationCore<TData, TVariables, TContext>(
+        Func<UseMutationOptions<TData, TVariables, TContext>> optionsFactory,
+        QueryClient? client)
+    {
+        var queryClient = client ?? UseQueryClient();
+
+        MutationObserver<TData, TVariables, TContext>? observer = null;
+        Signal<MutationObserverResult<TData, TVariables>>? result = null;
+        IDisposable? subscription = null;
+
+        new Effect(_ =>
+        {
+            var options = optionsFactory();
+
+            if (observer is null)
+            {
+                var created = new MutationObserver<TData, TVariables, TContext>(queryClient, options);
+                observer = created;
+
+                var resultSignal = new Signal<MutationObserverResult<TData, TVariables>>(created.CurrentResult);
+                result = resultSignal;
+
+                subscription = created.Subscribe(next => resultSignal.Value = next);
+            }
+            else
+            {
+                observer.SetOptions(options);
+            }
+        });
+
+        new Effect(onCleanup => onCleanup(() =>
+        {
+            subscription?.Dispose();
+            observer?.Dispose();
+        }));
+
+        return new UseMutationResult<TData, TVariables>(
+            result!,
+            (variables, mutateOptions) => observer!.Mutate(variables, mutateOptions),
+            (variables, mutateOptions) => observer!.MutateAsync(variables, mutateOptions),
+            () => observer!.Reset());
+    }
+
+    /// <summary>
+    /// Creates the observer, republishes its results as a signal, and ties both to the
+    /// component's scope. Shared by every query composable, which differ only in what kind of
+    /// observer they build.
+    /// </summary>
+    private static ObserverBinding<TQueryFnData, TData> Bind<TQueryFnData, TData, TOptions>(
+        Func<TOptions> optionsFactory,
+        Func<TOptions, QueryObserver<TQueryFnData, TData>> create,
+        Action<QueryObserver<TQueryFnData, TData>, TOptions> update)
+    {
         QueryObserver<TQueryFnData, TData>? observer = null;
         Signal<QueryObserverResult<TData>>? result = null;
         IDisposable? subscription = null;
@@ -210,19 +464,20 @@ public static class NatrixQuery
 
             if (observer is null)
             {
-                observer = new QueryObserver<TQueryFnData, TData>(queryClient, options);
+                var created = create(options);
+                observer = created;
 
-                var resultSignal = new Signal<QueryObserverResult<TData>>(observer.CurrentResult);
+                var resultSignal = new Signal<QueryObserverResult<TData>>(created.CurrentResult);
                 result = resultSignal;
 
                 // Subscribing is what attaches the observer to its query and starts the mount
                 // fetch, so anything it produces synchronously lands in the signal below.
-                subscription = observer.Subscribe(next => resultSignal.Value = next);
-                resultSignal.Value = observer.CurrentResult;
+                subscription = created.Subscribe(next => resultSignal.Value = next);
+                resultSignal.Value = created.CurrentResult;
             }
             else
             {
-                observer.SetOptions(options);
+                update(observer, options);
             }
         });
 
@@ -242,11 +497,13 @@ public static class NatrixQuery
             }
         });
 
-        return new UseQueryResult<TData>(
-            result!,
-            options => observer!.RefetchAsync(options),
-            () => observer!.SuspenseAsync());
+        return new ObserverBinding<TQueryFnData, TData>(result!, () => observer!);
     }
+
+    /// <summary>The signal a composable publishes, and the observer behind it.</summary>
+    private sealed record ObserverBinding<TQueryFnData, TData>(
+        IReadOnlySignal<QueryObserverResult<TData>> Result,
+        Func<QueryObserver<TQueryFnData, TData>> Observer);
 
     private static void RegisterServerPrefetch(Func<Task> prefetch)
     {

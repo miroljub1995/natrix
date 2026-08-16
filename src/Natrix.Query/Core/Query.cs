@@ -341,24 +341,37 @@ public sealed class Query
         _revertState = State;
 
         var options2 = Options;
-        Retryer? retryer = null;
-        QueryFunctionContext? context = null;
+        var abort = new CancellationTokenSource();
 
-        Task<object?> Fetch()
+        var context = new QueryFunctionContext(
+            Client,
+            QueryKey,
+            abort.Token,
+            options2.Meta,
+            () => _abortSignalConsumed = true);
+
+        Task<object?> Fetch() => options2.QueryFn is null
+            ? Task.FromException<object?>(new MissingQueryFunctionException(QueryHash))
+            : options2.QueryFn(context);
+
+        Func<Task<object?>> fetchFn = Fetch;
+
+        if (options2.Behavior is not null)
         {
-            if (options2.QueryFn is null)
+            // The behaviour may swap the whole request out — an infinite query turns this one
+            // fetch into a sequence of pages — while everything around it stays the same.
+            var behaviorContext = new QueryBehaviorContext
             {
-                return Task.FromException<object?>(new MissingQueryFunctionException(QueryHash));
-            }
+                Query = this,
+                Options = options2,
+                State = State,
+                FetchOptions = fetchOptions,
+                FunctionContext = context,
+                FetchFn = fetchFn,
+            };
 
-            context ??= new QueryFunctionContext(
-                Client,
-                QueryKey,
-                retryer!.Signal,
-                options2.Meta,
-                () => _abortSignalConsumed = true);
-
-            return options2.QueryFn(context);
+            options2.Behavior.OnFetch(behaviorContext);
+            fetchFn = behaviorContext.FetchFn;
         }
 
         if (State.FetchStatus == FetchStatus.Idle || !Equals(State.FetchMeta, fetchOptions?.Meta))
@@ -375,9 +388,10 @@ public sealed class Query
             });
         }
 
-        retryer = new Retryer(new RetryerConfig
+        var retryer = new Retryer(new RetryerConfig
         {
-            Fetch = Fetch,
+            Fetch = fetchFn,
+            Abort = abort,
             Scheduler = _scheduler,
             OnlineManager = Client.OnlineManager,
             NetworkMode = options2.NetworkMode,

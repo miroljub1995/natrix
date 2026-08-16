@@ -5,7 +5,7 @@
     <PackageId>Natrix.Query</PackageId>
     <Version>$(NatrixCoreVersion)</Version>
     <Authors>miroljub1995</Authors>
-    <Description>Asynchronous server-state management for Natrix — a port of TanStack Query built on Natrix signals: caching, background refetching, retries, and stale-while-revalidate.</Description>
+    <Description>Asynchronous server-state management for Natrix — a port of TanStack Query built on Natrix signals: caching, background refetching, retries, stale-while-revalidate, infinite queries, and mutations.</Description>
     <PackageTags>webassembly;wasm;dotnet;query;cache;async;natrix;tanstack</PackageTags>
     <PackageProjectUrl>https://github.com/miroljub1995/natrix</PackageProjectUrl>
     <RepositoryUrl>https://github.com/miroljub1995/natrix</RepositoryUrl>

@@ -12,7 +12,7 @@ namespace Natrix.Query;
 /// same time; an offline query is <see cref="QueryStatus.Pending"/> and
 /// <see cref="Natrix.Query.FetchStatus.Paused"/>.
 /// </remarks>
-public sealed record QueryObserverResult<TData>
+public record QueryObserverResult<TData>
 {
     /// <summary>The data, or <c>default</c> when there is none yet.</summary>
     public TData? Data { get; init; }
