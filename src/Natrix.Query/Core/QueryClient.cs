@@ -231,15 +231,66 @@ public sealed class QueryClient : IDisposable
 
         // An imperative fetch is awaited by a caller who wants an answer or an exception now,
         // so it does not inherit the mounted-query default of retrying three times.
-        var resolved = ResolveOptions(options, retryFallback: false);
+        return (TQueryFnData?)await FetchResolvedAsync(ResolveOptions(options, retryFallback: false))
+            .ConfigureAwait(true);
+    }
+
+    /// <summary>
+    /// Fetches an infinite query's pages ahead of time, awaiting the result. Without
+    /// <paramref name="pages"/> it loads one page; with it, that many, stopping early when the
+    /// list runs out.
+    /// </summary>
+    public async Task<InfiniteData<TPage, TPageParam>?> FetchInfiniteQueryAsync<TPage, TPageParam>(
+        UseInfiniteQueryOptions<TPage, TPageParam> options,
+        int? pages = null)
+    {
+        ArgumentNullException.ThrowIfNull(options);
+
+        var resolved = ResolveOptions(options.ToQueryOptions(pages ?? 1), retryFallback: false);
+        return (InfiniteData<TPage, TPageParam>?)await FetchResolvedAsync(resolved).ConfigureAwait(true);
+    }
+
+    /// <summary>Warms an infinite query's cache entry and swallows any failure.</summary>
+    public async Task PrefetchInfiniteQueryAsync<TPage, TPageParam>(
+        UseInfiniteQueryOptions<TPage, TPageParam> options,
+        int? pages = null)
+    {
+        try
+        {
+            await FetchInfiniteQueryAsync(options, pages).ConfigureAwait(true);
+        }
+        catch (Exception)
+        {
+            // Prefetching is best effort: the mounted query will surface the error properly.
+        }
+    }
+
+    /// <summary>Returns an infinite query's cached pages if there are any, and otherwise fetches them.</summary>
+    public async Task<InfiniteData<TPage, TPageParam>?> EnsureInfiniteQueryDataAsync<TPage, TPageParam>(
+        UseInfiniteQueryOptions<TPage, TPageParam> options,
+        int? pages = null)
+    {
+        ArgumentNullException.ThrowIfNull(options);
+
+        var query = QueryCache.Get(options.QueryKey.Hash);
+        if (query is { State.HasData: true })
+        {
+            return (InfiniteData<TPage, TPageParam>?)query.State.Data;
+        }
+
+        return await FetchInfiniteQueryAsync(options, pages).ConfigureAwait(true);
+    }
+
+    private async Task<object?> FetchResolvedAsync(ResolvedQueryOptions resolved)
+    {
         var query = QueryCache.Build(this, resolved);
 
         if (!query.IsStaleByTime(resolved.StaleTime.Resolve(query)))
         {
-            return (TQueryFnData?)query.State.Data;
+            return query.State.Data;
         }
 
-        return (TQueryFnData?)await query.FetchAsync(resolved).ConfigureAwait(true);
+        return await query.FetchAsync(resolved).ConfigureAwait(true);
     }
 
     /// <summary>

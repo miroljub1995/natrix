@@ -45,14 +45,15 @@ internal sealed class QueryTestHarness
     public static Task RunAsync(
         Func<QueryTestHarness, Task> body,
         QueryClientDefaultOptions? defaultOptions = null,
-        QueryCache? cache = null)
+        QueryCache? cache = null,
+        MutationCache? mutationCache = null)
     {
         ArgumentNullException.ThrowIfNull(body);
 
         // A dedicated thread, so the pump can block on its own queue without occupying a
         // thread-pool thread the test framework may need.
         return Task.Factory.StartNew(
-            () => Run(body, defaultOptions, cache),
+            () => Run(body, defaultOptions, cache, mutationCache),
             CancellationToken.None,
             TaskCreationOptions.LongRunning,
             TaskScheduler.Default).Unwrap();
@@ -103,7 +104,8 @@ internal sealed class QueryTestHarness
     private static Task Run(
         Func<QueryTestHarness, Task> body,
         QueryClientDefaultOptions? defaultOptions,
-        QueryCache? cache)
+        QueryCache? cache,
+        MutationCache? mutationCache)
     {
         var previous = SynchronizationContext.Current;
         var context = new PumpSynchronizationContext();
@@ -122,6 +124,7 @@ internal sealed class QueryTestHarness
                 OnlineManager = online,
                 DefaultOptions = defaultOptions,
                 QueryCache = cache,
+                MutationCache = mutationCache,
             });
 
             var harness = new QueryTestHarness(context, time, client, focus, online);

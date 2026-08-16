@@ -133,6 +133,11 @@ public sealed class Mutation
                     Error = null,
                 });
 
+                if (_cache.Config.OnMutate is not null)
+                {
+                    await _cache.Config.OnMutate(variables, this).ConfigureAwait(true);
+                }
+
                 if (Options.OnMutate is not null)
                 {
                     var context = await Options.OnMutate(variables).ConfigureAwait(true);
@@ -146,9 +151,19 @@ public sealed class Mutation
 
             var data = await retryer.Start().ConfigureAwait(true);
 
+            if (_cache.Config.OnSuccess is not null)
+            {
+                await _cache.Config.OnSuccess(data, variables, State.Context, this).ConfigureAwait(true);
+            }
+
             if (Options.OnSuccess is not null)
             {
                 await Options.OnSuccess(data, variables, State.Context).ConfigureAwait(true);
+            }
+
+            if (_cache.Config.OnSettled is not null)
+            {
+                await _cache.Config.OnSettled(data, null, variables, State.Context, this).ConfigureAwait(true);
             }
 
             if (Options.OnSettled is not null)
@@ -171,9 +186,19 @@ public sealed class Mutation
         {
             try
             {
+                if (_cache.Config.OnError is not null)
+                {
+                    await _cache.Config.OnError(error, variables, State.Context, this).ConfigureAwait(true);
+                }
+
                 if (Options.OnError is not null)
                 {
                     await Options.OnError(error, variables, State.Context).ConfigureAwait(true);
+                }
+
+                if (_cache.Config.OnSettled is not null)
+                {
+                    await _cache.Config.OnSettled(null, error, variables, State.Context, this).ConfigureAwait(true);
                 }
 
                 if (Options.OnSettled is not null)

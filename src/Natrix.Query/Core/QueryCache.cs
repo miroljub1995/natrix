@@ -1,6 +1,27 @@
 namespace Natrix.Query;
 
 /// <summary>
+/// Callbacks that fire for every query in a cache, whatever its key — the counterpart of the
+/// configuration TanStack Query's <c>QueryCache</c> takes.
+/// </summary>
+/// <remarks>
+/// This is where an application puts what should happen for all failures rather than one:
+/// showing a toast, reporting to telemetry, signing the user out on a 401. Pair it with the
+/// <c>Meta</c> option, which exists so a query can carry the message its global handler needs.
+/// </remarks>
+public sealed class QueryCacheConfig
+{
+    /// <summary>Runs after any query fails, cancellations excluded.</summary>
+    public Action<Exception, Query>? OnError { get; init; }
+
+    /// <summary>Runs after any query succeeds, with the data it produced.</summary>
+    public Action<object?, Query>? OnSuccess { get; init; }
+
+    /// <summary>Runs after any query settles, either way.</summary>
+    public Action<object?, Exception?, Query>? OnSettled { get; init; }
+}
+
+/// <summary>
 /// The store behind a <see cref="QueryClient"/>: every query, indexed by the hash of its key,
 /// plus the notification stream describing what happens to them. The counterpart of TanStack
 /// Query's <c>QueryCache</c>.
@@ -9,10 +30,13 @@ namespace Natrix.Query;
 /// Sharing one cache between clients is how a server-rendered request hands its data to
 /// another client, and how tests inspect state that no component is watching.
 /// </remarks>
-public sealed class QueryCache
+public sealed class QueryCache(QueryCacheConfig? config = null)
 {
     private readonly Dictionary<string, Query> _queries = new(StringComparer.Ordinal);
     private readonly List<Action<QueryCacheNotifyEvent>> _listeners = [];
+
+    /// <summary>The callbacks that fire for every query here.</summary>
+    public QueryCacheConfig Config { get; } = config ?? new QueryCacheConfig();
 
     /// <summary>Every query currently in the cache.</summary>
     public IReadOnlyList<Query> GetAll() => _queries.Values.ToArray();

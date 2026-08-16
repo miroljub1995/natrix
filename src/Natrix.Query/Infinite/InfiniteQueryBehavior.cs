@@ -25,7 +25,8 @@ internal sealed class InfiniteQueryBehavior<TPage, TPageParam>(
     TPageParam initialPageParam,
     PageParamResolver<TPage, TPageParam> getNextPageParam,
     PageParamResolver<TPage, TPageParam>? getPreviousPageParam,
-    int? maxPages) : IQueryBehavior, IInfinitePageInspector
+    int? maxPages,
+    int? pagesToFetch) : IQueryBehavior, IInfinitePageInspector
 {
     public void OnFetch(QueryBehaviorContext context)
     {
@@ -80,7 +81,10 @@ internal sealed class InfiniteQueryBehavior<TPage, TPageParam>(
         // Not a "load more": refetch every page the query already had, in order, so the whole
         // list is refreshed rather than collapsing back to its first page.
         var result = InfiniteData<TPage, TPageParam>.Empty;
-        var remainingPages = existing.Pages.Count;
+
+        // Normally "as many pages as it already had"; an imperative prefetch can ask for a
+        // fixed number instead, which is how a list is warmed before it is ever rendered.
+        var remainingPages = pagesToFetch ?? existing.Pages.Count;
         var currentPage = 0;
 
         do

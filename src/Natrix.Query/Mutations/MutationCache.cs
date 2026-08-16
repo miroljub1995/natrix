@@ -1,5 +1,26 @@
 namespace Natrix.Query;
 
+/// <summary>
+/// Callbacks that fire for every mutation in a cache — the counterpart of the configuration
+/// TanStack Query's <c>MutationCache</c> takes. Each runs before the mutation's own callback of
+/// the same name, and is awaited, so a global handler can do real work before the mutation is
+/// reported as settled.
+/// </summary>
+public sealed class MutationCacheConfig
+{
+    /// <summary>Runs before any mutation, ahead of its own <c>OnMutate</c>.</summary>
+    public Func<object?, Mutation, Task>? OnMutate { get; init; }
+
+    /// <summary>Runs after any mutation succeeds.</summary>
+    public Func<object?, object?, object?, Mutation, Task>? OnSuccess { get; init; }
+
+    /// <summary>Runs after any mutation fails — where a global error toast belongs.</summary>
+    public Func<Exception, object?, object?, Mutation, Task>? OnError { get; init; }
+
+    /// <summary>Runs after any mutation settles, either way.</summary>
+    public Func<object?, Exception?, object?, object?, Mutation, Task>? OnSettled { get; init; }
+}
+
 /// <summary>What happened to a mutation, for subscribers of <see cref="MutationCache.Subscribe"/>.</summary>
 public enum MutationCacheNotifyEventType
 {
@@ -34,11 +55,14 @@ public sealed record MutationCacheNotifyEvent(MutationCacheNotifyEventType Type,
 /// makes <see cref="MutationScope"/> serialise, and the set that
 /// <see cref="ResumePausedMutationsAsync"/> resumes when the connection returns.
 /// </remarks>
-public sealed class MutationCache
+public sealed class MutationCache(MutationCacheConfig? config = null)
 {
     private readonly List<Mutation> _mutations = [];
     private readonly List<Action<MutationCacheNotifyEvent>> _listeners = [];
     private int _nextMutationId;
+
+    /// <summary>The callbacks that fire for every mutation here.</summary>
+    public MutationCacheConfig Config { get; } = config ?? new MutationCacheConfig();
 
     /// <summary>Every mutation currently held.</summary>
     public IReadOnlyList<Mutation> GetAll() => _mutations.ToArray();

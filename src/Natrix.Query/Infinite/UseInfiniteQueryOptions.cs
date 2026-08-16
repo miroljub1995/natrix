@@ -73,8 +73,12 @@ public class UseInfiniteQueryOptions<TPage, TPageParam, TData> : QueryOptionsBas
     /// <inheritdoc cref="UseQueryOptions{TQueryFnData, TData}.PlaceholderData" />
     public PlaceholderDataOption<InfiniteData<TPage, TPageParam>> PlaceholderData { get; init; }
 
-    /// <summary>Builds the ordinary query options this infinite query runs as.</summary>
-    internal UseQueryOptions<InfiniteData<TPage, TPageParam>, TData> ToQueryOptions() => new()
+    /// <summary>
+    /// Builds the ordinary query options this infinite query runs as.
+    /// <paramref name="pages"/> fixes how many pages a single fetch loads, for the imperative
+    /// prefetching path; left null, a fetch reloads as many pages as the query already had.
+    /// </summary>
+    internal UseQueryOptions<InfiniteData<TPage, TPageParam>, TData> ToQueryOptions(int? pages = null) => new()
     {
         QueryKey = QueryKey,
 
@@ -86,7 +90,8 @@ public class UseInfiniteQueryOptions<TPage, TPageParam, TData> : QueryOptionsBas
             InitialPageParam,
             GetNextPageParam,
             GetPreviousPageParam,
-            MaxPages),
+            MaxPages,
+            pages),
         Select = Select,
         InitialData = InitialData,
         InitialDataUpdatedAt = InitialDataUpdatedAt,

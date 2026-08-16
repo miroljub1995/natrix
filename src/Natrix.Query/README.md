@@ -196,7 +196,33 @@ await client.CancelQueriesAsync(new QueryFilters { QueryKey = ["todos"] });
 client.RemoveQueries(new QueryFilters { QueryKey = ["todos"] });
 ```
 
+Infinite queries have their own imperative forms — `FetchInfiniteQueryAsync`,
+`PrefetchInfiniteQueryAsync` and `EnsureInfiniteQueryDataAsync`, each taking how many pages to
+load up front.
+
 Scope a different client to part of the tree with the `QueryClientProvider` component.
+
+## Global callbacks
+
+Handling every failure the same way belongs on the cache, not on each query. This is what the
+`Meta` option is for — it carries whatever the shared handler needs to say:
+
+```csharp
+var client = new QueryClient(new QueryClientConfig
+{
+    QueryCache = new QueryCache(new QueryCacheConfig
+    {
+        OnError = (error, query) => toasts.Show(query.Meta?["errorMessage"] as string ?? error.Message),
+    }),
+    MutationCache = new MutationCache(new MutationCacheConfig
+    {
+        OnError = (error, _, _, _) => { toasts.Show(error.Message); return Task.CompletedTask; },
+    }),
+});
+```
+
+Cancelling a query is not a failure, so it never reaches these handlers. The mutation ones are
+awaited, and each runs before the mutation's own callback of the same name.
 
 ## Server-side rendering
 

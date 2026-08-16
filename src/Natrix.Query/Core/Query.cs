@@ -401,34 +401,27 @@ public sealed class Query
             OnSuccess = data =>
             {
                 SetData(data);
+
+                _cache.Config.OnSuccess?.Invoke(data, this);
+                _cache.Config.OnSettled?.Invoke(data, State.Error, this);
+
                 ScheduleGc();
             },
             OnError = error =>
             {
-                if (error is QueryCancelledException { Silent: true })
+                // A silent cancellation leaves no trace in the state at all; a reverting one
+                // rolls it back. Either way the cache-wide handlers stay out of it, because a
+                // cancellation is not something going wrong with the query.
+                if (error is not QueryCancelledException { Silent: true })
                 {
-                    ScheduleGc();
-                    return;
+                    DispatchError(error);
                 }
 
-                Dispatch(state =>
+                if (error is not QueryCancelledException)
                 {
-                    if (error is QueryCancelledException { Revert: true } && _revertState is { } reverted)
-                    {
-                        return reverted with { FetchStatus = FetchStatus.Idle };
-                    }
-
-                    return state with
-                    {
-                        Error = error,
-                        ErrorUpdateCount = state.ErrorUpdateCount + 1,
-                        ErrorUpdatedAt = _scheduler.Now(),
-                        FetchFailureCount = state.FetchFailureCount + 1,
-                        FetchFailureReason = error,
-                        FetchStatus = FetchStatus.Idle,
-                        Status = QueryStatus.Error,
-                    };
-                });
+                    _cache.Config.OnError?.Invoke(error, this);
+                    _cache.Config.OnSettled?.Invoke(State.Data, error, this);
+                }
 
                 ScheduleGc();
             },
@@ -445,6 +438,25 @@ public sealed class Query
 
         return retryer.Start();
     }
+
+    private void DispatchError(Exception error) => Dispatch(state =>
+    {
+        if (error is QueryCancelledException { Revert: true } && _revertState is { } reverted)
+        {
+            return reverted with { FetchStatus = FetchStatus.Idle };
+        }
+
+        return state with
+        {
+            Error = error,
+            ErrorUpdateCount = state.ErrorUpdateCount + 1,
+            ErrorUpdatedAt = _scheduler.Now(),
+            FetchFailureCount = state.FetchFailureCount + 1,
+            FetchFailureReason = error,
+            FetchStatus = FetchStatus.Idle,
+            Status = QueryStatus.Error,
+        };
+    });
 
     private void Dispatch(Func<QueryState, QueryState> reduce)
     {

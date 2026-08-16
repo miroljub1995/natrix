@@ -296,4 +296,73 @@ public class InfiniteQueryTests
             await Assert.That(cached!.Pages.Count).IsEqualTo(2);
         });
     }
+
+    [Test]
+    public async Task Pages_can_be_prefetched_imperatively_before_anything_renders()
+    {
+        await QueryTestHarness.RunAsync(async harness =>
+        {
+            var fetched = new List<int>();
+
+            UseInfiniteQueryOptions<Page, int> Fresh() => new()
+            {
+                QueryKey = ["projects"],
+                InitialPageParam = 0,
+                StaleTime = TimeSpan.FromMinutes(1),
+                QueryFn = async context =>
+                {
+                    fetched.Add(context.PageParam);
+                    await Task.Yield();
+                    return MakePage(context.PageParam);
+                },
+                GetNextPageParam = (lastPage, _, _, _) =>
+                    lastPage.Next is { } next ? next : NextPageParam<int>.None,
+            };
+
+            var data = await harness.Client.FetchInfiniteQueryAsync(Fresh(), pages: 2);
+
+            await Assert.That(fetched).IsEquivalentTo(new[] { 0, 1 });
+            await Assert.That(data!.Pages.Count).IsEqualTo(2);
+
+            // A component mounting onto the prefetched entry finds it fresh and does not refetch.
+            var observer = new InfiniteQueryObserver<Page, int, InfiniteData<Page, int>>(
+                harness.Client,
+                Fresh());
+
+            using var subscription = observer.Subscribe(_ => { });
+            await harness.SettleAsync();
+
+            await Assert.That(fetched).IsEquivalentTo(new[] { 0, 1 });
+            await Assert.That(observer.CurrentResult.Pages!.Pages.Count).IsEqualTo(2);
+            await Assert.That(observer.CurrentResult.HasNextPage).IsTrue();
+        });
+    }
+
+    [Test]
+    public async Task Prefetching_more_pages_than_exist_stops_at_the_end()
+    {
+        await QueryTestHarness.RunAsync(async harness =>
+        {
+            var fetched = new List<int>();
+
+            var data = await harness.Client.FetchInfiniteQueryAsync(
+                new UseInfiniteQueryOptions<Page, int>
+                {
+                    QueryKey = ["projects"],
+                    InitialPageParam = 0,
+                    QueryFn = async context =>
+                    {
+                        fetched.Add(context.PageParam);
+                        await Task.Yield();
+                        return MakePage(context.PageParam);
+                    },
+                    GetNextPageParam = (lastPage, _, _, _) =>
+                        lastPage.Next is { } next ? next : NextPageParam<int>.None,
+                },
+                pages: 10);
+
+            await Assert.That(fetched).IsEquivalentTo(new[] { 0, 1, 2 });
+            await Assert.That(data!.Pages.Count).IsEqualTo(3);
+        });
+    }
 }
