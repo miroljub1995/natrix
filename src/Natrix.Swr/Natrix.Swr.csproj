@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <!-- NuGet Package Configuration -->
+        <IsPackable>true</IsPackable>
+        <PackageId>Natrix.Swr</PackageId>
+        <Version>$(NatrixCoreVersion)</Version>
+        <Authors>miroljub1995</Authors>
+        <Description>Stale-while-revalidate data fetching for Natrix — a port of React SWR built on Natrix signals and the component lifecycle.</Description>
+        <PackageTags>webassembly;wasm;dotnet;swr;data-fetching;cache;reactive;natrix</PackageTags>
+        <PackageProjectUrl>https://github.com/miroljub1995/natrix</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/miroljub1995/natrix</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>icon.png</PackageIcon>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Natrix.Core\Natrix.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <InternalsVisibleTo Include="Natrix.Swr.Tests" />
+    </ItemGroup>
+</Project>

@@ -63,6 +63,7 @@ jobs:
         project:
           - src/Natrix.Signals.Tests/Natrix.Signals.Tests.csproj
           - src/Natrix.Ssr.Tests/Natrix.Ssr.Tests.csproj
+          - src/Natrix.Swr.Tests/Natrix.Swr.Tests.csproj
           - src/Natrix.Core.Generators.Tests/Natrix.Core.Generators.Tests.csproj
           - src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj
         tfm:
