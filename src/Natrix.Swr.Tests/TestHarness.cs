@@ -63,13 +63,20 @@ internal sealed class TestApp : IDisposable
     private readonly NatrixHostBuilder _builder;
     private IDisposable? _mounted;
 
-    public TestApp(SwrOptions? defaultOptions = null, SwrCache? cache = null, bool lifecycleHooks = true)
+    public TestApp(
+        SwrOptions? defaultOptions = null,
+        SwrCache? cache = null,
+        bool lifecycleHooks = true,
+        bool swr = true)
     {
         Cache = cache ?? new SwrCache();
 
-        _builder = new NatrixHostBuilder()
-            .UseRootRenderer(new NullRenderRoot())
-            .UseSwr(defaultOptions, Cache);
+        _builder = new NatrixHostBuilder().UseRootRenderer(new NullRenderRoot());
+
+        if (swr)
+        {
+            _builder.UseSwr(defaultOptions, Cache);
+        }
 
         if (lifecycleHooks)
         {
