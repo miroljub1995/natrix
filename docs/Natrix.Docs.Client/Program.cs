@@ -11,6 +11,7 @@ using Natrix.Docs.Client;
 using Natrix.Docs.Client.Components;
 using Natrix.JSCore;
 using Natrix.StdWeb;
+using Natrix.Swr;
 using Natrix.TailwindCss;
 
 if (!OperatingSystem.IsBrowser())
@@ -30,6 +31,7 @@ var _ = new NatrixHostBuilder()
     .UseRootElement(appElement)
     .UseTeleport()
     .UseLifecycleHooks()
+    .UseSwr()
     .SetFeature<IClientHydrationStateFeature>(hydration)
     .SetFeature<INavigationFeature>(new ClientNavigationFeature(window))
     .UseRootComponent(() => new HydrationRoot { Children = [new DocsApp { Props = new DocsAppProps() }] })

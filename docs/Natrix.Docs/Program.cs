@@ -11,6 +11,7 @@ using Natrix.Core.Features.Routing;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.RenderRoot;
 using Natrix.Docs.Components;
+using Natrix.Swr;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,9 @@ app.MapFallback(async (httpContext) =>
     using var _ = new NatrixHostBuilder()
         .UseRootRenderer(root)
         .UseTeleport()
+        // A cache per request: resources never fetch on the server, but the entries they bind to
+        // must not be shared between visitors.
+        .UseSwr()
         .SetFeature<IServerPrefetchFeature>(prefetch)
         .SetFeature<IServerHydrationStateFeature>(new ServerHydrationStateFeature())
         .SetFeature<INavigationFeature>(navigation)
