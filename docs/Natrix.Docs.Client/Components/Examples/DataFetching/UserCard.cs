@@ -38,20 +38,8 @@ public class UserCard : BaseComponent<UserCardProps, NoEvents, NoSlots, NoExpose
             : user.Error.Value is not null ? "error"
             : "ready");
 
-        var statusClass = new Computed<string>(() =>
-        {
-            const string baseClass = "rounded-full px-2 py-0.5 text-xs font-medium";
-
-            return status.Value switch
-            {
-                "loading" or "revalidating" =>
-                    $"{baseClass} bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
-                "error" =>
-                    $"{baseClass} bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300",
-                _ =>
-                    $"{baseClass} bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300",
-            };
-        });
+        var hasError = new Computed<bool>(() => user.Error.Value is not null);
+        var hasProfile = new Computed<bool>(() => user.Data.Value is not null);
 
         return
         [
@@ -63,28 +51,9 @@ public class UserCard : BaseComponent<UserCardProps, NoEvents, NoSlots, NoExpose
                 },
                 Children =
                 [
-                    new Div
+                    new CardHeading
                     {
-                        Props = new DivProps
-                        {
-                            Class = "mb-3 flex items-center justify-between gap-2".ToConstSignal(),
-                        },
-                        Children =
-                        [
-                            new Span
-                            {
-                                Props = new SpanProps
-                                {
-                                    Class = "text-sm font-semibold text-gray-500 dark:text-gray-400".ToConstSignal(),
-                                },
-                                Children = [new DomText { Text = Props.Label }],
-                            },
-                            new Span
-                            {
-                                Props = new SpanProps { Class = statusClass },
-                                Children = [new DomText { Text = status }],
-                            },
-                        ],
+                        Props = new CardHeadingProps { Label = Props.Label, Status = status },
                     },
 
                     // An error does not replace what is already on screen. A failed revalidation
@@ -92,40 +61,38 @@ public class UserCard : BaseComponent<UserCardProps, NoEvents, NoSlots, NoExpose
                     // key that has never resolved has nothing to show but the error.
                     new If
                     {
-                        Condition = new Computed<bool>(() => user.Error.Value is not null),
+                        Condition = hasError,
                         Then = () =>
                         [
-                            new P
+                            new ErrorBanner
                             {
-                                Props = new PProps
+                                Props = new ErrorBannerProps
                                 {
-                                    Class = ("mb-3 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 "
-                                        + "dark:bg-red-900/30 dark:text-red-300").ToConstSignal(),
+                                    Message = new Computed<string>(
+                                        () => user.Error.Value?.Message ?? string.Empty),
                                 },
-                                Children =
-                                [
-                                    new DomText
-                                    {
-                                        Text = new Computed<string>(
-                                            () => user.Error.Value?.Message ?? string.Empty),
-                                    },
-                                ],
                             },
                         ],
                     },
 
-                    // The stale value stays put while a revalidation runs, so the placeholder only
+                    // The stale value stays put while a revalidation runs, so the skeleton only
                     // appears before the very first value for a key arrives.
                     new If
                     {
                         Condition = user.IsLoading,
-                        Then = () => [Placeholder()],
+                        Then = () => [new ProfileSkeleton { Props = new NoProps() }],
                         Otherwise = () =>
                         [
                             new If
                             {
-                                Condition = new Computed<bool>(() => user.Data.Value is not null),
-                                Then = () => [Profile(user)],
+                                Condition = hasProfile,
+                                Then = () =>
+                                [
+                                    new ProfileDetails
+                                    {
+                                        Props = new ProfileDetailsProps { Profile = user.Data },
+                                    },
+                                ],
                             },
                         ],
                     },
@@ -174,67 +141,4 @@ public class UserCard : BaseComponent<UserCardProps, NoEvents, NoSlots, NoExpose
             },
         ];
     }
-
-    private static IComponent Placeholder() =>
-        new Div
-        {
-            Props = new DivProps { Class = "space-y-2".ToConstSignal() },
-            Children =
-            [
-                new Div
-                {
-                    Props = new DivProps
-                    {
-                        Class = "h-5 w-40 animate-pulse rounded bg-gray-200 dark:bg-gray-700".ToConstSignal(),
-                    },
-                },
-                new Div
-                {
-                    Props = new DivProps
-                    {
-                        Class = "h-4 w-28 animate-pulse rounded bg-gray-200 dark:bg-gray-700".ToConstSignal(),
-                    },
-                },
-            ],
-        };
-
-    private static IComponent Profile(SwrResource<UserProfile> user) =>
-        new Div
-        {
-            Props = new DivProps { Class = "space-y-1".ToConstSignal() },
-            Children =
-            [
-                new P
-                {
-                    Props = new PProps
-                    {
-                        Class = "text-lg font-semibold text-gray-900 dark:text-white".ToConstSignal(),
-                    },
-                    Children =
-                    [
-                        new DomText
-                        {
-                            Text = new Computed<string>(() => user.Data.Value?.Name ?? "—"),
-                        },
-                    ],
-                },
-                new P
-                {
-                    Props = new PProps
-                    {
-                        Class = "text-sm text-gray-600 dark:text-gray-400".ToConstSignal(),
-                    },
-                    Children =
-                    [
-                        new DomText
-                        {
-                            Text = new Computed<string>(() =>
-                                user.Data.Value is { } profile
-                                    ? $"{profile.Role} · {profile.Followers} followers"
-                                    : string.Empty),
-                        },
-                    ],
-                },
-            ],
-        };
 }

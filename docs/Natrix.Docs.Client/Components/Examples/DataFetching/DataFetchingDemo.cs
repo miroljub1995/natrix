@@ -6,13 +6,6 @@ namespace Natrix.Docs.Client.Components.Examples.DataFetching;
 
 public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpose>
 {
-    private static readonly (string Id, string Name)[] Users =
-    [
-        ("ada", "Ada"),
-        ("grace", "Grace"),
-        ("linus", "Linus"),
-    ];
-
     protected override IComponent[] Setup(out NoExpose exposed)
     {
         exposed = default;
@@ -35,7 +28,25 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
                         new Div
                         {
                             Props = new DivProps { Class = "mb-4 flex flex-wrap items-center gap-2".ToConstSignal() },
-                            Children = [.. UserPicker(selectedId), BreakToggle(api)],
+                            Children =
+                            [
+                                new UserPicker
+                                {
+                                    Props = new UserPickerProps { SelectedId = selectedId },
+                                    Events = new UserPickerEvents
+                                    {
+                                        OnSelect = id => selectedId.Value = id,
+                                    },
+                                },
+                                new ApiHealthToggle
+                                {
+                                    Props = new ApiHealthToggleProps { IsBroken = api.IsBroken },
+                                    Events = new ApiHealthToggleEvents
+                                    {
+                                        OnToggle = () => api.IsBroken.Value = !api.IsBroken.Value,
+                                    },
+                                },
+                            ],
                         },
 
                         new Div
@@ -100,47 +111,4 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
             },
         ];
     }
-
-    private static IComponent[] UserPicker(Signal<string> selectedId)
-    {
-        var buttons = new List<IComponent>();
-
-        foreach (var (id, name) in Users)
-        {
-            buttons.Add(new DemoButton
-            {
-                Props = new DemoButtonProps
-                {
-                    Label = name.ToConstSignal(),
-                    Variant = new Computed<DemoButtonVariant>(() => selectedId.Value == id
-                        ? DemoButtonVariant.Primary
-                        : DemoButtonVariant.Secondary),
-                    ExtraClass = "px-4 py-1 text-sm".ToConstSignal(),
-                },
-                Events = new DemoButtonEvents
-                {
-                    OnClick = () => selectedId.Value = id,
-                },
-            });
-        }
-
-        return [.. buttons];
-    }
-
-    private static IComponent BreakToggle(FakeUserApi api) =>
-        new DemoButton
-        {
-            Props = new DemoButtonProps
-            {
-                Label = new Computed<string>(() => api.IsBroken.Value ? "Repair the API" : "Break the API"),
-                Variant = DemoButtonVariant.Secondary.ToConstSignal(),
-                ExtraClass = "ml-auto px-4 py-1 text-sm".ToConstSignal(),
-                Title = "While broken, every request fails and the resource retries twice before giving up"
-                    .ToConstSignal(),
-            },
-            Events = new DemoButtonEvents
-            {
-                OnClick = () => api.IsBroken.Value = !api.IsBroken.Value,
-            },
-        };
 }
