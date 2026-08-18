@@ -77,6 +77,7 @@ internal sealed class TestApp : IDisposable
         bool lifecycleHooks = true,
         bool swr = true,
         JsonSerializerOptions? serializerOptions = null,
+        JsonSerializerOptions? serializerOptionsFeature = null,
         ServerPrefetchFeature? serverPrefetch = null,
         ServerHydrationStateFeature? hydrationState = null,
         JsonObject? clientHydrationState = null)
@@ -95,6 +96,13 @@ internal sealed class TestApp : IDisposable
         if (lifecycleHooks)
         {
             _builder.UseLifecycleHooks();
+        }
+
+        // Registered the way an application that already configures serialization would, rather
+        // than handed to UseSwr.
+        if (serializerOptionsFeature is not null)
+        {
+            _builder.SetFeature(serializerOptionsFeature);
         }
 
         if (serverPrefetch is not null)

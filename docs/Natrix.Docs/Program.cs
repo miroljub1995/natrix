@@ -1,4 +1,7 @@
 using System.Text;
+using System.Text.Json;
+using Microsoft.AspNetCore.Http.Json;
+using Microsoft.Extensions.Options;
 using Natrix.Core;
 using Natrix.Core.Features;
 using Natrix.Ssr;
@@ -21,6 +24,12 @@ var builder = WebApplication.CreateBuilder(args);
 // fresh HttpClient per request would exhaust sockets under load.
 builder.Services.AddHttpClient();
 
+// One place decides how this app's JSON is shaped. Putting the source-generated context at the
+// front of the resolver chain means the endpoints below, the client that reads them, and the SWR
+// cache handed across the hydration boundary all go through the same trim- and AOT-safe metadata.
+builder.Services.ConfigureHttpJsonOptions(options =>
+    options.SerializerOptions.TypeInfoResolverChain.Insert(0, DocsJsonContext.Default));
+
 var app = builder.Build();
 
 app.MapStaticAssets();
@@ -39,7 +48,7 @@ app.MapGet("/api/users/{id}", async (string id, CancellationToken cancellationTo
     await Task.Delay(TimeSpan.FromMilliseconds(500), cancellationToken);
 
     return users.TryGetValue(id, out var profile)
-        ? Results.Json(profile, DocsJsonContext.Default.UserProfile)
+        ? Results.Ok(profile)
         : Results.NotFound();
 });
 
@@ -60,6 +69,11 @@ app.MapFallback(async (httpContext) =>
     // the browser would, whatever host and scheme the app is served under.
     var httpClient = httpContext.RequestServices.GetRequiredService<IHttpClientFactory>().CreateClient();
     httpClient.BaseAddress = new Uri($"{httpContext.Request.Scheme}://{httpContext.Request.Host}/");
+
+    // The very options the endpoints serialize with, so nothing in the render can disagree with
+    // what the browser will be reading.
+    var serializerOptions = httpContext.RequestServices
+        .GetRequiredService<IOptions<JsonOptions>>().Value.SerializerOptions;
     var navigation = new ServerNavigationFeature(requestPath);
     var root = new SsrRenderRoot();
     var prefetch = new ServerPrefetchFeature();
@@ -67,11 +81,13 @@ app.MapFallback(async (httpContext) =>
     using var _ = new NatrixHostBuilder()
         .UseRootRenderer(root)
         .UseTeleport()
+        .SetFeature(serializerOptions)
         // A cache per request - never a shared one, which would hand one visitor's data to the
         // next. Resources prefetch into it while the tree renders, and it is serialized into the
-        // page so the client picks the values up instead of fetching them again.
-        .UseSwr(serializerOptions: DocsJsonContext.Default.Options)
-        .SetFeature(new UserApi(httpClient))
+        // page - with the options registered above - so the client picks the values up instead of
+        // fetching them again.
+        .UseSwr()
+        .SetFeature(new UserApi(httpClient, serializerOptions))
         .SetFeature<IServerPrefetchFeature>(prefetch)
         .SetFeature<IServerHydrationStateFeature>(new ServerHydrationStateFeature())
         .SetFeature<INavigationFeature>(navigation)

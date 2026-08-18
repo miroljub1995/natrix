@@ -21,14 +21,18 @@ using Natrix.Swr;
 using var app = new NatrixHostBuilder()
     .UseRootElement(rootElement)
     .UseLifecycleHooks()
-    .UseSwr(serializerOptions: AppJsonContext.Default.Options)
+    .SetFeature(serializerOptions)
+    .UseSwr()
     .UseRootComponent(() => new App { Props = new() })
     .Build()
     .Mount();
 ```
 
-`serializerOptions` turns on the server-to-client transfer described under
-[Server rendering](#server-rendering). Leave it out and the cache is client-only.
+Serializer options turn on the server-to-client transfer described under
+[Server rendering](#server-rendering). They are taken from the `JsonSerializerOptions` registered
+as a feature, so an application that already configures serialization does not hand SWR the same
+thing twice; pass `UseSwr(serializerOptions: …)` to override, or register nothing and the cache
+stays client-only.
 
 ## Fetching
 
@@ -175,7 +179,6 @@ Both hosts need the same serializer context, which is why the fetched types belo
 client and the server both reference:
 
 ```csharp
-[JsonSourceGenerationOptions(PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase)]
 [JsonSerializable(typeof(UserProfile))]
 public sealed partial class AppJsonContext : JsonSerializerContext;
 ```
@@ -183,6 +186,26 @@ public sealed partial class AppJsonContext : JsonSerializerContext;
 Source-generated metadata is what keeps the transfer working under the client's trimming and AOT
 compilation. A type the context does not cover is reported at the `Use` call that introduced it,
 not at render time.
+
+Put that context in the resolver chain of each host's options and register those options as a
+feature. On a server that already serves JSON, the options its own endpoints use are the ones to
+register, so nothing in the render can disagree with what the browser will read:
+
+```csharp
+// Server
+builder.Services.ConfigureHttpJsonOptions(options =>
+    options.SerializerOptions.TypeInfoResolverChain.Insert(0, AppJsonContext.Default));
+
+var serializerOptions = httpContext.RequestServices
+    .GetRequiredService<IOptions<JsonOptions>>().Value.SerializerOptions;
+
+// Client — web defaults, because that is what the server's options start from. The chain settles
+// which types can be read; the conventions around it settle whether the bytes are understood.
+var serializerOptions = new JsonSerializerOptions(JsonSerializerDefaults.Web)
+{
+    TypeInfoResolverChain = { AppJsonContext.Default },
+};
+```
 
 The fetcher runs on both sides, so it has to be able to reach the API from both. In the browser that
 usually means a relative URL against the page's origin; on the server, an absolute one built from

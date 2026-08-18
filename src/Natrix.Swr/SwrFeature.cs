@@ -26,6 +26,7 @@ public sealed class SwrFeature
     /// </summary>
     internal const string HydrationSection = "swr";
 
+    private readonly JsonSerializerOptions? _explicitSerializerOptions;
     private bool _wired;
 
     public SwrFeature(
@@ -37,7 +38,7 @@ public sealed class SwrFeature
 
         Cache = cache ?? new SwrCache();
         DefaultOptions = defaultOptions ?? SwrOptions.Default;
-        SerializerOptions = serializerOptions;
+        _explicitSerializerOptions = serializerOptions;
     }
 
     public SwrCache Cache { get; }
@@ -48,15 +49,19 @@ public sealed class SwrFeature
     public SwrOptions DefaultOptions { get; }
 
     /// <summary>
-    /// How cached values cross from the server render to the client. Supply the options of a
-    /// source-generated <c>JsonSerializerContext</c> — that is what keeps the transfer
-    /// trim-safe and AOT-safe, and it is why the contracts belong in a project both sides
-    /// reference.
+    /// How cached values cross from the server render to the client: the options passed to
+    /// <c>UseSwr</c>, or failing that whichever <see cref="JsonSerializerOptions"/> the
+    /// application registered as a feature. Resolved on first use, so it reads as null until a
+    /// component has asked for a resource.
     ///
-    /// Leaving it null turns the transfer off: the server does not prefetch at all, and each
+    /// Either way it wants the resolver chain of a source-generated <c>JsonSerializerContext</c>
+    /// — that is what keeps the transfer trim-safe and AOT-safe, and it is why the contracts
+    /// belong in a project both hosts reference.
+    ///
+    /// Null once resolved turns the transfer off: the server does not prefetch at all, and each
     /// client fetches for itself after hydration.
     /// </summary>
-    public JsonSerializerOptions? SerializerOptions { get; }
+    public JsonSerializerOptions? SerializerOptions { get; private set; }
 
     /// <summary>
     /// Attaches the cache to whichever side of the hydration boundary this host is on. Driven
@@ -70,14 +75,18 @@ public sealed class SwrFeature
             return;
         }
 
+        // An application that already configures serialization - which a server does for its own
+        // endpoints anyway - should not have to hand the same options to UseSwr as well.
+        SerializerOptions = _explicitSerializerOptions ?? features.Get<JsonSerializerOptions>();
+
         if (features.Get<IClientHydrationStateFeature>()?.Value[HydrationSection] is JsonObject payload)
         {
             if (SerializerOptions is null)
             {
                 throw new InvalidOperationException(
                     "The page carries server-rendered SWR data but no serializer options are configured, "
-                    + $"so it cannot be read. Pass the same {nameof(JsonSerializerOptions)} to UseSwr() on "
-                    + "the client as on the server.");
+                    + $"so it cannot be read. Register the same {nameof(JsonSerializerOptions)} as a feature "
+                    + "on the client as on the server, or pass it to UseSwr().");
             }
 
             Cache.SeedFromHydration(payload);
@@ -98,6 +107,9 @@ public sealed class SwrFeature
     /// <c>Use</c> call that introduced it rather than at render time, so a type missing from the
     /// serializer context is reported against the code that asked for it.
     /// </summary>
+    /// <remarks>
+    /// Only meaningful after <see cref="EnsureWired"/>, which every <c>Use</c> call runs first.
+    /// </remarks>
     internal JsonTypeInfo<TData>? GetTypeInfo<TData>()
     {
         if (SerializerOptions is null)
@@ -112,9 +124,9 @@ public sealed class SwrFeature
         catch (Exception exception) when (exception is InvalidOperationException or NotSupportedException)
         {
             throw new InvalidOperationException(
-                $"The serializer options registered with UseSwr() have no metadata for {typeof(TData)}. "
-                + $"Add [JsonSerializable(typeof({typeof(TData).Name}))] to the JsonSerializerContext shared "
-                + "by the client and the server.",
+                $"The serializer options in use have no metadata for {typeof(TData)}. Add "
+                + $"[JsonSerializable(typeof({typeof(TData).Name}))] to the JsonSerializerContext shared by "
+                + "the client and the server.",
                 exception);
         }
     }

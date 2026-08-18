@@ -1,3 +1,4 @@
+using System.Text.Json;
 using System.Text.Json.Nodes;
 using Natrix.Core.Components;
 using Natrix.Signals;
@@ -324,6 +325,68 @@ public class SwrSsrTests
                 ["user", "1"],
                 (_, _) => Task.FromResult(new TestUser("Ada", 1843)))))
             .Throws<InvalidOperationException>();
+    }
+
+    [Test]
+    public async Task Serializer_options_can_come_from_a_registered_feature()
+    {
+        // An app that already configures serialization should not have to hand UseSwr the same
+        // options a second time.
+        var fetcher = new RecordingFetcher<TestUser>((_, _) => Task.FromResult(new TestUser("Ada", 1843)));
+        var prefetch = new ServerPrefetchFeature();
+        var hydration = new ServerHydrationStateFeature();
+
+        using var server = new TestApp(
+            NoRetries,
+            lifecycleHooks: false,
+            serializerOptionsFeature: TestJsonContext.Default.Options,
+            serverPrefetch: prefetch,
+            hydrationState: hydration);
+
+        server.MountProbe(() => SwrResource.Use(["user", "1"], fetcher.FetchAsync));
+
+        await prefetch.WaitForCompletionAsync();
+
+        var payload = JsonNode.Parse(hydration.Dehydrate().ToJsonString())!.AsObject();
+        await Assert.That(payload[SwrFeature.HydrationSection]!.AsObject().Count).IsEqualTo(1);
+
+        var clientFetcher = new RecordingFetcher<TestUser>((_, _) => Task.FromResult(new TestUser("stale", 0)));
+        TestUser? dataAtSetup = null;
+
+        using var client = new TestApp(
+            NoRetries,
+            serializerOptionsFeature: TestJsonContext.Default.Options,
+            clientHydrationState: payload);
+
+        client.MountProbe(() =>
+            dataAtSetup = SwrResource.Use(["user", "1"], clientFetcher.FetchAsync).Data.Value);
+
+        await Assert.That(dataAtSetup).IsEqualTo(new TestUser("Ada", 1843));
+        await Assert.That(clientFetcher.CallCount).IsEqualTo(0);
+    }
+
+    [Test]
+    public async Task Options_passed_to_UseSwr_win_over_the_registered_feature()
+    {
+        // The explicit argument is the more specific statement of intent.
+        var fetcher = new RecordingFetcher<TestUser>((_, _) => Task.FromResult(new TestUser("Ada", 1843)));
+        var prefetch = new ServerPrefetchFeature();
+
+        using var server = new TestApp(
+            NoRetries,
+            lifecycleHooks: false,
+            serializerOptions: TestJsonContext.Default.Options,
+            serializerOptionsFeature: new JsonSerializerOptions(),
+            serverPrefetch: prefetch,
+            hydrationState: new ServerHydrationStateFeature());
+
+        server.MountProbe(() => SwrResource.Use(["user", "1"], fetcher.FetchAsync));
+
+        await prefetch.WaitForCompletionAsync();
+
+        // The empty options in the feature have no metadata for TestUser, so reaching for them
+        // would have thrown rather than prefetched.
+        await Assert.That(fetcher.CallCount).IsEqualTo(1);
     }
 
     [Test]

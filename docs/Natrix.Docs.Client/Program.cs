@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices.JavaScript;
+using System.Text.Json;
 using Natrix.Browser;
 using Natrix.Browser.Components;
 using Natrix.Browser.Features.Routing;
@@ -29,16 +30,31 @@ var appElement = window.Document.GetElementById("app")
 
 var hydration = new ClientHydrationStateFeature();
 
+// The same context the server configured its endpoints with, and nothing else in the chain: under
+// AOT there is no reflection fallback to fall back to.
+//
+// Web defaults, because that is what ConfigureHttpJsonOptions starts from on the server. The
+// resolver chain settles which types can be read; the conventions around it - camelCase, and
+// case-insensitive matching - settle whether the bytes are understood, and a client reading the
+// server's JSON under different conventions silently deserializes every property to null.
+var serializerOptions = new JsonSerializerOptions(JsonSerializerDefaults.Web)
+{
+    TypeInfoResolverChain = { DocsJsonContext.Default },
+};
+
 // Same-origin, so the endpoint is addressed exactly as the markup addresses it.
-var userApi = new UserApi(new HttpClient { BaseAddress = new Uri($"{window.Location.Origin}/") });
+var userApi = new UserApi(
+    new HttpClient { BaseAddress = new Uri($"{window.Location.Origin}/") },
+    serializerOptions);
 
 var _ = new NatrixHostBuilder()
     .UseRootElement(appElement)
     .UseTeleport()
     .UseLifecycleHooks()
-    // The serializer context lets the values the server prefetched arrive with the page instead
-    // of being fetched again, and keeps that transfer AOT-safe.
-    .UseSwr(serializerOptions: DocsJsonContext.Default.Options)
+    .SetFeature(serializerOptions)
+    // Picks up the options registered above, so the values the server prefetched arrive with the
+    // page instead of being fetched again.
+    .UseSwr()
     .SetFeature(userApi)
     .SetFeature<IClientHydrationStateFeature>(hydration)
     .SetFeature<INavigationFeature>(new ClientNavigationFeature(window))
