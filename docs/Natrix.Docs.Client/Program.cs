@@ -9,6 +9,8 @@ using Natrix.Core.Features.Routing;
 using Natrix.Core.HotReload;
 using Natrix.Docs.Client;
 using Natrix.Docs.Client.Components;
+using Natrix.Docs.Client.Components.Examples.DataFetching;
+using Natrix.Docs.Contracts;
 using Natrix.JSCore;
 using Natrix.StdWeb;
 using Natrix.Swr;
@@ -27,11 +29,17 @@ var appElement = window.Document.GetElementById("app")
 
 var hydration = new ClientHydrationStateFeature();
 
+// Same-origin, so the endpoint is addressed exactly as the markup addresses it.
+var userApi = new UserApi(new HttpClient { BaseAddress = new Uri($"{window.Location.Origin}/") });
+
 var _ = new NatrixHostBuilder()
     .UseRootElement(appElement)
     .UseTeleport()
     .UseLifecycleHooks()
-    .UseSwr()
+    // The serializer context lets the values the server prefetched arrive with the page instead
+    // of being fetched again, and keeps that transfer AOT-safe.
+    .UseSwr(serializerOptions: DocsJsonContext.Default.Options)
+    .SetFeature(userApi)
     .SetFeature<IClientHydrationStateFeature>(hydration)
     .SetFeature<INavigationFeature>(new ClientNavigationFeature(window))
     .UseRootComponent(() => new HydrationRoot { Children = [new DocsApp { Props = new DocsAppProps() }] })

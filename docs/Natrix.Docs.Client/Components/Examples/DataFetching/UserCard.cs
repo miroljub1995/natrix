@@ -1,4 +1,5 @@
 using Natrix.Core.Components;
+using Natrix.Docs.Contracts;
 using Natrix.Dom.Components;
 using Natrix.Signals;
 using Natrix.Swr;
@@ -7,7 +8,7 @@ namespace Natrix.Docs.Client.Components.Examples.DataFetching;
 
 public class UserCardProps
 {
-    public required FakeUserApi Api { get; init; }
+    public required UserApi Api { get; init; }
 
     /// <summary>
     /// Part of the key, so changing it makes the card follow the selected user.

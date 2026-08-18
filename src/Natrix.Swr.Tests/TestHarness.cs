@@ -1,6 +1,14 @@
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization;
+using Natrix.Browser.Abstractions.Features.HydrationState;
 using Natrix.Core;
 using Natrix.Core.Components;
 using Natrix.Core.RenderRoot;
+using Natrix.Ssr.Abstractions.Features;
+using Natrix.Ssr.Abstractions.Features.HydrationState;
+using Natrix.Ssr.Features;
+using Natrix.Ssr.Features.HydrationState;
 
 namespace Natrix.Swr.Tests;
 
@@ -67,7 +75,11 @@ internal sealed class TestApp : IDisposable
         SwrOptions? defaultOptions = null,
         SwrCache? cache = null,
         bool lifecycleHooks = true,
-        bool swr = true)
+        bool swr = true,
+        JsonSerializerOptions? serializerOptions = null,
+        ServerPrefetchFeature? serverPrefetch = null,
+        ServerHydrationStateFeature? hydrationState = null,
+        JsonObject? clientHydrationState = null)
     {
         Cache = cache ?? new SwrCache();
 
@@ -75,12 +87,29 @@ internal sealed class TestApp : IDisposable
 
         if (swr)
         {
-            _builder.UseSwr(defaultOptions, Cache);
+            _builder.UseSwr(defaultOptions, Cache, serializerOptions);
         }
 
+        // Present only where a live tree is mounted, which is what tells a resource whether it is
+        // rendering on the client or on the server.
         if (lifecycleHooks)
         {
             _builder.UseLifecycleHooks();
+        }
+
+        if (serverPrefetch is not null)
+        {
+            _builder.SetFeature<IServerPrefetchFeature>(serverPrefetch);
+        }
+
+        if (hydrationState is not null)
+        {
+            _builder.SetFeature<IServerHydrationStateFeature>(hydrationState);
+        }
+
+        if (clientHydrationState is not null)
+        {
+            _builder.SetFeature<IClientHydrationStateFeature>(new TestClientHydrationState(clientHydrationState));
         }
     }
 
@@ -121,3 +150,14 @@ internal sealed class RecordingFetcher<TData>(Func<int, SwrKey, Task<TData>> han
         return handler(index, key);
     }
 }
+
+internal sealed class TestClientHydrationState(JsonObject value) : IClientHydrationStateFeature
+{
+    public JsonObject Value => value;
+}
+
+internal sealed record TestUser(string Name, int Followers);
+
+[JsonSerializable(typeof(TestUser))]
+[JsonSerializable(typeof(string))]
+internal sealed partial class TestJsonContext : JsonSerializerContext;

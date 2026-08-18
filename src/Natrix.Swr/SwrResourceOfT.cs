@@ -1,5 +1,7 @@
+using System.Text.Json.Serialization.Metadata;
 using Natrix.Core.Hooks;
 using Natrix.Signals;
+using Natrix.Ssr.Abstractions.Features;
 
 namespace Natrix.Swr;
 
@@ -31,6 +33,14 @@ public sealed class SwrResource<TData>
     private readonly SwrCache _cache;
     private readonly Func<SwrKey, CancellationToken, Task<TData>> _fetcher;
     private readonly SwrOptions _options;
+    private readonly JsonTypeInfo<TData>? _typeInfo;
+
+    /// <summary>
+    /// Present only while server rendering. When it is — and the value can be transferred to the
+    /// client — binding a key enqueues a fetch the render waits for, so the markup ships with the
+    /// data in it instead of a skeleton.
+    /// </summary>
+    private readonly IServerPrefetchFeature? _serverPrefetch;
 
     /// <summary>
     /// The bound entry, as a signal so the projections below re-read when the key changes, and
@@ -50,14 +60,20 @@ public sealed class SwrResource<TData>
     private bool _mounted;
 
     internal SwrResource(
-        SwrCache cache,
+        SwrFeature feature,
         Func<SwrKey> keyFactory,
         Func<SwrKey, CancellationToken, Task<TData>> fetcher,
-        SwrOptions options)
+        SwrOptions options,
+        IServerPrefetchFeature? serverPrefetch)
     {
-        _cache = cache;
+        _cache = feature.Cache;
         _fetcher = fetcher;
         _options = options;
+        _typeInfo = feature.GetTypeInfo<TData>();
+
+        // Prefetching a value the client cannot be handed would render data on the server and a
+        // loading state on the client, which is a hydration mismatch. The two travel together.
+        _serverPrefetch = _typeInfo is not null ? serverPrefetch : null;
 
         Data = new Computed<TData?>(() => _entrySignal.Value is { } entry ? entry.State.Value.Data : default);
         Error = new Computed<Exception?>(() => _entrySignal.Value?.State.Value.Error);
@@ -87,7 +103,7 @@ public sealed class SwrResource<TData>
         LifecycleHooks.OnMounted(onCleanup =>
         {
             _mounted = true;
-            _ = RevalidateAsync();
+            _ = _entry?.RevalidateOnMountAsync(_fetcher, _options);
         });
     }
 
@@ -178,15 +194,19 @@ public sealed class SwrResource<TData>
             return;
         }
 
-        var entry = _cache.GetOrCreate<TData>(key);
+        var entry = _cache.GetOrCreate(key, _typeInfo);
         entry.AddSubscriber();
 
         _entry = entry;
         _entrySignal.Value = entry;
 
+        // Registered per bind rather than once: a prefetch that moves a signal can change the
+        // key, and the drain picks up whatever the new binding registers.
+        _serverPrefetch?.Register(() => entry.EnsureLoadedAsync(_fetcher, _options));
+
         if (_mounted)
         {
-            _ = entry.RevalidateAsync(_fetcher, _options, force: false);
+            _ = entry.RevalidateOnMountAsync(_fetcher, _options);
         }
     }
 

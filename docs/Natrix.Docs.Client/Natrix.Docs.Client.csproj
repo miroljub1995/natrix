@@ -15,6 +15,7 @@
         <ProjectReference Include="..\..\src\Natrix.Browser\Natrix.Browser.csproj" />
         <ProjectReference Include="..\..\src\Natrix.Core.Generators\Natrix.Core.Generators.csproj"
             OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+        <ProjectReference Include="..\Natrix.Docs.Contracts\Natrix.Docs.Contracts.csproj" />
         <ProjectReference Include="..\..\src\Natrix.Swr\Natrix.Swr.csproj" />
         <ProjectReference Include="..\..\src\Natrix.TailwindCss\Natrix.TailwindCss.csproj" />
         <ProjectReference

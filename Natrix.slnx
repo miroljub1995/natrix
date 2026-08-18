@@ -2,6 +2,7 @@
   <Folder Name="/docs/">
     <Project Path="docs/Natrix.Docs/Natrix.Docs.csproj" />
     <Project Path="docs/Natrix.Docs.Client/Natrix.Docs.Client.csproj" />
+    <Project Path="docs/Natrix.Docs.Contracts/Natrix.Docs.Contracts.csproj" />
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/Natrix.Browser.Abstractions/Natrix.Browser.Abstractions.csproj" />

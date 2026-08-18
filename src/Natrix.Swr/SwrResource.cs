@@ -1,5 +1,6 @@
 using Natrix.Core;
 using Natrix.Core.Features;
+using Natrix.Ssr.Abstractions.Features;
 
 namespace Natrix.Swr;
 
@@ -34,8 +35,16 @@ public static class SwrResource
     /// Overrides the application-wide defaults from <see cref="NatrixHostBuilderSwrExtensions.UseSwr"/>.
     /// </param>
     /// <remarks>
+    /// <para>
     /// Only valid inside <c>Setup</c>: the resource is scoped to the component, and takes the
     /// cache from the ambient features while they are the component's own.
+    /// </para>
+    /// <para>
+    /// During server rendering, binding a key enqueues a prefetch the render waits for, so the
+    /// markup ships with the data and the client hydrates it without fetching again. That path
+    /// needs serializer options on <c>UseSwr</c>; without them the server renders the loading
+    /// state and the client fetches after hydration.
+    /// </para>
     /// </remarks>
     /// <exception cref="InvalidOperationException">
     /// Called outside <c>Setup</c>, or the application never called <c>UseSwr</c>.
@@ -60,7 +69,16 @@ public static class SwrResource
         var effectiveOptions = options ?? feature.DefaultOptions;
         effectiveOptions.Validate();
 
-        return new SwrResource<TData>(feature.Cache, key, fetcher, effectiveOptions);
+        // The first resource of the render is what attaches the cache to the hydration payload,
+        // in whichever direction this host runs.
+        feature.EnsureWired(features);
+
+        return new SwrResource<TData>(
+            feature,
+            key,
+            fetcher,
+            effectiveOptions,
+            features.Get<IServerPrefetchFeature>());
     }
 
     /// <inheritdoc cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, SwrOptions?)" />

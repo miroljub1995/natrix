@@ -1,4 +1,5 @@
 using Natrix.Core.Components;
+using Natrix.Docs.Contracts;
 using Natrix.Dom.Components;
 using Natrix.Signals;
 

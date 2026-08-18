@@ -5,6 +5,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Natrix.Ssr\Natrix.Ssr.csproj"/>
         <ProjectReference Include="..\Natrix.Swr\Natrix.Swr.csproj"/>
     </ItemGroup>
 

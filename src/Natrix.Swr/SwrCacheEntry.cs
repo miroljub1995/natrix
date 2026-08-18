@@ -1,29 +1,9 @@
+using System.Text.Json;
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization.Metadata;
 using Natrix.Signals;
 
 namespace Natrix.Swr;
-
-/// <summary>
-/// The type-erased face of a cache entry, so <see cref="SwrCache"/> can hold entries of mixed
-/// data types and still stop their pending work on eviction.
-/// </summary>
-internal interface ISwrCacheEntry
-{
-    void CancelPending();
-}
-
-/// <summary>
-/// The outcome of fetching a key, as a single value.
-///
-/// Data and error are one signal rather than two because effects re-run on every signal write:
-/// published separately, an effect would observe the moment where the error is already cleared
-/// but the new value has not landed yet, and render a spurious loading state between two frames
-/// of real content. <see cref="HasData"/> carries what <c>Data</c> alone cannot, that a fetch
-/// legitimately returned <c>default</c>.
-/// </summary>
-internal sealed record SwrEntryState<TData>(bool HasData, TData? Data, Exception? Error)
-{
-    public static readonly SwrEntryState<TData> Empty = new(false, default, null);
-}
 
 /// <summary>
 /// Everything the library knows about one key: the last value fetched for it, the last error,
@@ -34,7 +14,7 @@ internal sealed record SwrEntryState<TData>(bool HasData, TData? Data, Exception
 /// request and see one another's updates. The fetcher and options are <em>not</em> stored: they
 /// belong to whichever resource triggered the current request, and are passed in per call.
 /// </summary>
-internal sealed class SwrCacheEntry<TData>(SwrKey key) : ISwrCacheEntry
+internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData>? typeInfo) : ISwrCacheEntry
 {
     /// <summary>
     /// One request, from the first attempt to the last retry. Holds the cancellation source that
@@ -56,6 +36,13 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key) : ISwrCacheEntry
 
     private Run? _run;
     private int _subscribers;
+
+    /// <summary>
+    /// The value came from the server's render and has not been superseded, so the components
+    /// mounting on it right now are showing exactly what the server already sent. Refetching it
+    /// immediately would throw away the whole point of transferring it.
+    /// </summary>
+    private bool _hydrated;
 
     public SwrKey Key => key;
 
@@ -79,6 +66,11 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key) : ISwrCacheEntry
         if (Interlocked.Decrement(ref _subscribers) <= 0)
         {
             Interlocked.Exchange(ref _subscribers, 0);
+
+            // Hydration freshness covers the first render of a server-rendered page, not the
+            // rest of the session: once the components that page mounted are gone, the value is
+            // ordinary stale cache and the next mount revalidates it like any other.
+            _hydrated = false;
             CancelPending();
         }
     }
@@ -107,6 +99,41 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key) : ISwrCacheEntry
     }
 
     /// <summary>
+    /// The revalidation a component performs when it mounts. Skipped for a value that arrived
+    /// with the page, which is already as fresh as the markup rendered from it.
+    /// </summary>
+    public Task RevalidateOnMountAsync(Func<SwrKey, CancellationToken, Task<TData>> fetcher, SwrOptions options) =>
+        _hydrated ? Task.CompletedTask : RevalidateAsync(fetcher, options, force: false);
+
+    /// <summary>
+    /// Fetches only when the entry has nothing, which is what server-side prefetching needs: two
+    /// components on one key must not each cost a request, and a key already carrying a value
+    /// has nothing to prefetch.
+    /// </summary>
+    /// <remarks>
+    /// Retries are disabled for this path regardless of the caller's options. A request that
+    /// fails during server rendering would otherwise hold the response open for the whole
+    /// backoff sequence; the entry is reset instead, so the server renders the loading state and
+    /// the client — which receives no value for the key — fetches and retries as usual.
+    /// </remarks>
+    public async Task EnsureLoadedAsync(
+        Func<SwrKey, CancellationToken, Task<TData>> fetcher,
+        SwrOptions options)
+    {
+        if (PeekState().HasData)
+        {
+            return;
+        }
+
+        await RevalidateAsync(fetcher, options with { ShouldRetryOnError = false }, force: false);
+
+        if (!PeekState().HasData)
+        {
+            _state.Value = SwrEntryState<TData>.Empty;
+        }
+    }
+
+    /// <summary>
     /// Writes a value locally and optionally refetches. The pending request is cancelled first:
     /// a response that was already on its way describes the state before this mutation, so
     /// letting it land would undo it.
@@ -118,9 +145,39 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key) : ISwrCacheEntry
         SwrOptions options)
     {
         CancelPending();
+        _hydrated = false;
         _state.Value = new SwrEntryState<TData>(true, data, null);
 
         return revalidate ? StartRun(fetcher, options) : Task.CompletedTask;
+    }
+
+    /// <summary>
+    /// Seeds the entry from the payload the server sent with the page, so the first client
+    /// render matches the markup instead of flashing a loading state over it.
+    /// </summary>
+    public void Hydrate(JsonNode? node)
+    {
+        if (typeInfo is null)
+        {
+            return;
+        }
+
+        _state.Value = new SwrEntryState<TData>(true, JsonSerializer.Deserialize(node, typeInfo), null);
+        _hydrated = true;
+    }
+
+    public bool TryDehydrate(out JsonNode? node)
+    {
+        node = null;
+
+        var state = PeekState();
+        if (typeInfo is null || !state.HasData)
+        {
+            return false;
+        }
+
+        node = JsonSerializer.SerializeToNode(state.Data!, typeInfo);
+        return true;
     }
 
     /// <summary>
@@ -160,6 +217,10 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key) : ISwrCacheEntry
 
     private Task StartRun(Func<SwrKey, CancellationToken, Task<TData>> fetcher, SwrOptions options)
     {
+        // Whatever this produces replaces the transferred value, so the entry stops counting as
+        // freshly server-rendered from here on.
+        _hydrated = false;
+
         var run = new Run(new CancellationTokenSource());
         _run = run;
 

@@ -1,4 +1,5 @@
 using Natrix.Core.Components;
+using Natrix.Core.Features;
 using Natrix.Dom.Components;
 using Natrix.Signals;
 
@@ -10,7 +11,11 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
     {
         exposed = default;
 
-        var api = new FakeUserApi();
+        // Registered by whichever host is running, so the demo does not have to know how the
+        // endpoint is addressed from here.
+        var api = AppFeatures.Features.Get<UserApi>()
+            ?? throw new InvalidOperationException($"{nameof(UserApi)} is not registered.");
+
         var selectedId = new Signal<string>("ada");
 
         return
@@ -86,7 +91,7 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
                                 new DomText
                                 {
                                     Text = new Computed<string>(() =>
-                                        $"Requests actually sent: {api.RequestCount.Value}"),
+                                        $"Requests sent from the browser: {api.RequestCount.Value}"),
                                 },
                             ],
                         },
@@ -100,8 +105,9 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
                             [
                                 new DomText
                                 {
-                                    Text = ("Switching users sends one request for both cards. Switching back "
-                                        + "renders the cached value straight away and revalidates behind it.")
+                                    Text = ("The server fetched the first user while rendering and sent the value with "
+                                        + "the page, so the browser starts at zero. Switching users sends one "
+                                        + "request for both cards; switching back renders from cache.")
                                         .ToConstSignal(),
                                 },
                             ],

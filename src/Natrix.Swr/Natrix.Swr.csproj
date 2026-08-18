@@ -23,7 +23,9 @@
     </ItemGroup>
 
     <ItemGroup>
+        <ProjectReference Include="..\Natrix.Browser.Abstractions\Natrix.Browser.Abstractions.csproj" />
         <ProjectReference Include="..\Natrix.Core\Natrix.Core.csproj" />
+        <ProjectReference Include="..\Natrix.Ssr.Abstractions\Natrix.Ssr.Abstractions.csproj" />
     </ItemGroup>
 
     <ItemGroup>

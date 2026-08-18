@@ -21,11 +21,14 @@ using Natrix.Swr;
 using var app = new NatrixHostBuilder()
     .UseRootElement(rootElement)
     .UseLifecycleHooks()
-    .UseSwr()
+    .UseSwr(serializerOptions: AppJsonContext.Default.Options)
     .UseRootComponent(() => new App { Props = new() })
     .Build()
     .Mount();
 ```
+
+`serializerOptions` turns on the server-to-client transfer described under
+[Server rendering](#server-rendering). Leave it out and the cache is client-only.
 
 ## Fetching
 
@@ -137,11 +140,8 @@ var user = SwrResource.Use(key, fetcher, new SwrOptions { ShouldRetryOnError = f
 
 ## Behaviour worth knowing
 
-**Nothing is fetched during `Setup`.** The first request goes out from an `OnMounted` hook. On the
-server, where lifecycle hooks are dropped because there is no live tree, that means SSR renders
-the loading state and the client fetches after hydration — which is also what keeps hydration
-consistent, since the client's first render happens before mounted hooks flush and therefore
-matches the server's markup.
+**Nothing is fetched during `Setup`.** In the browser the first request goes out from an
+`OnMounted` hook, so a component that is set up and thrown away before it mounts costs nothing.
 
 **Requests are deduplicated while in flight.** Ten components mounting on the same key issue one
 request. There is no time-based deduping window: once a request finishes, the next revalidation
@@ -159,3 +159,46 @@ component to ask for it starts fresh.
 
 **Signals are not thread-safe**, and neither is this. Continuations are resumed on the
 synchronization context the request started on, which in a browser is the single UI thread.
+
+## Server rendering
+
+With `serializerOptions` configured, a server-rendered page arrives with its data already in it
+and the browser fetches nothing to display the first screen.
+
+Binding a key during server rendering registers a prefetch with `IServerPrefetchFeature`, which the
+SSR host drains before it writes the response. The values land in that request's cache, the markup
+is rendered from them, and the cache is serialized into the page's hydration state. On the client
+the cache is seeded from that payload before the first component binds, so the first render matches
+the server's markup and no revalidation is issued for data that arrived with the page.
+
+Both hosts need the same serializer context, which is why the fetched types belong in a project the
+client and the server both reference:
+
+```csharp
+[JsonSourceGenerationOptions(PropertyNamingPolicy = JsonKnownNamingPolicy.CamelCase)]
+[JsonSerializable(typeof(UserProfile))]
+public sealed partial class AppJsonContext : JsonSerializerContext;
+```
+
+Source-generated metadata is what keeps the transfer working under the client's trimming and AOT
+compilation. A type the context does not cover is reported at the `Use` call that introduced it,
+not at render time.
+
+The fetcher runs on both sides, so it has to be able to reach the API from both. In the browser that
+usually means a relative URL against the page's origin; on the server, an absolute one built from
+the request being answered.
+
+Rules the transfer follows:
+
+- **Prefetching and transferring travel together.** Without `serializerOptions` the server does not
+  prefetch at all — rendering data the client cannot be handed would guarantee a hydration mismatch.
+- **A key that fails on the server is left to the client.** Its entry is reset, so the server
+  renders the loading state and the client fetches and retries it normally. Errors are never
+  serialized into the page.
+- **Server prefetches do not retry.** A failing upstream would otherwise hold the response open for
+  the whole backoff sequence. The client retries per its options instead.
+- **Two components on one key cost one prefetch.** The drain runs callbacks one at a time, so a
+  prefetch checks for a value before requesting one rather than relying on in-flight deduplication.
+- **Hydration freshness lasts for the page that carried it.** Data that arrived with the page is not
+  revalidated on mount. Once the components holding that key unmount, it is ordinary stale cache
+  again and the next mount revalidates it. An explicit `RevalidateAsync()` always fetches.

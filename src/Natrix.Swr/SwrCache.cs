@@ -1,3 +1,6 @@
+using System.Text.Json.Nodes;
+using System.Text.Json.Serialization.Metadata;
+
 namespace Natrix.Swr;
 
 /// <summary>
@@ -19,6 +22,13 @@ public sealed class SwrCache
 {
     private readonly Dictionary<string, ISwrCacheEntry> _entries = new(StringComparer.Ordinal);
     private readonly Lock _gate = new();
+
+    /// <summary>
+    /// Values the server sent with the page, held until a component asks for the key they belong
+    /// to. Deserializing lazily is what keeps the payload free of type names: the entry is
+    /// created by a <c>Use</c> call that already knows its data type.
+    /// </summary>
+    private Dictionary<string, JsonNode?>? _pending;
 
     /// <summary>
     /// Number of keys currently held.
@@ -48,6 +58,8 @@ public sealed class SwrCache
         ISwrCacheEntry? entry;
         lock (_gate)
         {
+            _pending?.Remove(key.CacheKey);
+
             if (!_entries.Remove(key.CacheKey, out entry))
             {
                 return false;
@@ -69,6 +81,7 @@ public sealed class SwrCache
         {
             entries = [.. _entries.Values];
             _entries.Clear();
+            _pending = null;
         }
 
         foreach (var entry in entries)
@@ -78,14 +91,15 @@ public sealed class SwrCache
     }
 
     /// <summary>
-    /// Returns the entry for <paramref name="key"/>, creating it on first use.
+    /// Returns the entry for <paramref name="key"/>, creating it on first use and seeding it from
+    /// the server's payload when that key was rendered into the page.
     /// </summary>
     /// <exception cref="InvalidOperationException">
     /// The key is already held with a different data type. Two components fetching the same key
     /// into different shapes would silently share — and corrupt — one another's cache slot, so it
     /// is reported rather than tolerated.
     /// </exception>
-    internal SwrCacheEntry<TData> GetOrCreate<TData>(SwrKey key)
+    internal SwrCacheEntry<TData> GetOrCreate<TData>(SwrKey key, JsonTypeInfo<TData>? typeInfo)
     {
         lock (_gate)
         {
@@ -97,9 +111,55 @@ public sealed class SwrCache
                         $"Requested {typeof(SwrCacheEntry<TData>)}, found {existing.GetType()}.");
             }
 
-            var entry = new SwrCacheEntry<TData>(key);
+            var entry = new SwrCacheEntry<TData>(key, typeInfo);
+
+            if (_pending is not null && _pending.Remove(key.CacheKey, out var node))
+            {
+                entry.Hydrate(node);
+            }
+
             _entries[key.CacheKey] = entry;
             return entry;
         }
+    }
+
+    /// <summary>
+    /// Takes the values the server rendered this page from. Called once, before any component
+    /// binds a key.
+    /// </summary>
+    internal void SeedFromHydration(JsonObject payload)
+    {
+        lock (_gate)
+        {
+            _pending ??= new Dictionary<string, JsonNode?>(StringComparer.Ordinal);
+
+            foreach (var (cacheKey, node) in payload)
+            {
+                _pending[cacheKey] = node;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Serializes every entry that holds a value, for the client to pick up instead of fetching
+    /// it again. Errors are not transferred: a key that failed on the server was reset, and the
+    /// client fetches it normally.
+    /// </summary>
+    internal JsonObject Dehydrate()
+    {
+        var payload = new JsonObject();
+
+        lock (_gate)
+        {
+            foreach (var (cacheKey, entry) in _entries)
+            {
+                if (entry.TryDehydrate(out var node))
+                {
+                    payload[cacheKey] = node;
+                }
+            }
+        }
+
+        return payload;
     }
 }
