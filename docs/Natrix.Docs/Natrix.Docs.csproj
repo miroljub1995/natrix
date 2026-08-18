@@ -1,13 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
     <PropertyGroup>
-        <PublishAot Condition="'$(Configuration)' != 'Debug'">true</PublishAot>
+        <PublishAot>true</PublishAot>
         <!--
           Source-generate the route handlers rather than reflecting over the lambdas at startup.
-          PublishAot turns this on by its own, but only where PublishAot itself is on - which left
-          Debug building the reflection-based path and reporting IL2026/IL3050 against every
-          MapGet. Setting it here keeps both configurations on the same code path, so a handler
-          the generator cannot express is a build failure while it is being written rather than a
-          surprise at publish time.
+          PublishAot implies this, so it is redundant today - but it is the property that decides
+          whether MapGet compiles to generated code or to reflection, and stating it here means a
+          handler the generator cannot express fails the build outright instead of depending on
+          another property staying switched on.
         -->
         <EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>
     </PropertyGroup>
