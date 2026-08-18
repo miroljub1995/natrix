@@ -15,12 +15,16 @@ namespace Natrix.Swr;
 /// </summary>
 /// <remarks>
 /// <para>
-/// <b>Nothing is fetched during <c>Setup</c>.</b> The first request is issued from an
-/// <see cref="LifecycleHooks.OnMounted"/> hook, which means server-side rendering — where hooks
-/// are dropped because there is no live tree — renders the loading state and leaves the fetching
-/// to the client. That is also what keeps hydration consistent: the client's first render
-/// happens before mounted hooks flush, so it matches the server's markup, and data arrives
-/// afterwards.
+/// <b>Nothing is fetched during <c>Setup</c>.</b> In the browser the first request is issued from
+/// an <see cref="LifecycleHooks.OnMounted"/> hook, so a component set up and discarded before it
+/// mounts costs nothing.
+/// </para>
+/// <para>
+/// <b>Server rendering fetches too.</b> Binding a key there registers a prefetch the render waits
+/// for, and the value is serialized into the page for the client to pick up — so the first client
+/// render matches the markup, and a value that arrived with the page is not revalidated until the
+/// components holding it have unmounted. That path needs serializer options on <c>UseSwr</c>;
+/// without them the server does not prefetch, and each client fetches for itself.
 /// </para>
 /// <para>
 /// The signals here are per-resource projections of shared cache state. Two components using the

@@ -70,8 +70,6 @@ public sealed class SwrFeature
             return;
         }
 
-        _wired = true;
-
         if (features.Get<IClientHydrationStateFeature>()?.Value[HydrationSection] is JsonObject payload)
         {
             if (SerializerOptions is null)
@@ -89,6 +87,10 @@ public sealed class SwrFeature
         {
             server.RegisterDehydrateCallback(state => state[HydrationSection] = Cache.Dehydrate());
         }
+
+        // Set last: a misconfiguration reported above should keep being reported, and the
+        // callback above must never be registered twice.
+        _wired = true;
     }
 
     /// <summary>
