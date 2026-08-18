@@ -200,7 +200,9 @@ var serializerOptions = httpContext.RequestServices
     .GetRequiredService<IOptions<JsonOptions>>().Value.SerializerOptions;
 
 // Client — web defaults, because that is what the server's options start from. The chain settles
-// which types can be read; the conventions around it settle whether the bytes are understood.
+// which types can be resolved and carries whatever converters the generator baked in; naming
+// policy and case sensitivity belong to the options themselves, so both sides have to agree on
+// them separately or every property silently reads as null.
 var serializerOptions = new JsonSerializerOptions(JsonSerializerDefaults.Web)
 {
     TypeInfoResolverChain = { AppJsonContext.Default },
