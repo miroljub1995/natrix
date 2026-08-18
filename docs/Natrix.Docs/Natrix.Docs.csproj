@@ -1,14 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
     <PropertyGroup>
         <PublishAot>true</PublishAot>
-        <!--
-          Source-generate the route handlers rather than reflecting over the lambdas at startup.
-          PublishAot implies this, so it is redundant today - but it is the property that decides
-          whether MapGet compiles to generated code or to reflection, and stating it here means a
-          handler the generator cannot express fails the build outright instead of depending on
-          another property staying switched on.
-        -->
-        <EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>
     </PropertyGroup>
 
     <ItemGroup>
