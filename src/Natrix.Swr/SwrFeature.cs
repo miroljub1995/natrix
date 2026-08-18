@@ -9,7 +9,7 @@ namespace Natrix.Swr;
 
 /// <summary>
 /// The application's SWR configuration, published as a feature so that
-/// <see cref="SwrResource.Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, SwrOptions?)"/>
+/// <see cref="SwrResource.Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)"/>
 /// can find the cache from inside any component's <c>Setup</c> without it being threaded through
 /// props.
 /// </summary>

@@ -7,7 +7,7 @@ namespace Natrix.Swr;
 /// <summary>
 /// Entry point of the library — the equivalent of React SWR's <c>useSWR</c> hook.
 ///
-/// Call <see cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, SwrOptions?)"/>
+/// Call <see cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)"/>
 /// from a component's <c>Setup</c> and render from the signals it returns:
 /// <code>
 /// var user = SwrResource.Use(
@@ -31,8 +31,15 @@ public static class SwrResource
     /// cached under. The token is cancelled when the request is superseded or when the last
     /// component watching the key goes away.
     /// </param>
-    /// <param name="options">
-    /// Overrides the application-wide defaults from <see cref="NatrixHostBuilderSwrExtensions.UseSwr"/>.
+    /// <param name="configure">
+    /// Adjusts the application-wide defaults from <see cref="NatrixHostBuilderSwrExtensions.UseSwr"/>
+    /// for this resource. It receives those defaults and returns the options to use, so a resource
+    /// that cares about one setting says only that much and inherits the rest:
+    /// <code>
+    /// configure: options =&gt; options with { ErrorRetryCount = 1 }
+    /// </code>
+    /// Taking a whole <see cref="SwrOptions"/> instead would mean every caller silently replacing
+    /// settings it never meant to have an opinion about.
     /// </param>
     /// <remarks>
     /// <para>
@@ -52,7 +59,7 @@ public static class SwrResource
     public static SwrResource<TData> Use<TData>(
         Func<SwrKey> key,
         Func<SwrKey, CancellationToken, Task<TData>> fetcher,
-        SwrOptions? options = null)
+        Func<SwrOptions, SwrOptions>? configure = null)
     {
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
@@ -66,7 +73,11 @@ public static class SwrResource
                 $"No SWR cache is registered. Call {nameof(NatrixHostBuilderSwrExtensions.UseSwr)}() on the "
                 + $"{nameof(NatrixHostBuilder)} before mounting.");
 
-        var effectiveOptions = options ?? feature.DefaultOptions;
+        var effectiveOptions = configure is null
+            ? feature.DefaultOptions
+            : configure(feature.DefaultOptions)
+              ?? throw new ArgumentException("Returned null options.", nameof(configure));
+
         effectiveOptions.Validate();
 
         // The first resource of the render is what attaches the cache to the hydration payload,
@@ -81,38 +92,38 @@ public static class SwrResource
             features.Get<IServerPrefetchFeature>());
     }
 
-    /// <inheritdoc cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, SwrOptions?)" />
+    /// <inheritdoc cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)" />
     public static SwrResource<TData> Use<TData>(
         Func<SwrKey> key,
         Func<SwrKey, Task<TData>> fetcher,
-        SwrOptions? options = null)
+        Func<SwrOptions, SwrOptions>? configure = null)
     {
         ArgumentNullException.ThrowIfNull(fetcher);
 
-        return Use(key, (k, _) => fetcher(k), options);
+        return Use(key, (k, _) => fetcher(k), configure);
     }
 
     /// <summary>
     /// Overload for a key that never changes.
     /// </summary>
-    /// <inheritdoc cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, SwrOptions?)" />
+    /// <inheritdoc cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)" />
     public static SwrResource<TData> Use<TData>(
         SwrKey key,
         Func<SwrKey, CancellationToken, Task<TData>> fetcher,
-        SwrOptions? options = null) =>
-        Use(() => key, fetcher, options);
+        Func<SwrOptions, SwrOptions>? configure = null) =>
+        Use(() => key, fetcher, configure);
 
     /// <summary>
     /// Overload for a key that never changes.
     /// </summary>
-    /// <inheritdoc cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, SwrOptions?)" />
+    /// <inheritdoc cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)" />
     public static SwrResource<TData> Use<TData>(
         SwrKey key,
         Func<SwrKey, Task<TData>> fetcher,
-        SwrOptions? options = null)
+        Func<SwrOptions, SwrOptions>? configure = null)
     {
         ArgumentNullException.ThrowIfNull(fetcher);
 
-        return Use(() => key, (k, _) => fetcher(k), options);
+        return Use(() => key, (k, _) => fetcher(k), configure);
     }
 }

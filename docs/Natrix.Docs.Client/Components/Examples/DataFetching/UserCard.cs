@@ -44,7 +44,8 @@ public class UserCard : BaseComponent<UserCardProps, NoEvents, NoSlots, NoExpose
             (key, cancellationToken) => Props.UseFailingEndpoint.Value
                 ? api.GetUserFromFailingEndpointAsync(key[2], cancellationToken)
                 : api.GetUserAsync(key[2], cancellationToken),
-            new SwrOptions { ErrorRetryCount = 2, ErrorRetryInterval = TimeSpan.FromSeconds(1) });
+            // Only the retry timing differs from the app's defaults; everything else is inherited.
+            options => options with { ErrorRetryCount = 2, ErrorRetryInterval = TimeSpan.FromSeconds(1) });
 
         var status = new Computed<string>(() =>
             user.IsLoading.Value ? "loading"

@@ -131,13 +131,18 @@ half-implemented.
 | `ErrorRetryCount` | `3` | Additional attempts after the first failure. React SWR retries forever; a bound is the safer default in a browser tab. |
 | `ErrorRetryInterval` | `5s` | Base backoff. Attempt *n* waits `ErrorRetryInterval * 2^n`, capped at 2^8, without jitter. |
 
-Set them per resource, or app-wide as the default:
+Set the defaults app-wide, and adjust them per resource through a callback that receives them:
 
 ```csharp
 builder.UseSwr(new SwrOptions { ErrorRetryCount = 5 });
 
-var user = SwrResource.Use(key, fetcher, new SwrOptions { ShouldRetryOnError = false });
+var user = SwrResource.Use(key, fetcher, options => options with { ShouldRetryOnError = false });
 ```
+
+The callback shape is deliberate. Handing `Use` a whole `SwrOptions` would replace the
+application's defaults rather than layer on them, so a resource that only meant to change the retry
+count would silently take `ShouldRetryOnError`, `ErrorRetryInterval` and anything added later from
+the type's own defaults instead of the app's.
 
 `Error` is published as soon as an attempt fails, while retries may still be pending —
 `IsValidating` stays true for the whole sequence.

@@ -9,7 +9,7 @@ namespace Natrix.Swr;
 /// One component's view of one key: reactive state to render from, and the two imperative
 /// operations React SWR exposes on its response — revalidate and mutate.
 ///
-/// Created by <see cref="SwrResource.Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, SwrOptions?)"/>
+/// Created by <see cref="SwrResource.Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)"/>
 /// during <c>Setup</c>, and bound to that component: it follows the component's key as it
 /// changes, releases the entry when the component unmounts, and starts fetching when it mounts.
 /// </summary>

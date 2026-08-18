@@ -6,8 +6,9 @@ namespace Natrix.Swr;
 /// fallback data) is left out rather than half-implemented.
 /// </summary>
 /// <remarks>
-/// Options are supplied per <see cref="SwrResource.Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, SwrOptions?)"/>
-/// call, or app-wide through <see cref="NatrixHostBuilderSwrExtensions.UseSwr"/>. They belong to
+/// Set app-wide through <see cref="NatrixHostBuilderSwrExtensions.UseSwr"/>, and adjusted per
+/// resource by a callback that receives those defaults — <c>options => options with { … }</c> —
+/// so a resource overrides what it cares about and inherits the rest. They belong to
 /// the caller, not to the cache entry: two components sharing a key each retry on their own
 /// terms, and whichever one starts a request drives its retries.
 /// </remarks>

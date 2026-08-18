@@ -140,7 +140,7 @@ public class SwrCacheTests
         await Assert.That(() => app.MountProbe(() => SwrResource.Use(
                 ["user", "1"],
                 (_, _) => Task.FromResult("Ada"),
-                new SwrOptions { ErrorRetryCount = -1 })))
+                options => options with { ErrorRetryCount = -1 })))
             .Throws<ArgumentOutOfRangeException>();
     }
 
@@ -152,8 +152,49 @@ public class SwrCacheTests
         await Assert.That(() => app.MountProbe(() => SwrResource.Use(
                 ["user", "1"],
                 (_, _) => Task.FromResult("Ada"),
-                new SwrOptions { ErrorRetryInterval = TimeSpan.FromSeconds(-1) })))
+                options => options with { ErrorRetryInterval = TimeSpan.FromSeconds(-1) })))
             .Throws<ArgumentOutOfRangeException>();
+    }
+
+    [Test]
+    public async Task Per_resource_options_start_from_the_application_defaults()
+    {
+        // The application has turned retries off; the resource has an opinion only about how many
+        // there would be. Replacing the options wholesale would hand it ShouldRetryOnError's own
+        // default of true and quietly re-enable them.
+        var appDefaults = new SwrOptions { ShouldRetryOnError = false };
+        var fetcher = new RecordingFetcher<string>((_, _) =>
+            Task.FromException<string>(new InvalidOperationException("boom")));
+
+        using var app = new TestApp(appDefaults);
+
+        // Everything the retry would need is set here except whether to retry at all, so a
+        // second attempt can only come from ShouldRetryOnError not being inherited.
+        app.MountProbe(() => SwrResource.Use(
+            ["user", "1"],
+            fetcher.FetchAsync,
+            options => options with { ErrorRetryCount = 2, ErrorRetryInterval = TimeSpan.Zero }));
+
+        await Assert.That(fetcher.CallCount).IsEqualTo(1);
+    }
+
+    [Test]
+    public async Task The_callback_is_handed_the_application_defaults()
+    {
+        var appDefaults = new SwrOptions { ErrorRetryCount = 7, ErrorRetryInterval = TimeSpan.Zero };
+        SwrOptions? received = null;
+
+        using var app = new TestApp(appDefaults);
+        app.MountProbe(() => SwrResource.Use(
+            ["user", "1"],
+            (_, _) => Task.FromResult("Ada"),
+            options =>
+            {
+                received = options;
+                return options;
+            }));
+
+        await Assert.That(received).IsEqualTo(appDefaults);
     }
 
     [Test]

@@ -7,7 +7,7 @@ public static class NatrixHostBuilderSwrExtensions
 {
     /// <summary>
     /// Gives the application a cache, which is what
-    /// <see cref="SwrResource.Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, SwrOptions?)"/>
+    /// <see cref="SwrResource.Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)"/>
     /// binds components to. Call it before mounting.
     /// </summary>
     /// <param name="defaultOptions">
