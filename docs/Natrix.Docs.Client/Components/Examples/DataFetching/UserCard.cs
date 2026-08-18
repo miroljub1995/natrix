@@ -16,6 +16,13 @@ public class UserCardProps
     public required IReadOnlySignal<string> UserId { get; init; }
 
     public required IReadOnlySignal<string> Label { get; init; }
+
+    /// <summary>
+    /// Which endpoint to read from. Not part of the key: it says nothing about <em>which</em> user
+    /// is being loaded, so switching it must keep the same cache entry — that is what lets the last
+    /// good profile stay on screen underneath the error.
+    /// </summary>
+    public required IReadOnlySignal<bool> UseFailingEndpoint { get; init; }
 }
 
 /// <summary>
@@ -30,7 +37,9 @@ public class UserCard : BaseComponent<UserCardProps, NoEvents, NoSlots, NoExpose
 
         var user = SwrResource.Use(
             () => ["docs-demo", "user", Props.UserId.Value],
-            (key, cancellationToken) => Props.Api.GetUserAsync(key[2], cancellationToken),
+            (key, cancellationToken) => Props.UseFailingEndpoint.Value
+                ? Props.Api.GetUserFromFailingEndpointAsync(key[2], cancellationToken)
+                : Props.Api.GetUserAsync(key[2], cancellationToken),
             new SwrOptions { ErrorRetryCount = 2, ErrorRetryInterval = TimeSpan.FromSeconds(1) });
 
         var status = new Computed<string>(() =>

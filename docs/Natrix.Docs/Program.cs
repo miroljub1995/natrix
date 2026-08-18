@@ -34,18 +34,22 @@ var users = new Dictionary<string, UserProfile>(StringComparer.OrdinalIgnoreCase
     ["linus"] = new("Linus Torvalds", "Kernel maintainer", 1991),
 };
 
-app.MapGet("/api/users/{id}", async (string id, string? fail, CancellationToken cancellationToken) =>
+app.MapGet("/api/users/{id}", async (string id, CancellationToken cancellationToken) =>
 {
     await Task.Delay(TimeSpan.FromMilliseconds(500), cancellationToken);
-
-    if (fail == "1")
-    {
-        return Results.StatusCode(StatusCodes.Status503ServiceUnavailable);
-    }
 
     return users.TryGetValue(id, out var profile)
         ? Results.Json(profile, DocsJsonContext.Default.UserProfile)
         : Results.NotFound();
+});
+
+// Stands in for an upstream that is down, so the example can show retries and error states
+// against a real response rather than a flag the client sets on itself.
+app.MapGet("/api/failing/users/{id}", async (CancellationToken cancellationToken) =>
+{
+    await Task.Delay(TimeSpan.FromMilliseconds(500), cancellationToken);
+
+    return Results.StatusCode(StatusCodes.Status503ServiceUnavailable);
 });
 
 app.MapFallback(async (httpContext) =>

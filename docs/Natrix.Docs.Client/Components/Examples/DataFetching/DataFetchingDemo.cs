@@ -18,6 +18,10 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
 
         var selectedId = new Signal<string>("ada");
 
+        // Owned here rather than by the API: it is a control on this demo, not a mode the service
+        // is in. The cards read it to decide which endpoint to call.
+        var useFailingEndpoint = new Signal<bool>(false);
+
         return
         [
             new DemoCard
@@ -45,10 +49,10 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
                                 },
                                 new ApiHealthToggle
                                 {
-                                    Props = new ApiHealthToggleProps { IsBroken = api.IsBroken },
+                                    Props = new ApiHealthToggleProps { UseFailingEndpoint = useFailingEndpoint },
                                     Events = new ApiHealthToggleEvents
                                     {
-                                        OnToggle = () => api.IsBroken.Value = !api.IsBroken.Value,
+                                        OnToggle = () => useFailingEndpoint.Value = !useFailingEndpoint.Value,
                                     },
                                 },
                             ],
@@ -66,6 +70,7 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
                                         Api = api,
                                         UserId = selectedId,
                                         Label = "Card A".ToConstSignal(),
+                                        UseFailingEndpoint = useFailingEndpoint,
                                     },
                                 },
                                 new UserCard
@@ -75,6 +80,7 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
                                         Api = api,
                                         UserId = selectedId,
                                         Label = "Card B".ToConstSignal(),
+                                        UseFailingEndpoint = useFailingEndpoint,
                                     },
                                 },
                             ],
