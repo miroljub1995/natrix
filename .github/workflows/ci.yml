@@ -4,22 +4,24 @@ on:
   pull_request:
     branches:
       - main
-    # `ready_for_review` is not a default activity type, but it is what wakes CI
-    # back up once a draft is marked ready - see the `if` guard on every job.
+    # Listing `types` at all replaces the defaults, so the three default
+    # activity types are repeated here alongside `ready_for_review`.
     types:
       - opened
       - synchronize
       - reopened
       - ready_for_review
-  push:
-    branches:
-      - main
+
+  # Pushes to main deliberately do not build. Every merge arrives through a
+  # pull request that already ran this matrix against the same content, so the
+  # post-merge run almost always repeats work that was just done.
+  workflow_dispatch:
 
 # Draft pull requests are skipped: work in progress does not need to burn CI
-# minutes on every push. The full matrix runs on the `ready_for_review` event and
-# on every push afterwards. Skipped jobs still report a neutral "skipped"
-# conclusion, which branch protection accepts as satisfied, so a draft PR is not
-# blocked by checks that never ran.
+# minutes on every push. The full matrix runs on the `ready_for_review` event
+# and on every push to the branch afterwards. Skipped jobs still report a
+# neutral "skipped" conclusion, which branch protection accepts as satisfied,
+# so a draft PR is not blocked by checks that never ran.
 #
 # Read-only token is sufficient for build + test. Using the `pull_request`
 # trigger (instead of `pull_request_target`) means PRs from forks run in the
