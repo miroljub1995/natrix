@@ -4,10 +4,25 @@ on:
   pull_request:
     branches:
       - main
-  push:
-    branches:
-      - main
+    # Listing `types` at all replaces the defaults, so the three default
+    # activity types are repeated here alongside `ready_for_review`.
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
 
+  # Pushes to main deliberately do not build. Every merge arrives through a
+  # pull request that already ran this matrix against the same content, so the
+  # post-merge run almost always repeats work that was just done.
+  workflow_dispatch:
+
+# Draft pull requests are skipped: work in progress does not need to burn CI
+# minutes on every push. The full matrix runs on the `ready_for_review` event
+# and on every push to the branch afterwards. Skipped jobs still report a
+# neutral "skipped" conclusion, which branch protection accepts as satisfied,
+# so a draft PR is not blocked by checks that never ran.
+#
 # Read-only token is sufficient for build + test. Using the `pull_request`
 # trigger (instead of `pull_request_target`) means PRs from forks run in the
 # context of the fork with a read-only GITHUB_TOKEN and no access to secrets,
@@ -22,6 +37,7 @@ concurrency:
 jobs:
   build:
     name: Build solution
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -54,6 +70,7 @@ jobs:
 
   unit-tests:
     name: Unit tests
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -119,6 +136,7 @@ jobs:
 
   browser-tests:
     name: Browser (WASM) tests
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
