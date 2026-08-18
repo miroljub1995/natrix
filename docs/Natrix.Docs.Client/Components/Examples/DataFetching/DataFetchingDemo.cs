@@ -90,29 +90,14 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
                         {
                             Props = new PProps
                             {
-                                Class = "mt-4 text-sm text-gray-600 dark:text-gray-400".ToConstSignal(),
+                                Class = "mt-4 text-sm text-gray-500 dark:text-gray-500".ToConstSignal(),
                             },
                             Children =
                             [
                                 new DomText
                                 {
-                                    Text = new Computed<string>(() =>
-                                        $"Requests sent from the browser: {api.RequestCount.Value}"),
-                                },
-                            ],
-                        },
-                        new P
-                        {
-                            Props = new PProps
-                            {
-                                Class = "mt-1 text-sm text-gray-500 dark:text-gray-500".ToConstSignal(),
-                            },
-                            Children =
-                            [
-                                new DomText
-                                {
-                                    Text = ("The server fetched the first user while rendering and sent the value with "
-                                        + "the page, so the browser starts at zero. Switching users sends one "
+                                    Text = ("Both cards were filled in by the server before this page was sent, "
+                                        + "so the browser fetched nothing to show them. Switching users sends one "
                                         + "request for both cards; switching back renders from cache.")
                                         .ToConstSignal(),
                                 },
