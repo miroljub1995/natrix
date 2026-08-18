@@ -99,6 +99,13 @@ var user = SwrResource.Use(
 The fetcher is handed the key it is loading. Read the parameters back out of it rather than
 closing over signals, so the request can never disagree with the key its result is cached under.
 
+That rule is about what *identifies* the data. Ambient conditions the request happens to run
+under — an auth token, a base address, whether the service is currently up — are not part of a
+key: an outage does not change which user you asked for, and keying it would make the same user
+into two cache entries. The test is whether the thing you are tempted to leave out could ever
+produce a *different value* for the same key. If it could, it identifies the data and belongs in
+the key; if it can only change whether the request succeeds, it does not.
+
 ### What you get back
 
 | Member | Meaning |

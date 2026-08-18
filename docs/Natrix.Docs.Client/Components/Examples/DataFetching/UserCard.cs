@@ -17,10 +17,19 @@ public class UserCardProps
     public required IReadOnlySignal<string> Label { get; init; }
 
     /// <summary>
-    /// Which endpoint to read from. Not part of the key: it says nothing about <em>which</em> user
-    /// is being loaded, so switching it must keep the same cache entry — that is what lets the last
-    /// good profile stay on screen underneath the error.
+    /// Whether to read the user from the endpoint that always fails.
     /// </summary>
+    /// <remarks>
+    /// Deliberately not part of the key, even though the fetcher reads it: it stands in for the
+    /// service being down, and an outage does not change which user was asked for. Keying it would
+    /// split one user across two cache entries, so breaking the API would drop to a skeleton
+    /// instead of leaving the last good profile on screen under the error — which is the behaviour
+    /// this example exists to show.
+    ///
+    /// That holds because the failing endpoint can only fail. Something that could return a
+    /// <em>different value</em> for the same key would identify the data and would have to be in
+    /// the key, or the two sources would overwrite each other in one cache entry.
+    /// </remarks>
     public required IReadOnlySignal<bool> UseFailingEndpoint { get; init; }
 }
 
