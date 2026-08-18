@@ -1,4 +1,5 @@
 using Natrix.Core.Components;
+using Natrix.Core.Features;
 using Natrix.Docs.Contracts;
 using Natrix.Dom.Components;
 using Natrix.Signals;
@@ -8,8 +9,6 @@ namespace Natrix.Docs.Client.Components.Examples.DataFetching;
 
 public class UserCardProps
 {
-    public required UserApi Api { get; init; }
-
     /// <summary>
     /// Part of the key, so changing it makes the card follow the selected user.
     /// </summary>
@@ -35,11 +34,16 @@ public class UserCard : BaseComponent<UserCardProps, NoEvents, NoSlots, NoExpose
     {
         exposed = default;
 
+        // Resolved here rather than handed down: the API is infrastructure this component needs,
+        // not data its parent has any say over, and every card would want the same instance.
+        var api = AppFeatures.Features.Get<UserApi>()
+            ?? throw new InvalidOperationException($"{nameof(UserApi)} is not registered.");
+
         var user = SwrResource.Use(
             () => ["docs-demo", "user", Props.UserId.Value],
             (key, cancellationToken) => Props.UseFailingEndpoint.Value
-                ? Props.Api.GetUserFromFailingEndpointAsync(key[2], cancellationToken)
-                : Props.Api.GetUserAsync(key[2], cancellationToken),
+                ? api.GetUserFromFailingEndpointAsync(key[2], cancellationToken)
+                : api.GetUserAsync(key[2], cancellationToken),
             new SwrOptions { ErrorRetryCount = 2, ErrorRetryInterval = TimeSpan.FromSeconds(1) });
 
         var status = new Computed<string>(() =>

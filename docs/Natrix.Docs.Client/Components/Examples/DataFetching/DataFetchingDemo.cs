@@ -1,5 +1,4 @@
 using Natrix.Core.Components;
-using Natrix.Core.Features;
 using Natrix.Dom.Components;
 using Natrix.Signals;
 
@@ -10,11 +9,6 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
     protected override IComponent[] Setup(out NoExpose exposed)
     {
         exposed = default;
-
-        // Registered by whichever host is running, so the demo does not have to know how the
-        // endpoint is addressed from here.
-        var api = AppFeatures.Features.Get<UserApi>()
-            ?? throw new InvalidOperationException($"{nameof(UserApi)} is not registered.");
 
         var selectedId = new Signal<string>("ada");
 
@@ -67,7 +61,6 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
                                 {
                                     Props = new UserCardProps
                                     {
-                                        Api = api,
                                         UserId = selectedId,
                                         Label = "Card A".ToConstSignal(),
                                         UseFailingEndpoint = useFailingEndpoint,
@@ -77,7 +70,6 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
                                 {
                                     Props = new UserCardProps
                                     {
-                                        Api = api,
                                         UserId = selectedId,
                                         Label = "Card B".ToConstSignal(),
                                         UseFailingEndpoint = useFailingEndpoint,
