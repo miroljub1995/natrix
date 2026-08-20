@@ -52,8 +52,6 @@ public sealed class SwrResource<TData>
     private readonly Signal<SwrCacheEntry<TData>?> _entrySignal = new(null);
 
     private SwrCacheEntry<TData>? _entry;
-    private SwrKey _key = SwrKey.None;
-    private bool _bound;
 
     /// <summary>
     /// Gates fetching until the component is live. Key changes evaluated before that — including
@@ -90,18 +88,23 @@ public sealed class SwrResource<TData>
         IsLoading = new Computed<bool>(() =>
             _entrySignal.Value is { } entry && entry.State.Value is { HasData: false, Error: null });
 
-        // Re-runs whenever a signal read by the key factory changes, which is what makes a
-        // resource follow, say, a route parameter from one key to the next.
-        new Effect(_ =>
+        // Through a computed rather than straight off the factory, because the two answer
+        // different questions: the factory re-runs whenever anything it read changed, while the
+        // computed only reports a change when the key it produced actually differs. Binding cares
+        // about the second — a signal that moves without moving the key must leave the entry, its
+        // request in flight and its hydration freshness exactly where they are.
+        var key = new Computed<SwrKey>(keyFactory);
+
+        // So the claim's lifetime is the key's: released when the key moves on, and again when
+        // the component's scope disposes the effect.
+        new Effect(onCleanup =>
         {
-            var key = keyFactory();
+            var current = key.Value;
 
             using var untracked = new UntrackedScope();
-            Bind(key);
+            Bind(current);
+            onCleanup(Release);
         });
-
-        // Tracks nothing; exists only so the component's scope releases the entry on unmount.
-        new Effect(onCleanup => onCleanup(Release));
 
         LifecycleHooks.OnMounted(onCleanup =>
         {
@@ -176,21 +179,12 @@ public sealed class SwrResource<TData>
         return entry.MutateAsync(update(entry.PeekData()), revalidate, _fetcher, _options);
     }
 
+    /// <summary>
+    /// Takes a claim on the entry for <paramref name="key"/>. Only ever reached with a key that
+    /// differs from the one bound, since the effect driving it watches a computed.
+    /// </summary>
     private void Bind(SwrKey key)
     {
-        // The key factory re-runs whenever anything it read changed, which is not the same as
-        // the key having changed. Rebinding an unchanged key would drop and re-take the entry,
-        // cancelling its request on the way through.
-        if (_bound && _key == key)
-        {
-            return;
-        }
-
-        Release();
-
-        _bound = true;
-        _key = key;
-
         if (!key.HasValue)
         {
             _entrySignal.Value = null;
