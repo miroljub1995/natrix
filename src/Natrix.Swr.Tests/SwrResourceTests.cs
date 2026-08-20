@@ -242,6 +242,33 @@ public class SwrResourceTests
     }
 
     [Test]
+    public async Task Key_factory_re_running_with_an_unchanged_key_stays_bound_to_the_entry()
+    {
+        // A claim on an entry lasts as long as the key does, not as long as one run of the key
+        // factory. Releasing it per run would leave the resource showing a value it can no
+        // longer refresh — which looks identical to the test above until something asks it to.
+        var fetcher = new RecordingFetcher<string>((index, _) => Task.FromResult($"Ada {index}"));
+        var unrelated = new Signal<int>(0);
+        SwrResource<string>? resource = null;
+
+        using var app = new TestApp(NoRetries);
+        app.MountProbe(() => resource = SwrResource.Use(
+            () =>
+            {
+                _ = unrelated.Value;
+                return ["user", "1"];
+            },
+            fetcher.FetchAsync));
+
+        unrelated.Value = 1;
+
+        await resource!.RevalidateAsync();
+
+        await Assert.That(fetcher.CallCount).IsEqualTo(2);
+        await Assert.That(resource.Data.Value).IsEqualTo("Ada 1");
+    }
+
+    [Test]
     public async Task Absent_key_pauses_until_it_becomes_available()
     {
         var fetcher = new RecordingFetcher<string>((_, key) => Task.FromResult($"user-{key[1]}"));
