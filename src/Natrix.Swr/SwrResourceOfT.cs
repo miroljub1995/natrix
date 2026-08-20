@@ -40,9 +40,9 @@ public sealed class SwrResource<TData>
     private readonly JsonTypeInfo<TData>? _typeInfo;
 
     /// <summary>
-    /// Present only while server rendering. When it is — and the value can be transferred to the
-    /// client — binding a key enqueues a fetch the render waits for, so the markup ships with the
-    /// data in it instead of a skeleton.
+    /// Present only while server rendering on a host that can hand what it fetched to the client.
+    /// When it is, binding a key enqueues a fetch the render waits for, so the markup ships with
+    /// the data in it instead of a skeleton.
     /// </summary>
     private readonly IServerPrefetchFeature? _serverPrefetch;
 
@@ -73,11 +73,12 @@ public sealed class SwrResource<TData>
         _cache = feature.Cache;
         _fetcher = fetcher;
         _options = options;
-        _typeInfo = feature.GetTypeInfo<TData>();
+        _serverPrefetch = serverPrefetch;
 
-        // Prefetching a value the client cannot be handed would render data on the server and a
-        // loading state on the client, which is a hydration mismatch. The two travel together.
-        _serverPrefetch = _typeInfo is not null ? serverPrefetch : null;
+        // Resolved at the Use call that introduced the type rather than at the render that would
+        // have transferred it: a type the shared context does not cover throws here, pointing at
+        // the code that asked for it. Null only where the host transfers nothing at all.
+        _typeInfo = feature.GetTypeInfo<TData>();
 
         Data = new Computed<TData?>(() => _entrySignal.Value is { } entry ? entry.State.Value.Data : default);
         Error = new Computed<Exception?>(() => _entrySignal.Value?.State.Value.Error);

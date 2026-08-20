@@ -64,6 +64,17 @@ public sealed class SwrFeature
     public JsonSerializerOptions? SerializerOptions { get; private set; }
 
     /// <summary>
+    /// Whether anything this host fetches can cross the hydration boundary, which is decided by
+    /// <see cref="SerializerOptions"/> resolving to anything at all. It gates prefetching as well
+    /// as transferring: data rendered into markup the browser has no way to read back is a
+    /// hydration mismatch waiting to happen.
+    /// </summary>
+    /// <remarks>
+    /// Only meaningful after <see cref="EnsureWired"/>, which every <c>Use</c> call runs first.
+    /// </remarks>
+    internal bool CanTransfer => SerializerOptions is not null;
+
+    /// <summary>
     /// Attaches the cache to whichever side of the hydration boundary this host is on. Driven
     /// from the first <c>Use</c> call rather than from host construction, so it does not depend
     /// on the order features were registered in.
@@ -107,19 +118,27 @@ public sealed class SwrFeature
     /// <c>Use</c> call that introduced it rather than at render time, so a type missing from the
     /// serializer context is reported against the code that asked for it.
     /// </summary>
+    /// <returns>
+    /// The metadata for <typeparamref name="TData"/>, or <c>null</c> when this host transfers
+    /// nothing at all and so has no boundary for it to cross — see <see cref="CanTransfer"/>. A
+    /// type the configured options cannot describe throws instead: skipping it would leave the
+    /// server rendering a value the client cannot read.
+    /// </returns>
     /// <remarks>
     /// Only meaningful after <see cref="EnsureWired"/>, which every <c>Use</c> call runs first.
     /// </remarks>
     internal JsonTypeInfo<TData>? GetTypeInfo<TData>()
     {
-        if (SerializerOptions is null)
+        // Checked against the field rather than CanTransfer so the compiler carries the
+        // non-nullness into the call below.
+        if (SerializerOptions is not { } options)
         {
             return null;
         }
 
         try
         {
-            return (JsonTypeInfo<TData>)SerializerOptions.GetTypeInfo(typeof(TData));
+            return (JsonTypeInfo<TData>)options.GetTypeInfo(typeof(TData));
         }
         catch (Exception exception) when (exception is InvalidOperationException or NotSupportedException)
         {

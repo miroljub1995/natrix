@@ -84,12 +84,12 @@ public static class SwrResource
         // in whichever direction this host runs.
         feature.EnsureWired(features);
 
-        return new SwrResource<TData>(
-            feature,
-            key,
-            fetcher,
-            effectiveOptions,
-            features.Get<IServerPrefetchFeature>());
+        // Prefetching and transferring travel together. A host with no way to serialize what it
+        // fetched would render data on the server and a loading state on the client, so it does
+        // not prefetch at all and every client fetches for itself after hydration.
+        var serverPrefetch = feature.CanTransfer ? features.Get<IServerPrefetchFeature>() : null;
+
+        return new SwrResource<TData>(feature, key, fetcher, effectiveOptions, serverPrefetch);
     }
 
     /// <inheritdoc cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)" />
