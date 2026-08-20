@@ -102,8 +102,7 @@ public sealed class SwrResource<TData>
             var current = key.Value;
 
             using var untracked = new UntrackedScope();
-            Bind(current);
-            onCleanup(Release);
+            onCleanup(Bind(current));
         });
 
         LifecycleHooks.OnMounted(onCleanup =>
@@ -180,15 +179,21 @@ public sealed class SwrResource<TData>
     }
 
     /// <summary>
-    /// Takes a claim on the entry for <paramref name="key"/>. Only ever reached with a key that
-    /// differs from the one bound, since the effect driving it watches a computed.
+    /// Takes a claim on the entry for <paramref name="key"/> and hands back the undo for it,
+    /// which the effect runs when the key moves on or the component goes away. The two are
+    /// produced together so that neither can be reached without the other — a paused resource
+    /// takes nothing and hands back nothing, rather than relying on the release to notice.
     /// </summary>
-    private void Bind(SwrKey key)
+    /// <remarks>
+    /// Only ever reached with a key that differs from the one bound, since the effect driving it
+    /// watches a computed.
+    /// </remarks>
+    private Action Bind(SwrKey key)
     {
         if (!key.HasValue)
         {
             _entrySignal.Value = null;
-            return;
+            return static () => { };
         }
 
         var entry = _cache.GetOrCreate(key, _typeInfo);
@@ -205,16 +210,14 @@ public sealed class SwrResource<TData>
         {
             _ = entry.RevalidateOnMountAsync(_fetcher, _options);
         }
-    }
 
-    /// <summary>
-    /// Gives up the claim on the bound entry. Only the claim is released — the signal keeps
-    /// pointing at the entry so that a resource being torn down does not push a spurious "no
-    /// data" through the tree on its way out. <see cref="Bind"/> overwrites it right after.
-    /// </summary>
-    private void Release()
-    {
-        _entry?.RemoveSubscriber();
-        _entry = null;
+        return () =>
+        {
+            // Only the claim is given up — the signal keeps pointing at the entry so that a
+            // resource being torn down does not push a spurious "no data" through the tree on
+            // its way out. A rebind overwrites it right after.
+            entry.RemoveSubscriber();
+            _entry = null;
+        };
     }
 }

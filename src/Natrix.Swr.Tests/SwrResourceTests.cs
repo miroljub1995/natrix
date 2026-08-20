@@ -269,6 +269,43 @@ public class SwrResourceTests
     }
 
     [Test]
+    public async Task Pausing_one_resource_leaves_another_holding_the_key()
+    {
+        // Pausing takes no claim on anything, so the release that follows it must not hand one
+        // back. An extra release would take the count to zero under the component still watching
+        // and cancel the request out from under it.
+        var completion = new TaskCompletionSource<string>();
+        var fetcher = new RecordingFetcher<string>((_, _) => completion.Task);
+        var paused = new Signal<bool>(false);
+
+        using var app = new TestApp(NoRetries);
+        app.Mount(() => new Probe
+        {
+            Props = new ProbeProps
+            {
+                Body = () => SwrResource.Use(
+                    () => paused.Value ? SwrKey.None : new SwrKey("user", "1"),
+                    fetcher.FetchAsync),
+                Children =
+                [
+                    new Probe
+                    {
+                        Props = new ProbeProps
+                        {
+                            Body = () => SwrResource.Use(["user", "1"], fetcher.FetchAsync),
+                        },
+                    },
+                ],
+            },
+        });
+
+        paused.Value = true;
+
+        await Assert.That(fetcher.CallCount).IsEqualTo(1);
+        await Assert.That(fetcher.Tokens[0].IsCancellationRequested).IsFalse();
+    }
+
+    [Test]
     public async Task Absent_key_pauses_until_it_becomes_available()
     {
         var fetcher = new RecordingFetcher<string>((_, key) => Task.FromResult($"user-{key[1]}"));
