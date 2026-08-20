@@ -19,14 +19,15 @@ public static class NatrixHostBuilderSwrExtensions
     /// and the only safe one for a server rendering pass.
     /// </param>
     /// <param name="serializerOptions">
-    /// Turns on the server-to-client transfer: the server prefetches while it renders and writes
-    /// the result into the page's hydration state, and the client picks it up instead of
-    /// fetching the same data again. Pass the <c>Options</c> of a source-generated
-    /// <c>JsonSerializerContext</c> covering every fetched type — the same one on both hosts —
-    /// which is what keeps it trim-safe and AOT-safe.
+    /// How values travel from the server's render into the page the browser hydrates from: the
+    /// server prefetches while it renders and writes the result into the page's hydration state,
+    /// and the client picks it up instead of fetching the same data again. Pass the
+    /// <c>Options</c> of a source-generated <c>JsonSerializerContext</c> covering every fetched
+    /// type — the same one on both hosts — which is what keeps it trim-safe and AOT-safe.
     /// <para>
-    /// Omit it and nothing is transferred: server rendering emits the loading state and each
-    /// client fetches for itself.
+    /// Omit it only when the application already registers its <see cref="JsonSerializerOptions"/>
+    /// as a feature, which is what a server configuring its own endpoints does anyway; those are
+    /// used instead. With neither, the first resource reports it.
     /// </para>
     /// </param>
     public static NatrixHostBuilder UseSwr(

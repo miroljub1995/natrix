@@ -28,11 +28,14 @@ using var app = new NatrixHostBuilder()
     .Mount();
 ```
 
-Serializer options turn on the server-to-client transfer described under
-[Server rendering](#server-rendering). They are taken from the `JsonSerializerOptions` registered
-as a feature, so an application that already configures serialization does not hand SWR the same
-thing twice; pass `UseSwr(serializerOptions: …)` to override, or register nothing and the cache
-stays client-only.
+Serializer options are required: they are what carries a value from the server's render into the
+page the browser hydrates from, described under [Server rendering](#server-rendering). They are
+taken from the `JsonSerializerOptions` registered as a feature, so an application that already
+configures serialization does not hand SWR the same thing twice; pass `UseSwr(serializerOptions: …)`
+to override. With neither, the first `Use` call says so.
+
+A fetched type the options cannot describe is reported the same way, at the `Use` call that
+introduced it rather than at the render that would have shipped it.
 
 ## Fetching
 
@@ -178,8 +181,8 @@ synchronization context the request started on, which in a browser is the single
 
 ## Server rendering
 
-With `serializerOptions` configured, a server-rendered page arrives with its data already in it
-and the browser fetches nothing to display the first screen.
+A server-rendered page arrives with its data already in it, and the browser fetches nothing to
+display the first screen.
 
 Binding a key during server rendering registers a prefetch with `IServerPrefetchFeature`, which the
 SSR host drains before it writes the response. The values land in that request's cache, the markup
@@ -227,8 +230,6 @@ the request being answered.
 
 Rules the transfer follows:
 
-- **Prefetching and transferring travel together.** Without `serializerOptions` the server does not
-  prefetch at all — rendering data the client cannot be handed would guarantee a hydration mismatch.
 - **A key that fails on the server is left to the client.** Its entry is reset, so the server
   renders the loading state and the client fetches and retries it normally. Errors are never
   serialized into the page.

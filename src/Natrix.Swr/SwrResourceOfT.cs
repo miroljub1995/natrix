@@ -23,8 +23,7 @@ namespace Natrix.Swr;
 /// <b>Server rendering fetches too.</b> Binding a key there registers a prefetch the render waits
 /// for, and the value is serialized into the page for the client to pick up — so the first client
 /// render matches the markup, and a value that arrived with the page is not revalidated until the
-/// components holding it have unmounted. That path needs serializer options on <c>UseSwr</c>;
-/// without them the server does not prefetch, and each client fetches for itself.
+/// components holding it have unmounted.
 /// </para>
 /// <para>
 /// The signals here are per-resource projections of shared cache state. Two components using the
@@ -37,12 +36,11 @@ public sealed class SwrResource<TData>
     private readonly SwrCache _cache;
     private readonly Func<SwrKey, CancellationToken, Task<TData>> _fetcher;
     private readonly SwrOptions _options;
-    private readonly JsonTypeInfo<TData>? _typeInfo;
+    private readonly JsonTypeInfo<TData> _typeInfo;
 
     /// <summary>
-    /// Present only while server rendering on a host that can hand what it fetched to the client.
-    /// When it is, binding a key enqueues a fetch the render waits for, so the markup ships with
-    /// the data in it instead of a skeleton.
+    /// Present only while server rendering. When it is, binding a key enqueues a fetch the render
+    /// waits for, so the markup ships with the data in it instead of a skeleton.
     /// </summary>
     private readonly IServerPrefetchFeature? _serverPrefetch;
 
@@ -76,8 +74,8 @@ public sealed class SwrResource<TData>
         _serverPrefetch = serverPrefetch;
 
         // Resolved at the Use call that introduced the type rather than at the render that would
-        // have transferred it: a type the shared context does not cover throws here, pointing at
-        // the code that asked for it. Null only where the host transfers nothing at all.
+        // have transferred it, so a type the shared context does not cover is reported against
+        // the code that asked for it.
         _typeInfo = feature.GetTypeInfo<TData>();
 
         Data = new Computed<TData?>(() => _entrySignal.Value is { } entry ? entry.State.Value.Data : default);

@@ -76,6 +76,7 @@ internal sealed class TestApp : IDisposable
         SwrCache? cache = null,
         bool lifecycleHooks = true,
         bool swr = true,
+        bool serialization = true,
         JsonSerializerOptions? serializerOptions = null,
         JsonSerializerOptions? serializerOptionsFeature = null,
         ServerPrefetchFeature? serverPrefetch = null,
@@ -83,6 +84,14 @@ internal sealed class TestApp : IDisposable
         JsonObject? clientHydrationState = null)
     {
         Cache = cache ?? new SwrCache();
+
+        // Every host has to be able to serialize what it fetches, so tests that are not about the
+        // wire format still get the shared context — which is why it covers the primitives they
+        // fetch as well as TestUser.
+        if (serialization && serializerOptions is null && serializerOptionsFeature is null)
+        {
+            serializerOptionsFeature = TestJsonContext.Default.Options;
+        }
 
         _builder = new NatrixHostBuilder().UseRootRenderer(new NullRenderRoot());
 
@@ -168,4 +177,5 @@ internal sealed record TestUser(string Name, int Followers);
 
 [JsonSerializable(typeof(TestUser))]
 [JsonSerializable(typeof(string))]
+[JsonSerializable(typeof(int))]
 internal sealed partial class TestJsonContext : JsonSerializerContext;

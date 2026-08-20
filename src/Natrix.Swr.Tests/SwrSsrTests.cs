@@ -284,44 +284,13 @@ public class SwrSsrTests
     }
 
     [Test]
-    public async Task Server_does_not_prefetch_without_serializer_options()
+    public async Task A_host_with_no_serializer_options_is_reported()
     {
-        // Prefetching a value that cannot be transferred would render data on the server and a
-        // loading state on the client.
-        var fetcher = new RecordingFetcher<TestUser>((_, _) => Task.FromResult(new TestUser("Ada", 1843)));
-        var prefetch = new ServerPrefetchFeature();
-        SwrResource<TestUser>? resource = null;
+        // Not a mode to degrade into: a host that cannot serialize what it fetched would render
+        // values into markup the browser has no way to read back.
+        using var app = new TestApp(NoRetries, serialization: false);
 
-        using var server = new TestApp(
-            NoRetries,
-            lifecycleHooks: false,
-            serverPrefetch: prefetch,
-            hydrationState: new ServerHydrationStateFeature());
-
-        server.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync));
-
-        await prefetch.WaitForCompletionAsync();
-
-        await Assert.That(fetcher.CallCount).IsEqualTo(0);
-        await Assert.That(resource!.IsLoading.Value).IsTrue();
-    }
-
-    [Test]
-    public async Task A_payload_the_client_cannot_read_is_reported()
-    {
-        var payload = await RenderOnServerAsync(() => new Probe
-        {
-            Props = new ProbeProps
-            {
-                Body = () => SwrResource.Use(
-                    ["user", "1"],
-                    (_, _) => Task.FromResult(new TestUser("Ada", 1843))),
-            },
-        });
-
-        using var client = new TestApp(NoRetries, clientHydrationState: payload);
-
-        await Assert.That(() => client.MountProbe(() => SwrResource.Use(
+        await Assert.That(() => app.MountProbe(() => SwrResource.Use(
                 ["user", "1"],
                 (_, _) => Task.FromResult(new TestUser("Ada", 1843)))))
             .Throws<InvalidOperationException>();

@@ -27,6 +27,7 @@ public sealed class SwrFeature
     internal const string HydrationSection = "swr";
 
     private readonly JsonSerializerOptions? _explicitSerializerOptions;
+    private JsonSerializerOptions? _serializerOptions;
     private bool _wired;
 
     public SwrFeature(
@@ -51,28 +52,19 @@ public sealed class SwrFeature
     /// <summary>
     /// How cached values cross from the server render to the client: the options passed to
     /// <c>UseSwr</c>, or failing that whichever <see cref="JsonSerializerOptions"/> the
-    /// application registered as a feature. Resolved on first use, so it reads as null until a
-    /// component has asked for a resource.
+    /// application registered as a feature.
     ///
     /// Either way it wants the resolver chain of a source-generated <c>JsonSerializerContext</c>
     /// — that is what keeps the transfer trim-safe and AOT-safe, and it is why the contracts
     /// belong in a project both hosts reference.
-    ///
-    /// Null once resolved turns the transfer off: the server does not prefetch at all, and each
-    /// client fetches for itself after hydration.
     /// </summary>
-    public JsonSerializerOptions? SerializerOptions { get; private set; }
-
-    /// <summary>
-    /// Whether anything this host fetches can cross the hydration boundary, which is decided by
-    /// <see cref="SerializerOptions"/> resolving to anything at all. It gates prefetching as well
-    /// as transferring: data rendered into markup the browser has no way to read back is a
-    /// hydration mismatch waiting to happen.
-    /// </summary>
-    /// <remarks>
-    /// Only meaningful after <see cref="EnsureWired"/>, which every <c>Use</c> call runs first.
-    /// </remarks>
-    internal bool CanTransfer => SerializerOptions is not null;
+    /// <exception cref="InvalidOperationException">
+    /// Read before <see cref="EnsureWired"/> resolved it, which cannot happen through
+    /// <c>Use</c> — it wires the feature first.
+    /// </exception>
+    private JsonSerializerOptions SerializerOptions =>
+        _serializerOptions
+        ?? throw new InvalidOperationException($"{nameof(SwrFeature)} has not been wired yet.");
 
     /// <summary>
     /// Attaches the cache to whichever side of the hydration boundary this host is on. Driven
@@ -88,22 +80,18 @@ public sealed class SwrFeature
 
         // An application that already configures serialization - which a server does for its own
         // endpoints anyway - should not have to hand the same options to UseSwr as well.
-        SerializerOptions = _explicitSerializerOptions ?? features.Get<JsonSerializerOptions>();
+        _serializerOptions = _explicitSerializerOptions ?? features.Get<JsonSerializerOptions>()
+            ?? throw new InvalidOperationException(
+                $"SWR needs {nameof(JsonSerializerOptions)} to carry values from the server's render "
+                + "into the page the browser hydrates from. Pass them to UseSwr() or register them as "
+                + "a feature, using the resolver chain of the JsonSerializerContext both hosts share.");
 
         if (features.Get<IClientHydrationStateFeature>()?.Value[HydrationSection] is JsonObject payload)
         {
-            if (SerializerOptions is null)
-            {
-                throw new InvalidOperationException(
-                    "The page carries server-rendered SWR data but no serializer options are configured, "
-                    + $"so it cannot be read. Register the same {nameof(JsonSerializerOptions)} as a feature "
-                    + "on the client as on the server, or pass it to UseSwr().");
-            }
-
             Cache.SeedFromHydration(payload);
         }
 
-        if (SerializerOptions is not null && features.Get<IServerHydrationStateFeature>() is { } server)
+        if (features.Get<IServerHydrationStateFeature>() is { } server)
         {
             server.RegisterDehydrateCallback(state => state[HydrationSection] = Cache.Dehydrate());
         }
@@ -118,23 +106,17 @@ public sealed class SwrFeature
     /// <c>Use</c> call that introduced it rather than at render time, so a type missing from the
     /// serializer context is reported against the code that asked for it.
     /// </summary>
-    /// <returns>
-    /// The metadata for <typeparamref name="TData"/>, or <c>null</c> when this host transfers
-    /// nothing at all and so has no boundary for it to cross — see <see cref="CanTransfer"/>. A
-    /// type the configured options cannot describe throws instead: skipping it would leave the
-    /// server rendering a value the client cannot read.
-    /// </returns>
+    /// <exception cref="InvalidOperationException">
+    /// The configured options cannot describe <typeparamref name="TData"/>. Carrying on without
+    /// it would only defer the failure to the hydration mismatch it causes.
+    /// </exception>
     /// <remarks>
     /// Only meaningful after <see cref="EnsureWired"/>, which every <c>Use</c> call runs first.
     /// </remarks>
-    internal JsonTypeInfo<TData>? GetTypeInfo<TData>()
+    internal JsonTypeInfo<TData> GetTypeInfo<TData>()
     {
-        // Checked against the field rather than CanTransfer so the compiler carries the
-        // non-nullness into the call below.
-        if (SerializerOptions is not { } options)
-        {
-            return null;
-        }
+        // Read before the try so an unwired feature is not mistaken for a missing contract.
+        var options = SerializerOptions;
 
         try
         {

@@ -99,7 +99,7 @@ public sealed class SwrCache
     /// into different shapes would silently share — and corrupt — one another's cache slot, so it
     /// is reported rather than tolerated.
     /// </exception>
-    internal SwrCacheEntry<TData> GetOrCreate<TData>(SwrKey key, JsonTypeInfo<TData>? typeInfo)
+    internal SwrCacheEntry<TData> GetOrCreate<TData>(SwrKey key, JsonTypeInfo<TData> typeInfo)
     {
         lock (_gate)
         {

@@ -14,7 +14,7 @@ namespace Natrix.Swr;
 /// request and see one another's updates. The fetcher and options are <em>not</em> stored: they
 /// belong to whichever resource triggered the current request, and are passed in per call.
 /// </summary>
-internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData>? typeInfo) : ISwrCacheEntry
+internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeInfo) : ISwrCacheEntry
 {
     /// <summary>
     /// One request, from the first attempt to the last retry. Holds the cancellation source that
@@ -157,11 +157,6 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData>? type
     /// </summary>
     public void Hydrate(JsonNode? node)
     {
-        if (typeInfo is null)
-        {
-            return;
-        }
-
         _state.Value = new SwrEntryState<TData>(true, JsonSerializer.Deserialize(node, typeInfo), null);
         _hydrated = true;
     }
@@ -171,7 +166,7 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData>? type
         node = null;
 
         var state = PeekState();
-        if (typeInfo is null || !state.HasData)
+        if (!state.HasData)
         {
             return false;
         }

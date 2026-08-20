@@ -48,13 +48,12 @@ public static class SwrResource
     /// </para>
     /// <para>
     /// During server rendering, binding a key enqueues a prefetch the render waits for, so the
-    /// markup ships with the data and the client hydrates it without fetching again. That path
-    /// needs serializer options on <c>UseSwr</c>; without them the server renders the loading
-    /// state and the client fetches after hydration.
+    /// markup ships with the data and the client hydrates it without fetching again.
     /// </para>
     /// </remarks>
     /// <exception cref="InvalidOperationException">
-    /// Called outside <c>Setup</c>, or the application never called <c>UseSwr</c>.
+    /// Called outside <c>Setup</c>, the application never called <c>UseSwr</c>, or nothing
+    /// describes <typeparamref name="TData"/> to the configured serializer.
     /// </exception>
     public static SwrResource<TData> Use<TData>(
         Func<SwrKey> key,
@@ -84,12 +83,12 @@ public static class SwrResource
         // in whichever direction this host runs.
         feature.EnsureWired(features);
 
-        // Prefetching and transferring travel together. A host with no way to serialize what it
-        // fetched would render data on the server and a loading state on the client, so it does
-        // not prefetch at all and every client fetches for itself after hydration.
-        var serverPrefetch = feature.CanTransfer ? features.Get<IServerPrefetchFeature>() : null;
-
-        return new SwrResource<TData>(feature, key, fetcher, effectiveOptions, serverPrefetch);
+        return new SwrResource<TData>(
+            feature,
+            key,
+            fetcher,
+            effectiveOptions,
+            features.Get<IServerPrefetchFeature>());
     }
 
     /// <inheritdoc cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)" />
