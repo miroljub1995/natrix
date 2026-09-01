@@ -75,7 +75,7 @@ public class SwrCacheTests
     [Test]
     public async Task Clear_drops_every_entry()
     {
-        var fetcher = new RecordingFetcher<string>((_, key) => Task.FromResult(key[1]));
+        var fetcher = new RecordingFetcher<string>((_, key) => Task.FromResult(key.Segment<string>(1)));
 
         using var app = new TestApp(NoRetries);
         app.Mount(() => new Probe

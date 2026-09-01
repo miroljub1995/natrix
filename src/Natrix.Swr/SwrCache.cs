@@ -31,6 +31,12 @@ public sealed class SwrCache
     private Dictionary<string, JsonNode?>? _pending;
 
     /// <summary>
+    /// Attached when the feature holding this cache is wired, since encoding a key needs the
+    /// application's contracts and a cache can be constructed before there is an application.
+    /// </summary>
+    private SwrKeyEncoder? _keyEncoder;
+
+    /// <summary>
     /// Number of keys currently held.
     /// </summary>
     public int Count
@@ -44,6 +50,8 @@ public sealed class SwrCache
         }
     }
 
+    internal void AttachKeyEncoder(SwrKeyEncoder encoder) => _keyEncoder = encoder;
+
     /// <summary>
     /// Drops a key. Any request in flight for it is abandoned.
     /// </summary>
@@ -53,14 +61,23 @@ public sealed class SwrCache
     /// out from under the user. The next resource to ask for the key gets a fresh, empty entry.
     /// </remarks>
     /// <returns><c>true</c> if the key was present.</returns>
+    /// <exception cref="InvalidOperationException">
+    /// The cache has not been wired into an application yet, so there is nothing to encode the
+    /// key with — and nothing in it to remove either.
+    /// </exception>
     public bool Remove(SwrKey key)
     {
+        var cacheKey = (_keyEncoder
+            ?? throw new InvalidOperationException(
+                $"This {nameof(SwrCache)} is not in use by an application yet, so it holds nothing to remove."))
+            .Encode(key);
+
         ISwrCacheEntry? entry;
         lock (_gate)
         {
-            _pending?.Remove(key.CacheKey);
+            _pending?.Remove(cacheKey);
 
-            if (!_entries.Remove(key.CacheKey, out entry))
+            if (!_entries.Remove(cacheKey, out entry))
             {
                 return false;
             }
@@ -99,7 +116,7 @@ public sealed class SwrCache
     /// into different shapes would silently share — and corrupt — one another's cache slot, so it
     /// is reported rather than tolerated.
     /// </exception>
-    internal SwrCacheEntry<TData> GetOrCreate<TData>(SwrKey key, JsonTypeInfo<TData> typeInfo)
+    internal SwrCacheEntry<TData> GetOrCreate<TData>(SwrEncodedKey key, JsonTypeInfo<TData> typeInfo)
     {
         lock (_gate)
         {
@@ -111,7 +128,7 @@ public sealed class SwrCache
                         $"Requested {typeof(SwrCacheEntry<TData>)}, found {existing.GetType()}.");
             }
 
-            var entry = new SwrCacheEntry<TData>(key, typeInfo);
+            var entry = new SwrCacheEntry<TData>(key.Key, typeInfo);
 
             if (_pending is not null && _pending.Remove(key.CacheKey, out var node))
             {

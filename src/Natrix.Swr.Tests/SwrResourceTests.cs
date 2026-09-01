@@ -194,7 +194,7 @@ public class SwrResourceTests
     [Test]
     public async Task Key_change_refetches_and_switches_data()
     {
-        var fetcher = new RecordingFetcher<string>((_, key) => Task.FromResult($"user-{key[1]}"));
+        var fetcher = new RecordingFetcher<string>((_, key) => Task.FromResult($"user-{key.Segment<string>(1)}"));
         var userId = new Signal<string>("1");
         SwrResource<string>? resource = null;
 
@@ -308,7 +308,7 @@ public class SwrResourceTests
     [Test]
     public async Task Absent_key_pauses_until_it_becomes_available()
     {
-        var fetcher = new RecordingFetcher<string>((_, key) => Task.FromResult($"user-{key[1]}"));
+        var fetcher = new RecordingFetcher<string>((_, key) => Task.FromResult($"user-{key.Segment<string>(1)}"));
         var userId = new Signal<string?>(null);
         SwrResource<string>? resource = null;
 
@@ -641,4 +641,102 @@ public class SwrResourceTests
 
         await Assert.That(rendered).IsEquivalentTo(new[] { "loading", "Ada" });
     }
+
+    [Test]
+    public async Task Tuple_key_reaches_the_fetcher_with_its_types()
+    {
+        // The point of the typed overloads: the fetcher reads an int, not a segment it has to know
+        // both the position and the shape of.
+        var seen = new List<(string, int)>();
+        SwrResource<string>? resource = null;
+
+        using var app = new TestApp(NoRetries);
+        app.MountProbe(() => resource = SwrResource.Use(
+            () => ("user", 42),
+            (key, _) => { seen.Add(key); return Task.FromResult($"{key.Item1}-{key.Item2}"); }));
+
+        await Assert.That(seen).IsEquivalentTo(new[] { ("user", 42) });
+        await Assert.That(resource!.Data.Value).IsEqualTo("user-42");
+    }
+
+    [Test]
+    public async Task Tuple_key_rebinds_when_a_segment_moves()
+    {
+        var id = new Signal<int>(1);
+        var fetcher = new List<int>();
+        SwrResource<string>? resource = null;
+
+        using var app = new TestApp(NoRetries);
+        app.MountProbe(() => resource = SwrResource.Use(
+            () => ("user", id.Value),
+            (key, _) => { fetcher.Add(key.Item2); return Task.FromResult($"user-{key.Item2}"); }));
+
+        id.Value = 2;
+
+        await Assert.That(fetcher).IsEquivalentTo(new[] { 1, 2 });
+        await Assert.That(resource!.Data.Value).IsEqualTo("user-2");
+    }
+
+    [Test]
+    public async Task Null_tuple_key_pauses()
+    {
+        // A tuple has no absent value of its own, so the nullable overload is how a typed key says
+        // SwrKey.None. The arguments are named because a conditional with null in it has no
+        // natural type to infer them from.
+        var ready = new Signal<bool>(false);
+        var calls = 0;
+        SwrResource<string>? resource = null;
+
+        using var app = new TestApp(NoRetries);
+        app.MountProbe(() => resource = SwrResource.Use<string, int, string>(
+            () => ready.Value ? ("user", 1) : null,
+            (key, _) => { calls++; return Task.FromResult($"user-{key.Item2}"); }));
+
+        await Assert.That(calls).IsEqualTo(0);
+        await Assert.That(resource!.Key.Value).IsEqualTo(SwrKey.None);
+
+        ready.Value = true;
+
+        await Assert.That(calls).IsEqualTo(1);
+        await Assert.That(resource.Data.Value).IsEqualTo("user-1");
+    }
+
+    [Test]
+    public async Task A_key_that_re_encodes_the_same_stays_bound_to_the_entry()
+    {
+        // The two keys are structurally different - an int segment and a long one - but they
+        // encode alike, so they are one entry. Rebinding between them would release the claim and
+        // cancel the request the entry they both point at is running.
+        var wide = new Signal<bool>(false);
+        var fetcher = new RecordingFetcher<string>((index, _) => Task.FromResult($"Ada {index}"));
+        SwrResource<string>? resource = null;
+
+        using var app = new TestApp(NoRetries);
+        app.MountProbe(() => resource = SwrResource.Use(
+            () => wide.Value
+                ? new SwrKey(SwrKeySegment.Of("user"), SwrKeySegment.Of(1L))
+                : new SwrKey(SwrKeySegment.Of("user"), SwrKeySegment.Of(1)),
+            fetcher.FetchAsync));
+
+        wide.Value = true;
+        await resource!.RevalidateAsync();
+
+        await Assert.That(fetcher.CallCount).IsEqualTo(2);
+        await Assert.That(resource.Data.Value).IsEqualTo("Ada 1");
+    }
+
+    [Test]
+    public async Task A_segment_type_nothing_describes_is_reported_at_the_use_call()
+    {
+        // Reported here rather than from inside the binding effect, which is what the typed
+        // overloads buy: the segment types are known at the call, so they are resolved there.
+        using var app = new TestApp(NoRetries);
+
+        await Assert.That(() => app.MountProbe(() => SwrResource.Use(
+                () => ("user", new Unregistered(1)),
+                (_, _) => Task.FromResult("Ada"))))
+            .Throws<InvalidOperationException>();
+    }
+
+    private sealed record Unregistered(int Value);
 }

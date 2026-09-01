@@ -49,8 +49,8 @@ public sealed class UserCard : BaseComponent<UserCardProps, NoEvents, NoSlots, N
         exposed = default;
 
         var user = SwrResource.Use(
-            () => ["user", Props.UserId.Value],
-            async (key, ct) => await api.GetUserAsync(key[1], ct));
+            () => ("user", Props.UserId.Value),
+            async (key, ct) => await api.GetUserAsync(key.Item2, ct));
 
         return
         [
@@ -70,34 +70,55 @@ public sealed class UserCard : BaseComponent<UserCardProps, NoEvents, NoSlots, N
 
 ### Keys
 
-A key is a list of string segments, built with a collection expression:
+A key is an ordered list of typed segments. Return a tuple of up to seven of them and the types
+flow through to the fetcher, which reads its parameters back as what they were:
+
+```csharp
+var posts = SwrResource.Use(
+    () => ("user", userId.Value, "posts"),
+    (key, ct) => api.GetPostsAsync(key.Item2, ct));
+```
+
+Signals read inside the factory are tracked, so the resource follows them: when the key changes it
+rebinds, shows whatever is cached for the new key, and refetches. A factory that re-runs and
+produces the *same* key changes nothing.
+
+A tuple has no absent value of its own, so pausing — the equivalent of React SWR's `null` key —
+is spelled `null`. A paused resource never fetches and reports no data, which is how a request
+that depends on something not ready yet is expressed. Name the type arguments, since a conditional
+with `null` in it gives the compiler nothing to infer them from:
+
+```csharp
+var user = SwrResource.Use<string, string, User>(
+    () => session.Value is { } s ? ("user", s.UserId) : null,
+    (key, ct) => api.GetUserAsync(key.Item2, ct));
+```
+
+Overloads taking a `SwrKey` remain for keys whose arity or types are not known at the call. There
+the fetcher reads segments by position — `key.Segment<string>(1)` — and pauses with `SwrKey.None`.
+A key of plain strings can still be written as a collection expression:
 
 ```csharp
 SwrKey key = ["user", userId, "posts"];
 ```
 
-Segments are encoded length-prefixed, so `["ab", "c"]` and `["abc"]` are different keys and no
-segment value can collide with another key by containing a separator.
+#### How keys become cache entries
 
-Pass a `Func<SwrKey>` when part of the key is reactive. Signals read inside are tracked, so the
-resource follows them: when the key changes it rebinds, shows whatever is cached for the new key,
-and refetches. A factory that re-runs and produces the *same* key changes nothing.
+A key is filed under a canonical JSON encoding of its segments, so `["ab", "c"]` and `["abc"]` are
+different keys and no segment value can collide with another key by containing a separator.
 
-```csharp
-var posts = SwrResource.Use(
-    () => ["user", userId.Value, "posts"],
-    (key, ct) => api.GetPostsAsync(key[1], ct));
-```
+The encoding takes the contracts for your own types from the `JsonSerializerOptions` below, but
+none of their formatting: it fixes the naming policy, the encoder, number handling and null
+handling itself, and sorts object properties. That is deliberate. A serializer guarantees a value
+survives a round trip — not that two values encode alike exactly when they are equal, which is the
+opposite property and the one an identity needs. Left to an application's own options, hiding nulls
+would make two different keys collide, a naming policy that differs between the server and the
+browser would hide the whole hydration payload, and a dictionary built in a different order would
+become a second cache entry.
 
-Return `SwrKey.None` to pause — the equivalent of React SWR's `null` key. A paused resource never
-fetches and reports no data, which is how a request that depends on something not ready yet is
-expressed:
-
-```csharp
-var user = SwrResource.Use(
-    () => session.Value is { } s ? new SwrKey("user", s.UserId) : SwrKey.None,
-    (key, ct) => api.GetUserAsync(key[1], ct));
-```
+Segment types the library covers — the primitives, `Guid`, the date and time types, `Uri` — need no
+registration. Anything else needs `[JsonSerializable]` on the shared context, and a typed `Use`
+call reports a missing one at the call rather than when the key binds.
 
 The fetcher is handed the key it is loading. Read the parameters back out of it rather than
 closing over signals, so the request can never disagree with the key its result is cached under.

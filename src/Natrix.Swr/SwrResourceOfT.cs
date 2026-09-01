@@ -34,6 +34,7 @@ namespace Natrix.Swr;
 public sealed class SwrResource<TData>
 {
     private readonly SwrCache _cache;
+    private readonly SwrKeyEncoder _keyEncoder;
     private readonly Func<SwrKey, CancellationToken, Task<TData>> _fetcher;
     private readonly SwrOptions _options;
     private readonly JsonTypeInfo<TData> _typeInfo;
@@ -67,6 +68,7 @@ public sealed class SwrResource<TData>
         IServerPrefetchFeature? serverPrefetch)
     {
         _cache = feature.Cache;
+        _keyEncoder = feature.KeyEncoder;
         _fetcher = fetcher;
         _options = options;
         _serverPrefetch = serverPrefetch;
@@ -95,11 +97,23 @@ public sealed class SwrResource<TData>
         // request in flight and its hydration freshness exactly where they are.
         var key = new Computed<SwrKey>(keyFactory);
 
-        // So the claim's lifetime is the key's: released when the key moves on, and again when
-        // the component's scope disposes the effect.
-        new Effect(onCleanup =>
+        // Encoding is the expensive comparison and the authoritative one, so it goes in a second
+        // layer fed by the first: the cheap structural check above absorbs the factory runs that
+        // changed nothing, and a key is serialized only when its segments really moved. What
+        // comes out is compared as a string, so the two keys that differ only in a segment's
+        // declared type — an int and a long holding 1 — leave the binding alone, as they must:
+        // they share the entry, and rebinding would cancel its request.
+        var encodedKey = new Computed<SwrEncodedKey>(() =>
         {
             var current = key.Value;
+            return new SwrEncodedKey(current, _keyEncoder.Encode(current));
+        });
+
+        // So the claim's lifetime is the encoded key's: released when the key moves on, and again
+        // when the component's scope disposes the effect.
+        new Effect(onCleanup =>
+        {
+            var current = encodedKey.Value;
 
             using var untracked = new UntrackedScope();
             onCleanup(Bind(current));
@@ -188,7 +202,7 @@ public sealed class SwrResource<TData>
     /// Only ever reached with a key that differs from the one bound, since the effect driving it
     /// watches a computed.
     /// </remarks>
-    private Action Bind(SwrKey key)
+    private Action Bind(SwrEncodedKey key)
     {
         if (!key.HasValue)
         {

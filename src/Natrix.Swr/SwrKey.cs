@@ -1,38 +1,46 @@
 using System.Collections;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace Natrix.Swr;
 
 /// <summary>
-/// Identifies a cache entry. A key is an ordered list of string segments, which is what makes
-/// composite keys — <c>["user", id, "posts"]</c> — cheap to build from the pieces a component
+/// Identifies a cache entry. A key is an ordered list of typed segments, which is what makes
+/// composite keys — <c>("user", id, "posts")</c> — cheap to build from the pieces a component
 /// already has, instead of asking callers to concatenate a string and get the escaping right.
 ///
 /// The empty key (<see cref="None"/>, or <c>default</c>) means <em>no key</em>: a resource with
 /// no key is paused — it never fetches and reports no data. That is how conditional fetching is
 /// expressed, mirroring React SWR's <c>null</c> key:
 /// <code>
-/// () => userId.Value is { } id ? ["user", id] : SwrKey.None
+/// () => userId.Value is { } id ? ("user", id) : null
 /// </code>
 /// </summary>
 /// <remarks>
-/// Keys are compared and cached by an injective encoding of their segments (each segment is
-/// written length-prefixed), so <c>["ab", "c"]</c> and <c>["abc"]</c> are different keys and no
-/// separator can be smuggled in through a segment value.
+/// <para>
+/// The cache identifies a key by its canonical encoding rather than by <see cref="Equals(SwrKey)"/>
+/// — see <see cref="SwrKeyEncoder"/>. The two agree in the direction that matters: keys that
+/// compare equal always encode alike, so a resource never keeps a claim on an entry the encoding
+/// has moved on from. The converse does not hold, since segments of different types can encode to
+/// the same JSON: <c>("user", 1)</c> with an <c>int</c> and with a <c>long</c> compare different
+/// and share an entry.
+/// </para>
+/// <para>
+/// Which is why <c>Equals</c> is the cheap comparison and the encoding is the authoritative one:
+/// a resource can filter out most non-changes without serializing anything, and only pays for the
+/// encoding when the segments really moved.
+/// </para>
 /// </remarks>
 [CollectionBuilder(typeof(SwrKey), nameof(Create))]
-public readonly struct SwrKey : IEquatable<SwrKey>, IReadOnlyList<string>
+public readonly struct SwrKey : IEquatable<SwrKey>, IReadOnlyList<SwrKeySegment>
 {
-    private readonly string[]? _segments;
-    private readonly string? _cacheKey;
+    private readonly SwrKeySegment[]? _segments;
 
     /// <summary>
     /// The absent key. A resource holding it stays paused.
     /// </summary>
     public static SwrKey None => default;
 
-    public SwrKey(params string[] segments)
+    public SwrKey(params SwrKeySegment[] segments)
     {
         ArgumentNullException.ThrowIfNull(segments);
 
@@ -41,22 +49,15 @@ public readonly struct SwrKey : IEquatable<SwrKey>, IReadOnlyList<string>
             return;
         }
 
-        var copy = new string[segments.Length];
-        for (var i = 0; i < segments.Length; i++)
-        {
-            copy[i] = segments[i]
-                ?? throw new ArgumentException($"Key segment at index {i} is null.", nameof(segments));
-        }
-
-        _segments = copy;
-        _cacheKey = Encode(copy);
+        _segments = segments.AsSpan().ToArray();
     }
 
     /// <summary>
-    /// Collection-expression builder, so a key can be written as <c>["user", id]</c> wherever a
-    /// <see cref="SwrKey"/> is expected.
+    /// Collection-expression builder, so a key of strings can be written as <c>["user", id]</c>
+    /// wherever a <see cref="SwrKey"/> is expected — the elements convert through
+    /// <see cref="SwrKeySegment"/>'s implicit operator.
     /// </summary>
-    public static SwrKey Create(ReadOnlySpan<string> segments) => new(segments.ToArray());
+    public static SwrKey Create(ReadOnlySpan<SwrKeySegment> segments) => new(segments.ToArray());
 
     /// <summary>
     /// <c>false</c> for the empty key, which is the paused state rather than a real cache entry.
@@ -65,32 +66,80 @@ public readonly struct SwrKey : IEquatable<SwrKey>, IReadOnlyList<string>
 
     public int Count => _segments?.Length ?? 0;
 
-    public string this[int index] =>
+    public SwrKeySegment this[int index] =>
         _segments is not null
             ? _segments[index]
             : throw new ArgumentOutOfRangeException(nameof(index));
 
     /// <summary>
-    /// The injective encoding used as the cache dictionary key. Empty for <see cref="None"/>.
+    /// Reads segment <paramref name="index"/> as <typeparamref name="TSegment"/>, which is how an
+    /// untyped fetcher gets its parameters back out of the key it was handed.
     /// </summary>
-    internal string CacheKey => _cacheKey ?? string.Empty;
-
-    private static string Encode(string[] segments)
+    /// <exception cref="InvalidOperationException">
+    /// The segment holds another type. A resource is handed the key of the entry it shares, which
+    /// another <c>Use</c> call may have created — and keys whose segments differ only in type can
+    /// encode alike, so this is where that meets a fetcher expecting its own. Reported rather than
+    /// left to an <see cref="InvalidCastException"/> from inside the fetcher.
+    /// </exception>
+    public TSegment Segment<TSegment>(int index)
     {
-        var builder = new StringBuilder();
-        foreach (var segment in segments)
-        {
-            builder.Append(segment.Length).Append(':').Append(segment);
-        }
+        var segment = this[index];
 
-        return builder.ToString();
+        return segment.Value switch
+        {
+            TSegment typed => typed,
+            null when default(TSegment) is null => default!,
+            _ => throw new InvalidOperationException(
+                $"Key {this} holds a {segment.Type} at index {index}, but it is being read as "
+                + $"{typeof(TSegment)}. The same cache key is in use with differently typed segments."),
+        };
     }
 
-    public bool Equals(SwrKey other) => string.Equals(CacheKey, other.CacheKey, StringComparison.Ordinal);
+    /// <summary>
+    /// Structural comparison over the segments: same count, same declared types, equal values.
+    /// See the remarks on <see cref="SwrKey"/> for how this relates to the encoding the cache
+    /// keys entries by.
+    /// </summary>
+    public bool Equals(SwrKey other)
+    {
+        if (_segments is not { } segments)
+        {
+            return other._segments is null;
+        }
+
+        if (other._segments is not { } others || segments.Length != others.Length)
+        {
+            return false;
+        }
+
+        for (var i = 0; i < segments.Length; i++)
+        {
+            if (!segments[i].Equals(others[i]))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 
     public override bool Equals(object? obj) => obj is SwrKey other && Equals(other);
 
-    public override int GetHashCode() => StringComparer.Ordinal.GetHashCode(CacheKey);
+    public override int GetHashCode()
+    {
+        if (_segments is not { } segments)
+        {
+            return 0;
+        }
+
+        var hash = new HashCode();
+        foreach (var segment in segments)
+        {
+            hash.Add(segment);
+        }
+
+        return hash.ToHashCode();
+    }
 
     public static bool operator ==(SwrKey left, SwrKey right) => left.Equals(right);
 
@@ -99,8 +148,8 @@ public readonly struct SwrKey : IEquatable<SwrKey>, IReadOnlyList<string>
     public override string ToString() =>
         _segments is null ? "SwrKey.None" : $"[{string.Join(", ", _segments)}]";
 
-    public IEnumerator<string> GetEnumerator() =>
-        ((IEnumerable<string>)(_segments ?? [])).GetEnumerator();
+    public IEnumerator<SwrKeySegment> GetEnumerator() =>
+        ((IEnumerable<SwrKeySegment>)(_segments ?? [])).GetEnumerator();
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 }

@@ -175,7 +175,15 @@ internal sealed class TestClientHydrationState(JsonObject value) : IClientHydrat
 
 internal sealed record TestUser(string Name, int Followers);
 
+/// <summary>
+/// A key segment that is an object rather than a scalar, for the encoding tests: it has a
+/// nullable property, which is what an application's ignore-null setting would drop.
+/// </summary>
+internal sealed record TestFilter(string? Team, int Page);
+
 [JsonSerializable(typeof(TestUser))]
+[JsonSerializable(typeof(TestFilter))]
+[JsonSerializable(typeof(Dictionary<string, int>))]
 [JsonSerializable(typeof(string))]
 [JsonSerializable(typeof(int))]
 internal sealed partial class TestJsonContext : JsonSerializerContext;

@@ -11,11 +11,16 @@ namespace Natrix.Swr;
 /// from a component's <c>Setup</c> and render from the signals it returns:
 /// <code>
 /// var user = SwrResource.Use(
-///     () => ["user", Props.UserId.Value],
-///     async (key, ct) => await api.GetUserAsync(key[1], ct));
+///     () => ("user", Props.UserId.Value),
+///     async (key, ct) => await api.GetUserAsync(key.Item2, ct));
 /// </code>
+///
+/// A key factory that returns a tuple gets the typed overloads, where the key's element types
+/// flow into the fetcher's parameter — so the fetcher reads <c>key.Item2</c> as the <c>int</c> it
+/// was, instead of a segment it has to know the position and the shape of. Overloads taking a
+/// <see cref="SwrKey"/> remain for keys whose arity or types are not known at the call.
 /// </summary>
-public static class SwrResource
+public static partial class SwrResource
 {
     /// <summary>
     /// Binds a component to a key and keeps it there, refetching whenever the key changes.
@@ -58,7 +63,21 @@ public static class SwrResource
     public static SwrResource<TData> Use<TData>(
         Func<SwrKey> key,
         Func<SwrKey, CancellationToken, Task<TData>> fetcher,
-        Func<SwrOptions, SwrOptions>? configure = null)
+        Func<SwrOptions, SwrOptions>? configure = null) =>
+        Use(key, fetcher, configure, validateKeySegments: null);
+
+    /// <param name="validateKeySegments">
+    /// Resolves the contracts the key's segments encode under, for the typed overloads that know
+    /// those types at the call. Nothing is deferred by leaving it out — an untyped key learns its
+    /// segment types only when the factory runs — but where the types are known, a missing one is
+    /// worth reporting against the code that named it rather than from inside the binding effect.
+    /// </param>
+    /// <inheritdoc cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)"/>
+    internal static SwrResource<TData> Use<TData>(
+        Func<SwrKey> key,
+        Func<SwrKey, CancellationToken, Task<TData>> fetcher,
+        Func<SwrOptions, SwrOptions>? configure,
+        Action<SwrFeature>? validateKeySegments)
     {
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
@@ -82,6 +101,8 @@ public static class SwrResource
         // The first resource of the render is what attaches the cache to the hydration payload,
         // in whichever direction this host runs.
         feature.EnsureWired(features);
+
+        validateKeySegments?.Invoke(feature);
 
         return new SwrResource<TData>(
             feature,

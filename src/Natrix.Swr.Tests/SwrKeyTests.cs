@@ -26,9 +26,10 @@ public class SwrKeyTests
 
         await Assert.That(key.HasValue).IsTrue();
         await Assert.That(key.Count).IsEqualTo(3);
-        await Assert.That(key[0]).IsEqualTo("user");
-        await Assert.That(key[2]).IsEqualTo("posts");
-        await Assert.That(key.ToArray()).IsEquivalentTo(new[] { "user", "42", "posts" });
+        await Assert.That(key.Segment<string>(0)).IsEqualTo("user");
+        await Assert.That(key.Segment<string>(2)).IsEqualTo("posts");
+        await Assert.That(key.Select(segment => segment.Value).ToArray())
+            .IsEquivalentTo(new object?[] { "user", "42", "posts" });
     }
 
     [Test]
@@ -78,9 +79,33 @@ public class SwrKeyTests
     }
 
     [Test]
-    public async Task Null_segment_is_rejected()
+    public async Task Null_is_an_ordinary_segment()
     {
-        await Assert.That(() => new SwrKey("user", null!)).Throws<ArgumentException>();
+        // Distinct from the absent key, which is the paused state: a key with a null in it is a
+        // key, and encodes to one - JSON has a null of its own to spell it with.
+        var missing = new SwrKey("user", null!);
+
+        await Assert.That(missing.HasValue).IsTrue();
+        await Assert.That(missing).IsNotEqualTo(new SwrKey("user", ""));
+        await Assert.That(missing).IsNotEqualTo(SwrKey.None);
+    }
+
+    [Test]
+    public async Task Segment_read_as_the_wrong_type_is_reported()
+    {
+        var key = new SwrKey(SwrKeySegment.Of("user"), SwrKeySegment.Of(42));
+
+        await Assert.That(key.Segment<int>(1)).IsEqualTo(42);
+        await Assert.That(() => key.Segment<string>(1)).Throws<InvalidOperationException>();
+    }
+
+    [Test]
+    public async Task Segments_of_different_types_are_different_keys()
+    {
+        // Structurally, that is. They still share a cache entry, because they encode alike -
+        // which is why the cache is keyed by the encoding and not by this.
+        await Assert.That(new SwrKey(SwrKeySegment.Of(1)))
+            .IsNotEqualTo(new SwrKey(SwrKeySegment.Of(1L)));
     }
 
     [Test]

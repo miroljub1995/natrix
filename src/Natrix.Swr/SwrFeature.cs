@@ -28,6 +28,7 @@ public sealed class SwrFeature
 
     private readonly JsonSerializerOptions? _explicitSerializerOptions;
     private JsonSerializerOptions? _serializerOptions;
+    private SwrKeyEncoder? _keyEncoder;
     private bool _wired;
 
     public SwrFeature(
@@ -67,6 +68,15 @@ public sealed class SwrFeature
         ?? throw new InvalidOperationException($"{nameof(SwrFeature)} has not been wired yet.");
 
     /// <summary>
+    /// How keys become cache keys. Built from the application's resolver but none of its
+    /// formatting — see <see cref="SwrKeyEncoder"/> for why the two are separated.
+    /// </summary>
+    /// <inheritdoc cref="SerializerOptions" path="/exception"/>
+    internal SwrKeyEncoder KeyEncoder =>
+        _keyEncoder
+        ?? throw new InvalidOperationException($"{nameof(SwrFeature)} has not been wired yet.");
+
+    /// <summary>
     /// Attaches the cache to whichever side of the hydration boundary this host is on. Driven
     /// from the first <c>Use</c> call rather than from host construction, so it does not depend
     /// on the order features were registered in.
@@ -85,6 +95,12 @@ public sealed class SwrFeature
                 $"SWR needs {nameof(JsonSerializerOptions)} to carry values from the server's render "
                 + "into the page the browser hydrates from. Pass them to UseSwr() or register them as "
                 + "a feature, using the resolver chain of the JsonSerializerContext both hosts share.");
+
+        // The contracts come from the application, the formatting does not; the cache is handed
+        // the same encoder so that dropping a key by hand files it under the string a resource
+        // binding that key would have produced.
+        _keyEncoder = new SwrKeyEncoder(_serializerOptions.TypeInfoResolver);
+        Cache.AttachKeyEncoder(_keyEncoder);
 
         if (features.Get<IClientHydrationStateFeature>()?.Value[HydrationSection] is JsonObject payload)
         {
@@ -113,6 +129,15 @@ public sealed class SwrFeature
     /// <remarks>
     /// Only meaningful after <see cref="EnsureWired"/>, which every <c>Use</c> call runs first.
     /// </remarks>
+    /// <summary>
+    /// Resolves the contract a key segment of <typeparamref name="TSegment"/> encodes under,
+    /// discarding the result — the typed <c>Use</c> overloads call it for each of their segment
+    /// types so that a missing one is reported at the call rather than from inside the effect
+    /// that binds the key.
+    /// </summary>
+    /// <inheritdoc cref="SwrKeyEncoder.GetSegmentTypeInfo" path="/exception"/>
+    internal void EnsureKeySegmentContract<TSegment>() => KeyEncoder.GetSegmentTypeInfo(typeof(TSegment));
+
     internal JsonTypeInfo<TData> GetTypeInfo<TData>()
     {
         // Read before the try so an unwired feature is not mistaken for a missing contract.
