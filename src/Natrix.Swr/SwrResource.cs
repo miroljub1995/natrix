@@ -87,10 +87,10 @@ public static partial class SwrResource
     }
 
     /// <summary>
-    /// The application's SWR configuration, wired to whichever side of the hydration boundary
-    /// this host is on. Separate from the <c>Use</c> that needs it so that the typed overloads can
-    /// resolve their segment types' contracts before delegating; wiring is idempotent, so asking
-    /// twice on the way to one resource costs a pair of lookups.
+    /// The application's SWR configuration, as published to this subtree by <c>UseSwr</c>.
+    /// Separate from the <c>Use</c> that needs it so that the typed overloads can resolve their
+    /// segment types' contracts before delegating; it is a pair of lookups, so asking twice on
+    /// the way to one resource costs nothing worth avoiding.
     /// </summary>
     /// <param name="caller">
     /// Filled in by the compiler, and reported when a lookup fails — so the message names the
@@ -104,10 +104,6 @@ public static partial class SwrResource
     {
         var features = AppFeatures.GetRequiredCurrent(caller);
         var feature = features.GetRequired<SwrFeature>(caller);
-
-        // The first resource of the render is what attaches the cache to the hydration payload,
-        // in whichever direction this host runs.
-        feature.EnsureWired(features);
 
         return (features, feature);
     }

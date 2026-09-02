@@ -11,7 +11,7 @@ public class SwrCacheTests
     public async Task Entries_outlive_the_components_that_created_them()
     {
         var fetcher = new RecordingFetcher<string>((_, _) => Task.FromResult("Ada"));
-        var cache = new SwrCache();
+        var cache = new SwrCache(TestJsonContext.Default.Options);
 
         using (var app = new TestApp(NoRetries, cache))
         {
@@ -36,7 +36,7 @@ public class SwrCacheTests
     public async Task Remove_drops_the_entry()
     {
         var fetcher = new RecordingFetcher<string>((_, _) => Task.FromResult("Ada"));
-        var cache = new SwrCache();
+        var cache = new SwrCache(TestJsonContext.Default.Options);
 
         using (var app = new TestApp(NoRetries, cache))
         {

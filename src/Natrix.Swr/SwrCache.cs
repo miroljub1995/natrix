@@ -1,3 +1,4 @@
+using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization.Metadata;
 
@@ -22,6 +23,7 @@ public sealed class SwrCache
 {
     private readonly Dictionary<string, ISwrCacheEntry> _entries = new(StringComparer.Ordinal);
     private readonly Lock _gate = new();
+    private readonly JsonSerializerOptions _serializerOptions;
 
     /// <summary>
     /// Values the server sent with the page, held until a component asks for the key they belong
@@ -30,11 +32,30 @@ public sealed class SwrCache
     /// </summary>
     private Dictionary<string, JsonNode?>? _pending;
 
+
+
+    /// <param name="serializerOptions">
+    /// How the cache names and stores what it holds: the contracts for the values it carries
+    /// across the hydration boundary, and — through their resolver — the ones its keys are
+    /// encoded under. Required, because a cache that cannot do either is a cache whose entries
+    /// the browser cannot read back. Pass the <c>Options</c> of a source-generated
+    /// <c>JsonSerializerContext</c> covering every fetched type, the same one on both hosts,
+    /// which is what keeps the transfer trim-safe and AOT-safe.
+    /// </param>
+    public SwrCache(JsonSerializerOptions serializerOptions)
+    {
+        ArgumentNullException.ThrowIfNull(serializerOptions);
+
+        _serializerOptions = serializerOptions;
+
+        // The contracts come from the application, the formatting does not - see SwrKeyEncoder.
+        KeyEncoder = new SwrKeyEncoder(serializerOptions.TypeInfoResolver);
+    }
+
     /// <summary>
-    /// Attached when the feature holding this cache is wired, since encoding a key needs the
-    /// application's contracts and a cache can be constructed before there is an application.
+    /// How a key becomes the string this cache files it under.
     /// </summary>
-    private SwrKeyEncoder? _keyEncoder;
+    internal SwrKeyEncoder KeyEncoder { get; }
 
     /// <summary>
     /// Number of keys currently held.
@@ -50,8 +71,6 @@ public sealed class SwrCache
         }
     }
 
-    internal void AttachKeyEncoder(SwrKeyEncoder encoder) => _keyEncoder = encoder;
-
     /// <summary>
     /// Drops a key. Any request in flight for it is abandoned.
     /// </summary>
@@ -61,16 +80,9 @@ public sealed class SwrCache
     /// out from under the user. The next resource to ask for the key gets a fresh, empty entry.
     /// </remarks>
     /// <returns><c>true</c> if the key was present.</returns>
-    /// <exception cref="InvalidOperationException">
-    /// The cache has not been wired into an application yet, so there is nothing to encode the
-    /// key with — and nothing in it to remove either.
-    /// </exception>
     public bool Remove(SwrKey key)
     {
-        var cacheKey = (_keyEncoder
-            ?? throw new InvalidOperationException(
-                $"This {nameof(SwrCache)} is not in use by an application yet, so it holds nothing to remove."))
-            .Encode(key);
+        var cacheKey = KeyEncoder.Encode(key);
 
         ISwrCacheEntry? entry;
         lock (_gate)
@@ -116,6 +128,31 @@ public sealed class SwrCache
     /// into different shapes would silently share — and corrupt — one another's cache slot, so it
     /// is reported rather than tolerated.
     /// </exception>
+    /// <summary>
+    /// Resolves how <typeparamref name="TData"/> crosses the hydration boundary, at the
+    /// <c>Use</c> call that introduced it rather than at render time, so a type missing from the
+    /// serializer context is reported against the code that asked for it.
+    /// </summary>
+    /// <exception cref="InvalidOperationException">
+    /// The configured options cannot describe <typeparamref name="TData"/>. Carrying on without
+    /// it would only defer the failure to the hydration mismatch it causes.
+    /// </exception>
+    internal JsonTypeInfo<TData> GetTypeInfo<TData>()
+    {
+        try
+        {
+            return (JsonTypeInfo<TData>)_serializerOptions.GetTypeInfo(typeof(TData));
+        }
+        catch (Exception exception) when (exception is InvalidOperationException or NotSupportedException)
+        {
+            throw new InvalidOperationException(
+                $"The serializer options in use have no metadata for {typeof(TData)}. Add "
+                + $"[JsonSerializable(typeof({typeof(TData).Name}))] to the JsonSerializerContext shared by "
+                + "the client and the server.",
+                exception);
+        }
+    }
+
     internal SwrCacheEntry<TData> GetOrCreate<TData>(SwrEncodedKey key, JsonTypeInfo<TData> typeInfo)
     {
         lock (_gate)

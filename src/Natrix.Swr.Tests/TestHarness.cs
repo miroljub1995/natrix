@@ -4,6 +4,7 @@ using System.Text.Json.Serialization;
 using Natrix.Browser.Abstractions.Features.HydrationState;
 using Natrix.Core;
 using Natrix.Core.Components;
+using Natrix.Core.Features;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.Features;
 using Natrix.Ssr.Abstractions.Features.HydrationState;
@@ -70,6 +71,7 @@ internal sealed class TestApp : IDisposable
 {
     private readonly NatrixHostBuilder _builder;
     private IDisposable? _mounted;
+    private IFeatureCollection? _mountedFeatures;
 
     public TestApp(
         SwrOptions? defaultOptions = null,
@@ -83,8 +85,6 @@ internal sealed class TestApp : IDisposable
         ServerHydrationStateFeature? hydrationState = null,
         JsonObject? clientHydrationState = null)
     {
-        Cache = cache ?? new SwrCache();
-
         // Every host has to be able to serialize what it fetches, so tests that are not about the
         // wire format still get the shared context — which is why it covers the primitives they
         // fetch as well as TestUser.
@@ -93,11 +93,13 @@ internal sealed class TestApp : IDisposable
             serializerOptionsFeature = TestJsonContext.Default.Options;
         }
 
+        _cache = cache;
+
         _builder = new NatrixHostBuilder().UseRootRenderer(new NullRenderRoot());
 
         if (swr)
         {
-            _builder.UseSwr(defaultOptions, Cache, serializerOptions);
+            _builder.UseSwr(defaultOptions, cache, serializerOptions);
         }
 
         // Present only where a live tree is mounted, which is what tells a resource whether it is
@@ -130,10 +132,31 @@ internal sealed class TestApp : IDisposable
         }
     }
 
-    public SwrCache Cache { get; }
+    private readonly SwrCache? _cache;
+
+    /// <summary>
+    /// The cache the application is using. Only resolvable once mounted, since a host that was not
+    /// given one builds it from the serialization it finds — which is a mount-time question.
+    /// </summary>
+    public SwrCache Cache =>
+        _cache
+        ?? _mountedFeatures?.Get<SwrFeature>()?.Cache
+        ?? throw new InvalidOperationException("Mount first, or pass a cache in.");
 
     public TestApp Mount(Func<IComponent> root)
     {
+        // Captured from inside the tree, which is the only place a feature published by middleware
+        // is visible - the host's own collection never sees it.
+        _builder.Use(next => new FeatureProvider
+        {
+            Configure = _ => { },
+            Child = () =>
+            {
+                _mountedFeatures = AppFeatures.Current;
+                return next();
+            },
+        });
+
         _mounted = _builder.UseRootComponent(root).Build().Mount();
         return this;
     }

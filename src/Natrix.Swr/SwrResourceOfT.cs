@@ -68,7 +68,7 @@ public sealed class SwrResource<TData>
         IServerPrefetchFeature? serverPrefetch)
     {
         _cache = feature.Cache;
-        _keyEncoder = feature.KeyEncoder;
+        _keyEncoder = _cache.KeyEncoder;
         _fetcher = fetcher;
         _options = options;
         _serverPrefetch = serverPrefetch;
@@ -76,7 +76,7 @@ public sealed class SwrResource<TData>
         // Resolved at the Use call that introduced the type rather than at the render that would
         // have transferred it, so a type the shared context does not cover is reported against
         // the code that asked for it.
-        _typeInfo = feature.GetTypeInfo<TData>();
+        _typeInfo = _cache.GetTypeInfo<TData>();
 
         Data = new Computed<TData?>(() => _entrySignal.Value is { } entry ? entry.State.Value.Data : default);
         Error = new Computed<Exception?>(() => _entrySignal.Value?.State.Value.Error);

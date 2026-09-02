@@ -32,7 +32,19 @@ Serializer options are required: they are what carries a value from the server's
 page the browser hydrates from, described under [Server rendering](#server-rendering). They are
 taken from the `JsonSerializerOptions` registered as a feature, so an application that already
 configures serialization does not hand SWR the same thing twice; pass `UseSwr(serializerOptions: …)`
-to override. With neither, the first `Use` call says so.
+to override. With neither, `Mount()` says so.
+
+`UseSwr` registers middleware rather than a feature, and the cache it builds is published to the
+component tree at mount. That ordering is the point: the cache is built *out of* other features —
+the serializer options, and whichever side of the hydration boundary this host is on — and
+registration happens while the application is still being described, in an order nothing
+guarantees. `UseSwr` can therefore go anywhere in the chain. If you need the cache yourself, build
+it and pass it in:
+
+```csharp
+var cache = new SwrCache(serializerOptions);
+builder.UseSwr(cache: cache);
+```
 
 A fetched type the options cannot describe is reported the same way, at the `Use` call that
 introduced it rather than at the render that would have shipped it.
