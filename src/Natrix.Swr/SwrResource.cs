@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Natrix.Core;
 using Natrix.Core.Features;
 using Natrix.Ssr.Abstractions.Features;
@@ -91,19 +92,21 @@ public static partial class SwrResource
     /// resolve their segment types' contracts before delegating; wiring is idempotent, so asking
     /// twice on the way to one resource costs a pair of lookups.
     /// </summary>
+    /// <param name="caller">
+    /// Filled in by the compiler, and reported when a lookup fails — so the message names the
+    /// <c>Use</c> the application called rather than this helper.
+    /// </param>
     /// <exception cref="InvalidOperationException">
     /// Called outside <c>Setup</c>, or the application never called <c>UseSwr</c>.
     /// </exception>
-    internal static (IFeatureCollection Features, SwrFeature Feature) Resolve()
+    internal static (IFeatureCollection Features, SwrFeature Feature) Resolve(
+        [CallerMemberName] string? caller = null)
     {
-        var features = AppFeatures.Current
-            ?? throw new InvalidOperationException(
-                $"{nameof(SwrResource)}.{nameof(Use)} can only be called while a component is being set up.");
-
-        var feature = features.Get<SwrFeature>()
-            ?? throw new InvalidOperationException(
-                $"No SWR cache is registered. Call {nameof(NatrixHostBuilderSwrExtensions.UseSwr)}() on the "
-                + $"{nameof(NatrixHostBuilder)} before mounting.");
+        var features = AppFeatures.GetRequiredCurrent(caller);
+        var feature = features.GetRequired<SwrFeature>(
+            $"Call {nameof(NatrixHostBuilderSwrExtensions.UseSwr)}() on the "
+            + $"{nameof(NatrixHostBuilder)} before mounting.",
+            caller);
 
         // The first resource of the render is what attaches the cache to the hydration payload,
         // in whichever direction this host runs.
