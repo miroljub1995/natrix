@@ -103,10 +103,7 @@ public static partial class SwrResource
         [CallerMemberName] string? caller = null)
     {
         var features = AppFeatures.GetRequiredCurrent(caller);
-        var feature = features.GetRequired<SwrFeature>(
-            $"Call {nameof(NatrixHostBuilderSwrExtensions.UseSwr)}() on the "
-            + $"{nameof(NatrixHostBuilder)} before mounting.",
-            caller);
+        var feature = features.GetRequired<SwrFeature>(caller);
 
         // The first resource of the render is what attaches the cache to the hydration payload,
         // in whichever direction this host runs.

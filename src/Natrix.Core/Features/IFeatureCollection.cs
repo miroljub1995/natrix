@@ -22,11 +22,6 @@ public interface IFeatureCollection : IEnumerable<KeyValuePair<Type, object>>
     /// "object reference not set" says nothing about which feature the application forgot to
     /// register.
     /// </summary>
-    /// <param name="remedy">
-    /// What to do about it, in a sentence — the extension method that registers the feature,
-    /// usually. Worth passing: the rest of the message can say what is missing, but only the
-    /// feature's own library knows how to supply it.
-    /// </param>
     /// <param name="caller">
     /// Filled in by the compiler. It names the member that needed the feature, which is more use
     /// than the stack when the resolution happens in a shared helper.
@@ -36,9 +31,8 @@ public interface IFeatureCollection : IEnumerable<KeyValuePair<Type, object>>
     /// Being a default implementation, it is reached through the interface — a variable typed as
     /// a concrete collection has to be cast, or go through <see cref="Get{TFeature}"/> as before.
     /// </remarks>
-    TFeature GetRequired<TFeature>(string? remedy = null, [CallerMemberName] string? caller = null) =>
+    TFeature GetRequired<TFeature>([CallerMemberName] string? caller = null) =>
         Get<TFeature>()
         ?? throw new InvalidOperationException(
-            $"{caller} needs the {typeof(TFeature).Name} feature, which is not registered."
-            + (remedy is null ? string.Empty : " " + remedy));
+            $"{caller} needs the {typeof(TFeature).Name} feature, which is not registered.");
 }
