@@ -726,14 +726,30 @@ public class SwrResourceTests
     }
 
     [Test]
-    public async Task A_segment_type_nothing_describes_is_reported_at_the_use_call()
+    public async Task A_segment_type_nothing_describes_is_reported_when_the_key_binds()
     {
-        // Reported here rather than from inside the binding effect, which is what the typed
-        // overloads buy: the segment types are known at the call, so they are resolved there.
+        // Which for a key that is not paused is the Use call itself: binding runs in an effect,
+        // and an effect runs its body when it is constructed.
         using var app = new TestApp(NoRetries);
 
         await Assert.That(() => app.MountProbe(() => SwrResource.Use(
                 () => ("user", new Unregistered(1)),
+                (_, _) => Task.FromResult("Ada"))))
+            .Throws<InvalidOperationException>();
+    }
+
+    [Test]
+    public async Task A_paused_key_reports_its_segment_types_too()
+    {
+        // The case the typed overloads resolve their segment contracts for. A key with no segments
+        // has none to encode, so this one would otherwise carry the problem until something
+        // unpaused it, and then report it against whatever wrote that signal rather than against
+        // the component holding the key.
+        var ready = new Signal<bool>(false);
+        using var app = new TestApp(NoRetries);
+
+        await Assert.That(() => app.MountProbe(() => SwrResource.Use<string, Unregistered, string>(
+                () => ready.Value ? ("user", new Unregistered(1)) : null,
                 (_, _) => Task.FromResult("Ada"))))
             .Throws<InvalidOperationException>();
     }

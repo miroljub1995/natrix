@@ -63,25 +63,39 @@ public static partial class SwrResource
     public static SwrResource<TData> Use<TData>(
         Func<SwrKey> key,
         Func<SwrKey, CancellationToken, Task<TData>> fetcher,
-        Func<SwrOptions, SwrOptions>? configure = null) =>
-        Use(key, fetcher, configure, validateKeySegments: null);
-
-    /// <param name="validateKeySegments">
-    /// Resolves the contracts the key's segments encode under, for the typed overloads that know
-    /// those types at the call. Nothing is deferred by leaving it out — an untyped key learns its
-    /// segment types only when the factory runs — but where the types are known, a missing one is
-    /// worth reporting against the code that named it rather than from inside the binding effect.
-    /// </param>
-    /// <inheritdoc cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)"/>
-    internal static SwrResource<TData> Use<TData>(
-        Func<SwrKey> key,
-        Func<SwrKey, CancellationToken, Task<TData>> fetcher,
-        Func<SwrOptions, SwrOptions>? configure,
-        Action<SwrFeature>? validateKeySegments)
+        Func<SwrOptions, SwrOptions>? configure = null)
     {
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
+        var (features, feature) = Resolve();
+
+        var effectiveOptions = configure is null
+            ? feature.DefaultOptions
+            : configure(feature.DefaultOptions)
+              ?? throw new ArgumentException("Returned null options.", nameof(configure));
+
+        effectiveOptions.Validate();
+
+        return new SwrResource<TData>(
+            feature,
+            key,
+            fetcher,
+            effectiveOptions,
+            features.Get<IServerPrefetchFeature>());
+    }
+
+    /// <summary>
+    /// The application's SWR configuration, wired to whichever side of the hydration boundary
+    /// this host is on. Separate from the <c>Use</c> that needs it so that the typed overloads can
+    /// resolve their segment types' contracts before delegating; wiring is idempotent, so asking
+    /// twice on the way to one resource costs a pair of lookups.
+    /// </summary>
+    /// <exception cref="InvalidOperationException">
+    /// Called outside <c>Setup</c>, or the application never called <c>UseSwr</c>.
+    /// </exception>
+    internal static (IFeatureCollection Features, SwrFeature Feature) Resolve()
+    {
         var features = AppFeatures.Current
             ?? throw new InvalidOperationException(
                 $"{nameof(SwrResource)}.{nameof(Use)} can only be called while a component is being set up.");
@@ -91,25 +105,11 @@ public static partial class SwrResource
                 $"No SWR cache is registered. Call {nameof(NatrixHostBuilderSwrExtensions.UseSwr)}() on the "
                 + $"{nameof(NatrixHostBuilder)} before mounting.");
 
-        var effectiveOptions = configure is null
-            ? feature.DefaultOptions
-            : configure(feature.DefaultOptions)
-              ?? throw new ArgumentException("Returned null options.", nameof(configure));
-
-        effectiveOptions.Validate();
-
         // The first resource of the render is what attaches the cache to the hydration payload,
         // in whichever direction this host runs.
         feature.EnsureWired(features);
 
-        validateKeySegments?.Invoke(feature);
-
-        return new SwrResource<TData>(
-            feature,
-            key,
-            fetcher,
-            effectiveOptions,
-            features.Get<IServerPrefetchFeature>());
+        return (features, feature);
     }
 
     /// <inheritdoc cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)" />

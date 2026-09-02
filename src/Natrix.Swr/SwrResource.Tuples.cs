@@ -4,10 +4,10 @@ namespace Natrix.Swr;
 // it back with its types intact. Documented on the other part of the class, since a partial type
 // takes its doc comment from one part only.
 //
-// Every arity here is the same three lines: build a SwrKey whose segments carry the type
-// parameter they were declared with, unpack it again for the fetcher, and resolve each segment
-// type's contract up front. They are written out rather than generated because a tuple's arity
-// cannot be abstracted over.
+// Every arity here is the same three lines: resolve each segment type's contract up front, build
+// a SwrKey whose segments carry the type parameter they were declared with, and unpack it again
+// for the fetcher. They are written out rather than generated because a tuple's arity cannot be
+// abstracted over.
 //
 // Arity starts at two. A single segment is not a tuple, so its overload would take a bare
 // Func<T> and sit directly under the untyped one - and a one-segment key is a bad key anyway,
@@ -26,15 +26,16 @@ public static partial class SwrResource
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
+        // Ahead of everything else, so a segment type nothing describes is reported against
+        // the component that named it even when the key it names starts out paused.
+        var (_, feature) = Resolve();
+        feature.EnsureKeySegmentContract<T1>();
+        feature.EnsureKeySegmentContract<T2>();
+
         return Use(
             () => Key(key()),
             (k, token) => fetcher((k.Segment<T1>(0), k.Segment<T2>(1)), token),
-            configure,
-            static feature =>
-            {
-                feature.EnsureKeySegmentContract<T1>();
-                feature.EnsureKeySegmentContract<T2>();
-            });
+            configure);
     }
 
     /// <summary>
@@ -57,15 +58,16 @@ public static partial class SwrResource
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
+        // Ahead of everything else, so a segment type nothing describes is reported against
+        // the component that named it even when the key it names starts out paused.
+        var (_, feature) = Resolve();
+        feature.EnsureKeySegmentContract<T1>();
+        feature.EnsureKeySegmentContract<T2>();
+
         return Use(
             () => key() is { } segments ? Key(segments) : SwrKey.None,
             (k, token) => fetcher((k.Segment<T1>(0), k.Segment<T2>(1)), token),
-            configure,
-            static feature =>
-            {
-                feature.EnsureKeySegmentContract<T1>();
-                feature.EnsureKeySegmentContract<T2>();
-            });
+            configure);
     }
 
     /// <inheritdoc cref="Use{T1, T2, TData}(Func{(T1, T2)}, Func{(T1, T2), CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)"/>
@@ -105,16 +107,17 @@ public static partial class SwrResource
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
+        // Ahead of everything else, so a segment type nothing describes is reported against
+        // the component that named it even when the key it names starts out paused.
+        var (_, feature) = Resolve();
+        feature.EnsureKeySegmentContract<T1>();
+        feature.EnsureKeySegmentContract<T2>();
+        feature.EnsureKeySegmentContract<T3>();
+
         return Use(
             () => Key(key()),
             (k, token) => fetcher((k.Segment<T1>(0), k.Segment<T2>(1), k.Segment<T3>(2)), token),
-            configure,
-            static feature =>
-            {
-                feature.EnsureKeySegmentContract<T1>();
-                feature.EnsureKeySegmentContract<T2>();
-                feature.EnsureKeySegmentContract<T3>();
-            });
+            configure);
     }
 
     /// <summary>
@@ -137,16 +140,17 @@ public static partial class SwrResource
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
+        // Ahead of everything else, so a segment type nothing describes is reported against
+        // the component that named it even when the key it names starts out paused.
+        var (_, feature) = Resolve();
+        feature.EnsureKeySegmentContract<T1>();
+        feature.EnsureKeySegmentContract<T2>();
+        feature.EnsureKeySegmentContract<T3>();
+
         return Use(
             () => key() is { } segments ? Key(segments) : SwrKey.None,
             (k, token) => fetcher((k.Segment<T1>(0), k.Segment<T2>(1), k.Segment<T3>(2)), token),
-            configure,
-            static feature =>
-            {
-                feature.EnsureKeySegmentContract<T1>();
-                feature.EnsureKeySegmentContract<T2>();
-                feature.EnsureKeySegmentContract<T3>();
-            });
+            configure);
     }
 
     /// <inheritdoc cref="Use{T1, T2, T3, TData}(Func{(T1, T2, T3)}, Func{(T1, T2, T3), CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)"/>
@@ -186,17 +190,18 @@ public static partial class SwrResource
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
+        // Ahead of everything else, so a segment type nothing describes is reported against
+        // the component that named it even when the key it names starts out paused.
+        var (_, feature) = Resolve();
+        feature.EnsureKeySegmentContract<T1>();
+        feature.EnsureKeySegmentContract<T2>();
+        feature.EnsureKeySegmentContract<T3>();
+        feature.EnsureKeySegmentContract<T4>();
+
         return Use(
             () => Key(key()),
             (k, token) => fetcher((k.Segment<T1>(0), k.Segment<T2>(1), k.Segment<T3>(2), k.Segment<T4>(3)), token),
-            configure,
-            static feature =>
-            {
-                feature.EnsureKeySegmentContract<T1>();
-                feature.EnsureKeySegmentContract<T2>();
-                feature.EnsureKeySegmentContract<T3>();
-                feature.EnsureKeySegmentContract<T4>();
-            });
+            configure);
     }
 
     /// <summary>
@@ -219,17 +224,18 @@ public static partial class SwrResource
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
+        // Ahead of everything else, so a segment type nothing describes is reported against
+        // the component that named it even when the key it names starts out paused.
+        var (_, feature) = Resolve();
+        feature.EnsureKeySegmentContract<T1>();
+        feature.EnsureKeySegmentContract<T2>();
+        feature.EnsureKeySegmentContract<T3>();
+        feature.EnsureKeySegmentContract<T4>();
+
         return Use(
             () => key() is { } segments ? Key(segments) : SwrKey.None,
             (k, token) => fetcher((k.Segment<T1>(0), k.Segment<T2>(1), k.Segment<T3>(2), k.Segment<T4>(3)), token),
-            configure,
-            static feature =>
-            {
-                feature.EnsureKeySegmentContract<T1>();
-                feature.EnsureKeySegmentContract<T2>();
-                feature.EnsureKeySegmentContract<T3>();
-                feature.EnsureKeySegmentContract<T4>();
-            });
+            configure);
     }
 
     /// <inheritdoc cref="Use{T1, T2, T3, T4, TData}(Func{(T1, T2, T3, T4)}, Func{(T1, T2, T3, T4), CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)"/>
@@ -269,18 +275,19 @@ public static partial class SwrResource
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
+        // Ahead of everything else, so a segment type nothing describes is reported against
+        // the component that named it even when the key it names starts out paused.
+        var (_, feature) = Resolve();
+        feature.EnsureKeySegmentContract<T1>();
+        feature.EnsureKeySegmentContract<T2>();
+        feature.EnsureKeySegmentContract<T3>();
+        feature.EnsureKeySegmentContract<T4>();
+        feature.EnsureKeySegmentContract<T5>();
+
         return Use(
             () => Key(key()),
             (k, token) => fetcher((k.Segment<T1>(0), k.Segment<T2>(1), k.Segment<T3>(2), k.Segment<T4>(3), k.Segment<T5>(4)), token),
-            configure,
-            static feature =>
-            {
-                feature.EnsureKeySegmentContract<T1>();
-                feature.EnsureKeySegmentContract<T2>();
-                feature.EnsureKeySegmentContract<T3>();
-                feature.EnsureKeySegmentContract<T4>();
-                feature.EnsureKeySegmentContract<T5>();
-            });
+            configure);
     }
 
     /// <summary>
@@ -303,18 +310,19 @@ public static partial class SwrResource
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
+        // Ahead of everything else, so a segment type nothing describes is reported against
+        // the component that named it even when the key it names starts out paused.
+        var (_, feature) = Resolve();
+        feature.EnsureKeySegmentContract<T1>();
+        feature.EnsureKeySegmentContract<T2>();
+        feature.EnsureKeySegmentContract<T3>();
+        feature.EnsureKeySegmentContract<T4>();
+        feature.EnsureKeySegmentContract<T5>();
+
         return Use(
             () => key() is { } segments ? Key(segments) : SwrKey.None,
             (k, token) => fetcher((k.Segment<T1>(0), k.Segment<T2>(1), k.Segment<T3>(2), k.Segment<T4>(3), k.Segment<T5>(4)), token),
-            configure,
-            static feature =>
-            {
-                feature.EnsureKeySegmentContract<T1>();
-                feature.EnsureKeySegmentContract<T2>();
-                feature.EnsureKeySegmentContract<T3>();
-                feature.EnsureKeySegmentContract<T4>();
-                feature.EnsureKeySegmentContract<T5>();
-            });
+            configure);
     }
 
     /// <inheritdoc cref="Use{T1, T2, T3, T4, T5, TData}(Func{(T1, T2, T3, T4, T5)}, Func{(T1, T2, T3, T4, T5), CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)"/>
@@ -354,19 +362,20 @@ public static partial class SwrResource
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
+        // Ahead of everything else, so a segment type nothing describes is reported against
+        // the component that named it even when the key it names starts out paused.
+        var (_, feature) = Resolve();
+        feature.EnsureKeySegmentContract<T1>();
+        feature.EnsureKeySegmentContract<T2>();
+        feature.EnsureKeySegmentContract<T3>();
+        feature.EnsureKeySegmentContract<T4>();
+        feature.EnsureKeySegmentContract<T5>();
+        feature.EnsureKeySegmentContract<T6>();
+
         return Use(
             () => Key(key()),
             (k, token) => fetcher((k.Segment<T1>(0), k.Segment<T2>(1), k.Segment<T3>(2), k.Segment<T4>(3), k.Segment<T5>(4), k.Segment<T6>(5)), token),
-            configure,
-            static feature =>
-            {
-                feature.EnsureKeySegmentContract<T1>();
-                feature.EnsureKeySegmentContract<T2>();
-                feature.EnsureKeySegmentContract<T3>();
-                feature.EnsureKeySegmentContract<T4>();
-                feature.EnsureKeySegmentContract<T5>();
-                feature.EnsureKeySegmentContract<T6>();
-            });
+            configure);
     }
 
     /// <summary>
@@ -389,19 +398,20 @@ public static partial class SwrResource
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
+        // Ahead of everything else, so a segment type nothing describes is reported against
+        // the component that named it even when the key it names starts out paused.
+        var (_, feature) = Resolve();
+        feature.EnsureKeySegmentContract<T1>();
+        feature.EnsureKeySegmentContract<T2>();
+        feature.EnsureKeySegmentContract<T3>();
+        feature.EnsureKeySegmentContract<T4>();
+        feature.EnsureKeySegmentContract<T5>();
+        feature.EnsureKeySegmentContract<T6>();
+
         return Use(
             () => key() is { } segments ? Key(segments) : SwrKey.None,
             (k, token) => fetcher((k.Segment<T1>(0), k.Segment<T2>(1), k.Segment<T3>(2), k.Segment<T4>(3), k.Segment<T5>(4), k.Segment<T6>(5)), token),
-            configure,
-            static feature =>
-            {
-                feature.EnsureKeySegmentContract<T1>();
-                feature.EnsureKeySegmentContract<T2>();
-                feature.EnsureKeySegmentContract<T3>();
-                feature.EnsureKeySegmentContract<T4>();
-                feature.EnsureKeySegmentContract<T5>();
-                feature.EnsureKeySegmentContract<T6>();
-            });
+            configure);
     }
 
     /// <inheritdoc cref="Use{T1, T2, T3, T4, T5, T6, TData}(Func{(T1, T2, T3, T4, T5, T6)}, Func{(T1, T2, T3, T4, T5, T6), CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)"/>
@@ -441,20 +451,21 @@ public static partial class SwrResource
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
+        // Ahead of everything else, so a segment type nothing describes is reported against
+        // the component that named it even when the key it names starts out paused.
+        var (_, feature) = Resolve();
+        feature.EnsureKeySegmentContract<T1>();
+        feature.EnsureKeySegmentContract<T2>();
+        feature.EnsureKeySegmentContract<T3>();
+        feature.EnsureKeySegmentContract<T4>();
+        feature.EnsureKeySegmentContract<T5>();
+        feature.EnsureKeySegmentContract<T6>();
+        feature.EnsureKeySegmentContract<T7>();
+
         return Use(
             () => Key(key()),
             (k, token) => fetcher((k.Segment<T1>(0), k.Segment<T2>(1), k.Segment<T3>(2), k.Segment<T4>(3), k.Segment<T5>(4), k.Segment<T6>(5), k.Segment<T7>(6)), token),
-            configure,
-            static feature =>
-            {
-                feature.EnsureKeySegmentContract<T1>();
-                feature.EnsureKeySegmentContract<T2>();
-                feature.EnsureKeySegmentContract<T3>();
-                feature.EnsureKeySegmentContract<T4>();
-                feature.EnsureKeySegmentContract<T5>();
-                feature.EnsureKeySegmentContract<T6>();
-                feature.EnsureKeySegmentContract<T7>();
-            });
+            configure);
     }
 
     /// <summary>
@@ -477,20 +488,21 @@ public static partial class SwrResource
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
+        // Ahead of everything else, so a segment type nothing describes is reported against
+        // the component that named it even when the key it names starts out paused.
+        var (_, feature) = Resolve();
+        feature.EnsureKeySegmentContract<T1>();
+        feature.EnsureKeySegmentContract<T2>();
+        feature.EnsureKeySegmentContract<T3>();
+        feature.EnsureKeySegmentContract<T4>();
+        feature.EnsureKeySegmentContract<T5>();
+        feature.EnsureKeySegmentContract<T6>();
+        feature.EnsureKeySegmentContract<T7>();
+
         return Use(
             () => key() is { } segments ? Key(segments) : SwrKey.None,
             (k, token) => fetcher((k.Segment<T1>(0), k.Segment<T2>(1), k.Segment<T3>(2), k.Segment<T4>(3), k.Segment<T5>(4), k.Segment<T6>(5), k.Segment<T7>(6)), token),
-            configure,
-            static feature =>
-            {
-                feature.EnsureKeySegmentContract<T1>();
-                feature.EnsureKeySegmentContract<T2>();
-                feature.EnsureKeySegmentContract<T3>();
-                feature.EnsureKeySegmentContract<T4>();
-                feature.EnsureKeySegmentContract<T5>();
-                feature.EnsureKeySegmentContract<T6>();
-                feature.EnsureKeySegmentContract<T7>();
-            });
+            configure);
     }
 
     /// <inheritdoc cref="Use{T1, T2, T3, T4, T5, T6, T7, TData}(Func{(T1, T2, T3, T4, T5, T6, T7)}, Func{(T1, T2, T3, T4, T5, T6, T7), CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)"/>

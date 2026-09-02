@@ -130,11 +130,16 @@ public sealed class SwrFeature
     /// Only meaningful after <see cref="EnsureWired"/>, which every <c>Use</c> call runs first.
     /// </remarks>
     /// <summary>
-    /// Resolves the contract a key segment of <typeparamref name="TSegment"/> encodes under,
-    /// discarding the result — the typed <c>Use</c> overloads call it for each of their segment
-    /// types so that a missing one is reported at the call rather than from inside the effect
-    /// that binds the key.
+    /// Resolves the contract a key segment of <typeparamref name="TSegment"/> encodes under and
+    /// discards it, for the typed <c>Use</c> overloads to call before they build anything.
     /// </summary>
+    /// <remarks>
+    /// Redundant for a key that binds straight away, which reaches the encoder inside <c>Use</c>
+    /// regardless. It earns its place on the key that starts paused: that one has no segments to
+    /// encode yet, so without this it carries the problem until something unpauses it and then
+    /// reports it against whatever wrote that signal, rather than against the component holding
+    /// the key.
+    /// </remarks>
     /// <inheritdoc cref="SwrKeyEncoder.GetSegmentTypeInfo" path="/exception"/>
     internal void EnsureKeySegmentContract<TSegment>() => KeyEncoder.GetSegmentTypeInfo(typeof(TSegment));
 

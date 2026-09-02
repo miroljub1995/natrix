@@ -118,7 +118,8 @@ become a second cache entry.
 
 Segment types the library covers — the primitives, `Guid`, the date and time types, `Uri` — need no
 registration. Anything else needs `[JsonSerializable]` on the shared context, and a typed `Use`
-call reports a missing one at the call rather than when the key binds.
+reports a missing one at the call — including for a key that starts out paused, which has no
+segments to encode yet and would otherwise fail from whatever later unpauses it.
 
 The fetcher is handed the key it is loading. Read the parameters back out of it rather than
 closing over signals, so the request can never disagree with the key its result is cached under.
