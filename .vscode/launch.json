@@ -2,34 +2,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run: Natrix.Browser.Tests (Browser)",
-            "type": "coreclr",
-            "request": "launch",
-            "program": "dotnet",
-            "args": [
-                "exec",
-                "${workspaceFolder}/src/Natrix.Browser.Tests/bin/Debug/net10.0/browser-wasm/Natrix.Browser.Tests.dll",
-                "--browser-headed"
-            ],
-            "cwd": "${workspaceFolder}/src/Natrix.Browser.Tests/bin/Debug/net10.0/browser-wasm",
-            "stopAtEntry": false,
-            "preLaunchTask": "build: Natrix.Browser.Tests"
-        },
-        {
-            "name": "Run: Natrix.WebIDLGenerator.Tests (Browser)",
-            "type": "coreclr",
-            "request": "launch",
-            "program": "dotnet",
-            "args": [
-                "exec",
-                "${workspaceFolder}/src/Natrix.WebIDLGenerator.Tests/bin/Debug/net10.0/browser-wasm/Natrix.WebIDLGenerator.Tests.dll",
-                "--browser-headed"
-            ],
-            "cwd": "${workspaceFolder}/src/Natrix.WebIDLGenerator.Tests/bin/Debug/net10.0/browser-wasm",
-            "stopAtEntry": false,
-            "preLaunchTask": "build: Natrix.WebIDLGenerator.Tests"
-        },
-        {
             "name": "Run: Generate JSCore",
             "type": "coreclr",
             "request": "launch",
