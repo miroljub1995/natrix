@@ -771,4 +771,23 @@ public class SwrResourceTests
         await Assert.That(resource!.Data.Value).IsEqualTo("user-posts-7");
         await Assert.That(resource.Key.Value.Count).IsEqualTo(9);
     }
+
+    [Test]
+    public async Task An_optional_segment_binds_and_rebinds()
+    {
+        // Distinct from pausing: the key is present either way, it is the segment that is absent.
+        var id = new Signal<int?>(null);
+        var keys = new List<int?>();
+        SwrResource<string>? resource = null;
+
+        using var app = new TestApp(NoRetries);
+        app.MountProbe(() => resource = SwrResource.Use(
+            () => ("user", id.Value),
+            (key, _) => { keys.Add(key.Item2); return Task.FromResult($"user-{key.Item2}"); }));
+
+        id.Value = 7;
+
+        await Assert.That(keys).IsEquivalentTo(new int?[] { null, 7 });
+        await Assert.That(resource!.Data.Value).IsEqualTo("user-7");
+    }
 }

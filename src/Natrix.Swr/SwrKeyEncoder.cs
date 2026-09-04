@@ -157,6 +157,12 @@ internal sealed class SwrKeyEncoder
 /// application no registrations at all — and so that a segment of one of them encodes identically
 /// on both sides of the hydration boundary no matter what either host configured.
 /// </summary>
+/// <remarks>
+/// Each value type appears twice, because a nullable one is a distinct type to the serializer and
+/// resolves from its underlying registration no more than any other generic instantiation does.
+/// Absent them, an optional segment — which is half the reason a key is built from a tuple rather
+/// than a string — reports its own type as unsupported.
+/// </remarks>
 [JsonSerializable(typeof(string))]
 [JsonSerializable(typeof(bool))]
 [JsonSerializable(typeof(char))]
@@ -178,4 +184,23 @@ internal sealed class SwrKeyEncoder
 [JsonSerializable(typeof(TimeOnly))]
 [JsonSerializable(typeof(TimeSpan))]
 [JsonSerializable(typeof(Uri))]
+[JsonSerializable(typeof(bool?))]
+[JsonSerializable(typeof(char?))]
+[JsonSerializable(typeof(byte?))]
+[JsonSerializable(typeof(sbyte?))]
+[JsonSerializable(typeof(short?))]
+[JsonSerializable(typeof(ushort?))]
+[JsonSerializable(typeof(int?))]
+[JsonSerializable(typeof(uint?))]
+[JsonSerializable(typeof(long?))]
+[JsonSerializable(typeof(ulong?))]
+[JsonSerializable(typeof(float?))]
+[JsonSerializable(typeof(double?))]
+[JsonSerializable(typeof(decimal?))]
+[JsonSerializable(typeof(Guid?))]
+[JsonSerializable(typeof(DateTime?))]
+[JsonSerializable(typeof(DateTimeOffset?))]
+[JsonSerializable(typeof(DateOnly?))]
+[JsonSerializable(typeof(TimeOnly?))]
+[JsonSerializable(typeof(TimeSpan?))]
 internal sealed partial class SwrKeyJsonContext : JsonSerializerContext;

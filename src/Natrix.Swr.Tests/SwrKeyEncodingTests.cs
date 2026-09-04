@@ -45,6 +45,24 @@ public class SwrKeyEncodingTests
     }
 
     [Test]
+    public async Task An_optional_scalar_needs_no_registration_either()
+    {
+        // A nullable value type is a distinct type to the serializer, so registering the
+        // underlying one does not cover it - and an optional segment is half the reason a key is
+        // built from a tuple rather than a string.
+        var encoder = new SwrKeyEncoder(applicationResolver: null);
+
+        await Assert.That(encoder.Encode([SwrKeySegment.Of((int?)42)])).IsEqualTo("[42]");
+        await Assert.That(encoder.Encode([SwrKeySegment.Of((int?)null)])).IsEqualTo("[null]");
+        await Assert.That(encoder.Encode([SwrKeySegment.Of((Guid?)Guid.Empty)]))
+            .IsEqualTo("""["00000000-0000-0000-0000-000000000000"]""");
+
+        // Distinct from the string "42", and from the absent key.
+        await Assert.That(encoder.Encode([SwrKeySegment.Of((int?)42)]))
+            .IsNotEqualTo(encoder.Encode(["42"]));
+    }
+
+    [Test]
     public async Task A_segment_type_nothing_describes_is_reported()
     {
         await Assert.That(() => Encoder().Encode([SwrKeySegment.Of(new Unregistered(1))]))
