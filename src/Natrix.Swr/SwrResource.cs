@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using Natrix.Core;
 using Natrix.Core.Features;
 using Natrix.Ssr.Abstractions.Features;
@@ -69,7 +68,8 @@ public static partial class SwrResource
         ArgumentNullException.ThrowIfNull(key);
         ArgumentNullException.ThrowIfNull(fetcher);
 
-        var (features, feature) = Resolve();
+        var features = AppFeatures.Features;
+        var feature = features.GetRequired<SwrFeature>();
 
         var effectiveOptions = configure is null
             ? feature.DefaultOptions
@@ -84,28 +84,6 @@ public static partial class SwrResource
             fetcher,
             effectiveOptions,
             features.Get<IServerPrefetchFeature>());
-    }
-
-    /// <summary>
-    /// The application's SWR configuration, as published to this subtree by <c>UseSwr</c>.
-    /// Separate from the <c>Use</c> that needs it so that the typed overloads can resolve their
-    /// segment types' contracts before delegating; it is a pair of lookups, so asking twice on
-    /// the way to one resource costs nothing worth avoiding.
-    /// </summary>
-    /// <param name="caller">
-    /// Filled in by the compiler, and reported when a lookup fails — so the message names the
-    /// <c>Use</c> the application called rather than this helper.
-    /// </param>
-    /// <exception cref="InvalidOperationException">
-    /// Called outside <c>Setup</c>, or the application never called <c>UseSwr</c>.
-    /// </exception>
-    internal static (IFeatureCollection Features, SwrFeature Feature) Resolve(
-        [CallerMemberName] string? caller = null)
-    {
-        var features = AppFeatures.GetRequiredCurrent(caller);
-        var feature = features.GetRequired<SwrFeature>(caller);
-
-        return (features, feature);
     }
 
     /// <inheritdoc cref="Use{TData}(Func{SwrKey}, Func{SwrKey, CancellationToken, Task{TData}}, Func{SwrOptions, SwrOptions}?)" />

@@ -39,10 +39,7 @@ public sealed class FeatureProvider : IComponent
 
     public void Mount(IRenderSlot slot)
     {
-        var parentFeatures = AppFeatures.Current
-            ?? throw new InvalidOperationException(
-                $"{nameof(AppFeatures)}.{nameof(AppFeatures.Current)} must be set before mounting a "
-                + $"{nameof(FeatureProvider)}.");
+        var parentFeatures = AppFeatures.Features;
 
         // Configured before the ambient swap, so that a provider that throws leaves the collection
         // it was handed exactly as it found it.

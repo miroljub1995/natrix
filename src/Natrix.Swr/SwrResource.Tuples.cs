@@ -1,3 +1,5 @@
+using Natrix.Core.Features;
+
 namespace Natrix.Swr;
 
 // The typed half of the entry point: key factories that return a tuple, and fetchers that receive
@@ -28,7 +30,7 @@ public static partial class SwrResource
 
         // Ahead of everything else, so a segment type nothing describes is reported against
         // the component that named it even when the key it names starts out paused.
-        var (_, feature) = Resolve();
+        var feature = AppFeatures.Features.GetRequired<SwrFeature>();
         feature.EnsureKeySegmentContract<T1>();
         feature.EnsureKeySegmentContract<T2>();
 
@@ -60,7 +62,7 @@ public static partial class SwrResource
 
         // Ahead of everything else, so a segment type nothing describes is reported against
         // the component that named it even when the key it names starts out paused.
-        var (_, feature) = Resolve();
+        var feature = AppFeatures.Features.GetRequired<SwrFeature>();
         feature.EnsureKeySegmentContract<T1>();
         feature.EnsureKeySegmentContract<T2>();
 
@@ -109,7 +111,7 @@ public static partial class SwrResource
 
         // Ahead of everything else, so a segment type nothing describes is reported against
         // the component that named it even when the key it names starts out paused.
-        var (_, feature) = Resolve();
+        var feature = AppFeatures.Features.GetRequired<SwrFeature>();
         feature.EnsureKeySegmentContract<T1>();
         feature.EnsureKeySegmentContract<T2>();
         feature.EnsureKeySegmentContract<T3>();
@@ -142,7 +144,7 @@ public static partial class SwrResource
 
         // Ahead of everything else, so a segment type nothing describes is reported against
         // the component that named it even when the key it names starts out paused.
-        var (_, feature) = Resolve();
+        var feature = AppFeatures.Features.GetRequired<SwrFeature>();
         feature.EnsureKeySegmentContract<T1>();
         feature.EnsureKeySegmentContract<T2>();
         feature.EnsureKeySegmentContract<T3>();
@@ -192,7 +194,7 @@ public static partial class SwrResource
 
         // Ahead of everything else, so a segment type nothing describes is reported against
         // the component that named it even when the key it names starts out paused.
-        var (_, feature) = Resolve();
+        var feature = AppFeatures.Features.GetRequired<SwrFeature>();
         feature.EnsureKeySegmentContract<T1>();
         feature.EnsureKeySegmentContract<T2>();
         feature.EnsureKeySegmentContract<T3>();
@@ -226,7 +228,7 @@ public static partial class SwrResource
 
         // Ahead of everything else, so a segment type nothing describes is reported against
         // the component that named it even when the key it names starts out paused.
-        var (_, feature) = Resolve();
+        var feature = AppFeatures.Features.GetRequired<SwrFeature>();
         feature.EnsureKeySegmentContract<T1>();
         feature.EnsureKeySegmentContract<T2>();
         feature.EnsureKeySegmentContract<T3>();
@@ -277,7 +279,7 @@ public static partial class SwrResource
 
         // Ahead of everything else, so a segment type nothing describes is reported against
         // the component that named it even when the key it names starts out paused.
-        var (_, feature) = Resolve();
+        var feature = AppFeatures.Features.GetRequired<SwrFeature>();
         feature.EnsureKeySegmentContract<T1>();
         feature.EnsureKeySegmentContract<T2>();
         feature.EnsureKeySegmentContract<T3>();
@@ -312,7 +314,7 @@ public static partial class SwrResource
 
         // Ahead of everything else, so a segment type nothing describes is reported against
         // the component that named it even when the key it names starts out paused.
-        var (_, feature) = Resolve();
+        var feature = AppFeatures.Features.GetRequired<SwrFeature>();
         feature.EnsureKeySegmentContract<T1>();
         feature.EnsureKeySegmentContract<T2>();
         feature.EnsureKeySegmentContract<T3>();
@@ -364,7 +366,7 @@ public static partial class SwrResource
 
         // Ahead of everything else, so a segment type nothing describes is reported against
         // the component that named it even when the key it names starts out paused.
-        var (_, feature) = Resolve();
+        var feature = AppFeatures.Features.GetRequired<SwrFeature>();
         feature.EnsureKeySegmentContract<T1>();
         feature.EnsureKeySegmentContract<T2>();
         feature.EnsureKeySegmentContract<T3>();
@@ -400,7 +402,7 @@ public static partial class SwrResource
 
         // Ahead of everything else, so a segment type nothing describes is reported against
         // the component that named it even when the key it names starts out paused.
-        var (_, feature) = Resolve();
+        var feature = AppFeatures.Features.GetRequired<SwrFeature>();
         feature.EnsureKeySegmentContract<T1>();
         feature.EnsureKeySegmentContract<T2>();
         feature.EnsureKeySegmentContract<T3>();
@@ -453,7 +455,7 @@ public static partial class SwrResource
 
         // Ahead of everything else, so a segment type nothing describes is reported against
         // the component that named it even when the key it names starts out paused.
-        var (_, feature) = Resolve();
+        var feature = AppFeatures.Features.GetRequired<SwrFeature>();
         feature.EnsureKeySegmentContract<T1>();
         feature.EnsureKeySegmentContract<T2>();
         feature.EnsureKeySegmentContract<T3>();
@@ -490,7 +492,7 @@ public static partial class SwrResource
 
         // Ahead of everything else, so a segment type nothing describes is reported against
         // the component that named it even when the key it names starts out paused.
-        var (_, feature) = Resolve();
+        var feature = AppFeatures.Features.GetRequired<SwrFeature>();
         feature.EnsureKeySegmentContract<T1>();
         feature.EnsureKeySegmentContract<T2>();
         feature.EnsureKeySegmentContract<T3>();
