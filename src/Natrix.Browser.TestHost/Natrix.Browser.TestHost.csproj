@@ -24,6 +24,8 @@
         <GenerateSelfRegisteredExtensions>false</GenerateSelfRegisteredExtensions>
         <GenerateTestingPlatformConfigurationFile>false</GenerateTestingPlatformConfigurationFile>
         <TestingPlatformDotnetTestSupport>false</TestingPlatformDotnetTestSupport>
+        <!-- Without this, IDE test explorers try to launch the library as a test host. -->
+        <DisableTestingPlatformServerCapability>true</DisableTestingPlatformServerCapability>
 
         <!-- TUnit.Core's implicit usings would shadow types used here. -->
         <TUnitImplicitUsings>false</TUnitImplicitUsings>
@@ -47,6 +49,9 @@
 
     <ItemGroup>
         <SupportedPlatform Include="browser"/>
+        <!-- Stamped by Microsoft.Testing.Platform's props for every referencing project. -->
+        <ProjectCapability Remove="TestingPlatformServer.ExitOnProcessExitCapability"/>
+        <ProjectCapability Remove="TestingPlatformServer.UseListTestsOptionForDiscoveryCapability"/>
     </ItemGroup>
 
 </Project>
