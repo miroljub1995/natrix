@@ -113,6 +113,31 @@ public class HydrationStateFeatureTests
     }
 
     [Test]
+    public async Task Renders_state_contributed_after_the_script_has_mounted()
+    {
+        // The script sits in <head>, so it mounts before the tree whose state it carries, and
+        // before IServerPrefetchFeature drains. Serializing at mount time would capture none of
+        // what those produce.
+        var root = new SsrRenderRoot();
+        var feature = new ServerHydrationStateFeature();
+
+        using var _ = new NatrixHostBuilder()
+            .UseRootRenderer(root)
+            .SetFeature<IServerHydrationStateFeature>(feature)
+            .UseRootComponent(() => new HydrationStateScript())
+            .Build()
+            .Mount();
+
+        feature.RegisterDehydrateCallback(obj => obj["late"] = "arrived");
+
+        var output = await SsrHelpers.RenderAsync(root);
+
+        await Assert.That(output).IsEqualTo(
+            $"<script id=\"{HydrationStateScript.DefaultScriptElementId}\" type=\"application/json\">"
+            + "{\"hydrate\":true,\"late\":\"arrived\"}</script>");
+    }
+
+    [Test]
     public async Task Renders_script_with_custom_element_id()
     {
         var root = new SsrRenderRoot();

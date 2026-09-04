@@ -1,4 +1,7 @@
 using System.Text;
+using System.Text.Json;
+using Microsoft.AspNetCore.Http.Json;
+using Microsoft.Extensions.Options;
 using Natrix.Core;
 using Natrix.Core.Features;
 using Natrix.Ssr;
@@ -10,17 +13,67 @@ using Natrix.Ssr.Features.HydrationState;
 using Natrix.Core.Features.Routing;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.RenderRoot;
+using Natrix.Docs.Client.Components.Examples.DataFetching;
 using Natrix.Docs.Components;
+using Natrix.Docs.Contracts;
+using Natrix.Swr;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Pooled handlers: server-side rendering calls the app's own endpoint once per request, and a
+// fresh HttpClient per request would exhaust sockets under load.
+builder.Services.AddHttpClient();
+
+// One place decides how this app's JSON is shaped. Putting the source-generated context at the
+// front of the resolver chain means the endpoints below, the client that reads them, and the SWR
+// cache handed across the hydration boundary all go through the same trim- and AOT-safe metadata.
+builder.Services.ConfigureHttpJsonOptions(options =>
+    options.SerializerOptions.TypeInfoResolverChain.Insert(0, DocsJsonContext.Default));
 
 var app = builder.Build();
 
 app.MapStaticAssets();
 
+// The endpoint the data fetching example reads, deliberately slow enough that the loading and
+// revalidating states are visible.
+var users = new Dictionary<string, UserProfile>(StringComparer.OrdinalIgnoreCase)
+{
+    ["ada"] = new("Ada Lovelace", "Mathematician", 1843),
+    ["grace"] = new("Grace Hopper", "Rear Admiral", 1959),
+    ["linus"] = new("Linus Torvalds", "Kernel maintainer", 1991),
+};
+
+app.MapGet("/api/users/{id}", async (string id, CancellationToken cancellationToken) =>
+{
+    await Task.Delay(TimeSpan.FromMilliseconds(500), cancellationToken);
+
+    return users.TryGetValue(id, out var profile)
+        ? Results.Ok(profile)
+        : Results.NotFound();
+});
+
+// Stands in for an upstream that is down, so the example can show retries and error states
+// against a real response rather than a flag the client sets on itself.
+app.MapGet("/api/failing/users/{id}", async (CancellationToken cancellationToken) =>
+{
+    await Task.Delay(TimeSpan.FromMilliseconds(500), cancellationToken);
+
+    return Results.StatusCode(StatusCodes.Status503ServiceUnavailable);
+});
+
 app.MapFallback(async (httpContext) =>
 {
     var requestPath = httpContext.Request.Path.Value ?? "/";
+
+    // Resolved from the request being answered, so server-side fetching reaches the same endpoint
+    // the browser would, whatever host and scheme the app is served under.
+    var httpClient = httpContext.RequestServices.GetRequiredService<IHttpClientFactory>().CreateClient();
+    httpClient.BaseAddress = new Uri($"{httpContext.Request.Scheme}://{httpContext.Request.Host}/");
+
+    // The very options the endpoints serialize with, so nothing in the render can disagree with
+    // what the browser will be reading.
+    var serializerOptions = httpContext.RequestServices
+        .GetRequiredService<IOptions<JsonOptions>>().Value.SerializerOptions;
     var navigation = new ServerNavigationFeature(requestPath);
     var root = new SsrRenderRoot();
     var prefetch = new ServerPrefetchFeature();
@@ -28,6 +81,13 @@ app.MapFallback(async (httpContext) =>
     using var _ = new NatrixHostBuilder()
         .UseRootRenderer(root)
         .UseTeleport()
+        .SetFeature(serializerOptions)
+        // A cache per request - never a shared one, which would hand one visitor's data to the
+        // next. Resources prefetch into it while the tree renders, and it is serialized into the
+        // page - with the options registered above - so the client picks the values up instead of
+        // fetching them again.
+        .UseSwr()
+        .SetFeature(new UserApi(httpClient, serializerOptions))
         .SetFeature<IServerPrefetchFeature>(prefetch)
         .SetFeature<IServerHydrationStateFeature>(new ServerHydrationStateFeature())
         .SetFeature<INavigationFeature>(navigation)

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <!--
+          Shared by the browser client and the SSR host so both sides agree on the wire format.
+          Serialization goes through a source-generated context, which is what keeps it working
+          under the client's AOT compilation and trimming: no reflection over the DTOs at runtime.
+        -->
+        <IsTrimmable>true</IsTrimmable>
+        <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser" />
+    </ItemGroup>
+
+</Project>

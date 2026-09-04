@@ -2,6 +2,7 @@
   <Folder Name="/docs/">
     <Project Path="docs/Natrix.Docs/Natrix.Docs.csproj" />
     <Project Path="docs/Natrix.Docs.Client/Natrix.Docs.Client.csproj" />
+    <Project Path="docs/Natrix.Docs.Contracts/Natrix.Docs.Contracts.csproj" />
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/Natrix.Browser.Abstractions/Natrix.Browser.Abstractions.csproj" />
@@ -20,6 +21,8 @@
     <Project Path="src/Natrix.Ssr.Abstractions/Natrix.Ssr.Abstractions.csproj" />
     <Project Path="src/Natrix.Ssr/Natrix.Ssr.csproj" />
     <Project Path="src/Natrix.StdWeb/Natrix.StdWeb.csproj" />
+    <Project Path="src/Natrix.Swr/Natrix.Swr.csproj" />
+    <Project Path="src/Natrix.Swr.Tests/Natrix.Swr.Tests.csproj" />
     <Project Path="src/Natrix.TailwindCss.Engine.Abstractions/Natrix.TailwindCss.Engine.Abstractions.csproj" />
     <Project Path="src/Natrix.TailwindCss.Engine/Natrix.TailwindCss.Engine.csproj" />
     <Project Path="src/Natrix.TailwindCss.Generators/Natrix.TailwindCss.Generators.csproj" />

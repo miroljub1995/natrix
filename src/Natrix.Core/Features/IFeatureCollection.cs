@@ -13,4 +13,20 @@ public interface IFeatureCollection : IEnumerable<KeyValuePair<Type, object>>
     TFeature? Get<TFeature>();
 
     void Set<TFeature>(TFeature? instance);
+
+    /// <summary>
+    /// <see cref="Get{TFeature}"/> for a feature the caller cannot do without, which is most of
+    /// them: a component that resolves one is going to dereference it on the next line, and
+    /// "object reference not set" says nothing about which feature the application forgot to
+    /// register.
+    /// </summary>
+    /// <exception cref="InvalidOperationException">Nothing is registered for the feature.</exception>
+    /// <remarks>
+    /// Being a default implementation, it is reached through the interface — a variable typed as
+    /// a concrete collection has to be cast, or go through <see cref="Get{TFeature}"/> as before.
+    /// </remarks>
+    TFeature GetRequired<TFeature>() =>
+        Get<TFeature>()
+        ?? throw new InvalidOperationException(
+            $"The {typeof(TFeature).Name} feature is not registered.");
 }
