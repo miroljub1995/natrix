@@ -24,8 +24,7 @@ Tailwind CSS integration.
   it is for constraints that are not obvious from the code. Diagrams live
   alongside it in `src/Natrix.TailwindCss.Generators/ARCHITECTURE.md`.
 
-- **Browser-WASM tests** — `.github/instructions/testing.instructions.md`,
-  imported below. `Natrix.Browser.Tests` and `Natrix.WebIDLGenerator.Tests`
-  cannot be run with `dotnet test`.
-
-@.github/instructions/testing.instructions.md
+- **Browser-WASM tests** — `Natrix.Browser.Tests` and
+  `Natrix.WebIDLGenerator.Tests` run in headless Chromium through plain
+  `dotnet test`. How that works, and the options, are in
+  `src/Natrix.Browser.TestHost/README.md`.

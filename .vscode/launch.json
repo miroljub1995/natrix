@@ -2,32 +2,6 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run: Natrix.Browser.Tests (Browser)",
-            "type": "coreclr",
-            "request": "launch",
-            "program": "${workspaceFolder}/src/Natrix.BrowserTestsRunner/bin/Debug/net10.0/Natrix.BrowserTestsRunner",
-            "args": [],
-            "cwd": "${workspaceFolder}/src/Natrix.BrowserTestsRunner",
-            "stopAtEntry": false,
-            "env": {
-                "RunnerBundlePath": "../../../../Natrix.Browser.Tests/bin/Debug/net10.0/browser-wasm/AppBundle/"
-            },
-            "preLaunchTask": "build: Natrix.Browser.Tests"
-        },
-        {
-            "name": "Run: Natrix.WebIDLGenerator.Tests (Browser)",
-            "type": "coreclr",
-            "request": "launch",
-            "program": "${workspaceFolder}/src/Natrix.BrowserTestsRunner/bin/Debug/net10.0/Natrix.BrowserTestsRunner",
-            "args": [],
-            "cwd": "${workspaceFolder}/src/Natrix.BrowserTestsRunner",
-            "stopAtEntry": false,
-            "env": {
-                "RunnerBundlePath": "../../../../Natrix.WebIDLGenerator.Tests/bin/Debug/net9.0/browser-wasm/AppBundle/"
-            },
-            "preLaunchTask": "build: Natrix.WebIDLGenerator.Tests"
-        },
-        {
             "name": "Run: Generate JSCore",
             "type": "coreclr",
             "request": "launch",

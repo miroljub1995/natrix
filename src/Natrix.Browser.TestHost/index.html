@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="icon" href="data:,"/>
+    <title>Natrix browser tests</title>
+    <script type="module">
+        import {dotnet} from "./_framework/dotnet.js";
+
+        // Called by the host over the DevTools protocol once the page has loaded.
+        // `args` are Microsoft.Testing.Platform command line arguments for the
+        // TUnit application inside the bundle; the return value is its exit code.
+        globalThis.run = async (args) => {
+            // A test project may ship an optional ES module that sets up JavaScript
+            // fixtures before the runtime starts (see WasmExtraFilesToDeploy).
+            const probe = await fetch("./test-extension-init.js");
+            if (probe.ok) {
+                const extension = await import("./test-extension-init.js");
+                if (typeof extension.init === "function") {
+                    await extension.init();
+                }
+            }
+
+            const {runMain, getConfig} = await dotnet.create();
+            return await runMain(getConfig().mainAssemblyName, args ?? []);
+        };
+    </script>
+</head>
+<body>
+</body>
+</html>

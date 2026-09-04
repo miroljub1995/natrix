@@ -1,6 +1,5 @@
 {
     "chat.tools.terminal.autoApprove": {
-        "dotnet test": true,
-        "/dotnet run --project src/Natrix\\.BrowserTestsRunner -f net\\d+\\.\\d+ --launch-profile (Natrix\\.Browser\\.Tests|Natrix\\.WebIDLGenerator\\.Tests)/": true
+        "dotnet test": true
     }
 }

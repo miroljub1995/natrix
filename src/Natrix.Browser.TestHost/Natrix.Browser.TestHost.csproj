@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <!--
+      Host library for browser-wasm test projects. A test project that references
+      this library and calls BrowserTestHost.RunAsync from its entry point becomes
+      runnable from both sides of the fence with one assembly:
+
+        - in the browser it is an ordinary Microsoft.Testing.Platform application,
+          running whatever test framework the project registered;
+        - on the host (dotnet test, IDE test explorers) the same assembly acts as a
+          platform test framework that launches headless Chromium, serves the wasm
+          AppBundle and relays results back.
+
+      Nothing here depends on a particular test framework. Discovery on the host
+      uses the platform's server-mode protocol through Natrix.Browser.TestHost.ServerMode.
+
+      Everything here is compiled into the wasm bundle too (untrimmed in Debug), so
+      keep the dependency list short. PuppeteerSharp drives the browser; serving
+      uses the BCL.
+    -->
+
+    <PropertyGroup>
+        <!-- TPEXP: tree-node filters and output properties are marked experimental by the platform. -->
+        <NoWarn>$(NoWarn);TPEXP</NoWarn>
+        <!-- Without this, IDE test explorers try to launch the library as a test host. -->
+        <DisableTestingPlatformServerCapability>true</DisableTestingPlatformServerCapability>
+
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <RootNamespace>Natrix.Browser.TestHost</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Testing.Platform"/>
+        <PackageReference Include="ChromeForTesting"/>
+        <PackageReference Include="PuppeteerSharp"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Natrix.Browser.TestHost.ServerMode\Natrix.Browser.TestHost.ServerMode.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="index.html" LogicalName="index.html"/>
+        <None Include="build\**" Pack="true" PackagePath="build\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser"/>
+        <!-- Stamped by Microsoft.Testing.Platform's props on every referencing project; without
+             them IDE test explorers would try to launch this library as a test host. -->
+        <ProjectCapability Remove="TestingPlatformServer.ExitOnProcessExitCapability"/>
+        <ProjectCapability Remove="TestingPlatformServer.UseListTestsOptionForDiscoveryCapability"/>
+    </ItemGroup>
+
+</Project>
