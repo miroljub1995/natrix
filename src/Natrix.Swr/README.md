@@ -82,8 +82,8 @@ public sealed class UserCard : BaseComponent<UserCardProps, NoEvents, NoSlots, N
 
 ### Keys
 
-A key is an ordered list of typed segments. Return a tuple of up to seven of them and the types
-flow through to the fetcher, which reads its parameters back as what they were:
+A key is an ordered list of typed segments. Return a tuple and the types flow through to the
+fetcher, which reads its parameters back as what they were:
 
 ```csharp
 var posts = SwrResource.Use(
@@ -101,7 +101,7 @@ that depends on something not ready yet is expressed. Name the type arguments, s
 with `null` in it gives the compiler nothing to infer them from:
 
 ```csharp
-var user = SwrResource.Use<string, string, User>(
+var user = SwrResource.Use<(string, string), User>(
     () => session.Value is { } s ? ("user", s.UserId) : null,
     (key, ct) => api.GetUserAsync(key.Item2, ct));
 ```

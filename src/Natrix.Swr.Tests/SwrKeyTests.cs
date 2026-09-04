@@ -114,4 +114,37 @@ public class SwrKeyTests
         await Assert.That(new SwrKey("user", "42").ToString()).IsEqualTo("[user, 42]");
         await Assert.That(SwrKey.None.ToString()).IsEqualTo("SwrKey.None");
     }
+
+    [Test]
+    public async Task A_tuple_key_hands_its_tuple_back()
+    {
+        var key = SwrKey.FromTuple(("user", 42));
+
+        await Assert.That(key.Tuple<(string, int)>()).IsEqualTo(("user", 42));
+        await Assert.That(key.Count).IsEqualTo(2);
+        await Assert.That(key.Segment<int>(1)).IsEqualTo(42);
+    }
+
+    [Test]
+    public async Task A_tuple_key_carries_the_declared_element_types()
+    {
+        // Not the runtime ones: a null element has none, and that is the element whose contract
+        // the encoder still has to look up.
+        var key = SwrKey.FromTuple(("user", (int?)null));
+
+        await Assert.That(key[1].Value).IsNull();
+        await Assert.That(key[1].Type).IsEqualTo(typeof(int?));
+    }
+
+    [Test]
+    public async Task Reading_a_key_as_the_wrong_tuple_is_reported()
+    {
+        // Entries are shared, so a typed fetcher is handed whichever key created the entry - which
+        // another call may have built from a different shape, or not from a tuple at all.
+        var fromTuple = SwrKey.FromTuple(("user", 42));
+        var fromSegments = new SwrKey("user", "42");
+
+        await Assert.That(() => fromTuple.Tuple<(string, string)>()).Throws<InvalidOperationException>();
+        await Assert.That(() => fromSegments.Tuple<(string, string)>()).Throws<InvalidOperationException>();
+    }
 }

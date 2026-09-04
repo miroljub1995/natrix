@@ -688,7 +688,7 @@ public class SwrResourceTests
         SwrResource<string>? resource = null;
 
         using var app = new TestApp(NoRetries);
-        app.MountProbe(() => resource = SwrResource.Use<string, int, string>(
+        app.MountProbe(() => resource = SwrResource.Use<(string, int), string>(
             () => ready.Value ? ("user", 1) : null,
             (key, _) => { calls++; return Task.FromResult($"user-{key.Item2}"); }));
 
@@ -748,11 +748,27 @@ public class SwrResourceTests
         var ready = new Signal<bool>(false);
         using var app = new TestApp(NoRetries);
 
-        await Assert.That(() => app.MountProbe(() => SwrResource.Use<string, Unregistered, string>(
+        await Assert.That(() => app.MountProbe(() => SwrResource.Use<(string, Unregistered), string>(
                 () => ready.Value ? ("user", new Unregistered(1)) : null,
                 (_, _) => Task.FromResult("Ada"))))
             .Throws<InvalidOperationException>();
     }
 
     private sealed record Unregistered(int Value);
+
+    [Test]
+    public async Task Tuple_keys_are_not_capped_at_seven_segments()
+    {
+        // Past seven a tuple nests its remainder, and the shape is flattened rather than matched
+        // against an overload per arity - so there is no arity to run out of.
+        SwrResource<string>? resource = null;
+
+        using var app = new TestApp(NoRetries);
+        app.MountProbe(() => resource = SwrResource.Use(
+            () => ("user", 1, 2, 3, 4, 5, 6, "posts", 7),
+            (key, _) => Task.FromResult($"{key.Item1}-{key.Item8}-{key.Item9}")));
+
+        await Assert.That(resource!.Data.Value).IsEqualTo("user-posts-7");
+        await Assert.That(resource.Key.Value.Count).IsEqualTo(9);
+    }
 }

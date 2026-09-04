@@ -36,6 +36,12 @@ public readonly struct SwrKey : IEquatable<SwrKey>, IReadOnlyList<SwrKeySegment>
     private readonly SwrKeySegment[]? _segments;
 
     /// <summary>
+    /// The tuple this key was built from, kept so that a typed fetcher can be handed back what it
+    /// declared rather than have one rebuilt for it. Null for a key built segment by segment.
+    /// </summary>
+    private readonly ITuple? _source;
+
+    /// <summary>
     /// The absent key. A resource holding it stays paused.
     /// </summary>
     public static SwrKey None => default;
@@ -50,6 +56,29 @@ public readonly struct SwrKey : IEquatable<SwrKey>, IReadOnlyList<SwrKeySegment>
         }
 
         _segments = segments.AsSpan().ToArray();
+    }
+
+    private SwrKey(ITuple source, SwrKeySegment[] segments)
+    {
+        _source = source;
+        _segments = segments;
+    }
+
+    /// <summary>
+    /// Builds a key from a tuple, each element carrying the type the call declared for it.
+    /// </summary>
+    internal static SwrKey FromTuple<TTuple>(TTuple tuple)
+        where TTuple : struct, ITuple
+    {
+        var types = SwrKeyTupleShape<TTuple>.ElementTypes;
+        var segments = new SwrKeySegment[types.Length];
+
+        for (var i = 0; i < types.Length; i++)
+        {
+            segments[i] = new SwrKeySegment(tuple[i], types[i]);
+        }
+
+        return new SwrKey(tuple, segments);
     }
 
     /// <summary>
@@ -70,6 +99,28 @@ public readonly struct SwrKey : IEquatable<SwrKey>, IReadOnlyList<SwrKeySegment>
         _segments is not null
             ? _segments[index]
             : throw new ArgumentOutOfRangeException(nameof(index));
+
+    /// <summary>
+    /// The key as the tuple it was built from, which is how a typed fetcher gets its parameters
+    /// back out of the key it was handed.
+    /// </summary>
+    /// <exception cref="InvalidOperationException">
+    /// The key was not built from a tuple of this shape. A resource is handed the key of the entry
+    /// it shares, which another <c>Use</c> call may have created — so this is where a typed
+    /// fetcher meets a key some other call built differently, or built segment by segment.
+    /// </exception>
+    public TTuple Tuple<TTuple>()
+        where TTuple : struct, ITuple =>
+        _source switch
+        {
+            TTuple typed => typed,
+            null => throw new InvalidOperationException(
+                $"Key {this} was not built from a tuple, so it cannot be read as {typeof(TTuple)}. "
+                + "The same cache key is in use from both a tuple overload and a SwrKey one."),
+            _ => throw new InvalidOperationException(
+                $"Key {this} was built from a {_source.GetType()}, but is being read as "
+                + $"{typeof(TTuple)}. The same cache key is in use with differently typed segments."),
+        };
 
     /// <summary>
     /// Reads segment <paramref name="index"/> as <typeparamref name="TSegment"/>, which is how an

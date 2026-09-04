@@ -37,17 +37,9 @@ public sealed class SwrFeature
     public SwrOptions DefaultOptions { get; }
 
     /// <summary>
-    /// Resolves the contract a key segment of <typeparamref name="TSegment"/> encodes under and
-    /// discards it, for the typed <c>Use</c> overloads to call before they build anything.
+    /// Resolves the contract a key segment of <paramref name="type"/> encodes under and discards
+    /// it, for the typed <c>Use</c> overloads to call before they build anything.
     /// </summary>
-    /// <remarks>
-    /// Redundant for a key that binds straight away, which reaches the encoder inside <c>Use</c>
-    /// regardless. It earns its place on the key that starts paused: that one has no segments to
-    /// encode yet, so without this it carries the problem until something unpauses it and then
-    /// reports it against whatever wrote that signal, rather than against the component holding
-    /// the key.
-    /// </remarks>
     /// <inheritdoc cref="SwrKeyEncoder.GetSegmentTypeInfo" path="/exception"/>
-    internal void EnsureKeySegmentContract<TSegment>() =>
-        Cache.KeyEncoder.GetSegmentTypeInfo(typeof(TSegment));
+    internal void EnsureKeySegmentContract(Type type) => Cache.KeyEncoder.GetSegmentTypeInfo(type);
 }
