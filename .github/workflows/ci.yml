@@ -140,9 +140,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        profile:
-          - Natrix.WebIDLGenerator.Tests
-          - Natrix.Browser.Tests
+        project:
+          - src/Natrix.WebIDLGenerator.Tests/Natrix.WebIDLGenerator.Tests.csproj
+          - src/Natrix.Browser.Tests/Natrix.Browser.Tests.csproj
         tfm:
           - net9.0
           - net10.0
@@ -163,7 +163,8 @@ jobs:
       - name: Restore workloads
         run: dotnet workload restore Natrix.slnx
 
-      - name: Run ${{ matrix.profile }} (${{ matrix.tfm }})
-        # The runner builds the browser-wasm test bundle for its own TFM and
-        # executes it in headless Chromium (ChromeForTesting + PuppeteerSharp).
-        run: dotnet run --project src/Natrix.BrowserTestsRunner -f ${{ matrix.tfm }} --launch-profile ${{ matrix.profile }}
+      - name: Test ${{ matrix.project }} (${{ matrix.tfm }})
+        # These projects host themselves (see Natrix.Browser.TestHost): on the host
+        # the test assembly is a Microsoft.Testing.Platform app that serves its own
+        # wasm bundle to headless Chromium and relays the results.
+        run: dotnet test ${{ matrix.project }} -c Release -f ${{ matrix.tfm }}

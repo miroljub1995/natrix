@@ -26,6 +26,6 @@ Tailwind CSS integration.
 
 - **Browser-WASM tests** — `.github/instructions/testing.instructions.md`,
   imported below. `Natrix.Browser.Tests` and `Natrix.WebIDLGenerator.Tests`
-  cannot be run with `dotnet test`.
+  run in headless Chromium through `dotnet test`; the `-f` flag is required.
 
 @.github/instructions/testing.instructions.md

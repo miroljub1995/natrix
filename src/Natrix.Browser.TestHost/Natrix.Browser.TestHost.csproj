@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <!--
+      Host library for browser-wasm test projects. A test project that references
+      this library and calls BrowserTestHost.RunAsync from its entry point becomes
+      runnable from both sides of the fence with one assembly:
+
+        - in the browser it is an ordinary TUnit test application;
+        - on the host (dotnet test, IDE test explorers) the same assembly acts as a
+          Microsoft.Testing.Platform test framework that launches headless Chromium,
+          serves the wasm AppBundle and relays results back.
+
+      Everything here is compiled into the wasm bundle too (untrimmed in Debug), so
+      keep the dependency list short. PuppeteerSharp drives the browser; serving
+      uses the BCL.
+    -->
+
+    <PropertyGroup>
+        <!-- TUnit.Engine's props flip these on for anything that references it. -->
+        <OutputType>Library</OutputType>
+        <IsTestProject>false</IsTestProject>
+        <IsTestingPlatformApplication>false</IsTestingPlatformApplication>
+        <GenerateTestingPlatformEntryPoint>false</GenerateTestingPlatformEntryPoint>
+        <GenerateSelfRegisteredExtensions>false</GenerateSelfRegisteredExtensions>
+        <GenerateTestingPlatformConfigurationFile>false</GenerateTestingPlatformConfigurationFile>
+        <TestingPlatformDotnetTestSupport>false</TestingPlatformDotnetTestSupport>
+
+        <!-- TUnit.Core's implicit usings would shadow types used here. -->
+        <TUnitImplicitUsings>false</TUnitImplicitUsings>
+        <!-- TPEXP: tree-node filters and output properties are marked experimental by the platform. -->
+        <NoWarn>$(NoWarn);TPEXP</NoWarn>
+
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <RootNamespace>Natrix.Browser.TestHost</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="TUnit.Engine"/>
+        <PackageReference Include="ChromeForTesting"/>
+        <PackageReference Include="PuppeteerSharp"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <EmbeddedResource Include="index.html" LogicalName="index.html"/>
+        <None Include="build\**" Pack="true" PackagePath="build\"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser"/>
+    </ItemGroup>
+
+</Project>
