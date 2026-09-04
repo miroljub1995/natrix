@@ -3,9 +3,9 @@ using System.Text.Json.Serialization;
 namespace Natrix.Browser.TestHost.Protocol;
 
 /// <summary>
-/// A flattened <c>TestNodeUpdateMessage</c>. Produced by the engine side (TUnit in
-/// the browser, or on the host during discovery) and consumed by the bridge, which
-/// turns it back into a test node for the host's Microsoft.Testing.Platform session.
+/// A flattened <c>TestNodeUpdateMessage</c>. Produced by the test framework side in
+/// the browser, or by server-mode discovery on the host, and consumed by the bridge,
+/// which turns it back into a test node for the host's Microsoft.Testing.Platform session.
 /// </summary>
 public sealed class TestEvent
 {

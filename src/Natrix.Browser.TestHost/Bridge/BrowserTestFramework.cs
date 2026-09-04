@@ -74,7 +74,7 @@ internal sealed class BrowserTestFramework(IServiceProvider serviceProvider)
     {
         if (_discovered is null || refresh)
         {
-            _discovered = (await EngineDiscovery.DiscoverAsync(cancellationToken)).ToDictionary(e => e.Uid);
+            _discovered = (await EngineDiscovery.DiscoverAsync(LogAsync, cancellationToken)).ToDictionary(e => e.Uid);
         }
 
         return _discovered.Values;
@@ -209,6 +209,14 @@ internal sealed class BrowserTestFramework(IServiceProvider serviceProvider)
 
         var parent = testEvent.ParentUid is { } parentUid ? new TestNodeUid(parentUid) : null;
         return context.MessageBus.PublishAsync(this, new TestNodeUpdateMessage(session, node, parent));
+    }
+
+    private void LogAsync(string message)
+    {
+        if (Environment.GetEnvironmentVariable(BridgeCommandLineOptions.ConsoleVariable) is "1" or "true")
+        {
+            _ = _output.DisplayAsync(this, new TextOutputDeviceData("[discovery] " + message));
+        }
     }
 
     private static TestNodeStateProperty StateProperty(TestEvent testEvent)

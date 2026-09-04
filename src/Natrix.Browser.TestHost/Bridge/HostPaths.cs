@@ -21,12 +21,6 @@ internal static class HostPaths
         }
     }
 
-    public static string DotnetPath =>
-        Environment.ProcessPath is { } processPath &&
-        Path.GetFileNameWithoutExtension(processPath).Equals("dotnet", StringComparison.OrdinalIgnoreCase)
-            ? processPath
-            : "dotnet";
-
     public static string BundleDirectory
     {
         get

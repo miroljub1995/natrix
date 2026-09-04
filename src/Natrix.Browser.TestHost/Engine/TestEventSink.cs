@@ -1,10 +1,14 @@
+using System.Text.Json;
 using Microsoft.Testing.Platform.Extensions.Messages;
 using Microsoft.Testing.Platform.Extensions.TestHost;
+using Natrix.Browser.TestHost.Protocol;
 
 namespace Natrix.Browser.TestHost.Engine;
 
 /// <summary>
-/// Forwards every test node update to the bridge.
+/// Forwards every test node update to the bridge over the JavaScript binding it
+/// installed. On the host, where the engine only ever runs in server mode for
+/// discovery, the platform itself reports to the bridge and this does nothing.
 /// </summary>
 internal sealed class TestEventSink : IDataConsumer
 {
@@ -19,9 +23,9 @@ internal sealed class TestEventSink : IDataConsumer
 
     public Task ConsumeAsync(IDataProducer dataProducer, IData value, CancellationToken cancellationToken)
     {
-        if (value is TestNodeUpdateMessage message)
+        if (OperatingSystem.IsBrowser() && value is TestNodeUpdateMessage message)
         {
-            TestEventChannel.Post(TestEventMapper.FromMessage(message));
+            SinkInterop.Post(JsonSerializer.Serialize(TestEventMapper.FromMessage(message), ProtocolJsonContext.Default.TestEvent));
         }
 
         return Task.CompletedTask;

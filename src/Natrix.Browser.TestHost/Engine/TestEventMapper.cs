@@ -1,6 +1,5 @@
 using Microsoft.Testing.Platform.Extensions.Messages;
 using Natrix.Browser.TestHost.Protocol;
-using TUnit.Core;
 
 namespace Natrix.Browser.TestHost.Engine;
 
@@ -53,37 +52,6 @@ internal static class TestEventMapper
             Metadata = metadata.Length == 0
                 ? null
                 : metadata.Select(m => new MetadataEntry { Key = m.Key, Value = m.Value }).ToArray(),
-        };
-    }
-
-    /// <summary>
-    /// The same shape from TUnit's discovery context. The uid and the method identity
-    /// must agree with what <see cref="FromMessage"/> produces at run time, since the
-    /// bridge correlates results by uid and builds filters from the names.
-    /// </summary>
-    public static TestEvent FromDiscovery(DiscoveredTestContext context)
-    {
-        var details = context.TestDetails;
-        var method = details.MethodMetadata;
-        var type = details.ClassType;
-
-        return new TestEvent
-        {
-            Uid = details.TestId,
-            DisplayName = context.GetDisplayName(),
-            State = TestStates.Discovered,
-
-            AssemblyFullName = type.Assembly.FullName,
-            Namespace = type.Namespace,
-            TypeName = type.Name,
-            MethodName = details.MethodName,
-            MethodArity = method?.GenericTypeCount,
-            ParameterTypeFullNames = method?.Parameters.Select(p => p.Type?.FullName ?? p.Type?.Name ?? string.Empty).ToArray(),
-            ReturnTypeFullName = method?.ReturnType?.FullName ?? details.ReturnType?.FullName,
-
-            FilePath = details.TestFilePath,
-            StartLine = details.TestLineNumber,
-            EndLine = details.TestLineNumber,
         };
     }
 

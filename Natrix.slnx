@@ -7,6 +7,7 @@
     <Project Path="src/Natrix.Browser.Abstractions/Natrix.Browser.Abstractions.csproj" />
     <Project Path="src/Natrix.Browser/Natrix.Browser.csproj" />
     <Project Path="src/Natrix.Browser.TestHost/Natrix.Browser.TestHost.csproj" />
+    <Project Path="src/Natrix.Browser.TestHost.ServerMode/Natrix.Browser.TestHost.ServerMode.csproj" />
     <Project Path="src/Natrix.Browser.Tests/Natrix.Browser.Tests.csproj" />
     <Project Path="src/Natrix.Core.Generators.Tests/Natrix.Core.Generators.Tests.csproj" />
     <Project Path="src/Natrix.Core.Generators/Natrix.Core.Generators.csproj" />
