@@ -8,15 +8,13 @@
     <script type="module">
         import {dotnet} from "./_framework/dotnet.js";
 
-        // Called by the host over the DevTools protocol once the page has loaded.
-        // `args` are Microsoft.Testing.Platform command line arguments for the
-        // TUnit application inside the bundle; the return value is its exit code.
-        globalThis.run = async (args) => {
-            // A test project may ship an optional ES module that sets up JavaScript
-            // fixtures before the runtime starts (see WasmExtraFilesToDeploy).
-            const probe = await fetch("./test-extension-init.js");
-            if (probe.ok) {
-                const extension = await import("./test-extension-init.js");
+        // Called by the host once the page has loaded. `args` are Microsoft.Testing.Platform
+        // command line arguments for the test application inside the bundle; `initModule`
+        // is the optional ES module the host found next to the bundle, whose exported
+        // `init()` runs before the runtime starts. The return value is the exit code.
+        globalThis.run = async (args, initModule) => {
+            if (initModule) {
+                const extension = await import(initModule);
                 if (typeof extension.init === "function") {
                     await extension.init();
                 }

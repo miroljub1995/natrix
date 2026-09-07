@@ -39,8 +39,9 @@ the runtimeconfig to be framework-dependent, points `RunCommand` at the test
 assembly instead of `WasmAppHost`, injects the discovery hook, and fetches Chrome
 for the host runtime identifier.
 
-The discovery child process is started as `dotnet <assembly>`, so `dotnet` must
-be on `PATH`.
+The discovery child process is started as `dotnet <assembly>`; the directory of
+the `dotnet` that started the host is put on `PATH` for that, so IDE-launched
+processes with a minimal environment work too.
 
 An optional `test-extension-init.js` module deployed with the bundle is imported
 and its `init()` awaited before the runtime starts, for JavaScript fixtures.
@@ -53,7 +54,10 @@ Pass them after `--`:
   until the window is closed.
 - `--browser-console` forwards all browser console output; by default only
   warnings and errors are shown.
-- `--treenode-filter` works as usual, e.g. `/*/*/IfTests/*`.
+- `--treenode-filter` works as usual, e.g. `/*/*/IfTests/*`, for both listing and
+  running. IDE selections by uid are translated into such a filter over the
+  discovered names, which can over-select when several classes share method
+  names; results for tests that were not selected are not reported.
 
 Environment equivalents, for IDE run configurations:
 `NATRIX_BROWSER_TESTHOST_HEADED=1`, `NATRIX_BROWSER_TESTHOST_CONSOLE=1`.

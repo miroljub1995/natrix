@@ -41,6 +41,8 @@ nupkg/
 x64/
 x86/
 build/
+# MSBuild logic shipped with Natrix.Browser.TestHost lives in a folder the rule above would hide.
+!src/Natrix.Browser.TestHost/build/
 bld/
 [Bb]in/
 [Oo]bj/

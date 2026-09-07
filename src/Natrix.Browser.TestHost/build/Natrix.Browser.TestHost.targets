@@ -1,0 +1,69 @@
+<Project>
+
+  <!--
+    Imported by browser-wasm test projects that host themselves through
+    Natrix.Browser.TestHost. Three things have to change for the wasm build
+    output to be launchable on the host:
+
+      1. The entry point is hand-written (it branches on browser vs. host), so
+         Microsoft.Testing.Platform must not generate one.
+      2. The build-output runtimeconfig has to be framework-dependent. The
+         WebAssembly SDK writes a self-contained one ("includedFrameworks"),
+         which the host `dotnet` refuses to run. The wasm runtime only reads
+         configProperties from this file, so rewriting the framework section
+         does not affect the browser side.
+      3. `dotnet test` and `dotnet run` compute their command from RunCommand /
+         RunArguments, which the WebAssembly SDK points at WasmAppHost. They
+         are redirected to the test assembly itself.
+  -->
+
+  <PropertyGroup>
+    <GenerateTestingPlatformEntryPoint>false</GenerateTestingPlatformEntryPoint>
+  </PropertyGroup>
+
+  <Target Name="_NatrixBrowserTestHostRuntimeConfig"
+          AfterTargets="GenerateBuildRuntimeConfigurationFiles"
+          Condition="'$(RuntimeIdentifier)' == 'browser-wasm' and Exists('$(ProjectRuntimeConfigFilePath)')">
+    <PropertyGroup>
+      <_NatrixRuntimeConfig>$([System.IO.File]::ReadAllText('$(ProjectRuntimeConfigFilePath)'))</_NatrixRuntimeConfig>
+      <_NatrixRuntimeConfig>$(_NatrixRuntimeConfig.Replace('"includedFrameworks"', '"frameworks"'))</_NatrixRuntimeConfig>
+      <!-- The host side does not need the exact runtime the bundle was built against; any newer one will do. -->
+      <_NatrixRuntimeConfig Condition="!$(_NatrixRuntimeConfig.Contains('&quot;rollForward&quot;'))">$(_NatrixRuntimeConfig.Replace('"runtimeOptions": {', '"runtimeOptions": {&#xA;    "rollForward": "LatestMajor",'))</_NatrixRuntimeConfig>
+    </PropertyGroup>
+    <WriteLinesToFile File="$(ProjectRuntimeConfigFilePath)"
+                      Lines="$([MSBuild]::Escape($(_NatrixRuntimeConfig)))"
+                      Overwrite="true"
+                      WriteOnlyWhenDifferent="true" />
+  </Target>
+
+  <!--
+    ChromeForTesting is fetched at build time by the DownloadArchive package, which
+    picks the archive by the project's RuntimeIdentifier and silently skips when
+    there is no match. "browser-wasm" never matches, so the same task is invoked
+    again here for the SDK's host runtime, which is where the browser runs.
+  -->
+  <Target Name="_NatrixBrowserTestHostDownloadChrome"
+          AfterTargets="Build"
+          Condition="'$(RuntimeIdentifier)' == 'browser-wasm' and '$(DownloadArchiveLib)' != '' and '@(DownloadArchive)' != ''">
+    <DownloadTask
+        DownloadArchiveLib="$(DownloadArchiveLib)"
+        TargetDir="$([System.IO.Path]::GetFullPath($([System.IO.Path]::Combine($(MSBuildProjectDirectory),$(OutDir)))))"
+        InputItems="@(DownloadArchive)"
+        RuntimeIdentifier="$(NETCoreSdkRuntimeIdentifier)"
+        IsTestProject="$(IsTestProject)"
+        OutputType="$(OutputType)"
+        FallbackToProcessRuntimeInformation="True" />
+  </Target>
+
+  <Target Name="_NatrixBrowserTestHostRunCommand"
+          AfterTargets="ComputeRunArguments"
+          Condition="'$(RuntimeIdentifier)' == 'browser-wasm'">
+    <PropertyGroup>
+      <RunCommand Condition="'$(DOTNET_HOST_PATH)' != '' and Exists('$(DOTNET_HOST_PATH)')">$(DOTNET_HOST_PATH)</RunCommand>
+      <RunCommand Condition="'$(DOTNET_HOST_PATH)' == '' or !Exists('$(DOTNET_HOST_PATH)')">dotnet</RunCommand>
+      <RunArguments>exec &quot;$(TargetPath)&quot;</RunArguments>
+      <RunWorkingDirectory>$(TargetDir)</RunWorkingDirectory>
+    </PropertyGroup>
+  </Target>
+
+</Project>

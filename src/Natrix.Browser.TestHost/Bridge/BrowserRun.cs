@@ -1,3 +1,4 @@
+using System.Runtime.ExceptionServices;
 using System.Runtime.Versioning;
 using System.Text.Json;
 using System.Threading.Channels;
@@ -19,6 +20,9 @@ internal sealed class BrowserRunOptions
 [UnsupportedOSPlatform("browser")]
 internal static class BrowserRun
 {
+    /// <summary>Optional ES module a test project can deploy to set up JavaScript fixtures.</summary>
+    private const string InitModule = "test-extension-init.js";
+
     /// <returns>The exit code of the test application inside the browser.</returns>
     public static async Task<int> ExecuteAsync(
         string bundleDirectory,
@@ -37,6 +41,9 @@ internal static class BrowserRun
             Devtools = options.Headed,
             DefaultViewport = options.Headed ? null : ViewPortOptions.Default,
             Args = ["--no-sandbox", "--no-zygote", "--disable-dev-shm-usage"],
+            // The whole suite runs inside one protocol call; its duration is bounded by the
+            // platform's own timeout and by cancellation, not by a per-call limit.
+            ProtocolTimeout = int.MaxValue,
         });
 
         var page = (await browser.PagesAsync()).SingleOrDefault() ?? await browser.NewPageAsync();
@@ -74,21 +81,26 @@ internal static class BrowserRun
             return true;
         });
 
+        // Drained to the end regardless of how the run finishes, so diagnostics queued
+        // just before a failure still reach the caller.
         var replay = Task.Run(async () =>
         {
-            await foreach (var callback in relay.Reader.ReadAllAsync(cancellationToken))
+            await foreach (var callback in relay.Reader.ReadAllAsync())
             {
                 await callback();
             }
-        }, cancellationToken);
+        }, CancellationToken.None);
 
-        int exitCode;
+        var exitCode = -1;
+        ExceptionDispatchInfo? failure = null;
         try
         {
-            await page.GoToAsync(server.BaseUrl + "index.html", WaitUntilNavigation.Load);
-            // Passed as a literal: EvaluateFunctionAsync would spread an array into separate parameters.
+            await page.GoToAsync(server.BaseUrl + "index.html", WaitUntilNavigation.Load).WaitAsync(cancellationToken);
+
+            // Passed as literals: EvaluateFunctionAsync would spread an array into separate parameters.
             var arguments = JsonSerializer.Serialize(engineArguments.ToArray(), ProtocolJsonContext.Default.StringArray);
-            exitCode = await page.EvaluateExpressionAsync<int>($"run({arguments})");
+            var initModule = File.Exists(Path.Join(bundleDirectory, InitModule)) ? $"\"./{InitModule}\"" : "null";
+            exitCode = await page.EvaluateExpressionAsync<int>($"run({arguments}, {initModule})").WaitAsync(cancellationToken);
 
             if (options.Headed)
             {
@@ -96,12 +108,22 @@ internal static class BrowserRun
                 await WaitForCloseAsync(page, browser, cancellationToken);
             }
         }
-        finally
+        catch (Exception exception)
         {
-            relay.Writer.Complete();
+            failure = ExceptionDispatchInfo.Capture(exception);
         }
 
-        await replay;
+        relay.Writer.Complete();
+        try
+        {
+            await replay;
+        }
+        catch (Exception) when (failure is not null)
+        {
+            // The run's own failure is the one worth reporting.
+        }
+
+        failure?.Throw();
         return exitCode;
     }
 

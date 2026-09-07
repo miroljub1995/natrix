@@ -21,6 +21,31 @@ internal static class HostPaths
         }
     }
 
+    /// <summary>
+    /// The server-mode client starts the discovery child as a bare <c>dotnet</c>, which
+    /// the OS resolves against this process's PATH. An IDE launched from a desktop
+    /// shell may not have it there, but the muxer that started this process is known.
+    /// </summary>
+    public static void EnsureDotnetOnPath()
+    {
+        if (Environment.ProcessPath is not { } processPath ||
+            !Path.GetFileNameWithoutExtension(processPath).Equals("dotnet", StringComparison.OrdinalIgnoreCase) ||
+            Path.GetDirectoryName(processPath) is not { } dotnetDirectory)
+        {
+            return;
+        }
+
+        var path = Environment.GetEnvironmentVariable("PATH") ?? string.Empty;
+        var entries = path.Split(Path.PathSeparator, StringSplitOptions.RemoveEmptyEntries);
+        if (entries.Contains(dotnetDirectory, StringComparer.Ordinal))
+        {
+            return;
+        }
+
+        Environment.SetEnvironmentVariable("PATH", dotnetDirectory + Path.PathSeparator + path);
+        Environment.SetEnvironmentVariable("DOTNET_HOST_PATH", processPath);
+    }
+
     public static string BundleDirectory
     {
         get

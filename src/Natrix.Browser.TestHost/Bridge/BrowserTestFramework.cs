@@ -1,3 +1,4 @@
+using System.Reflection;
 using Microsoft.Testing.Platform.CommandLine;
 using Microsoft.Testing.Platform.Extensions.Messages;
 using Microsoft.Testing.Platform.Extensions.OutputDevice;
@@ -22,6 +23,8 @@ internal sealed class BrowserTestFramework(IServiceProvider serviceProvider)
 {
     private readonly ICommandLineOptions _options = serviceProvider.GetCommandLineOptions();
     private readonly IOutputDevice _output = serviceProvider.GetOutputDevice();
+    private readonly bool _headed = BridgeCommandLineOptions.IsSet(serviceProvider.GetCommandLineOptions(), BridgeCommandLineOptions.HeadedOption, BridgeCommandLineOptions.HeadedVariable);
+    private readonly bool _forwardAllConsole = BridgeCommandLineOptions.IsSet(serviceProvider.GetCommandLineOptions(), BridgeCommandLineOptions.ConsoleOption, BridgeCommandLineOptions.ConsoleVariable);
 
     // Discovery results by uid. An IDE discovers before it runs a selection, and a
     // uid alone is not enough to build the browser-side filter.
@@ -64,10 +67,32 @@ internal sealed class BrowserTestFramework(IServiceProvider serviceProvider)
 
     private async Task DiscoverAsync(ExecuteRequestContext context, DiscoverTestExecutionRequest request)
     {
+        var matcher = TreeNodeFilterText(request.Filter) is { } filter ? new TreeNodeFilterMatcher(filter) : null;
+        var assembly = Assembly.GetEntryAssembly()?.GetName().Name;
+
         foreach (var testEvent in await EnsureDiscoveredAsync(context.CancellationToken, refresh: true))
         {
-            await PublishAsync(context, request.Session.SessionUid, testEvent, forceDiscovered: true);
+            if (matcher is null || matcher.Matches(assembly, testEvent.Namespace, testEvent.TypeName, testEvent.MethodName))
+            {
+                await PublishAsync(context, request.Session.SessionUid, testEvent, forceDiscovered: true);
+            }
         }
+    }
+
+    /// <summary>
+    /// The platform hands a parsed filter over when it registered <c>--treenode-filter</c>
+    /// itself; when the bridge's own option provider did, only the raw text exists.
+    /// </summary>
+    private string? TreeNodeFilterText(ITestExecutionFilter filter)
+    {
+        if (filter is TreeNodeFilter treeFilter)
+        {
+            return treeFilter.Filter;
+        }
+
+        return _options.TryGetOptionArgumentList(BridgeCommandLineOptions.TreeNodeFilterOption, out var arguments) && arguments.Length == 1
+            ? arguments[0]
+            : null;
     }
 
     private async Task<IReadOnlyCollection<TestEvent>> EnsureDiscoveredAsync(CancellationToken cancellationToken, bool refresh)
@@ -97,6 +122,8 @@ internal sealed class BrowserTestFramework(IServiceProvider serviceProvider)
                 var selected = requestedUids.Select(uid => _discovered!.GetValueOrDefault(uid)).OfType<TestEvent>().ToArray();
                 if (selected.Length == 0)
                 {
+                    await _output.DisplayAsync(this, new TextOutputDeviceData(
+                        $"None of the {requestedUids.Count} selected tests exist in the current build; rebuild and rediscover."));
                     return;
                 }
 
@@ -104,27 +131,17 @@ internal sealed class BrowserTestFramework(IServiceProvider serviceProvider)
                 engineArguments.Add(TreeNodeFilterBuilder.Build(selected));
                 break;
 
-            case TreeNodeFilter treeFilter:
-                engineArguments.Add("--" + BridgeCommandLineOptions.TreeNodeFilterOption);
-                engineArguments.Add(treeFilter.Filter);
-                break;
-
             default:
-                if (_options.TryGetOptionArgumentList(BridgeCommandLineOptions.TreeNodeFilterOption, out var filterArguments) &&
-                    filterArguments.Length == 1)
+                if (TreeNodeFilterText(request.Filter) is { } treeFilter)
                 {
                     engineArguments.Add("--" + BridgeCommandLineOptions.TreeNodeFilterOption);
-                    engineArguments.Add(filterArguments[0]);
+                    engineArguments.Add(treeFilter);
                 }
 
                 break;
         }
 
-        var options = new BrowserRunOptions
-        {
-            Headed = BridgeCommandLineOptions.IsSet(_options, BridgeCommandLineOptions.HeadedOption, BridgeCommandLineOptions.HeadedVariable),
-            ForwardAllConsole = BridgeCommandLineOptions.IsSet(_options, BridgeCommandLineOptions.ConsoleOption, BridgeCommandLineOptions.ConsoleVariable),
-        };
+        var options = new BrowserRunOptions { Headed = _headed, ForwardAllConsole = _forwardAllConsole };
 
         var bundle = HostPaths.BundleDirectory;
         var sawFailure = false;
@@ -135,13 +152,15 @@ internal sealed class BrowserTestFramework(IServiceProvider serviceProvider)
             options,
             async testEvent =>
             {
-                if (requestedUids is not null && !requestedUids.Contains(testEvent.Uid))
-                {
-                    return;
-                }
-
+                // The engine's exit code covers every test it ran, including ones the
+                // tree-node filter over-selected, so failures are counted before the
+                // uid filter decides what the caller gets to see.
                 sawFailure |= testEvent.State is TestStates.Failed or TestStates.Error or TestStates.Timeout;
-                await PublishAsync(context, request.Session.SessionUid, testEvent, forceDiscovered: false);
+
+                if (requestedUids is null || requestedUids.Contains(testEvent.Uid))
+                {
+                    await PublishAsync(context, request.Session.SessionUid, testEvent, forceDiscovered: false);
+                }
             },
             text => _output.DisplayAsync(this, new TextOutputDeviceData(text)),
             context.CancellationToken);
@@ -213,7 +232,7 @@ internal sealed class BrowserTestFramework(IServiceProvider serviceProvider)
 
     private void LogAsync(string message)
     {
-        if (Environment.GetEnvironmentVariable(BridgeCommandLineOptions.ConsoleVariable) is "1" or "true")
+        if (_forwardAllConsole)
         {
             _ = _output.DisplayAsync(this, new TextOutputDeviceData("[discovery] " + message));
         }

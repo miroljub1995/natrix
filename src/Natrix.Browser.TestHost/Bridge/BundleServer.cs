@@ -47,16 +47,28 @@ internal sealed class BundleServer : IDisposable
     public static BundleServer Start(string bundleDirectory)
     {
         var root = Path.GetFullPath(bundleDirectory);
-        var port = FreePort();
-        var baseUrl = $"http://127.0.0.1:{port}/";
 
-        var listener = new HttpListener();
-        listener.Prefixes.Add(baseUrl);
-        listener.Start();
+        // HttpListener cannot bind port 0, so a free port is probed first. Another process
+        // can take it in between; a few attempts make that a non-event.
+        for (var attempt = 1; ; attempt++)
+        {
+            var baseUrl = $"http://127.0.0.1:{FreePort()}/";
+            var listener = new HttpListener();
+            listener.Prefixes.Add(baseUrl);
+            try
+            {
+                listener.Start();
+            }
+            catch (HttpListenerException) when (attempt < 5)
+            {
+                listener.Close();
+                continue;
+            }
 
-        var server = new BundleServer(listener, root, baseUrl);
-        _ = Task.Run(server.AcceptLoopAsync);
-        return server;
+            var server = new BundleServer(listener, root, baseUrl);
+            _ = Task.Run(server.AcceptLoopAsync);
+            return server;
+        }
     }
 
     private async Task AcceptLoopAsync()
@@ -92,7 +104,8 @@ internal sealed class BundleServer : IDisposable
             }
 
             var file = Path.GetFullPath(Path.Join(_root, path.TrimStart('/')));
-            if (!file.StartsWith(_root, StringComparison.Ordinal) || !File.Exists(file))
+            var relative = Path.GetRelativePath(_root, file);
+            if (relative.StartsWith("..", StringComparison.Ordinal) || Path.IsPathRooted(relative) || !File.Exists(file))
             {
                 await WriteAsync(response, 404, "text/plain", "Not found"u8.ToArray(), context.Request.HttpMethod);
                 return;

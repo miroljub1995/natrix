@@ -31,7 +31,7 @@ public static class ServerModeTestApplication
         {
             ClientName = "Natrix.Browser.TestHost",
             ClientVersion = "1.0.0",
-            Logger = log is null ? null : new DelegateLogger(log),
+            Logger = log is null ? null : new DelegateMtpClientLogger((level, message) => log($"[{level}] {message}")),
         };
 
         foreach (var (name, value) in environment)
@@ -90,7 +90,7 @@ public static class ServerModeTestApplication
         {
             ClientName = "Natrix.Browser.TestHost",
             ClientVersion = "1.0.0",
-            Logger = log is null ? null : new DelegateLogger(log),
+            Logger = log is null ? null : new DelegateMtpClientLogger((level, message) => log($"[{level}] {message}")),
         };
 
         foreach (var (name, value) in environment)
@@ -162,9 +162,4 @@ public static class ServerModeTestApplication
                 _ => null,
             }
             : null;
-
-    private sealed class DelegateLogger(Action<string> log) : IMtpClientLogger
-    {
-        public void Log(MtpClientLogLevel level, string message) => log($"[{level}] {message}");
-    }
 }
