@@ -82,10 +82,6 @@ jobs:
           - src/Natrix.Ssr.Tests/Natrix.Ssr.Tests.csproj
           - src/Natrix.Core.Generators.Tests/Natrix.Core.Generators.Tests.csproj
           - src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj
-          # Browser-wasm projects host themselves (see Natrix.Browser.TestHost): on the
-          # host the test assembly is a Microsoft.Testing.Platform app that serves its
-          # own wasm bundle to headless Chromium and relays the results, so the same
-          # `dotnet test` command runs them. They only need the wasm workload.
           - src/Natrix.WebIDLGenerator.Tests/Natrix.WebIDLGenerator.Tests.csproj
           - src/Natrix.Browser.Tests/Natrix.Browser.Tests.csproj
         tfm:
