@@ -35,10 +35,37 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Build solution
+  tests:
+    name: Tests (${{ matrix.os }})
     if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      # One job per operating system, so branch protection needs three required
+      # checks instead of one per (project, TFM) pair.
+      #
+      # Linux runs the whole solution: `dotnet test` on the solution builds every
+      # project (which is why there is no separate build job) and then runs every
+      # test project for every TFM it targets, including the browser-wasm ones in
+      # headless Chromium.
+      #
+      # Everything is portable managed code except the Tailwind generator: it
+      # loads a per-RID native V8 library, picks its ClearScript flavor from the
+      # compiler host's runtime, and resolves stylesheet paths with host-dependent
+      # case sensitivity. So its tests also run on Windows and macOS. Only that
+      # project runs there, on one TFM: the test host's framework does not change
+      # which engine flavor is selected, and the wasm AOT builds would only add
+      # minutes. What this still does *not* cover is the `net462` flavor, since
+      # `dotnet test` on Windows runs VBCSCompiler on modern .NET. That needs
+      # MSBuild.exe or devenv.exe from a Visual Studio install.
+      matrix:
+        include:
+          - os: ubuntu-latest
+            test: dotnet test Natrix.slnx -c Release
+          - os: windows-latest
+            test: dotnet test src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj -c Release -f net10.0
+          - os: macos-latest
+            test: dotnet test src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj -c Release -f net10.0
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -63,81 +90,10 @@ jobs:
           cache-dependency-path: src/Natrix.TailwindCss.Generators/js/package-lock.json
 
       - name: Restore workloads
+        # Only the browser-wasm projects need the wasm-tools workload, and they
+        # only run on Linux.
+        if: matrix.os == 'ubuntu-latest'
         run: dotnet workload restore Natrix.slnx
 
-      - name: Build
-        run: dotnet build Natrix.slnx -c Release
-
-  unit-tests:
-    name: Tests
-    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - ubuntu-latest
-        project:
-          - src/Natrix.Signals.Tests/Natrix.Signals.Tests.csproj
-          - src/Natrix.Ssr.Tests/Natrix.Ssr.Tests.csproj
-          - src/Natrix.Swr.Tests/Natrix.Swr.Tests.csproj
-          - src/Natrix.Core.Generators.Tests/Natrix.Core.Generators.Tests.csproj
-          - src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj
-          - src/Natrix.WebIDLGenerator.Tests/Natrix.WebIDLGenerator.Tests.csproj
-          - src/Natrix.Browser.Tests/Natrix.Browser.Tests.csproj
-        tfm:
-          - net9.0
-          - net10.0
-
-        # Everything above is portable managed code, or runs in headless Chromium,
-        # and runs on Linux only.
-        #
-        # The Tailwind generator is the one exception in the repository: it loads
-        # a per-RID native V8 library, picks its ClearScript flavor from the
-        # compiler host's runtime, and resolves stylesheet paths with
-        # host-dependent case sensitivity. So it also runs on Windows and macOS.
-        # These entries conflict with the single `os` value above, so Actions
-        # appends them as extra jobs rather than merging them in.
-        #
-        # One TFM is enough there: the test host's framework does not change
-        # which engine flavor is selected. And note what this still does *not*
-        # cover - `dotnet test` on Windows runs VBCSCompiler on modern .NET, so
-        # the `net462` flavor stays unexercised. That needs MSBuild.exe or
-        # devenv.exe from a Visual Studio install.
-        include:
-          - os: windows-latest
-            project: src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj
-            tfm: net10.0
-          - os: macos-latest
-            project: src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj
-            tfm: net10.0
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v7
-        with:
-          submodules: recursive
-
-      - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v6
-        with:
-          global-json-file: global.json
-          dotnet-version: |
-            9.0.x
-            10.0.x
-
-      - name: Setup Node.js
-        # Only the Tailwind generator needs it, to build its embedded bundle.
-        if: matrix.project == 'src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj'
-        uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: npm
-          cache-dependency-path: src/Natrix.TailwindCss.Generators/js/package-lock.json
-
-      - name: Restore workloads
-        # Only the browser-wasm projects need the wasm-tools workload.
-        if: contains(matrix.project, 'Natrix.Browser.Tests') || contains(matrix.project, 'Natrix.WebIDLGenerator.Tests')
-        run: dotnet workload restore ${{ matrix.project }}
-
-      - name: Test ${{ matrix.project }} (${{ matrix.tfm }})
-        run: dotnet test ${{ matrix.project }} -c Release -f ${{ matrix.tfm }}
+      - name: Test
+        run: ${{ matrix.test }}
