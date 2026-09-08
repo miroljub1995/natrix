@@ -60,5 +60,3 @@ Pass them after `--`:
 
 Environment equivalents, for IDE run configurations:
 `NATRIX_BROWSER_TESTHOST_HEADED=1`, `NATRIX_BROWSER_TESTHOST_CONSOLE=1`.
-`NATRIX_BROWSER_TESTHOST_CHROME` overrides the browser executable, and
-`NATRIX_BROWSER_TESTHOST_BUNDLE` the bundle directory.
