@@ -19,7 +19,27 @@
 
   <PropertyGroup>
     <GenerateTestingPlatformEntryPoint>false</GenerateTestingPlatformEntryPoint>
+    <!-- A native launcher for the host next to the wasm build output (see below). -->
+    <AppHostRuntimeIdentifier Condition="'$(RuntimeIdentifier)' == 'browser-wasm'">$(NETCoreSdkRuntimeIdentifier)</AppHostRuntimeIdentifier>
   </PropertyGroup>
+
+  <!--
+    The WebAssembly SDK turns apphost generation off after this file is imported,
+    so it is turned back on right before the SDK decides which apphost pack it
+    needs (ProcessFrameworkReferences, which also runs during restore) and again
+    before it resolves and creates the launcher.
+    The result is a regular executable for the host OS that runs the test assembly
+    in its bridge role. Both the platform's server-mode client and IDE test
+    explorers prefer such a sibling executable over `dotnet <assembly>`, which
+    removes the dependency on `dotnet` being resolvable from PATH.
+  -->
+  <Target Name="_NatrixBrowserTestHostAppHost"
+          BeforeTargets="ProcessFrameworkReferences;ResolveAppHosts;_CreateAppHost;_ComputeNETCoreBuildOutputFiles"
+          Condition="'$(RuntimeIdentifier)' == 'browser-wasm'">
+    <PropertyGroup>
+      <UseAppHost>true</UseAppHost>
+    </PropertyGroup>
+  </Target>
 
   <Target Name="_NatrixBrowserTestHostRuntimeConfig"
           AfterTargets="GenerateBuildRuntimeConfigurationFiles"
