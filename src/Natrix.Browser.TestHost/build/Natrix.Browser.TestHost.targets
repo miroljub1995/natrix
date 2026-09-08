@@ -30,8 +30,8 @@
     before it resolves and creates the launcher.
     The result is a regular executable for the host OS that runs the test assembly
     in its bridge role. Both the platform's server-mode client and IDE test
-    explorers prefer such a sibling executable over `dotnet <assembly>`, which
-    removes the dependency on `dotnet` being resolvable from PATH.
+    explorers prefer such a sibling executable over `dotnet <assembly>`, so nothing
+    depends on `dotnet` being resolvable from PATH.
   -->
   <Target Name="_NatrixBrowserTestHostAppHost"
           BeforeTargets="ProcessFrameworkReferences;ResolveAppHosts;_CreateAppHost;_ComputeNETCoreBuildOutputFiles"

@@ -19,7 +19,6 @@ internal static class EngineDiscovery
             [BrowserTestHost.ModeVariable] = BrowserTestHost.EngineMode,
         };
 
-        HostPaths.EnsureDotnetOnPath();
         var nodes = await ServerModeTestApplication.DiscoverAsync(HostPaths.EntryAssemblyPath, environment, log, cancellationToken);
 
         return nodes

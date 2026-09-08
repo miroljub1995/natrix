@@ -40,9 +40,7 @@ assembly instead of `WasmAppHost`, injects the discovery hook, and fetches Chrom
 for the host runtime identifier.
 
 The discovery child process is started through the generated launcher, so it does
-not need `dotnet` on `PATH`. Should the launcher be missing, the client falls back
-to `dotnet <assembly>`, and the host then puts the directory of the `dotnet` that
-started it on `PATH` first.
+not need `dotnet` on `PATH`.
 
 An optional `test-extension-init.js` module deployed with the bundle is imported
 and its `init()` awaited before the runtime starts, for JavaScript fixtures.
