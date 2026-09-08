@@ -457,4 +457,83 @@ public class AppFeaturesTests
             ];
         }
     }
+
+    [Test]
+    public async Task Middleware_publishes_features_to_the_tree()
+    {
+        // The point of it: a feature built at mount, out of what the application registered,
+        // rather than at registration where the order is nobody's to guarantee.
+        Theme? observed = null;
+
+        using var _ = new NatrixHostBuilder()
+            .UseRootRenderer(new SsrRenderRoot())
+            .SetFeature(new User("Ada"))
+            .Use(features => features.Set(new Theme($"{features.Get<User>()!.Name}'s theme")))
+            .UseRootComponent(() => new Spy
+            {
+                Props = new SpyProps { Spy = f => observed = f.Get<Theme>() },
+            })
+            .Build()
+            .Mount();
+
+        await Assert.That(observed).IsEqualTo(new Theme("Ada's theme"));
+    }
+
+    [Test]
+    public async Task Middleware_runs_outermost_first_in_the_order_it_was_added()
+    {
+        // So that one added after another sits inside it and can build on what it published.
+        var order = new List<string>();
+        Counter? observed = null;
+
+        using var _ = new NatrixHostBuilder()
+            .UseRootRenderer(new SsrRenderRoot())
+            .Use(features => { order.Add("first"); features.Set(new Counter(1)); })
+            .Use(features => { order.Add("second"); features.Set(new Counter(features.Get<Counter>()!.Value + 1)); })
+            .UseRootComponent(() => new Spy
+            {
+                Props = new SpyProps { Spy = f => observed = f.Get<Counter>() },
+            })
+            .Build()
+            .Mount();
+
+        await Assert.That(order).IsEquivalentTo(new[] { "first", "second" });
+        await Assert.That(observed).IsEqualTo(new Counter(2));
+    }
+
+    [Test]
+    public async Task What_middleware_publishes_stays_below_it()
+    {
+        // Middleware writes to a layer of its own, so the host's collection is left as the
+        // application described it - two hosts sharing one builder would otherwise leak into
+        // each other.
+        var builder = new NatrixHostBuilder()
+            .UseRootRenderer(new SsrRenderRoot())
+            .Use(features => features.Set(new Theme("dark")))
+            .UseRootComponent(() => new Spy { Props = new SpyProps { Spy = _ => { } } });
+
+        using var _ = builder.Build().Mount();
+
+        await Assert.That(builder.Features.Get<Theme>()).IsNull();
+    }
+
+    [Test]
+    public async Task Middleware_decides_what_to_mount()
+    {
+        // The general form, where next is a delegate rather than a promise: a middleware that
+        // never calls it renders in place of the application instead of around it.
+        var rootWasMounted = false;
+
+        using var _ = new NatrixHostBuilder()
+            .UseRootRenderer(new SsrRenderRoot())
+            .Use(next => new Spy { Props = new SpyProps { Spy = _ => { } } })
+            .UseRootComponent(() => new Spy
+            {
+                Props = new SpyProps { Spy = _ => rootWasMounted = true },
+            })
+            .Build()
+            .Mount();
+
+        await Assert.That(rootWasMounted).IsFalse();
+    }
 }

@@ -2,6 +2,7 @@ using Natrix.Core.Components;
 using Natrix.Dom.Components;
 using Natrix.Core.Features.Routing;
 using Natrix.Docs.Client.Components.Examples.BouncingBalls;
+using Natrix.Docs.Client.Components.Examples.DataFetching;
 using Natrix.Docs.Client.Components.Examples.Todo;
 using Natrix.Signals;
 
@@ -65,6 +66,11 @@ public class DocsApp : BaseComponent<DocsAppProps, NoEvents, NoSlots, NoExpose>
                                     {
                                         Pattern = "/examples/canvas",
                                         Render = () => [new BouncingBallsExamplePage { Props = new NoProps() }],
+                                    },
+                                    new Route
+                                    {
+                                        Pattern = "/examples/data-fetching",
+                                        Render = () => [new DataFetchingExamplePage { Props = new NoProps() }],
                                     },
                                 ],
                             },

@@ -1,10 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
     <PropertyGroup>
-        <PublishAot Condition="'$(Configuration)' != 'Debug'">true</PublishAot>
+        <PublishAot>true</PublishAot>
     </PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\Natrix.Docs.Client\Natrix.Docs.Client.csproj" />
+        <ProjectReference Include="..\Natrix.Docs.Contracts\Natrix.Docs.Contracts.csproj" />
         <ProjectReference Include="..\..\src\Natrix.Ssr\Natrix.Ssr.csproj" />
     </ItemGroup>
 

@@ -16,7 +16,12 @@ public sealed class HotReloadManager : IHotReloadManager
     public event Action<Type[]?>? OnDeltaApplied;
 
     [UnconditionalSuppressMessage("Trimming", "IL2026", Justification = "Only used during hot reload with the interpreter; no trimming occurs.")]
-    public TypeDependencyGraph Graph { get; } = new();
+    public HotReloadManager()
+    {
+        Graph = new();
+    }
+
+    public TypeDependencyGraph Graph { get; }
 
     public void FireBeforeUpdate(Type[]? types)
     {
