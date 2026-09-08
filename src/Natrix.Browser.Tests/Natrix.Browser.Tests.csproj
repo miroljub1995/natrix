@@ -14,6 +14,12 @@
         <PackageReference Include="TUnit"/>
     </ItemGroup>
 
+    <!-- The project hosts itself: see Program.cs and Natrix.Browser.TestHost. -->
+    <ItemGroup>
+        <ProjectReference Include="..\Natrix.Browser.TestHost\Natrix.Browser.TestHost.csproj"/>
+    </ItemGroup>
+    <Import Project="..\Natrix.Browser.TestHost\build\Natrix.Browser.TestHost.targets"/>
+
     <ItemGroup>
         <WasmExtraFilesToDeploy Include="test-extension-init.js"/>
     </ItemGroup>

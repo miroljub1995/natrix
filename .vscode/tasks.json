@@ -2,46 +2,6 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build: Natrix.Browser.Tests",
-            "type": "process",
-            "command": "dotnet",
-            "args": [
-                "build",
-                "Natrix.Browser.Tests/Natrix.Browser.Tests.csproj",
-                "-f",
-                "net10.0"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/src"
-            },
-            "group": "build",
-            "presentation": {
-                "reveal": "silent",
-                "panel": "shared"
-            },
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "build: Natrix.WebIDLGenerator.Tests",
-            "type": "process",
-            "command": "dotnet",
-            "args": [
-                "build",
-                "Natrix.WebIDLGenerator.Tests/Natrix.WebIDLGenerator.Tests.csproj",
-                "-f",
-                "net9.0"
-            ],
-            "options": {
-                "cwd": "${workspaceFolder}/src"
-            },
-            "group": "build",
-            "presentation": {
-                "reveal": "silent",
-                "panel": "shared"
-            },
-            "problemMatcher": "$msCompile"
-        },
-        {
             "label": "build: Natrix.WebIDLGenerator",
             "type": "process",
             "command": "dotnet",

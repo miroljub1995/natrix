@@ -69,7 +69,7 @@ jobs:
         run: dotnet build Natrix.slnx -c Release
 
   unit-tests:
-    name: Unit tests
+    name: Tests
     if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
     runs-on: ${{ matrix.os }}
     strategy:
@@ -83,11 +83,14 @@ jobs:
           - src/Natrix.Swr.Tests/Natrix.Swr.Tests.csproj
           - src/Natrix.Core.Generators.Tests/Natrix.Core.Generators.Tests.csproj
           - src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj
+          - src/Natrix.WebIDLGenerator.Tests/Natrix.WebIDLGenerator.Tests.csproj
+          - src/Natrix.Browser.Tests/Natrix.Browser.Tests.csproj
         tfm:
           - net9.0
           - net10.0
 
-        # Everything above is portable managed code and runs on Linux only.
+        # Everything above is portable managed code, or runs in headless Chromium,
+        # and runs on Linux only.
         #
         # The Tailwind generator is the one exception in the repository: it loads
         # a per-RID native V8 library, picks its ClearScript flavor from the
@@ -131,40 +134,10 @@ jobs:
           cache: npm
           cache-dependency-path: src/Natrix.TailwindCss.Generators/js/package-lock.json
 
+      - name: Restore workloads
+        # Only the browser-wasm projects need the wasm-tools workload.
+        if: contains(matrix.project, 'Natrix.Browser.Tests') || contains(matrix.project, 'Natrix.WebIDLGenerator.Tests')
+        run: dotnet workload restore ${{ matrix.project }}
+
       - name: Test ${{ matrix.project }} (${{ matrix.tfm }})
         run: dotnet test ${{ matrix.project }} -c Release -f ${{ matrix.tfm }}
-
-  browser-tests:
-    name: Browser (WASM) tests
-    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        profile:
-          - Natrix.WebIDLGenerator.Tests
-          - Natrix.Browser.Tests
-        tfm:
-          - net9.0
-          - net10.0
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v7
-        with:
-          submodules: recursive
-
-      - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v6
-        with:
-          global-json-file: global.json
-          dotnet-version: |
-            9.0.x
-            10.0.x
-
-      - name: Restore workloads
-        run: dotnet workload restore Natrix.slnx
-
-      - name: Run ${{ matrix.profile }} (${{ matrix.tfm }})
-        # The runner builds the browser-wasm test bundle for its own TFM and
-        # executes it in headless Chromium (ChromeForTesting + PuppeteerSharp).
-        run: dotnet run --project src/Natrix.BrowserTestsRunner -f ${{ matrix.tfm }} --launch-profile ${{ matrix.profile }}
