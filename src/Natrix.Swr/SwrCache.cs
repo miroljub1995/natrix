@@ -32,7 +32,14 @@ public sealed class SwrCache
     /// </summary>
     private Dictionary<string, JsonNode?>? _pending;
 
-
+    /// <summary>
+    /// True while the page is being reproduced from the server's markup: from the moment the
+    /// payload is taken until the synchronous mount that hydrates from it has returned — or
+    /// until <see cref="Clear"/> drops the payload with everything else. A key seeded from the
+    /// payload and bound in that window is showing what the server rendered, and is not
+    /// revalidated; a key bound at any later point is.
+    /// </summary>
+    internal bool IsHydrating => _pending is not null;
 
     /// <param name="serializerOptions">
     /// How the cache names and stores what it holds: the contracts for the values it carries
@@ -195,9 +202,22 @@ public sealed class SwrCache
     }
 
     /// <summary>
+    /// Closes the hydration pass. Whatever the payload carried for keys nothing bound is dropped
+    /// with it: it described the render that has just been reproduced, and a key asked for from
+    /// here on is a new question with a fresh request.
+    /// </summary>
+    internal void EndHydration()
+    {
+        lock (_gate)
+        {
+            _pending = null;
+        }
+    }
+
+    /// <summary>
     /// Serializes every entry that holds a value, for the client to pick up instead of fetching
-    /// it again. Errors are not transferred: a key that failed on the server was reset, and the
-    /// client fetches it normally.
+    /// it again. Errors are not transferred: a key that fails on the server fails the render, so
+    /// there is no page for one to travel with.
     /// </summary>
     internal JsonObject Dehydrate()
     {

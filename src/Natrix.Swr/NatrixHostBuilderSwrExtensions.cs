@@ -3,6 +3,7 @@ using System.Text.Json.Nodes;
 using Natrix.Browser.Abstractions.Features.HydrationState;
 using Natrix.Core;
 using Natrix.Core.Features;
+using Natrix.Ssr.Abstractions.Features;
 using Natrix.Ssr.Abstractions.Features.HydrationState;
 
 namespace Natrix.Swr;
@@ -40,10 +41,12 @@ public static class NatrixHostBuilderSwrExtensions
     /// Registered as middleware rather than as a feature, because what it registers is built out
     /// of other features and there is no order in which registration alone could see them. This
     /// runs at mount instead, with everything in place, which is why nothing here is assigned
-    /// after the fact.
+    /// after the fact. A second middleware wraps the tree so the cache's hydration pass ends
+    /// the moment the synchronous mount beneath it returns.
     /// </remarks>
     /// <exception cref="InvalidOperationException">
-    /// Thrown at mount: no cache was given and nothing describes the application's serialization.
+    /// Thrown at mount: no cache was given and nothing describes the application's serialization,
+    /// or the host renders on the server without an <see cref="IServerPrefetchFeature"/>.
     /// </exception>
     public static NatrixHostBuilder UseSwr(
         this NatrixHostBuilder builder,
@@ -71,11 +74,23 @@ public static class NatrixHostBuilderSwrExtensions
 
             if (features.Get<IServerHydrationStateFeature>() is { } server)
             {
+                // The prefetch feature's presence is what tells a resource it is on the server.
+                // Without it every resource would take itself to be in a browser and fetch after
+                // the render — off the request's thread, and past the response.
+                if (features.Get<IServerPrefetchFeature>() is null)
+                {
+                    throw new InvalidOperationException(
+                        $"SWR on a server host needs {nameof(IServerPrefetchFeature)}: it is what keeps "
+                        + "resources from fetching outside the prefetch queue the render waits for. Register "
+                        + "a ServerPrefetchFeature and drain it before writing the response.");
+                }
+
                 server.RegisterDehydrateCallback(
                     state => state[SwrFeature.HydrationSection] = resolved.Dehydrate());
             }
 
             features.Set(new SwrFeature(resolved, defaultOptions));
-        });
+        })
+        .Use(next => new SwrHydrationBoundary { Child = next });
     }
 }

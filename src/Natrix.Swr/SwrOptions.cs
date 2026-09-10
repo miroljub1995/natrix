@@ -1,9 +1,9 @@
 namespace Natrix.Swr;
 
 /// <summary>
-/// Configuration for a resource. Deliberately small: this port covers error retries only, and
-/// every other React SWR option (refresh intervals, revalidate-on-focus, deduping windows,
-/// fallback data) is left out rather than half-implemented.
+/// Configuration for a resource. Deliberately small: this port covers error retries and where a
+/// resource fetches, and every other React SWR option (refresh intervals, revalidate-on-focus,
+/// deduping windows, fallback data) is left out rather than half-implemented.
 /// </summary>
 /// <remarks>
 /// Set app-wide through <see cref="NatrixHostBuilderSwrExtensions.UseSwr"/>, and adjusted per
@@ -48,6 +48,29 @@ public sealed record SwrOptions
     /// retry timing predictable.
     /// </remarks>
     public TimeSpan ErrorRetryInterval { get; init; } = TimeSpan.FromSeconds(5);
+
+    /// <summary>
+    /// Whether the fetcher runs during server rendering. When <c>true</c>, binding a key on the
+    /// server registers a prefetch the render waits for, and the value ships with the page. When
+    /// <c>false</c> the resource is client-only: the server renders its loading state, nothing
+    /// for the key is transferred, and the browser fetches after its first render as it would for
+    /// any key the page did not carry.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// For data the server cannot or should not fetch — a request that needs a browser-only API
+    /// or a credential only the browser holds, a value that is personal to the visitor and must
+    /// not be rendered into cacheable markup, or one whose upstream is too slow to hold the
+    /// response for.
+    /// </para>
+    /// <para>
+    /// Hydration stays consistent either way: the server's markup shows the loading state and the
+    /// client's first render, seeing no value for the key, shows the same. The setting is the
+    /// caller's, not the entry's — a client-only resource sharing a key with one that does fetch
+    /// on the server receives the prefetched value like any other subscriber.
+    /// </para>
+    /// </remarks>
+    public bool FetchOnServer { get; init; } = true;
 
     /// <summary>
     /// Validated where options enter the library rather than in an <c>init</c> accessor, so the

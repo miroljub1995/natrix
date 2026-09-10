@@ -15,7 +15,7 @@ public class SwrResourceTests
         new() { ErrorRetryCount = count, ErrorRetryInterval = TimeSpan.Zero };
 
     [Test]
-    public async Task Fetches_on_mount_and_publishes_data()
+    public async Task Fetches_after_setup_and_publishes_data()
     {
         var fetcher = new RecordingFetcher<string>((_, _) => Task.FromResult("Ada"));
         SwrResource<string>? resource = null;
@@ -42,7 +42,8 @@ public class SwrResourceTests
         {
             var resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync);
 
-            // Still inside Setup: the tree is not mounted, so nothing may have been requested.
+            // Still inside Setup, which is running inside the parent's render: nothing may have
+            // been requested yet.
             callsSeenInSetup = fetcher.CallCount;
             _ = resource;
         });
@@ -52,19 +53,48 @@ public class SwrResourceTests
     }
 
     [Test]
-    public async Task Does_not_fetch_without_lifecycle_hooks()
+    public async Task The_first_request_waits_for_the_next_cycle()
     {
-        // Server-side rendering registers no lifecycle hooks feature, so mounted hooks — and
-        // with them the first request — are dropped. The tree renders its loading state instead.
+        // Binding happens inside the render that set the component up, and a fetcher that
+        // completed on the spot would write into it. So even an instant fetcher leaves the first
+        // render at its loading state, with no request in flight yet.
         var fetcher = new RecordingFetcher<string>((_, _) => Task.FromResult("Ada"));
         SwrResource<string>? resource = null;
 
-        using var app = new TestApp(NoRetries, lifecycleHooks: false);
-        app.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync));
+        using var app = new TestApp(NoRetries);
+        app.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync), pump: false);
 
         await Assert.That(fetcher.CallCount).IsEqualTo(0);
         await Assert.That(resource!.IsLoading.Value).IsTrue();
         await Assert.That(resource.IsValidating.Value).IsFalse();
+
+        app.Pump();
+
+        await Assert.That(fetcher.CallCount).IsEqualTo(1);
+        await Assert.That(resource.Data.Value).IsEqualTo("Ada");
+        await Assert.That(resource.IsLoading.Value).IsFalse();
+    }
+
+    [Test]
+    public async Task A_key_that_moved_on_before_its_cycle_is_not_fetched()
+    {
+        // The request deferred for the first key has no audience by the time it would run: the
+        // binding that replaced it issued its own.
+        var fetcher = new RecordingFetcher<string>((_, key) => Task.FromResult($"user-{key.Segment<string>(1)}"));
+        var userId = new Signal<string>("1");
+        SwrResource<string>? resource = null;
+
+        using var app = new TestApp(NoRetries);
+        app.MountProbe(
+            () => resource = SwrResource.Use(() => ["user", userId.Value], fetcher.FetchAsync),
+            pump: false);
+
+        userId.Value = "2";
+        app.Pump();
+
+        await Assert.That(fetcher.CallCount).IsEqualTo(1);
+        await Assert.That(fetcher.Keys[0]).IsEqualTo(new SwrKey("user", "2"));
+        await Assert.That(resource!.Data.Value).IsEqualTo("user-2");
     }
 
     [Test]
@@ -187,6 +217,9 @@ public class SwrResourceTests
 
         // The remounted component sees the cached value before its own request completes.
         await Assert.That(dataAtSetup[1]).IsEqualTo("Ada 0");
+
+        app.Pump();
+
         await Assert.That(fetcher.CallCount).IsEqualTo(2);
         await Assert.That(latest.Data.Value).IsEqualTo("Ada 1");
     }
@@ -205,15 +238,21 @@ public class SwrResourceTests
         await Assert.That(resource!.Data.Value).IsEqualTo("user-1");
 
         userId.Value = "2";
+        app.Pump();
 
         await Assert.That(fetcher.CallCount).IsEqualTo(2);
         await Assert.That(resource.Key.Value).IsEqualTo(new SwrKey("user", "2"));
         await Assert.That(resource.Data.Value).IsEqualTo("user-2");
 
-        // Back to a key already in the cache: its value is there immediately, and it revalidates.
+        // Back to a key already in the cache: its value is there immediately, before the
+        // revalidation that follows a cycle later.
         userId.Value = "1";
 
         await Assert.That(resource.Data.Value).IsEqualTo("user-1");
+        await Assert.That(fetcher.CallCount).IsEqualTo(2);
+
+        app.Pump();
+
         await Assert.That(fetcher.CallCount).IsEqualTo(3);
     }
 
@@ -322,12 +361,14 @@ public class SwrResourceTests
         await Assert.That(resource.Key.Value).IsEqualTo(SwrKey.None);
 
         userId.Value = "7";
+        app.Pump();
 
         await Assert.That(fetcher.CallCount).IsEqualTo(1);
         await Assert.That(resource.Data.Value).IsEqualTo("user-7");
 
         // Going back to no key stops reporting the previous key's data.
         userId.Value = null;
+        app.Pump();
 
         await Assert.That(resource.Data.Value).IsNull();
         await Assert.That(resource.IsLoading.Value).IsFalse();
@@ -672,6 +713,7 @@ public class SwrResourceTests
             (key, _) => { fetcher.Add(key.Item2); return Task.FromResult($"user-{key.Item2}"); }));
 
         id.Value = 2;
+        app.Pump();
 
         await Assert.That(fetcher).IsEquivalentTo(new[] { 1, 2 });
         await Assert.That(resource!.Data.Value).IsEqualTo("user-2");
@@ -696,6 +738,7 @@ public class SwrResourceTests
         await Assert.That(resource!.Key.Value).IsEqualTo(SwrKey.None);
 
         ready.Value = true;
+        app.Pump();
 
         await Assert.That(calls).IsEqualTo(1);
         await Assert.That(resource.Data.Value).IsEqualTo("user-1");
@@ -786,6 +829,7 @@ public class SwrResourceTests
             (key, _) => { keys.Add(key.Item2); return Task.FromResult($"user-{key.Item2}"); }));
 
         id.Value = 7;
+        app.Pump();
 
         await Assert.That(keys).IsEquivalentTo(new int?[] { null, 7 });
         await Assert.That(resource!.Data.Value).IsEqualTo("user-7");
