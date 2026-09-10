@@ -165,15 +165,16 @@ await todos.MutateAsync(current => [.. current ?? [], newTodo], revalidate: fals
 
 ## Options
 
-This port covers error retries and nothing else. React SWR's refresh intervals,
-revalidate-on-focus, deduping windows and fallback data are deliberately absent rather than
-half-implemented.
+This port covers error retries and where a resource fetches, and nothing else. React SWR's
+refresh intervals, revalidate-on-focus, deduping windows and fallback data are deliberately absent
+rather than half-implemented.
 
 | Option | Default | Meaning |
 | --- | --- | --- |
 | `ShouldRetryOnError` | `true` | Whether a failed fetch is retried at all. |
 | `ErrorRetryCount` | `3` | Additional attempts after the first failure. React SWR retries forever; a bound is the safer default in a browser tab. |
 | `ErrorRetryInterval` | `5s` | Base backoff. Attempt *n* waits `ErrorRetryInterval * 2^n`, capped at 2^8, without jitter. |
+| `FetchOnServer` | `true` | Whether the fetcher runs during server rendering. `false` makes the resource client-only — see [Client-only resources](#client-only-resources). |
 
 Set the defaults app-wide, and adjust them per resource through a callback that receives them:
 
@@ -193,8 +194,11 @@ the type's own defaults instead of the app's.
 
 ## Behaviour worth knowing
 
-**Nothing is fetched during `Setup`.** In the browser the first request goes out from an
-`OnMounted` hook, so a component that is set up and thrown away before it mounts costs nothing.
+**Nothing is fetched synchronously during `Setup`.** Binding a key in the browser issues its
+request on the next cycle of the event loop. `Setup` runs inside the parent's render, and a fetcher
+that completed on the spot would otherwise write into the middle of it — and hand the first render
+of a hydrated page a value the server's markup never had. The deferral makes the first render of any
+key the page did not carry the loading state, whatever the fetcher's speed.
 
 **Requests are deduplicated while in flight.** Ten components mounting on the same key issue one
 request. There is no time-based deduping window: once a request finishes, the next revalidation
@@ -223,6 +227,12 @@ SSR host drains before it writes the response. The values land in that request's
 is rendered from them, and the cache is serialized into the page's hydration state. On the client
 the cache is seeded from that payload before the first component binds, so the first render matches
 the server's markup and no revalidation is issued for data that arrived with the page.
+
+That feature is also how a resource tells which side it is on: where it is present, the fetcher runs
+only through the queue it drains; where it is absent, the resource takes itself to be in a browser
+and fetches after its first render. A server host must therefore register it, as the project
+template does, and `Mount()` refuses a host that has server hydration state without it — the
+requests would otherwise start during the render and outlive the response.
 
 Both hosts need the same serializer context, which is why the fetched types belong in a project the
 client and the server both reference:
@@ -264,13 +274,47 @@ the request being answered.
 
 Rules the transfer follows:
 
-- **A key that fails on the server is left to the client.** Its entry is reset, so the server
-  renders the loading state and the client fetches and retries it normally. Errors are never
-  serialized into the page.
+- **A key that fails on the server fails the render.** The exception leaves the prefetch drain,
+  and the host answers with an error instead of a page missing data it asked for. Let it propagate:
+  a host that caught it and served the page anyway would render the error state into markup the
+  client — which receives no error — cannot reproduce. Data the page can do without belongs in a
+  client-only resource, which the server never fetches.
+- **The server fetches only through the prefetch queue.** A request started anywhere else would
+  outlive the response. Which is also why a client-only resource, which registers no prefetch,
+  never runs its fetcher on the server at all.
 - **Server prefetches do not retry.** A failing upstream would otherwise hold the response open for
-  the whole backoff sequence. The client retries per its options instead.
+  the whole backoff sequence; the first failure fails the render instead.
 - **Two components on one key cost one prefetch.** The drain runs callbacks one at a time, so a
   prefetch checks for a value before requesting one rather than relying on in-flight deduplication.
-- **Hydration freshness lasts for the page that carried it.** Data that arrived with the page is not
-  revalidated on mount. Once the components holding that key unmount, it is ordinary stale cache
-  again and the next mount revalidates it. An explicit `RevalidateAsync()` always fetches.
+- **Hydration covers the pass that reproduces the markup, and nothing after it.** A key bound while
+  the page hydrates renders the value it shipped with and is not revalidated. Every bind once that
+  synchronous pass has returned revalidates — a component mounted later on a key another one still
+  holds included — and payload for keys nothing bound during the pass is dropped. An explicit
+  `RevalidateAsync()` always fetches.
+
+### Client-only resources
+
+Not everything should be fetched on the server: a request that needs a browser-only API or a
+credential only the browser holds, a value personal to the visitor that must not end up in
+cacheable markup, or an upstream too slow to hold the response for. Turn `FetchOnServer` off for
+those, and leave it on for the rest — the setting is per resource, so one page can mix both:
+
+```csharp
+var profile = SwrResource.Use(
+    () => ("profile", userId.Value),
+    (key, ct) => api.GetProfileAsync(key.Item2, ct));
+
+var notifications = SwrResource.Use(
+    () => ("notifications", userId.Value),
+    (key, ct) => api.GetNotificationsAsync(key.Item2, ct),
+    options => options with { FetchOnServer = false });
+```
+
+The fetcher of a client-only resource never runs on the server. The server renders its loading
+state, and the hydration payload carries nothing for its key, so the client's first render shows
+the same loading state as the markup and the request goes out on the cycle after it — exactly what
+happens for any key the page did not carry. `FetchOnServer` has no effect in the browser.
+
+The setting belongs to the caller, not to the cache entry. A client-only resource that shares a key
+with one that does fetch on the server receives the prefetched value like any other subscriber,
+and is hydrated from it on the client.

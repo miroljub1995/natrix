@@ -1,3 +1,4 @@
+using System.Runtime.ExceptionServices;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization.Metadata;
@@ -37,13 +38,6 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
     private Run? _run;
     private int _subscribers;
 
-    /// <summary>
-    /// The value came from the server's render and has not been superseded, so the components
-    /// mounting on it right now are showing exactly what the server already sent. Refetching it
-    /// immediately would throw away the whole point of transferring it.
-    /// </summary>
-    private bool _hydrated;
-
     public SwrKey Key => key;
 
     public IReadOnlySignal<SwrEntryState<TData>> State => _state;
@@ -66,11 +60,6 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
         if (Interlocked.Decrement(ref _subscribers) <= 0)
         {
             Interlocked.Exchange(ref _subscribers, 0);
-
-            // Hydration freshness covers the first render of a server-rendered page, not the
-            // rest of the session: once the components that page mounted are gone, the value is
-            // ordinary stale cache and the next mount revalidates it like any other.
-            _hydrated = false;
             CancelPending();
         }
     }
@@ -78,32 +67,20 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
     /// <summary>
     /// Fetches unless an identical request is already running, in which case the caller joins it.
     /// This is the deduplication: a hundred components mounting with the same key issue one
-    /// request.
+    /// request. <see cref="MutateAsync"/> is the one operation that must not join — a response
+    /// already on its way would undo the mutation — and it cancels and restarts on its own.
     /// </summary>
-    /// <param name="force">
-    /// Starts a fresh request even when one is in flight, cancelling it. Used after a local
-    /// mutation, whose value the older response would otherwise overwrite.
+    /// <param name="throwOnError">
+    /// Rethrows the failure once retries are exhausted, instead of only recording it on the
+    /// entry. The error is recorded either way.
     /// </param>
     public Task RevalidateAsync(
         Func<SwrKey, CancellationToken, Task<TData>> fetcher,
         SwrOptions options,
-        bool force)
-    {
-        if (!force && _run is { } existing)
-        {
-            return existing.Task ?? Task.CompletedTask;
-        }
-
-        CancelPending();
-        return StartRun(fetcher, options);
-    }
-
-    /// <summary>
-    /// The revalidation a component performs when it mounts. Skipped for a value that arrived
-    /// with the page, which is already as fresh as the markup rendered from it.
-    /// </summary>
-    public Task RevalidateOnMountAsync(Func<SwrKey, CancellationToken, Task<TData>> fetcher, SwrOptions options) =>
-        _hydrated ? Task.CompletedTask : RevalidateAsync(fetcher, options, force: false);
+        bool throwOnError) =>
+        _run is { } existing
+            ? existing.Task ?? Task.CompletedTask
+            : StartRun(fetcher, options, throwOnError);
 
     /// <summary>
     /// Fetches only when the entry has nothing, which is what server-side prefetching needs: two
@@ -111,26 +88,34 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
     /// has nothing to prefetch.
     /// </summary>
     /// <remarks>
-    /// Retries are disabled for this path regardless of the caller's options. A request that
-    /// fails during server rendering would otherwise hold the response open for the whole
-    /// backoff sequence; the entry is reset instead, so the server renders the loading state and
-    /// the client — which receives no value for the key — fetches and retries as usual.
+    /// Retries are disabled for this path regardless of the caller's options, and the failure is
+    /// thrown rather than only recorded. A request that fails during server rendering would
+    /// otherwise hold the response open for the whole backoff sequence, and a page rendered
+    /// without data it asked for is a broken page: the exception leaves the prefetch drain, which
+    /// is what turns it into an error response instead.
     /// </remarks>
-    public async Task EnsureLoadedAsync(
-        Func<SwrKey, CancellationToken, Task<TData>> fetcher,
-        SwrOptions options)
+    public Task EnsureLoadedAsync(Func<SwrKey, CancellationToken, Task<TData>> fetcher, SwrOptions options)
     {
-        if (PeekState().HasData)
+        var state = PeekState();
+        if (state.HasData)
         {
-            return;
+            return Task.CompletedTask;
         }
 
-        await RevalidateAsync(fetcher, options with { ShouldRetryOnError = false }, force: false);
+        // Never joins a run in flight. One started from Setup — an explicit revalidation or a
+        // mutation — carries its caller's retries and swallows its failure, which are the two
+        // things a server run must not do.
+        CancelPending();
 
-        if (!PeekState().HasData)
+        // A request for this key already failed on this render. Another would only cost the
+        // upstream a second call for a response that is not going to be served; the same failure
+        // is raised again so the drain sees it whichever callback reaches the key first.
+        if (state.Error is { } error)
         {
-            _state.Value = SwrEntryState<TData>.Empty;
+            ExceptionDispatchInfo.Throw(error);
         }
+
+        return StartRun(fetcher, options with { ShouldRetryOnError = false }, throwOnError: true);
     }
 
     /// <summary>
@@ -145,10 +130,9 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
         SwrOptions options)
     {
         CancelPending();
-        _hydrated = false;
         _state.Value = new SwrEntryState<TData>(true, data, null);
 
-        return revalidate ? StartRun(fetcher, options) : Task.CompletedTask;
+        return revalidate ? StartRun(fetcher, options, throwOnError: false) : Task.CompletedTask;
     }
 
     /// <summary>
@@ -158,8 +142,16 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
     public void Hydrate(JsonNode? node)
     {
         _state.Value = new SwrEntryState<TData>(true, JsonSerializer.Deserialize(node, typeInfo), null);
-        _hydrated = true;
+        IsHydrated = true;
     }
+
+    /// <summary>
+    /// The value was seeded from the page's payload. Only consulted while the cache's hydration
+    /// pass is open, which is why it is never cleared: a value the cache held from before the
+    /// page — one an earlier host fetched into a cache that outlived it — is not the server's
+    /// render, and must not be mistaken for it just because it is present.
+    /// </summary>
+    public bool IsHydrated { get; private set; }
 
     public bool TryDehydrate(out JsonNode? node)
     {
@@ -210,16 +202,12 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
         _isValidating.Value = false;
     }
 
-    private Task StartRun(Func<SwrKey, CancellationToken, Task<TData>> fetcher, SwrOptions options)
+    private Task StartRun(Func<SwrKey, CancellationToken, Task<TData>> fetcher, SwrOptions options, bool throwOnError)
     {
-        // Whatever this produces replaces the transferred value, so the entry stops counting as
-        // freshly server-rendered from here on.
-        _hydrated = false;
-
         var run = new Run(new CancellationTokenSource());
         _run = run;
 
-        var task = RunAsync(run, fetcher, options);
+        var task = RunAsync(run, fetcher, options, throwOnError);
         run.Task = task;
 
         return task;
@@ -228,7 +216,8 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
     private async Task RunAsync(
         Run run,
         Func<SwrKey, CancellationToken, Task<TData>> fetcher,
-        SwrOptions options)
+        SwrOptions options,
+        bool throwOnError)
     {
         var token = run.Cts.Token;
         var attempt = 0;
@@ -269,6 +258,11 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
 
                     if (!options.ShouldRetryOnError || attempt >= options.ErrorRetryCount)
                     {
+                        if (throwOnError)
+                        {
+                            throw;
+                        }
+
                         return;
                     }
 

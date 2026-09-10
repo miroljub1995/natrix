@@ -15,7 +15,7 @@ namespace Natrix.Swr.Tests;
 
 /// <summary>
 /// A render root that renders nothing. The resource under test never touches the DOM, so the
-/// tests only need the component lifecycle — mount, unmount, mounted hooks — and not any output.
+/// tests only need the component lifecycle — mount and unmount — and not any output.
 /// </summary>
 internal sealed class NullRenderRoot : IRenderRoot
 {
@@ -52,7 +52,7 @@ internal sealed class ProbeProps
 
 /// <summary>
 /// Minimal component whose only job is to run a test's setup body under real component
-/// semantics: its own feature layer, its own effect scope, and lifecycle hooks.
+/// semantics: its own feature layer and its own effect scope.
 /// </summary>
 internal sealed class Probe : BaseComponent<ProbeProps, NoEvents, NoSlots, NoExpose>
 {
@@ -67,16 +67,22 @@ internal sealed class Probe : BaseComponent<ProbeProps, NoEvents, NoSlots, NoExp
 /// <summary>
 /// Mounts a component tree with SWR registered, the way an application host would.
 /// </summary>
+/// <remarks>
+/// A resource in the browser defers its first request for a key to the next cycle of the event
+/// loop. Here that cycle is run by hand — <see cref="Mount"/> runs it once the tree is up, and
+/// <see cref="Pump"/> runs it after anything else that rebinds a key — so a test observes the
+/// deferral where it matters and never waits on a real scheduler.
+/// </remarks>
 internal sealed class TestApp : IDisposable
 {
     private readonly NatrixHostBuilder _builder;
+    private readonly Queue<TaskCompletionSource> _deferred = new();
     private IDisposable? _mounted;
     private IFeatureCollection? _mountedFeatures;
 
     public TestApp(
         SwrOptions? defaultOptions = null,
         SwrCache? cache = null,
-        bool lifecycleHooks = true,
         bool swr = true,
         bool serialization = true,
         JsonSerializerOptions? serializerOptions = null,
@@ -100,13 +106,6 @@ internal sealed class TestApp : IDisposable
         if (swr)
         {
             _builder.UseSwr(defaultOptions, cache, serializerOptions);
-        }
-
-        // Present only where a live tree is mounted, which is what tells a resource whether it is
-        // rendering on the client or on the server.
-        if (lifecycleHooks)
-        {
-            _builder.UseLifecycleHooks();
         }
 
         // Registered the way an application that already configures serialization would, rather
@@ -143,7 +142,12 @@ internal sealed class TestApp : IDisposable
         ?? _mountedFeatures?.Get<SwrFeature>()?.Cache
         ?? throw new InvalidOperationException("Mount first, or pass a cache in.");
 
-    public TestApp Mount(Func<IComponent> root)
+    /// <summary>
+    /// Mounts the tree and, unless <paramref name="pump"/> is <c>false</c>, runs the cycle that
+    /// follows — the one in which resources issue their first requests. Pass <c>false</c> to look
+    /// at the tree between the two.
+    /// </summary>
+    public TestApp Mount(Func<IComponent> root, bool pump = true)
     {
         // Captured from inside the tree, which is the only place a feature published by middleware
         // is visible - the host's own collection never sees it.
@@ -152,20 +156,48 @@ internal sealed class TestApp : IDisposable
             Configure = _ => { },
             Child = () =>
             {
-                _mountedFeatures = AppFeatures.Current;
+                var features = AppFeatures.Current;
+                _mountedFeatures = features;
+
+                if (features?.Get<SwrFeature>() is { } feature)
+                {
+                    feature.YieldAsync = DeferAsync;
+                }
+
                 return next();
             },
         });
 
         _mounted = _builder.UseRootComponent(root).Build().Mount();
-        return this;
+        return pump ? Pump() : this;
     }
 
     /// <summary>
     /// Mounts a single probe running <paramref name="body"/>.
     /// </summary>
-    public TestApp MountProbe(Action body) =>
-        Mount(() => new Probe { Props = new ProbeProps { Body = body } });
+    public TestApp MountProbe(Action body, bool pump = true) =>
+        Mount(() => new Probe { Props = new ProbeProps { Body = body } }, pump);
+
+    /// <summary>
+    /// Runs everything waiting for the next cycle, and whatever that work defers in turn, until
+    /// nothing is left — the browser's event loop, fast-forwarded to idle.
+    /// </summary>
+    public TestApp Pump()
+    {
+        while (_deferred.TryDequeue(out var cycle))
+        {
+            cycle.SetResult();
+        }
+
+        return this;
+    }
+
+    private Task DeferAsync()
+    {
+        var cycle = new TaskCompletionSource();
+        _deferred.Enqueue(cycle);
+        return cycle.Task;
+    }
 
     public void Dispose() => _mounted?.Dispose();
 }

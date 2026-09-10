@@ -53,7 +53,9 @@ public static partial class SwrResource
     /// </para>
     /// <para>
     /// During server rendering, binding a key enqueues a prefetch the render waits for, so the
-    /// markup ships with the data and the client hydrates it without fetching again.
+    /// markup ships with the data and the client hydrates it without fetching again. Set
+    /// <see cref="SwrOptions.FetchOnServer"/> to <c>false</c> for a resource that should only
+    /// fetch in the browser.
     /// </para>
     /// </remarks>
     /// <exception cref="InvalidOperationException">
