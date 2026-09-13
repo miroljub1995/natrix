@@ -148,8 +148,8 @@ the key; if it can only change whether the request succeeds, it does not.
 | Member | Meaning |
 | --- | --- |
 | `Data` | Cached value for the current key, `default` until one arrives. Stays put across revalidations and failures. |
-| `Error` | Last error, cleared by the next successful fetch. |
-| `IsLoading` | A request is pending or in flight and there is no value yet — the initial load. A subset of `IsValidating`. An error is not a value, so a retry after a failure loads again. |
+| `Error` | Last error, set once a request has given up and cleared by the next successful fetch. |
+| `IsLoading` | A request is in flight and there is no value yet — the initial load, retries included. A subset of `IsValidating`. |
 | `IsValidating` | A request is pending or in flight, retries included — from the moment a key that will be fetched is bound. Also true while refreshing data already on screen. |
 | `Key` | The key currently bound. |
 | `RevalidateAsync()` | Refetches, or joins the request already running. |
@@ -189,9 +189,10 @@ application's defaults rather than layer on them, so a resource that only meant 
 count would silently take `ShouldRetryOnError`, `ErrorRetryInterval` and anything added later from
 the type's own defaults instead of the app's.
 
-`Error` is published as soon as an attempt fails, while retries may still be pending —
-`IsValidating` stays true for the whole sequence, and so does `IsLoading` when no value has
-arrived yet, since a retry is still the initial load. Both drop once the retries give up.
+`Error` is published only once the retries give up, as in TanStack Query rather than React SWR,
+which reports each attempt's failure as it happens. Until then the key is still being worked on:
+`IsValidating` stays true for the whole sequence, and so does `IsLoading` when no value has arrived
+yet, since a retry is still the initial load. All three settle together on the final attempt.
 
 ## Behaviour worth knowing
 

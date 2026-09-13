@@ -104,12 +104,14 @@ internal sealed class SwrRun<TData>
                         return;
                     }
 
-                    // The last good value is kept on purpose — showing stale data next to an
-                    // error beats blanking the screen.
-                    state.Value = Peek(state) with { Error = exception };
-
+                    // Recorded only once the run gives up, as TanStack Query does rather than
+                    // React SWR: while a retry is still to come the key is being worked on, and
+                    // an error published in the meantime would have a component show a failure
+                    // over its skeleton. The last good value is kept on purpose — showing stale
+                    // data next to an error beats blanking the screen.
                     if (!options.ShouldRetryOnError || attempt >= options.ErrorRetryCount)
                     {
+                        state.Value = Peek(state) with { Error = exception };
                         return;
                     }
 

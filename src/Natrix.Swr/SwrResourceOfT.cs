@@ -186,17 +186,17 @@ public sealed class SwrResource<TData>
     public IReadOnlySignal<TData?> Data { get; }
 
     /// <summary>
-    /// The last error for the current key, cleared by the next successful fetch. Set as soon as
-    /// an attempt fails, while retries may still be pending.
+    /// The last error for the current key, cleared by the next successful fetch. Set only once a
+    /// request has given up: while retries are still to come the key is loading, not failed.
     /// </summary>
     public IReadOnlySignal<Exception?> Error { get; }
 
     /// <summary>
     /// A request is pending or in flight for the current key and there is no value for it yet:
     /// the initial load, as opposed to a refresh of data already on screen. Always a subset of
-    /// <see cref="IsValidating"/>. A failed attempt does not count as a value, so this is
-    /// <c>true</c> again while a retry or an explicit revalidation runs after an error, and
-    /// <c>false</c> once retries are exhausted. Always <c>false</c> for an absent key.
+    /// <see cref="IsValidating"/>. Stays <c>true</c> through a request's retries, and is
+    /// <c>true</c> again while an explicit revalidation runs after an error. Always <c>false</c>
+    /// for an absent key.
     /// </summary>
     public IReadOnlySignal<bool> IsLoading { get; }
 

@@ -149,11 +149,12 @@ public class SwrResourceTests
     }
 
     [Test]
-    public async Task Loads_again_while_retrying_after_a_failure_with_no_data()
+    public async Task Keeps_loading_and_withholds_the_error_while_retrying()
     {
-        // An error is not a value: the key still has nothing to show, and a request for it is in
-        // flight, which is exactly the initial load. Once the retries give up there is no request
-        // either, and the error alone is what is left.
+        // A failed attempt with a retry to come is not an outcome: the key still has nothing to
+        // show, a request for it is in flight, and nothing has been decided — so it is loading,
+        // and not yet failed. Once the retries give up there is no request either, and the error
+        // alone is what is left.
         var completions = new List<TaskCompletionSource<string>>();
         var fetcher = new RecordingFetcher<string>((_, _) =>
         {
@@ -170,7 +171,7 @@ public class SwrResourceTests
 
         // The retry is in flight.
         await Assert.That(fetcher.CallCount).IsEqualTo(2);
-        await Assert.That(resource!.Error.Value?.Message).IsEqualTo("boom 0");
+        await Assert.That(resource!.Error.Value).IsNull();
         await Assert.That(resource.IsValidating.Value).IsTrue();
         await Assert.That(resource.IsLoading.Value).IsTrue();
 

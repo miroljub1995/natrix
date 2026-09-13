@@ -398,9 +398,9 @@ public class SwrSsrTests
 
         await Assert.That(() => server.DrainAsync(prefetch)).Throws<AggregateException>();
 
-        // The prefetch raises the failure the Setup run already recorded, and cancels the retry
-        // that run was waiting on, instead of asking the upstream again.
-        await Assert.That(fetcher.CallCount).IsEqualTo(1);
+        // The Setup run had not published its failure — it was waiting on a retry — so the
+        // prefetch cancels it and asks the upstream itself, once, and raises that answer.
+        await Assert.That(fetcher.CallCount).IsEqualTo(2);
         await Assert.That(fetcher.Tokens[0].IsCancellationRequested).IsTrue();
     }
 
