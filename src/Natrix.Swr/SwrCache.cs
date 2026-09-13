@@ -65,6 +65,20 @@ public sealed class SwrCache
     internal SwrKeyEncoder KeyEncoder { get; }
 
     /// <summary>
+    /// Defers to the next cycle of the host's event loop. Every request this cache's entries
+    /// start yields through this before it calls its fetcher — see <see cref="SwrRun{TData}"/>.
+    /// On the cache because that is what a host builds, and what its entries have in common.
+    /// Replaced by the tests, which run that cycle by hand.
+    /// </summary>
+    internal Func<Task> YieldAsync { get; set; } = static async () => await Task.Yield();
+
+    /// <summary>
+    /// Read through to the current <see cref="YieldAsync"/> rather than captured, so a cache
+    /// handed to a later host defers on that host's loop for the entries it already holds.
+    /// </summary>
+    private Task YieldThroughAsync() => YieldAsync();
+
+    /// <summary>
     /// Number of keys currently held.
     /// </summary>
     public int Count
@@ -172,7 +186,7 @@ public sealed class SwrCache
                         $"Requested {typeof(SwrCacheEntry<TData>)}, found {existing.GetType()}.");
             }
 
-            var entry = new SwrCacheEntry<TData>(key.Key, typeInfo);
+            var entry = new SwrCacheEntry<TData>(key.Key, typeInfo, YieldThroughAsync);
 
             if (_pending is not null && _pending.Remove(key.CacheKey, out var node))
             {

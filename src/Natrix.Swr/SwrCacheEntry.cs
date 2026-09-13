@@ -8,37 +8,38 @@ namespace Natrix.Swr;
 
 /// <summary>
 /// Everything the library knows about one key: the last value fetched for it, the last error,
-/// whether a request is in flight, and the request itself.
+/// and the request in flight for it.
 ///
 /// State lives here — on the entry shared by every resource using the key — rather than on the
 /// resources, which is what makes two components asking for <c>["user", "1"]</c> issue one
 /// request and see one another's updates. The fetcher and options are <em>not</em> stored: they
 /// belong to whichever resource triggered the current request, and are passed in per call.
 /// </summary>
-internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeInfo) : ISwrCacheEntry
+internal sealed class SwrCacheEntry<TData> : ISwrCacheEntry
 {
-    /// <summary>
-    /// One request, from the first attempt to the last retry. Holds the cancellation source that
-    /// supersedes it and the task callers join for deduplication.
-    /// </summary>
-    private sealed class Run(CancellationTokenSource cts)
-    {
-        public CancellationTokenSource Cts { get; } = cts;
-
-        /// <summary>
-        /// Assigned immediately after <c>RunAsync</c> is started, so it is only null during the
-        /// synchronous prefix of that call.
-        /// </summary>
-        public Task? Task { get; set; }
-    }
-
     private readonly Signal<SwrEntryState<TData>> _state = new(SwrEntryState<TData>.Empty);
-    private readonly Signal<bool> _isValidating = new(false);
 
-    private Run? _run;
+    /// <summary>
+    /// The request in flight, or null when there is none. A signal rather than a field with a
+    /// separate "validating" flag beside it: the flag would only ever mirror whether this is
+    /// set, and a mirror is one more thing to keep in step across every start, finish and
+    /// cancellation.
+    /// </summary>
+    private readonly Signal<SwrRun<TData>?> _run = new(null);
+
+    private readonly JsonTypeInfo<TData> _typeInfo;
+    private readonly Func<Task> _yieldAsync;
     private int _subscribers;
 
-    public SwrKey Key => key;
+    public SwrCacheEntry(SwrKey key, JsonTypeInfo<TData> typeInfo, Func<Task> yieldAsync)
+    {
+        Key = key;
+        _typeInfo = typeInfo;
+        _yieldAsync = yieldAsync;
+        IsValidating = new Computed<bool>(() => _run.Value is not null);
+    }
+
+    public SwrKey Key { get; }
 
     public IReadOnlySignal<SwrEntryState<TData>> State => _state;
 
@@ -46,7 +47,7 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
     /// True from the moment a request starts until it succeeds or gives up — retries included,
     /// since the entry is still working on the value.
     /// </summary>
-    public IReadOnlySignal<bool> IsValidating => _isValidating;
+    public IReadOnlySignal<bool> IsValidating { get; }
 
     public void AddSubscriber() => Interlocked.Increment(ref _subscribers);
 
@@ -69,18 +70,12 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
     /// This is the deduplication: a hundred components mounting with the same key issue one
     /// request. <see cref="MutateAsync"/> is the one operation that must not join — a response
     /// already on its way would undo the mutation — and it cancels and restarts on its own.
+    /// A failure is recorded on the entry, not thrown.
     /// </summary>
-    /// <param name="throwOnError">
-    /// Rethrows the failure once retries are exhausted, instead of only recording it on the
-    /// entry. The error is recorded either way.
-    /// </param>
-    public Task RevalidateAsync(
-        Func<SwrKey, CancellationToken, Task<TData>> fetcher,
-        SwrOptions options,
-        bool throwOnError) =>
-        _run is { } existing
-            ? existing.Task ?? Task.CompletedTask
-            : StartRun(fetcher, options, throwOnError);
+    public Task RevalidateAsync(Func<SwrKey, CancellationToken, Task<TData>> fetcher, SwrOptions options) =>
+        PeekRun() is { } existing
+            ? existing.Task
+            : StartRun(fetcher, options);
 
     /// <summary>
     /// Fetches only when the entry has nothing, which is what server-side prefetching needs: two
@@ -94,12 +89,12 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
     /// without data it asked for is a broken page: the exception leaves the prefetch drain, which
     /// is what turns it into an error response instead.
     /// </remarks>
-    public Task EnsureLoadedAsync(Func<SwrKey, CancellationToken, Task<TData>> fetcher, SwrOptions options)
+    public async Task EnsureLoadedAsync(Func<SwrKey, CancellationToken, Task<TData>> fetcher, SwrOptions options)
     {
         var state = PeekState();
         if (state.HasData)
         {
-            return Task.CompletedTask;
+            return;
         }
 
         // Never joins a run in flight. One started from Setup — an explicit revalidation or a
@@ -115,7 +110,16 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
             ExceptionDispatchInfo.Throw(error);
         }
 
-        return StartRun(fetcher, options with { ShouldRetryOnError = false }, throwOnError: true);
+        await StartRun(fetcher, options with { ShouldRetryOnError = false });
+
+        // The run writes its outcome rather than throwing it. There was no value when this
+        // started, so one now means success, an error without one means the single attempt
+        // failed, and neither means the run was superseded — which is the next callback's
+        // problem, not this one's.
+        if (PeekState() is { HasData: false, Error: { } failure })
+        {
+            ExceptionDispatchInfo.Throw(failure);
+        }
     }
 
     /// <summary>
@@ -132,7 +136,7 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
         CancelPending();
         _state.Value = new SwrEntryState<TData>(true, data, null);
 
-        return revalidate ? StartRun(fetcher, options, throwOnError: false) : Task.CompletedTask;
+        return revalidate ? StartRun(fetcher, options) : Task.CompletedTask;
     }
 
     /// <summary>
@@ -141,7 +145,7 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
     /// </summary>
     public void Hydrate(JsonNode? node)
     {
-        _state.Value = new SwrEntryState<TData>(true, JsonSerializer.Deserialize(node, typeInfo), null);
+        _state.Value = new SwrEntryState<TData>(true, JsonSerializer.Deserialize(node, _typeInfo), null);
         IsHydrated = true;
     }
 
@@ -163,7 +167,7 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
             return false;
         }
 
-        node = JsonSerializer.SerializeToNode(state.Data!, typeInfo);
+        node = JsonSerializer.SerializeToNode(state.Data!, _typeInfo);
         return true;
     }
 
@@ -175,8 +179,9 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
 
     /// <summary>
     /// The entry's own reads must never register a dependency. They happen on whatever stack
-    /// resumed the request — which, when a fetch completes synchronously inside an effect, is a
-    /// stack with that unrelated effect installed as the active consumer.
+    /// resumed a request — which, when a fetch completes inside an effect, is a stack with that
+    /// unrelated effect installed as the active consumer — or on the stack of a resource's
+    /// imperative operation, which user code may well call from inside an effect.
     /// </summary>
     private SwrEntryState<TData> PeekState()
     {
@@ -184,111 +189,64 @@ internal sealed class SwrCacheEntry<TData>(SwrKey key, JsonTypeInfo<TData> typeI
         return _state.Value;
     }
 
+    /// <inheritdoc cref="PeekState"/>
+    private SwrRun<TData>? PeekRun()
+    {
+        using var untracked = new UntrackedScope();
+        return _run.Value;
+    }
+
     /// <summary>
     /// Abandons the request in flight, if any. Safe to call when there is none.
     /// </summary>
     public void CancelPending()
     {
-        var run = _run;
+        var run = PeekRun();
         if (run is null)
         {
             return;
         }
 
-        // Cleared before cancelling so the run's own teardown sees it is no longer current and
-        // leaves the flags to whoever comes next.
-        _run = null;
-        run.Cts.Cancel();
-        _isValidating.Value = false;
+        // Cleared before cancelling, so the slot is free for whoever comes next by the time the
+        // abandoned run's continuations see the cancellation.
+        _run.Value = null;
+        run.Cancel();
     }
 
-    private Task StartRun(Func<SwrKey, CancellationToken, Task<TData>> fetcher, SwrOptions options, bool throwOnError)
+    private Task StartRun(Func<SwrKey, CancellationToken, Task<TData>> fetcher, SwrOptions options)
     {
-        var run = new Run(new CancellationTokenSource());
-        _run = run;
+        var run = new SwrRun<TData>(Key, _state, fetcher, options, _yieldAsync);
 
-        var task = RunAsync(run, fetcher, options, throwOnError);
-        run.Task = task;
+        // The run yields before it does anything, so it is still in flight here whatever the
+        // fetcher does: publishing it after construction never publishes a finished run.
+        _run.Value = run;
+        _ = ClearWhenDoneAsync(run);
 
-        return task;
+        return run.Task;
     }
 
-    private async Task RunAsync(
-        Run run,
-        Func<SwrKey, CancellationToken, Task<TData>> fetcher,
-        SwrOptions options,
-        bool throwOnError)
+    /// <summary>
+    /// Frees the slot when its run finishes. Registered before the run's task is handed to
+    /// anyone, so it is the first continuation to see the outcome, and a caller awaiting the run
+    /// finds the slot already cleared.
+    /// </summary>
+    private async Task ClearWhenDoneAsync(SwrRun<TData> run)
     {
-        var token = run.Cts.Token;
-        var attempt = 0;
-
-        _isValidating.Value = true;
-
         try
         {
-            while (true)
-            {
-                try
-                {
-                    // Deliberately not ConfigureAwait(false): the continuation writes signals,
-                    // which re-runs effects and touches the DOM, so it has to come back to the
-                    // context the request started on.
-                    var data = await fetcher(key, token);
-
-                    if (token.IsCancellationRequested)
-                    {
-                        return;
-                    }
-
-                    _state.Value = new SwrEntryState<TData>(true, data, null);
-                    return;
-                }
-                catch (Exception exception)
-                {
-                    // Covers the fetcher observing our token as much as it does a real failure;
-                    // either way a superseded run must not touch the entry.
-                    if (token.IsCancellationRequested)
-                    {
-                        return;
-                    }
-
-                    // The last good value is kept on purpose — showing stale data next to an
-                    // error beats blanking the screen.
-                    _state.Value = PeekState() with { Error = exception };
-
-                    if (!options.ShouldRetryOnError || attempt >= options.ErrorRetryCount)
-                    {
-                        if (throwOnError)
-                        {
-                            throw;
-                        }
-
-                        return;
-                    }
-
-                    try
-                    {
-                        await Task.Delay(options.GetRetryDelay(attempt), token);
-                    }
-                    catch (OperationCanceledException)
-                    {
-                        return;
-                    }
-
-                    attempt++;
-                }
-            }
+            await run.Task;
         }
-        finally
+        catch (Exception)
         {
-            // A superseded run owns none of this any more; the run that replaced it does.
-            if (ReferenceEquals(_run, run))
-            {
-                _run = null;
-                _isValidating.Value = false;
-            }
+            // A run records its failures rather than throwing them. What can still fault the
+            // task is an effect throwing while the outcome lands, which is not the slot's
+            // business: the run is over either way.
+        }
 
-            run.Cts.Dispose();
+        // A superseded run owns none of this any more; the run that replaced it does.
+        if (ReferenceEquals(PeekRun(), run))
+        {
+            _run.Value = null;
         }
     }
 }

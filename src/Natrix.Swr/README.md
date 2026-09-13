@@ -148,9 +148,9 @@ the key; if it can only change whether the request succeeds, it does not.
 | Member | Meaning |
 | --- | --- |
 | `Data` | Cached value for the current key, `default` until one arrives. Stays put across revalidations and failures. |
-| `Error` | Last error, cleared by the next successful fetch. |
-| `IsLoading` | Nothing to show yet: no value and no error for this key. |
-| `IsValidating` | A request is in flight, retries included. Also true while refreshing data already on screen. |
+| `Error` | Last error, set once a request has given up and cleared by the next successful fetch. |
+| `IsLoading` | A request is in flight and there is no value yet — the initial load, retries included. A subset of `IsValidating`. |
+| `IsValidating` | A request is pending or in flight, retries included — from the moment a key that will be fetched is bound. Also true while refreshing data already on screen. |
 | `Key` | The key currently bound. |
 | `RevalidateAsync()` | Refetches, or joins the request already running. |
 | `MutateAsync(value)` | Writes a value into the cache — every component on that key updates — and refetches to confirm it. |
@@ -189,13 +189,17 @@ application's defaults rather than layer on them, so a resource that only meant 
 count would silently take `ShouldRetryOnError`, `ErrorRetryInterval` and anything added later from
 the type's own defaults instead of the app's.
 
-`Error` is published as soon as an attempt fails, while retries may still be pending —
-`IsValidating` stays true for the whole sequence.
+`Error` is published only once the retries give up, as in TanStack Query rather than React SWR,
+which reports each attempt's failure as it happens. Until then the key is still being worked on:
+`IsValidating` stays true for the whole sequence, and so does `IsLoading` when no value has arrived
+yet, since a retry is still the initial load. All three settle together on the final attempt.
 
 ## Behaviour worth knowing
 
-**Nothing is fetched synchronously during `Setup`.** Binding a key in the browser issues its
-request on the next cycle of the event loop. `Setup` runs inside the parent's render, and a fetcher
+**The fetcher is never called synchronously.** Every request — the one a binding issues, an
+explicit `RevalidateAsync`, the refetch after `MutateAsync` — yields to the next cycle of the event
+loop before it calls the fetcher. `IsValidating` is true from the moment the request starts;
+`MutateAsync` writes its value immediately. `Setup` runs inside the parent's render, and a fetcher
 that completed on the spot would otherwise write into the middle of it — and hand the first render
 of a hydrated page a value the server's markup never had. The deferral makes the first render of any
 key the page did not carry the loading state, whatever the fetcher's speed.

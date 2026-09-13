@@ -37,13 +37,6 @@ public sealed class SwrFeature
     public SwrOptions DefaultOptions { get; }
 
     /// <summary>
-    /// Defers to the next cycle of the host's event loop. A resource in the browser issues its
-    /// first request for a key through this rather than from inside the render that bound it.
-    /// Replaced by the tests, which run that cycle by hand.
-    /// </summary>
-    internal Func<Task> YieldAsync { get; set; } = static async () => await Task.Yield();
-
-    /// <summary>
     /// Resolves the contract a key segment of <paramref name="type"/> encodes under and discards
     /// it, for the typed <c>Use</c> overloads to call before they build anything.
     /// </summary>
