@@ -68,10 +68,11 @@ internal sealed class Probe : BaseComponent<ProbeProps, NoEvents, NoSlots, NoExp
 /// Mounts a component tree with SWR registered, the way an application host would.
 /// </summary>
 /// <remarks>
-/// A resource in the browser defers its first request for a key to the next cycle of the event
-/// loop. Here that cycle is run by hand — <see cref="Mount"/> runs it once the tree is up, and
-/// <see cref="Pump"/> runs it after anything else that rebinds a key — so a test observes the
-/// deferral where it matters and never waits on a real scheduler.
+/// Every request yields to the next cycle of the event loop before it calls its fetcher. Here
+/// that cycle is run by hand — <see cref="Mount"/> runs it once the tree is up, <see cref="Pump"/>
+/// runs it after anything else that starts a request, and <see cref="DrainAsync"/> runs it
+/// alongside the server's prefetch drain — so a test observes the deferral where it matters and
+/// never waits on a real scheduler.
 /// </remarks>
 internal sealed class TestApp : IDisposable
 {
@@ -161,7 +162,7 @@ internal sealed class TestApp : IDisposable
 
                 if (features?.Get<SwrFeature>() is { } feature)
                 {
-                    feature.YieldAsync = DeferAsync;
+                    feature.Cache.YieldAsync = DeferAsync;
                 }
 
                 return next();
@@ -190,6 +191,34 @@ internal sealed class TestApp : IDisposable
         }
 
         return this;
+    }
+
+    /// <summary>
+    /// Runs the cycle an imperative operation deferred its request to, and hands the operation
+    /// back to be awaited: <c>await app.Pumped(resource.RevalidateAsync())</c>.
+    /// </summary>
+    public Task Pumped(Task operation)
+    {
+        Pump();
+        return operation;
+    }
+
+    /// <summary>
+    /// Drains the server's prefetch queue the way the SSR host does, running the deferred cycle
+    /// as it goes: each prefetch's request yields before it fetches, and on this host that yield
+    /// lands on the same hand-run queue.
+    /// </summary>
+    public async Task DrainAsync(ServerPrefetchFeature prefetch)
+    {
+        var drain = prefetch.WaitForCompletionAsync();
+
+        while (!drain.IsCompleted)
+        {
+            Pump();
+            await Task.Yield();
+        }
+
+        await drain;
     }
 
     private Task DeferAsync()

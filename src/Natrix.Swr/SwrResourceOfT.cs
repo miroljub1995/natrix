@@ -15,9 +15,10 @@ namespace Natrix.Swr;
 /// <remarks>
 /// <para>
 /// <b>Nothing is fetched synchronously during <c>Setup</c>.</b> In the browser, binding a key
-/// issues its request on the next cycle of the event loop. Setup runs inside the parent's render,
-/// and a fetcher that completed on the spot would otherwise write the entry's signals into the
-/// middle of it — and hand the first client render a value the server's markup never had.
+/// starts its request at once, but the request itself yields to the event loop before it calls
+/// the fetcher — see <see cref="SwrRun{TData}"/>. Setup runs inside the parent's render, and a
+/// fetcher that completed on the spot would otherwise write the entry's signals into the middle
+/// of it — and hand the first client render a value the server's markup never had.
 /// </para>
 /// <para>
 /// <b>Server rendering fetches only through the prefetch queue</b>, and only when
@@ -66,15 +67,26 @@ public sealed class SwrResource<TData>
 
         Data = new Computed<TData?>(() => entrySignal.Value is { } entry ? entry.State.Value.Data : default);
         Error = new Computed<Exception?>(() => entrySignal.Value?.State.Value.Error);
-        IsValidating = new Computed<bool>(() => entrySignal.Value?.IsValidating.Value ?? false);
         Key = new Computed<SwrKey>(() => entrySignal.Value?.Key ?? SwrKey.None);
 
-        // "Loading" is the absence of an outcome, not the presence of a request: a key with
-        // neither data nor error has nothing to render yet, whether its request is already in
-        // flight or still waiting for the next cycle. Without that, a server-rendered
-        // tree — which never fetches — would show its empty state instead of its skeleton.
+        // In the browser a binding starts its request on the spot, so the entry's own run is the
+        // whole answer. On the server the request for a bound key that has no value is still to
+        // come — from the prefetch drain, or for a client-only resource from the browser, which
+        // binds the key with nothing in the payload for it and fetches — so "no value yet" is
+        // "being fetched", and the render shows the skeleton rather than an empty state the
+        // client's first render would never reproduce. Once the value is there, whichever
+        // resource prefetched it, the client hydrates it without a request, and this agrees.
+        var isServer = serverPrefetch is not null;
+
+        IsValidating = new Computed<bool>(() =>
+            entrySignal.Value is { } entry
+            && (entry.IsValidating.Value || (isServer && !entry.State.Value.HasData)));
+
+        // React SWR's definition: a request for a key that has no value yet. A subset of
+        // IsValidating — the same request, minus the ones that only refresh what is already on
+        // screen. An error is not a value, so a retry after a failure loads again.
         IsLoading = new Computed<bool>(() =>
-            entrySignal.Value is { } entry && entry.State.Value is { HasData: false, Error: null });
+            IsValidating.Value && entrySignal.Value is { } entry && !entry.State.Value.HasData);
 
         // Through a computed rather than straight off the factory, because the two answer
         // different questions: the factory re-runs whenever anything it read changed, while the
@@ -144,7 +156,14 @@ public sealed class SwrResource<TData>
 
                 if (!hydrated)
                 {
-                    _ = RevalidateNextCycleAsync(entry, feature.YieldAsync);
+                    // Started here, inside the parent's render, which is safe because the run
+                    // yields before it calls the fetcher: the only thing written into the render
+                    // is the entry's "in flight" state. A request already running for the key is
+                    // joined instead. If the key moves on before the cycle, releasing the claim
+                    // cancels the run — unless another component still holds the key, in which
+                    // case the request is theirs. Not awaited: it never faults on this path, and
+                    // the entry owns its lifetime.
+                    _ = entry.RevalidateAsync(fetcher, options);
                 }
             }
 
@@ -157,27 +176,6 @@ public sealed class SwrResource<TData>
                 _entry = null;
             });
         });
-    }
-
-    /// <summary>
-    /// The request a binding issues in the browser, one cycle later. It is started from the effect
-    /// that bound the key — during <c>Setup</c>, that effect is running inside the parent's render
-    /// — so nothing may happen synchronously: a fetcher that completed on the spot would write the
-    /// entry's signals into the middle of that render, and hand the first client render a value
-    /// the server's markup never had. Deferring keeps that first render at the loading state the
-    /// server rendered, whether the fetcher is slow or instant.
-    /// </summary>
-    private async Task RevalidateNextCycleAsync(SwrCacheEntry<TData> entry, Func<Task> yieldAsync)
-    {
-        await yieldAsync();
-
-        // The key may have moved on, or the component gone, in the meantime. The binding that
-        // replaced this one issued its own request, and an entry nobody holds has no audience.
-        // Not awaited: the run never faults on this path, and the entry owns its lifetime.
-        if (ReferenceEquals(_entry, entry))
-        {
-            _ = entry.RevalidateAsync(_fetcher, _options, throwOnError: false);
-        }
     }
 
     /// <summary>
@@ -194,14 +192,19 @@ public sealed class SwrResource<TData>
     public IReadOnlySignal<Exception?> Error { get; }
 
     /// <summary>
-    /// Nothing to render yet: no value and no error for the current key. Distinct from
-    /// <see cref="IsValidating"/>, which is also true while refreshing data that is already on
-    /// screen. Always <c>false</c> for an absent key.
+    /// A request is pending or in flight for the current key and there is no value for it yet:
+    /// the initial load, as opposed to a refresh of data already on screen. Always a subset of
+    /// <see cref="IsValidating"/>. A failed attempt does not count as a value, so this is
+    /// <c>true</c> again while a retry or an explicit revalidation runs after an error, and
+    /// <c>false</c> once retries are exhausted. Always <c>false</c> for an absent key.
     /// </summary>
     public IReadOnlySignal<bool> IsLoading { get; }
 
     /// <summary>
     /// A request for the current key is in flight, including the gaps between error retries.
+    /// <c>true</c> from the moment a key that will be fetched is bound until that request
+    /// succeeds or gives up. On the server, also <c>true</c> for a bound key with no value yet:
+    /// its request is coming, from the prefetch drain or from the browser.
     /// </summary>
     public IReadOnlySignal<bool> IsValidating { get; }
 
@@ -213,15 +216,17 @@ public sealed class SwrResource<TData>
 
     /// <summary>
     /// Refetches the current key, or joins the request already in flight for it. A no-op while
-    /// paused.
+    /// paused. The fetcher is called on the next cycle of the event loop, never before this
+    /// returns.
     /// </summary>
     public Task RevalidateAsync() =>
-        _entry?.RevalidateAsync(_fetcher, _options, throwOnError: false) ?? Task.CompletedTask;
+        _entry?.RevalidateAsync(_fetcher, _options) ?? Task.CompletedTask;
 
     /// <summary>
     /// Writes <paramref name="data"/> into the cache for the current key, so every component
     /// using it updates at once, and by default refetches to confirm it against the server.
-    /// A no-op while paused.
+    /// The write is immediate; the refetch calls the fetcher on the next cycle of the event
+    /// loop. A no-op while paused.
     /// </summary>
     /// <param name="revalidate">
     /// <c>false</c> to keep the local value as-is — appropriate when the response of the write

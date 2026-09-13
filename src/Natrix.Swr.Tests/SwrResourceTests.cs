@@ -57,7 +57,8 @@ public class SwrResourceTests
     {
         // Binding happens inside the render that set the component up, and a fetcher that
         // completed on the spot would write into it. So even an instant fetcher leaves the first
-        // render at its loading state, with no request in flight yet.
+        // render at its loading state: the request is in flight, and reported as such, but it
+        // does not call the fetcher until the next cycle.
         var fetcher = new RecordingFetcher<string>((_, _) => Task.FromResult("Ada"));
         SwrResource<string>? resource = null;
 
@@ -66,7 +67,7 @@ public class SwrResourceTests
 
         await Assert.That(fetcher.CallCount).IsEqualTo(0);
         await Assert.That(resource!.IsLoading.Value).IsTrue();
-        await Assert.That(resource.IsValidating.Value).IsFalse();
+        await Assert.That(resource.IsValidating.Value).IsTrue();
 
         app.Pump();
 
@@ -78,8 +79,8 @@ public class SwrResourceTests
     [Test]
     public async Task A_key_that_moved_on_before_its_cycle_is_not_fetched()
     {
-        // The request deferred for the first key has no audience by the time it would run: the
-        // binding that replaced it issued its own.
+        // The request started for the first key is cancelled with the binding that started it,
+        // before its cycle comes: the binding that replaced it issued its own.
         var fetcher = new RecordingFetcher<string>((_, key) => Task.FromResult($"user-{key.Segment<string>(1)}"));
         var userId = new Signal<string>("1");
         SwrResource<string>? resource = null;
@@ -140,10 +141,146 @@ public class SwrResourceTests
         await Assert.That(resource.IsLoading.Value).IsFalse();
         await Assert.That(resource.Data.Value).IsEqualTo("Ada");
 
+        app.Pump();
         completions[1].SetResult("Ada Lovelace");
         await revalidation;
 
         await Assert.That(resource.Data.Value).IsEqualTo("Ada Lovelace");
+    }
+
+    [Test]
+    public async Task Loads_again_while_retrying_after_a_failure_with_no_data()
+    {
+        // An error is not a value: the key still has nothing to show, and a request for it is in
+        // flight, which is exactly the initial load. Once the retries give up there is no request
+        // either, and the error alone is what is left.
+        var completions = new List<TaskCompletionSource<string>>();
+        var fetcher = new RecordingFetcher<string>((_, _) =>
+        {
+            var completion = new TaskCompletionSource<string>();
+            completions.Add(completion);
+            return completion.Task;
+        });
+        SwrResource<string>? resource = null;
+
+        using var app = new TestApp(ImmediateRetries(1));
+        app.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync));
+
+        completions[0].SetException(new InvalidOperationException("boom 0"));
+
+        // The retry is in flight.
+        await Assert.That(fetcher.CallCount).IsEqualTo(2);
+        await Assert.That(resource!.Error.Value?.Message).IsEqualTo("boom 0");
+        await Assert.That(resource.IsValidating.Value).IsTrue();
+        await Assert.That(resource.IsLoading.Value).IsTrue();
+
+        completions[1].SetException(new InvalidOperationException("boom 1"));
+
+        await Assert.That(resource.Error.Value?.Message).IsEqualTo("boom 1");
+        await Assert.That(resource.IsValidating.Value).IsFalse();
+        await Assert.That(resource.IsLoading.Value).IsFalse();
+    }
+
+    [Test]
+    public async Task Explicit_revalidation_after_a_failure_loads_again()
+    {
+        var completions = new List<TaskCompletionSource<string>>();
+        var fetcher = new RecordingFetcher<string>((_, _) =>
+        {
+            var completion = new TaskCompletionSource<string>();
+            completions.Add(completion);
+            return completion.Task;
+        });
+        SwrResource<string>? resource = null;
+
+        using var app = new TestApp(NoRetries);
+        app.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync));
+
+        completions[0].SetException(new InvalidOperationException("boom"));
+
+        await Assert.That(resource!.IsLoading.Value).IsFalse();
+
+        var revalidation = resource.RevalidateAsync();
+
+        await Assert.That(resource.IsLoading.Value).IsTrue();
+        await Assert.That(resource.Error.Value).IsNotNull();
+
+        app.Pump();
+        completions[1].SetResult("Ada");
+        await revalidation;
+
+        await Assert.That(resource.IsLoading.Value).IsFalse();
+        await Assert.That(resource.Error.Value).IsNull();
+        await Assert.That(resource.Data.Value).IsEqualTo("Ada");
+    }
+
+    [Test]
+    public async Task Switching_to_a_cached_key_revalidates_without_loading()
+    {
+        // The second key already has a value from an earlier binding, so moving back to it is a
+        // refresh of what is on screen, not an initial load.
+        var completions = new List<TaskCompletionSource<string>>();
+        var fetcher = new RecordingFetcher<string>((_, _) =>
+        {
+            var completion = new TaskCompletionSource<string>();
+            completions.Add(completion);
+            return completion.Task;
+        });
+        var userId = new Signal<string>("1");
+        SwrResource<string>? resource = null;
+
+        using var app = new TestApp(NoRetries);
+        app.MountProbe(() => resource = SwrResource.Use(() => new SwrKey("user", userId.Value), fetcher.FetchAsync));
+
+        completions[0].SetResult("user-1");
+
+        userId.Value = "2";
+        app.Pump();
+
+        await Assert.That(resource!.IsLoading.Value).IsTrue();
+        await Assert.That(resource.Data.Value).IsNull();
+
+        completions[1].SetResult("user-2");
+
+        userId.Value = "1";
+        app.Pump();
+
+        await Assert.That(fetcher.CallCount).IsEqualTo(3);
+        await Assert.That(resource.Data.Value).IsEqualTo("user-1");
+        await Assert.That(resource.IsValidating.Value).IsTrue();
+        await Assert.That(resource.IsLoading.Value).IsFalse();
+
+        completions[2].SetResult("user-1 again");
+
+        await Assert.That(resource.Data.Value).IsEqualTo("user-1 again");
+        await Assert.That(resource.IsValidating.Value).IsFalse();
+    }
+
+    [Test]
+    public async Task A_rebind_before_the_cycle_does_not_leave_the_old_key_pending()
+    {
+        // The first key's request is cancelled with its binding, before it ever fetches. The
+        // second key's request is its own, and once it lands nothing is validating any more.
+        var fetcher = new RecordingFetcher<string>((_, key) => Task.FromResult($"user-{key.Segment<string>(1)}"));
+        var userId = new Signal<string>("1");
+        SwrResource<string>? resource = null;
+
+        using var app = new TestApp(NoRetries);
+        app.MountProbe(
+            () => resource = SwrResource.Use(() => new SwrKey("user", userId.Value), fetcher.FetchAsync),
+            pump: false);
+
+        userId.Value = "2";
+
+        await Assert.That(resource!.IsValidating.Value).IsTrue();
+        await Assert.That(resource.IsLoading.Value).IsTrue();
+
+        app.Pump();
+
+        await Assert.That(fetcher.CallCount).IsEqualTo(1);
+        await Assert.That(resource.Data.Value).IsEqualTo("user-2");
+        await Assert.That(resource.IsValidating.Value).IsFalse();
+        await Assert.That(resource.IsLoading.Value).IsFalse();
     }
 
     [Test]
@@ -301,7 +438,7 @@ public class SwrResourceTests
 
         unrelated.Value = 1;
 
-        await resource!.RevalidateAsync();
+        await app.Pumped(resource!.RevalidateAsync());
 
         await Assert.That(fetcher.CallCount).IsEqualTo(2);
         await Assert.That(resource.Data.Value).IsEqualTo("Ada 1");
@@ -445,7 +582,7 @@ public class SwrResourceTests
         using var app = new TestApp(NoRetries);
         app.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync));
 
-        await resource!.RevalidateAsync();
+        await app.Pumped(resource!.RevalidateAsync());
 
         await Assert.That(resource.Data.Value).IsEqualTo("Ada");
         await Assert.That(resource.Error.Value?.Message).IsEqualTo("boom");
@@ -565,7 +702,7 @@ public class SwrResourceTests
         using var app = new TestApp(NoRetries);
         app.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync));
 
-        await resource!.MutateAsync("local");
+        await app.Pumped(resource!.MutateAsync("local"));
 
         await Assert.That(fetcher.CallCount).IsEqualTo(2);
         await Assert.That(resource.Data.Value).IsEqualTo("server-1");
@@ -609,6 +746,8 @@ public class SwrResourceTests
 
         await Assert.That(resource.Data.Value).IsEqualTo("local");
 
+        // The confirming request goes out on the next cycle, like any other.
+        app.Pump();
         completions[1].SetResult("server");
         await mutation;
 
@@ -762,7 +901,7 @@ public class SwrResourceTests
             fetcher.FetchAsync));
 
         wide.Value = true;
-        await resource!.RevalidateAsync();
+        await app.Pumped(resource!.RevalidateAsync());
 
         await Assert.That(fetcher.CallCount).IsEqualTo(2);
         await Assert.That(resource.Data.Value).IsEqualTo("Ada 1");

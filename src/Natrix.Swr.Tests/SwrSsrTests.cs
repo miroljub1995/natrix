@@ -32,7 +32,7 @@ public class SwrSsrTests
 
         app.Mount(root);
 
-        await prefetch.WaitForCompletionAsync();
+        await app.DrainAsync(prefetch);
 
         // Through a string, exactly as it travels: the client parses it back out of the page.
         var dehydrated = hydration.Dehydrate().ToJsonString();
@@ -54,15 +54,18 @@ public class SwrSsrTests
 
         app.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync));
 
-        // Nothing has run yet: mounting only registers, the drain is what fetches.
+        // Nothing has run yet: mounting only registers, the drain is what fetches. The render
+        // still reports the key as being fetched, since the prefetch is on its way.
         await Assert.That(fetcher.CallCount).IsEqualTo(0);
         await Assert.That(resource!.IsLoading.Value).IsTrue();
+        await Assert.That(resource.IsValidating.Value).IsTrue();
 
-        await prefetch.WaitForCompletionAsync();
+        await app.DrainAsync(prefetch);
 
         await Assert.That(fetcher.CallCount).IsEqualTo(1);
         await Assert.That(resource.Data.Value).IsEqualTo(new TestUser("Ada", 1843));
         await Assert.That(resource.IsLoading.Value).IsFalse();
+        await Assert.That(resource.IsValidating.Value).IsFalse();
     }
 
     [Test]
@@ -95,7 +98,7 @@ public class SwrSsrTests
             },
         });
 
-        await prefetch.WaitForCompletionAsync();
+        await app.DrainAsync(prefetch);
 
         // The drain runs callbacks one at a time, so deduplicating in-flight requests is not
         // enough here: the second callback has to see the value the first one produced.
@@ -337,7 +340,7 @@ public class SwrSsrTests
 
         client.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync));
 
-        await resource!.RevalidateAsync();
+        await client.Pumped(resource!.RevalidateAsync());
 
         await Assert.That(fetcher.CallCount).IsEqualTo(1);
         await Assert.That(resource.Data.Value).IsEqualTo(new TestUser("Ada", 1844));
@@ -363,7 +366,7 @@ public class SwrSsrTests
 
         server.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync));
 
-        var thrown = await Assert.That(() => prefetch.WaitForCompletionAsync()).Throws<AggregateException>();
+        var thrown = await Assert.That(() => server.DrainAsync(prefetch)).Throws<AggregateException>();
 
         await Assert.That(thrown!.InnerExceptions).HasSingleItem();
         await Assert.That(thrown.InnerExceptions[0]).IsSameReferenceAs(failure);
@@ -393,7 +396,7 @@ public class SwrSsrTests
 
         server.MountProbe(() => _ = SwrResource.Use(["user", "1"], fetcher.FetchAsync).RevalidateAsync());
 
-        await Assert.That(() => prefetch.WaitForCompletionAsync()).Throws<AggregateException>();
+        await Assert.That(() => server.DrainAsync(prefetch)).Throws<AggregateException>();
 
         // The prefetch raises the failure the Setup run already recorded, and cancels the retry
         // that run was waiting on, instead of asking the upstream again.
@@ -432,7 +435,7 @@ public class SwrSsrTests
             },
         });
 
-        var thrown = await Assert.That(() => prefetch.WaitForCompletionAsync()).Throws<AggregateException>();
+        var thrown = await Assert.That(() => server.DrainAsync(prefetch)).Throws<AggregateException>();
 
         // The second callback raises the recorded failure rather than asking the upstream again.
         await Assert.That(fetcher.CallCount).IsEqualTo(1);
@@ -475,7 +478,7 @@ public class SwrSsrTests
 
         server.MountProbe(() => SwrResource.Use(["user", "1"], fetcher.FetchAsync));
 
-        await Assert.That(() => prefetch.WaitForCompletionAsync()).Throws<AggregateException>();
+        await Assert.That(() => server.DrainAsync(prefetch)).Throws<AggregateException>();
 
         await Assert.That(fetcher.CallCount).IsEqualTo(1);
     }
@@ -499,13 +502,14 @@ public class SwrSsrTests
             fetcher.FetchAsync,
             options => options with { FetchOnServer = false }));
 
-        await prefetch.WaitForCompletionAsync();
+        await server.DrainAsync(prefetch);
 
         // The fetcher never runs on the server, and the markup shows the loading state — the same
-        // state the client will render before it fetches.
+        // state the client will render before it fetches. The key is being fetched, just not
+        // here, so it is validating as it will be on the client.
         await Assert.That(fetcher.CallCount).IsEqualTo(0);
         await Assert.That(resource!.IsLoading.Value).IsTrue();
-        await Assert.That(resource.IsValidating.Value).IsFalse();
+        await Assert.That(resource.IsValidating.Value).IsTrue();
 
         var payload = JsonNode.Parse(hydration.Dehydrate().ToJsonString())!.AsObject();
         await Assert.That(payload[SwrFeature.HydrationSection]!.AsObject().Count).IsEqualTo(0);
@@ -617,10 +621,20 @@ public class SwrSsrTests
             },
         });
 
-        await prefetch.WaitForCompletionAsync();
+        // Before the drain the key has no value, and the client-only resource reports the request
+        // that is coming for it, whichever side runs it.
+        await Assert.That(clientOnly!.IsLoading.Value).IsTrue();
+        await Assert.That(clientOnly.IsValidating.Value).IsTrue();
+
+        await server.DrainAsync(prefetch);
 
         await Assert.That(fetcher.CallCount).IsEqualTo(1);
-        await Assert.That(clientOnly!.Data.Value).IsEqualTo(new TestUser("Ada", 1843));
+        await Assert.That(clientOnly.Data.Value).IsEqualTo(new TestUser("Ada", 1843));
+
+        // The value travels with the page and the client hydrates it without a request, so the
+        // markup must not say one is in flight.
+        await Assert.That(clientOnly.IsLoading.Value).IsFalse();
+        await Assert.That(clientOnly.IsValidating.Value).IsFalse();
     }
 
     [Test]
@@ -657,10 +671,11 @@ public class SwrSsrTests
                 options => options with { FetchOnServer = false }),
             pump: false);
 
-        // The first render, the one that has to match the markup.
+        // The first render, the one that has to match the markup: nothing has been fetched, but
+        // the key is being fetched, as the server rendered it.
         await Assert.That(fetcher.CallCount).IsEqualTo(0);
         await Assert.That(resource!.IsLoading.Value).IsTrue();
-        await Assert.That(resource.IsValidating.Value).IsFalse();
+        await Assert.That(resource.IsValidating.Value).IsTrue();
         await Assert.That(resource.Data.Value).IsNull();
 
         client.Pump();
@@ -718,7 +733,7 @@ public class SwrSsrTests
 
         server.MountProbe(() => SwrResource.Use(["user", "1"], fetcher.FetchAsync));
 
-        await prefetch.WaitForCompletionAsync();
+        await server.DrainAsync(prefetch);
 
         var payload = JsonNode.Parse(hydration.Dehydrate().ToJsonString())!.AsObject();
         await Assert.That(payload[SwrFeature.HydrationSection]!.AsObject().Count).IsEqualTo(1);
@@ -754,7 +769,7 @@ public class SwrSsrTests
 
         server.MountProbe(() => SwrResource.Use(["user", "1"], fetcher.FetchAsync));
 
-        await prefetch.WaitForCompletionAsync();
+        await server.DrainAsync(prefetch);
 
         // The empty options in the feature have no metadata for TestUser, so reaching for them
         // would have thrown rather than prefetched.
