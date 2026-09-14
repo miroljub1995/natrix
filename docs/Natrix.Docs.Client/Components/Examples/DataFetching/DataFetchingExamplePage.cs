@@ -23,7 +23,10 @@ public class DataFetchingExamplePage : BaseComponent<NoProps, NoEvents, NoSlots,
                         + "same key, so they share one request and one cached value: switching users refetches "
                         + "once for both, and switching back renders from cache while it revalidates. Break the "
                         + "API to watch the resource retry twice before it surfaces the error, and use "
-                        + "'+1 follower' to write straight into the shared cache entry.").ToConstSignal(),
+                        + "'+1 follower' to write straight into the shared cache entry. The second card binds two users "
+                        + "per component and fetches them in parallel; Grace sits in both pairs, so she is "
+                        + "fetched once for the two of them. The third card is client-only, left for the "
+                        + "browser to load after the page arrives.").ToConstSignal(),
                     GitHubUrl = "https://github.com/miroljub1995/natrix/tree/main/docs/Natrix.Docs.Client/Components/Examples/DataFetching".ToConstSignal(),
                 },
                 Slots = new ExamplePageSlots

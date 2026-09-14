@@ -9,33 +9,52 @@ public class CardHeadingProps
     public required IReadOnlySignal<string> Label { get; init; }
 
     /// <summary>
-    /// Which of the resource's states the card is in: <c>loading</c>, <c>revalidating</c>,
-    /// <c>error</c> or <c>ready</c>.
+    /// The resource's raw <c>IsLoading</c> and <c>IsValidating</c>, shown as their own flags so
+    /// the difference between them can be watched directly.
     /// </summary>
-    public required IReadOnlySignal<string> Status { get; init; }
+    public required IReadOnlySignal<bool> IsLoading { get; init; }
+
+    public required IReadOnlySignal<bool> IsValidating { get; init; }
 }
 
 /// <summary>
-/// A card's title with its status badge. Owns the mapping from status to colour so the card
-/// itself is left describing what to show rather than how to paint it.
+/// A card's title with the resource's two flags. Owns how a flag is painted so the card itself is
+/// left describing what to show rather than how to paint it.
 /// </summary>
 public class CardHeading : BaseComponent<CardHeadingProps, NoEvents, NoSlots, NoExpose>
 {
-    private const string BadgeClass = "rounded-full px-2 py-0.5 text-xs font-medium";
+    // Whole class lists as plain literals: the Tailwind generator collects candidates from string
+    // literals only, so a name that exists just inside an interpolated string gets no CSS.
+    //
+    // A fixed width in ch, sized to the longer "IsValidating=False", keeps a flag from shifting its
+    // neighbours when its value flips; the border is always drawn and only its colour changes, so
+    // it never costs a pixel either.
+    private const string FlagOnClass =
+        "inline-block w-[21ch] rounded-md border px-2 py-0.5 text-center font-mono text-xs border-emerald-500 text-emerald-700 dark:text-emerald-300";
+
+    private const string FlagOffClass =
+        "inline-block w-[21ch] rounded-md border px-2 py-0.5 text-center font-mono text-xs border-transparent text-gray-400 dark:text-gray-500";
 
     protected override IComponent[] Setup(out NoExpose exposed)
     {
         exposed = default;
 
-        var badgeClass = new Computed<string>(() => Props.Status.Value switch
+        // A flag spells out its value, and shows a green border while true, so a glance shows
+        // which of the two a request is currently counted under.
+        static Span Flag(string name, IReadOnlySignal<bool> value) => new()
         {
-            "loading" or "revalidating" =>
-                $"{BadgeClass} bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300",
-            "error" =>
-                $"{BadgeClass} bg-red-100 text-red-800 dark:bg-red-900/40 dark:text-red-300",
-            _ =>
-                $"{BadgeClass} bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300",
-        });
+            Props = new SpanProps
+            {
+                Class = new Computed<string>(() => value.Value ? FlagOnClass : FlagOffClass),
+            },
+            Children =
+            [
+                new DomText
+                {
+                    Text = new Computed<string>(() => $"{name}={(value.Value ? "True" : "False")}"),
+                },
+            ],
+        };
 
         return
         [
@@ -43,7 +62,7 @@ public class CardHeading : BaseComponent<CardHeadingProps, NoEvents, NoSlots, No
             {
                 Props = new DivProps
                 {
-                    Class = "mb-3 flex items-center justify-between gap-2".ToConstSignal(),
+                    Class = "mb-3 flex flex-wrap items-center gap-2".ToConstSignal(),
                 },
                 Children =
                 [
@@ -51,15 +70,12 @@ public class CardHeading : BaseComponent<CardHeadingProps, NoEvents, NoSlots, No
                     {
                         Props = new SpanProps
                         {
-                            Class = "text-sm font-semibold text-gray-500 dark:text-gray-400".ToConstSignal(),
+                            Class = "mr-auto text-sm font-semibold text-gray-500 dark:text-gray-400".ToConstSignal(),
                         },
                         Children = [new DomText { Text = Props.Label }],
                     },
-                    new Span
-                    {
-                        Props = new SpanProps { Class = badgeClass },
-                        Children = [new DomText { Text = Props.Status }],
-                    },
+                    Flag("IsLoading", Props.IsLoading),
+                    Flag("IsValidating", Props.IsValidating),
                 ],
             },
         ];
