@@ -41,6 +41,8 @@ var users = new Dictionary<string, UserProfile>(StringComparer.OrdinalIgnoreCase
     ["ada"] = new("Ada Lovelace", "Mathematician", 1843),
     ["grace"] = new("Grace Hopper", "Rear Admiral", 1959),
     ["linus"] = new("Linus Torvalds", "Kernel maintainer", 1991),
+    ["alan"] = new("Alan Turing", "Cryptanalyst", 1936),
+    ["margaret"] = new("Margaret Hamilton", "Software engineer", 1969),
 };
 
 app.MapGet("/api/users/{id}", async (string id, CancellationToken cancellationToken) =>

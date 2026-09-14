@@ -45,8 +45,7 @@ public class UserCard : BaseComponent<UserCardProps, NoEvents, NoSlots, NoExpose
 
         // Resolved here rather than handed down: the API is infrastructure this component needs,
         // not data its parent has any say over, and every card would want the same instance.
-        var api = AppFeatures.Features.Get<UserApi>()
-            ?? throw new InvalidOperationException($"{nameof(UserApi)} is not registered.");
+        var api = AppFeatures.Features.GetRequired<UserApi>();
 
         var user = SwrResource.Use(
             () => ("docs-demo", "user", Props.UserId.Value),
@@ -55,12 +54,6 @@ public class UserCard : BaseComponent<UserCardProps, NoEvents, NoSlots, NoExpose
                 : api.GetUserAsync(key.Item3, cancellationToken),
             // Only the retry timing differs from the app's defaults; everything else is inherited.
             options => options with { ErrorRetryCount = 2, ErrorRetryInterval = TimeSpan.FromSeconds(1) });
-
-        var status = new Computed<string>(() =>
-            user.IsLoading.Value ? "loading"
-            : user.IsValidating.Value ? "revalidating"
-            : user.Error.Value is not null ? "error"
-            : "ready");
 
         var hasError = new Computed<bool>(() => user.Error.Value is not null);
         var hasProfile = new Computed<bool>(() => user.Data.Value is not null);
@@ -77,7 +70,12 @@ public class UserCard : BaseComponent<UserCardProps, NoEvents, NoSlots, NoExpose
                 [
                     new CardHeading
                     {
-                        Props = new CardHeadingProps { Label = Props.Label, Status = status },
+                        Props = new CardHeadingProps
+                        {
+                            Label = Props.Label,
+                            IsLoading = user.IsLoading,
+                            IsValidating = user.IsValidating,
+                        },
                     },
 
                     // An error does not replace what is already on screen. A failed revalidation
