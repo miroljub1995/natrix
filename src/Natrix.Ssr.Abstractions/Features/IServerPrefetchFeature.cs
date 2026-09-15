@@ -1,26 +1,33 @@
 namespace Natrix.Ssr.Abstractions.Features;
 
 /// <summary>
-/// SSR-only feature that lets components register asynchronous prefetch
-/// callbacks during their <c>Setup</c> phase. Modeled after Vue's
-/// <c>onServerPrefetch</c>.
+/// SSR-only feature that lets components start asynchronous work during their <c>Setup</c> —
+/// fetching the data they render — which the host waits for before it writes the response.
+/// Modeled after Vue's <c>onServerPrefetch</c>.
 /// </summary>
+/// <remarks>
+/// Prefetches start as they are registered and run concurrently: a page with five independent
+/// fetches waits for the slowest, not for the sum. What makes that safe is the host's event
+/// loop, which the whole request runs on and which runs continuations one at a time — a
+/// callback is free to write signals after its awaits, and never runs alongside the render or
+/// another callback's continuation. What a callback does <em>before</em> its first await runs
+/// inside the <c>Setup</c> that registered it, so it must not write signals there.
+/// </remarks>
 public interface IServerPrefetchFeature
 {
     /// <summary>
-    /// Enqueues a prefetch callback to be invoked during
-    /// <see cref="WaitForCompletionAsync"/>.
+    /// Starts <paramref name="callback"/> and keeps its task for
+    /// <see cref="WaitForCompletionAsync"/>. The token it receives is cancelled when the request
+    /// is: a fetch for a response nobody is waiting for should stop.
     /// </summary>
-    void Register(Func<Task> callback);
+    void Register(Func<CancellationToken, Task> callback);
 
     /// <summary>
-    /// Drains all registered callbacks one at a time. Callbacks registered
-    /// while draining (e.g. from cascading prefetches or dynamically mounted
-    /// subtrees) are appended to the queue and consumed by the same loop.
-    ///
-    /// Continues draining even when individual callbacks fault; if one or
-    /// more callbacks throw, an <see cref="AggregateException"/> containing
-    /// every collected error is thrown after the drain completes.
+    /// Completes when every registered callback has, including callbacks registered while it
+    /// waits — a prefetch that moves a signal can mount a subtree that registers its own.
+    /// Waits for all of them even when some fail, then throws an <see cref="AggregateException"/>
+    /// carrying every failure. Throws <see cref="OperationCanceledException"/> once the request
+    /// is cancelled rather than waiting for callbacks that ignore their token.
     /// </summary>
-    Task WaitForCompletionAsync(CancellationToken cancellationToken = default);
+    Task WaitForCompletionAsync();
 }

@@ -81,8 +81,8 @@ public static class NatrixHostBuilderSwrExtensions
                 {
                     throw new InvalidOperationException(
                         $"SWR on a server host needs {nameof(IServerPrefetchFeature)}: it is what keeps "
-                        + "resources from fetching outside the prefetch queue the render waits for. Register "
-                        + "a ServerPrefetchFeature and drain it before writing the response.");
+                        + "resources from fetching outside the prefetches the render waits for. Register "
+                        + "a ServerPrefetchFeature and wait for it before writing the response.");
                 }
 
                 server.RegisterDehydrateCallback(

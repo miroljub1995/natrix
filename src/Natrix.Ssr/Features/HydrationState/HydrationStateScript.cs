@@ -28,10 +28,10 @@ public sealed class HydrationStateScript : IComponent
                 $"{nameof(IServerHydrationStateFeature)} is not registered. " +
                 $"Register {nameof(ServerHydrationStateFeature)} before mounting.");
 
-        // Serialized when the response is written, not now. Mounting happens before
-        // IServerPrefetchFeature drains, and this component sits in <head> - ahead of the tree
-        // whose state it carries - so dehydrating here would capture the state of an app that
-        // has not loaded anything yet.
+        // Serialized when the response is written, not now. Mounting happens before the
+        // prefetches IServerPrefetchFeature waits for have landed, and this component sits in
+        // <head> - ahead of the tree whose state it carries - so dehydrating here would capture
+        // the state of an app that has not loaded anything yet.
         var json = new Computed<string>(() => serverFeature.Dehydrate().ToJsonString());
 
         if (slot is not ISsrRenderSlot ssrRenderSlot)

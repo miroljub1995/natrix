@@ -83,13 +83,26 @@ internal sealed class SwrCacheEntry<TData> : ISwrCacheEntry
     /// has nothing to prefetch.
     /// </summary>
     /// <remarks>
+    /// <para>
     /// Retries are disabled for this path regardless of the caller's options, and the failure is
     /// thrown rather than only recorded. A request that fails during server rendering would
     /// otherwise hold the response open for the whole backoff sequence, and a page rendered
     /// without data it asked for is a broken page: the exception leaves the prefetch drain, which
     /// is what turns it into an error response instead.
+    /// </para>
+    /// <para>
+    /// Prefetches start as components bind and run concurrently, so a second component on the
+    /// key usually finds the first one's request still in flight. It joins that request — and
+    /// only that kind of request. A run started from <c>Setup</c> by an explicit revalidation or
+    /// a mutation carries its caller's retries and swallows its failure, which are the two things
+    /// a server run must not do, so one of those is cancelled and replaced instead.
+    /// </para>
     /// </remarks>
-    public async Task EnsureLoadedAsync(Func<SwrKey, CancellationToken, Task<TData>> fetcher, SwrOptions options)
+    /// <param name="cancellationToken">The request's token; stops the fetcher once nobody is waiting.</param>
+    public async Task EnsureLoadedAsync(
+        Func<SwrKey, CancellationToken, Task<TData>> fetcher,
+        SwrOptions options,
+        CancellationToken cancellationToken)
     {
         var state = PeekState();
         if (state.HasData)
@@ -97,25 +110,34 @@ internal sealed class SwrCacheEntry<TData> : ISwrCacheEntry
             return;
         }
 
-        // Never joins a run in flight. One started from Setup — an explicit revalidation or a
-        // mutation — carries its caller's retries and swallows its failure, which are the two
-        // things a server run must not do.
-        CancelPending();
-
-        // A request for this key already failed on this render. Another would only cost the
-        // upstream a second call for a response that is not going to be served; the same failure
-        // is raised again so the drain sees it whichever callback reaches the key first.
-        if (state.Error is { } error)
+        if (PeekRun() is { IsServerPrefetch: true } inFlight)
         {
-            ExceptionDispatchInfo.Throw(error);
+            await inFlight.Task;
         }
+        else
+        {
+            CancelPending();
 
-        await StartRun(fetcher, options with { ShouldRetryOnError = false });
+            // A request for this key already failed on this render. Another would only cost the
+            // upstream a second call for a response that is not going to be served; the same
+            // failure is raised again so the drain sees it whichever callback reaches the key
+            // first.
+            if (state.Error is { } error)
+            {
+                ExceptionDispatchInfo.Throw(error);
+            }
+
+            await StartRun(
+                fetcher,
+                options with { ShouldRetryOnError = false },
+                cancellationToken,
+                isServerPrefetch: true);
+        }
 
         // The run writes its outcome rather than throwing it. There was no value when this
         // started, so one now means success, an error without one means the single attempt
-        // failed, and neither means the run was superseded — which is the next callback's
-        // problem, not this one's.
+        // failed, and neither means the run was superseded or the request cancelled — which is
+        // the next callback's problem, not this one's.
         if (PeekState() is { HasData: false, Error: { } failure })
         {
             ExceptionDispatchInfo.Throw(failure);
@@ -213,9 +235,13 @@ internal sealed class SwrCacheEntry<TData> : ISwrCacheEntry
         run.Cancel();
     }
 
-    private Task StartRun(Func<SwrKey, CancellationToken, Task<TData>> fetcher, SwrOptions options)
+    private Task StartRun(
+        Func<SwrKey, CancellationToken, Task<TData>> fetcher,
+        SwrOptions options,
+        CancellationToken cancellationToken = default,
+        bool isServerPrefetch = false)
     {
-        var run = new SwrRun<TData>(Key, _state, fetcher, options, _yieldAsync);
+        var run = new SwrRun<TData>(Key, _state, fetcher, options, _yieldAsync, cancellationToken, isServerPrefetch);
 
         // The run yields before it does anything, so it is still in flight here whatever the
         // fetcher does: publishing it after construction never publishes a finished run.

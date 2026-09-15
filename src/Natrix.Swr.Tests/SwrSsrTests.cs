@@ -2,6 +2,7 @@ using System.Text.Json;
 using System.Text.Json.Nodes;
 using Natrix.Core.Components;
 using Natrix.Signals;
+using Natrix.Ssr;
 using Natrix.Ssr.Features;
 using Natrix.Ssr.Features.HydrationState;
 
@@ -30,9 +31,11 @@ public class SwrSsrTests
             serverPrefetch: prefetch,
             hydrationState: hydration);
 
-        app.Mount(root);
-
-        await app.DrainAsync(prefetch);
+        await SsrEventLoop.RunAsync(async () =>
+        {
+            app.Mount(root);
+            await app.DrainAsync(prefetch);
+        });
 
         // Through a string, exactly as it travels: the client parses it back out of the page.
         var dehydrated = hydration.Dehydrate().ToJsonString();
@@ -52,20 +55,86 @@ public class SwrSsrTests
             serverPrefetch: prefetch,
             hydrationState: new ServerHydrationStateFeature());
 
-        app.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync));
+        await SsrEventLoop.RunAsync(async () =>
+        {
+            app.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync), pump: false);
 
-        // Nothing has run yet: mounting only registers, the drain is what fetches. The render
-        // still reports the key as being fetched, since the prefetch is on its way.
-        await Assert.That(fetcher.CallCount).IsEqualTo(0);
-        await Assert.That(resource!.IsLoading.Value).IsTrue();
-        await Assert.That(resource.IsValidating.Value).IsTrue();
+            // Binding started the prefetch, but a request yields before it fetches, so nothing
+            // has run into the render. The render still reports the key as being fetched, since
+            // the prefetch is on its way.
+            await Assert.That(fetcher.CallCount).IsEqualTo(0);
+            await Assert.That(resource!.IsLoading.Value).IsTrue();
+            await Assert.That(resource.IsValidating.Value).IsTrue();
 
-        await app.DrainAsync(prefetch);
+            await app.DrainAsync(prefetch);
 
-        await Assert.That(fetcher.CallCount).IsEqualTo(1);
-        await Assert.That(resource.Data.Value).IsEqualTo(new TestUser("Ada", 1843));
-        await Assert.That(resource.IsLoading.Value).IsFalse();
-        await Assert.That(resource.IsValidating.Value).IsFalse();
+            await Assert.That(fetcher.CallCount).IsEqualTo(1);
+            await Assert.That(resource.Data.Value).IsEqualTo(new TestUser("Ada", 1843));
+            await Assert.That(resource.IsLoading.Value).IsFalse();
+            await Assert.That(resource.IsValidating.Value).IsFalse();
+        });
+    }
+
+    [Test]
+    public async Task Prefetches_for_different_keys_are_in_flight_together()
+    {
+        // Each fetcher reports when it is called and finishes only when the test lets it, so
+        // both being called before either has finished is what shows they are not run one after
+        // another: a page waits for its slowest prefetch, not for the sum of them.
+        var started = new Dictionary<string, TaskCompletionSource>
+        {
+            ["1"] = new(),
+            ["2"] = new(),
+        };
+        var release = new TaskCompletionSource();
+        var fetcher = new RecordingFetcher<TestUser>(async (_, key) =>
+        {
+            started[key.Segment<string>(1)].SetResult();
+            await release.Task;
+            return new TestUser(key.Segment<string>(1), 1843);
+        });
+        var prefetch = new ServerPrefetchFeature();
+        SwrResource<TestUser>? first = null;
+        SwrResource<TestUser>? second = null;
+
+        using var app = new TestApp(
+            NoRetries,
+            serializerOptions: TestJsonContext.Default.Options,
+            serverPrefetch: prefetch,
+            hydrationState: new ServerHydrationStateFeature());
+
+        await SsrEventLoop.RunAsync(async () =>
+        {
+            app.Mount(() => new Probe
+            {
+                Props = new ProbeProps
+                {
+                    Body = () => first = SwrResource.Use(["user", "1"], fetcher.FetchAsync),
+                    Children =
+                    [
+                        new Probe
+                        {
+                            Props = new ProbeProps
+                            {
+                                Body = () => second = SwrResource.Use(["user", "2"], fetcher.FetchAsync),
+                            },
+                        },
+                    ],
+                },
+            });
+
+            await Task.WhenAll(started["1"].Task, started["2"].Task);
+
+            await Assert.That(fetcher.CallCount).IsEqualTo(2);
+            await Assert.That(first!.Data.Value).IsNull();
+            await Assert.That(second!.Data.Value).IsNull();
+
+            release.SetResult();
+            await app.DrainAsync(prefetch);
+
+            await Assert.That(first.Data.Value).IsEqualTo(new TestUser("1", 1843));
+            await Assert.That(second.Data.Value).IsEqualTo(new TestUser("2", 1843));
+        });
     }
 
     [Test]
@@ -80,29 +149,93 @@ public class SwrSsrTests
             serverPrefetch: prefetch,
             hydrationState: new ServerHydrationStateFeature());
 
-        app.Mount(() => new Probe
+        await SsrEventLoop.RunAsync(async () =>
         {
-            Props = new ProbeProps
+            app.Mount(() => new Probe
             {
-                Body = () => SwrResource.Use(["user", "1"], fetcher.FetchAsync),
-                Children =
-                [
-                    new Probe
-                    {
-                        Props = new ProbeProps
+                Props = new ProbeProps
+                {
+                    Body = () => SwrResource.Use(["user", "1"], fetcher.FetchAsync),
+                    Children =
+                    [
+                        new Probe
                         {
-                            Body = () => SwrResource.Use(["user", "1"], fetcher.FetchAsync),
+                            Props = new ProbeProps
+                            {
+                                Body = () => SwrResource.Use(["user", "1"], fetcher.FetchAsync),
+                            },
                         },
-                    },
-                ],
-            },
+                    ],
+                },
+            });
+
+            await app.DrainAsync(prefetch);
         });
 
-        await app.DrainAsync(prefetch);
-
-        // The drain runs callbacks one at a time, so deduplicating in-flight requests is not
-        // enough here: the second callback has to see the value the first one produced.
+        // Both prefetches were in flight at once: the second joined the first one's request
+        // rather than issuing its own.
         await Assert.That(fetcher.CallCount).IsEqualTo(1);
+    }
+
+    [Test]
+    public async Task A_component_bound_after_the_value_landed_costs_no_prefetch()
+    {
+        // The other timing: a prefetch that moves a signal mounts a component on a key that has
+        // already been fetched. Nothing is in flight to join, and there is nothing left to fetch.
+        var fetcher = new RecordingFetcher<TestUser>((_, _) => Task.FromResult(new TestUser("Ada", 1843)));
+        var prefetch = new ServerPrefetchFeature();
+        var showSecond = new Signal<bool>(false);
+        TestUser? secondDataAtSetup = null;
+
+        using var app = new TestApp(
+            NoRetries,
+            serializerOptions: TestJsonContext.Default.Options,
+            serverPrefetch: prefetch,
+            hydrationState: new ServerHydrationStateFeature());
+
+        await SsrEventLoop.RunAsync(async () =>
+        {
+            app.Mount(() => new Probe
+            {
+                Props = new ProbeProps
+                {
+                    Body = () =>
+                    {
+                        var first = SwrResource.Use(["user", "1"], fetcher.FetchAsync);
+                        new Effect(_ =>
+                        {
+                            if (first.Data.Value is not null)
+                            {
+                                showSecond.Value = true;
+                            }
+                        });
+                    },
+                    Children =
+                    [
+                        new If
+                        {
+                            Condition = showSecond,
+                            Then = () =>
+                            [
+                                new Probe
+                                {
+                                    Props = new ProbeProps
+                                    {
+                                        Body = () => secondDataAtSetup =
+                                            SwrResource.Use(["user", "1"], fetcher.FetchAsync).Data.Value,
+                                    },
+                                },
+                            ],
+                        },
+                    ],
+                },
+            });
+
+            await app.DrainAsync(prefetch);
+        });
+
+        await Assert.That(fetcher.CallCount).IsEqualTo(1);
+        await Assert.That(secondDataAtSetup).IsEqualTo(new TestUser("Ada", 1843));
     }
 
     [Test]
@@ -364,9 +497,13 @@ public class SwrSsrTests
             serverPrefetch: prefetch,
             hydrationState: hydration);
 
-        server.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync));
+        AggregateException? thrown = null;
 
-        var thrown = await Assert.That(() => server.DrainAsync(prefetch)).Throws<AggregateException>();
+        await SsrEventLoop.RunAsync(async () =>
+        {
+            server.MountProbe(() => resource = SwrResource.Use(["user", "1"], fetcher.FetchAsync));
+            thrown = await Assert.That(() => server.DrainAsync(prefetch)).Throws<AggregateException>();
+        });
 
         await Assert.That(thrown!.InnerExceptions).HasSingleItem();
         await Assert.That(thrown.InnerExceptions[0]).IsSameReferenceAs(failure);
@@ -381,12 +518,15 @@ public class SwrSsrTests
     public async Task A_run_started_during_setup_does_not_soften_the_server_failure()
     {
         // An explicit revalidation from Setup carries the caller's retries and swallows its
-        // failure. The prefetch must not join it, or a failing key would hold the response open
-        // for the backoff and then be served as an error the client cannot reproduce.
+        // failure. A prefetch that finds it in flight must not join it, or a failing key would
+        // hold the response open for the backoff and then be served as an error the client
+        // cannot reproduce. A client-only resource is what can start such a run without a
+        // prefetch of its own; the prefetch arrives when a component on the key mounts later.
         var fetcher = new RecordingFetcher<TestUser>((_, _) =>
             Task.FromException<TestUser>(new InvalidOperationException("upstream is down")));
         var prefetch = new ServerPrefetchFeature();
         var options = new SwrOptions { ErrorRetryCount = 5, ErrorRetryInterval = TimeSpan.FromMinutes(10) };
+        var showSecond = new Signal<bool>(false);
 
         using var server = new TestApp(
             options,
@@ -394,9 +534,44 @@ public class SwrSsrTests
             serverPrefetch: prefetch,
             hydrationState: new ServerHydrationStateFeature());
 
-        server.MountProbe(() => _ = SwrResource.Use(["user", "1"], fetcher.FetchAsync).RevalidateAsync());
+        await SsrEventLoop.RunAsync(async () =>
+        {
+            server.Mount(() => new Probe
+            {
+                Props = new ProbeProps
+                {
+                    Body = () => _ = SwrResource.Use(
+                        ["user", "1"],
+                        fetcher.FetchAsync,
+                        options => options with { FetchOnServer = false }).RevalidateAsync(),
+                    Children =
+                    [
+                        new If
+                        {
+                            Condition = showSecond,
+                            Then = () =>
+                            [
+                                new Probe
+                                {
+                                    Props = new ProbeProps
+                                    {
+                                        Body = () => SwrResource.Use(["user", "1"], fetcher.FetchAsync),
+                                    },
+                                },
+                            ],
+                        },
+                    ],
+                },
+            });
 
-        await Assert.That(() => server.DrainAsync(prefetch)).Throws<AggregateException>();
+            // The Setup run has fetched, failed, and is waiting out its first retry.
+            await server.SettleAsync();
+            await Assert.That(fetcher.CallCount).IsEqualTo(1);
+
+            showSecond.Value = true;
+
+            await Assert.That(() => server.DrainAsync(prefetch)).Throws<AggregateException>();
+        });
 
         // The Setup run had not published its failure — it was waiting on a retry — so the
         // prefetch cancels it and asks the upstream itself, once, and raises that answer.
@@ -417,27 +592,33 @@ public class SwrSsrTests
             serverPrefetch: prefetch,
             hydrationState: new ServerHydrationStateFeature());
 
-        server.Mount(() => new Probe
+        AggregateException? thrown = null;
+
+        await SsrEventLoop.RunAsync(async () =>
         {
-            Props = new ProbeProps
+            server.Mount(() => new Probe
             {
-                Body = () => SwrResource.Use(["user", "1"], fetcher.FetchAsync),
-                Children =
-                [
-                    new Probe
-                    {
-                        Props = new ProbeProps
+                Props = new ProbeProps
+                {
+                    Body = () => SwrResource.Use(["user", "1"], fetcher.FetchAsync),
+                    Children =
+                    [
+                        new Probe
                         {
-                            Body = () => SwrResource.Use(["user", "1"], fetcher.FetchAsync),
+                            Props = new ProbeProps
+                            {
+                                Body = () => SwrResource.Use(["user", "1"], fetcher.FetchAsync),
+                            },
                         },
-                    },
-                ],
-            },
+                    ],
+                },
+            });
+
+            thrown = await Assert.That(() => server.DrainAsync(prefetch)).Throws<AggregateException>();
         });
 
-        var thrown = await Assert.That(() => server.DrainAsync(prefetch)).Throws<AggregateException>();
-
-        // The second callback raises the recorded failure rather than asking the upstream again.
+        // The second callback joined the request and raises the same failure, rather than asking
+        // the upstream again.
         await Assert.That(fetcher.CallCount).IsEqualTo(1);
         await Assert.That(thrown!.InnerExceptions.Count).IsEqualTo(2);
         await Assert.That(thrown.InnerExceptions[1]).IsSameReferenceAs(failure);
@@ -476,9 +657,11 @@ public class SwrSsrTests
             serverPrefetch: prefetch,
             hydrationState: new ServerHydrationStateFeature());
 
-        server.MountProbe(() => SwrResource.Use(["user", "1"], fetcher.FetchAsync));
-
-        await Assert.That(() => server.DrainAsync(prefetch)).Throws<AggregateException>();
+        await SsrEventLoop.RunAsync(async () =>
+        {
+            server.MountProbe(() => SwrResource.Use(["user", "1"], fetcher.FetchAsync));
+            await Assert.That(() => server.DrainAsync(prefetch)).Throws<AggregateException>();
+        });
 
         await Assert.That(fetcher.CallCount).IsEqualTo(1);
     }
@@ -497,12 +680,15 @@ public class SwrSsrTests
             serverPrefetch: prefetch,
             hydrationState: hydration);
 
-        server.MountProbe(() => resource = SwrResource.Use(
-            ["user", "1"],
-            fetcher.FetchAsync,
-            options => options with { FetchOnServer = false }));
+        await SsrEventLoop.RunAsync(async () =>
+        {
+            server.MountProbe(() => resource = SwrResource.Use(
+                ["user", "1"],
+                fetcher.FetchAsync,
+                options => options with { FetchOnServer = false }));
 
-        await server.DrainAsync(prefetch);
+            await server.DrainAsync(prefetch);
+        });
 
         // The fetcher never runs on the server, and the markup shows the loading state — the same
         // state the client will render before it fetches. The key is being fetched, just not
@@ -600,36 +786,39 @@ public class SwrSsrTests
             serverPrefetch: prefetch,
             hydrationState: new ServerHydrationStateFeature());
 
-        server.Mount(() => new Probe
+        await SsrEventLoop.RunAsync(async () =>
         {
-            Props = new ProbeProps
+            server.Mount(() => new Probe
             {
-                Body = () => clientOnly = SwrResource.Use(
-                    ["user", "1"],
-                    fetcher.FetchAsync,
-                    options => options with { FetchOnServer = false }),
-                Children =
-                [
-                    new Probe
-                    {
-                        Props = new ProbeProps
+                Props = new ProbeProps
+                {
+                    Body = () => clientOnly = SwrResource.Use(
+                        ["user", "1"],
+                        fetcher.FetchAsync,
+                        options => options with { FetchOnServer = false }),
+                    Children =
+                    [
+                        new Probe
                         {
-                            Body = () => SwrResource.Use(["user", "1"], fetcher.FetchAsync),
+                            Props = new ProbeProps
+                            {
+                                Body = () => SwrResource.Use(["user", "1"], fetcher.FetchAsync),
+                            },
                         },
-                    },
-                ],
-            },
+                    ],
+                },
+            }, pump: false);
+
+            // Before the value lands the key has none, and the client-only resource reports the
+            // request that is coming for it, whichever side runs it.
+            await Assert.That(clientOnly!.IsLoading.Value).IsTrue();
+            await Assert.That(clientOnly.IsValidating.Value).IsTrue();
+
+            await server.DrainAsync(prefetch);
         });
 
-        // Before the drain the key has no value, and the client-only resource reports the request
-        // that is coming for it, whichever side runs it.
-        await Assert.That(clientOnly!.IsLoading.Value).IsTrue();
-        await Assert.That(clientOnly.IsValidating.Value).IsTrue();
-
-        await server.DrainAsync(prefetch);
-
         await Assert.That(fetcher.CallCount).IsEqualTo(1);
-        await Assert.That(clientOnly.Data.Value).IsEqualTo(new TestUser("Ada", 1843));
+        await Assert.That(clientOnly!.Data.Value).IsEqualTo(new TestUser("Ada", 1843));
 
         // The value travels with the page and the client hydrates it without a request, so the
         // markup must not say one is in flight.
@@ -731,9 +920,11 @@ public class SwrSsrTests
             serverPrefetch: prefetch,
             hydrationState: hydration);
 
-        server.MountProbe(() => SwrResource.Use(["user", "1"], fetcher.FetchAsync));
-
-        await server.DrainAsync(prefetch);
+        await SsrEventLoop.RunAsync(async () =>
+        {
+            server.MountProbe(() => SwrResource.Use(["user", "1"], fetcher.FetchAsync));
+            await server.DrainAsync(prefetch);
+        });
 
         var payload = JsonNode.Parse(hydration.Dehydrate().ToJsonString())!.AsObject();
         await Assert.That(payload[SwrFeature.HydrationSection]!.AsObject().Count).IsEqualTo(1);
@@ -767,9 +958,11 @@ public class SwrSsrTests
             serverPrefetch: prefetch,
             hydrationState: new ServerHydrationStateFeature());
 
-        server.MountProbe(() => SwrResource.Use(["user", "1"], fetcher.FetchAsync));
-
-        await server.DrainAsync(prefetch);
+        await SsrEventLoop.RunAsync(async () =>
+        {
+            server.MountProbe(() => SwrResource.Use(["user", "1"], fetcher.FetchAsync));
+            await server.DrainAsync(prefetch);
+        });
 
         // The empty options in the feature have no metadata for TestUser, so reaching for them
         // would have thrown rather than prefetched.
