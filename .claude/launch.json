@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "docs",
+      "runtimeExecutable": "dotnet",
+      "runtimeArgs": [
+        "run", "--project", "docs/Natrix.Docs", "-f", "net10.0",
+        "--launch-profile", "Natrix.Docs"
+      ],
+      "port": 5100,
+      "url": "https://localhost:5100"
+    }
+  ]
+}
