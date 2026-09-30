@@ -41,6 +41,7 @@ var users = new Dictionary<string, UserProfile>(StringComparer.OrdinalIgnoreCase
     ["ada"] = new("Ada Lovelace", "Mathematician", 1843),
     ["grace"] = new("Grace Hopper", "Rear Admiral", 1959),
     ["linus"] = new("Linus Torvalds", "Kernel maintainer", 1991),
+    ["barbara"] = new("Barbara Liskov", "Language designer", 1974),
     ["alan"] = new("Alan Turing", "Cryptanalyst", 1936),
     ["margaret"] = new("Margaret Hamilton", "Software engineer", 1969),
 };
@@ -63,7 +64,10 @@ app.MapGet("/api/failing/users/{id}", async (CancellationToken cancellationToken
     return Results.StatusCode(StatusCodes.Status503ServiceUnavailable);
 });
 
-app.MapFallback(async (httpContext) =>
+// The whole request runs on one SsrEventLoop: mount, the prefetches components start, and the
+// response. The loop runs continuations one at a time, which is what lets the prefetches run
+// concurrently while the render stays single-threaded, as it is in the browser.
+app.MapFallback(httpContext => SsrEventLoop.RunAsync(async () =>
 {
     var requestPath = httpContext.Request.Path.Value ?? "/";
 
@@ -78,7 +82,7 @@ app.MapFallback(async (httpContext) =>
         .GetRequiredService<IOptions<JsonOptions>>().Value.SerializerOptions;
     var navigation = new ServerNavigationFeature(requestPath);
     var root = new SsrRenderRoot();
-    var prefetch = new ServerPrefetchFeature();
+    var prefetch = new ServerPrefetchFeature(httpContext.RequestAborted);
 
     using var _ = new NatrixHostBuilder()
         .UseRootRenderer(root)
@@ -98,7 +102,7 @@ app.MapFallback(async (httpContext) =>
         .Build()
         .Mount();
 
-    await prefetch.WaitForCompletionAsync(httpContext.RequestAborted);
+    await prefetch.WaitForCompletionAsync();
 
     if (navigation.RedirectLocation is { } location)
     {
@@ -110,6 +114,6 @@ app.MapFallback(async (httpContext) =>
     await httpContext.Response.BodyWriter.WriteAsync(Encoding.UTF8.GetBytes("<!DOCTYPE html>"));
     await root.WriteAsync(httpContext.Response.BodyWriter, cancellationToken: httpContext.RequestAborted);
     await httpContext.Response.BodyWriter.FlushAsync(httpContext.RequestAborted);
-});
+}));
 
 app.Run();

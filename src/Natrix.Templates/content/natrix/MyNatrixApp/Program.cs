@@ -18,12 +18,15 @@ var app = builder.Build();
 
 app.MapStaticAssets();
 
-app.MapFallback(async (httpContext) =>
+// The whole request runs on one SsrEventLoop: mount, the prefetches components start, and the
+// response. The loop runs continuations one at a time, which is what lets the prefetches run
+// concurrently while the render stays single-threaded, as it is in the browser.
+app.MapFallback(httpContext => SsrEventLoop.RunAsync(async () =>
 {
     var requestPath = httpContext.Request.Path.Value ?? "/";
     var navigation = new ServerNavigationFeature(requestPath);
     var root = new SsrRenderRoot();
-    var prefetch = new ServerPrefetchFeature();
+    var prefetch = new ServerPrefetchFeature(httpContext.RequestAborted);
 
     using var _ = new NatrixHostBuilder()
         .UseRootRenderer(root)
@@ -36,7 +39,7 @@ app.MapFallback(async (httpContext) =>
         .Build()
         .Mount();
 
-    await prefetch.WaitForCompletionAsync(httpContext.RequestAborted);
+    await prefetch.WaitForCompletionAsync();
 
     if (navigation.RedirectLocation is { } location)
     {
@@ -48,6 +51,6 @@ app.MapFallback(async (httpContext) =>
     await httpContext.Response.BodyWriter.WriteAsync(Encoding.UTF8.GetBytes("<!DOCTYPE html>"));
     await root.WriteAsync(httpContext.Response.BodyWriter, cancellationToken: httpContext.RequestAborted);
     await httpContext.Response.BodyWriter.FlushAsync(httpContext.RequestAborted);
-});
+}));
 
 app.Run();

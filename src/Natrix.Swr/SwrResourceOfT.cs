@@ -21,10 +21,11 @@ namespace Natrix.Swr;
 /// of it — and hand the first client render a value the server's markup never had.
 /// </para>
 /// <para>
-/// <b>Server rendering fetches only through the prefetch queue</b>, and only when
-/// <see cref="SwrOptions.FetchOnServer"/> is on. Binding a key there registers a prefetch the
-/// render waits for, and the value is serialized into the page for the client to pick up — so the
-/// first client render matches the markup, and the components hydrating from that value do not
+/// <b>Server rendering fetches only through the prefetch feature</b>, and only when
+/// <see cref="SwrOptions.FetchOnServer"/> is on. Binding a key there registers a prefetch, which
+/// starts at once and runs alongside every other prefetch on the page; the render waits for all
+/// of them, and the value is serialized into the page for the client to pick up — so the first
+/// client render matches the markup, and the components hydrating from that value do not
 /// revalidate it. A client-only resource registers nothing and fetches in the browser.
 /// </para>
 /// <para>
@@ -132,17 +133,17 @@ public sealed class SwrResource<TData>
 
             if (serverPrefetch is not null)
             {
-                // On the server the fetcher runs only through the prefetch queue, which the render
-                // waits for. A request started here would outlive the response, and the prefetch
-                // registered after it would join it and inherit its retries. Registered per bind
-                // rather than once: a prefetch that moves a signal can change the key, and the
-                // drain picks up whatever the new binding registers. A client-only resource
-                // registers nothing, which leaves the entry empty: the markup shows the loading
-                // state, the payload carries no value for the key, and the client's first render
-                // agrees before it fetches.
+                // On the server the fetcher runs only through the prefetch feature, which the
+                // render waits for. A request started any other way would outlive the response,
+                // and a prefetch registered after it would join it and inherit its retries.
+                // Registered per bind rather than once: a prefetch that moves a signal can change
+                // the key, and the drain waits for whatever the new binding registers. A
+                // client-only resource registers nothing, which leaves the entry empty: the
+                // markup shows the loading state, the payload carries no value for the key, and
+                // the client's first render agrees before it fetches.
                 if (options.FetchOnServer)
                 {
-                    serverPrefetch.Register(() => entry.EnsureLoadedAsync(fetcher, options));
+                    serverPrefetch.Register(token => entry.EnsureLoadedAsync(fetcher, options, token));
                 }
             }
             else

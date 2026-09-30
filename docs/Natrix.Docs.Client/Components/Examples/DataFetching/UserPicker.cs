@@ -25,6 +25,8 @@ public class UserPicker : BaseComponent<UserPickerProps, UserPickerEvents, NoSlo
         ("ada", "Ada"),
         ("grace", "Grace"),
         ("linus", "Linus"),
+        // Bound by no other card on the page, so this is the switch that costs a request.
+        ("barbara", "Barbara"),
     ];
 
     protected override IComponent[] Setup(out NoExpose exposed)

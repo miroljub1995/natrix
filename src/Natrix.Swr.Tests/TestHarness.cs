@@ -194,6 +194,21 @@ internal sealed class TestApp : IDisposable
     }
 
     /// <summary>
+    /// <see cref="Pump"/> for a server host: continuations released by the cycle are posted to
+    /// the request's event loop, behind the caller, so this yields to let them run — and runs
+    /// the cycle again for whatever they defer in turn, until nothing is left.
+    /// </summary>
+    public async Task SettleAsync()
+    {
+        do
+        {
+            Pump();
+            await Task.Yield();
+        }
+        while (_deferred.Count > 0);
+    }
+
+    /// <summary>
     /// Runs the cycle an imperative operation deferred its request to, and hands the operation
     /// back to be awaited: <c>await app.Pumped(resource.RevalidateAsync())</c>.
     /// </summary>
@@ -204,9 +219,11 @@ internal sealed class TestApp : IDisposable
     }
 
     /// <summary>
-    /// Drains the server's prefetch queue the way the SSR host does, running the deferred cycle
+    /// Waits for the server's prefetches the way the SSR host does, running the deferred cycle
     /// as it goes: each prefetch's request yields before it fetches, and on this host that yield
-    /// lands on the same hand-run queue.
+    /// lands on the same hand-run queue. Call it, like <see cref="Mount"/> on a server host,
+    /// from inside <c>SsrEventLoop.RunAsync</c>, which is where the prefetch feature insists on
+    /// being used.
     /// </summary>
     public async Task DrainAsync(ServerPrefetchFeature prefetch)
     {
