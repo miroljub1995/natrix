@@ -6,10 +6,7 @@
         <Nullable>enable</Nullable>
         <IsAotCompatible>true</IsAotCompatible>
 
-        <NatrixApiVersion Condition="'$(NatrixApiVersion)' == ''">0.2.0</NatrixApiVersion>
-        <NatrixCoreVersion Condition="'$(NatrixCoreVersion)' == ''">0.5.0</NatrixCoreVersion>
-        <NatrixTailwindVersion Condition="'$(NatrixTailwindVersion)' == ''">0.5.0</NatrixTailwindVersion>
-        <NatrixTemplatesVersion Condition="'$(NatrixTemplatesVersion)' == ''">0.13.0</NatrixTemplatesVersion>
+        <Version>0.14.0</Version>
 
         <!-- By default, don't create NuGet packages for projects -->
         <IsPackable>false</IsPackable>

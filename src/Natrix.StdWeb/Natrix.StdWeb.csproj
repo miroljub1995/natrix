@@ -6,7 +6,6 @@
         <!-- NuGet Package Configuration -->
         <IsPackable>true</IsPackable>
         <PackageId>Natrix.StdWeb</PackageId>
-        <Version>$(NatrixApiVersion)</Version>
         <Authors>miroljub1995</Authors>
         <Description>Auto-generated strongly-typed C# wrappers for standard Web APIs (DOM, Fetch, Canvas, WebGL, etc.) for Natrix WebAssembly framework. Based on official W3C WebIDL specifications.</Description>
         <PackageTags>webassembly;wasm;javascript;webapi;dom;webidl;blazor;dotnet</PackageTags>

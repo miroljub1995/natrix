@@ -3,7 +3,6 @@
         <!-- NuGet Package Configuration -->
         <IsPackable>true</IsPackable>
         <PackageId>Natrix.Signals</PackageId>
-        <Version>$(NatrixCoreVersion)</Version>
         <Authors>miroljub1995</Authors>
         <Description>Reactive signals primitives for Natrix — fine-grained reactivity for .NET WebAssembly applications.</Description>
         <PackageTags>webassembly;wasm;dotnet;signals;reactive</PackageTags>

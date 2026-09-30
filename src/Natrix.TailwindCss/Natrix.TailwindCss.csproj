@@ -4,7 +4,6 @@
     <!-- NuGet Package Configuration -->
     <IsPackable>true</IsPackable>
     <PackageId>Natrix.TailwindCss</PackageId>
-    <Version>$(NatrixTailwindVersion)</Version>
     <Authors>miroljub1995</Authors>
     <Description>Tailwind CSS integration for Natrix with source generator support for strongly-typed utility usage.</Description>
     <PackageTags>tailwindcss;css;webassembly;wasm;dotnet;natrix</PackageTags>

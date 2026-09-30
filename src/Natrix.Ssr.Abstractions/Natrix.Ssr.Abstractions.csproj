@@ -3,7 +3,6 @@
     <!-- NuGet Package Configuration -->
     <IsPackable>true</IsPackable>
     <PackageId>Natrix.Ssr.Abstractions</PackageId>
-    <Version>$(NatrixCoreVersion)</Version>
     <Authors>miroljub1995</Authors>
     <Description>SSR rendering abstractions and node model contracts for Natrix.</Description>
     <PackageTags>webassembly;wasm;dotnet;ssr;abstractions;natrix</PackageTags>
