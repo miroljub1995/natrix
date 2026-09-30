@@ -14,7 +14,6 @@
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
 
-    <Version>$(NatrixTemplatesVersion)</Version>
     <Authors>miroljub1995</Authors>
     <Description>dotnet new templates for Natrix applications, including a docs-style server + client scaffold with Tailwind CSS.</Description>
     <PackageTags>template;dotnet-new;natrix;webassembly;wasm;tailwindcss</PackageTags>
@@ -41,9 +40,9 @@
       <_TemplatePackagesProps>$(IntermediateOutputPath)template-Directory.Packages.props</_TemplatePackagesProps>
     </PropertyGroup>
     <Copy SourceFiles="content\natrix\Directory.Packages.props" DestinationFiles="$(_TemplatePackagesProps)" />
-    <XmlPoke XmlInputPath="$(_TemplatePackagesProps)" Query="/Project/ItemGroup/PackageVersion[@Include='Natrix.Browser']/@Version" Value="$(NatrixCoreVersion)" />
-    <XmlPoke XmlInputPath="$(_TemplatePackagesProps)" Query="/Project/ItemGroup/PackageVersion[@Include='Natrix.Ssr']/@Version" Value="$(NatrixCoreVersion)" />
-    <XmlPoke XmlInputPath="$(_TemplatePackagesProps)" Query="/Project/ItemGroup/PackageVersion[@Include='Natrix.TailwindCss']/@Version" Value="$(NatrixTailwindVersion)" />
+    <XmlPoke XmlInputPath="$(_TemplatePackagesProps)" Query="/Project/ItemGroup/PackageVersion[@Include='Natrix.Browser']/@Version" Value="$(Version)" />
+    <XmlPoke XmlInputPath="$(_TemplatePackagesProps)" Query="/Project/ItemGroup/PackageVersion[@Include='Natrix.Ssr']/@Version" Value="$(Version)" />
+    <XmlPoke XmlInputPath="$(_TemplatePackagesProps)" Query="/Project/ItemGroup/PackageVersion[@Include='Natrix.TailwindCss']/@Version" Value="$(Version)" />
     <ItemGroup>
       <None Include="$(_TemplatePackagesProps)" Pack="true" PackagePath="content/natrix/Directory.Packages.props" />
     </ItemGroup>

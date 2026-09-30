@@ -3,7 +3,6 @@
     <!-- NuGet Package Configuration -->
     <IsPackable>true</IsPackable>
     <PackageId>Natrix.Ssr</PackageId>
-    <Version>$(NatrixCoreVersion)</Version>
     <Authors>miroljub1995</Authors>
     <Description>Server-side rendering helpers for Natrix that depend on ASP.NET Core hosting and static assets infrastructure.</Description>
     <PackageTags>webassembly;wasm;dotnet;ssr;aspnetcore;natrix</PackageTags>

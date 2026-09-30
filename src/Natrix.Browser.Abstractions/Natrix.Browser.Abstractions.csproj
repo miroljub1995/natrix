@@ -2,7 +2,6 @@
   <PropertyGroup>
     <IsPackable>true</IsPackable>
     <PackageId>Natrix.Browser.Abstractions</PackageId>
-    <Version>$(NatrixCoreVersion)</Version>
     <Authors>miroljub1995</Authors>
     <Description>Browser rendering abstractions for Natrix.</Description>
     <PackageTags>webassembly;wasm;dotnet;browser;abstractions;natrix</PackageTags>

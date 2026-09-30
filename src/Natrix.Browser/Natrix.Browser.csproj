@@ -3,7 +3,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <IsPackable>true</IsPackable>
     <PackageId>Natrix.Browser</PackageId>
-    <Version>$(NatrixCoreVersion)</Version>
     <Authors>miroljub1995</Authors>
     <Description>Browser render root and browser host integration for Natrix.</Description>
     <PackageTags>webassembly;wasm;dotnet;browser;rendering;natrix</PackageTags>

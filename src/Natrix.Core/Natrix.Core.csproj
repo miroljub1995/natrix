@@ -3,7 +3,6 @@
     <!-- NuGet Package Configuration -->
     <IsPackable>true</IsPackable>
     <PackageId>Natrix.Core</PackageId>
-    <Version>$(NatrixCoreVersion)</Version>
     <Authors>miroljub1995</Authors>
     <Description>Core framework for building reactive WebAssembly UIs with C# and .NET — component model, rendering, signals, and source generators.</Description>
     <PackageTags>webassembly;wasm;dotnet;components;reactive;ui;blazor</PackageTags>
