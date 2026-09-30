@@ -97,8 +97,6 @@ jobs:
           set -euo pipefail
           mkdir -p artifacts/nuget
 
-          # Only projects with <IsPackable>true</IsPackable> produce a package;
-          # everything else in the solution (tests, docs, generators) is skipped.
           dotnet pack Natrix.slnx -c Release -o artifacts/nuget
 
       - name: Check package size
