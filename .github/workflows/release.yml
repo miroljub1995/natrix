@@ -97,24 +97,9 @@ jobs:
           set -euo pipefail
           mkdir -p artifacts/nuget
 
-          projects=(
-            Natrix.JSCore
-            Natrix.StdWeb
-            Natrix.Signals
-            Natrix.Core
-            Natrix.Browser.Abstractions
-            Natrix.Browser
-            Natrix.Dom
-            Natrix.Ssr.Abstractions
-            Natrix.Ssr
-            Natrix.Swr
-            Natrix.TailwindCss
-            Natrix.Templates
-          )
-
-          for project in "${projects[@]}"; do
-            dotnet pack "src/$project/$project.csproj" -c Release -o artifacts/nuget
-          done
+          # Only projects with <IsPackable>true</IsPackable> produce a package;
+          # everything else in the solution (tests, docs, generators) is skipped.
+          dotnet pack Natrix.slnx -c Release -o artifacts/nuget
 
       - name: Check package size
         # Natrix.TailwindCss carries the native V8 library for every supported
