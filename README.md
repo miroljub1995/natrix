@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="icon.svg" alt="Natrix" width="128" height="128">
+</p>
+
 # Natrix
 
 Natrix is a .NET WebAssembly toolkit for building browser applications in C#. It combines a JavaScript interop foundation, generated browser API bindings, and an experimental component layer for reactive UI rendering.
