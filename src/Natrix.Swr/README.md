@@ -226,14 +226,15 @@ synchronization context the request started on, which in a browser is the single
 A server-rendered page arrives with its data already in it, and the browser fetches nothing to
 display the first screen.
 
-Binding a key during server rendering registers a prefetch with `IServerPrefetchFeature`, which the
-SSR host drains before it writes the response. The values land in that request's cache, the markup
-is rendered from them, and the cache is serialized into the page's hydration state. On the client
+Binding a key during server rendering registers a prefetch with `IServerPrefetchFeature`. Prefetches
+start as they are registered and run concurrently, and the SSR host waits for all of them before it
+writes the response. The values land in that request's cache, the markup is rendered from them, and
+the cache is serialized into the page's hydration state. On the client
 the cache is seeded from that payload before the first component binds, so the first render matches
 the server's markup and no revalidation is issued for data that arrived with the page.
 
 That feature is also how a resource tells which side it is on: where it is present, the fetcher runs
-only through the queue it drains; where it is absent, the resource takes itself to be in a browser
+only through the prefetches it waits for; where it is absent, the resource takes itself to be in a browser
 and fetches after its first render. A server host must therefore register it, as the project
 template does, and `Mount()` refuses a host that has server hydration state without it — the
 requests would otherwise start during the render and outlive the response.
@@ -283,13 +284,17 @@ Rules the transfer follows:
   a host that caught it and served the page anyway would render the error state into markup the
   client — which receives no error — cannot reproduce. Data the page can do without belongs in a
   client-only resource, which the server never fetches.
-- **The server fetches only through the prefetch queue.** A request started anywhere else would
+- **The server fetches only through the prefetch feature.** A request started anywhere else would
   outlive the response. Which is also why a client-only resource, which registers no prefetch,
-  never runs its fetcher on the server at all.
+  never runs its fetcher on the server at all. The request's cancellation reaches every prefetch's
+  fetcher, so an aborted request does not keep fetching for a page nobody is waiting for.
 - **Server prefetches do not retry.** A failing upstream would otherwise hold the response open for
   the whole backoff sequence; the first failure fails the render instead.
-- **Two components on one key cost one prefetch.** The drain runs callbacks one at a time, so a
-  prefetch checks for a value before requesting one rather than relying on in-flight deduplication.
+- **Two components on one key cost one prefetch.** Prefetches run concurrently, so the second
+  usually finds the first one's request in flight and joins it; one that arrives after the value
+  has landed finds the value. Only a server prefetch's request is joined: a run started from
+  `Setup` by an explicit revalidation or a mutation carries retries and swallows its failure, so a
+  prefetch cancels it and issues its own.
 - **Hydration covers the pass that reproduces the markup, and nothing after it.** A key bound while
   the page hydrates renders the value it shipped with and is not revalidated. Every bind once that
   synchronous pass has returned revalidates — a component mounted later on a key another one still

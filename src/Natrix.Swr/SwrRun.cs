@@ -26,17 +26,32 @@ namespace Natrix.Swr;
 /// </remarks>
 internal sealed class SwrRun<TData>
 {
-    private readonly CancellationTokenSource _cts = new();
+    private readonly CancellationTokenSource _cts;
 
+    /// <param name="cancellationToken">
+    /// Cancels the run from outside — the request's token, for a run started by a server
+    /// prefetch. Linked with the entry's own cancellation, so either stops the fetcher.
+    /// </param>
+    /// <param name="isServerPrefetch">
+    /// Started by a server prefetch: no retries, and its failure is what fails the render. The
+    /// entry lets another prefetch for the same key join such a run, and only such a run.
+    /// </param>
     public SwrRun(
         SwrKey key,
         Signal<SwrEntryState<TData>> state,
         Func<SwrKey, CancellationToken, Task<TData>> fetcher,
         SwrOptions options,
-        Func<Task> yieldAsync)
+        Func<Task> yieldAsync,
+        CancellationToken cancellationToken,
+        bool isServerPrefetch)
     {
+        _cts = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        IsServerPrefetch = isServerPrefetch;
         Task = RunAsync(key, state, fetcher, options, yieldAsync);
     }
+
+    /// <inheritdoc cref="SwrRun{TData}(SwrKey, Signal{SwrEntryState{TData}}, Func{SwrKey, CancellationToken, Task{TData}}, SwrOptions, Func{Task}, CancellationToken, bool)" path="/param[@name='isServerPrefetch']"/>
+    public bool IsServerPrefetch { get; }
 
     /// <summary>
     /// Completes when the run succeeds, gives up, or is cancelled. Never faults on the run's own

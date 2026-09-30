@@ -95,7 +95,10 @@ public class DataFetchingDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpo
                                         {
                                             Text = ("Both cards were filled in by the server before this page was sent, "
                                                 + "so the browser fetched nothing to show them. Switching users sends one "
-                                                + "request for both cards; switching back renders from cache.")
+                                                + "request for both cards. Ada, Grace and Linus are also bound by the pair "
+                                                + "cards below, so they arrived with the page and render from cache while "
+                                                + "they revalidate; Barbara is in no other card, so she is the switch that "
+                                                + "shows a real load.")
                                                 .ToConstSignal(),
                                         },
                                     ],
