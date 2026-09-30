@@ -91,7 +91,7 @@ public sealed class ServerPrefetchFeature(CancellationToken cancellationToken = 
     {
         try
         {
-            return callback(cancellationToken) ?? Task.CompletedTask;
+            return callback(cancellationToken);
         }
         catch (Exception exception)
         {
