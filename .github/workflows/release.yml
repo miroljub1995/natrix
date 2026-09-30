@@ -90,6 +90,12 @@ jobs:
         run: |
           echo "Release ${{ steps.version.outputs.tag }} already exists. Skipping pack and publish steps."
 
+      - name: Restore workloads
+        # Packing the solution evaluates the browser-wasm projects too, which
+        # fails without the wasm-tools workload even though they aren't packed.
+        if: steps.release_check.outputs.exists != 'true'
+        run: dotnet workload restore Natrix.slnx
+
       - name: Pack NuGet packages
         if: steps.release_check.outputs.exists != 'true'
         shell: bash
