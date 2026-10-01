@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class FileSystemHandleKind
+public sealed partial class FileSystemHandleKind: global::Natrix.JSCore.IJSEnum<FileSystemHandleKind>
 {
     private readonly string _value;
 

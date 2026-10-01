@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUFeatureName
+public sealed partial class GPUFeatureName: global::Natrix.JSCore.IJSEnum<GPUFeatureName>
 {
     private readonly string _value;
 

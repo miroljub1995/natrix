@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate void EffectCallbackManaged(double? progress, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.GenericMarshaller.Union> currentTarget, global::Natrix.StdWeb.Animation animation);
+public delegate void EffectCallbackManaged(double? progress, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPseudoElement>> currentTarget, global::Natrix.StdWeb.Animation animation);
 
-public partial class EffectCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class EffectCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<EffectCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public EffectCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static EffectCallback global::Natrix.JSCore.IJSObjectProxy<EffectCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public EffectCallback(EffectCallbackManaged input): this(ToJSObject(input))
@@ -92,10 +96,10 @@ public partial class EffectCallback: global::Natrix.JSCore.JSObjectProxy
                 }
 
                 // Argument 2
-                global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.GenericMarshaller.Union> ___arg_5;
+                global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPseudoElement>> ___arg_5;
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_6;
                 ___propObject_6 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(___args_0, 1);
-                ___arg_5 = new global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.GenericMarshaller.Union>(___propObject_6);
+                ___arg_5 = new global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPseudoElement>>(___propObject_6);
 
                 // Argument 3
                 global::Natrix.StdWeb.Animation ___arg_7;

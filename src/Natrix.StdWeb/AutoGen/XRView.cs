@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class XRView: global::Natrix.JSCore.JSObjectProxy
+public partial class XRView: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<XRView>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XRView(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,33 +12,37 @@ public partial class XRView: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool IsFirstPersonObserver
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "isFirstPersonObserver");
-    }
+    static XRView global::Natrix.JSCore.IJSObjectProxy<XRView>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<XRView>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRCamera? Camera
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRCamera?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "camera");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRCamera>.Get(JSObject, "camera");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool IsFirstPersonObserver
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isFirstPersonObserver");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XREye Eye
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XREye, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "eye");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XREye>.Get(JSObject, "eye");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Index
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "index");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "index");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? RecommendedViewportScale
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "recommendedViewportScale");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "recommendedViewportScale");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -67,13 +71,13 @@ public partial class XRView: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Float32Array ProjectionMatrix
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Float32Array, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "projectionMatrix");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>.Get(JSObject, "projectionMatrix");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRRigidTransform Transform
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRRigidTransform, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "transform");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>.Get(JSObject, "transform");
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ML: global::Natrix.JSCore.JSObjectProxy
+public partial class ML: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<ML>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ML(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,18 +12,22 @@ public partial class ML: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContext, global::Natrix.StdWeb.PropertyAccessor> CreateContext()
+    static ML global::Natrix.JSCore.IJSObjectProxy<ML>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ML>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLContext>> CreateContext()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "createContext", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContext, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLContext>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContext, global::Natrix.StdWeb.PropertyAccessor> CreateContext(global::Natrix.StdWeb.MLContextOptions options)
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLContext>> CreateContext(global::Natrix.StdWeb.MLContextOptions options)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -39,11 +43,11 @@ public partial class ML: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createContext", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContext, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLContext>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContext, global::Natrix.StdWeb.PropertyAccessor> CreateContext(global::Natrix.StdWeb.GPUDevice gpuDevice)
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLContext>> CreateContext(global::Natrix.StdWeb.GPUDevice gpuDevice)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -59,7 +63,7 @@ public partial class ML: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createContext", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContext, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLContext>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

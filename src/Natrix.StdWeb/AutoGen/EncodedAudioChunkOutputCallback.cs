@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void EncodedAudioChunkOutputCallbackManaged(global::Natrix.StdWeb.EncodedAudioChunk output, global::Natrix.StdWeb.EncodedAudioChunkMetadata metadata);
 
-public partial class EncodedAudioChunkOutputCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class EncodedAudioChunkOutputCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<EncodedAudioChunkOutputCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public EncodedAudioChunkOutputCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static EncodedAudioChunkOutputCallback global::Natrix.JSCore.IJSObjectProxy<EncodedAudioChunkOutputCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public EncodedAudioChunkOutputCallback(EncodedAudioChunkOutputCallbackManaged input): this(ToJSObject(input))

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class VideoPixelFormat
+public sealed partial class VideoPixelFormat: global::Natrix.JSCore.IJSEnum<VideoPixelFormat>
 {
     private readonly string _value;
 

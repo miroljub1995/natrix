@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RenderBlockingStatusType
+public sealed partial class RenderBlockingStatusType: global::Natrix.JSCore.IJSEnum<RenderBlockingStatusType>
 {
     private readonly string _value;
 

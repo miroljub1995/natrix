@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUAutoLayoutMode
+public sealed partial class GPUAutoLayoutMode: global::Natrix.JSCore.IJSEnum<GPUAutoLayoutMode>
 {
     private readonly string _value;
 

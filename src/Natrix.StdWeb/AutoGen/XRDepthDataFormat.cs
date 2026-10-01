@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRDepthDataFormat
+public sealed partial class XRDepthDataFormat: global::Natrix.JSCore.IJSEnum<XRDepthDataFormat>
 {
     private readonly string _value;
 

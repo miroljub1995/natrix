@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PointerAxis
+public sealed partial class PointerAxis: global::Natrix.JSCore.IJSEnum<PointerAxis>
 {
     private readonly string _value;
 

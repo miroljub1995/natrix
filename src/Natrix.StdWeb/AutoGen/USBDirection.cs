@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class USBDirection
+public sealed partial class USBDirection: global::Natrix.JSCore.IJSEnum<USBDirection>
 {
     private readonly string _value;
 

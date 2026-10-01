@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PeriodicSyncEventInit: global::Natrix.StdWeb.ExtendableEventInit
+public partial class PeriodicSyncEventInit: global::Natrix.StdWeb.ExtendableEventInit, global::Natrix.JSCore.IJSObjectProxy<PeriodicSyncEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class PeriodicSyncEventInit: global::Natrix.StdWeb.ExtendableEven
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PeriodicSyncEventInit global::Natrix.JSCore.IJSObjectProxy<PeriodicSyncEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PeriodicSyncEventInit(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class PeriodicSyncEventInit: global::Natrix.StdWeb.ExtendableEven
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Tag
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "tag");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "tag", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "tag");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "tag", value);
     }
 }
 

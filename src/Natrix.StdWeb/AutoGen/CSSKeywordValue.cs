@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CSSKeywordValue: global::Natrix.StdWeb.CSSStyleValue
+public partial class CSSKeywordValue: global::Natrix.StdWeb.CSSStyleValue, global::Natrix.JSCore.IJSObjectProxy<CSSKeywordValue>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CSSKeywordValue(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CSSKeywordValue global::Natrix.JSCore.IJSObjectProxy<CSSKeywordValue>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CSSKeywordValue>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.CSSKeywordValue New(string value)
@@ -30,8 +34,8 @@ public partial class CSSKeywordValue: global::Natrix.StdWeb.CSSStyleValue
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "value", value);
     }
 }
 

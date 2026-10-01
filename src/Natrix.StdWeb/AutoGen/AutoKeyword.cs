@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AutoKeyword
+public sealed partial class AutoKeyword: global::Natrix.JSCore.IJSEnum<AutoKeyword>
 {
     private readonly string _value;
 

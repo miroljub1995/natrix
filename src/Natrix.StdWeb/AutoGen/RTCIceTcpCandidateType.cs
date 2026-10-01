@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCIceTcpCandidateType
+public sealed partial class RTCIceTcpCandidateType: global::Natrix.JSCore.IJSEnum<RTCIceTcpCandidateType>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class YamlLdErrorCode
+public sealed partial class YamlLdErrorCode: global::Natrix.JSCore.IJSEnum<YamlLdErrorCode>
 {
     private readonly string _value;
 

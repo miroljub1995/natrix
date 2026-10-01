@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void CreateMonitorCallbackManaged(global::Natrix.StdWeb.CreateMonitor monitor);
 
-public partial class CreateMonitorCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class CreateMonitorCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<CreateMonitorCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CreateMonitorCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CreateMonitorCallback global::Natrix.JSCore.IJSObjectProxy<CreateMonitorCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CreateMonitorCallback(CreateMonitorCallbackManaged input): this(ToJSObject(input))

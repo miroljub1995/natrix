@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ScriptWindowAttribution
+public sealed partial class ScriptWindowAttribution: global::Natrix.JSCore.IJSEnum<ScriptWindowAttribution>
 {
     private readonly string _value;
 

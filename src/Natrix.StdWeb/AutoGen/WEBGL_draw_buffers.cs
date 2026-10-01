@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WEBGL_draw_buffers: global::Natrix.JSCore.JSObjectProxy
+public partial class WEBGL_draw_buffers: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<WEBGL_draw_buffers>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WEBGL_draw_buffers(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WEBGL_draw_buffers global::Natrix.JSCore.IJSObjectProxy<WEBGL_draw_buffers>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WEBGL_draw_buffers>(obj);
 
     public const uint COLOR_ATTACHMENT0_WEBGL = 0x8CE0;
 
@@ -80,7 +84,7 @@ public partial class WEBGL_draw_buffers: global::Natrix.JSCore.JSObjectProxy
     public const uint MAX_DRAW_BUFFERS_WEBGL = 0x8824;
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void DrawBuffersWEBGL(global::Natrix.JSCore.Generics.JSArray<uint, global::Natrix.StdWeb.PropertyAccessor> buffers)
+    public void DrawBuffersWEBGL(global::Natrix.JSCore.Generics.JSArray<uint, global::Natrix.JSCore.Generics.UInt32Accessor> buffers)
     {
         int ___argsArrayLength_2 = 1;
 

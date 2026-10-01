@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class IdentityCredentialDisconnectOptions: global::Natrix.StdWeb.IdentityProviderConfig
+public partial class IdentityCredentialDisconnectOptions: global::Natrix.StdWeb.IdentityProviderConfig, global::Natrix.JSCore.IJSObjectProxy<IdentityCredentialDisconnectOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class IdentityCredentialDisconnectOptions: global::Natrix.StdWeb.
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static IdentityCredentialDisconnectOptions global::Natrix.JSCore.IJSObjectProxy<IdentityCredentialDisconnectOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public IdentityCredentialDisconnectOptions(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class IdentityCredentialDisconnectOptions: global::Natrix.StdWeb.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string AccountHint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "accountHint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "accountHint", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "accountHint");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "accountHint", value);
     }
 }
 

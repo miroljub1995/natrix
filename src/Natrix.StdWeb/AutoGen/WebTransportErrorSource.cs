@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class WebTransportErrorSource
+public sealed partial class WebTransportErrorSource: global::Natrix.JSCore.IJSEnum<WebTransportErrorSource>
 {
     private readonly string _value;
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WebGLQuery: global::Natrix.StdWeb.WebGLObject
+public partial class WebGLQuery: global::Natrix.StdWeb.WebGLObject, global::Natrix.JSCore.IJSObjectProxy<WebGLQuery>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WebGLQuery(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WebGLQuery global::Natrix.JSCore.IJSObjectProxy<WebGLQuery>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WebGLQuery>(obj);
 
 
 }

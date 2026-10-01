@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SpeechSynthesisEvent: global::Natrix.StdWeb.Event
+public partial class SpeechSynthesisEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<SpeechSynthesisEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SpeechSynthesisEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SpeechSynthesisEvent global::Natrix.JSCore.IJSObjectProxy<SpeechSynthesisEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<SpeechSynthesisEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.SpeechSynthesisEvent New(string type, global::Natrix.StdWeb.SpeechSynthesisEventInit eventInitDict)
@@ -35,31 +39,31 @@ public partial class SpeechSynthesisEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SpeechSynthesisUtterance Utterance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpeechSynthesisUtterance, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "utterance");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechSynthesisUtterance>.Get(JSObject, "utterance");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint CharIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "charIndex");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "charIndex");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint CharLength
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "charLength");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "charLength");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float ElapsedTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "elapsedTime");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "elapsedTime");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 }
 

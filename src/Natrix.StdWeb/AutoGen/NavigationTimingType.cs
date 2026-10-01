@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class NavigationTimingType
+public sealed partial class NavigationTimingType: global::Natrix.JSCore.IJSEnum<NavigationTimingType>
 {
     private readonly string _value;
 

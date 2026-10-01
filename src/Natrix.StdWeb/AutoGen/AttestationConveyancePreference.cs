@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AttestationConveyancePreference
+public sealed partial class AttestationConveyancePreference: global::Natrix.JSCore.IJSEnum<AttestationConveyancePreference>
 {
     private readonly string _value;
 

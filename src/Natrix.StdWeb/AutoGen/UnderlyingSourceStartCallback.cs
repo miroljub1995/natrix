@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? UnderlyingSourceStartCallbackManaged(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.ReadableStreamDefaultController, global::Natrix.StdWeb.ReadableByteStreamController, global::Natrix.StdWeb.GenericMarshaller.Union> controller);
+public delegate global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? UnderlyingSourceStartCallbackManaged(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.ReadableStreamDefaultController, global::Natrix.StdWeb.ReadableByteStreamController, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStreamDefaultController>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableByteStreamController>> controller);
 
-public partial class UnderlyingSourceStartCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class UnderlyingSourceStartCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<UnderlyingSourceStartCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public UnderlyingSourceStartCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static UnderlyingSourceStartCallback global::Natrix.JSCore.IJSObjectProxy<UnderlyingSourceStartCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public UnderlyingSourceStartCallback(UnderlyingSourceStartCallbackManaged input): this(ToJSObject(input))
@@ -53,7 +57,7 @@ public partial class UnderlyingSourceStartCallback: global::Natrix.JSCore.JSObje
             global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunction(JSObject, null, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
             // Return Value
-            global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? ___res_2;
+            global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? ___res_2;
             global::System.Runtime.InteropServices.JavaScript.JSObject? ___propObject_5;
             ___propObject_5 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2AsNullable(___resOwner_1.JSObject, "value");
             if (___propObject_5 is null)
@@ -62,7 +66,7 @@ public partial class UnderlyingSourceStartCallback: global::Natrix.JSCore.JSObje
             }
             else
             {
-                ___res_2 = new global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>(___propObject_5);
+                ___res_2 = new global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>(___propObject_5);
             }
             return ___res_2;
         };
@@ -78,12 +82,12 @@ public partial class UnderlyingSourceStartCallback: global::Natrix.JSCore.JSObje
             using (___res_5)
             {
                 // Argument 1
-                global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.ReadableStreamDefaultController, global::Natrix.StdWeb.ReadableByteStreamController, global::Natrix.StdWeb.GenericMarshaller.Union> ___arg_2;
+                global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.ReadableStreamDefaultController, global::Natrix.StdWeb.ReadableByteStreamController, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStreamDefaultController>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableByteStreamController>> ___arg_2;
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_3;
                 ___propObject_3 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(___args_0, 0);
-                ___arg_2 = new global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.ReadableStreamDefaultController, global::Natrix.StdWeb.ReadableByteStreamController, global::Natrix.StdWeb.GenericMarshaller.Union>(___propObject_3);
+                ___arg_2 = new global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.ReadableStreamDefaultController, global::Natrix.StdWeb.ReadableByteStreamController, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStreamDefaultController>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableByteStreamController>>(___propObject_3);
 
-                global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? ___managedRes_6 = input(___arg_2);
+                global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? ___managedRes_6 = input(___arg_2);
 
                 global::System.Runtime.InteropServices.JavaScript.JSObject? ___propObject_7;
                 if (___managedRes_6 is null)

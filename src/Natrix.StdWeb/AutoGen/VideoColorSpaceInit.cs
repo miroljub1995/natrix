@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class VideoColorSpaceInit: global::Natrix.JSCore.JSObjectProxy
+public partial class VideoColorSpaceInit: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<VideoColorSpaceInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class VideoColorSpaceInit: global::Natrix.JSCore.JSObjectProxy
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static VideoColorSpaceInit global::Natrix.JSCore.IJSObjectProxy<VideoColorSpaceInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public VideoColorSpaceInit(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,29 +26,29 @@ public partial class VideoColorSpaceInit: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoColorPrimaries? Primaries
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoColorPrimaries?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "primaries");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoColorPrimaries?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "primaries", value);
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoColorPrimaries>.Get(JSObject, "primaries");
+        set => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoColorPrimaries>.Set(JSObject, "primaries", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoTransferCharacteristics? Transfer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoTransferCharacteristics?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "transfer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoTransferCharacteristics?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "transfer", value);
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoTransferCharacteristics>.Get(JSObject, "transfer");
+        set => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoTransferCharacteristics>.Set(JSObject, "transfer", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoMatrixCoefficients? Matrix
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoMatrixCoefficients?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "matrix");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoMatrixCoefficients?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "matrix", value);
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoMatrixCoefficients>.Get(JSObject, "matrix");
+        set => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoMatrixCoefficients>.Set(JSObject, "matrix", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool? FullRange
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "fullRange");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "fullRange", value);
+        get => global::Natrix.JSCore.Generics.NullableBooleanAccessor.Get(JSObject, "fullRange");
+        set => global::Natrix.JSCore.Generics.NullableBooleanAccessor.Set(JSObject, "fullRange", value);
     }
 }
 

@@ -4,13 +4,16 @@ using Natrix.JSCore.Extensions;
 
 namespace Natrix.JSCore.Generics;
 
-public class FrozenArray<T, TAccessor> : JSObjectProxy
+public class FrozenArray<T, TAccessor> : JSObjectProxy, IJSObjectProxy<FrozenArray<T, TAccessor>>
     where TAccessor : IPropertyAccessor<T>
 {
     [SupportedOSPlatform("browser")]
     public FrozenArray(JSObject obj) : base(obj)
     {
     }
+
+    [SupportedOSPlatform("browser")]
+    static FrozenArray<T, TAccessor> IJSObjectProxy<FrozenArray<T, TAccessor>>.Create(JSObject obj) => new(obj);
 
     [SupportedOSPlatform("browser")]
     public static implicit operator FrozenArray<T, TAccessor>(T[] input) =>

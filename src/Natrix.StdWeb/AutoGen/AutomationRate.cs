@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AutomationRate
+public sealed partial class AutomationRate: global::Natrix.JSCore.IJSEnum<AutomationRate>
 {
     private readonly string _value;
 

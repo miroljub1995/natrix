@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ClipboardItemOptions: global::Natrix.JSCore.JSObjectProxy
+public partial class ClipboardItemOptions: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<ClipboardItemOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class ClipboardItemOptions: global::Natrix.JSCore.JSObjectProxy
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ClipboardItemOptions global::Natrix.JSCore.IJSObjectProxy<ClipboardItemOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ClipboardItemOptions(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,8 +26,8 @@ public partial class ClipboardItemOptions: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PresentationStyle PresentationStyle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PresentationStyle, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "presentationStyle");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PresentationStyle, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "presentationStyle", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PresentationStyle>.Get(JSObject, "presentationStyle");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PresentationStyle>.Set(JSObject, "presentationStyle", value);
     }
 }
 

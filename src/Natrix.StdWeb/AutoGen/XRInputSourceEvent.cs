@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class XRInputSourceEvent: global::Natrix.StdWeb.Event
+public partial class XRInputSourceEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<XRInputSourceEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XRInputSourceEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static XRInputSourceEvent global::Natrix.JSCore.IJSObjectProxy<XRInputSourceEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<XRInputSourceEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.XRInputSourceEvent New(string type, global::Natrix.StdWeb.XRInputSourceEventInit eventInitDict)
@@ -35,13 +39,13 @@ public partial class XRInputSourceEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRFrame Frame
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRFrame, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "frame");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRFrame>.Get(JSObject, "frame");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRInputSource InputSource
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRInputSource, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "inputSource");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRInputSource>.Get(JSObject, "inputSource");
     }
 }
 

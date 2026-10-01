@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class XRCubeLayerInit: global::Natrix.StdWeb.XRLayerInit
+public partial class XRCubeLayerInit: global::Natrix.StdWeb.XRLayerInit, global::Natrix.JSCore.IJSObjectProxy<XRCubeLayerInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class XRCubeLayerInit: global::Natrix.StdWeb.XRLayerInit
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static XRCubeLayerInit global::Natrix.JSCore.IJSObjectProxy<XRCubeLayerInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XRCubeLayerInit(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class XRCubeLayerInit: global::Natrix.StdWeb.XRLayerInit
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMPointReadOnly? Orientation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPointReadOnly?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "orientation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMPointReadOnly?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "orientation", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DOMPointReadOnly>.Get(JSObject, "orientation");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DOMPointReadOnly>.Set(JSObject, "orientation", value);
     }
 }
 

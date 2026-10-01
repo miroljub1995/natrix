@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class OrientationSensorOptions: global::Natrix.StdWeb.SensorOptions
+public partial class OrientationSensorOptions: global::Natrix.StdWeb.SensorOptions, global::Natrix.JSCore.IJSObjectProxy<OrientationSensorOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class OrientationSensorOptions: global::Natrix.StdWeb.SensorOptio
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static OrientationSensorOptions global::Natrix.JSCore.IJSObjectProxy<OrientationSensorOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public OrientationSensorOptions(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class OrientationSensorOptions: global::Natrix.StdWeb.SensorOptio
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.OrientationSensorLocalCoordinateSystem ReferenceFrame
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.OrientationSensorLocalCoordinateSystem, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "referenceFrame");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.OrientationSensorLocalCoordinateSystem, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "referenceFrame", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OrientationSensorLocalCoordinateSystem>.Get(JSObject, "referenceFrame");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OrientationSensorLocalCoordinateSystem>.Set(JSObject, "referenceFrame", value);
     }
 }
 

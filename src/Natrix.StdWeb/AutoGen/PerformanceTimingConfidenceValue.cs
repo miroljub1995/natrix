@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PerformanceTimingConfidenceValue
+public sealed partial class PerformanceTimingConfidenceValue: global::Natrix.JSCore.IJSEnum<PerformanceTimingConfidenceValue>
 {
     private readonly string _value;
 

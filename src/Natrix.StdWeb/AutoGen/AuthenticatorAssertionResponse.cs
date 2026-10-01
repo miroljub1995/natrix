@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class AuthenticatorAssertionResponse: global::Natrix.StdWeb.AuthenticatorResponse
+public partial class AuthenticatorAssertionResponse: global::Natrix.StdWeb.AuthenticatorResponse, global::Natrix.JSCore.IJSObjectProxy<AuthenticatorAssertionResponse>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AuthenticatorAssertionResponse(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,21 +12,25 @@ public partial class AuthenticatorAssertionResponse: global::Natrix.StdWeb.Authe
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static AuthenticatorAssertionResponse global::Natrix.JSCore.IJSObjectProxy<AuthenticatorAssertionResponse>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<AuthenticatorAssertionResponse>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.ArrayBuffer AuthenticatorData
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.ArrayBuffer, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "authenticatorData");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.ArrayBuffer>.Get(JSObject, "authenticatorData");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.ArrayBuffer Signature
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.ArrayBuffer, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "signature");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.ArrayBuffer>.Get(JSObject, "signature");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.ArrayBuffer? UserHandle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.ArrayBuffer?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "userHandle");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.ArrayBuffer>.Get(JSObject, "userHandle");
     }
 }
 

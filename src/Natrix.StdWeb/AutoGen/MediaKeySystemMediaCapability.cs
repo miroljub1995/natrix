@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MediaKeySystemMediaCapability: global::Natrix.JSCore.JSObjectProxy
+public partial class MediaKeySystemMediaCapability: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<MediaKeySystemMediaCapability>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class MediaKeySystemMediaCapability: global::Natrix.JSCore.JSObje
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MediaKeySystemMediaCapability global::Natrix.JSCore.IJSObjectProxy<MediaKeySystemMediaCapability>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MediaKeySystemMediaCapability(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,22 +26,22 @@ public partial class MediaKeySystemMediaCapability: global::Natrix.JSCore.JSObje
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ContentType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "contentType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "contentType", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "contentType");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "contentType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? EncryptionScheme
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "encryptionScheme");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "encryptionScheme", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "encryptionScheme");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "encryptionScheme", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Robustness
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "robustness");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "robustness", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "robustness");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "robustness", value);
     }
 }
 

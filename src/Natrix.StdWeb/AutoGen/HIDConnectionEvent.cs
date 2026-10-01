@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class HIDConnectionEvent: global::Natrix.StdWeb.Event
+public partial class HIDConnectionEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<HIDConnectionEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public HIDConnectionEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static HIDConnectionEvent global::Natrix.JSCore.IJSObjectProxy<HIDConnectionEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<HIDConnectionEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.HIDConnectionEvent New(string type, global::Natrix.StdWeb.HIDConnectionEventInit eventInitDict)
@@ -35,7 +39,7 @@ public partial class HIDConnectionEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HIDDevice Device
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HIDDevice, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "device");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDevice>.Get(JSObject, "device");
     }
 }
 

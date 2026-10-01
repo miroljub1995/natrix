@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class UnderlineStyle
+public sealed partial class UnderlineStyle: global::Natrix.JSCore.IJSEnum<UnderlineStyle>
 {
     private readonly string _value;
 

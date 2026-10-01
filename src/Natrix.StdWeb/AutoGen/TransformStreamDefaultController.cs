@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class TransformStreamDefaultController: global::Natrix.JSCore.JSObjectProxy
+public partial class TransformStreamDefaultController: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<TransformStreamDefaultController>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TransformStreamDefaultController(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,9 +12,13 @@ public partial class TransformStreamDefaultController: global::Natrix.JSCore.JSO
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TransformStreamDefaultController global::Natrix.JSCore.IJSObjectProxy<TransformStreamDefaultController>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<TransformStreamDefaultController>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? DesiredSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "desiredSize");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "desiredSize");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -24,7 +28,7 @@ public partial class TransformStreamDefaultController: global::Natrix.JSCore.JSO
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void Enqueue(global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? chunk)
+    public void Enqueue(global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? chunk)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -53,7 +57,7 @@ public partial class TransformStreamDefaultController: global::Natrix.JSCore.JSO
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void Error(global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? reason)
+    public void Error(global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? reason)
     {
         int ___argsArrayLength_2 = 1;
 

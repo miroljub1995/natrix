@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RemotePlaybackState
+public sealed partial class RemotePlaybackState: global::Natrix.JSCore.IJSEnum<RemotePlaybackState>
 {
     private readonly string _value;
 

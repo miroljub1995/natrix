@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCIceServerTransportProtocol
+public sealed partial class RTCIceServerTransportProtocol: global::Natrix.JSCore.IJSEnum<RTCIceServerTransportProtocol>
 {
     private readonly string _value;
 

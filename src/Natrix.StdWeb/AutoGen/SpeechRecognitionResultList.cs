@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SpeechRecognitionResultList: global::Natrix.JSCore.JSObjectProxy
+public partial class SpeechRecognitionResultList: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<SpeechRecognitionResultList>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SpeechRecognitionResultList(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,9 +12,13 @@ public partial class SpeechRecognitionResultList: global::Natrix.JSCore.JSObject
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SpeechRecognitionResultList global::Natrix.JSCore.IJSObjectProxy<SpeechRecognitionResultList>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<SpeechRecognitionResultList>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "length");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "length");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -34,7 +38,7 @@ public partial class SpeechRecognitionResultList: global::Natrix.JSCore.JSObject
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "item", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpeechRecognitionResult, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechRecognitionResult>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

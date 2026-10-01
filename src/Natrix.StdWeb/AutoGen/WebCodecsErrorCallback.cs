@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void WebCodecsErrorCallbackManaged(global::Natrix.StdWeb.DOMException error);
 
-public partial class WebCodecsErrorCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class WebCodecsErrorCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<WebCodecsErrorCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WebCodecsErrorCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WebCodecsErrorCallback global::Natrix.JSCore.IJSObjectProxy<WebCodecsErrorCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WebCodecsErrorCallback(WebCodecsErrorCallbackManaged input): this(ToJSObject(input))

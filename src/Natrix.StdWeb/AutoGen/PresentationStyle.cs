@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PresentationStyle
+public sealed partial class PresentationStyle: global::Natrix.JSCore.IJSEnum<PresentationStyle>
 {
     private readonly string _value;
 

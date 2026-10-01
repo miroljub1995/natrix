@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class BackgroundFetchFailureReason
+public sealed partial class BackgroundFetchFailureReason: global::Natrix.JSCore.IJSEnum<BackgroundFetchFailureReason>
 {
     private readonly string _value;
 

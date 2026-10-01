@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CompositionEventInit: global::Natrix.StdWeb.UIEventInit
+public partial class CompositionEventInit: global::Natrix.StdWeb.UIEventInit, global::Natrix.JSCore.IJSObjectProxy<CompositionEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class CompositionEventInit: global::Natrix.StdWeb.UIEventInit
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CompositionEventInit global::Natrix.JSCore.IJSObjectProxy<CompositionEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CompositionEventInit(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class CompositionEventInit: global::Natrix.StdWeb.UIEventInit
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "data");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "data", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "data");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "data", value);
     }
 }
 

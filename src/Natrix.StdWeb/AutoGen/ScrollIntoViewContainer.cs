@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ScrollIntoViewContainer
+public sealed partial class ScrollIntoViewContainer: global::Natrix.JSCore.IJSEnum<ScrollIntoViewContainer>
 {
     private readonly string _value;
 

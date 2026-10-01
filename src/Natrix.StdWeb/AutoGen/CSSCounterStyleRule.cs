@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CSSCounterStyleRule: global::Natrix.StdWeb.CSSRule
+public partial class CSSCounterStyleRule: global::Natrix.StdWeb.CSSRule, global::Natrix.JSCore.IJSObjectProxy<CSSCounterStyleRule>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CSSCounterStyleRule(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,80 +12,84 @@ public partial class CSSCounterStyleRule: global::Natrix.StdWeb.CSSRule
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CSSCounterStyleRule global::Natrix.JSCore.IJSObjectProxy<CSSCounterStyleRule>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CSSCounterStyleRule>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "name");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "name", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "name", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string System
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "system");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "system", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "system");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "system", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Symbols
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "symbols");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "symbols", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "symbols");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "symbols", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string AdditiveSymbols
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "additiveSymbols");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "additiveSymbols", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "additiveSymbols");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "additiveSymbols", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Negative
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "negative");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "negative", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "negative");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "negative", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Prefix
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "prefix");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "prefix", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "prefix");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "prefix", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Suffix
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "suffix");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "suffix", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "suffix");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "suffix", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Range
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "range");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "range", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "range");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "range", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Pad
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "pad");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "pad", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "pad");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "pad", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string SpeakAs
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "speakAs");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "speakAs", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "speakAs");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "speakAs", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Fallback
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "fallback");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "fallback", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "fallback");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "fallback", value);
     }
 }
 

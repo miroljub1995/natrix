@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class DocumentFragment: global::Natrix.StdWeb.Node
+public partial class DocumentFragment: global::Natrix.StdWeb.Node, global::Natrix.JSCore.IJSObjectProxy<DocumentFragment>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public DocumentFragment(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static DocumentFragment global::Natrix.JSCore.IJSObjectProxy<DocumentFragment>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<DocumentFragment>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.DocumentFragment New()
@@ -35,35 +39,35 @@ public partial class DocumentFragment: global::Natrix.StdWeb.Node
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getElementById", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HTMLCollection Children
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLCollection, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "children");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLCollection>.Get(JSObject, "children");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? FirstElementChild
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "firstElementChild");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>.Get(JSObject, "firstElementChild");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? LastElementChild
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "lastElementChild");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>.Get(JSObject, "lastElementChild");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ChildElementCount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "childElementCount");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "childElementCount");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void Prepend(params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.StdWeb.GenericMarshaller.Union>[] nodes)
+    public void Prepend(params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>, global::Natrix.JSCore.Generics.StringAccessor>[] nodes)
     {
         int ___argsArrayLength_2 = nodes.Length + 0;
 
@@ -72,7 +76,7 @@ public partial class DocumentFragment: global::Natrix.StdWeb.Node
         // Argument 1
         for (int ___i_3 = 0; ___i_3 < nodes.Length; ___i_3++)
         {
-        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.StdWeb.GenericMarshaller.Union> ___elem_4 = nodes[___i_3];
+        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>, global::Natrix.JSCore.Generics.StringAccessor> ___elem_4 = nodes[___i_3];
             global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_5 = ___elem_4.JSObject;
             global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(___argsArray_0.JSObject, 0 + ___i_3, ___propObject_5);
         }
@@ -81,7 +85,7 @@ public partial class DocumentFragment: global::Natrix.StdWeb.Node
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void Append(params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.StdWeb.GenericMarshaller.Union>[] nodes)
+    public void Append(params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>, global::Natrix.JSCore.Generics.StringAccessor>[] nodes)
     {
         int ___argsArrayLength_2 = nodes.Length + 0;
 
@@ -90,7 +94,7 @@ public partial class DocumentFragment: global::Natrix.StdWeb.Node
         // Argument 1
         for (int ___i_3 = 0; ___i_3 < nodes.Length; ___i_3++)
         {
-        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.StdWeb.GenericMarshaller.Union> ___elem_4 = nodes[___i_3];
+        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>, global::Natrix.JSCore.Generics.StringAccessor> ___elem_4 = nodes[___i_3];
             global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_5 = ___elem_4.JSObject;
             global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(___argsArray_0.JSObject, 0 + ___i_3, ___propObject_5);
         }
@@ -99,7 +103,7 @@ public partial class DocumentFragment: global::Natrix.StdWeb.Node
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void ReplaceChildren(params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.StdWeb.GenericMarshaller.Union>[] nodes)
+    public void ReplaceChildren(params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>, global::Natrix.JSCore.Generics.StringAccessor>[] nodes)
     {
         int ___argsArrayLength_2 = nodes.Length + 0;
 
@@ -108,7 +112,7 @@ public partial class DocumentFragment: global::Natrix.StdWeb.Node
         // Argument 1
         for (int ___i_3 = 0; ___i_3 < nodes.Length; ___i_3++)
         {
-        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.StdWeb.GenericMarshaller.Union> ___elem_4 = nodes[___i_3];
+        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>, global::Natrix.JSCore.Generics.StringAccessor> ___elem_4 = nodes[___i_3];
             global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_5 = ___elem_4.JSObject;
             global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(___argsArray_0.JSObject, 0 + ___i_3, ___propObject_5);
         }
@@ -161,7 +165,7 @@ public partial class DocumentFragment: global::Natrix.StdWeb.Node
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "querySelector", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -181,7 +185,7 @@ public partial class DocumentFragment: global::Natrix.StdWeb.Node
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "querySelectorAll", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NodeList, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NodeList>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

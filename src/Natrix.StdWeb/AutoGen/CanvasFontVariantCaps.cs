@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CanvasFontVariantCaps
+public sealed partial class CanvasFontVariantCaps: global::Natrix.JSCore.IJSEnum<CanvasFontVariantCaps>
 {
     private readonly string _value;
 

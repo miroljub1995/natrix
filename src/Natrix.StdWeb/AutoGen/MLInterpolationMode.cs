@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MLInterpolationMode
+public sealed partial class MLInterpolationMode: global::Natrix.JSCore.IJSEnum<MLInterpolationMode>
 {
     private readonly string _value;
 

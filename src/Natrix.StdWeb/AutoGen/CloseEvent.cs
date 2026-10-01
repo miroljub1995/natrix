@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CloseEvent: global::Natrix.StdWeb.Event
+public partial class CloseEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<CloseEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CloseEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CloseEvent global::Natrix.JSCore.IJSObjectProxy<CloseEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CloseEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.CloseEvent New(string type)
@@ -51,19 +55,19 @@ public partial class CloseEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool WasClean
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "wasClean");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "wasClean");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Code
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "code");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "code");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Reason
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "reason");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "reason");
     }
 }
 

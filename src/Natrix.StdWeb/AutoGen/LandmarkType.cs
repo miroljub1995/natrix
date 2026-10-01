@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class LandmarkType
+public sealed partial class LandmarkType: global::Natrix.JSCore.IJSEnum<LandmarkType>
 {
     private readonly string _value;
 

@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate global::Natrix.JSCore.Promise NavigationInterceptHandlerManaged();
 
-public partial class NavigationInterceptHandler: global::Natrix.JSCore.JSObjectProxy
+public partial class NavigationInterceptHandler: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<NavigationInterceptHandler>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NavigationInterceptHandler(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NavigationInterceptHandler global::Natrix.JSCore.IJSObjectProxy<NavigationInterceptHandler>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NavigationInterceptHandler(NavigationInterceptHandlerManaged input): this(ToJSObject(input))

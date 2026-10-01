@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MediaSessionEnterPictureInPictureReason
+public sealed partial class MediaSessionEnterPictureInPictureReason: global::Natrix.JSCore.IJSEnum<MediaSessionEnterPictureInPictureReason>
 {
     private readonly string _value;
 

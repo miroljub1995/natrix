@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class AudioScheduledSourceNode: global::Natrix.StdWeb.AudioNode
+public partial class AudioScheduledSourceNode: global::Natrix.StdWeb.AudioNode, global::Natrix.JSCore.IJSObjectProxy<AudioScheduledSourceNode>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AudioScheduledSourceNode(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,10 +12,14 @@ public partial class AudioScheduledSourceNode: global::Natrix.StdWeb.AudioNode
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static AudioScheduledSourceNode global::Natrix.JSCore.IJSObjectProxy<AudioScheduledSourceNode>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<AudioScheduledSourceNode>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventHandlerNonNull? Onended
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onended");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onended", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Get(JSObject, "onended");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Set(JSObject, "onended", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

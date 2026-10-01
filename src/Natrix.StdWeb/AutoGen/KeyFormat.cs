@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class KeyFormat
+public sealed partial class KeyFormat: global::Natrix.JSCore.IJSEnum<KeyFormat>
 {
     private readonly string _value;
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RdfDataset: global::Natrix.JSCore.JSObjectProxy
+public partial class RdfDataset: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<RdfDataset>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RdfDataset(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RdfDataset global::Natrix.JSCore.IJSObjectProxy<RdfDataset>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<RdfDataset>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.RdfDataset New()
@@ -21,7 +25,7 @@ public partial class RdfDataset: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RdfGraph DefaultGraph
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RdfGraph, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "defaultGraph");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RdfGraph>.Get(JSObject, "defaultGraph");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

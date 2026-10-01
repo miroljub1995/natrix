@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PictureInPictureEvent: global::Natrix.StdWeb.Event
+public partial class PictureInPictureEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<PictureInPictureEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PictureInPictureEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PictureInPictureEvent global::Natrix.JSCore.IJSObjectProxy<PictureInPictureEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PictureInPictureEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.PictureInPictureEvent New(string type, global::Natrix.StdWeb.PictureInPictureEventInit eventInitDict)
@@ -35,7 +39,7 @@ public partial class PictureInPictureEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PictureInPictureWindow PictureInPictureWindow
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PictureInPictureWindow, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "pictureInPictureWindow");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PictureInPictureWindow>.Get(JSObject, "pictureInPictureWindow");
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRInteractionMode
+public sealed partial class XRInteractionMode: global::Natrix.JSCore.IJSEnum<XRInteractionMode>
 {
     private readonly string _value;
 

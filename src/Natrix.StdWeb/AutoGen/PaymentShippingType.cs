@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PaymentShippingType
+public sealed partial class PaymentShippingType: global::Natrix.JSCore.IJSEnum<PaymentShippingType>
 {
     private readonly string _value;
 

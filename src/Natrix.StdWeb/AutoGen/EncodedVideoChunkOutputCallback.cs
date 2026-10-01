@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void EncodedVideoChunkOutputCallbackManaged(global::Natrix.StdWeb.EncodedVideoChunk chunk, global::Natrix.StdWeb.EncodedVideoChunkMetadata metadata);
 
-public partial class EncodedVideoChunkOutputCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class EncodedVideoChunkOutputCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<EncodedVideoChunkOutputCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public EncodedVideoChunkOutputCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static EncodedVideoChunkOutputCallback global::Natrix.JSCore.IJSObjectProxy<EncodedVideoChunkOutputCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public EncodedVideoChunkOutputCallback(EncodedVideoChunkOutputCallbackManaged input): this(ToJSObject(input))

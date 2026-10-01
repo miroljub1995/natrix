@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class NotRestoredReasons: global::Natrix.JSCore.JSObjectProxy
+public partial class NotRestoredReasons: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<NotRestoredReasons>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NotRestoredReasons(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,39 +12,43 @@ public partial class NotRestoredReasons: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NotRestoredReasons global::Natrix.JSCore.IJSObjectProxy<NotRestoredReasons>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<NotRestoredReasons>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Src
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "src");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "src");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "id");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "id");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "url");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "url");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NotRestoredReasonDetails, global::Natrix.StdWeb.PropertyAccessor>? Reasons
+    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NotRestoredReasonDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NotRestoredReasonDetails>>? Reasons
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NotRestoredReasonDetails, global::Natrix.StdWeb.PropertyAccessor>?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "reasons");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NotRestoredReasonDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NotRestoredReasonDetails>>>.Get(JSObject, "reasons");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NotRestoredReasons, global::Natrix.StdWeb.PropertyAccessor>? Children
+    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NotRestoredReasons, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NotRestoredReasons>>? Children
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NotRestoredReasons, global::Natrix.StdWeb.PropertyAccessor>?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "children");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NotRestoredReasons, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NotRestoredReasons>>>.Get(JSObject, "children");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -55,7 +59,7 @@ public partial class NotRestoredReasons: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toJSON", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.JSObjectAccessor.Get(___resOwner_1.JSObject, "value");
     }
 }
 

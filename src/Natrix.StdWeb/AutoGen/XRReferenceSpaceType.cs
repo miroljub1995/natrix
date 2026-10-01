@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRReferenceSpaceType
+public sealed partial class XRReferenceSpaceType: global::Natrix.JSCore.IJSEnum<XRReferenceSpaceType>
 {
     private readonly string _value;
 

@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate void FileSystemEntriesCallbackManaged(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FileSystemEntry, global::Natrix.StdWeb.PropertyAccessor> entries);
+public delegate void FileSystemEntriesCallbackManaged(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FileSystemEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemEntry>> entries);
 
-public partial class FileSystemEntriesCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class FileSystemEntriesCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<FileSystemEntriesCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FileSystemEntriesCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static FileSystemEntriesCallback global::Natrix.JSCore.IJSObjectProxy<FileSystemEntriesCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FileSystemEntriesCallback(FileSystemEntriesCallbackManaged input): this(ToJSObject(input))
@@ -61,10 +65,10 @@ public partial class FileSystemEntriesCallback: global::Natrix.JSCore.JSObjectPr
             using (___args_0)
             {
                 // Argument 1
-                global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FileSystemEntry, global::Natrix.StdWeb.PropertyAccessor> ___arg_2;
+                global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FileSystemEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemEntry>> ___arg_2;
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_3;
                 ___propObject_3 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(___args_0, 0);
-                ___arg_2 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FileSystemEntry, global::Natrix.StdWeb.PropertyAccessor>(___propObject_3);
+                ___arg_2 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FileSystemEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemEntry>>(___propObject_3);
 
                 input(___arg_2);
             }

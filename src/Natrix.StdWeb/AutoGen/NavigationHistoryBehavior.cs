@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class NavigationHistoryBehavior
+public sealed partial class NavigationHistoryBehavior: global::Natrix.JSCore.IJSEnum<NavigationHistoryBehavior>
 {
     private readonly string _value;
 

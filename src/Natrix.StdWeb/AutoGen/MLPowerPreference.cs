@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MLPowerPreference
+public sealed partial class MLPowerPreference: global::Natrix.JSCore.IJSEnum<MLPowerPreference>
 {
     private readonly string _value;
 

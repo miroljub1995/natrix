@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class FullscreenKeyboardLock
+public sealed partial class FullscreenKeyboardLock: global::Natrix.JSCore.IJSEnum<FullscreenKeyboardLock>
 {
     private readonly string _value;
 

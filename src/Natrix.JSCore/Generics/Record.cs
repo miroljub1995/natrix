@@ -6,7 +6,7 @@ using Natrix.JSCore.Extensions;
 
 namespace Natrix.JSCore.Generics;
 
-public partial class Record<TValue, TAccessor> : JSObjectProxy, IEnumerable<KeyValuePair<string, TValue>>
+public partial class Record<TValue, TAccessor> : JSObjectProxy, IJSObjectProxy<Record<TValue, TAccessor>>, IEnumerable<KeyValuePair<string, TValue>>
     where TAccessor : IPropertyAccessor<TValue>
 {
     [JSImport("construct", "natrix")]
@@ -21,6 +21,9 @@ public partial class Record<TValue, TAccessor> : JSObjectProxy, IEnumerable<KeyV
     public Record(JSObject obj) : base(obj)
     {
     }
+
+    [SupportedOSPlatform("browser")]
+    static Record<TValue, TAccessor> IJSObjectProxy<Record<TValue, TAccessor>>.Create(JSObject obj) => new(obj);
 
     [SupportedOSPlatform("browser")]
     public TValue this[string key]

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCOfferOptions: global::Natrix.StdWeb.RTCOfferAnswerOptions
+public partial class RTCOfferOptions: global::Natrix.StdWeb.RTCOfferAnswerOptions, global::Natrix.JSCore.IJSObjectProxy<RTCOfferOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class RTCOfferOptions: global::Natrix.StdWeb.RTCOfferAnswerOption
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCOfferOptions global::Natrix.JSCore.IJSObjectProxy<RTCOfferOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCOfferOptions(): base()
     {
     }
@@ -22,22 +26,22 @@ public partial class RTCOfferOptions: global::Natrix.StdWeb.RTCOfferAnswerOption
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IceRestart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "iceRestart");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "iceRestart", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "iceRestart");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "iceRestart", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool OfferToReceiveAudio
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "offerToReceiveAudio");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "offerToReceiveAudio", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "offerToReceiveAudio");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "offerToReceiveAudio", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool OfferToReceiveVideo
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "offerToReceiveVideo");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "offerToReceiveVideo", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "offerToReceiveVideo");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "offerToReceiveVideo", value);
     }
 }
 

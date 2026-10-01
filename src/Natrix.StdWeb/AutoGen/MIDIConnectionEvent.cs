@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MIDIConnectionEvent: global::Natrix.StdWeb.Event
+public partial class MIDIConnectionEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<MIDIConnectionEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MIDIConnectionEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MIDIConnectionEvent global::Natrix.JSCore.IJSObjectProxy<MIDIConnectionEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<MIDIConnectionEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.MIDIConnectionEvent New(string type)
@@ -51,7 +55,7 @@ public partial class MIDIConnectionEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MIDIPort? Port
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MIDIPort?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "port");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.MIDIPort>.Get(JSObject, "port");
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GyroscopeLocalCoordinateSystem
+public sealed partial class GyroscopeLocalCoordinateSystem: global::Natrix.JSCore.IJSEnum<GyroscopeLocalCoordinateSystem>
 {
     private readonly string _value;
 

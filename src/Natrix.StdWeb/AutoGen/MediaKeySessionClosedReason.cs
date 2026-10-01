@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MediaKeySessionClosedReason
+public sealed partial class MediaKeySessionClosedReason: global::Natrix.JSCore.IJSEnum<MediaKeySessionClosedReason>
 {
     private readonly string _value;
 

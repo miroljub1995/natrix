@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XREye
+public sealed partial class XREye: global::Natrix.JSCore.IJSEnum<XREye>
 {
     private readonly string _value;
 

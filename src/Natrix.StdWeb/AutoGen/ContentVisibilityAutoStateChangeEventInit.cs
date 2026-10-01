@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ContentVisibilityAutoStateChangeEventInit: global::Natrix.StdWeb.EventInit
+public partial class ContentVisibilityAutoStateChangeEventInit: global::Natrix.StdWeb.EventInit, global::Natrix.JSCore.IJSObjectProxy<ContentVisibilityAutoStateChangeEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class ContentVisibilityAutoStateChangeEventInit: global::Natrix.S
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ContentVisibilityAutoStateChangeEventInit global::Natrix.JSCore.IJSObjectProxy<ContentVisibilityAutoStateChangeEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ContentVisibilityAutoStateChangeEventInit(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class ContentVisibilityAutoStateChangeEventInit: global::Natrix.S
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Skipped
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "skipped");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "skipped", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "skipped");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "skipped", value);
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PushEncryptionKeyName
+public sealed partial class PushEncryptionKeyName: global::Natrix.JSCore.IJSEnum<PushEncryptionKeyName>
 {
     private readonly string _value;
 

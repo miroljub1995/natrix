@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AppBannerPromptOutcome
+public sealed partial class AppBannerPromptOutcome: global::Natrix.JSCore.IJSEnum<AppBannerPromptOutcome>
 {
     private readonly string _value;
 

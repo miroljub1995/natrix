@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class SecurePaymentConfirmationAvailability
+public sealed partial class SecurePaymentConfirmationAvailability: global::Natrix.JSCore.IJSEnum<SecurePaymentConfirmationAvailability>
 {
     private readonly string _value;
 

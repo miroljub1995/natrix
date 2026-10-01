@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WebGLContextEvent: global::Natrix.StdWeb.Event
+public partial class WebGLContextEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<WebGLContextEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WebGLContextEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WebGLContextEvent global::Natrix.JSCore.IJSObjectProxy<WebGLContextEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WebGLContextEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.WebGLContextEvent New(string type)
@@ -51,7 +55,7 @@ public partial class WebGLContextEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string StatusMessage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "statusMessage");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "statusMessage");
     }
 }
 

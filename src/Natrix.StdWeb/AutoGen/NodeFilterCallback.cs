@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate ushort NodeFilterCallbackManaged(global::Natrix.StdWeb.Node node);
 
-public partial class NodeFilterCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class NodeFilterCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<NodeFilterCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NodeFilterCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NodeFilterCallback global::Natrix.JSCore.IJSObjectProxy<NodeFilterCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NodeFilterCallback(NodeFilterCallbackManaged input): this(ToJSObject(input))

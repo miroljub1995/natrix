@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class GainOptions: global::Natrix.StdWeb.AudioNodeOptions
+public partial class GainOptions: global::Natrix.StdWeb.AudioNodeOptions, global::Natrix.JSCore.IJSObjectProxy<GainOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class GainOptions: global::Natrix.StdWeb.AudioNodeOptions
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GainOptions global::Natrix.JSCore.IJSObjectProxy<GainOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GainOptions(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class GainOptions: global::Natrix.StdWeb.AudioNodeOptions
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Gain
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "gain");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "gain", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "gain");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "gain", value);
     }
 }
 

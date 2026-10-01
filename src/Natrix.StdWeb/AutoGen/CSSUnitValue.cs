@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CSSUnitValue: global::Natrix.StdWeb.CSSNumericValue
+public partial class CSSUnitValue: global::Natrix.StdWeb.CSSNumericValue, global::Natrix.JSCore.IJSObjectProxy<CSSUnitValue>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CSSUnitValue(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CSSUnitValue global::Natrix.JSCore.IJSObjectProxy<CSSUnitValue>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CSSUnitValue>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.CSSUnitValue New(double value, string unit)
@@ -35,14 +39,14 @@ public partial class CSSUnitValue: global::Natrix.StdWeb.CSSNumericValue
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "value", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Unit
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "unit");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "unit");
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MediaDecodingType
+public sealed partial class MediaDecodingType: global::Natrix.JSCore.IJSEnum<MediaDecodingType>
 {
     private readonly string _value;
 

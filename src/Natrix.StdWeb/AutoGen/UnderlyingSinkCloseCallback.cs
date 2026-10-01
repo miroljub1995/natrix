@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate global::Natrix.JSCore.Promise UnderlyingSinkCloseCallbackManaged();
 
-public partial class UnderlyingSinkCloseCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class UnderlyingSinkCloseCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<UnderlyingSinkCloseCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public UnderlyingSinkCloseCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static UnderlyingSinkCloseCallback global::Natrix.JSCore.IJSObjectProxy<UnderlyingSinkCloseCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public UnderlyingSinkCloseCallback(UnderlyingSinkCloseCallbackManaged input): this(ToJSObject(input))

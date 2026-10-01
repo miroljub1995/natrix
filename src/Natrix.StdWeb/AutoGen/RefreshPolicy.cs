@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RefreshPolicy
+public sealed partial class RefreshPolicy: global::Natrix.JSCore.IJSEnum<RefreshPolicy>
 {
     private readonly string _value;
 

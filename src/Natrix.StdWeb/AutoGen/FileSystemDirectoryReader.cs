@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class FileSystemDirectoryReader: global::Natrix.JSCore.JSObjectProxy
+public partial class FileSystemDirectoryReader: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<FileSystemDirectoryReader>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FileSystemDirectoryReader(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static FileSystemDirectoryReader global::Natrix.JSCore.IJSObjectProxy<FileSystemDirectoryReader>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<FileSystemDirectoryReader>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public void ReadEntries(global::Natrix.StdWeb.FileSystemEntriesCallback successCallback)

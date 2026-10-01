@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class NodeFilter: global::Natrix.JSCore.JSObjectProxy
+public partial class NodeFilter: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<NodeFilter>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -13,6 +13,10 @@ public partial class NodeFilter: global::Natrix.JSCore.JSObjectProxy
     {
     }
 #pragma warning restore CS8618
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NodeFilter global::Natrix.JSCore.IJSObjectProxy<NodeFilter>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<NodeFilter>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NodeFilter(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
@@ -80,8 +84,8 @@ public partial class NodeFilter: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.NodeFilterCallback AcceptNode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NodeFilterCallback, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "acceptNode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.NodeFilterCallback, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "acceptNode", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NodeFilterCallback>.Get(JSObject, "acceptNode");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NodeFilterCallback>.Set(JSObject, "acceptNode", value);
     }
 }
 

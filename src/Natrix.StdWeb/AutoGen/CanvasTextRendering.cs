@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CanvasTextRendering
+public sealed partial class CanvasTextRendering: global::Natrix.JSCore.IJSEnum<CanvasTextRendering>
 {
     private readonly string _value;
 

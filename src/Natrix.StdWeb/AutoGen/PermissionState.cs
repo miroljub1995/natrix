@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PermissionState
+public sealed partial class PermissionState: global::Natrix.JSCore.IJSEnum<PermissionState>
 {
     private readonly string _value;
 

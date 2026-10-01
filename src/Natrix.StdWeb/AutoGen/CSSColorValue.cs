@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CSSColorValue: global::Natrix.StdWeb.CSSStyleValue
+public partial class CSSColorValue: global::Natrix.StdWeb.CSSStyleValue, global::Natrix.JSCore.IJSObjectProxy<CSSColorValue>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CSSColorValue(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,7 +12,11 @@ public partial class CSSColorValue: global::Natrix.StdWeb.CSSStyleValue
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public static global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSColorValue, global::Natrix.StdWeb.CSSStyleValue, global::Natrix.StdWeb.GenericMarshaller.Union> Parse(string cssText)
+    static CSSColorValue global::Natrix.JSCore.IJSObjectProxy<CSSColorValue>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CSSColorValue>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public static global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSColorValue, global::Natrix.StdWeb.CSSStyleValue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSColorValue>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleValue>> Parse(string cssText)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -28,7 +32,7 @@ public partial class CSSColorValue: global::Natrix.StdWeb.CSSStyleValue
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "CSSColorValue"), "parse", global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "CSSColorValue"), ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSColorValue, global::Natrix.StdWeb.CSSStyleValue, global::Natrix.StdWeb.GenericMarshaller.Union>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSColorValue, global::Natrix.StdWeb.CSSStyleValue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSColorValue>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleValue>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

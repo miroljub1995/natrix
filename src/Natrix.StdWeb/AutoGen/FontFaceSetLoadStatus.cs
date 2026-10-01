@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class FontFaceSetLoadStatus
+public sealed partial class FontFaceSetLoadStatus: global::Natrix.JSCore.IJSEnum<FontFaceSetLoadStatus>
 {
     private readonly string _value;
 

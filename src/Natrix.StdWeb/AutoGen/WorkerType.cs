@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class WorkerType
+public sealed partial class WorkerType: global::Natrix.JSCore.IJSEnum<WorkerType>
 {
     private readonly string _value;
 

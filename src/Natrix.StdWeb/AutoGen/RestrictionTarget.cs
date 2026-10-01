@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RestrictionTarget: global::Natrix.JSCore.JSObjectProxy
+public partial class RestrictionTarget: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<RestrictionTarget>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RestrictionTarget(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,7 +12,11 @@ public partial class RestrictionTarget: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public static global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RestrictionTarget, global::Natrix.StdWeb.PropertyAccessor> FromElement(global::Natrix.StdWeb.Element element)
+    static RestrictionTarget global::Natrix.JSCore.IJSObjectProxy<RestrictionTarget>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<RestrictionTarget>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public static global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RestrictionTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RestrictionTarget>> FromElement(global::Natrix.StdWeb.Element element)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -28,7 +32,7 @@ public partial class RestrictionTarget: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "RestrictionTarget"), "fromElement", global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "RestrictionTarget"), ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RestrictionTarget, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RestrictionTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RestrictionTarget>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PointerEvent: global::Natrix.StdWeb.MouseEvent
+public partial class PointerEvent: global::Natrix.StdWeb.MouseEvent, global::Natrix.JSCore.IJSObjectProxy<PointerEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PointerEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PointerEvent global::Natrix.JSCore.IJSObjectProxy<PointerEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PointerEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.PointerEvent New(string type)
@@ -51,101 +55,101 @@ public partial class PointerEvent: global::Natrix.StdWeb.MouseEvent
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int PointerId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "pointerId");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "pointerId");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "width");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "width");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "height");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "height");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Pressure
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "pressure");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "pressure");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float TangentialPressure
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "tangentialPressure");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "tangentialPressure");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int TiltX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "tiltX");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "tiltX");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int TiltY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "tiltY");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "tiltY");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Twist
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "twist");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "twist");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double AltitudeAngle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "altitudeAngle");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "altitudeAngle");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double AzimuthAngle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "azimuthAngle");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "azimuthAngle");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string PointerType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "pointerType");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "pointerType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IsPrimary
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "isPrimary");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isPrimary");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int PersistentDeviceId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "persistentDeviceId");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "persistentDeviceId");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PointerEvent, global::Natrix.StdWeb.PropertyAccessor> GetCoalescedEvents()
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PointerEvent, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PointerEvent>> GetCoalescedEvents()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getCoalescedEvents", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PointerEvent, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PointerEvent, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PointerEvent>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PointerEvent, global::Natrix.StdWeb.PropertyAccessor> GetPredictedEvents()
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PointerEvent, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PointerEvent>> GetPredictedEvents()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getPredictedEvents", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PointerEvent, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PointerEvent, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PointerEvent>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

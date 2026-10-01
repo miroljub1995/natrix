@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCEncodedAudioFrameMetadata: global::Natrix.StdWeb.RTCEncodedFrameMetadata
+public partial class RTCEncodedAudioFrameMetadata: global::Natrix.StdWeb.RTCEncodedFrameMetadata, global::Natrix.JSCore.IJSObjectProxy<RTCEncodedAudioFrameMetadata>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class RTCEncodedAudioFrameMetadata: global::Natrix.StdWeb.RTCEnco
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCEncodedAudioFrameMetadata global::Natrix.JSCore.IJSObjectProxy<RTCEncodedAudioFrameMetadata>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCEncodedAudioFrameMetadata(): base()
     {
     }
@@ -22,15 +26,15 @@ public partial class RTCEncodedAudioFrameMetadata: global::Natrix.StdWeb.RTCEnco
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public short SequenceNumber
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<short, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "sequenceNumber");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<short, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "sequenceNumber", value);
+        get => global::Natrix.JSCore.Generics.Int16Accessor.Get(JSObject, "sequenceNumber");
+        set => global::Natrix.JSCore.Generics.Int16Accessor.Set(JSObject, "sequenceNumber", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double AudioLevel
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "audioLevel");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "audioLevel", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "audioLevel");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "audioLevel", value);
     }
 }
 

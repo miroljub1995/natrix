@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class BinaryType
+public sealed partial class BinaryType: global::Natrix.JSCore.IJSEnum<BinaryType>
 {
     private readonly string _value;
 

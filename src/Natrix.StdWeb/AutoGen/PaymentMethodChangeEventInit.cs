@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PaymentMethodChangeEventInit: global::Natrix.StdWeb.PaymentRequestUpdateEventInit
+public partial class PaymentMethodChangeEventInit: global::Natrix.StdWeb.PaymentRequestUpdateEventInit, global::Natrix.JSCore.IJSObjectProxy<PaymentMethodChangeEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class PaymentMethodChangeEventInit: global::Natrix.StdWeb.Payment
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PaymentMethodChangeEventInit global::Natrix.JSCore.IJSObjectProxy<PaymentMethodChangeEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PaymentMethodChangeEventInit(): base()
     {
     }
@@ -22,15 +26,15 @@ public partial class PaymentMethodChangeEventInit: global::Natrix.StdWeb.Payment
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string MethodName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "methodName");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "methodName", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "methodName");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "methodName", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject? MethodDetails
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "methodDetails");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::System.Runtime.InteropServices.JavaScript.JSObject?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "methodDetails", value);
+        get => global::Natrix.JSCore.Generics.NullableJSObjectAccessor.Get(JSObject, "methodDetails");
+        set => global::Natrix.JSCore.Generics.NullableJSObjectAccessor.Set(JSObject, "methodDetails", value);
     }
 }
 

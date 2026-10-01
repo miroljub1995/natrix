@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate void ReportingObserverCallbackManaged(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.StdWeb.PropertyAccessor> reports, global::Natrix.StdWeb.ReportingObserver observer);
+public delegate void ReportingObserverCallbackManaged(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Report>> reports, global::Natrix.StdWeb.ReportingObserver observer);
 
-public partial class ReportingObserverCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class ReportingObserverCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<ReportingObserverCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ReportingObserverCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ReportingObserverCallback global::Natrix.JSCore.IJSObjectProxy<ReportingObserverCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ReportingObserverCallback(ReportingObserverCallbackManaged input): this(ToJSObject(input))
@@ -66,10 +70,10 @@ public partial class ReportingObserverCallback: global::Natrix.JSCore.JSObjectPr
             using (___args_0)
             {
                 // Argument 1
-                global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.StdWeb.PropertyAccessor> ___arg_2;
+                global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Report>> ___arg_2;
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_3;
                 ___propObject_3 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(___args_0, 0);
-                ___arg_2 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.StdWeb.PropertyAccessor>(___propObject_3);
+                ___arg_2 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Report>>(___propObject_3);
 
                 // Argument 2
                 global::Natrix.StdWeb.ReportingObserver ___arg_4;

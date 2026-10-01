@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ChannelSplitterNode: global::Natrix.StdWeb.AudioNode
+public partial class ChannelSplitterNode: global::Natrix.StdWeb.AudioNode, global::Natrix.JSCore.IJSObjectProxy<ChannelSplitterNode>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ChannelSplitterNode(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ChannelSplitterNode global::Natrix.JSCore.IJSObjectProxy<ChannelSplitterNode>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ChannelSplitterNode>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.ChannelSplitterNode New(global::Natrix.StdWeb.BaseAudioContext context)

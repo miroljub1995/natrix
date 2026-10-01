@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class DocumentReadyState
+public sealed partial class DocumentReadyState: global::Natrix.JSCore.IJSEnum<DocumentReadyState>
 {
     private readonly string _value;
 

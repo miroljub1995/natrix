@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate global::Natrix.JSCore.Promise TransformerFlushCallbackManaged(global::Natrix.StdWeb.TransformStreamDefaultController controller);
 
-public partial class TransformerFlushCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class TransformerFlushCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<TransformerFlushCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TransformerFlushCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TransformerFlushCallback global::Natrix.JSCore.IJSObjectProxy<TransformerFlushCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TransformerFlushCallback(TransformerFlushCallbackManaged input): this(ToJSObject(input))

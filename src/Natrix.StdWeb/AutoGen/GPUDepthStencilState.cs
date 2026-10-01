@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class GPUDepthStencilState: global::Natrix.JSCore.JSObjectProxy
+public partial class GPUDepthStencilState: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<GPUDepthStencilState>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class GPUDepthStencilState: global::Natrix.JSCore.JSObjectProxy
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GPUDepthStencilState global::Natrix.JSCore.IJSObjectProxy<GPUDepthStencilState>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GPUDepthStencilState(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,71 +26,71 @@ public partial class GPUDepthStencilState: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GPUTextureFormat Format
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUTextureFormat, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "format");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUTextureFormat, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "format", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUTextureFormat>.Get(JSObject, "format");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUTextureFormat>.Set(JSObject, "format", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool DepthWriteEnabled
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "depthWriteEnabled");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "depthWriteEnabled", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "depthWriteEnabled");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "depthWriteEnabled", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUCompareFunction DepthCompare
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUCompareFunction, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "depthCompare");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUCompareFunction, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "depthCompare", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCompareFunction>.Get(JSObject, "depthCompare");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCompareFunction>.Set(JSObject, "depthCompare", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUStencilFaceState StencilFront
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUStencilFaceState, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stencilFront");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUStencilFaceState, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stencilFront", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUStencilFaceState>.Get(JSObject, "stencilFront");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUStencilFaceState>.Set(JSObject, "stencilFront", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUStencilFaceState StencilBack
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUStencilFaceState, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stencilBack");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUStencilFaceState, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stencilBack", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUStencilFaceState>.Get(JSObject, "stencilBack");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUStencilFaceState>.Set(JSObject, "stencilBack", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint StencilReadMask
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stencilReadMask");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stencilReadMask", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "stencilReadMask");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "stencilReadMask", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint StencilWriteMask
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stencilWriteMask");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stencilWriteMask", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "stencilWriteMask");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "stencilWriteMask", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int DepthBias
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "depthBias");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "depthBias", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "depthBias");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "depthBias", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float DepthBiasSlopeScale
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "depthBiasSlopeScale");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "depthBiasSlopeScale", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "depthBiasSlopeScale");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "depthBiasSlopeScale", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float DepthBiasClamp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "depthBiasClamp");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "depthBiasClamp", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "depthBiasClamp");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "depthBiasClamp", value);
     }
 }
 

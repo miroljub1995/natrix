@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class HIDUnitSystem
+public sealed partial class HIDUnitSystem: global::Natrix.JSCore.IJSEnum<HIDUnitSystem>
 {
     private readonly string _value;
 

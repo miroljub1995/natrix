@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class JsonLdFramingError: global::Natrix.JSCore.JSObjectProxy
+public partial class JsonLdFramingError: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<JsonLdFramingError>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class JsonLdFramingError: global::Natrix.JSCore.JSObjectProxy
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static JsonLdFramingError global::Natrix.JSCore.IJSObjectProxy<JsonLdFramingError>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public JsonLdFramingError(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,15 +26,15 @@ public partial class JsonLdFramingError: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.JsonLdFramingErrorCode Code
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.JsonLdFramingErrorCode, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "code");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.JsonLdFramingErrorCode, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "code", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.JsonLdFramingErrorCode>.Get(JSObject, "code");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.JsonLdFramingErrorCode>.Set(JSObject, "code", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "message");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "message", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "message");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "message", value);
     }
 }
 

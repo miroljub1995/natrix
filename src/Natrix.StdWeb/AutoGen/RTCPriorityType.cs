@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCPriorityType
+public sealed partial class RTCPriorityType: global::Natrix.JSCore.IJSEnum<RTCPriorityType>
 {
     private readonly string _value;
 

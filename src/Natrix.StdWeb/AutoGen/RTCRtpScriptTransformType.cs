@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCRtpScriptTransformType
+public sealed partial class RTCRtpScriptTransformType: global::Natrix.JSCore.IJSEnum<RTCRtpScriptTransformType>
 {
     private readonly string _value;
 

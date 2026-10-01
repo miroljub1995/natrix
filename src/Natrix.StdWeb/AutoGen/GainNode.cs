@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class GainNode: global::Natrix.StdWeb.AudioNode
+public partial class GainNode: global::Natrix.StdWeb.AudioNode, global::Natrix.JSCore.IJSObjectProxy<GainNode>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GainNode(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GainNode global::Natrix.JSCore.IJSObjectProxy<GainNode>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<GainNode>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.GainNode New(global::Natrix.StdWeb.BaseAudioContext context)
@@ -51,7 +55,7 @@ public partial class GainNode: global::Natrix.StdWeb.AudioNode
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioParam Gain
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioParam, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "gain");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>.Get(JSObject, "gain");
     }
 }
 

@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate global::Natrix.JSCore.Promise UnderlyingSourcePullCallbackManaged(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.ReadableStreamDefaultController, global::Natrix.StdWeb.ReadableByteStreamController, global::Natrix.StdWeb.GenericMarshaller.Union> controller);
+public delegate global::Natrix.JSCore.Promise UnderlyingSourcePullCallbackManaged(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.ReadableStreamDefaultController, global::Natrix.StdWeb.ReadableByteStreamController, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStreamDefaultController>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableByteStreamController>> controller);
 
-public partial class UnderlyingSourcePullCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class UnderlyingSourcePullCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<UnderlyingSourcePullCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public UnderlyingSourcePullCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static UnderlyingSourcePullCallback global::Natrix.JSCore.IJSObjectProxy<UnderlyingSourcePullCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public UnderlyingSourcePullCallback(UnderlyingSourcePullCallbackManaged input): this(ToJSObject(input))
@@ -71,10 +75,10 @@ public partial class UnderlyingSourcePullCallback: global::Natrix.JSCore.JSObjec
             using (___res_5)
             {
                 // Argument 1
-                global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.ReadableStreamDefaultController, global::Natrix.StdWeb.ReadableByteStreamController, global::Natrix.StdWeb.GenericMarshaller.Union> ___arg_2;
+                global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.ReadableStreamDefaultController, global::Natrix.StdWeb.ReadableByteStreamController, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStreamDefaultController>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableByteStreamController>> ___arg_2;
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_3;
                 ___propObject_3 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(___args_0, 0);
-                ___arg_2 = new global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.ReadableStreamDefaultController, global::Natrix.StdWeb.ReadableByteStreamController, global::Natrix.StdWeb.GenericMarshaller.Union>(___propObject_3);
+                ___arg_2 = new global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.ReadableStreamDefaultController, global::Natrix.StdWeb.ReadableByteStreamController, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStreamDefaultController>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableByteStreamController>>(___propObject_3);
 
                 global::Natrix.JSCore.Promise ___managedRes_6 = input(___arg_2);
 

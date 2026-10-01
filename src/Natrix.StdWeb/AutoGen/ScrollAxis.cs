@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ScrollAxis
+public sealed partial class ScrollAxis: global::Natrix.JSCore.IJSEnum<ScrollAxis>
 {
     private readonly string _value;
 

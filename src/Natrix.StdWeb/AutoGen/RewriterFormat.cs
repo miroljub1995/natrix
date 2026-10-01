@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RewriterFormat
+public sealed partial class RewriterFormat: global::Natrix.JSCore.IJSEnum<RewriterFormat>
 {
     private readonly string _value;
 

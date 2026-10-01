@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AudioContextLatencyCategory
+public sealed partial class AudioContextLatencyCategory: global::Natrix.JSCore.IJSEnum<AudioContextLatencyCategory>
 {
     private readonly string _value;
 

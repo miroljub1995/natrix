@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class OpusBitstreamFormat
+public sealed partial class OpusBitstreamFormat: global::Natrix.JSCore.IJSEnum<OpusBitstreamFormat>
 {
     private readonly string _value;
 

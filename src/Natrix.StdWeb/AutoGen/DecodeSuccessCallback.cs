@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void DecodeSuccessCallbackManaged(global::Natrix.StdWeb.AudioBuffer decodedData);
 
-public partial class DecodeSuccessCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class DecodeSuccessCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<DecodeSuccessCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public DecodeSuccessCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static DecodeSuccessCallback global::Natrix.JSCore.IJSObjectProxy<DecodeSuccessCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public DecodeSuccessCallback(DecodeSuccessCallbackManaged input): this(ToJSObject(input))

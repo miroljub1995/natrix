@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SpeechGrammar: global::Natrix.JSCore.JSObjectProxy
+public partial class SpeechGrammar: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<SpeechGrammar>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SpeechGrammar(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,17 +12,21 @@ public partial class SpeechGrammar: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SpeechGrammar global::Natrix.JSCore.IJSObjectProxy<SpeechGrammar>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<SpeechGrammar>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Src
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "src");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "src", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "src");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "src", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Weight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "weight");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "weight", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "weight");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "weight", value);
     }
 }
 

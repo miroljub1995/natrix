@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class WriterFormat
+public sealed partial class WriterFormat: global::Natrix.JSCore.IJSEnum<WriterFormat>
 {
     private readonly string _value;
 

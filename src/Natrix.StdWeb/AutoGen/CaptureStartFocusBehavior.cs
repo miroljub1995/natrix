@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CaptureStartFocusBehavior
+public sealed partial class CaptureStartFocusBehavior: global::Natrix.JSCore.IJSEnum<CaptureStartFocusBehavior>
 {
     private readonly string _value;
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class HTMLAudioElement: global::Natrix.StdWeb.HTMLMediaElement
+public partial class HTMLAudioElement: global::Natrix.StdWeb.HTMLMediaElement, global::Natrix.JSCore.IJSObjectProxy<HTMLAudioElement>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public HTMLAudioElement(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static HTMLAudioElement global::Natrix.JSCore.IJSObjectProxy<HTMLAudioElement>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<HTMLAudioElement>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.HTMLAudioElement New()

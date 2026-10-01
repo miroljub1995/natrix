@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PerformancePreference
+public sealed partial class PerformancePreference: global::Natrix.JSCore.IJSEnum<PerformancePreference>
 {
     private readonly string _value;
 

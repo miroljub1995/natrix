@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class SummarizerType
+public sealed partial class SummarizerType: global::Natrix.JSCore.IJSEnum<SummarizerType>
 {
     private readonly string _value;
 

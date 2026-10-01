@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CursorCaptureConstraint
+public sealed partial class CursorCaptureConstraint: global::Natrix.JSCore.IJSEnum<CursorCaptureConstraint>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUMipmapFilterMode
+public sealed partial class GPUMipmapFilterMode: global::Natrix.JSCore.IJSEnum<GPUMipmapFilterMode>
 {
     private readonly string _value;
 

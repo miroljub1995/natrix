@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCRtpSynchronizationSource: global::Natrix.StdWeb.RTCRtpContributingSource
+public partial class RTCRtpSynchronizationSource: global::Natrix.StdWeb.RTCRtpContributingSource, global::Natrix.JSCore.IJSObjectProxy<RTCRtpSynchronizationSource>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -13,6 +13,10 @@ public partial class RTCRtpSynchronizationSource: global::Natrix.StdWeb.RTCRtpCo
     {
     }
 #pragma warning restore CS8618
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCRtpSynchronizationSource global::Natrix.JSCore.IJSObjectProxy<RTCRtpSynchronizationSource>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCRtpSynchronizationSource(): base()

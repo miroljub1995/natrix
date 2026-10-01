@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRDepthUsage
+public sealed partial class XRDepthUsage: global::Natrix.JSCore.IJSEnum<XRDepthUsage>
 {
     private readonly string _value;
 

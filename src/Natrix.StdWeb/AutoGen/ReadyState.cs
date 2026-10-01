@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ReadyState
+public sealed partial class ReadyState: global::Natrix.JSCore.IJSEnum<ReadyState>
 {
     private readonly string _value;
 

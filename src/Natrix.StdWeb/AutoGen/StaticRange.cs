@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class StaticRange: global::Natrix.StdWeb.AbstractRange
+public partial class StaticRange: global::Natrix.StdWeb.AbstractRange, global::Natrix.JSCore.IJSObjectProxy<StaticRange>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public StaticRange(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static StaticRange global::Natrix.JSCore.IJSObjectProxy<StaticRange>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<StaticRange>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.StaticRange New(global::Natrix.StdWeb.StaticRangeInit init)

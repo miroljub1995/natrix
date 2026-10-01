@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PaymentMethodChangeEvent: global::Natrix.StdWeb.PaymentRequestUpdateEvent
+public partial class PaymentMethodChangeEvent: global::Natrix.StdWeb.PaymentRequestUpdateEvent, global::Natrix.JSCore.IJSObjectProxy<PaymentMethodChangeEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PaymentMethodChangeEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PaymentMethodChangeEvent global::Natrix.JSCore.IJSObjectProxy<PaymentMethodChangeEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PaymentMethodChangeEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.PaymentMethodChangeEvent New(string type)
@@ -51,13 +55,13 @@ public partial class PaymentMethodChangeEvent: global::Natrix.StdWeb.PaymentRequ
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string MethodName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "methodName");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "methodName");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject? MethodDetails
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "methodDetails");
+        get => global::Natrix.JSCore.Generics.NullableJSObjectAccessor.Get(JSObject, "methodDetails");
     }
 }
 

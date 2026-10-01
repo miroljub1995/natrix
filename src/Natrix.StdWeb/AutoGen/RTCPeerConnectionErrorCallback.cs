@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void RTCPeerConnectionErrorCallbackManaged(global::Natrix.StdWeb.DOMException error);
 
-public partial class RTCPeerConnectionErrorCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class RTCPeerConnectionErrorCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<RTCPeerConnectionErrorCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCPeerConnectionErrorCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCPeerConnectionErrorCallback global::Natrix.JSCore.IJSObjectProxy<RTCPeerConnectionErrorCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCPeerConnectionErrorCallback(RTCPeerConnectionErrorCallbackManaged input): this(ToJSObject(input))

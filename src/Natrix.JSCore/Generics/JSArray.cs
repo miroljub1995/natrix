@@ -4,13 +4,16 @@ using Natrix.JSCore.Extensions;
 
 namespace Natrix.JSCore.Generics;
 
-public class JSArray<T, TAccessor> : JSObjectProxy
+public class JSArray<T, TAccessor> : JSObjectProxy, IJSObjectProxy<JSArray<T, TAccessor>>
     where TAccessor : IPropertyAccessor<T>
 {
     [SupportedOSPlatform("browser")]
     public JSArray(JSObject obj) : base(obj)
     {
     }
+
+    [SupportedOSPlatform("browser")]
+    static JSArray<T, TAccessor> IJSObjectProxy<JSArray<T, TAccessor>>.Create(JSObject obj) => new(obj);
 
     [SupportedOSPlatform("browser")]
     public static implicit operator JSArray<T, TAccessor>(T[] input) =>

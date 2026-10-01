@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void XRFrameRequestCallbackManaged(double time, global::Natrix.StdWeb.XRFrame frame);
 
-public partial class XRFrameRequestCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class XRFrameRequestCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<XRFrameRequestCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XRFrameRequestCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static XRFrameRequestCallback global::Natrix.JSCore.IJSObjectProxy<XRFrameRequestCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XRFrameRequestCallback(XRFrameRequestCallbackManaged input): this(ToJSObject(input))

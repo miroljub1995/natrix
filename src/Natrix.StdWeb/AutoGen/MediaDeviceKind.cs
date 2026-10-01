@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MediaDeviceKind
+public sealed partial class MediaDeviceKind: global::Natrix.JSCore.IJSEnum<MediaDeviceKind>
 {
     private readonly string _value;
 

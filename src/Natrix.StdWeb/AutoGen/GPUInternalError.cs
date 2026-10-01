@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class GPUInternalError: global::Natrix.StdWeb.GPUError
+public partial class GPUInternalError: global::Natrix.StdWeb.GPUError, global::Natrix.JSCore.IJSObjectProxy<GPUInternalError>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GPUInternalError(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GPUInternalError global::Natrix.JSCore.IJSObjectProxy<GPUInternalError>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<GPUInternalError>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.GPUInternalError New(string message)

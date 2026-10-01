@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class FileSystemFileHandle: global::Natrix.StdWeb.FileSystemHandle
+public partial class FileSystemFileHandle: global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.IJSObjectProxy<FileSystemFileHandle>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FileSystemFileHandle(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,29 +12,33 @@ public partial class FileSystemFileHandle: global::Natrix.StdWeb.FileSystemHandl
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.File, global::Natrix.StdWeb.PropertyAccessor> GetFile()
+    static FileSystemFileHandle global::Natrix.JSCore.IJSObjectProxy<FileSystemFileHandle>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<FileSystemFileHandle>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.File, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.File>> GetFile()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getFile", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.File, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.File, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.File>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemWritableFileStream, global::Natrix.StdWeb.PropertyAccessor> CreateWritable()
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemWritableFileStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemWritableFileStream>> CreateWritable()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "createWritable", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemWritableFileStream, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemWritableFileStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemWritableFileStream>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemWritableFileStream, global::Natrix.StdWeb.PropertyAccessor> CreateWritable(global::Natrix.StdWeb.FileSystemCreateWritableOptions options)
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemWritableFileStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemWritableFileStream>> CreateWritable(global::Natrix.StdWeb.FileSystemCreateWritableOptions options)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -50,18 +54,18 @@ public partial class FileSystemFileHandle: global::Natrix.StdWeb.FileSystemHandl
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createWritable", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemWritableFileStream, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemWritableFileStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemWritableFileStream>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemSyncAccessHandle, global::Natrix.StdWeb.PropertyAccessor> CreateSyncAccessHandle()
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemSyncAccessHandle, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemSyncAccessHandle>> CreateSyncAccessHandle()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "createSyncAccessHandle", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemSyncAccessHandle, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemSyncAccessHandle, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemSyncAccessHandle>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

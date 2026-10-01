@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUStorageTextureAccess
+public sealed partial class GPUStorageTextureAccess: global::Natrix.JSCore.IJSEnum<GPUStorageTextureAccess>
 {
     private readonly string _value;
 

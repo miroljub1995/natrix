@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AnimationTriggerBehavior
+public sealed partial class AnimationTriggerBehavior: global::Natrix.JSCore.IJSEnum<AnimationTriggerBehavior>
 {
     private readonly string _value;
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class QuotaExceededError: global::Natrix.StdWeb.DOMException
+public partial class QuotaExceededError: global::Natrix.StdWeb.DOMException, global::Natrix.JSCore.IJSObjectProxy<QuotaExceededError>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public QuotaExceededError(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static QuotaExceededError global::Natrix.JSCore.IJSObjectProxy<QuotaExceededError>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<QuotaExceededError>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.QuotaExceededError New()
@@ -58,13 +62,13 @@ public partial class QuotaExceededError: global::Natrix.StdWeb.DOMException
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Quota
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "quota");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "quota");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Requested
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "requested");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "requested");
     }
 }
 

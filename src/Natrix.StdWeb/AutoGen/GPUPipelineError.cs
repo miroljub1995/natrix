@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class GPUPipelineError: global::Natrix.StdWeb.DOMException
+public partial class GPUPipelineError: global::Natrix.StdWeb.DOMException, global::Natrix.JSCore.IJSObjectProxy<GPUPipelineError>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GPUPipelineError(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GPUPipelineError global::Natrix.JSCore.IJSObjectProxy<GPUPipelineError>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<GPUPipelineError>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.GPUPipelineError New(string message, global::Natrix.StdWeb.GPUPipelineErrorInit options)
@@ -35,7 +39,7 @@ public partial class GPUPipelineError: global::Natrix.StdWeb.DOMException
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUPipelineErrorReason Reason
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUPipelineErrorReason, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "reason");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPipelineErrorReason>.Get(JSObject, "reason");
     }
 }
 

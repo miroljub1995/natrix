@@ -4,15 +4,19 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CSSMathInvert: global::Natrix.StdWeb.CSSMathValue
+public partial class CSSMathInvert: global::Natrix.StdWeb.CSSMathValue, global::Natrix.JSCore.IJSObjectProxy<CSSMathInvert>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CSSMathInvert(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
 
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CSSMathInvert global::Natrix.JSCore.IJSObjectProxy<CSSMathInvert>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CSSMathInvert>(obj);
+
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.CSSMathInvert New(global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.CSSNumericValue, global::Natrix.StdWeb.GenericMarshaller.Union> arg)
+    public static global::Natrix.StdWeb.CSSMathInvert New(global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.CSSNumericValue, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSNumericValue>> arg)
     {
         int ___argsArrayLength_3 = 1;
 
@@ -29,7 +33,7 @@ public partial class CSSMathInvert: global::Natrix.StdWeb.CSSMathValue
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSNumericValue Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSNumericValue, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "value");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSNumericValue>.Get(JSObject, "value");
     }
 }
 

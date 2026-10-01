@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class BluetoothManufacturerDataFilter: global::Natrix.JSCore.JSObjectProxy
+public partial class BluetoothManufacturerDataFilter: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<BluetoothManufacturerDataFilter>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public BluetoothManufacturerDataFilter(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static BluetoothManufacturerDataFilter global::Natrix.JSCore.IJSObjectProxy<BluetoothManufacturerDataFilter>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<BluetoothManufacturerDataFilter>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.BluetoothManufacturerDataFilter New()

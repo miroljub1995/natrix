@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class USBRequestType
+public sealed partial class USBRequestType: global::Natrix.JSCore.IJSEnum<USBRequestType>
 {
     private readonly string _value;
 

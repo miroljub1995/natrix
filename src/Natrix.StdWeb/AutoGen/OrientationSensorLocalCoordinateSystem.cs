@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class OrientationSensorLocalCoordinateSystem
+public sealed partial class OrientationSensorLocalCoordinateSystem: global::Natrix.JSCore.IJSEnum<OrientationSensorLocalCoordinateSystem>
 {
     private readonly string _value;
 

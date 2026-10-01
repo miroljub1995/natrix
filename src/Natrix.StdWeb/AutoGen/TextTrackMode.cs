@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class TextTrackMode
+public sealed partial class TextTrackMode: global::Natrix.JSCore.IJSEnum<TextTrackMode>
 {
     private readonly string _value;
 

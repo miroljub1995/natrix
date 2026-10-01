@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CanvasFontKerning
+public sealed partial class CanvasFontKerning: global::Natrix.JSCore.IJSEnum<CanvasFontKerning>
 {
     private readonly string _value;
 

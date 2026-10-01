@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class SpeechRecognitionErrorCode
+public sealed partial class SpeechRecognitionErrorCode: global::Natrix.JSCore.IJSEnum<SpeechRecognitionErrorCode>
 {
     private readonly string _value;
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class NDEFReadingEvent: global::Natrix.StdWeb.Event
+public partial class NDEFReadingEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<NDEFReadingEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NDEFReadingEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NDEFReadingEvent global::Natrix.JSCore.IJSObjectProxy<NDEFReadingEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<NDEFReadingEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.NDEFReadingEvent New(string type, global::Natrix.StdWeb.NDEFReadingEventInit readingEventInitDict)
@@ -35,13 +39,13 @@ public partial class NDEFReadingEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string SerialNumber
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "serialNumber");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "serialNumber");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NDEFMessage Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NDEFMessage, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "message");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFMessage>.Get(JSObject, "message");
     }
 }
 

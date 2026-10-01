@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class BluetoothManufacturerDataFilterInit: global::Natrix.StdWeb.BluetoothDataFilterInit
+public partial class BluetoothManufacturerDataFilterInit: global::Natrix.StdWeb.BluetoothDataFilterInit, global::Natrix.JSCore.IJSObjectProxy<BluetoothManufacturerDataFilterInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class BluetoothManufacturerDataFilterInit: global::Natrix.StdWeb.
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static BluetoothManufacturerDataFilterInit global::Natrix.JSCore.IJSObjectProxy<BluetoothManufacturerDataFilterInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public BluetoothManufacturerDataFilterInit(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class BluetoothManufacturerDataFilterInit: global::Natrix.StdWeb.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ushort CompanyIdentifier
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "companyIdentifier");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "companyIdentifier", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "companyIdentifier");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "companyIdentifier", value);
     }
 }
 

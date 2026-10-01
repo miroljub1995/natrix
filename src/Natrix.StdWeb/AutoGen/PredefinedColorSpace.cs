@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PredefinedColorSpace
+public sealed partial class PredefinedColorSpace: global::Natrix.JSCore.IJSEnum<PredefinedColorSpace>
 {
     private readonly string _value;
 

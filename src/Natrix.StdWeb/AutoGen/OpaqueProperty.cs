@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class OpaqueProperty
+public sealed partial class OpaqueProperty: global::Natrix.JSCore.IJSEnum<OpaqueProperty>
 {
     private readonly string _value;
 

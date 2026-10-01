@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ContentVisibilityAutoStateChangeEvent: global::Natrix.StdWeb.Event
+public partial class ContentVisibilityAutoStateChangeEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<ContentVisibilityAutoStateChangeEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ContentVisibilityAutoStateChangeEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ContentVisibilityAutoStateChangeEvent global::Natrix.JSCore.IJSObjectProxy<ContentVisibilityAutoStateChangeEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ContentVisibilityAutoStateChangeEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.ContentVisibilityAutoStateChangeEvent New(string type)
@@ -51,7 +55,7 @@ public partial class ContentVisibilityAutoStateChangeEvent: global::Natrix.StdWe
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Skipped
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "skipped");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "skipped");
     }
 }
 

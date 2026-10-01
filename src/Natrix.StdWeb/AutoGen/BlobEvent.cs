@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class BlobEvent: global::Natrix.StdWeb.Event
+public partial class BlobEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<BlobEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public BlobEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static BlobEvent global::Natrix.JSCore.IJSObjectProxy<BlobEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<BlobEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.BlobEvent New(string type, global::Natrix.StdWeb.BlobEventInit eventInitDict)
@@ -35,13 +39,13 @@ public partial class BlobEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Blob Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Blob, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Blob>.Get(JSObject, "data");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Timecode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "timecode");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "timecode");
     }
 }
 

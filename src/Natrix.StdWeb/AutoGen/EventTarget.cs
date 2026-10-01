@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class EventTarget: global::Natrix.JSCore.JSObjectProxy
+public partial class EventTarget: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<EventTarget>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public EventTarget(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static EventTarget global::Natrix.JSCore.IJSObjectProxy<EventTarget>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<EventTarget>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.EventTarget New()
@@ -47,7 +51,7 @@ public partial class EventTarget: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void AddEventListener(string type, global::Natrix.StdWeb.EventListener? callback, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AddEventListenerOptions, bool, global::Natrix.StdWeb.GenericMarshaller.Union> options)
+    public void AddEventListener(string type, global::Natrix.StdWeb.EventListener? callback, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AddEventListenerOptions, bool, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AddEventListenerOptions>, global::Natrix.JSCore.Generics.BooleanAccessor> options)
     {
         int ___argsArrayLength_2 = 3;
 
@@ -107,7 +111,7 @@ public partial class EventTarget: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void RemoveEventListener(string type, global::Natrix.StdWeb.EventListener? callback, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.EventListenerOptions, bool, global::Natrix.StdWeb.GenericMarshaller.Union> options)
+    public void RemoveEventListener(string type, global::Natrix.StdWeb.EventListener? callback, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.EventListenerOptions, bool, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EventListenerOptions>, global::Natrix.JSCore.Generics.BooleanAccessor> options)
     {
         int ___argsArrayLength_2 = 3;
 
@@ -155,7 +159,7 @@ public partial class EventTarget: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "dispatchEvent", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -175,7 +179,7 @@ public partial class EventTarget: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "when", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Observable, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Observable>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -200,7 +204,7 @@ public partial class EventTarget: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "when", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Observable, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Observable>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

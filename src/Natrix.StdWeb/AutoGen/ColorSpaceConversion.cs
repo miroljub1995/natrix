@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ColorSpaceConversion
+public sealed partial class ColorSpaceConversion: global::Natrix.JSCore.IJSEnum<ColorSpaceConversion>
 {
     private readonly string _value;
 

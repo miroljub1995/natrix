@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RelativeOrientationSensor: global::Natrix.StdWeb.OrientationSensor
+public partial class RelativeOrientationSensor: global::Natrix.StdWeb.OrientationSensor, global::Natrix.JSCore.IJSObjectProxy<RelativeOrientationSensor>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RelativeOrientationSensor(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RelativeOrientationSensor global::Natrix.JSCore.IJSObjectProxy<RelativeOrientationSensor>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<RelativeOrientationSensor>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.RelativeOrientationSensor New()

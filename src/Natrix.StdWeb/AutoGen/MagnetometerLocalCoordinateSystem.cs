@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MagnetometerLocalCoordinateSystem
+public sealed partial class MagnetometerLocalCoordinateSystem: global::Natrix.JSCore.IJSEnum<MagnetometerLocalCoordinateSystem>
 {
     private readonly string _value;
 

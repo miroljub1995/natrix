@@ -4,7 +4,7 @@ namespace Natrix.WebIDLGenerator.Tests;
 
 #nullable enable
 
-public partial class TestPromiseProperties: global::Natrix.JSCore.JSObjectProxy
+public partial class TestPromiseProperties: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<TestPromiseProperties>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TestPromiseProperties(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,68 +12,72 @@ public partial class TestPromiseProperties: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> PromisePropertyLong
+    static TestPromiseProperties global::Natrix.JSCore.IJSObjectProxy<TestPromiseProperties>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<TestPromiseProperties>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor> PromisePropertyLong
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "promisePropertyLong");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "promisePropertyLong", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor>>.Get(JSObject, "promisePropertyLong");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor>>.Set(JSObject, "promisePropertyLong", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> PromisePropertyLongReadOnly
+    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor> PromisePropertyLongReadOnly
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "promisePropertyLongReadOnly");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor>>.Get(JSObject, "promisePropertyLongReadOnly");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>? PromisePropertyLongNullable
+    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor>? PromisePropertyLongNullable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>?, global::Natrix.WebIDLGenerator.Tests.PropertyAccessorNullable>(JSObject, "promisePropertyLongNullable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>?, global::Natrix.WebIDLGenerator.Tests.PropertyAccessorNullable>(JSObject, "promisePropertyLongNullable", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor>>.Get(JSObject, "promisePropertyLongNullable");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor>>.Set(JSObject, "promisePropertyLongNullable", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>? PromisePropertyLongReadOnlyNullableAsNull
+    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor>? PromisePropertyLongReadOnlyNullableAsNull
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>?, global::Natrix.WebIDLGenerator.Tests.PropertyAccessorNullable>(JSObject, "promisePropertyLongReadOnlyNullableAsNull");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor>>.Get(JSObject, "promisePropertyLongReadOnlyNullableAsNull");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>? PromisePropertyLongReadOnlyNullableAsNotNull
+    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor>? PromisePropertyLongReadOnlyNullableAsNotNull
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>?, global::Natrix.WebIDLGenerator.Tests.PropertyAccessorNullable>(JSObject, "promisePropertyLongReadOnlyNullableAsNotNull");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor>>.Get(JSObject, "promisePropertyLongReadOnlyNullableAsNotNull");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> PromisePropertyString
+    public global::Natrix.JSCore.Generics.Promise<string, global::Natrix.JSCore.Generics.StringAccessor> PromisePropertyString
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "promisePropertyString");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "promisePropertyString", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "promisePropertyString");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "promisePropertyString", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> PromisePropertyStringReadOnly
+    public global::Natrix.JSCore.Generics.Promise<string, global::Natrix.JSCore.Generics.StringAccessor> PromisePropertyStringReadOnly
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "promisePropertyStringReadOnly");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "promisePropertyStringReadOnly");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> PromisePropertyLongDelayed
+    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor> PromisePropertyLongDelayed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "promisePropertyLongDelayed");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor>>.Get(JSObject, "promisePropertyLongDelayed");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> TestTaskToPromise
+    public global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor> TestTaskToPromise
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "testTaskToPromise");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "testTaskToPromise", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor>>.Get(JSObject, "testTaskToPromise");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.JSCore.Generics.Int32Accessor>>.Set(JSObject, "testTaskToPromise", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int? TestTaskToPromiseValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int?, global::Natrix.WebIDLGenerator.Tests.PropertyAccessorNullable>(JSObject, "testTaskToPromiseValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int?, global::Natrix.WebIDLGenerator.Tests.PropertyAccessorNullable>(JSObject, "testTaskToPromiseValue", value);
+        get => global::Natrix.JSCore.Generics.NullableInt32Accessor.Get(JSObject, "testTaskToPromiseValue");
+        set => global::Natrix.JSCore.Generics.NullableInt32Accessor.Set(JSObject, "testTaskToPromiseValue", value);
     }
 }
 

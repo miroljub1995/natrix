@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class LoginStatus
+public sealed partial class LoginStatus: global::Natrix.JSCore.IJSEnum<LoginStatus>
 {
     private readonly string _value;
 

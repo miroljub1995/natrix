@@ -7,7 +7,7 @@ public class TestRecordLongTest() : BaseTest<TestRecordLong>("testRecordLong")
     [Test]
     public async Task TestRecordLong()
     {
-        Record<long, PropertyAccessor> record = new()
+        Record<long, Int64Accessor> record = new()
         {
             { "first", 10 },
             { "second", 20 },

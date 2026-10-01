@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class XPathResult: global::Natrix.JSCore.JSObjectProxy
+public partial class XPathResult: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<XPathResult>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XPathResult(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static XPathResult global::Natrix.JSCore.IJSObjectProxy<XPathResult>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<XPathResult>(obj);
 
     public const ushort ANY_TYPE = 0;
 
@@ -34,43 +38,43 @@ public partial class XPathResult: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort ResultType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "resultType");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "resultType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double NumberValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "numberValue");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "numberValue");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string StringValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stringValue");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "stringValue");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool BooleanValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "booleanValue");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "booleanValue");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Node? SingleNodeValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Node?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "singleNodeValue");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Node>.Get(JSObject, "singleNodeValue");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool InvalidIteratorState
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "invalidIteratorState");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "invalidIteratorState");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint SnapshotLength
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "snapshotLength");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "snapshotLength");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -81,7 +85,7 @@ public partial class XPathResult: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "iterateNext", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Node?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Node>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -101,7 +105,7 @@ public partial class XPathResult: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "snapshotItem", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Node?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Node>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

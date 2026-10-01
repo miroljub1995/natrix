@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class OES_draw_buffers_indexed: global::Natrix.JSCore.JSObjectProxy
+public partial class OES_draw_buffers_indexed: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<OES_draw_buffers_indexed>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public OES_draw_buffers_indexed(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static OES_draw_buffers_indexed global::Natrix.JSCore.IJSObjectProxy<OES_draw_buffers_indexed>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<OES_draw_buffers_indexed>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public void EnableiOES(uint target, uint index)

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy
+public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<Sanitizer>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public Sanitizer(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static Sanitizer global::Natrix.JSCore.IJSObjectProxy<Sanitizer>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<Sanitizer>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.Sanitizer New()
@@ -19,7 +23,7 @@ public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.Sanitizer New(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.SanitizerConfig, global::Natrix.StdWeb.SanitizerPresets, global::Natrix.StdWeb.GenericMarshaller.Union> configuration)
+    public static global::Natrix.StdWeb.Sanitizer New(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.SanitizerConfig, global::Natrix.StdWeb.SanitizerPresets, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SanitizerConfig>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SanitizerPresets>> configuration)
     {
         int ___argsArrayLength_3 = 1;
 
@@ -41,11 +45,11 @@ public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "get", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SanitizerConfig, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SanitizerConfig>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool AllowElement(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerElementNamespaceWithAttributes, global::Natrix.StdWeb.GenericMarshaller.Union> element)
+    public bool AllowElement(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerElementNamespaceWithAttributes, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SanitizerElementNamespaceWithAttributes>> element)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -60,11 +64,11 @@ public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "allowElement", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool RemoveElement(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerElementNamespace, global::Natrix.StdWeb.GenericMarshaller.Union> element)
+    public bool RemoveElement(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerElementNamespace, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SanitizerElementNamespace>> element)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -79,11 +83,11 @@ public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "removeElement", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool ReplaceElementWithChildren(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerElementNamespace, global::Natrix.StdWeb.GenericMarshaller.Union> element)
+    public bool ReplaceElementWithChildren(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerElementNamespace, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SanitizerElementNamespace>> element)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -98,11 +102,11 @@ public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "replaceElementWithChildren", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool AllowProcessingInstruction(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerProcessingInstruction, global::Natrix.StdWeb.GenericMarshaller.Union> pi)
+    public bool AllowProcessingInstruction(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerProcessingInstruction, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SanitizerProcessingInstruction>> pi)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -117,11 +121,11 @@ public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "allowProcessingInstruction", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool RemoveProcessingInstruction(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerProcessingInstruction, global::Natrix.StdWeb.GenericMarshaller.Union> pi)
+    public bool RemoveProcessingInstruction(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerProcessingInstruction, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SanitizerProcessingInstruction>> pi)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -136,11 +140,11 @@ public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "removeProcessingInstruction", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool AllowAttribute(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerAttributeNamespace, global::Natrix.StdWeb.GenericMarshaller.Union> attribute)
+    public bool AllowAttribute(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerAttributeNamespace, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SanitizerAttributeNamespace>> attribute)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -155,11 +159,11 @@ public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "allowAttribute", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool RemoveAttribute(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerAttributeNamespace, global::Natrix.StdWeb.GenericMarshaller.Union> attribute)
+    public bool RemoveAttribute(global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.SanitizerAttributeNamespace, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SanitizerAttributeNamespace>> attribute)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -174,7 +178,7 @@ public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "removeAttribute", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -194,7 +198,7 @@ public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "setComments", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -214,7 +218,7 @@ public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "setDataAttributes", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -225,7 +229,7 @@ public partial class Sanitizer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "removeUnsafe", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 }
 

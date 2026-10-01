@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate void IntersectionObserverCallbackManaged(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IntersectionObserverEntry, global::Natrix.StdWeb.PropertyAccessor> entries, global::Natrix.StdWeb.IntersectionObserver observer);
+public delegate void IntersectionObserverCallbackManaged(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IntersectionObserverEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IntersectionObserverEntry>> entries, global::Natrix.StdWeb.IntersectionObserver observer);
 
-public partial class IntersectionObserverCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class IntersectionObserverCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<IntersectionObserverCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public IntersectionObserverCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static IntersectionObserverCallback global::Natrix.JSCore.IJSObjectProxy<IntersectionObserverCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public IntersectionObserverCallback(IntersectionObserverCallbackManaged input): this(ToJSObject(input))
@@ -66,10 +70,10 @@ public partial class IntersectionObserverCallback: global::Natrix.JSCore.JSObjec
             using (___args_0)
             {
                 // Argument 1
-                global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IntersectionObserverEntry, global::Natrix.StdWeb.PropertyAccessor> ___arg_2;
+                global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IntersectionObserverEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IntersectionObserverEntry>> ___arg_2;
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_3;
                 ___propObject_3 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(___args_0, 0);
-                ___arg_2 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IntersectionObserverEntry, global::Natrix.StdWeb.PropertyAccessor>(___propObject_3);
+                ___arg_2 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IntersectionObserverEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IntersectionObserverEntry>>(___propObject_3);
 
                 // Argument 2
                 global::Natrix.StdWeb.IntersectionObserver ___arg_4;

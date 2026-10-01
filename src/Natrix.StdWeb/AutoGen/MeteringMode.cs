@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MeteringMode
+public sealed partial class MeteringMode: global::Natrix.JSCore.IJSEnum<MeteringMode>
 {
     private readonly string _value;
 

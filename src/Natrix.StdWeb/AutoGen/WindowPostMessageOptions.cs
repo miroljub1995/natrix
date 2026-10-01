@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WindowPostMessageOptions: global::Natrix.StdWeb.StructuredSerializeOptions
+public partial class WindowPostMessageOptions: global::Natrix.StdWeb.StructuredSerializeOptions, global::Natrix.JSCore.IJSObjectProxy<WindowPostMessageOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class WindowPostMessageOptions: global::Natrix.StdWeb.StructuredS
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WindowPostMessageOptions global::Natrix.JSCore.IJSObjectProxy<WindowPostMessageOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WindowPostMessageOptions(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class WindowPostMessageOptions: global::Natrix.StdWeb.StructuredS
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string TargetOrigin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "targetOrigin");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "targetOrigin", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "targetOrigin");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "targetOrigin", value);
     }
 }
 

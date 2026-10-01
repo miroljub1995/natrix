@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class GPUVertexBufferLayout: global::Natrix.JSCore.JSObjectProxy
+public partial class GPUVertexBufferLayout: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<GPUVertexBufferLayout>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class GPUVertexBufferLayout: global::Natrix.JSCore.JSObjectProxy
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GPUVertexBufferLayout global::Natrix.JSCore.IJSObjectProxy<GPUVertexBufferLayout>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GPUVertexBufferLayout(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,22 +26,22 @@ public partial class GPUVertexBufferLayout: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ulong ArrayStride
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "arrayStride");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "arrayStride", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "arrayStride");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "arrayStride", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUVertexStepMode StepMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUVertexStepMode, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stepMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUVertexStepMode, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stepMode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUVertexStepMode>.Get(JSObject, "stepMode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUVertexStepMode>.Set(JSObject, "stepMode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexAttribute, global::Natrix.StdWeb.PropertyAccessor> Attributes
+    public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexAttribute, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexAttribute>> Attributes
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexAttribute, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "attributes");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexAttribute, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "attributes", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexAttribute, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexAttribute>>>.Get(JSObject, "attributes");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexAttribute, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexAttribute>>>.Set(JSObject, "attributes", value);
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RecordingState
+public sealed partial class RecordingState: global::Natrix.JSCore.IJSEnum<RecordingState>
 {
     private readonly string _value;
 

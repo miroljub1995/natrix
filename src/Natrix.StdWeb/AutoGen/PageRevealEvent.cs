@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PageRevealEvent: global::Natrix.StdWeb.Event
+public partial class PageRevealEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<PageRevealEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PageRevealEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PageRevealEvent global::Natrix.JSCore.IJSObjectProxy<PageRevealEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PageRevealEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.PageRevealEvent New(string type)
@@ -51,7 +55,7 @@ public partial class PageRevealEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ViewTransition? ViewTransition
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ViewTransition?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "viewTransition");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.ViewTransition>.Get(JSObject, "viewTransition");
     }
 }
 

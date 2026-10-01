@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WEBGL_compressed_texture_etc: global::Natrix.JSCore.JSObjectProxy
+public partial class WEBGL_compressed_texture_etc: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<WEBGL_compressed_texture_etc>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WEBGL_compressed_texture_etc(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WEBGL_compressed_texture_etc global::Natrix.JSCore.IJSObjectProxy<WEBGL_compressed_texture_etc>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WEBGL_compressed_texture_etc>(obj);
 
     public const uint COMPRESSED_R11_EAC = 0x9270;
 

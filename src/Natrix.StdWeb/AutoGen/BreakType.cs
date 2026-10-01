@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class BreakType
+public sealed partial class BreakType: global::Natrix.JSCore.IJSEnum<BreakType>
 {
     private readonly string _value;
 

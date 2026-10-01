@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class EncodedAudioChunkType
+public sealed partial class EncodedAudioChunkType: global::Natrix.JSCore.IJSEnum<EncodedAudioChunkType>
 {
     private readonly string _value;
 

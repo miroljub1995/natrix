@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class DOMParserSupportedType
+public sealed partial class DOMParserSupportedType: global::Natrix.JSCore.IJSEnum<DOMParserSupportedType>
 {
     private readonly string _value;
 

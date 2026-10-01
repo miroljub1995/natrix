@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ByteLengthQueuingStrategy: global::Natrix.JSCore.JSObjectProxy
+public partial class ByteLengthQueuingStrategy: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<ByteLengthQueuingStrategy>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ByteLengthQueuingStrategy(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ByteLengthQueuingStrategy global::Natrix.JSCore.IJSObjectProxy<ByteLengthQueuingStrategy>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ByteLengthQueuingStrategy>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.ByteLengthQueuingStrategy New(global::Natrix.StdWeb.QueuingStrategyInit init)
@@ -30,13 +34,13 @@ public partial class ByteLengthQueuingStrategy: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double HighWaterMark
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "highWaterMark");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "highWaterMark");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Function Size
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Function, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "size");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Function>.Get(JSObject, "size");
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class EventListener: global::Natrix.JSCore.JSObjectProxy
+public partial class EventListener: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<EventListener>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -13,6 +13,10 @@ public partial class EventListener: global::Natrix.JSCore.JSObjectProxy
     {
     }
 #pragma warning restore CS8618
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static EventListener global::Natrix.JSCore.IJSObjectProxy<EventListener>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<EventListener>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public EventListener(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
@@ -48,8 +52,8 @@ public partial class EventListener: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.EventListenerCallback HandleEvent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventListenerCallback, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "handleEvent");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventListenerCallback, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "handleEvent", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EventListenerCallback>.Get(JSObject, "handleEvent");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EventListenerCallback>.Set(JSObject, "handleEvent", value);
     }
 }
 

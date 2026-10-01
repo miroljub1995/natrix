@@ -12,7 +12,7 @@ public class AttributeMemberTypeGenerator(
     {
         var descriptionToTypeDeclarationGenerator =
             provider.GetRequiredService<IDLTypeDescriptionToTypeDeclarationGenerator>();
-        var propertyAccessorGenerator = provider.GetRequiredService<PropertyAccessorGenerator>();
+        var propertyAccessorResolver = provider.GetRequiredService<PropertyAccessorResolver>();
 
         List<string> bodyParts = [];
 
@@ -23,7 +23,7 @@ public class AttributeMemberTypeGenerator(
 
         var returnTypeDeclaration = descriptionToTypeDeclarationGenerator.Generate(input.IdlType);
 
-        var accessor = propertyAccessorGenerator.GetOrCreateAccessor(input.IdlType);
+        var accessor = propertyAccessorResolver.Resolve(input.IdlType);
 
         // Getter
         {
@@ -33,7 +33,7 @@ public class AttributeMemberTypeGenerator(
                 : "JSObject";
 
             var getter = $$"""
-                           get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<{{returnTypeDeclaration}}, {{accessor}}>({{inputVar}}, "{{input.Name}}");
+                           get => {{accessor}}.Get({{inputVar}}, "{{input.Name}}");
                            """;
 
             bodyParts.Add(getter);
@@ -48,7 +48,7 @@ public class AttributeMemberTypeGenerator(
                 : "JSObject";
 
             var setter = $$"""
-                           set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<{{returnTypeDeclaration}}, {{accessor}}>({{inputVar}}, "{{input.Name}}", value);
+                           set => {{accessor}}.Set({{inputVar}}, "{{input.Name}}", value);
                            """;
 
             bodyParts.Add(setter);

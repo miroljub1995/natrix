@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CSSFontFeatureValuesMap: global::Natrix.JSCore.JSObjectProxy
+public partial class CSSFontFeatureValuesMap: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<CSSFontFeatureValuesMap>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CSSFontFeatureValuesMap(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,7 +12,11 @@ public partial class CSSFontFeatureValuesMap: global::Natrix.JSCore.JSObjectProx
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void Set(string featureValueName, global::Natrix.JSCore.Generics.Union<uint, global::Natrix.JSCore.Generics.JSArray<uint, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.GenericMarshaller.Union> values)
+    static CSSFontFeatureValuesMap global::Natrix.JSCore.IJSObjectProxy<CSSFontFeatureValuesMap>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CSSFontFeatureValuesMap>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void Set(string featureValueName, global::Natrix.JSCore.Generics.Union<uint, global::Natrix.JSCore.Generics.JSArray<uint, global::Natrix.JSCore.Generics.UInt32Accessor>, global::Natrix.JSCore.Generics.UInt32Accessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<uint, global::Natrix.JSCore.Generics.UInt32Accessor>>> values)
     {
         int ___argsArrayLength_2 = 2;
 

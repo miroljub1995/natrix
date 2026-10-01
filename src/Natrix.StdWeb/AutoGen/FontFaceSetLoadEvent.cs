@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class FontFaceSetLoadEvent: global::Natrix.StdWeb.Event
+public partial class FontFaceSetLoadEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<FontFaceSetLoadEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FontFaceSetLoadEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static FontFaceSetLoadEvent global::Natrix.JSCore.IJSObjectProxy<FontFaceSetLoadEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<FontFaceSetLoadEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.FontFaceSetLoadEvent New(string type)
@@ -49,9 +53,9 @@ public partial class FontFaceSetLoadEvent: global::Natrix.StdWeb.Event
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.FontFace, global::Natrix.StdWeb.PropertyAccessor> Fontfaces
+    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>> Fontfaces
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.FontFace, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "fontfaces");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>>.Get(JSObject, "fontfaces");
     }
 }
 

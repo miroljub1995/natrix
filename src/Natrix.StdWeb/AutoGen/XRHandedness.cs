@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRHandedness
+public sealed partial class XRHandedness: global::Natrix.JSCore.IJSEnum<XRHandedness>
 {
     private readonly string _value;
 

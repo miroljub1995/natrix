@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MLClampOptions: global::Natrix.StdWeb.MLOperatorOptions
+public partial class MLClampOptions: global::Natrix.StdWeb.MLOperatorOptions, global::Natrix.JSCore.IJSObjectProxy<MLClampOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,22 +15,26 @@ public partial class MLClampOptions: global::Natrix.StdWeb.MLOperatorOptions
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MLClampOptions global::Natrix.JSCore.IJSObjectProxy<MLClampOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MLClampOptions(): base()
     {
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.StdWeb.GenericMarshaller.Union> MinValue
+    public global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.DoubleAccessor> MinValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.StdWeb.GenericMarshaller.Union>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "minValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.StdWeb.GenericMarshaller.Union>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "minValue", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.DoubleAccessor>>.Get(JSObject, "minValue");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.DoubleAccessor>>.Set(JSObject, "minValue", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.StdWeb.GenericMarshaller.Union> MaxValue
+    public global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.DoubleAccessor> MaxValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.StdWeb.GenericMarshaller.Union>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "maxValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.StdWeb.GenericMarshaller.Union>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "maxValue", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.DoubleAccessor>>.Get(JSObject, "maxValue");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.DoubleAccessor>>.Set(JSObject, "maxValue", value);
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUVertexStepMode
+public sealed partial class GPUVertexStepMode: global::Natrix.JSCore.IJSEnum<GPUVertexStepMode>
 {
     private readonly string _value;
 

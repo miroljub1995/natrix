@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AutoplayPolicy
+public sealed partial class AutoplayPolicy: global::Natrix.JSCore.IJSEnum<AutoplayPolicy>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class KeyUsage
+public sealed partial class KeyUsage: global::Natrix.JSCore.IJSEnum<KeyUsage>
 {
     private readonly string _value;
 

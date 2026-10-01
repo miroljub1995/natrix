@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class NotificationDirection
+public sealed partial class NotificationDirection: global::Natrix.JSCore.IJSEnum<NotificationDirection>
 {
     private readonly string _value;
 

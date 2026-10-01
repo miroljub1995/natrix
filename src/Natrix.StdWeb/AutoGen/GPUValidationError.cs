@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class GPUValidationError: global::Natrix.StdWeb.GPUError
+public partial class GPUValidationError: global::Natrix.StdWeb.GPUError, global::Natrix.JSCore.IJSObjectProxy<GPUValidationError>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GPUValidationError(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GPUValidationError global::Natrix.JSCore.IJSObjectProxy<GPUValidationError>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<GPUValidationError>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.GPUValidationError New(string message)

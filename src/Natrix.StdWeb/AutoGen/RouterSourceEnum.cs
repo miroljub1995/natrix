@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RouterSourceEnum
+public sealed partial class RouterSourceEnum: global::Natrix.JSCore.IJSEnum<RouterSourceEnum>
 {
     private readonly string _value;
 

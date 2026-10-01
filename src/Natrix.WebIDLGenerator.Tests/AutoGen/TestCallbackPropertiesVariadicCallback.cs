@@ -6,12 +6,16 @@ namespace Natrix.WebIDLGenerator.Tests;
 
 public delegate void TestCallbackPropertiesVariadicCallbackManaged(long param1, params int[] values);
 
-public partial class TestCallbackPropertiesVariadicCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class TestCallbackPropertiesVariadicCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<TestCallbackPropertiesVariadicCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TestCallbackPropertiesVariadicCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TestCallbackPropertiesVariadicCallback global::Natrix.JSCore.IJSObjectProxy<TestCallbackPropertiesVariadicCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TestCallbackPropertiesVariadicCallback(TestCallbackPropertiesVariadicCallbackManaged input): this(ToJSObject(input))

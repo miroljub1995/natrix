@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MediaDecodingConfiguration: global::Natrix.StdWeb.MediaConfiguration
+public partial class MediaDecodingConfiguration: global::Natrix.StdWeb.MediaConfiguration, global::Natrix.JSCore.IJSObjectProxy<MediaDecodingConfiguration>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class MediaDecodingConfiguration: global::Natrix.StdWeb.MediaConf
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MediaDecodingConfiguration global::Natrix.JSCore.IJSObjectProxy<MediaDecodingConfiguration>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MediaDecodingConfiguration(): base()
     {
     }
@@ -22,15 +26,15 @@ public partial class MediaDecodingConfiguration: global::Natrix.StdWeb.MediaConf
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.MediaDecodingType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaDecodingType, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MediaDecodingType, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaDecodingType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaDecodingType>.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaCapabilitiesKeySystemConfiguration KeySystemConfiguration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaCapabilitiesKeySystemConfiguration, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "keySystemConfiguration");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MediaCapabilitiesKeySystemConfiguration, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "keySystemConfiguration", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaCapabilitiesKeySystemConfiguration>.Get(JSObject, "keySystemConfiguration");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaCapabilitiesKeySystemConfiguration>.Set(JSObject, "keySystemConfiguration", value);
     }
 }
 

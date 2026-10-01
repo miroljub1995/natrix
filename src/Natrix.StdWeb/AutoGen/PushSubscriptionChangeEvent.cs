@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PushSubscriptionChangeEvent: global::Natrix.StdWeb.ExtendableEvent
+public partial class PushSubscriptionChangeEvent: global::Natrix.StdWeb.ExtendableEvent, global::Natrix.JSCore.IJSObjectProxy<PushSubscriptionChangeEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PushSubscriptionChangeEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PushSubscriptionChangeEvent global::Natrix.JSCore.IJSObjectProxy<PushSubscriptionChangeEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PushSubscriptionChangeEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.PushSubscriptionChangeEvent New(string type)
@@ -51,13 +55,13 @@ public partial class PushSubscriptionChangeEvent: global::Natrix.StdWeb.Extendab
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PushSubscription? NewSubscription
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PushSubscription?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "newSubscription");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PushSubscription>.Get(JSObject, "newSubscription");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PushSubscription? OldSubscription
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PushSubscription?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "oldSubscription");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PushSubscription>.Get(JSObject, "oldSubscription");
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PresentationConnectionCloseReason
+public sealed partial class PresentationConnectionCloseReason: global::Natrix.JSCore.IJSEnum<PresentationConnectionCloseReason>
 {
     private readonly string _value;
 

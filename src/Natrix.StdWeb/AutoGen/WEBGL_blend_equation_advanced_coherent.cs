@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WEBGL_blend_equation_advanced_coherent: global::Natrix.JSCore.JSObjectProxy
+public partial class WEBGL_blend_equation_advanced_coherent: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<WEBGL_blend_equation_advanced_coherent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WEBGL_blend_equation_advanced_coherent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WEBGL_blend_equation_advanced_coherent global::Natrix.JSCore.IJSObjectProxy<WEBGL_blend_equation_advanced_coherent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WEBGL_blend_equation_advanced_coherent>(obj);
 
     public const uint MULTIPLY = 0x9294;
 

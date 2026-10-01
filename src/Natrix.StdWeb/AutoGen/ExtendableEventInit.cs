@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ExtendableEventInit: global::Natrix.StdWeb.EventInit
+public partial class ExtendableEventInit: global::Natrix.StdWeb.EventInit, global::Natrix.JSCore.IJSObjectProxy<ExtendableEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -13,6 +13,10 @@ public partial class ExtendableEventInit: global::Natrix.StdWeb.EventInit
     {
     }
 #pragma warning restore CS8618
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ExtendableEventInit global::Natrix.JSCore.IJSObjectProxy<ExtendableEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ExtendableEventInit(): base()

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CaptureAction
+public sealed partial class CaptureAction: global::Natrix.JSCore.IJSEnum<CaptureAction>
 {
     private readonly string _value;
 

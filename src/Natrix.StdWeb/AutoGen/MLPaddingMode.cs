@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MLPaddingMode
+public sealed partial class MLPaddingMode: global::Natrix.JSCore.IJSEnum<MLPaddingMode>
 {
     private readonly string _value;
 

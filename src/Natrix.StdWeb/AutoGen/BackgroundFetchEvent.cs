@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class BackgroundFetchEvent: global::Natrix.StdWeb.ExtendableEvent
+public partial class BackgroundFetchEvent: global::Natrix.StdWeb.ExtendableEvent, global::Natrix.JSCore.IJSObjectProxy<BackgroundFetchEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public BackgroundFetchEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static BackgroundFetchEvent global::Natrix.JSCore.IJSObjectProxy<BackgroundFetchEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<BackgroundFetchEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.BackgroundFetchEvent New(string type, global::Natrix.StdWeb.BackgroundFetchEventInit init)
@@ -35,7 +39,7 @@ public partial class BackgroundFetchEvent: global::Natrix.StdWeb.ExtendableEvent
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BackgroundFetchRegistration Registration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BackgroundFetchRegistration, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "registration");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRegistration>.Get(JSObject, "registration");
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ReadableStreamReaderMode
+public sealed partial class ReadableStreamReaderMode: global::Natrix.JSCore.IJSEnum<ReadableStreamReaderMode>
 {
     private readonly string _value;
 

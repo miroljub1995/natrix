@@ -4,7 +4,7 @@ namespace Natrix.WebIDLGenerator.Tests;
 
 #nullable enable
 
-public partial class TestCallbackInterfaceCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class TestCallbackInterfaceCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<TestCallbackInterfaceCallback>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -13,6 +13,10 @@ public partial class TestCallbackInterfaceCallback: global::Natrix.JSCore.JSObje
     {
     }
 #pragma warning restore CS8618
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TestCallbackInterfaceCallback global::Natrix.JSCore.IJSObjectProxy<TestCallbackInterfaceCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<TestCallbackInterfaceCallback>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TestCallbackInterfaceCallback(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
@@ -52,8 +56,8 @@ public partial class TestCallbackInterfaceCallback: global::Natrix.JSCore.JSObje
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback ProcessValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "processValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "processValue", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback>.Get(JSObject, "processValue");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback>.Set(JSObject, "processValue", value);
     }
 }
 

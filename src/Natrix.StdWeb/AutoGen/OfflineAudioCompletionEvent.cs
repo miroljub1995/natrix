@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class OfflineAudioCompletionEvent: global::Natrix.StdWeb.Event
+public partial class OfflineAudioCompletionEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<OfflineAudioCompletionEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public OfflineAudioCompletionEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static OfflineAudioCompletionEvent global::Natrix.JSCore.IJSObjectProxy<OfflineAudioCompletionEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<OfflineAudioCompletionEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.OfflineAudioCompletionEvent New(string type, global::Natrix.StdWeb.OfflineAudioCompletionEventInit eventInitDict)
@@ -35,7 +39,7 @@ public partial class OfflineAudioCompletionEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioBuffer RenderedBuffer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioBuffer, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "renderedBuffer");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioBuffer>.Get(JSObject, "renderedBuffer");
     }
 }
 

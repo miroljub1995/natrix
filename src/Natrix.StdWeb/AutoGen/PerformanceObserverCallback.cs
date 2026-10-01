@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void PerformanceObserverCallbackManaged(global::Natrix.StdWeb.PerformanceObserverEntryList entries, global::Natrix.StdWeb.PerformanceObserver observer, global::Natrix.StdWeb.PerformanceObserverCallbackOptions options);
 
-public partial class PerformanceObserverCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class PerformanceObserverCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<PerformanceObserverCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PerformanceObserverCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PerformanceObserverCallback global::Natrix.JSCore.IJSObjectProxy<PerformanceObserverCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PerformanceObserverCallback(PerformanceObserverCallbackManaged input): this(ToJSObject(input))

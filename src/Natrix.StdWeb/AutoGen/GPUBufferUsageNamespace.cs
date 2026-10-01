@@ -32,13 +32,13 @@ public partial class GPUBufferUsageNamespace: global::Natrix.JSCore.JSObjectProx
     public const uint QUERY_RESOLVE = 0x0200;
 }
 
-public partial class ServiceWorkerGlobalScope
+public partial class Window
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUBufferUsageNamespace GPUBufferUsage => new global::Natrix.StdWeb.GPUBufferUsageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUBufferUsage"));
 }
 
-public partial class Window
+public partial class ServiceWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUBufferUsageNamespace GPUBufferUsage => new global::Natrix.StdWeb.GPUBufferUsageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUBufferUsage"));
@@ -50,13 +50,13 @@ public partial class DedicatedWorkerGlobalScope
     public global::Natrix.StdWeb.GPUBufferUsageNamespace GPUBufferUsage => new global::Natrix.StdWeb.GPUBufferUsageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUBufferUsage"));
 }
 
-public partial class RTCIdentityProviderGlobalScope
+public partial class SharedWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUBufferUsageNamespace GPUBufferUsage => new global::Natrix.StdWeb.GPUBufferUsageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUBufferUsage"));
 }
 
-public partial class SharedWorkerGlobalScope
+public partial class RTCIdentityProviderGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUBufferUsageNamespace GPUBufferUsage => new global::Natrix.StdWeb.GPUBufferUsageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUBufferUsage"));

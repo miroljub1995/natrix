@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GamepadMappingType
+public sealed partial class GamepadMappingType: global::Natrix.JSCore.IJSEnum<GamepadMappingType>
 {
     private readonly string _value;
 

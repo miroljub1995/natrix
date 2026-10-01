@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class XRSessionEvent: global::Natrix.StdWeb.Event
+public partial class XRSessionEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<XRSessionEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XRSessionEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static XRSessionEvent global::Natrix.JSCore.IJSObjectProxy<XRSessionEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<XRSessionEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.XRSessionEvent New(string type, global::Natrix.StdWeb.XRSessionEventInit eventInitDict)
@@ -35,7 +39,7 @@ public partial class XRSessionEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRSession Session
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRSession, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "session");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSession>.Get(JSObject, "session");
     }
 }
 

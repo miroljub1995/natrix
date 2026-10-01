@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class HighlightType
+public sealed partial class HighlightType: global::Natrix.JSCore.IJSEnum<HighlightType>
 {
     private readonly string _value;
 

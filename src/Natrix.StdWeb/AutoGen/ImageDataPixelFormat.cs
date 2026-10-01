@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ImageDataPixelFormat
+public sealed partial class ImageDataPixelFormat: global::Natrix.JSCore.IJSEnum<ImageDataPixelFormat>
 {
     private readonly string _value;
 

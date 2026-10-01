@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CookieStoreManager: global::Natrix.JSCore.JSObjectProxy
+public partial class CookieStoreManager: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<CookieStoreManager>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CookieStoreManager(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,7 +12,11 @@ public partial class CookieStoreManager: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Promise Subscribe(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.StdWeb.PropertyAccessor> subscriptions)
+    static CookieStoreManager global::Natrix.JSCore.IJSObjectProxy<CookieStoreManager>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CookieStoreManager>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Promise Subscribe(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CookieStoreGetOptions>> subscriptions)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -27,22 +31,22 @@ public partial class CookieStoreManager: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "subscribe", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> GetSubscriptions()
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CookieStoreGetOptions>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CookieStoreGetOptions>>>> GetSubscriptions()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getSubscriptions", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CookieStoreGetOptions>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CookieStoreGetOptions>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Promise Unsubscribe(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.StdWeb.PropertyAccessor> subscriptions)
+    public global::Natrix.JSCore.Promise Unsubscribe(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CookieStoreGetOptions>> subscriptions)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -57,7 +61,7 @@ public partial class CookieStoreManager: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "unsubscribe", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

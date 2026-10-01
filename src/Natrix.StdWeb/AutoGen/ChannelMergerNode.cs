@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ChannelMergerNode: global::Natrix.StdWeb.AudioNode
+public partial class ChannelMergerNode: global::Natrix.StdWeb.AudioNode, global::Natrix.JSCore.IJSObjectProxy<ChannelMergerNode>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ChannelMergerNode(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ChannelMergerNode global::Natrix.JSCore.IJSObjectProxy<ChannelMergerNode>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ChannelMergerNode>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.ChannelMergerNode New(global::Natrix.StdWeb.BaseAudioContext context)

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUFrontFace
+public sealed partial class GPUFrontFace: global::Natrix.JSCore.IJSEnum<GPUFrontFace>
 {
     private readonly string _value;
 

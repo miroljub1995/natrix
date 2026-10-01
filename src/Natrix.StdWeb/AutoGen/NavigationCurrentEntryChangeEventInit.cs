@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class NavigationCurrentEntryChangeEventInit: global::Natrix.StdWeb.EventInit
+public partial class NavigationCurrentEntryChangeEventInit: global::Natrix.StdWeb.EventInit, global::Natrix.JSCore.IJSObjectProxy<NavigationCurrentEntryChangeEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class NavigationCurrentEntryChangeEventInit: global::Natrix.StdWe
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NavigationCurrentEntryChangeEventInit global::Natrix.JSCore.IJSObjectProxy<NavigationCurrentEntryChangeEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NavigationCurrentEntryChangeEventInit(): base()
     {
     }
@@ -22,15 +26,15 @@ public partial class NavigationCurrentEntryChangeEventInit: global::Natrix.StdWe
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NavigationType? NavigationType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NavigationType?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "navigationType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.NavigationType?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "navigationType", value);
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.NavigationType>.Get(JSObject, "navigationType");
+        set => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.NavigationType>.Set(JSObject, "navigationType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.NavigationHistoryEntry From
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NavigationHistoryEntry, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "from");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.NavigationHistoryEntry, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "from", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NavigationHistoryEntry>.Get(JSObject, "from");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NavigationHistoryEntry>.Set(JSObject, "from", value);
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class DocumentVisibilityState
+public sealed partial class DocumentVisibilityState: global::Natrix.JSCore.IJSEnum<DocumentVisibilityState>
 {
     private readonly string _value;
 

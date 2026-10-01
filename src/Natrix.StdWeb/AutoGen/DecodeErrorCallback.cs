@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void DecodeErrorCallbackManaged(global::Natrix.StdWeb.DOMException error);
 
-public partial class DecodeErrorCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class DecodeErrorCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<DecodeErrorCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public DecodeErrorCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static DecodeErrorCallback global::Natrix.JSCore.IJSObjectProxy<DecodeErrorCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public DecodeErrorCallback(DecodeErrorCallbackManaged input): this(ToJSObject(input))

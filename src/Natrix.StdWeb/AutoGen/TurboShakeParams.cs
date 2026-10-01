@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class TurboShakeParams: global::Natrix.StdWeb.Algorithm
+public partial class TurboShakeParams: global::Natrix.StdWeb.Algorithm, global::Natrix.JSCore.IJSObjectProxy<TurboShakeParams>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class TurboShakeParams: global::Natrix.StdWeb.Algorithm
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TurboShakeParams global::Natrix.JSCore.IJSObjectProxy<TurboShakeParams>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TurboShakeParams(): base()
     {
     }
@@ -22,15 +26,15 @@ public partial class TurboShakeParams: global::Natrix.StdWeb.Algorithm
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint OutputLength
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "outputLength");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "outputLength", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "outputLength");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "outputLength", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte DomainSeparation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "domainSeparation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<byte, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "domainSeparation", value);
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "domainSeparation");
+        set => global::Natrix.JSCore.Generics.ByteAccessor.Set(JSObject, "domainSeparation", value);
     }
 }
 

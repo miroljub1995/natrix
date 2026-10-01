@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUPrimitiveTopology
+public sealed partial class GPUPrimitiveTopology: global::Natrix.JSCore.IJSEnum<GPUPrimitiveTopology>
 {
     private readonly string _value;
 

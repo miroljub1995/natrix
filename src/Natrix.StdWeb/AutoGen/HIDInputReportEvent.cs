@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class HIDInputReportEvent: global::Natrix.StdWeb.Event
+public partial class HIDInputReportEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<HIDInputReportEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public HIDInputReportEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static HIDInputReportEvent global::Natrix.JSCore.IJSObjectProxy<HIDInputReportEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<HIDInputReportEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.HIDInputReportEvent New(string type, global::Natrix.StdWeb.HIDInputReportEventInit eventInitDict)
@@ -35,19 +39,19 @@ public partial class HIDInputReportEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HIDDevice Device
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HIDDevice, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "device");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDevice>.Get(JSObject, "device");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte ReportId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "reportId");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "reportId");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.DataView Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.DataView, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.DataView>.Get(JSObject, "data");
     }
 }
 

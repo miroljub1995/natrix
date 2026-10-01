@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCStatsIceCandidatePairState
+public sealed partial class RTCStatsIceCandidatePairState: global::Natrix.JSCore.IJSEnum<RTCStatsIceCandidatePairState>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUBufferMapState
+public sealed partial class GPUBufferMapState: global::Natrix.JSCore.IJSEnum<GPUBufferMapState>
 {
     private readonly string _value;
 

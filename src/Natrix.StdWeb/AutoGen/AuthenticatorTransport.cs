@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AuthenticatorTransport
+public sealed partial class AuthenticatorTransport: global::Natrix.JSCore.IJSEnum<AuthenticatorTransport>
 {
     private readonly string _value;
 

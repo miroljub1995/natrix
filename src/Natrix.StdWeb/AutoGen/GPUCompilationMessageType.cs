@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUCompilationMessageType
+public sealed partial class GPUCompilationMessageType: global::Natrix.JSCore.IJSEnum<GPUCompilationMessageType>
 {
     private readonly string _value;
 

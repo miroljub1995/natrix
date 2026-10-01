@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class SystemAudioPreferenceEnum
+public sealed partial class SystemAudioPreferenceEnum: global::Natrix.JSCore.IJSEnum<SystemAudioPreferenceEnum>
 {
     private readonly string _value;
 

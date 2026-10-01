@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCBundlePolicy
+public sealed partial class RTCBundlePolicy: global::Natrix.JSCore.IJSEnum<RTCBundlePolicy>
 {
     private readonly string _value;
 

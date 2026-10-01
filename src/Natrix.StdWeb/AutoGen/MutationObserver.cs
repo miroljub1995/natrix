@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MutationObserver: global::Natrix.JSCore.JSObjectProxy
+public partial class MutationObserver: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<MutationObserver>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MutationObserver(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MutationObserver global::Natrix.JSCore.IJSObjectProxy<MutationObserver>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<MutationObserver>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.MutationObserver New(global::Natrix.StdWeb.MutationCallback callback)
@@ -69,14 +73,14 @@ public partial class MutationObserver: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MutationRecord, global::Natrix.StdWeb.PropertyAccessor> TakeRecords()
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MutationRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MutationRecord>> TakeRecords()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "takeRecords", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MutationRecord, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MutationRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MutationRecord>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

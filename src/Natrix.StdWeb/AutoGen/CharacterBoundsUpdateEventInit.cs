@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CharacterBoundsUpdateEventInit: global::Natrix.StdWeb.EventInit
+public partial class CharacterBoundsUpdateEventInit: global::Natrix.StdWeb.EventInit, global::Natrix.JSCore.IJSObjectProxy<CharacterBoundsUpdateEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class CharacterBoundsUpdateEventInit: global::Natrix.StdWeb.Event
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CharacterBoundsUpdateEventInit global::Natrix.JSCore.IJSObjectProxy<CharacterBoundsUpdateEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CharacterBoundsUpdateEventInit(): base()
     {
     }
@@ -22,15 +26,15 @@ public partial class CharacterBoundsUpdateEventInit: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint RangeStart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "rangeStart");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "rangeStart", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "rangeStart");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "rangeStart", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint RangeEnd
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "rangeEnd");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "rangeEnd", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "rangeEnd");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "rangeEnd", value);
     }
 }
 

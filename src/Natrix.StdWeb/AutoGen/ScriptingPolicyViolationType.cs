@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ScriptingPolicyViolationType
+public sealed partial class ScriptingPolicyViolationType: global::Natrix.JSCore.IJSEnum<ScriptingPolicyViolationType>
 {
     private readonly string _value;
 

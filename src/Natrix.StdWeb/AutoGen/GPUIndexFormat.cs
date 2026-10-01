@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUIndexFormat
+public sealed partial class GPUIndexFormat: global::Natrix.JSCore.IJSEnum<GPUIndexFormat>
 {
     private readonly string _value;
 

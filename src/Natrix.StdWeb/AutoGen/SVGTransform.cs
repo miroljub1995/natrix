@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SVGTransform: global::Natrix.JSCore.JSObjectProxy
+public partial class SVGTransform: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<SVGTransform>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SVGTransform(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SVGTransform global::Natrix.JSCore.IJSObjectProxy<SVGTransform>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<SVGTransform>(obj);
 
     public const ushort SVG_TRANSFORM_UNKNOWN = 0;
 
@@ -28,19 +32,19 @@ public partial class SVGTransform: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "type");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "type");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGMatrix Matrix
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGMatrix, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "matrix");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGMatrix>.Get(JSObject, "matrix");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Angle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "angle");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "angle");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void FrameRequestCallbackManaged(double time);
 
-public partial class FrameRequestCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class FrameRequestCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<FrameRequestCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FrameRequestCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static FrameRequestCallback global::Natrix.JSCore.IJSObjectProxy<FrameRequestCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FrameRequestCallback(FrameRequestCallbackManaged input): this(ToJSObject(input))

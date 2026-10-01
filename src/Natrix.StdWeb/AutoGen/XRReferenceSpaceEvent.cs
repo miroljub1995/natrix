@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class XRReferenceSpaceEvent: global::Natrix.StdWeb.Event
+public partial class XRReferenceSpaceEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<XRReferenceSpaceEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XRReferenceSpaceEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static XRReferenceSpaceEvent global::Natrix.JSCore.IJSObjectProxy<XRReferenceSpaceEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<XRReferenceSpaceEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.XRReferenceSpaceEvent New(string type, global::Natrix.StdWeb.XRReferenceSpaceEventInit eventInitDict)
@@ -35,13 +39,13 @@ public partial class XRReferenceSpaceEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRReferenceSpace ReferenceSpace
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRReferenceSpace, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "referenceSpace");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRReferenceSpace>.Get(JSObject, "referenceSpace");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRRigidTransform? Transform
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRRigidTransform?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "transform");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>.Get(JSObject, "transform");
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class EncodedVideoChunkType
+public sealed partial class EncodedVideoChunkType: global::Natrix.JSCore.IJSEnum<EncodedVideoChunkType>
 {
     private readonly string _value;
 

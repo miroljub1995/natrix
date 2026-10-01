@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MIDIPortConnectionState
+public sealed partial class MIDIPortConnectionState: global::Natrix.JSCore.IJSEnum<MIDIPortConnectionState>
 {
     private readonly string _value;
 

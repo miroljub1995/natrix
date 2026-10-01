@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CrossOriginStorageManager: global::Natrix.JSCore.JSObjectProxy
+public partial class CrossOriginStorageManager: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<CrossOriginStorageManager>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CrossOriginStorageManager(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,7 +12,11 @@ public partial class CrossOriginStorageManager: global::Natrix.JSCore.JSObjectPr
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemFileHandle, global::Natrix.StdWeb.PropertyAccessor> RequestFileHandle(global::Natrix.StdWeb.CrossOriginStorageRequestFileHandleHash hash)
+    static CrossOriginStorageManager global::Natrix.JSCore.IJSObjectProxy<CrossOriginStorageManager>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CrossOriginStorageManager>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemFileHandle, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemFileHandle>> RequestFileHandle(global::Natrix.StdWeb.CrossOriginStorageRequestFileHandleHash hash)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -28,11 +32,11 @@ public partial class CrossOriginStorageManager: global::Natrix.JSCore.JSObjectPr
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "requestFileHandle", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemFileHandle, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemFileHandle, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemFileHandle>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemFileHandle, global::Natrix.StdWeb.PropertyAccessor> RequestFileHandle(global::Natrix.StdWeb.CrossOriginStorageRequestFileHandleHash hash, global::Natrix.StdWeb.CrossOriginStorageRequestFileHandleOptions options)
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemFileHandle, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemFileHandle>> RequestFileHandle(global::Natrix.StdWeb.CrossOriginStorageRequestFileHandleHash hash, global::Natrix.StdWeb.CrossOriginStorageRequestFileHandleOptions options)
     {
         int ___argsArrayLength_2 = 2;
 
@@ -53,7 +57,7 @@ public partial class CrossOriginStorageManager: global::Natrix.JSCore.JSObjectPr
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "requestFileHandle", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemFileHandle, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FileSystemFileHandle, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemFileHandle>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

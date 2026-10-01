@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class LanguageModelMessageRole
+public sealed partial class LanguageModelMessageRole: global::Natrix.JSCore.IJSEnum<LanguageModelMessageRole>
 {
     private readonly string _value;
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CSSMatrixComponent: global::Natrix.StdWeb.CSSTransformComponent
+public partial class CSSMatrixComponent: global::Natrix.StdWeb.CSSTransformComponent, global::Natrix.JSCore.IJSObjectProxy<CSSMatrixComponent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CSSMatrixComponent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CSSMatrixComponent global::Natrix.JSCore.IJSObjectProxy<CSSMatrixComponent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CSSMatrixComponent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.CSSMatrixComponent New(global::Natrix.StdWeb.DOMMatrixReadOnly matrix)
@@ -51,8 +55,8 @@ public partial class CSSMatrixComponent: global::Natrix.StdWeb.CSSTransformCompo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMMatrix Matrix
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMMatrix, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "matrix");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMMatrix, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "matrix", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMMatrix>.Get(JSObject, "matrix");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMMatrix>.Set(JSObject, "matrix", value);
     }
 }
 

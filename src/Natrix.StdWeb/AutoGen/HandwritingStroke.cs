@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class HandwritingStroke: global::Natrix.JSCore.JSObjectProxy
+public partial class HandwritingStroke: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<HandwritingStroke>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public HandwritingStroke(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static HandwritingStroke global::Natrix.JSCore.IJSObjectProxy<HandwritingStroke>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<HandwritingStroke>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.HandwritingStroke New()
@@ -34,14 +38,14 @@ public partial class HandwritingStroke: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingPoint, global::Natrix.StdWeb.PropertyAccessor> GetPoints()
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingPoint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingPoint>> GetPoints()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getPoints", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingPoint, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingPoint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingPoint>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

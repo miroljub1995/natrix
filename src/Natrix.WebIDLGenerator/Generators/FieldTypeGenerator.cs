@@ -12,19 +12,19 @@ public class FieldTypeGenerator(
     {
         var descriptionToTypeDeclarationGenerator =
             provider.GetRequiredService<IDLTypeDescriptionToTypeDeclarationGenerator>();
-        var propertyAccessorGenerator = provider.GetRequiredService<PropertyAccessorGenerator>();
+        var propertyAccessorResolver = provider.GetRequiredService<PropertyAccessorResolver>();
 
         var requiredKeyword = input.Required ? " required" : "";
         var returnTypeDeclaration = descriptionToTypeDeclarationGenerator.Generate(input.IdlType);
 
-        var accessor = propertyAccessorGenerator.GetOrCreateAccessor(input.IdlType);
+        var accessor = propertyAccessorResolver.Resolve(input.IdlType);
 
         var getter = $$"""
-                       get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<{{returnTypeDeclaration}}, {{accessor}}>(JSObject, "{{input.Name}}");
+                       get => {{accessor}}.Get(JSObject, "{{input.Name}}");
                        """;
 
         var setter = $$"""
-                       set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<{{returnTypeDeclaration}}, {{accessor}}>(JSObject, "{{input.Name}}", value);
+                       set => {{accessor}}.Set(JSObject, "{{input.Name}}", value);
                        """;
 
         var content = $$"""

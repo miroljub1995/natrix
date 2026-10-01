@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class HardwareAcceleration
+public sealed partial class HardwareAcceleration: global::Natrix.JSCore.IJSEnum<HardwareAcceleration>
 {
     private readonly string _value;
 

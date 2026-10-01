@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class GPUUncapturedErrorEvent: global::Natrix.StdWeb.Event
+public partial class GPUUncapturedErrorEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<GPUUncapturedErrorEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GPUUncapturedErrorEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GPUUncapturedErrorEvent global::Natrix.JSCore.IJSObjectProxy<GPUUncapturedErrorEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<GPUUncapturedErrorEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.GPUUncapturedErrorEvent New(string type, global::Natrix.StdWeb.GPUUncapturedErrorEventInit gpuUncapturedErrorEventInitDict)
@@ -35,7 +39,7 @@ public partial class GPUUncapturedErrorEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUError Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUError, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "error");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUError>.Get(JSObject, "error");
     }
 }
 

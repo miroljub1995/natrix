@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUCompareFunction
+public sealed partial class GPUCompareFunction: global::Natrix.JSCore.IJSEnum<GPUCompareFunction>
 {
     private readonly string _value;
 

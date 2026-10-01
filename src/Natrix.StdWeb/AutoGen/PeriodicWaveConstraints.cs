@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PeriodicWaveConstraints: global::Natrix.JSCore.JSObjectProxy
+public partial class PeriodicWaveConstraints: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<PeriodicWaveConstraints>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class PeriodicWaveConstraints: global::Natrix.JSCore.JSObjectProx
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PeriodicWaveConstraints global::Natrix.JSCore.IJSObjectProxy<PeriodicWaveConstraints>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PeriodicWaveConstraints(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,8 +26,8 @@ public partial class PeriodicWaveConstraints: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool DisableNormalization
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "disableNormalization");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "disableNormalization", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "disableNormalization");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "disableNormalization", value);
     }
 }
 

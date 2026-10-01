@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class BluetoothAdvertisingEvent: global::Natrix.StdWeb.Event
+public partial class BluetoothAdvertisingEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<BluetoothAdvertisingEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public BluetoothAdvertisingEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static BluetoothAdvertisingEvent global::Natrix.JSCore.IJSObjectProxy<BluetoothAdvertisingEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<BluetoothAdvertisingEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.BluetoothAdvertisingEvent New(string type, global::Natrix.StdWeb.BluetoothAdvertisingEventInit init)
@@ -35,49 +39,49 @@ public partial class BluetoothAdvertisingEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BluetoothDevice Device
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BluetoothDevice, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "device");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothDevice>.Get(JSObject, "device");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.StdWeb.PropertyAccessor> Uuids
+    public global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor> Uuids
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "uuids");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "uuids");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort? Appearance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "appearance");
+        get => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Get(JSObject, "appearance");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public sbyte? TxPower
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<sbyte?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "txPower");
+        get => global::Natrix.JSCore.Generics.NullableSByteAccessor.Get(JSObject, "txPower");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public sbyte? Rssi
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<sbyte?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "rssi");
+        get => global::Natrix.JSCore.Generics.NullableSByteAccessor.Get(JSObject, "rssi");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BluetoothManufacturerDataMap ManufacturerData
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BluetoothManufacturerDataMap, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "manufacturerData");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothManufacturerDataMap>.Get(JSObject, "manufacturerData");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BluetoothServiceDataMap ServiceData
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BluetoothServiceDataMap, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "serviceData");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothServiceDataMap>.Get(JSObject, "serviceData");
     }
 }
 

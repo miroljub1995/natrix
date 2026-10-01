@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class DelayOptions: global::Natrix.StdWeb.AudioNodeOptions
+public partial class DelayOptions: global::Natrix.StdWeb.AudioNodeOptions, global::Natrix.JSCore.IJSObjectProxy<DelayOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class DelayOptions: global::Natrix.StdWeb.AudioNodeOptions
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static DelayOptions global::Natrix.JSCore.IJSObjectProxy<DelayOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public DelayOptions(): base()
     {
     }
@@ -22,15 +26,15 @@ public partial class DelayOptions: global::Natrix.StdWeb.AudioNodeOptions
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double MaxDelayTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "maxDelayTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "maxDelayTime", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "maxDelayTime");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "maxDelayTime", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DelayTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "delayTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "delayTime", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "delayTime");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "delayTime", value);
     }
 }
 

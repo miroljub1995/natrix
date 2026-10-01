@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class EndOfStreamError
+public sealed partial class EndOfStreamError: global::Natrix.JSCore.IJSEnum<EndOfStreamError>
 {
     private readonly string _value;
 

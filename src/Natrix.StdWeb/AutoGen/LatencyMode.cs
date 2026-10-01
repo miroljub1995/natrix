@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class LatencyMode
+public sealed partial class LatencyMode: global::Natrix.JSCore.IJSEnum<LatencyMode>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class WebTransportCongestionControl
+public sealed partial class WebTransportCongestionControl: global::Natrix.JSCore.IJSEnum<WebTransportCongestionControl>
 {
     private readonly string _value;
 

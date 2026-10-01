@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RunningStatus
+public sealed partial class RunningStatus: global::Natrix.JSCore.IJSEnum<RunningStatus>
 {
     private readonly string _value;
 

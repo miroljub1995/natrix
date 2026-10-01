@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class USBAlternateInterface: global::Natrix.JSCore.JSObjectProxy
+public partial class USBAlternateInterface: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<USBAlternateInterface>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public USBAlternateInterface(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static USBAlternateInterface global::Natrix.JSCore.IJSObjectProxy<USBAlternateInterface>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<USBAlternateInterface>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.USBAlternateInterface New(global::Natrix.StdWeb.USBInterface deviceInterface, byte alternateSetting)
@@ -35,37 +39,37 @@ public partial class USBAlternateInterface: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte AlternateSetting
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "alternateSetting");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "alternateSetting");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte InterfaceClass
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "interfaceClass");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "interfaceClass");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte InterfaceSubclass
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "interfaceSubclass");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "interfaceSubclass");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte InterfaceProtocol
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "interfaceProtocol");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "interfaceProtocol");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? InterfaceName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "interfaceName");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "interfaceName");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBEndpoint, global::Natrix.StdWeb.PropertyAccessor> Endpoints
+    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBEndpoint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBEndpoint>> Endpoints
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBEndpoint, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "endpoints");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBEndpoint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBEndpoint>>>.Get(JSObject, "endpoints");
     }
 }
 

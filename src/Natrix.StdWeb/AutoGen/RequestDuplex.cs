@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RequestDuplex
+public sealed partial class RequestDuplex: global::Natrix.JSCore.IJSEnum<RequestDuplex>
 {
     private readonly string _value;
 

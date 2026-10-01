@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUCullMode
+public sealed partial class GPUCullMode: global::Natrix.JSCore.IJSEnum<GPUCullMode>
 {
     private readonly string _value;
 

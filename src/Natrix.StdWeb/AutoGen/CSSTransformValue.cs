@@ -4,15 +4,19 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CSSTransformValue: global::Natrix.StdWeb.CSSStyleValue
+public partial class CSSTransformValue: global::Natrix.StdWeb.CSSStyleValue, global::Natrix.JSCore.IJSObjectProxy<CSSTransformValue>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CSSTransformValue(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
 
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CSSTransformValue global::Natrix.JSCore.IJSObjectProxy<CSSTransformValue>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CSSTransformValue>(obj);
+
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.CSSTransformValue New(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CSSTransformComponent, global::Natrix.StdWeb.PropertyAccessor> transforms)
+    public static global::Natrix.StdWeb.CSSTransformValue New(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CSSTransformComponent, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSTransformComponent>> transforms)
     {
         int ___argsArrayLength_3 = 1;
 
@@ -29,7 +33,7 @@ public partial class CSSTransformValue: global::Natrix.StdWeb.CSSStyleValue
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "length");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "length");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -49,7 +53,7 @@ public partial class CSSTransformValue: global::Natrix.StdWeb.CSSStyleValue
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallGetter(JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSTransformComponent, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSTransformComponent>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -75,7 +79,7 @@ public partial class CSSTransformValue: global::Natrix.StdWeb.CSSStyleValue
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Is2D
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "is2D");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "is2D");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -86,7 +90,7 @@ public partial class CSSTransformValue: global::Natrix.StdWeb.CSSStyleValue
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toMatrix", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMMatrix, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMMatrix>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

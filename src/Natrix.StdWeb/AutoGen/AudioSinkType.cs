@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AudioSinkType
+public sealed partial class AudioSinkType: global::Natrix.JSCore.IJSEnum<AudioSinkType>
 {
     private readonly string _value;
 

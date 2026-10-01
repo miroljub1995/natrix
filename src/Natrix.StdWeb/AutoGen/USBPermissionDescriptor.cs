@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class USBPermissionDescriptor: global::Natrix.StdWeb.PermissionDescriptor
+public partial class USBPermissionDescriptor: global::Natrix.StdWeb.PermissionDescriptor, global::Natrix.JSCore.IJSObjectProxy<USBPermissionDescriptor>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,22 +15,26 @@ public partial class USBPermissionDescriptor: global::Natrix.StdWeb.PermissionDe
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static USBPermissionDescriptor global::Natrix.JSCore.IJSObjectProxy<USBPermissionDescriptor>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public USBPermissionDescriptor(): base()
     {
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.StdWeb.PropertyAccessor> Filters
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>> Filters
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "filters");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "filters", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>>.Get(JSObject, "filters");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>>.Set(JSObject, "filters", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.StdWeb.PropertyAccessor> ExclusionFilters
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>> ExclusionFilters
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "exclusionFilters");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "exclusionFilters", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>>.Get(JSObject, "exclusionFilters");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>>.Set(JSObject, "exclusionFilters", value);
     }
 }
 

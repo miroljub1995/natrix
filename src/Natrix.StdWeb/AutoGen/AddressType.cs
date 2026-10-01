@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AddressType
+public sealed partial class AddressType: global::Natrix.JSCore.IJSEnum<AddressType>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PaymentManager: global::Natrix.JSCore.JSObjectProxy
+public partial class PaymentManager: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<PaymentManager>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PaymentManager(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,14 +12,18 @@ public partial class PaymentManager: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PaymentManager global::Natrix.JSCore.IJSObjectProxy<PaymentManager>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PaymentManager>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string UserHint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "userHint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "userHint", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "userHint");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "userHint", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Promise EnableDelegations(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PaymentDelegation, global::Natrix.StdWeb.PropertyAccessor> delegations)
+    public global::Natrix.JSCore.Promise EnableDelegations(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PaymentDelegation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PaymentDelegation>> delegations)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -34,7 +38,7 @@ public partial class PaymentManager: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "enableDelegations", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

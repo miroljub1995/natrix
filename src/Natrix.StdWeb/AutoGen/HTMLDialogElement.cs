@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class HTMLDialogElement: global::Natrix.StdWeb.HTMLElement
+public partial class HTMLDialogElement: global::Natrix.StdWeb.HTMLElement, global::Natrix.JSCore.IJSObjectProxy<HTMLDialogElement>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public HTMLDialogElement(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static HTMLDialogElement global::Natrix.JSCore.IJSObjectProxy<HTMLDialogElement>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<HTMLDialogElement>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.HTMLDialogElement New()
@@ -21,22 +25,22 @@ public partial class HTMLDialogElement: global::Natrix.StdWeb.HTMLElement
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Open
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "open");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "open", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "open");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "open", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ReturnValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "returnValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "returnValue", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "returnValue");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "returnValue", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ClosedBy
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "closedBy");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "closedBy", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "closedBy");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "closedBy", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CSSMathOperator
+public sealed partial class CSSMathOperator: global::Natrix.JSCore.IJSEnum<CSSMathOperator>
 {
     private readonly string _value;
 

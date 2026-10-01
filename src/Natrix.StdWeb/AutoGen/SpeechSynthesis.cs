@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SpeechSynthesis: global::Natrix.StdWeb.EventTarget
+public partial class SpeechSynthesis: global::Natrix.StdWeb.EventTarget, global::Natrix.JSCore.IJSObjectProxy<SpeechSynthesis>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SpeechSynthesis(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,28 +12,32 @@ public partial class SpeechSynthesis: global::Natrix.StdWeb.EventTarget
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SpeechSynthesis global::Natrix.JSCore.IJSObjectProxy<SpeechSynthesis>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<SpeechSynthesis>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Pending
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "pending");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "pending");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Speaking
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "speaking");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "speaking");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Paused
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "paused");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "paused");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventHandlerNonNull? Onvoiceschanged
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onvoiceschanged");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onvoiceschanged", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Get(JSObject, "onvoiceschanged");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Set(JSObject, "onvoiceschanged", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -70,14 +74,14 @@ public partial class SpeechSynthesis: global::Natrix.StdWeb.EventTarget
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SpeechSynthesisVoice, global::Natrix.StdWeb.PropertyAccessor> GetVoices()
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SpeechSynthesisVoice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechSynthesisVoice>> GetVoices()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getVoices", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SpeechSynthesisVoice, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SpeechSynthesisVoice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechSynthesisVoice>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void VideoFrameOutputCallbackManaged(global::Natrix.StdWeb.VideoFrame output);
 
-public partial class VideoFrameOutputCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class VideoFrameOutputCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<VideoFrameOutputCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public VideoFrameOutputCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static VideoFrameOutputCallback global::Natrix.JSCore.IJSObjectProxy<VideoFrameOutputCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public VideoFrameOutputCallback(VideoFrameOutputCallbackManaged input): this(ToJSObject(input))

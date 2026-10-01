@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MultiCacheQueryOptions: global::Natrix.StdWeb.CacheQueryOptions
+public partial class MultiCacheQueryOptions: global::Natrix.StdWeb.CacheQueryOptions, global::Natrix.JSCore.IJSObjectProxy<MultiCacheQueryOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class MultiCacheQueryOptions: global::Natrix.StdWeb.CacheQueryOpt
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MultiCacheQueryOptions global::Natrix.JSCore.IJSObjectProxy<MultiCacheQueryOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MultiCacheQueryOptions(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class MultiCacheQueryOptions: global::Natrix.StdWeb.CacheQueryOpt
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string CacheName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "cacheName");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "cacheName", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "cacheName");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "cacheName", value);
     }
 }
 

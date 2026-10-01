@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CredentialUiMode
+public sealed partial class CredentialUiMode: global::Natrix.JSCore.IJSEnum<CredentialUiMode>
 {
     private readonly string _value;
 

@@ -30,7 +30,7 @@ public class EnumTypeGenerator(
 
                         #nullable enable
 
-                        public sealed partial class {{input.Name}}
+                        public sealed partial class {{input.Name}}: global::Natrix.JSCore.IJSEnum<{{input.Name}}>
                         {
                             private readonly string _value;
 

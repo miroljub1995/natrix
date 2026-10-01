@@ -4,13 +4,16 @@ using Natrix.JSCore.Extensions;
 
 namespace Natrix.JSCore.Generics;
 
-public class ObservableArray<T, TAccessor> : JSObjectProxy
+public class ObservableArray<T, TAccessor> : JSObjectProxy, IJSObjectProxy<ObservableArray<T, TAccessor>>
     where TAccessor : IPropertyAccessor<T>
 {
     [SupportedOSPlatform("browser")]
     public ObservableArray(JSObject obj) : base(obj)
     {
     }
+
+    [SupportedOSPlatform("browser")]
+    static ObservableArray<T, TAccessor> IJSObjectProxy<ObservableArray<T, TAccessor>>.Create(JSObject obj) => new(obj);
 
     [SupportedOSPlatform("browser")]
     public static implicit operator ObservableArray<T, TAccessor>(T[] input) =>

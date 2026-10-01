@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CanMakePaymentEvent: global::Natrix.StdWeb.ExtendableEvent
+public partial class CanMakePaymentEvent: global::Natrix.StdWeb.ExtendableEvent, global::Natrix.JSCore.IJSObjectProxy<CanMakePaymentEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CanMakePaymentEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CanMakePaymentEvent global::Natrix.JSCore.IJSObjectProxy<CanMakePaymentEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CanMakePaymentEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.CanMakePaymentEvent New(string type)
@@ -28,7 +32,7 @@ public partial class CanMakePaymentEvent: global::Natrix.StdWeb.ExtendableEvent
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void RespondWith(global::Natrix.JSCore.Generics.Promise<bool, global::Natrix.StdWeb.PropertyAccessor> canMakePaymentResponse)
+    public void RespondWith(global::Natrix.JSCore.Generics.Promise<bool, global::Natrix.JSCore.Generics.BooleanAccessor> canMakePaymentResponse)
     {
         int ___argsArrayLength_2 = 1;
 

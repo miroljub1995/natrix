@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ContactsManager: global::Natrix.JSCore.JSObjectProxy
+public partial class ContactsManager: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<ContactsManager>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ContactsManager(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,18 +12,22 @@ public partial class ContactsManager: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactProperty, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> GetProperties()
+    static ContactsManager global::Natrix.JSCore.IJSObjectProxy<ContactsManager>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ContactsManager>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactProperty, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ContactProperty>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactProperty, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ContactProperty>>>> GetProperties()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getProperties", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactProperty, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactProperty, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ContactProperty>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactProperty, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ContactProperty>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactInfo, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> Select(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactProperty, global::Natrix.StdWeb.PropertyAccessor> properties)
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ContactInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ContactInfo>>>> Select(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactProperty, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ContactProperty>> properties)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -38,11 +42,11 @@ public partial class ContactsManager: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "select", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactInfo, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ContactInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ContactInfo>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactInfo, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> Select(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactProperty, global::Natrix.StdWeb.PropertyAccessor> properties, global::Natrix.StdWeb.ContactsSelectOptions options)
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ContactInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ContactInfo>>>> Select(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactProperty, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ContactProperty>> properties, global::Natrix.StdWeb.ContactsSelectOptions options)
     {
         int ___argsArrayLength_2 = 2;
 
@@ -62,7 +66,7 @@ public partial class ContactsManager: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "select", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactInfo, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ContactInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ContactInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ContactInfo>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

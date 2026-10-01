@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class TimeEvent: global::Natrix.StdWeb.Event
+public partial class TimeEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<TimeEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TimeEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,15 +12,19 @@ public partial class TimeEvent: global::Natrix.StdWeb.Event
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TimeEvent global::Natrix.JSCore.IJSObjectProxy<TimeEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<TimeEvent>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Window? View
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Window?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "view");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Window>.Get(JSObject, "view");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Detail
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "detail");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "detail");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AlphaOption
+public sealed partial class AlphaOption: global::Natrix.JSCore.IJSEnum<AlphaOption>
 {
     private readonly string _value;
 

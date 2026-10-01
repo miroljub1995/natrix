@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class LayoutSizingMode
+public sealed partial class LayoutSizingMode: global::Natrix.JSCore.IJSEnum<LayoutSizingMode>
 {
     private readonly string _value;
 

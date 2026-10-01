@@ -4,13 +4,16 @@ using System.Runtime.Versioning;
 
 namespace Natrix.JSCore.Generics;
 
-public partial class Promise<T, TPropertyAccessor> : JSObjectProxy
+public partial class Promise<T, TPropertyAccessor> : JSObjectProxy, IJSObjectProxy<Promise<T, TPropertyAccessor>>
     where TPropertyAccessor : IPropertyAccessor<T>
 {
     [SupportedOSPlatform("browser")]
     public Promise(JSObject obj) : base(obj)
     {
     }
+
+    [SupportedOSPlatform("browser")]
+    static Promise<T, TPropertyAccessor> IJSObjectProxy<Promise<T, TPropertyAccessor>>.Create(JSObject obj) => new(obj);
 
     [JSImport("construct", "natrix")]
     private static partial JSObject ConstructObject(JSObject obj, string constructorName);

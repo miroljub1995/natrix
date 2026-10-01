@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUPipelineErrorReason
+public sealed partial class GPUPipelineErrorReason: global::Natrix.JSCore.IJSEnum<GPUPipelineErrorReason>
 {
     private readonly string _value;
 

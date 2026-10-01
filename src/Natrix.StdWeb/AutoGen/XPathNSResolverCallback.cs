@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate string? XPathNSResolverCallbackManaged(string? prefix);
 
-public partial class XPathNSResolverCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class XPathNSResolverCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<XPathNSResolverCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XPathNSResolverCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static XPathNSResolverCallback global::Natrix.JSCore.IJSObjectProxy<XPathNSResolverCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XPathNSResolverCallback(XPathNSResolverCallbackManaged input): this(ToJSObject(input))

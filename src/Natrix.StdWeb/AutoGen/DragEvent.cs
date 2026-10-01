@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class DragEvent: global::Natrix.StdWeb.MouseEvent
+public partial class DragEvent: global::Natrix.StdWeb.MouseEvent, global::Natrix.JSCore.IJSObjectProxy<DragEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public DragEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static DragEvent global::Natrix.JSCore.IJSObjectProxy<DragEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<DragEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.DragEvent New(string type)
@@ -51,7 +55,7 @@ public partial class DragEvent: global::Natrix.StdWeb.MouseEvent
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DataTransfer? DataTransfer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DataTransfer?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "dataTransfer");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DataTransfer>.Get(JSObject, "dataTransfer");
     }
 }
 

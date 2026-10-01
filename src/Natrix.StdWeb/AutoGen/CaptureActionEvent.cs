@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CaptureActionEvent: global::Natrix.StdWeb.Event
+public partial class CaptureActionEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<CaptureActionEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CaptureActionEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CaptureActionEvent global::Natrix.JSCore.IJSObjectProxy<CaptureActionEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CaptureActionEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.CaptureActionEvent New()
@@ -37,7 +41,7 @@ public partial class CaptureActionEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CaptureAction Action
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CaptureAction, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "action");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CaptureAction>.Get(JSObject, "action");
     }
 }
 

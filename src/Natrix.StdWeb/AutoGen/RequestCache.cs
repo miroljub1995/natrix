@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RequestCache
+public sealed partial class RequestCache: global::Natrix.JSCore.IJSEnum<RequestCache>
 {
     private readonly string _value;
 

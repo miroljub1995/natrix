@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class DistanceModelType
+public sealed partial class DistanceModelType: global::Natrix.JSCore.IJSEnum<DistanceModelType>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ChannelInterpretation
+public sealed partial class ChannelInterpretation: global::Natrix.JSCore.IJSEnum<ChannelInterpretation>
 {
     private readonly string _value;
 

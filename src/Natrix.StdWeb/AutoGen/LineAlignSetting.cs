@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class LineAlignSetting
+public sealed partial class LineAlignSetting: global::Natrix.JSCore.IJSEnum<LineAlignSetting>
 {
     private readonly string _value;
 

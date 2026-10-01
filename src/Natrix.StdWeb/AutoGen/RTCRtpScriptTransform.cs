@@ -4,15 +4,19 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCRtpScriptTransform: global::Natrix.JSCore.JSObjectProxy
+public partial class RTCRtpScriptTransform: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<RTCRtpScriptTransform>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCRtpScriptTransform(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
 
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCRtpScriptTransform global::Natrix.JSCore.IJSObjectProxy<RTCRtpScriptTransform>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<RTCRtpScriptTransform>(obj);
+
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.RTCRtpScriptTransform New(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Worker, global::Natrix.StdWeb.WorkerAndParameters, global::Natrix.StdWeb.GenericMarshaller.Union> workerOrWorkerAndParameters)
+    public static global::Natrix.StdWeb.RTCRtpScriptTransform New(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Worker, global::Natrix.StdWeb.WorkerAndParameters, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Worker>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WorkerAndParameters>> workerOrWorkerAndParameters)
     {
         int ___argsArrayLength_3 = 1;
 
@@ -27,7 +31,7 @@ public partial class RTCRtpScriptTransform: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.RTCRtpScriptTransform New(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Worker, global::Natrix.StdWeb.WorkerAndParameters, global::Natrix.StdWeb.GenericMarshaller.Union> workerOrWorkerAndParameters, global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? options)
+    public static global::Natrix.StdWeb.RTCRtpScriptTransform New(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Worker, global::Natrix.StdWeb.WorkerAndParameters, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Worker>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WorkerAndParameters>> workerOrWorkerAndParameters, global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? options)
     {
         int ___argsArrayLength_3 = 2;
 
@@ -55,7 +59,7 @@ public partial class RTCRtpScriptTransform: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.RTCRtpScriptTransform New(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Worker, global::Natrix.StdWeb.WorkerAndParameters, global::Natrix.StdWeb.GenericMarshaller.Union> workerOrWorkerAndParameters, global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? options, global::Natrix.JSCore.Generics.JSArray<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.StdWeb.PropertyAccessor> transfer)
+    public static global::Natrix.StdWeb.RTCRtpScriptTransform New(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Worker, global::Natrix.StdWeb.WorkerAndParameters, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Worker>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WorkerAndParameters>> workerOrWorkerAndParameters, global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? options, global::Natrix.JSCore.Generics.JSArray<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor> transfer)
     {
         int ___argsArrayLength_3 = 3;
 

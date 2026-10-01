@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MLGraph: global::Natrix.JSCore.JSObjectProxy
+public partial class MLGraph: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<MLGraph>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MLGraph(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MLGraph global::Natrix.JSCore.IJSObjectProxy<MLGraph>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<MLGraph>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public void Destroy()

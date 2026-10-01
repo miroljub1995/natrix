@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate void MutationCallbackManaged(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MutationRecord, global::Natrix.StdWeb.PropertyAccessor> mutations, global::Natrix.StdWeb.MutationObserver observer);
+public delegate void MutationCallbackManaged(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MutationRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MutationRecord>> mutations, global::Natrix.StdWeb.MutationObserver observer);
 
-public partial class MutationCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class MutationCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<MutationCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MutationCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MutationCallback global::Natrix.JSCore.IJSObjectProxy<MutationCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MutationCallback(MutationCallbackManaged input): this(ToJSObject(input))
@@ -66,10 +70,10 @@ public partial class MutationCallback: global::Natrix.JSCore.JSObjectProxy
             using (___args_0)
             {
                 // Argument 1
-                global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MutationRecord, global::Natrix.StdWeb.PropertyAccessor> ___arg_2;
+                global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MutationRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MutationRecord>> ___arg_2;
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_3;
                 ___propObject_3 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(___args_0, 0);
-                ___arg_2 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MutationRecord, global::Natrix.StdWeb.PropertyAccessor>(___propObject_3);
+                ___arg_2 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MutationRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MutationRecord>>(___propObject_3);
 
                 // Argument 2
                 global::Natrix.StdWeb.MutationObserver ___arg_4;

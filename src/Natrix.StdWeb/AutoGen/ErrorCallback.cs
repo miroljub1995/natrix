@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void ErrorCallbackManaged(global::Natrix.StdWeb.DOMException err);
 
-public partial class ErrorCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class ErrorCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<ErrorCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ErrorCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ErrorCallback global::Natrix.JSCore.IJSObjectProxy<ErrorCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ErrorCallback(ErrorCallbackManaged input): this(ToJSObject(input))

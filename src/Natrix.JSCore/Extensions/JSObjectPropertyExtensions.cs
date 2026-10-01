@@ -163,12 +163,23 @@ public static partial class JSObjectPropertyExtensions
         GetPropertyAsObjectV2AsNullable_Bridge(obj, propertyName) ??
         throw new Exception($"Property {propertyName} is null or undefined.");
 
+    public static object GetPropertyAsObjectV2(this JSObject obj, int propertyIndex) =>
+        GetPropertyAsObjectV2AsNullable_Bridge(obj, propertyIndex) ??
+        throw new Exception($"Property {propertyIndex} is null or undefined.");
+
     public static object? GetPropertyAsObjectV2AsNullable(this JSObject obj, string propertyName) =>
         GetPropertyAsObjectV2AsNullable_Bridge(obj, propertyName);
+
+    public static object? GetPropertyAsObjectV2AsNullable(this JSObject obj, int propertyIndex) =>
+        GetPropertyAsObjectV2AsNullable_Bridge(obj, propertyIndex);
 
     [JSImport("globalThis.Reflect.get")]
     [return: JSMarshalAs<JSType.Any>]
     private static partial object? GetPropertyAsObjectV2AsNullable_Bridge(JSObject obj, string propertyName);
+
+    [JSImport("globalThis.Reflect.get")]
+    [return: JSMarshalAs<JSType.Any>]
+    private static partial object? GetPropertyAsObjectV2AsNullable_Bridge(JSObject obj, int propertyIndex);
 
     #endregion
 
@@ -323,11 +334,21 @@ public static partial class JSObjectPropertyExtensions
     public static void SetPropertyAsObjectV2AsNullable(this JSObject obj, string propertyName, object? value) =>
         SetPropertyAsObjectV2AsNullable_Bridge(obj, propertyName, value);
 
+    public static void SetPropertyAsObjectV2AsNullable(this JSObject obj, int propertyIndex, object? value) =>
+        SetPropertyAsObjectV2AsNullable_Bridge(obj, propertyIndex, value);
+
     public static void SetPropertyAsObjectV2(this JSObject obj, string propertyName, object value) =>
         SetPropertyAsObjectV2AsNullable_Bridge(obj, propertyName, value);
 
+    public static void SetPropertyAsObjectV2(this JSObject obj, int propertyIndex, object value) =>
+        SetPropertyAsObjectV2AsNullable_Bridge(obj, propertyIndex, value);
+
     [JSImport("globalThis.Reflect.set")]
     private static partial void SetPropertyAsObjectV2AsNullable_Bridge(JSObject obj, string propertyName,
+        [JSMarshalAs<JSType.Any>] object? value);
+
+    [JSImport("globalThis.Reflect.set")]
+    private static partial void SetPropertyAsObjectV2AsNullable_Bridge(JSObject obj, int propertyIndex,
         [JSMarshalAs<JSType.Any>] object? value);
 
     #endregion

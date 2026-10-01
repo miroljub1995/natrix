@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class IDBRequestReadyState
+public sealed partial class IDBRequestReadyState: global::Natrix.JSCore.IJSEnum<IDBRequestReadyState>
 {
     private readonly string _value;
 

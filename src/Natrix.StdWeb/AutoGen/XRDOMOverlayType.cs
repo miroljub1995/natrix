@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRDOMOverlayType
+public sealed partial class XRDOMOverlayType: global::Natrix.JSCore.IJSEnum<XRDOMOverlayType>
 {
     private readonly string _value;
 

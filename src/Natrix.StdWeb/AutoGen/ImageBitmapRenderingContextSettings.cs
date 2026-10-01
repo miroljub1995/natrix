@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ImageBitmapRenderingContextSettings: global::Natrix.JSCore.JSObjectProxy
+public partial class ImageBitmapRenderingContextSettings: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<ImageBitmapRenderingContextSettings>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class ImageBitmapRenderingContextSettings: global::Natrix.JSCore.
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ImageBitmapRenderingContextSettings global::Natrix.JSCore.IJSObjectProxy<ImageBitmapRenderingContextSettings>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ImageBitmapRenderingContextSettings(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,8 +26,8 @@ public partial class ImageBitmapRenderingContextSettings: global::Natrix.JSCore.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Alpha
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "alpha");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "alpha", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "alpha");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "alpha", value);
     }
 }
 

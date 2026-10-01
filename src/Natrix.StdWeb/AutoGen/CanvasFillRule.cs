@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CanvasFillRule
+public sealed partial class CanvasFillRule: global::Natrix.JSCore.IJSEnum<CanvasFillRule>
 {
     private readonly string _value;
 

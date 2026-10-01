@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ClientCapability
+public sealed partial class ClientCapability: global::Natrix.JSCore.IJSEnum<ClientCapability>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class IDBTransactionMode
+public sealed partial class IDBTransactionMode: global::Natrix.JSCore.IJSEnum<IDBTransactionMode>
 {
     private readonly string _value;
 

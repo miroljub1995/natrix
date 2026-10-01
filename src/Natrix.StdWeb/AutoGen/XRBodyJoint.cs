@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRBodyJoint
+public sealed partial class XRBodyJoint: global::Natrix.JSCore.IJSEnum<XRBodyJoint>
 {
     private readonly string _value;
 

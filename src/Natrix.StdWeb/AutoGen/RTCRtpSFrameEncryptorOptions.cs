@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCRtpSFrameEncryptorOptions: global::Natrix.StdWeb.SFrameTransformOptions
+public partial class RTCRtpSFrameEncryptorOptions: global::Natrix.StdWeb.SFrameTransformOptions, global::Natrix.JSCore.IJSObjectProxy<RTCRtpSFrameEncryptorOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class RTCRtpSFrameEncryptorOptions: global::Natrix.StdWeb.SFrameT
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCRtpSFrameEncryptorOptions global::Natrix.JSCore.IJSObjectProxy<RTCRtpSFrameEncryptorOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCRtpSFrameEncryptorOptions(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class RTCRtpSFrameEncryptorOptions: global::Natrix.StdWeb.SFrameT
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SFrameType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SFrameType, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SFrameType, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameType>.Set(JSObject, "type", value);
     }
 }
 

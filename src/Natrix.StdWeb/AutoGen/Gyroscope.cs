@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class Gyroscope: global::Natrix.StdWeb.Sensor
+public partial class Gyroscope: global::Natrix.StdWeb.Sensor, global::Natrix.JSCore.IJSObjectProxy<Gyroscope>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public Gyroscope(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static Gyroscope global::Natrix.JSCore.IJSObjectProxy<Gyroscope>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<Gyroscope>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.Gyroscope New()
@@ -37,19 +41,19 @@ public partial class Gyroscope: global::Natrix.StdWeb.Sensor
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? X
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "x");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "x");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Y
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "y");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "y");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Z
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "z");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "z");
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRVisibilityState
+public sealed partial class XRVisibilityState: global::Natrix.JSCore.IJSEnum<XRVisibilityState>
 {
     private readonly string _value;
 

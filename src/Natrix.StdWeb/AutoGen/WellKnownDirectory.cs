@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class WellKnownDirectory
+public sealed partial class WellKnownDirectory: global::Natrix.JSCore.IJSEnum<WellKnownDirectory>
 {
     private readonly string _value;
 

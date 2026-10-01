@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class KeyFrameRequestEvent: global::Natrix.StdWeb.Event
+public partial class KeyFrameRequestEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<KeyFrameRequestEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public KeyFrameRequestEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static KeyFrameRequestEvent global::Natrix.JSCore.IJSObjectProxy<KeyFrameRequestEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<KeyFrameRequestEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.KeyFrameRequestEvent New(string type)
@@ -51,7 +55,7 @@ public partial class KeyFrameRequestEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Rid
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "rid");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "rid");
     }
 }
 

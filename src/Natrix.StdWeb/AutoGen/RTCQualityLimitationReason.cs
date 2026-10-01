@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCQualityLimitationReason
+public sealed partial class RTCQualityLimitationReason: global::Natrix.JSCore.IJSEnum<RTCQualityLimitationReason>
 {
     private readonly string _value;
 

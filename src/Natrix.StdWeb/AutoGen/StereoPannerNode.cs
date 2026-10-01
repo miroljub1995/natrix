@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class StereoPannerNode: global::Natrix.StdWeb.AudioNode
+public partial class StereoPannerNode: global::Natrix.StdWeb.AudioNode, global::Natrix.JSCore.IJSObjectProxy<StereoPannerNode>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public StereoPannerNode(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static StereoPannerNode global::Natrix.JSCore.IJSObjectProxy<StereoPannerNode>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<StereoPannerNode>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.StereoPannerNode New(global::Natrix.StdWeb.BaseAudioContext context)
@@ -51,7 +55,7 @@ public partial class StereoPannerNode: global::Natrix.StdWeb.AudioNode
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioParam Pan
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioParam, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "pan");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>.Get(JSObject, "pan");
     }
 }
 

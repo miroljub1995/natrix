@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SpeechRecognitionPhrase: global::Natrix.JSCore.JSObjectProxy
+public partial class SpeechRecognitionPhrase: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<SpeechRecognitionPhrase>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SpeechRecognitionPhrase(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SpeechRecognitionPhrase global::Natrix.JSCore.IJSObjectProxy<SpeechRecognitionPhrase>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<SpeechRecognitionPhrase>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.SpeechRecognitionPhrase New(string phrase)
@@ -51,13 +55,13 @@ public partial class SpeechRecognitionPhrase: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Phrase
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "phrase");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "phrase");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Boost
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "boost");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "boost");
     }
 }
 

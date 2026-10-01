@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PaymentDelegation
+public sealed partial class PaymentDelegation: global::Natrix.JSCore.IJSEnum<PaymentDelegation>
 {
     private readonly string _value;
 

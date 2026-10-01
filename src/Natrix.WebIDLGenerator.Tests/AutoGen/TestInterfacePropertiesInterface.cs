@@ -4,7 +4,7 @@ namespace Natrix.WebIDLGenerator.Tests;
 
 #nullable enable
 
-public partial class TestInterfacePropertiesInterface: global::Natrix.JSCore.JSObjectProxy
+public partial class TestInterfacePropertiesInterface: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<TestInterfacePropertiesInterface>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TestInterfacePropertiesInterface(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,10 +12,14 @@ public partial class TestInterfacePropertiesInterface: global::Natrix.JSCore.JSO
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TestInterfacePropertiesInterface global::Natrix.JSCore.IJSObjectProxy<TestInterfacePropertiesInterface>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<TestInterfacePropertiesInterface>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "value", value);
     }
 }
 

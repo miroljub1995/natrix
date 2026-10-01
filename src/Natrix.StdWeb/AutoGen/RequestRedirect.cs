@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RequestRedirect
+public sealed partial class RequestRedirect: global::Natrix.JSCore.IJSEnum<RequestRedirect>
 {
     private readonly string _value;
 

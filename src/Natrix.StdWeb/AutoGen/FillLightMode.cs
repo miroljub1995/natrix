@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class FillLightMode
+public sealed partial class FillLightMode: global::Natrix.JSCore.IJSEnum<FillLightMode>
 {
     private readonly string _value;
 

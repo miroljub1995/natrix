@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class BiquadFilterType
+public sealed partial class BiquadFilterType: global::Natrix.JSCore.IJSEnum<BiquadFilterType>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MLInputOperandLayout
+public sealed partial class MLInputOperandLayout: global::Natrix.JSCore.IJSEnum<MLInputOperandLayout>
 {
     private readonly string _value;
 

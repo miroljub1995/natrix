@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SyncEventInit: global::Natrix.StdWeb.ExtendableEventInit
+public partial class SyncEventInit: global::Natrix.StdWeb.ExtendableEventInit, global::Natrix.JSCore.IJSObjectProxy<SyncEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class SyncEventInit: global::Natrix.StdWeb.ExtendableEventInit
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SyncEventInit global::Natrix.JSCore.IJSObjectProxy<SyncEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SyncEventInit(): base()
     {
     }
@@ -22,15 +26,15 @@ public partial class SyncEventInit: global::Natrix.StdWeb.ExtendableEventInit
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Tag
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "tag");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "tag", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "tag");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "tag", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool LastChance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "lastChance");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "lastChance", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "lastChance");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "lastChance", value);
     }
 }
 

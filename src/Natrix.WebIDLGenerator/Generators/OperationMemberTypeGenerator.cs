@@ -15,7 +15,7 @@ public class OperationMemberTypeGenerator(
         var descriptionToTypeDeclarationGenerator =
             provider.GetRequiredService<IDLTypeDescriptionToTypeDeclarationGenerator>();
         var argumentsToDeclarationGenerator = provider.GetRequiredService<ArgumentsToDeclarationGenerator>();
-        var propertyAccessorGenerator = provider.GetRequiredService<PropertyAccessorGenerator>();
+        var propertyAccessorResolver = provider.GetRequiredService<PropertyAccessorResolver>();
 
         var isStatic = input.Special == OperationSpecial.Static;
         var staticKeyword = isStatic ? " static" : "";
@@ -129,13 +129,12 @@ public class OperationMemberTypeGenerator(
 
             if (!isVoid && input.IdlType is not null)
             {
-                var returnType = descriptionToTypeDeclarationGenerator.Generate(input.IdlType);
-                var resPropertyAccessor = propertyAccessorGenerator.GetOrCreateAccessor(input.IdlType);
+                var resPropertyAccessor = propertyAccessorResolver.Resolve(input.IdlType);
 
                 bodyStatements.Add(
                     $$"""
                       // Return Value
-                      return global::Natrix.JSCore.Generics.PropertyAccessor.Get<{{returnType}}, {{resPropertyAccessor}}>({{resOwnerVar}}.JSObject, "value");
+                      return {{resPropertyAccessor}}.Get({{resOwnerVar}}.JSObject, "value");
                       """
                 );
             }

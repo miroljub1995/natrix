@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PublicKeyCredentialType
+public sealed partial class PublicKeyCredentialType: global::Natrix.JSCore.IJSEnum<PublicKeyCredentialType>
 {
     private readonly string _value;
 

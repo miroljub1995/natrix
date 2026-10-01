@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class SanitizerPresets
+public sealed partial class SanitizerPresets: global::Natrix.JSCore.IJSEnum<SanitizerPresets>
 {
     private readonly string _value;
 

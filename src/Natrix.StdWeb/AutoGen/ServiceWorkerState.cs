@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ServiceWorkerState
+public sealed partial class ServiceWorkerState: global::Natrix.JSCore.IJSEnum<ServiceWorkerState>
 {
     private readonly string _value;
 

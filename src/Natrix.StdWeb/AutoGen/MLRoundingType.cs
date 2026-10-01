@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MLRoundingType
+public sealed partial class MLRoundingType: global::Natrix.JSCore.IJSEnum<MLRoundingType>
 {
     private readonly string _value;
 

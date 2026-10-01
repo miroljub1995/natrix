@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class XRCPUDepthInformation: global::Natrix.StdWeb.XRDepthInformation
+public partial class XRCPUDepthInformation: global::Natrix.StdWeb.XRDepthInformation, global::Natrix.JSCore.IJSObjectProxy<XRCPUDepthInformation>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XRCPUDepthInformation(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,9 +12,13 @@ public partial class XRCPUDepthInformation: global::Natrix.StdWeb.XRDepthInforma
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static XRCPUDepthInformation global::Natrix.JSCore.IJSObjectProxy<XRCPUDepthInformation>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<XRCPUDepthInformation>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.ArrayBuffer Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.ArrayBuffer, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.ArrayBuffer>.Get(JSObject, "data");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -39,7 +43,7 @@ public partial class XRCPUDepthInformation: global::Natrix.StdWeb.XRDepthInforma
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getDepthInMeters", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.SingleAccessor.Get(___resOwner_1.JSObject, "value");
     }
 }
 

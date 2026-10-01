@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class EndingType
+public sealed partial class EndingType: global::Natrix.JSCore.IJSEnum<EndingType>
 {
     private readonly string _value;
 

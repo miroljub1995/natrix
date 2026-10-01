@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCRtpTransceiver: global::Natrix.JSCore.JSObjectProxy
+public partial class RTCRtpTransceiver: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<RTCRtpTransceiver>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCRtpTransceiver(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,34 +12,38 @@ public partial class RTCRtpTransceiver: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCRtpTransceiver global::Natrix.JSCore.IJSObjectProxy<RTCRtpTransceiver>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<RTCRtpTransceiver>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Mid
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "mid");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "mid");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCRtpSender Sender
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCRtpSender, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "sender");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpSender>.Get(JSObject, "sender");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCRtpReceiver Receiver
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCRtpReceiver, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "receiver");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpReceiver>.Get(JSObject, "receiver");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCRtpTransceiverDirection Direction
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCRtpTransceiverDirection, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "direction");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCRtpTransceiverDirection, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "direction", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCRtpTransceiverDirection>.Get(JSObject, "direction");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCRtpTransceiverDirection>.Set(JSObject, "direction", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCRtpTransceiverDirection? CurrentDirection
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCRtpTransceiverDirection?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "currentDirection");
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.RTCRtpTransceiverDirection>.Get(JSObject, "currentDirection");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -49,7 +53,7 @@ public partial class RTCRtpTransceiver: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void SetCodecPreferences(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCRtpCodec, global::Natrix.StdWeb.PropertyAccessor> codecs)
+    public void SetCodecPreferences(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCRtpCodec, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpCodec>> codecs)
     {
         int ___argsArrayLength_2 = 1;
 

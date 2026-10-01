@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CanvasDirection
+public sealed partial class CanvasDirection: global::Natrix.JSCore.IJSEnum<CanvasDirection>
 {
     private readonly string _value;
 

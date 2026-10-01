@@ -36,7 +36,7 @@ public class CallbackInterfaceTypeGenerator(
 
                         #nullable enable
 
-                        public partial class {{input.Name}}: global::Natrix.JSCore.JSObjectProxy
+                        public partial class {{input.Name}}: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<{{input.Name}}>
                         {
                         #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
                             [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -45,6 +45,10 @@ public class CallbackInterfaceTypeGenerator(
                             {
                             }
                         #pragma warning restore CS8618
+
+                            [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+                            static {{input.Name}} global::Natrix.JSCore.IJSObjectProxy<{{input.Name}}>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+                                global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<{{input.Name}}>(obj);
 
                             [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
                             public {{input.Name}}(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))

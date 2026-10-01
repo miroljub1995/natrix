@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MediaStreamTrackState
+public sealed partial class MediaStreamTrackState: global::Natrix.JSCore.IJSEnum<MediaStreamTrackState>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XMLHttpRequestResponseType
+public sealed partial class XMLHttpRequestResponseType: global::Natrix.JSCore.IJSEnum<XMLHttpRequestResponseType>
 {
     private readonly string _value;
 

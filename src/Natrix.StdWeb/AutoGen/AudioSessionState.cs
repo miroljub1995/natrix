@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AudioSessionState
+public sealed partial class AudioSessionState: global::Natrix.JSCore.IJSEnum<AudioSessionState>
 {
     private readonly string _value;
 

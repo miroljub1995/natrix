@@ -16,7 +16,6 @@ public class ConstructorMemberTypeGenerator(
         var descriptionToTypeDeclarationGenerator =
             provider.GetRequiredService<IDLTypeDescriptionToTypeDeclarationGenerator>();
         var argumentsToDeclarationGenerator = provider.GetRequiredService<ArgumentsToDeclarationGenerator>();
-        var propertyAccessorGenerator = provider.GetRequiredService<PropertyAccessorGenerator>();
 
         var isEmpty = input.Arguments.Count == 0;
 

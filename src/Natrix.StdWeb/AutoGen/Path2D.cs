@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class Path2D: global::Natrix.JSCore.JSObjectProxy
+public partial class Path2D: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<Path2D>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public Path2D(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static Path2D global::Natrix.JSCore.IJSObjectProxy<Path2D>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<Path2D>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.Path2D New()
@@ -19,7 +23,7 @@ public partial class Path2D: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.Path2D New(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Path2D, string, global::Natrix.StdWeb.GenericMarshaller.Union> path)
+    public static global::Natrix.StdWeb.Path2D New(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Path2D, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Path2D>, global::Natrix.JSCore.Generics.StringAccessor> path)
     {
         int ___argsArrayLength_3 = 1;
 
@@ -280,7 +284,7 @@ public partial class Path2D: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void RoundRect(double x, double y, double w, double h, global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.JSArray<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.DOMPointInit, global::Natrix.StdWeb.GenericMarshaller.Union>, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.GenericMarshaller.Union> radii)
+    public void RoundRect(double x, double y, double w, double h, global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.JSArray<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPointInit>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPointInit>>>>, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPointInit>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPointInit>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPointInit>>>>>> radii)
     {
         int ___argsArrayLength_2 = 5;
 

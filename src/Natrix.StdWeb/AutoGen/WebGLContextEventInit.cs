@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WebGLContextEventInit: global::Natrix.StdWeb.EventInit
+public partial class WebGLContextEventInit: global::Natrix.StdWeb.EventInit, global::Natrix.JSCore.IJSObjectProxy<WebGLContextEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class WebGLContextEventInit: global::Natrix.StdWeb.EventInit
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WebGLContextEventInit global::Natrix.JSCore.IJSObjectProxy<WebGLContextEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WebGLContextEventInit(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class WebGLContextEventInit: global::Natrix.StdWeb.EventInit
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string StatusMessage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "statusMessage");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "statusMessage", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "statusMessage");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "statusMessage", value);
     }
 }
 

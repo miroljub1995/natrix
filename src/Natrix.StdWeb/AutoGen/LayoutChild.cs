@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class LayoutChild: global::Natrix.JSCore.JSObjectProxy
+public partial class LayoutChild: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<LayoutChild>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public LayoutChild(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,24 +12,28 @@ public partial class LayoutChild: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static LayoutChild global::Natrix.JSCore.IJSObjectProxy<LayoutChild>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<LayoutChild>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.StylePropertyMapReadOnly StyleMap
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.StylePropertyMapReadOnly, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "styleMap");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StylePropertyMapReadOnly>.Get(JSObject, "styleMap");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.IntrinsicSizes, global::Natrix.StdWeb.PropertyAccessor> IntrinsicSizes()
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.IntrinsicSizes, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IntrinsicSizes>> IntrinsicSizes()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "intrinsicSizes", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.IntrinsicSizes, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.IntrinsicSizes, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IntrinsicSizes>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.LayoutFragment, global::Natrix.StdWeb.PropertyAccessor> LayoutNextFragment(global::Natrix.StdWeb.LayoutConstraintsOptions constraints, global::Natrix.StdWeb.ChildBreakToken breakToken)
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.LayoutFragment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LayoutFragment>> LayoutNextFragment(global::Natrix.StdWeb.LayoutConstraintsOptions constraints, global::Natrix.StdWeb.ChildBreakToken breakToken)
     {
         int ___argsArrayLength_2 = 2;
 
@@ -50,7 +54,7 @@ public partial class LayoutChild: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "layoutNextFragment", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.LayoutFragment, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.LayoutFragment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LayoutFragment>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

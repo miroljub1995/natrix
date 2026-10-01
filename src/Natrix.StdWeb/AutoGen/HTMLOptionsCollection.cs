@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class HTMLOptionsCollection: global::Natrix.StdWeb.HTMLCollection
+public partial class HTMLOptionsCollection: global::Natrix.StdWeb.HTMLCollection, global::Natrix.JSCore.IJSObjectProxy<HTMLOptionsCollection>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public HTMLOptionsCollection(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,10 +12,14 @@ public partial class HTMLOptionsCollection: global::Natrix.StdWeb.HTMLCollection
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static HTMLOptionsCollection global::Natrix.JSCore.IJSObjectProxy<HTMLOptionsCollection>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<HTMLOptionsCollection>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "length");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "length", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "length");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "length", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -47,7 +51,7 @@ public partial class HTMLOptionsCollection: global::Natrix.StdWeb.HTMLCollection
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void Add(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLOptionElement, global::Natrix.StdWeb.HTMLOptGroupElement, global::Natrix.StdWeb.GenericMarshaller.Union> element)
+    public void Add(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLOptionElement, global::Natrix.StdWeb.HTMLOptGroupElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLOptionElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLOptGroupElement>> element)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -61,7 +65,7 @@ public partial class HTMLOptionsCollection: global::Natrix.StdWeb.HTMLCollection
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void Add(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLOptionElement, global::Natrix.StdWeb.HTMLOptGroupElement, global::Natrix.StdWeb.GenericMarshaller.Union> element, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLElement, int, global::Natrix.StdWeb.GenericMarshaller.Union>? before)
+    public void Add(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLOptionElement, global::Natrix.StdWeb.HTMLOptGroupElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLOptionElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLOptGroupElement>> element, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLElement, int, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLElement>, global::Natrix.JSCore.Generics.Int32Accessor>? before)
     {
         int ___argsArrayLength_2 = 2;
 
@@ -105,8 +109,8 @@ public partial class HTMLOptionsCollection: global::Natrix.StdWeb.HTMLCollection
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int SelectedIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "selectedIndex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "selectedIndex", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "selectedIndex");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "selectedIndex", value);
     }
 }
 

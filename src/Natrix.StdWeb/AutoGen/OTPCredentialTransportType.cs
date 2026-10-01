@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class OTPCredentialTransportType
+public sealed partial class OTPCredentialTransportType: global::Natrix.JSCore.IJSEnum<OTPCredentialTransportType>
 {
     private readonly string _value;
 

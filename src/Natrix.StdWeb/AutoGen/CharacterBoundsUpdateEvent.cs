@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CharacterBoundsUpdateEvent: global::Natrix.StdWeb.Event
+public partial class CharacterBoundsUpdateEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<CharacterBoundsUpdateEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CharacterBoundsUpdateEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CharacterBoundsUpdateEvent global::Natrix.JSCore.IJSObjectProxy<CharacterBoundsUpdateEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CharacterBoundsUpdateEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.CharacterBoundsUpdateEvent New(string type)
@@ -51,13 +55,13 @@ public partial class CharacterBoundsUpdateEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint RangeStart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "rangeStart");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "rangeStart");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint RangeEnd
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "rangeEnd");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "rangeEnd");
     }
 }
 

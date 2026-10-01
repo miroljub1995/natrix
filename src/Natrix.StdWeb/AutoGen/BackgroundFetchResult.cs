@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class BackgroundFetchResult
+public sealed partial class BackgroundFetchResult: global::Natrix.JSCore.IJSEnum<BackgroundFetchResult>
 {
     private readonly string _value;
 

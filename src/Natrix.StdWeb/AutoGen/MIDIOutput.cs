@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MIDIOutput: global::Natrix.StdWeb.MIDIPort
+public partial class MIDIOutput: global::Natrix.StdWeb.MIDIPort, global::Natrix.JSCore.IJSObjectProxy<MIDIOutput>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MIDIOutput(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,7 +12,11 @@ public partial class MIDIOutput: global::Natrix.StdWeb.MIDIPort
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void Send(global::Natrix.JSCore.Generics.JSArray<byte, global::Natrix.StdWeb.PropertyAccessor> data)
+    static MIDIOutput global::Natrix.JSCore.IJSObjectProxy<MIDIOutput>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<MIDIOutput>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void Send(global::Natrix.JSCore.Generics.JSArray<byte, global::Natrix.JSCore.Generics.ByteAccessor> data)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -26,7 +30,7 @@ public partial class MIDIOutput: global::Natrix.StdWeb.MIDIPort
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void Send(global::Natrix.JSCore.Generics.JSArray<byte, global::Natrix.StdWeb.PropertyAccessor> data, double timestamp)
+    public void Send(global::Natrix.JSCore.Generics.JSArray<byte, global::Natrix.JSCore.Generics.ByteAccessor> data, double timestamp)
     {
         int ___argsArrayLength_2 = 2;
 

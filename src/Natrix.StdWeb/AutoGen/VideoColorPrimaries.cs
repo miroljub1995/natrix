@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class VideoColorPrimaries
+public sealed partial class VideoColorPrimaries: global::Natrix.JSCore.IJSEnum<VideoColorPrimaries>
 {
     private readonly string _value;
 

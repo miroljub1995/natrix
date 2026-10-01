@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class Gamepad: global::Natrix.JSCore.JSObjectProxy
+public partial class Gamepad: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<Gamepad>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public Gamepad(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,75 +12,79 @@ public partial class Gamepad: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static Gamepad global::Natrix.JSCore.IJSObjectProxy<Gamepad>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<Gamepad>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GamepadHand Hand
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GamepadHand, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hand");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHand>.Get(JSObject, "hand");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadHapticActuator, global::Natrix.StdWeb.PropertyAccessor> HapticActuators
+    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadHapticActuator, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GamepadHapticActuator>> HapticActuators
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadHapticActuator, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hapticActuators");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadHapticActuator, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GamepadHapticActuator>>>.Get(JSObject, "hapticActuators");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GamepadPose? Pose
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GamepadPose?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "pose");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GamepadPose>.Get(JSObject, "pose");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "id");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "id");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Index
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "index");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "index");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Connected
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "connected");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "connected");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Timestamp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "timestamp");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "timestamp");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GamepadMappingType Mapping
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GamepadMappingType, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "mapping");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadMappingType>.Get(JSObject, "mapping");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.FrozenArray<double, global::Natrix.StdWeb.PropertyAccessor> Axes
+    public global::Natrix.JSCore.Generics.FrozenArray<double, global::Natrix.JSCore.Generics.DoubleAccessor> Axes
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<double, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "axes");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<double, global::Natrix.JSCore.Generics.DoubleAccessor>>.Get(JSObject, "axes");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadButton, global::Natrix.StdWeb.PropertyAccessor> Buttons
+    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadButton, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GamepadButton>> Buttons
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadButton, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "buttons");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadButton, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GamepadButton>>>.Get(JSObject, "buttons");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadTouch, global::Natrix.StdWeb.PropertyAccessor> Touches
+    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadTouch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GamepadTouch>> Touches
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadTouch, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "touches");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadTouch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GamepadTouch>>>.Get(JSObject, "touches");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GamepadHapticActuator VibrationActuator
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GamepadHapticActuator, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "vibrationActuator");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GamepadHapticActuator>.Get(JSObject, "vibrationActuator");
     }
 }
 

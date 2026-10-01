@@ -4,7 +4,7 @@ namespace Natrix.WebIDLGenerator.Tests;
 
 #nullable enable
 
-public sealed partial class TestEnumPropertiesEnum
+public sealed partial class TestEnumPropertiesEnum: global::Natrix.JSCore.IJSEnum<TestEnumPropertiesEnum>
 {
     private readonly string _value;
 

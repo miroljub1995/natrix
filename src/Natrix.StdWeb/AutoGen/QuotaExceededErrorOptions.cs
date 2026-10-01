@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class QuotaExceededErrorOptions: global::Natrix.JSCore.JSObjectProxy
+public partial class QuotaExceededErrorOptions: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<QuotaExceededErrorOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class QuotaExceededErrorOptions: global::Natrix.JSCore.JSObjectPr
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static QuotaExceededErrorOptions global::Natrix.JSCore.IJSObjectProxy<QuotaExceededErrorOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public QuotaExceededErrorOptions(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,15 +26,15 @@ public partial class QuotaExceededErrorOptions: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Quota
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "quota");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "quota", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "quota");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "quota", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Requested
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "requested");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "requested", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "requested");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "requested", value);
     }
 }
 
