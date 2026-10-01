@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class AnimationWorkletGlobalScope: global::Natrix.StdWeb.WorkletGlobalScope
+public partial class AnimationWorkletGlobalScope: global::Natrix.StdWeb.WorkletGlobalScope, global::Natrix.JSCore.IJSObjectProxy<AnimationWorkletGlobalScope>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AnimationWorkletGlobalScope(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static AnimationWorkletGlobalScope global::Natrix.JSCore.IJSObjectProxy<AnimationWorkletGlobalScope>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<AnimationWorkletGlobalScope>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public void RegisterAnimator(string name, global::Natrix.StdWeb.AnimatorInstanceConstructor animatorCtor)

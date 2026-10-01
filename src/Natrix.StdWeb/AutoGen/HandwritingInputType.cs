@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class HandwritingInputType
+public sealed partial class HandwritingInputType: global::Natrix.JSCore.IJSEnum<HandwritingInputType>
 {
     private readonly string _value;
 

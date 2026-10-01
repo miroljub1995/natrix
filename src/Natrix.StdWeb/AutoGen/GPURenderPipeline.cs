@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class GPURenderPipeline: global::Natrix.JSCore.JSObjectProxy
+public partial class GPURenderPipeline: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<GPURenderPipeline>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GPURenderPipeline(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,10 +12,14 @@ public partial class GPURenderPipeline: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GPURenderPipeline global::Natrix.JSCore.IJSObjectProxy<GPURenderPipeline>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<GPURenderPipeline>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Label
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "label");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "label", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -35,7 +39,7 @@ public partial class GPURenderPipeline: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getBindGroupLayout", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUBindGroupLayout, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUBindGroupLayout, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBindGroupLayout>>(___resOwner_1.JSObject, "value");
     }
 }
 

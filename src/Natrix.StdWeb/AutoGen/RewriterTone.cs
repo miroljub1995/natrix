@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RewriterTone
+public sealed partial class RewriterTone: global::Natrix.JSCore.IJSEnum<RewriterTone>
 {
     private readonly string _value;
 

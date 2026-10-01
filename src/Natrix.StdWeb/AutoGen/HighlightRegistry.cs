@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class HighlightRegistry: global::Natrix.JSCore.JSObjectProxy
+public partial class HighlightRegistry: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<HighlightRegistry>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public HighlightRegistry(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,7 +12,11 @@ public partial class HighlightRegistry: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.StdWeb.PropertyAccessor> HighlightsFromPoint(float x, float y)
+    static HighlightRegistry global::Natrix.JSCore.IJSObjectProxy<HighlightRegistry>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<HighlightRegistry>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HighlightHitResult>> HighlightsFromPoint(float x, float y)
     {
         int ___argsArrayLength_2 = 2;
 
@@ -33,11 +37,11 @@ public partial class HighlightRegistry: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "highlightsFromPoint", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HighlightHitResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HighlightHitResult>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.StdWeb.PropertyAccessor> HighlightsFromPoint(float x, float y, global::Natrix.StdWeb.HighlightsFromPointOptions options)
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HighlightHitResult>> HighlightsFromPoint(float x, float y, global::Natrix.StdWeb.HighlightsFromPointOptions options)
     {
         int ___argsArrayLength_2 = 3;
 
@@ -63,7 +67,7 @@ public partial class HighlightRegistry: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "highlightsFromPoint", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HighlightHitResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HighlightHitResult>>>>(___resOwner_1.JSObject, "value");
     }
 }
 

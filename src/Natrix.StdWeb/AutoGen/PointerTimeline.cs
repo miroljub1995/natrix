@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PointerTimeline: global::Natrix.StdWeb.AnimationTimeline
+public partial class PointerTimeline: global::Natrix.StdWeb.AnimationTimeline, global::Natrix.JSCore.IJSObjectProxy<PointerTimeline>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PointerTimeline(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PointerTimeline global::Natrix.JSCore.IJSObjectProxy<PointerTimeline>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PointerTimeline>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.PointerTimeline New()
@@ -37,13 +41,13 @@ public partial class PointerTimeline: global::Natrix.StdWeb.AnimationTimeline
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? Source
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "source");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "source");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PointerAxis Axis
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PointerAxis, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "axis");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PointerAxis, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PointerAxis>>(JSObject, "axis");
     }
 }
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class USBConnectionEvent: global::Natrix.StdWeb.Event
+public partial class USBConnectionEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<USBConnectionEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public USBConnectionEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static USBConnectionEvent global::Natrix.JSCore.IJSObjectProxy<USBConnectionEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<USBConnectionEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.USBConnectionEvent New(string type, global::Natrix.StdWeb.USBConnectionEventInit eventInitDict)
@@ -35,7 +39,7 @@ public partial class USBConnectionEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.USBDevice Device
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBDevice, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "device");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDevice>>(JSObject, "device");
     }
 }
 

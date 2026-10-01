@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class FederatedCredential: global::Natrix.StdWeb.Credential
+public partial class FederatedCredential: global::Natrix.StdWeb.Credential, global::Natrix.JSCore.IJSObjectProxy<FederatedCredential>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FederatedCredential(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static FederatedCredential global::Natrix.JSCore.IJSObjectProxy<FederatedCredential>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<FederatedCredential>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.FederatedCredential New(global::Natrix.StdWeb.FederatedCredentialInit data)
@@ -30,25 +34,25 @@ public partial class FederatedCredential: global::Natrix.StdWeb.Credential
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Provider
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "provider");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "provider");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Protocol
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "protocol");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "protocol");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string IconURL
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "iconURL");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "iconURL");
     }
 }
 

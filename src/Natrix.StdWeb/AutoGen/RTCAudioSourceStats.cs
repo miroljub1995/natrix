@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCAudioSourceStats: global::Natrix.StdWeb.RTCMediaSourceStats
+public partial class RTCAudioSourceStats: global::Natrix.StdWeb.RTCMediaSourceStats, global::Natrix.JSCore.IJSObjectProxy<RTCAudioSourceStats>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class RTCAudioSourceStats: global::Natrix.StdWeb.RTCMediaSourceSt
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCAudioSourceStats global::Natrix.JSCore.IJSObjectProxy<RTCAudioSourceStats>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCAudioSourceStats(): base()
     {
     }
@@ -22,36 +26,36 @@ public partial class RTCAudioSourceStats: global::Natrix.StdWeb.RTCMediaSourceSt
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double AudioLevel
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "audioLevel");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "audioLevel", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "audioLevel");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "audioLevel", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double TotalAudioEnergy
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "totalAudioEnergy");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "totalAudioEnergy", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalAudioEnergy");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalAudioEnergy", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double TotalSamplesDuration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "totalSamplesDuration");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "totalSamplesDuration", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalSamplesDuration");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalSamplesDuration", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double EchoReturnLoss
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "echoReturnLoss");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "echoReturnLoss", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "echoReturnLoss");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "echoReturnLoss", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double EchoReturnLossEnhancement
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "echoReturnLossEnhancement");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "echoReturnLossEnhancement", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "echoReturnLossEnhancement");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "echoReturnLossEnhancement", value);
     }
 }
 

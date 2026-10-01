@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class UserActivation: global::Natrix.JSCore.JSObjectProxy
+public partial class UserActivation: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<UserActivation>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public UserActivation(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,15 +12,19 @@ public partial class UserActivation: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static UserActivation global::Natrix.JSCore.IJSObjectProxy<UserActivation>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<UserActivation>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool HasBeenActive
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hasBeenActive");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "hasBeenActive");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IsActive
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "isActive");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isActive");
     }
 }
 

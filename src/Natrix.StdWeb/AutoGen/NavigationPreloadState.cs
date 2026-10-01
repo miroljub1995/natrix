@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class NavigationPreloadState: global::Natrix.JSCore.JSObjectProxy
+public partial class NavigationPreloadState: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<NavigationPreloadState>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class NavigationPreloadState: global::Natrix.JSCore.JSObjectProxy
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NavigationPreloadState global::Natrix.JSCore.IJSObjectProxy<NavigationPreloadState>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NavigationPreloadState(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,15 +26,15 @@ public partial class NavigationPreloadState: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Enabled
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "enabled");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "enabled", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "enabled");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "enabled", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string HeaderValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "headerValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "headerValue", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "headerValue");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "headerValue", value);
     }
 }
 

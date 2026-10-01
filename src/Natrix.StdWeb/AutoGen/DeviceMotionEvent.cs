@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class DeviceMotionEvent: global::Natrix.StdWeb.Event
+public partial class DeviceMotionEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<DeviceMotionEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public DeviceMotionEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static DeviceMotionEvent global::Natrix.JSCore.IJSObjectProxy<DeviceMotionEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<DeviceMotionEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.DeviceMotionEvent New(string type)
@@ -51,36 +55,36 @@ public partial class DeviceMotionEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DeviceMotionEventAcceleration? Acceleration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DeviceMotionEventAcceleration?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "acceleration");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DeviceMotionEventAcceleration?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DeviceMotionEventAcceleration>>(JSObject, "acceleration");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DeviceMotionEventAcceleration? AccelerationIncludingGravity
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DeviceMotionEventAcceleration?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "accelerationIncludingGravity");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DeviceMotionEventAcceleration?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DeviceMotionEventAcceleration>>(JSObject, "accelerationIncludingGravity");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DeviceMotionEventRotationRate? RotationRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DeviceMotionEventRotationRate?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "rotationRate");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DeviceMotionEventRotationRate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DeviceMotionEventRotationRate>>(JSObject, "rotationRate");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Interval
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "interval");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "interval");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public static global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PermissionState, global::Natrix.StdWeb.PropertyAccessor> RequestPermission()
+    public static global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PermissionState, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PermissionState>> RequestPermission()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "DeviceMotionEvent"), "requestPermission", global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "DeviceMotionEvent"), ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PermissionState, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PermissionState, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PermissionState>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PermissionState, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PermissionState>>>>(___resOwner_1.JSObject, "value");
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MLSplitOptions: global::Natrix.StdWeb.MLOperatorOptions
+public partial class MLSplitOptions: global::Natrix.StdWeb.MLOperatorOptions, global::Natrix.JSCore.IJSObjectProxy<MLSplitOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class MLSplitOptions: global::Natrix.StdWeb.MLOperatorOptions
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MLSplitOptions global::Natrix.JSCore.IJSObjectProxy<MLSplitOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MLSplitOptions(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class MLSplitOptions: global::Natrix.StdWeb.MLOperatorOptions
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Axis
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "axis");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "axis", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "axis");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "axis", value);
     }
 }
 

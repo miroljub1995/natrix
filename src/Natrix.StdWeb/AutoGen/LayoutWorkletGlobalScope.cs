@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class LayoutWorkletGlobalScope: global::Natrix.StdWeb.WorkletGlobalScope
+public partial class LayoutWorkletGlobalScope: global::Natrix.StdWeb.WorkletGlobalScope, global::Natrix.JSCore.IJSObjectProxy<LayoutWorkletGlobalScope>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public LayoutWorkletGlobalScope(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static LayoutWorkletGlobalScope global::Natrix.JSCore.IJSObjectProxy<LayoutWorkletGlobalScope>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<LayoutWorkletGlobalScope>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public void RegisterLayout(string name, global::Natrix.StdWeb.VoidFunction layoutCtor)

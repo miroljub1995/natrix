@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class DeferredRequestInit: global::Natrix.StdWeb.RequestInit
+public partial class DeferredRequestInit: global::Natrix.StdWeb.RequestInit, global::Natrix.JSCore.IJSObjectProxy<DeferredRequestInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class DeferredRequestInit: global::Natrix.StdWeb.RequestInit
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static DeferredRequestInit global::Natrix.JSCore.IJSObjectProxy<DeferredRequestInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public DeferredRequestInit(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class DeferredRequestInit: global::Natrix.StdWeb.RequestInit
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ActivateAfter
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "activateAfter");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "activateAfter", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "activateAfter");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "activateAfter", value);
     }
 }
 

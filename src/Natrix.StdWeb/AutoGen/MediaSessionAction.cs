@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MediaSessionAction
+public sealed partial class MediaSessionAction: global::Natrix.JSCore.IJSEnum<MediaSessionAction>
 {
     private readonly string _value;
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class HTMLMenuElement: global::Natrix.StdWeb.HTMLElement
+public partial class HTMLMenuElement: global::Natrix.StdWeb.HTMLElement, global::Natrix.JSCore.IJSObjectProxy<HTMLMenuElement>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public HTMLMenuElement(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static HTMLMenuElement global::Natrix.JSCore.IJSObjectProxy<HTMLMenuElement>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<HTMLMenuElement>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.HTMLMenuElement New()
@@ -21,8 +25,8 @@ public partial class HTMLMenuElement: global::Natrix.StdWeb.HTMLElement
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Compact
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "compact");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "compact", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "compact");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "compact", value);
     }
 }
 

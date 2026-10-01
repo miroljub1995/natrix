@@ -4,12 +4,16 @@ namespace Natrix.WebIDLGenerator.Tests;
 
 #nullable enable
 
-public partial class TestDictionary: global::Natrix.JSCore.JSObjectProxy
+public partial class TestDictionary: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<TestDictionary>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TestDictionary(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TestDictionary global::Natrix.JSCore.IJSObjectProxy<TestDictionary>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<TestDictionary>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ProcessDictionary(global::Natrix.WebIDLGenerator.Tests.TestDictionaryDict value)
@@ -28,7 +32,7 @@ public partial class TestDictionary: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "processDictionary", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(___resOwner_1.JSObject, "value");
     }
 }
 

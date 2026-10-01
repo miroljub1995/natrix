@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PeriodicSyncEvent: global::Natrix.StdWeb.ExtendableEvent
+public partial class PeriodicSyncEvent: global::Natrix.StdWeb.ExtendableEvent, global::Natrix.JSCore.IJSObjectProxy<PeriodicSyncEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PeriodicSyncEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PeriodicSyncEvent global::Natrix.JSCore.IJSObjectProxy<PeriodicSyncEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PeriodicSyncEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.PeriodicSyncEvent New(string type, global::Natrix.StdWeb.PeriodicSyncEventInit init)
@@ -35,7 +39,7 @@ public partial class PeriodicSyncEvent: global::Natrix.StdWeb.ExtendableEvent
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Tag
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "tag");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "tag");
     }
 }
 

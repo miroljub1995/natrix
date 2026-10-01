@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void RTCSessionDescriptionCallbackManaged(global::Natrix.StdWeb.RTCSessionDescriptionInit description);
 
-public partial class RTCSessionDescriptionCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class RTCSessionDescriptionCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<RTCSessionDescriptionCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCSessionDescriptionCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCSessionDescriptionCallback global::Natrix.JSCore.IJSObjectProxy<RTCSessionDescriptionCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCSessionDescriptionCallback(RTCSessionDescriptionCallbackManaged input): this(ToJSObject(input))

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class OperationType
+public sealed partial class OperationType: global::Natrix.JSCore.IJSEnum<OperationType>
 {
     private readonly string _value;
 

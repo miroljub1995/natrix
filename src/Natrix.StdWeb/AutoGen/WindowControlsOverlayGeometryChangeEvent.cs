@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WindowControlsOverlayGeometryChangeEvent: global::Natrix.StdWeb.Event
+public partial class WindowControlsOverlayGeometryChangeEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<WindowControlsOverlayGeometryChangeEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WindowControlsOverlayGeometryChangeEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WindowControlsOverlayGeometryChangeEvent global::Natrix.JSCore.IJSObjectProxy<WindowControlsOverlayGeometryChangeEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WindowControlsOverlayGeometryChangeEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.WindowControlsOverlayGeometryChangeEvent New(string type, global::Natrix.StdWeb.WindowControlsOverlayGeometryChangeEventInit eventInitDict)
@@ -35,13 +39,13 @@ public partial class WindowControlsOverlayGeometryChangeEvent: global::Natrix.St
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMRect TitlebarAreaRect
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMRect, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "titlebarAreaRect");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMRect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRect>>(JSObject, "titlebarAreaRect");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Visible
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "visible");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "visible");
     }
 }
 

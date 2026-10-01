@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRReflectionFormat
+public sealed partial class XRReflectionFormat: global::Natrix.JSCore.IJSEnum<XRReflectionFormat>
 {
     private readonly string _value;
 

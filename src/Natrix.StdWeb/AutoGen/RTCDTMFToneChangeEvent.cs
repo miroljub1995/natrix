@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCDTMFToneChangeEvent: global::Natrix.StdWeb.Event
+public partial class RTCDTMFToneChangeEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<RTCDTMFToneChangeEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCDTMFToneChangeEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCDTMFToneChangeEvent global::Natrix.JSCore.IJSObjectProxy<RTCDTMFToneChangeEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<RTCDTMFToneChangeEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.RTCDTMFToneChangeEvent New(string type)
@@ -51,7 +55,7 @@ public partial class RTCDTMFToneChangeEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Tone
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "tone");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "tone");
     }
 }
 

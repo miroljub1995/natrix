@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CanvasColorType
+public sealed partial class CanvasColorType: global::Natrix.JSCore.IJSEnum<CanvasColorType>
 {
     private readonly string _value;
 

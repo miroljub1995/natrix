@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CanvasTextAlign
+public sealed partial class CanvasTextAlign: global::Natrix.JSCore.IJSEnum<CanvasTextAlign>
 {
     private readonly string _value;
 

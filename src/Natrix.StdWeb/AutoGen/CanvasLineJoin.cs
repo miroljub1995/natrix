@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CanvasLineJoin
+public sealed partial class CanvasLineJoin: global::Natrix.JSCore.IJSEnum<CanvasLineJoin>
 {
     private readonly string _value;
 

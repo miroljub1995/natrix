@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class AriaNotificationOptions: global::Natrix.JSCore.JSObjectProxy
+public partial class AriaNotificationOptions: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<AriaNotificationOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class AriaNotificationOptions: global::Natrix.JSCore.JSObjectProx
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static AriaNotificationOptions global::Natrix.JSCore.IJSObjectProxy<AriaNotificationOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AriaNotificationOptions(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,8 +26,8 @@ public partial class AriaNotificationOptions: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AriaNotifyPriority Priority
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AriaNotifyPriority, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "priority");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AriaNotifyPriority, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "priority", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AriaNotifyPriority, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AriaNotifyPriority>>(JSObject, "priority");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AriaNotifyPriority, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AriaNotifyPriority>>(JSObject, "priority", value);
     }
 }
 

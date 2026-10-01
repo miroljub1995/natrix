@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PresentationReceiver: global::Natrix.JSCore.JSObjectProxy
+public partial class PresentationReceiver: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<PresentationReceiver>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PresentationReceiver(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,9 +12,13 @@ public partial class PresentationReceiver: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PresentationConnectionList, global::Natrix.StdWeb.PropertyAccessor> ConnectionList
+    static PresentationReceiver global::Natrix.JSCore.IJSObjectProxy<PresentationReceiver>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PresentationReceiver>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PresentationConnectionList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PresentationConnectionList>> ConnectionList
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PresentationConnectionList, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "connectionList");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PresentationConnectionList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PresentationConnectionList>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PresentationConnectionList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PresentationConnectionList>>>>(JSObject, "connectionList");
     }
 }
 

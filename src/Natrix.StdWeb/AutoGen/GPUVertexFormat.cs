@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUVertexFormat
+public sealed partial class GPUVertexFormat: global::Natrix.JSCore.IJSEnum<GPUVertexFormat>
 {
     private readonly string _value;
 

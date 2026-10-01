@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AppendMode
+public sealed partial class AppendMode: global::Natrix.JSCore.IJSEnum<AppendMode>
 {
     private readonly string _value;
 

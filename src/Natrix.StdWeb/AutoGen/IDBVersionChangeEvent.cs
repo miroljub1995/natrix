@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class IDBVersionChangeEvent: global::Natrix.StdWeb.Event
+public partial class IDBVersionChangeEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<IDBVersionChangeEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public IDBVersionChangeEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static IDBVersionChangeEvent global::Natrix.JSCore.IJSObjectProxy<IDBVersionChangeEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<IDBVersionChangeEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.IDBVersionChangeEvent New(string type)
@@ -51,13 +55,13 @@ public partial class IDBVersionChangeEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong OldVersion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "oldVersion");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "oldVersion");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong? NewVersion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "newVersion");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor>(JSObject, "newVersion");
     }
 }
 

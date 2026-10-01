@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRPlaneOrientation
+public sealed partial class XRPlaneOrientation: global::Natrix.JSCore.IJSEnum<XRPlaneOrientation>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class FrameType
+public sealed partial class FrameType: global::Natrix.JSCore.IJSEnum<FrameType>
 {
     private readonly string _value;
 

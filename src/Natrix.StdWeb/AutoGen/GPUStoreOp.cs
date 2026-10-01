@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUStoreOp
+public sealed partial class GPUStoreOp: global::Natrix.JSCore.IJSEnum<GPUStoreOp>
 {
     private readonly string _value;
 

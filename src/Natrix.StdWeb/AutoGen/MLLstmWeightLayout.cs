@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MLLstmWeightLayout
+public sealed partial class MLLstmWeightLayout: global::Natrix.JSCore.IJSEnum<MLLstmWeightLayout>
 {
     private readonly string _value;
 

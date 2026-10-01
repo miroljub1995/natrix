@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUDeviceLostReason
+public sealed partial class GPUDeviceLostReason: global::Natrix.JSCore.IJSEnum<GPUDeviceLostReason>
 {
     private readonly string _value;
 

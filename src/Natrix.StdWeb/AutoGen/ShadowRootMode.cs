@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ShadowRootMode
+public sealed partial class ShadowRootMode: global::Natrix.JSCore.IJSEnum<ShadowRootMode>
 {
     private readonly string _value;
 

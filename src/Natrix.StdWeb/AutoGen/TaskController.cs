@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class TaskController: global::Natrix.StdWeb.AbortController
+public partial class TaskController: global::Natrix.StdWeb.AbortController, global::Natrix.JSCore.IJSObjectProxy<TaskController>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TaskController(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TaskController global::Natrix.JSCore.IJSObjectProxy<TaskController>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<TaskController>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.TaskController New()

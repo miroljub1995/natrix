@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class FenceReportingDestination
+public sealed partial class FenceReportingDestination: global::Natrix.JSCore.IJSEnum<FenceReportingDestination>
 {
     private readonly string _value;
 

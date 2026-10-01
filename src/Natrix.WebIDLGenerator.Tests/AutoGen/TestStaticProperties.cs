@@ -4,7 +4,7 @@ namespace Natrix.WebIDLGenerator.Tests;
 
 #nullable enable
 
-public partial class TestStaticProperties: global::Natrix.JSCore.JSObjectProxy
+public partial class TestStaticProperties: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<TestStaticProperties>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TestStaticProperties(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,10 +12,14 @@ public partial class TestStaticProperties: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TestStaticProperties global::Natrix.JSCore.IJSObjectProxy<TestStaticProperties>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<TestStaticProperties>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public static int SimpleProp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "TestStaticProperties"), "simpleProp");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "TestStaticProperties"), "simpleProp", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "TestStaticProperties"), "simpleProp");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "TestStaticProperties"), "simpleProp", value);
     }
 }
 

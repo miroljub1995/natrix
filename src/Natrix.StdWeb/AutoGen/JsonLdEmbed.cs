@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class JsonLdEmbed
+public sealed partial class JsonLdEmbed: global::Natrix.JSCore.IJSEnum<JsonLdEmbed>
 {
     private readonly string _value;
 

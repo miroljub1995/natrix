@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class DigitalCredentialPresentationProtocol
+public sealed partial class DigitalCredentialPresentationProtocol: global::Natrix.JSCore.IJSEnum<DigitalCredentialPresentationProtocol>
 {
     private readonly string _value;
 

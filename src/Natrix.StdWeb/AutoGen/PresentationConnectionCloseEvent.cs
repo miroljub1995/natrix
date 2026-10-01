@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PresentationConnectionCloseEvent: global::Natrix.StdWeb.Event
+public partial class PresentationConnectionCloseEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<PresentationConnectionCloseEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PresentationConnectionCloseEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PresentationConnectionCloseEvent global::Natrix.JSCore.IJSObjectProxy<PresentationConnectionCloseEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PresentationConnectionCloseEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.PresentationConnectionCloseEvent New(string type, global::Natrix.StdWeb.PresentationConnectionCloseEventInit eventInitDict)
@@ -35,13 +39,13 @@ public partial class PresentationConnectionCloseEvent: global::Natrix.StdWeb.Eve
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PresentationConnectionCloseReason Reason
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PresentationConnectionCloseReason, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "reason");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PresentationConnectionCloseReason, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PresentationConnectionCloseReason>>(JSObject, "reason");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "message");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "message");
     }
 }
 

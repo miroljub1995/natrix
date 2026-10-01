@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class HdrMetadataType
+public sealed partial class HdrMetadataType: global::Natrix.JSCore.IJSEnum<HdrMetadataType>
 {
     private readonly string _value;
 

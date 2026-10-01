@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ResizeQuality
+public sealed partial class ResizeQuality: global::Natrix.JSCore.IJSEnum<ResizeQuality>
 {
     private readonly string _value;
 

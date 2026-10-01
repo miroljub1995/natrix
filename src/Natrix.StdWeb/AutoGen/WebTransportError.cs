@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WebTransportError: global::Natrix.StdWeb.DOMException
+public partial class WebTransportError: global::Natrix.StdWeb.DOMException, global::Natrix.JSCore.IJSObjectProxy<WebTransportError>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WebTransportError(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WebTransportError global::Natrix.JSCore.IJSObjectProxy<WebTransportError>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WebTransportError>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.WebTransportError New()
@@ -58,13 +62,13 @@ public partial class WebTransportError: global::Natrix.StdWeb.DOMException
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebTransportErrorSource Source
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebTransportErrorSource, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "source");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebTransportErrorSource, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WebTransportErrorSource>>(JSObject, "source");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint? StreamErrorCode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "streamErrorCode");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.JSCore.Generics.NullableUInt32Accessor>(JSObject, "streamErrorCode");
     }
 }
 

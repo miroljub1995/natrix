@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ContentCategory
+public sealed partial class ContentCategory: global::Natrix.JSCore.IJSEnum<ContentCategory>
 {
     private readonly string _value;
 

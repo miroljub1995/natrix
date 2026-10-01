@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class EXT_texture_compression_bptc: global::Natrix.JSCore.JSObjectProxy
+public partial class EXT_texture_compression_bptc: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<EXT_texture_compression_bptc>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public EXT_texture_compression_bptc(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static EXT_texture_compression_bptc global::Natrix.JSCore.IJSObjectProxy<EXT_texture_compression_bptc>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<EXT_texture_compression_bptc>(obj);
 
     public const uint COMPRESSED_RGBA_BPTC_UNORM_EXT = 0x8E8C;
 

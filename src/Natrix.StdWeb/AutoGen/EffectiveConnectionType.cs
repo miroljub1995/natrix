@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class EffectiveConnectionType
+public sealed partial class EffectiveConnectionType: global::Natrix.JSCore.IJSEnum<EffectiveConnectionType>
 {
     private readonly string _value;
 

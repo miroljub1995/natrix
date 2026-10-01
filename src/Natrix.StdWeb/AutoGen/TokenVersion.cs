@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class TokenVersion
+public sealed partial class TokenVersion: global::Natrix.JSCore.IJSEnum<TokenVersion>
 {
     private readonly string _value;
 

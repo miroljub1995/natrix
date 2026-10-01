@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class LargeBlobSupport
+public sealed partial class LargeBlobSupport: global::Natrix.JSCore.IJSEnum<LargeBlobSupport>
 {
     private readonly string _value;
 

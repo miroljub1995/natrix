@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class NavigationEventInit: global::Natrix.StdWeb.UIEventInit
+public partial class NavigationEventInit: global::Natrix.StdWeb.UIEventInit, global::Natrix.JSCore.IJSObjectProxy<NavigationEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class NavigationEventInit: global::Natrix.StdWeb.UIEventInit
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NavigationEventInit global::Natrix.JSCore.IJSObjectProxy<NavigationEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NavigationEventInit(): base()
     {
     }
@@ -22,15 +26,15 @@ public partial class NavigationEventInit: global::Natrix.StdWeb.UIEventInit
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SpatialNavigationDirection Dir
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpatialNavigationDirection, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "dir");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SpatialNavigationDirection, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "dir", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpatialNavigationDirection, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpatialNavigationDirection>>(JSObject, "dir");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SpatialNavigationDirection, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpatialNavigationDirection>>(JSObject, "dir", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventTarget? RelatedTarget
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventTarget?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "relatedTarget");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventTarget?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "relatedTarget", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventTarget?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>>(JSObject, "relatedTarget");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventTarget?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>>(JSObject, "relatedTarget", value);
     }
 }
 

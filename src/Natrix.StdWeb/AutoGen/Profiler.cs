@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class Profiler: global::Natrix.StdWeb.EventTarget
+public partial class Profiler: global::Natrix.StdWeb.EventTarget, global::Natrix.JSCore.IJSObjectProxy<Profiler>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public Profiler(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,15 +12,19 @@ public partial class Profiler: global::Natrix.StdWeb.EventTarget
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static Profiler global::Natrix.JSCore.IJSObjectProxy<Profiler>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<Profiler>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double SampleInterval
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "sampleInterval");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "sampleInterval");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Stopped
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stopped");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "stopped");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
@@ -40,14 +44,14 @@ public partial class Profiler: global::Natrix.StdWeb.EventTarget
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.ProfilerTrace, global::Natrix.StdWeb.PropertyAccessor> Stop()
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.ProfilerTrace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerTrace>> Stop()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "stop", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.ProfilerTrace, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.ProfilerTrace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerTrace>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.ProfilerTrace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerTrace>>>>(___resOwner_1.JSObject, "value");
     }
 }
 

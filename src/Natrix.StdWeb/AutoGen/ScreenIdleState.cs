@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ScreenIdleState
+public sealed partial class ScreenIdleState: global::Natrix.JSCore.IJSEnum<ScreenIdleState>
 {
     private readonly string _value;
 

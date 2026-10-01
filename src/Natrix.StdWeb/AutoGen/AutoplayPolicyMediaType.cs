@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AutoplayPolicyMediaType
+public sealed partial class AutoplayPolicyMediaType: global::Natrix.JSCore.IJSEnum<AutoplayPolicyMediaType>
 {
     private readonly string _value;
 

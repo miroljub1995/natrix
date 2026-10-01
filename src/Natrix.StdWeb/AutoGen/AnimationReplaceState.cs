@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AnimationReplaceState
+public sealed partial class AnimationReplaceState: global::Natrix.JSCore.IJSEnum<AnimationReplaceState>
 {
     private readonly string _value;
 

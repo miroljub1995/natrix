@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CookieSameSite
+public sealed partial class CookieSameSite: global::Natrix.JSCore.IJSEnum<CookieSameSite>
 {
     private readonly string _value;
 

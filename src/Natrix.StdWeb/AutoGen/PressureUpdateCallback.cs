@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate void PressureUpdateCallbackManaged(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PressureRecord, global::Natrix.StdWeb.PropertyAccessor> changes, global::Natrix.StdWeb.PressureObserver observer);
+public delegate void PressureUpdateCallbackManaged(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PressureRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PressureRecord>> changes, global::Natrix.StdWeb.PressureObserver observer);
 
-public partial class PressureUpdateCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class PressureUpdateCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<PressureUpdateCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PressureUpdateCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PressureUpdateCallback global::Natrix.JSCore.IJSObjectProxy<PressureUpdateCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PressureUpdateCallback(PressureUpdateCallbackManaged input): this(ToJSObject(input))
@@ -66,10 +70,10 @@ public partial class PressureUpdateCallback: global::Natrix.JSCore.JSObjectProxy
             using (___args_0)
             {
                 // Argument 1
-                global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PressureRecord, global::Natrix.StdWeb.PropertyAccessor> ___arg_2;
+                global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PressureRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PressureRecord>> ___arg_2;
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_3;
                 ___propObject_3 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(___args_0, 0);
-                ___arg_2 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PressureRecord, global::Natrix.StdWeb.PropertyAccessor>(___propObject_3);
+                ___arg_2 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PressureRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PressureRecord>>(___propObject_3);
 
                 // Argument 2
                 global::Natrix.StdWeb.PressureObserver ___arg_4;

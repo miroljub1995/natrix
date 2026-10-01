@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCRtpTransceiverDirection
+public sealed partial class RTCRtpTransceiverDirection: global::Natrix.JSCore.IJSEnum<RTCRtpTransceiverDirection>
 {
     private readonly string _value;
 

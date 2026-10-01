@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class IDBTransactionDurability
+public sealed partial class IDBTransactionDurability: global::Natrix.JSCore.IJSEnum<IDBTransactionDurability>
 {
     private readonly string _value;
 

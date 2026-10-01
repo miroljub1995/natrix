@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class DOMQuadInit: global::Natrix.JSCore.JSObjectProxy
+public partial class DOMQuadInit: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<DOMQuadInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class DOMQuadInit: global::Natrix.JSCore.JSObjectProxy
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static DOMQuadInit global::Natrix.JSCore.IJSObjectProxy<DOMQuadInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public DOMQuadInit(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,29 +26,29 @@ public partial class DOMQuadInit: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMPointInit P1
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPointInit, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "p1");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMPointInit, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "p1", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPointInit>>(JSObject, "p1");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPointInit>>(JSObject, "p1", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMPointInit P2
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPointInit, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "p2");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMPointInit, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "p2", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPointInit>>(JSObject, "p2");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPointInit>>(JSObject, "p2", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMPointInit P3
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPointInit, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "p3");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMPointInit, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "p3", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPointInit>>(JSObject, "p3");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPointInit>>(JSObject, "p3", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMPointInit P4
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPointInit, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "p4");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMPointInit, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "p4", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPointInit>>(JSObject, "p4");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMPointInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPointInit>>(JSObject, "p4", value);
     }
 }
 

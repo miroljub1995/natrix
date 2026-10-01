@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CorrectionType
+public sealed partial class CorrectionType: global::Natrix.JSCore.IJSEnum<CorrectionType>
 {
     private readonly string _value;
 

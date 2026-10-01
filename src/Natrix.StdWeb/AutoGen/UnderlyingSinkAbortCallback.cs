@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate global::Natrix.JSCore.Promise UnderlyingSinkAbortCallbackManaged(global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? reason);
+public delegate global::Natrix.JSCore.Promise UnderlyingSinkAbortCallbackManaged(global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? reason);
 
-public partial class UnderlyingSinkAbortCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class UnderlyingSinkAbortCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<UnderlyingSinkAbortCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public UnderlyingSinkAbortCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static UnderlyingSinkAbortCallback global::Natrix.JSCore.IJSObjectProxy<UnderlyingSinkAbortCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public UnderlyingSinkAbortCallback(UnderlyingSinkAbortCallbackManaged input): this(ToJSObject(input))
@@ -80,7 +84,7 @@ public partial class UnderlyingSinkAbortCallback: global::Natrix.JSCore.JSObject
             using (___res_5)
             {
                 // Argument 1
-                global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? ___arg_2;
+                global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? ___arg_2;
                 global::System.Runtime.InteropServices.JavaScript.JSObject? ___propObject_3;
                 ___propObject_3 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2AsNullable(___args_0, 0);
                 if (___propObject_3 is null)
@@ -89,7 +93,7 @@ public partial class UnderlyingSinkAbortCallback: global::Natrix.JSCore.JSObject
                 }
                 else
                 {
-                    ___arg_2 = new global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>(___propObject_3);
+                    ___arg_2 = new global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>(___propObject_3);
                 }
 
                 global::Natrix.JSCore.Promise ___managedRes_6 = input(___arg_2);

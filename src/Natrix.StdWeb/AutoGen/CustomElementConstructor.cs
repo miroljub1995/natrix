@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate global::Natrix.StdWeb.HTMLElement CustomElementConstructorManaged();
 
-public partial class CustomElementConstructor: global::Natrix.JSCore.JSObjectProxy
+public partial class CustomElementConstructor: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<CustomElementConstructor>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CustomElementConstructor(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CustomElementConstructor global::Natrix.JSCore.IJSObjectProxy<CustomElementConstructor>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CustomElementConstructor(CustomElementConstructorManaged input): this(ToJSObject(input))

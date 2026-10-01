@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SensorErrorEvent: global::Natrix.StdWeb.Event
+public partial class SensorErrorEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<SensorErrorEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SensorErrorEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SensorErrorEvent global::Natrix.JSCore.IJSObjectProxy<SensorErrorEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<SensorErrorEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.SensorErrorEvent New(string type, global::Natrix.StdWeb.SensorErrorEventInit errorEventInitDict)
@@ -35,7 +39,7 @@ public partial class SensorErrorEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMException Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMException, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "error");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMException, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMException>>(JSObject, "error");
     }
 }
 

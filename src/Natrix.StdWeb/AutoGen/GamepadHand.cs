@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GamepadHand
+public sealed partial class GamepadHand: global::Natrix.JSCore.IJSEnum<GamepadHand>
 {
     private readonly string _value;
 

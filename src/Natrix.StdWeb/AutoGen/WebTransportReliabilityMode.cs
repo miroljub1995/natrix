@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class WebTransportReliabilityMode
+public sealed partial class WebTransportReliabilityMode: global::Natrix.JSCore.IJSEnum<WebTransportReliabilityMode>
 {
     private readonly string _value;
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ANGLE_instanced_arrays: global::Natrix.JSCore.JSObjectProxy
+public partial class ANGLE_instanced_arrays: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<ANGLE_instanced_arrays>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ANGLE_instanced_arrays(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ANGLE_instanced_arrays global::Natrix.JSCore.IJSObjectProxy<ANGLE_instanced_arrays>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ANGLE_instanced_arrays>(obj);
 
     public const uint VERTEX_ATTRIB_ARRAY_DIVISOR_ANGLE = 0x88FE;
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCDataChannelEvent: global::Natrix.StdWeb.Event
+public partial class RTCDataChannelEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<RTCDataChannelEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCDataChannelEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCDataChannelEvent global::Natrix.JSCore.IJSObjectProxy<RTCDataChannelEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<RTCDataChannelEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.RTCDataChannelEvent New(string type, global::Natrix.StdWeb.RTCDataChannelEventInit eventInitDict)
@@ -35,7 +39,7 @@ public partial class RTCDataChannelEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCDataChannel Channel
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCDataChannel, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "channel");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCDataChannel, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCDataChannel>>(JSObject, "channel");
     }
 }
 

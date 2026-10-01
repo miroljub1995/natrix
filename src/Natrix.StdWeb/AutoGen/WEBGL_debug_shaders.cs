@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WEBGL_debug_shaders: global::Natrix.JSCore.JSObjectProxy
+public partial class WEBGL_debug_shaders: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<WEBGL_debug_shaders>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WEBGL_debug_shaders(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WEBGL_debug_shaders global::Natrix.JSCore.IJSObjectProxy<WEBGL_debug_shaders>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WEBGL_debug_shaders>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string GetTranslatedShaderSource(global::Natrix.StdWeb.WebGLShader shader)
@@ -28,7 +32,7 @@ public partial class WEBGL_debug_shaders: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getTranslatedShaderSource", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(___resOwner_1.JSObject, "value");
     }
 }
 

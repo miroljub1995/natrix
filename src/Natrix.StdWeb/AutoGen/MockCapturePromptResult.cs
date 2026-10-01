@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MockCapturePromptResult
+public sealed partial class MockCapturePromptResult: global::Natrix.JSCore.IJSEnum<MockCapturePromptResult>
 {
     private readonly string _value;
 

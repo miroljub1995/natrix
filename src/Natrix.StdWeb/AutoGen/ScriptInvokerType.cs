@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ScriptInvokerType
+public sealed partial class ScriptInvokerType: global::Natrix.JSCore.IJSEnum<ScriptInvokerType>
 {
     private readonly string _value;
 

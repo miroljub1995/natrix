@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class OscillatorType
+public sealed partial class OscillatorType: global::Natrix.JSCore.IJSEnum<OscillatorType>
 {
     private readonly string _value;
 

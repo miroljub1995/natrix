@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ScrollLogicalPosition
+public sealed partial class ScrollLogicalPosition: global::Natrix.JSCore.IJSEnum<ScrollLogicalPosition>
 {
     private readonly string _value;
 

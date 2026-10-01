@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PageTransitionEvent: global::Natrix.StdWeb.Event
+public partial class PageTransitionEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<PageTransitionEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PageTransitionEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PageTransitionEvent global::Natrix.JSCore.IJSObjectProxy<PageTransitionEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PageTransitionEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.PageTransitionEvent New(string type)
@@ -51,7 +55,7 @@ public partial class PageTransitionEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Persisted
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "persisted");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "persisted");
     }
 }
 

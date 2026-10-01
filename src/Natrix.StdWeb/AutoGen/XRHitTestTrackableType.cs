@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRHitTestTrackableType
+public sealed partial class XRHitTestTrackableType: global::Natrix.JSCore.IJSEnum<XRHitTestTrackableType>
 {
     private readonly string _value;
 

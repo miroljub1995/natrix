@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CanvasLineCap
+public sealed partial class CanvasLineCap: global::Natrix.JSCore.IJSEnum<CanvasLineCap>
 {
     private readonly string _value;
 

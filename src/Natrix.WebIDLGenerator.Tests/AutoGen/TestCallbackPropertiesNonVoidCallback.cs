@@ -6,12 +6,16 @@ namespace Natrix.WebIDLGenerator.Tests;
 
 public delegate int TestCallbackPropertiesNonVoidCallbackManaged(int a, int b);
 
-public partial class TestCallbackPropertiesNonVoidCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class TestCallbackPropertiesNonVoidCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<TestCallbackPropertiesNonVoidCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TestCallbackPropertiesNonVoidCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TestCallbackPropertiesNonVoidCallback global::Natrix.JSCore.IJSObjectProxy<TestCallbackPropertiesNonVoidCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TestCallbackPropertiesNonVoidCallback(TestCallbackPropertiesNonVoidCallbackManaged input): this(ToJSObject(input))

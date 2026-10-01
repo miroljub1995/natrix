@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MLRecurrentNetworkDirection
+public sealed partial class MLRecurrentNetworkDirection: global::Natrix.JSCore.IJSEnum<MLRecurrentNetworkDirection>
 {
     private readonly string _value;
 

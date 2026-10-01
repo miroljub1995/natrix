@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class BarcodeDetector: global::Natrix.JSCore.JSObjectProxy
+public partial class BarcodeDetector: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<BarcodeDetector>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public BarcodeDetector(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static BarcodeDetector global::Natrix.JSCore.IJSObjectProxy<BarcodeDetector>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<BarcodeDetector>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.BarcodeDetector New()
@@ -35,18 +39,18 @@ public partial class BarcodeDetector: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public static global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> GetSupportedFormats()
+    public static global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BarcodeFormat>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BarcodeFormat>>>> GetSupportedFormats()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "BarcodeDetector"), "getSupportedFormats", global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "BarcodeDetector"), ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BarcodeFormat>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BarcodeFormat>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BarcodeFormat>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BarcodeFormat>>>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedBarcode, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> Detect(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLImageElement, global::Natrix.StdWeb.SVGImageElement, global::Natrix.StdWeb.HTMLVideoElement, global::Natrix.StdWeb.HTMLCanvasElement, global::Natrix.StdWeb.ImageBitmap, global::Natrix.StdWeb.OffscreenCanvas, global::Natrix.StdWeb.VideoFrame, global::Natrix.StdWeb.Blob, global::Natrix.StdWeb.ImageData, global::Natrix.StdWeb.GenericMarshaller.Union> image)
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedBarcode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DetectedBarcode>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedBarcode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DetectedBarcode>>>> Detect(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLImageElement, global::Natrix.StdWeb.SVGImageElement, global::Natrix.StdWeb.HTMLVideoElement, global::Natrix.StdWeb.HTMLCanvasElement, global::Natrix.StdWeb.ImageBitmap, global::Natrix.StdWeb.OffscreenCanvas, global::Natrix.StdWeb.VideoFrame, global::Natrix.StdWeb.Blob, global::Natrix.StdWeb.ImageData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLImageElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGImageElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLVideoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLCanvasElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageBitmap>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.OffscreenCanvas>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoFrame>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Blob>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageData>> image)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -61,7 +65,7 @@ public partial class BarcodeDetector: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "detect", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedBarcode, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedBarcode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DetectedBarcode>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedBarcode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DetectedBarcode>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedBarcode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DetectedBarcode>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedBarcode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DetectedBarcode>>>>>>(___resOwner_1.JSObject, "value");
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUBlendFactor
+public sealed partial class GPUBlendFactor: global::Natrix.JSCore.IJSEnum<GPUBlendFactor>
 {
     private readonly string _value;
 

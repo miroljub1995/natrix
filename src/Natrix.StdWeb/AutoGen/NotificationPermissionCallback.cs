@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void NotificationPermissionCallbackManaged(global::Natrix.StdWeb.NotificationPermission permission);
 
-public partial class NotificationPermissionCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class NotificationPermissionCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<NotificationPermissionCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NotificationPermissionCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NotificationPermissionCallback global::Natrix.JSCore.IJSObjectProxy<NotificationPermissionCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NotificationPermissionCallback(NotificationPermissionCallbackManaged input): this(ToJSObject(input))

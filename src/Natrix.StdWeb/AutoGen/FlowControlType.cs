@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class FlowControlType
+public sealed partial class FlowControlType: global::Natrix.JSCore.IJSEnum<FlowControlType>
 {
     private readonly string _value;
 

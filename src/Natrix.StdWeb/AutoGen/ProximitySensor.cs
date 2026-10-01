@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ProximitySensor: global::Natrix.StdWeb.Sensor
+public partial class ProximitySensor: global::Natrix.StdWeb.Sensor, global::Natrix.JSCore.IJSObjectProxy<ProximitySensor>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ProximitySensor(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ProximitySensor global::Natrix.JSCore.IJSObjectProxy<ProximitySensor>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ProximitySensor>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.ProximitySensor New()
@@ -37,19 +41,19 @@ public partial class ProximitySensor: global::Natrix.StdWeb.Sensor
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Distance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "distance");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "distance");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Max
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "max");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "max");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool? Near
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "near");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool?, global::Natrix.JSCore.Generics.NullableBooleanAccessor>(JSObject, "near");
     }
 }
 

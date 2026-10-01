@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class InputDeviceCapabilities: global::Natrix.JSCore.JSObjectProxy
+public partial class InputDeviceCapabilities: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<InputDeviceCapabilities>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public InputDeviceCapabilities(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static InputDeviceCapabilities global::Natrix.JSCore.IJSObjectProxy<InputDeviceCapabilities>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<InputDeviceCapabilities>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.InputDeviceCapabilities New()
@@ -37,13 +41,13 @@ public partial class InputDeviceCapabilities: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool FiresTouchEvents
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "firesTouchEvents");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "firesTouchEvents");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool PointerMovementScrolls
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "pointerMovementScrolls");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "pointerMovementScrolls");
     }
 }
 

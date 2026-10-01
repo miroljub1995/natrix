@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRSessionMode
+public sealed partial class XRSessionMode: global::Natrix.JSCore.IJSEnum<XRSessionMode>
 {
     private readonly string _value;
 

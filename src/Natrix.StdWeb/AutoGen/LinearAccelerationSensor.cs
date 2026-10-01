@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class LinearAccelerationSensor: global::Natrix.StdWeb.Accelerometer
+public partial class LinearAccelerationSensor: global::Natrix.StdWeb.Accelerometer, global::Natrix.JSCore.IJSObjectProxy<LinearAccelerationSensor>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public LinearAccelerationSensor(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static LinearAccelerationSensor global::Natrix.JSCore.IJSObjectProxy<LinearAccelerationSensor>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<LinearAccelerationSensor>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.LinearAccelerationSensor New()

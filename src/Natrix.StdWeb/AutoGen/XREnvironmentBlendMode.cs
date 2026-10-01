@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XREnvironmentBlendMode
+public sealed partial class XREnvironmentBlendMode: global::Natrix.JSCore.IJSEnum<XREnvironmentBlendMode>
 {
     private readonly string _value;
 

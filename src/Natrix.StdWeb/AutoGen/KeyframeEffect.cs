@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class KeyframeEffect: global::Natrix.StdWeb.AnimationEffect
+public partial class KeyframeEffect: global::Natrix.StdWeb.AnimationEffect, global::Natrix.JSCore.IJSObjectProxy<KeyframeEffect>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public KeyframeEffect(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static KeyframeEffect global::Natrix.JSCore.IJSObjectProxy<KeyframeEffect>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<KeyframeEffect>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.KeyframeEffect New(global::Natrix.StdWeb.Element? target, global::System.Runtime.InteropServices.JavaScript.JSObject? keyframes)
@@ -49,7 +53,7 @@ public partial class KeyframeEffect: global::Natrix.StdWeb.AnimationEffect
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.KeyframeEffect New(global::Natrix.StdWeb.Element? target, global::System.Runtime.InteropServices.JavaScript.JSObject? keyframes, global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.KeyframeEffectOptions, global::Natrix.StdWeb.GenericMarshaller.Union> options)
+    public static global::Natrix.StdWeb.KeyframeEffect New(global::Natrix.StdWeb.Element? target, global::System.Runtime.InteropServices.JavaScript.JSObject? keyframes, global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.KeyframeEffectOptions, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeyframeEffectOptions>> options)
     {
         int ___argsArrayLength_3 = 3;
 
@@ -108,33 +112,33 @@ public partial class KeyframeEffect: global::Natrix.StdWeb.AnimationEffect
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? Target
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "target");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.Element?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "target", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "target");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "target", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? PseudoElement
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "pseudoElement");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "pseudoElement", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "pseudoElement");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "pseudoElement", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CompositeOperation Composite
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CompositeOperation, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "composite");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CompositeOperation, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "composite", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CompositeOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CompositeOperation>>(JSObject, "composite");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CompositeOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CompositeOperation>>(JSObject, "composite", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.StdWeb.PropertyAccessor> GetKeyframes()
+    public global::Natrix.JSCore.Generics.JSArray<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor> GetKeyframes()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getKeyframes", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -163,8 +167,8 @@ public partial class KeyframeEffect: global::Natrix.StdWeb.AnimationEffect
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.IterationCompositeOperation IterationComposite
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IterationCompositeOperation, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "iterationComposite");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.IterationCompositeOperation, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "iterationComposite", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IterationCompositeOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IterationCompositeOperation>>(JSObject, "iterationComposite");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.IterationCompositeOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IterationCompositeOperation>>(JSObject, "iterationComposite", value);
     }
 }
 

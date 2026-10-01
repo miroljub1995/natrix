@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCIceCandidatePair: global::Natrix.JSCore.JSObjectProxy
+public partial class RTCIceCandidatePair: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<RTCIceCandidatePair>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCIceCandidatePair(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,15 +12,19 @@ public partial class RTCIceCandidatePair: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCIceCandidatePair global::Natrix.JSCore.IJSObjectProxy<RTCIceCandidatePair>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<RTCIceCandidatePair>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIceCandidate Local
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "local");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceCandidate>>(JSObject, "local");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIceCandidate Remote
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "remote");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceCandidate>>(JSObject, "remote");
     }
 }
 

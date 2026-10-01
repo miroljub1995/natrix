@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class BlockFragmentationType
+public sealed partial class BlockFragmentationType: global::Natrix.JSCore.IJSEnum<BlockFragmentationType>
 {
     private readonly string _value;
 

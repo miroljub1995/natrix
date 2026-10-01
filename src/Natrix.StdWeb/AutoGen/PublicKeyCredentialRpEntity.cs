@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PublicKeyCredentialRpEntity: global::Natrix.StdWeb.PublicKeyCredentialEntity
+public partial class PublicKeyCredentialRpEntity: global::Natrix.StdWeb.PublicKeyCredentialEntity, global::Natrix.JSCore.IJSObjectProxy<PublicKeyCredentialRpEntity>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class PublicKeyCredentialRpEntity: global::Natrix.StdWeb.PublicKe
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PublicKeyCredentialRpEntity global::Natrix.JSCore.IJSObjectProxy<PublicKeyCredentialRpEntity>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PublicKeyCredentialRpEntity(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class PublicKeyCredentialRpEntity: global::Natrix.StdWeb.PublicKe
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "id");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "id", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id", value);
     }
 }
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class AbsoluteOrientationSensor: global::Natrix.StdWeb.OrientationSensor
+public partial class AbsoluteOrientationSensor: global::Natrix.StdWeb.OrientationSensor, global::Natrix.JSCore.IJSObjectProxy<AbsoluteOrientationSensor>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AbsoluteOrientationSensor(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static AbsoluteOrientationSensor global::Natrix.JSCore.IJSObjectProxy<AbsoluteOrientationSensor>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<AbsoluteOrientationSensor>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.AbsoluteOrientationSensor New()

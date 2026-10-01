@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void FunctionStringCallbackManaged(string data);
 
-public partial class FunctionStringCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class FunctionStringCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<FunctionStringCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FunctionStringCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static FunctionStringCallback global::Natrix.JSCore.IJSObjectProxy<FunctionStringCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FunctionStringCallback(FunctionStringCallbackManaged input): this(ToJSObject(input))

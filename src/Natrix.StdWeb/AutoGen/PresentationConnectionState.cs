@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PresentationConnectionState
+public sealed partial class PresentationConnectionState: global::Natrix.JSCore.IJSEnum<PresentationConnectionState>
 {
     private readonly string _value;
 

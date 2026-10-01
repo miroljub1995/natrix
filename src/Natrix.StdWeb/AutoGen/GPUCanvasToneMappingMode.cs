@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUCanvasToneMappingMode
+public sealed partial class GPUCanvasToneMappingMode: global::Natrix.JSCore.IJSEnum<GPUCanvasToneMappingMode>
 {
     private readonly string _value;
 

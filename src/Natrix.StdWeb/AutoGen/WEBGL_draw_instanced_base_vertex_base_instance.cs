@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WEBGL_draw_instanced_base_vertex_base_instance: global::Natrix.JSCore.JSObjectProxy
+public partial class WEBGL_draw_instanced_base_vertex_base_instance: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<WEBGL_draw_instanced_base_vertex_base_instance>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WEBGL_draw_instanced_base_vertex_base_instance(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WEBGL_draw_instanced_base_vertex_base_instance global::Natrix.JSCore.IJSObjectProxy<WEBGL_draw_instanced_base_vertex_base_instance>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WEBGL_draw_instanced_base_vertex_base_instance>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public void DrawArraysInstancedBaseInstanceWEBGL(uint mode, int first, int count, int instanceCount, uint baseInstance)

@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void AudioDataOutputCallbackManaged(global::Natrix.StdWeb.AudioData output);
 
-public partial class AudioDataOutputCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class AudioDataOutputCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<AudioDataOutputCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AudioDataOutputCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static AudioDataOutputCallback global::Natrix.JSCore.IJSObjectProxy<AudioDataOutputCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AudioDataOutputCallback(AudioDataOutputCallbackManaged input): this(ToJSObject(input))

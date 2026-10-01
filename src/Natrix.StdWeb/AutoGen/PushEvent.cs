@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PushEvent: global::Natrix.StdWeb.ExtendableEvent
+public partial class PushEvent: global::Natrix.StdWeb.ExtendableEvent, global::Natrix.JSCore.IJSObjectProxy<PushEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PushEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PushEvent global::Natrix.JSCore.IJSObjectProxy<PushEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PushEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.PushEvent New(string type)
@@ -51,13 +55,13 @@ public partial class PushEvent: global::Natrix.StdWeb.ExtendableEvent
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PushMessageData? Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PushMessageData?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PushMessageData?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PushMessageData>>(JSObject, "data");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Notification? Notification
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Notification?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "notification");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Notification?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Notification>>(JSObject, "notification");
     }
 }
 

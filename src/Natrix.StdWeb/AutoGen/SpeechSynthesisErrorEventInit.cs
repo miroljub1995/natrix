@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SpeechSynthesisErrorEventInit: global::Natrix.StdWeb.SpeechSynthesisEventInit
+public partial class SpeechSynthesisErrorEventInit: global::Natrix.StdWeb.SpeechSynthesisEventInit, global::Natrix.JSCore.IJSObjectProxy<SpeechSynthesisErrorEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class SpeechSynthesisErrorEventInit: global::Natrix.StdWeb.Speech
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SpeechSynthesisErrorEventInit global::Natrix.JSCore.IJSObjectProxy<SpeechSynthesisErrorEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SpeechSynthesisErrorEventInit(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class SpeechSynthesisErrorEventInit: global::Natrix.StdWeb.Speech
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.SpeechSynthesisErrorCode Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpeechSynthesisErrorCode, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "error");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SpeechSynthesisErrorCode, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "error", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpeechSynthesisErrorCode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpeechSynthesisErrorCode>>(JSObject, "error");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SpeechSynthesisErrorCode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpeechSynthesisErrorCode>>(JSObject, "error", value);
     }
 }
 

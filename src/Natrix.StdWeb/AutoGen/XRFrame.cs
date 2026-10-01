@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class XRFrame: global::Natrix.JSCore.JSObjectProxy
+public partial class XRFrame: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<XRFrame>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XRFrame(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,7 +12,11 @@ public partial class XRFrame: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.XRAnchor, global::Natrix.StdWeb.PropertyAccessor> CreateAnchor(global::Natrix.StdWeb.XRRigidTransform pose, global::Natrix.StdWeb.XRSpace space)
+    static XRFrame global::Natrix.JSCore.IJSObjectProxy<XRFrame>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<XRFrame>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.XRAnchor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRAnchor>> CreateAnchor(global::Natrix.StdWeb.XRRigidTransform pose, global::Natrix.StdWeb.XRSpace space)
     {
         int ___argsArrayLength_2 = 2;
 
@@ -33,25 +37,25 @@ public partial class XRFrame: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createAnchor", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.XRAnchor, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.XRAnchor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRAnchor>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.XRAnchor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRAnchor>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRAnchorSet TrackedAnchors
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRAnchorSet, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "trackedAnchors");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRAnchorSet, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRAnchorSet>>(JSObject, "trackedAnchors");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRBody? Body
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRBody?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "body");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRBody?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRBody>>(JSObject, "body");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRMeshSet DetectedMeshes
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRMeshSet, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "detectedMeshes");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRMeshSet, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRMeshSet>>(JSObject, "detectedMeshes");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -71,7 +75,7 @@ public partial class XRFrame: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getDepthInformation", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRCPUDepthInformation?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRCPUDepthInformation?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRCPUDepthInformation>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -96,11 +100,11 @@ public partial class XRFrame: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getJointPose", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRJointPose?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRJointPose?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRJointPose>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool FillJointRadii(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRJointSpace, global::Natrix.StdWeb.PropertyAccessor> jointSpaces, global::Natrix.JSCore.Float32Array radii)
+    public bool FillJointRadii(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRJointSpace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRJointSpace>> jointSpaces, global::Natrix.JSCore.Float32Array radii)
     {
         int ___argsArrayLength_2 = 2;
 
@@ -120,11 +124,11 @@ public partial class XRFrame: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "fillJointRadii", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool FillPoses(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRSpace, global::Natrix.StdWeb.PropertyAccessor> spaces, global::Natrix.StdWeb.XRSpace baseSpace, global::Natrix.JSCore.Float32Array transforms)
+    public bool FillPoses(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRSpace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSpace>> spaces, global::Natrix.StdWeb.XRSpace baseSpace, global::Natrix.JSCore.Float32Array transforms)
     {
         int ___argsArrayLength_2 = 3;
 
@@ -149,11 +153,11 @@ public partial class XRFrame: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "fillPoses", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRHitTestResult, global::Natrix.StdWeb.PropertyAccessor> GetHitTestResults(global::Natrix.StdWeb.XRHitTestSource hitTestSource)
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRHitTestResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRHitTestResult>> GetHitTestResults(global::Natrix.StdWeb.XRHitTestSource hitTestSource)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -169,11 +173,11 @@ public partial class XRFrame: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getHitTestResults", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRHitTestResult, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRHitTestResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRHitTestResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRHitTestResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRHitTestResult>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRTransientInputHitTestResult, global::Natrix.StdWeb.PropertyAccessor> GetHitTestResultsForTransientInput(global::Natrix.StdWeb.XRTransientInputHitTestSource hitTestSource)
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRTransientInputHitTestResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRTransientInputHitTestResult>> GetHitTestResultsForTransientInput(global::Natrix.StdWeb.XRTransientInputHitTestSource hitTestSource)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -189,7 +193,7 @@ public partial class XRFrame: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getHitTestResultsForTransientInput", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRTransientInputHitTestResult, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRTransientInputHitTestResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRTransientInputHitTestResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRTransientInputHitTestResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRTransientInputHitTestResult>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -209,25 +213,25 @@ public partial class XRFrame: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getLightEstimate", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRLightEstimate?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRLightEstimate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRLightEstimate>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRPlaneSet DetectedPlanes
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRPlaneSet, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "detectedPlanes");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRPlaneSet, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRPlaneSet>>(JSObject, "detectedPlanes");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRSession Session
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRSession, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "session");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRSession, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSession>>(JSObject, "session");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double PredictedDisplayTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "predictedDisplayTime");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "predictedDisplayTime");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -247,7 +251,7 @@ public partial class XRFrame: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getViewerPose", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRViewerPose?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRViewerPose?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRViewerPose>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -272,7 +276,7 @@ public partial class XRFrame: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getPose", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRPose?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRPose?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRPose>>(___resOwner_1.JSObject, "value");
     }
 }
 

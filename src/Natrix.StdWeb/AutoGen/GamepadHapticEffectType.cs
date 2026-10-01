@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GamepadHapticEffectType
+public sealed partial class GamepadHapticEffectType: global::Natrix.JSCore.IJSEnum<GamepadHapticEffectType>
 {
     private readonly string _value;
 

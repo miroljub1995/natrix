@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class OverSampleType
+public sealed partial class OverSampleType: global::Natrix.JSCore.IJSEnum<OverSampleType>
 {
     private readonly string _value;
 

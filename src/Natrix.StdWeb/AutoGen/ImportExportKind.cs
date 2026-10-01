@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ImportExportKind
+public sealed partial class ImportExportKind: global::Natrix.JSCore.IJSEnum<ImportExportKind>
 {
     private readonly string _value;
 

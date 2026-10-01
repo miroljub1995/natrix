@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class SelfCapturePreferenceEnum
+public sealed partial class SelfCapturePreferenceEnum: global::Natrix.JSCore.IJSEnum<SelfCapturePreferenceEnum>
 {
     private readonly string _value;
 

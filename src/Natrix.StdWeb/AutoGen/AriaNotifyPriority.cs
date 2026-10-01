@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AriaNotifyPriority
+public sealed partial class AriaNotifyPriority: global::Natrix.JSCore.IJSEnum<AriaNotifyPriority>
 {
     private readonly string _value;
 

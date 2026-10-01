@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MLOperandDataType
+public sealed partial class MLOperandDataType: global::Natrix.JSCore.IJSEnum<MLOperandDataType>
 {
     private readonly string _value;
 

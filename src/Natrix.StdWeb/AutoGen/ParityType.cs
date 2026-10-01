@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ParityType
+public sealed partial class ParityType: global::Natrix.JSCore.IJSEnum<ParityType>
 {
     private readonly string _value;
 

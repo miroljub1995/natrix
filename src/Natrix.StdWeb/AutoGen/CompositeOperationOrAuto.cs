@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CompositeOperationOrAuto
+public sealed partial class CompositeOperationOrAuto: global::Natrix.JSCore.IJSEnum<CompositeOperationOrAuto>
 {
     private readonly string _value;
 

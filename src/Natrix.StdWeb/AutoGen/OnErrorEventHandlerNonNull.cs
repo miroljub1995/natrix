@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? OnErrorEventHandlerNonNullManaged(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Event, string, global::Natrix.StdWeb.GenericMarshaller.Union> @event, string source, uint lineno, uint colno, global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? error);
+public delegate global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? OnErrorEventHandlerNonNullManaged(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Event, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Event>, global::Natrix.JSCore.Generics.StringAccessor> @event, string source, uint lineno, uint colno, global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? error);
 
-public partial class OnErrorEventHandlerNonNull: global::Natrix.JSCore.JSObjectProxy
+public partial class OnErrorEventHandlerNonNull: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<OnErrorEventHandlerNonNull>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public OnErrorEventHandlerNonNull(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static OnErrorEventHandlerNonNull global::Natrix.JSCore.IJSObjectProxy<OnErrorEventHandlerNonNull>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public OnErrorEventHandlerNonNull(OnErrorEventHandlerNonNullManaged input): this(ToJSObject(input))
@@ -81,7 +85,7 @@ public partial class OnErrorEventHandlerNonNull: global::Natrix.JSCore.JSObjectP
             global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunction(JSObject, null, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
             // Return Value
-            global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? ___res_2;
+            global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? ___res_2;
             global::System.Runtime.InteropServices.JavaScript.JSObject? ___propObject_9;
             ___propObject_9 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2AsNullable(___resOwner_1.JSObject, "value");
             if (___propObject_9 is null)
@@ -90,7 +94,7 @@ public partial class OnErrorEventHandlerNonNull: global::Natrix.JSCore.JSObjectP
             }
             else
             {
-                ___res_2 = new global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>(___propObject_9);
+                ___res_2 = new global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>(___propObject_9);
             }
             return ___res_2;
         };
@@ -106,10 +110,10 @@ public partial class OnErrorEventHandlerNonNull: global::Natrix.JSCore.JSObjectP
             using (___res_13)
             {
                 // Argument 1
-                global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Event, string, global::Natrix.StdWeb.GenericMarshaller.Union> ___arg_2;
+                global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Event, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Event>, global::Natrix.JSCore.Generics.StringAccessor> ___arg_2;
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_3;
                 ___propObject_3 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(___args_0, 0);
-                ___arg_2 = new global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Event, string, global::Natrix.StdWeb.GenericMarshaller.Union>(___propObject_3);
+                ___arg_2 = new global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Event, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Event>, global::Natrix.JSCore.Generics.StringAccessor>(___propObject_3);
 
                 // Argument 2
                 string ___arg_4;
@@ -127,7 +131,7 @@ public partial class OnErrorEventHandlerNonNull: global::Natrix.JSCore.JSObjectP
                 ___arg_8 = Convert.ToUInt32(___res_9);
 
                 // Argument 5
-                global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? ___arg_10;
+                global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? ___arg_10;
                 global::System.Runtime.InteropServices.JavaScript.JSObject? ___propObject_11;
                 ___propObject_11 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2AsNullable(___args_0, 4);
                 if (___propObject_11 is null)
@@ -136,10 +140,10 @@ public partial class OnErrorEventHandlerNonNull: global::Natrix.JSCore.JSObjectP
                 }
                 else
                 {
-                    ___arg_10 = new global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>(___propObject_11);
+                    ___arg_10 = new global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>(___propObject_11);
                 }
 
-                global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.StdWeb.GenericMarshaller.Union>? ___managedRes_14 = input(___arg_2, ___arg_4, ___arg_6, ___arg_8, ___arg_10);
+                global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? ___managedRes_14 = input(___arg_2, ___arg_4, ___arg_6, ___arg_8, ___arg_10);
 
                 global::System.Runtime.InteropServices.JavaScript.JSObject? ___propObject_15;
                 if (___managedRes_14 is null)

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CropTarget: global::Natrix.JSCore.JSObjectProxy
+public partial class CropTarget: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<CropTarget>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CropTarget(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,7 +12,11 @@ public partial class CropTarget: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public static global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CropTarget, global::Natrix.StdWeb.PropertyAccessor> FromElement(global::Natrix.StdWeb.Element element)
+    static CropTarget global::Natrix.JSCore.IJSObjectProxy<CropTarget>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CropTarget>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public static global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CropTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CropTarget>> FromElement(global::Natrix.StdWeb.Element element)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -28,7 +32,7 @@ public partial class CropTarget: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "CropTarget"), "fromElement", global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "CropTarget"), ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CropTarget, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CropTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CropTarget>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CropTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CropTarget>>>>(___resOwner_1.JSObject, "value");
     }
 }
 

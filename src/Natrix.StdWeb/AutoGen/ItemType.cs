@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ItemType
+public sealed partial class ItemType: global::Natrix.JSCore.IJSEnum<ItemType>
 {
     private readonly string _value;
 

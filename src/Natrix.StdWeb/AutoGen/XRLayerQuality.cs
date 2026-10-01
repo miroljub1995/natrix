@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRLayerQuality
+public sealed partial class XRLayerQuality: global::Natrix.JSCore.IJSEnum<XRLayerQuality>
 {
     private readonly string _value;
 

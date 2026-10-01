@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class TaskPriorityChangeEvent: global::Natrix.StdWeb.Event
+public partial class TaskPriorityChangeEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<TaskPriorityChangeEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TaskPriorityChangeEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TaskPriorityChangeEvent global::Natrix.JSCore.IJSObjectProxy<TaskPriorityChangeEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<TaskPriorityChangeEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.TaskPriorityChangeEvent New(string type, global::Natrix.StdWeb.TaskPriorityChangeEventInit priorityChangeEventInitDict)
@@ -35,7 +39,7 @@ public partial class TaskPriorityChangeEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.TaskPriority PreviousPriority
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.TaskPriority, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "previousPriority");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.TaskPriority, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.TaskPriority>>(JSObject, "previousPriority");
     }
 }
 

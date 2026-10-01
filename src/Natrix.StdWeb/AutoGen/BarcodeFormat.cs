@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class BarcodeFormat
+public sealed partial class BarcodeFormat: global::Natrix.JSCore.IJSEnum<BarcodeFormat>
 {
     private readonly string _value;
 

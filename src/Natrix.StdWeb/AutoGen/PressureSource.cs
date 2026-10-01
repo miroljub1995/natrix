@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PressureSource
+public sealed partial class PressureSource: global::Natrix.JSCore.IJSEnum<PressureSource>
 {
     private readonly string _value;
 

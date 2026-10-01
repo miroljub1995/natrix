@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class WriterLength
+public sealed partial class WriterLength: global::Natrix.JSCore.IJSEnum<WriterLength>
 {
     private readonly string _value;
 

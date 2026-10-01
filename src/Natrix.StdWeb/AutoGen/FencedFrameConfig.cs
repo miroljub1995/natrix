@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class FencedFrameConfig: global::Natrix.JSCore.JSObjectProxy
+public partial class FencedFrameConfig: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<FencedFrameConfig>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FencedFrameConfig(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static FencedFrameConfig global::Natrix.JSCore.IJSObjectProxy<FencedFrameConfig>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<FencedFrameConfig>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.FencedFrameConfig New(string url)

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ImageSmoothingQuality
+public sealed partial class ImageSmoothingQuality: global::Natrix.JSCore.IJSEnum<ImageSmoothingQuality>
 {
     private readonly string _value;
 

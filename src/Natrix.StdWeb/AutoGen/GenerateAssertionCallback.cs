@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RTCIdentityAssertionResult, global::Natrix.StdWeb.PropertyAccessor> GenerateAssertionCallbackManaged(string contents, string origin, global::Natrix.StdWeb.RTCIdentityProviderOptions options);
+public delegate global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RTCIdentityAssertionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIdentityAssertionResult>> GenerateAssertionCallbackManaged(string contents, string origin, global::Natrix.StdWeb.RTCIdentityProviderOptions options);
 
-public partial class GenerateAssertionCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class GenerateAssertionCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<GenerateAssertionCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GenerateAssertionCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GenerateAssertionCallback global::Natrix.JSCore.IJSObjectProxy<GenerateAssertionCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GenerateAssertionCallback(GenerateAssertionCallbackManaged input): this(ToJSObject(input))
@@ -64,10 +68,10 @@ public partial class GenerateAssertionCallback: global::Natrix.JSCore.JSObjectPr
             global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunction(JSObject, null, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
             // Return Value
-            global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RTCIdentityAssertionResult, global::Natrix.StdWeb.PropertyAccessor> ___res_2;
+            global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RTCIdentityAssertionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIdentityAssertionResult>> ___res_2;
             global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_7;
             ___propObject_7 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(___resOwner_1.JSObject, "value");
-            ___res_2 = new global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RTCIdentityAssertionResult, global::Natrix.StdWeb.PropertyAccessor>(___propObject_7);
+            ___res_2 = new global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RTCIdentityAssertionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIdentityAssertionResult>>(___propObject_7);
             return ___res_2;
         };
         return true;
@@ -96,7 +100,7 @@ public partial class GenerateAssertionCallback: global::Natrix.JSCore.JSObjectPr
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___res_7 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(___args_0, 2);
                 ___arg_6 = new global::Natrix.StdWeb.RTCIdentityProviderOptions(___res_7);
 
-                global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RTCIdentityAssertionResult, global::Natrix.StdWeb.PropertyAccessor> ___managedRes_10 = input(___arg_2, ___arg_4, ___arg_6);
+                global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RTCIdentityAssertionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIdentityAssertionResult>> ___managedRes_10 = input(___arg_2, ___arg_4, ___arg_6);
 
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_11 = ___managedRes_10.JSObject;
                 global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___res_9, "value", ___propObject_11);

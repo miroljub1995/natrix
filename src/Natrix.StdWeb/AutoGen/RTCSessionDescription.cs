@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCSessionDescription: global::Natrix.JSCore.JSObjectProxy
+public partial class RTCSessionDescription: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<RTCSessionDescription>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCSessionDescription(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCSessionDescription global::Natrix.JSCore.IJSObjectProxy<RTCSessionDescription>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<RTCSessionDescription>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.RTCSessionDescription New(global::Natrix.StdWeb.RTCSessionDescriptionInit descriptionInitDict)
@@ -30,13 +34,13 @@ public partial class RTCSessionDescription: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCSdpType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCSdpType, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "type");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCSdpType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCSdpType>>(JSObject, "type");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Sdp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "sdp");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "sdp");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -47,7 +51,7 @@ public partial class RTCSessionDescription: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toJSON", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCSessionDescriptionInit, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCSessionDescriptionInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCSessionDescriptionInit>>(___resOwner_1.JSObject, "value");
     }
 }
 

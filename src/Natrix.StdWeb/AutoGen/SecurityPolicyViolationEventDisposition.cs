@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class SecurityPolicyViolationEventDisposition
+public sealed partial class SecurityPolicyViolationEventDisposition: global::Natrix.JSCore.IJSEnum<SecurityPolicyViolationEventDisposition>
 {
     private readonly string _value;
 

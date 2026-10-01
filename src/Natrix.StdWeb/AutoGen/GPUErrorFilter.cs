@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUErrorFilter
+public sealed partial class GPUErrorFilter: global::Natrix.JSCore.IJSEnum<GPUErrorFilter>
 {
     private readonly string _value;
 

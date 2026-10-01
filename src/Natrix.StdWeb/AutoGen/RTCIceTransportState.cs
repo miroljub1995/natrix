@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCIceTransportState
+public sealed partial class RTCIceTransportState: global::Natrix.JSCore.IJSEnum<RTCIceTransportState>
 {
     private readonly string _value;
 

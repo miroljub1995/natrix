@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RemoteDocument, global::Natrix.StdWeb.PropertyAccessor> LoadDocumentCallbackManaged(string url, global::Natrix.StdWeb.LoadDocumentOptions options);
+public delegate global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RemoteDocument, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RemoteDocument>> LoadDocumentCallbackManaged(string url, global::Natrix.StdWeb.LoadDocumentOptions options);
 
-public partial class LoadDocumentCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class LoadDocumentCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<LoadDocumentCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public LoadDocumentCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static LoadDocumentCallback global::Natrix.JSCore.IJSObjectProxy<LoadDocumentCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public LoadDocumentCallback(LoadDocumentCallbackManaged input): this(ToJSObject(input))
@@ -59,10 +63,10 @@ public partial class LoadDocumentCallback: global::Natrix.JSCore.JSObjectProxy
             global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunction(JSObject, null, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
             // Return Value
-            global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RemoteDocument, global::Natrix.StdWeb.PropertyAccessor> ___res_2;
+            global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RemoteDocument, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RemoteDocument>> ___res_2;
             global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_6;
             ___propObject_6 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(___resOwner_1.JSObject, "value");
-            ___res_2 = new global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RemoteDocument, global::Natrix.StdWeb.PropertyAccessor>(___propObject_6);
+            ___res_2 = new global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RemoteDocument, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RemoteDocument>>(___propObject_6);
             return ___res_2;
         };
         return true;
@@ -86,7 +90,7 @@ public partial class LoadDocumentCallback: global::Natrix.JSCore.JSObjectProxy
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___res_5 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(___args_0, 1);
                 ___arg_4 = new global::Natrix.StdWeb.LoadDocumentOptions(___res_5);
 
-                global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RemoteDocument, global::Natrix.StdWeb.PropertyAccessor> ___managedRes_8 = input(___arg_2, ___arg_4);
+                global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RemoteDocument, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RemoteDocument>> ___managedRes_8 = input(___arg_2, ___arg_4);
 
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_9 = ___managedRes_8.JSObject;
                 global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___res_7, "value", ___propObject_9);

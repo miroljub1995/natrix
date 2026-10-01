@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class IdentityCredentialError: global::Natrix.StdWeb.DOMException
+public partial class IdentityCredentialError: global::Natrix.StdWeb.DOMException, global::Natrix.JSCore.IJSObjectProxy<IdentityCredentialError>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public IdentityCredentialError(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static IdentityCredentialError global::Natrix.JSCore.IJSObjectProxy<IdentityCredentialError>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<IdentityCredentialError>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.IdentityCredentialError New()
@@ -58,13 +62,13 @@ public partial class IdentityCredentialError: global::Natrix.StdWeb.DOMException
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "error");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "error");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "url");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url");
     }
 }
 

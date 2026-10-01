@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MIDIConnectionEventInit: global::Natrix.StdWeb.EventInit
+public partial class MIDIConnectionEventInit: global::Natrix.StdWeb.EventInit, global::Natrix.JSCore.IJSObjectProxy<MIDIConnectionEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class MIDIConnectionEventInit: global::Natrix.StdWeb.EventInit
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MIDIConnectionEventInit global::Natrix.JSCore.IJSObjectProxy<MIDIConnectionEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MIDIConnectionEventInit(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class MIDIConnectionEventInit: global::Natrix.StdWeb.EventInit
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MIDIPort Port
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MIDIPort, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "port");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MIDIPort, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "port", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MIDIPort, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MIDIPort>>(JSObject, "port");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MIDIPort, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MIDIPort>>(JSObject, "port", value);
     }
 }
 

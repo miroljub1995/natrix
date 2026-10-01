@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MediaKeyMessageType
+public sealed partial class MediaKeyMessageType: global::Natrix.JSCore.IJSEnum<MediaKeyMessageType>
 {
     private readonly string _value;
 

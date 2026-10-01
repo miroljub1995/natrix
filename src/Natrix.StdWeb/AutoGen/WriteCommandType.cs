@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class WriteCommandType
+public sealed partial class WriteCommandType: global::Natrix.JSCore.IJSEnum<WriteCommandType>
 {
     private readonly string _value;
 

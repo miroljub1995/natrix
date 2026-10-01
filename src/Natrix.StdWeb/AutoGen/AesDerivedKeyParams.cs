@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class AesDerivedKeyParams: global::Natrix.StdWeb.Algorithm
+public partial class AesDerivedKeyParams: global::Natrix.StdWeb.Algorithm, global::Natrix.JSCore.IJSObjectProxy<AesDerivedKeyParams>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class AesDerivedKeyParams: global::Natrix.StdWeb.Algorithm
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static AesDerivedKeyParams global::Natrix.JSCore.IJSObjectProxy<AesDerivedKeyParams>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AesDerivedKeyParams(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class AesDerivedKeyParams: global::Natrix.StdWeb.Algorithm
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ushort Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "length");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "length", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "length");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "length", value);
     }
 }
 

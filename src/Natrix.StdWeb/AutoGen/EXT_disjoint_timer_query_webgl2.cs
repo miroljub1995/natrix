@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class EXT_disjoint_timer_query_webgl2: global::Natrix.JSCore.JSObjectProxy
+public partial class EXT_disjoint_timer_query_webgl2: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<EXT_disjoint_timer_query_webgl2>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public EXT_disjoint_timer_query_webgl2(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static EXT_disjoint_timer_query_webgl2 global::Natrix.JSCore.IJSObjectProxy<EXT_disjoint_timer_query_webgl2>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<EXT_disjoint_timer_query_webgl2>(obj);
 
     public const uint QUERY_COUNTER_BITS_EXT = 0x8864;
 

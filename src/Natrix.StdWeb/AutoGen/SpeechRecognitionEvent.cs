@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SpeechRecognitionEvent: global::Natrix.StdWeb.Event
+public partial class SpeechRecognitionEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<SpeechRecognitionEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SpeechRecognitionEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SpeechRecognitionEvent global::Natrix.JSCore.IJSObjectProxy<SpeechRecognitionEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<SpeechRecognitionEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.SpeechRecognitionEvent New(string type, global::Natrix.StdWeb.SpeechRecognitionEventInit eventInitDict)
@@ -35,13 +39,13 @@ public partial class SpeechRecognitionEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ResultIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "resultIndex");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "resultIndex");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SpeechRecognitionResultList Results
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpeechRecognitionResultList, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "results");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpeechRecognitionResultList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechRecognitionResultList>>(JSObject, "results");
     }
 }
 

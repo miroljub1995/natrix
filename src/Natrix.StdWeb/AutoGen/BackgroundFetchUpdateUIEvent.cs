@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class BackgroundFetchUpdateUIEvent: global::Natrix.StdWeb.BackgroundFetchEvent
+public partial class BackgroundFetchUpdateUIEvent: global::Natrix.StdWeb.BackgroundFetchEvent, global::Natrix.JSCore.IJSObjectProxy<BackgroundFetchUpdateUIEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public BackgroundFetchUpdateUIEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static BackgroundFetchUpdateUIEvent global::Natrix.JSCore.IJSObjectProxy<BackgroundFetchUpdateUIEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<BackgroundFetchUpdateUIEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.BackgroundFetchUpdateUIEvent New(string type, global::Natrix.StdWeb.BackgroundFetchEventInit init)
@@ -40,7 +44,7 @@ public partial class BackgroundFetchUpdateUIEvent: global::Natrix.StdWeb.Backgro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "updateUI", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -60,7 +64,7 @@ public partial class BackgroundFetchUpdateUIEvent: global::Natrix.StdWeb.Backgro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "updateUI", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
     }
 }
 

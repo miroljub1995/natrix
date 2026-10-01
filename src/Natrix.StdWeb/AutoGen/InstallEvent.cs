@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class InstallEvent: global::Natrix.StdWeb.ExtendableEvent
+public partial class InstallEvent: global::Natrix.StdWeb.ExtendableEvent, global::Natrix.JSCore.IJSObjectProxy<InstallEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public InstallEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static InstallEvent global::Natrix.JSCore.IJSObjectProxy<InstallEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<InstallEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.InstallEvent New(string type)
@@ -49,7 +53,7 @@ public partial class InstallEvent: global::Natrix.StdWeb.ExtendableEvent
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Promise AddRoutes(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RouterRule, global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RouterRule, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.GenericMarshaller.Union> rules)
+    public global::Natrix.JSCore.Promise AddRoutes(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RouterRule, global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RouterRule, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterRule>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterRule>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RouterRule, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterRule>>>> rules)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -64,7 +68,7 @@ public partial class InstallEvent: global::Natrix.StdWeb.ExtendableEvent
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "addRoutes", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
     }
 }
 

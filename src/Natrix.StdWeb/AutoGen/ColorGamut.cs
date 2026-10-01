@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ColorGamut
+public sealed partial class ColorGamut: global::Natrix.JSCore.IJSEnum<ColorGamut>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class USBTransferStatus
+public sealed partial class USBTransferStatus: global::Natrix.JSCore.IJSEnum<USBTransferStatus>
 {
     private readonly string _value;
 

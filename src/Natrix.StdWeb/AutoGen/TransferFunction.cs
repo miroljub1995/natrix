@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class TransferFunction
+public sealed partial class TransferFunction: global::Natrix.JSCore.IJSEnum<TransferFunction>
 {
     private readonly string _value;
 

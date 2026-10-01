@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class GamepadEvent: global::Natrix.StdWeb.Event
+public partial class GamepadEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<GamepadEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GamepadEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GamepadEvent global::Natrix.JSCore.IJSObjectProxy<GamepadEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<GamepadEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.GamepadEvent New(string type)
@@ -51,7 +55,7 @@ public partial class GamepadEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Gamepad Gamepad
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Gamepad, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "gamepad");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Gamepad, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Gamepad>>(JSObject, "gamepad");
     }
 }
 

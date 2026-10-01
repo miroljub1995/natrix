@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class LayoutOptions: global::Natrix.JSCore.JSObjectProxy
+public partial class LayoutOptions: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<LayoutOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class LayoutOptions: global::Natrix.JSCore.JSObjectProxy
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static LayoutOptions global::Natrix.JSCore.IJSObjectProxy<LayoutOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public LayoutOptions(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,15 +26,15 @@ public partial class LayoutOptions: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ChildDisplayType ChildDisplay
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ChildDisplayType, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "childDisplay");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ChildDisplayType, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "childDisplay", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ChildDisplayType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChildDisplayType>>(JSObject, "childDisplay");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ChildDisplayType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChildDisplayType>>(JSObject, "childDisplay", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.LayoutSizingMode Sizing
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.LayoutSizingMode, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "sizing");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.LayoutSizingMode, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "sizing", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.LayoutSizingMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LayoutSizingMode>>(JSObject, "sizing");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.LayoutSizingMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LayoutSizingMode>>(JSObject, "sizing", value);
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class IDBVersionChangeEventInit: global::Natrix.StdWeb.EventInit
+public partial class IDBVersionChangeEventInit: global::Natrix.StdWeb.EventInit, global::Natrix.JSCore.IJSObjectProxy<IDBVersionChangeEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class IDBVersionChangeEventInit: global::Natrix.StdWeb.EventInit
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static IDBVersionChangeEventInit global::Natrix.JSCore.IJSObjectProxy<IDBVersionChangeEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public IDBVersionChangeEventInit(): base()
     {
     }
@@ -22,15 +26,15 @@ public partial class IDBVersionChangeEventInit: global::Natrix.StdWeb.EventInit
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong OldVersion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "oldVersion");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "oldVersion", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "oldVersion");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "oldVersion", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong? NewVersion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "newVersion");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "newVersion", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor>(JSObject, "newVersion");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor>(JSObject, "newVersion", value);
     }
 }
 

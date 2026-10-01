@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class Availability
+public sealed partial class Availability: global::Natrix.JSCore.IJSEnum<Availability>
 {
     private readonly string _value;
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class USBIsochronousInTransferPacket: global::Natrix.JSCore.JSObjectProxy
+public partial class USBIsochronousInTransferPacket: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<USBIsochronousInTransferPacket>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public USBIsochronousInTransferPacket(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static USBIsochronousInTransferPacket global::Natrix.JSCore.IJSObjectProxy<USBIsochronousInTransferPacket>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<USBIsochronousInTransferPacket>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.USBIsochronousInTransferPacket New(global::Natrix.StdWeb.USBTransferStatus status)
@@ -59,13 +63,13 @@ public partial class USBIsochronousInTransferPacket: global::Natrix.JSCore.JSObj
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.DataView? Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.DataView?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.DataView?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.DataView>>(JSObject, "data");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.USBTransferStatus Status
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBTransferStatus, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "status");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBTransferStatus, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBTransferStatus>>(JSObject, "status");
     }
 }
 

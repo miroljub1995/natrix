@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PaymentRequestUpdateEvent: global::Natrix.StdWeb.Event
+public partial class PaymentRequestUpdateEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<PaymentRequestUpdateEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PaymentRequestUpdateEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PaymentRequestUpdateEvent global::Natrix.JSCore.IJSObjectProxy<PaymentRequestUpdateEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PaymentRequestUpdateEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.PaymentRequestUpdateEvent New(string type)
@@ -49,7 +53,7 @@ public partial class PaymentRequestUpdateEvent: global::Natrix.StdWeb.Event
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void UpdateWith(global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentDetailsUpdate, global::Natrix.StdWeb.PropertyAccessor> detailsPromise)
+    public void UpdateWith(global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentDetailsUpdate, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentDetailsUpdate>> detailsPromise)
     {
         int ___argsArrayLength_2 = 1;
 

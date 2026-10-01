@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate global::Natrix.JSCore.Promise RefillCallbackManaged();
 
-public partial class RefillCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class RefillCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<RefillCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RefillCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RefillCallback global::Natrix.JSCore.IJSObjectProxy<RefillCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RefillCallback(RefillCallbackManaged input): this(ToJSObject(input))

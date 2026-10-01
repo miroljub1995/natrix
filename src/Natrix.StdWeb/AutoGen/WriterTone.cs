@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class WriterTone
+public sealed partial class WriterTone: global::Natrix.JSCore.IJSEnum<WriterTone>
 {
     private readonly string _value;
 

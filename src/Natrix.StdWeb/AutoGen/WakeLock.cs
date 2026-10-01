@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WakeLock: global::Natrix.JSCore.JSObjectProxy
+public partial class WakeLock: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<WakeLock>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WakeLock(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,18 +12,22 @@ public partial class WakeLock: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WakeLockSentinel, global::Natrix.StdWeb.PropertyAccessor> Request()
+    static WakeLock global::Natrix.JSCore.IJSObjectProxy<WakeLock>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WakeLock>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WakeLockSentinel, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WakeLockSentinel>> Request()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "request", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WakeLockSentinel, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WakeLockSentinel, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WakeLockSentinel>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WakeLockSentinel, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WakeLockSentinel>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WakeLockSentinel, global::Natrix.StdWeb.PropertyAccessor> Request(global::Natrix.StdWeb.WakeLockType type)
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WakeLockSentinel, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WakeLockSentinel>> Request(global::Natrix.StdWeb.WakeLockType type)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -39,7 +43,7 @@ public partial class WakeLock: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "request", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WakeLockSentinel, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WakeLockSentinel, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WakeLockSentinel>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WakeLockSentinel, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WakeLockSentinel>>>>(___resOwner_1.JSObject, "value");
     }
 }
 

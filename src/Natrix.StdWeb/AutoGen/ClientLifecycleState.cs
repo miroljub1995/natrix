@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ClientLifecycleState
+public sealed partial class ClientLifecycleState: global::Natrix.JSCore.IJSEnum<ClientLifecycleState>
 {
     private readonly string _value;
 

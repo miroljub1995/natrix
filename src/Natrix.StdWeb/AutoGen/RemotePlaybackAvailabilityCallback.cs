@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void RemotePlaybackAvailabilityCallbackManaged(bool available);
 
-public partial class RemotePlaybackAvailabilityCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class RemotePlaybackAvailabilityCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<RemotePlaybackAvailabilityCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RemotePlaybackAvailabilityCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RemotePlaybackAvailabilityCallback global::Natrix.JSCore.IJSObjectProxy<RemotePlaybackAvailabilityCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RemotePlaybackAvailabilityCallback(RemotePlaybackAvailabilityCallbackManaged input): this(ToJSObject(input))

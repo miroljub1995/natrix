@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class OpusApplication
+public sealed partial class OpusApplication: global::Natrix.JSCore.IJSEnum<OpusApplication>
 {
     private readonly string _value;
 

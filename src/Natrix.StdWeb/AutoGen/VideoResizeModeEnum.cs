@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class VideoResizeModeEnum
+public sealed partial class VideoResizeModeEnum: global::Natrix.JSCore.IJSEnum<VideoResizeModeEnum>
 {
     private readonly string _value;
 

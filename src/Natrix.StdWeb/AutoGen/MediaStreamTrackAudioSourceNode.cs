@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MediaStreamTrackAudioSourceNode: global::Natrix.StdWeb.AudioNode
+public partial class MediaStreamTrackAudioSourceNode: global::Natrix.StdWeb.AudioNode, global::Natrix.JSCore.IJSObjectProxy<MediaStreamTrackAudioSourceNode>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MediaStreamTrackAudioSourceNode(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MediaStreamTrackAudioSourceNode global::Natrix.JSCore.IJSObjectProxy<MediaStreamTrackAudioSourceNode>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<MediaStreamTrackAudioSourceNode>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.MediaStreamTrackAudioSourceNode New(global::Natrix.StdWeb.AudioContext context, global::Natrix.StdWeb.MediaStreamTrackAudioSourceOptions options)

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PlaybackDirection
+public sealed partial class PlaybackDirection: global::Natrix.JSCore.IJSEnum<PlaybackDirection>
 {
     private readonly string _value;
 

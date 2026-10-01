@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class DisplayCaptureSurfaceType
+public sealed partial class DisplayCaptureSurfaceType: global::Natrix.JSCore.IJSEnum<DisplayCaptureSurfaceType>
 {
     private readonly string _value;
 

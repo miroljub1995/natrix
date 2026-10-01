@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class FullscreenNavigationUI
+public sealed partial class FullscreenNavigationUI: global::Natrix.JSCore.IJSEnum<FullscreenNavigationUI>
 {
     private readonly string _value;
 

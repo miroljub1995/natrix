@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class VideoMatrixCoefficients
+public sealed partial class VideoMatrixCoefficients: global::Natrix.JSCore.IJSEnum<VideoMatrixCoefficients>
 {
     private readonly string _value;
 

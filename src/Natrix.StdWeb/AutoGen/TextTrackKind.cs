@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class TextTrackKind
+public sealed partial class TextTrackKind: global::Natrix.JSCore.IJSEnum<TextTrackKind>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class TableKind
+public sealed partial class TableKind: global::Natrix.JSCore.IJSEnum<TableKind>
 {
     private readonly string _value;
 

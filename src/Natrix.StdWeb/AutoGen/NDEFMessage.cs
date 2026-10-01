@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class NDEFMessage: global::Natrix.JSCore.JSObjectProxy
+public partial class NDEFMessage: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<NDEFMessage>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NDEFMessage(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NDEFMessage global::Natrix.JSCore.IJSObjectProxy<NDEFMessage>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<NDEFMessage>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.NDEFMessage New(global::Natrix.StdWeb.NDEFMessageInit messageInit)
@@ -28,9 +32,9 @@ public partial class NDEFMessage: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NDEFRecord, global::Natrix.StdWeb.PropertyAccessor> Records
+    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NDEFRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecord>> Records
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NDEFRecord, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "records");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NDEFRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NDEFRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecord>>>>(JSObject, "records");
     }
 }
 

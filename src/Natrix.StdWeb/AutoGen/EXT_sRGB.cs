@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class EXT_sRGB: global::Natrix.JSCore.JSObjectProxy
+public partial class EXT_sRGB: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<EXT_sRGB>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public EXT_sRGB(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static EXT_sRGB global::Natrix.JSCore.IJSObjectProxy<EXT_sRGB>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<EXT_sRGB>(obj);
 
     public const uint SRGB_EXT = 0x8C40;
 

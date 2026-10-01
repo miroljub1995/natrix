@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MonitorTypeSurfacesEnum
+public sealed partial class MonitorTypeSurfacesEnum: global::Natrix.JSCore.IJSEnum<MonitorTypeSurfacesEnum>
 {
     private readonly string _value;
 

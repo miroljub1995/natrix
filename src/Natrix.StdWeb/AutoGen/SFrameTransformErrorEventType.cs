@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class SFrameTransformErrorEventType
+public sealed partial class SFrameTransformErrorEventType: global::Natrix.JSCore.IJSEnum<SFrameTransformErrorEventType>
 {
     private readonly string _value;
 

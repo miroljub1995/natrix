@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRHandJoint
+public sealed partial class XRHandJoint: global::Natrix.JSCore.IJSEnum<XRHandJoint>
 {
     private readonly string _value;
 

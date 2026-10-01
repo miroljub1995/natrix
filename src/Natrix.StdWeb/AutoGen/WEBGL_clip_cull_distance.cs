@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WEBGL_clip_cull_distance: global::Natrix.JSCore.JSObjectProxy
+public partial class WEBGL_clip_cull_distance: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<WEBGL_clip_cull_distance>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WEBGL_clip_cull_distance(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WEBGL_clip_cull_distance global::Natrix.JSCore.IJSObjectProxy<WEBGL_clip_cull_distance>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WEBGL_clip_cull_distance>(obj);
 
     public const uint MAX_CLIP_DISTANCES_WEBGL = 0x0D32;
 

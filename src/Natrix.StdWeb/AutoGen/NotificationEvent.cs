@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class NotificationEvent: global::Natrix.StdWeb.ExtendableEvent
+public partial class NotificationEvent: global::Natrix.StdWeb.ExtendableEvent, global::Natrix.JSCore.IJSObjectProxy<NotificationEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NotificationEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NotificationEvent global::Natrix.JSCore.IJSObjectProxy<NotificationEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<NotificationEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.NotificationEvent New(string type, global::Natrix.StdWeb.NotificationEventInit eventInitDict)
@@ -35,13 +39,13 @@ public partial class NotificationEvent: global::Natrix.StdWeb.ExtendableEvent
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Notification Notification
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Notification, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "notification");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Notification, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Notification>>(JSObject, "notification");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Action
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "action");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "action");
     }
 }
 

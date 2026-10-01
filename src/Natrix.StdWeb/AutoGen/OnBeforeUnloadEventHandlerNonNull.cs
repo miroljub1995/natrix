@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate string? OnBeforeUnloadEventHandlerNonNullManaged(global::Natrix.StdWeb.Event @event);
 
-public partial class OnBeforeUnloadEventHandlerNonNull: global::Natrix.JSCore.JSObjectProxy
+public partial class OnBeforeUnloadEventHandlerNonNull: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<OnBeforeUnloadEventHandlerNonNull>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public OnBeforeUnloadEventHandlerNonNull(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static OnBeforeUnloadEventHandlerNonNull global::Natrix.JSCore.IJSObjectProxy<OnBeforeUnloadEventHandlerNonNull>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public OnBeforeUnloadEventHandlerNonNull(OnBeforeUnloadEventHandlerNonNullManaged input): this(ToJSObject(input))

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUTextureAspect
+public sealed partial class GPUTextureAspect: global::Natrix.JSCore.IJSEnum<GPUTextureAspect>
 {
     private readonly string _value;
 

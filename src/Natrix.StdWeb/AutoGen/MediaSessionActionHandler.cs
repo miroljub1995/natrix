@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void MediaSessionActionHandlerManaged(global::Natrix.StdWeb.MediaSessionActionDetails details);
 
-public partial class MediaSessionActionHandler: global::Natrix.JSCore.JSObjectProxy
+public partial class MediaSessionActionHandler: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<MediaSessionActionHandler>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MediaSessionActionHandler(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MediaSessionActionHandler global::Natrix.JSCore.IJSObjectProxy<MediaSessionActionHandler>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MediaSessionActionHandler(MediaSessionActionHandlerManaged input): this(ToJSObject(input))

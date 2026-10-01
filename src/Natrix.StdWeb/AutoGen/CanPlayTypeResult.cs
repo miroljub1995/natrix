@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CanPlayTypeResult
+public sealed partial class CanPlayTypeResult: global::Natrix.JSCore.IJSEnum<CanPlayTypeResult>
 {
     private readonly string _value;
 

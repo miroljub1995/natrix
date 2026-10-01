@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RsaPssParams: global::Natrix.StdWeb.Algorithm
+public partial class RsaPssParams: global::Natrix.StdWeb.Algorithm, global::Natrix.JSCore.IJSObjectProxy<RsaPssParams>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class RsaPssParams: global::Natrix.StdWeb.Algorithm
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RsaPssParams global::Natrix.JSCore.IJSObjectProxy<RsaPssParams>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RsaPssParams(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class RsaPssParams: global::Natrix.StdWeb.Algorithm
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint SaltLength
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "saltLength");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "saltLength", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "saltLength");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "saltLength", value);
     }
 }
 

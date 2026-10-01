@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void SubscribeCallbackManaged(global::Natrix.StdWeb.Subscriber subscriber);
 
-public partial class SubscribeCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class SubscribeCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<SubscribeCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SubscribeCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SubscribeCallback global::Natrix.JSCore.IJSObjectProxy<SubscribeCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SubscribeCallback(SubscribeCallbackManaged input): this(ToJSObject(input))

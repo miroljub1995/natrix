@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ConstantSourceNode: global::Natrix.StdWeb.AudioScheduledSourceNode
+public partial class ConstantSourceNode: global::Natrix.StdWeb.AudioScheduledSourceNode, global::Natrix.JSCore.IJSObjectProxy<ConstantSourceNode>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ConstantSourceNode(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ConstantSourceNode global::Natrix.JSCore.IJSObjectProxy<ConstantSourceNode>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ConstantSourceNode>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.ConstantSourceNode New(global::Natrix.StdWeb.BaseAudioContext context)
@@ -51,7 +55,7 @@ public partial class ConstantSourceNode: global::Natrix.StdWeb.AudioScheduledSou
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioParam Offset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioParam, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "offset");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioParam, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>>(JSObject, "offset");
     }
 }
 

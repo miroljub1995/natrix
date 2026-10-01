@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CompressionFormat
+public sealed partial class CompressionFormat: global::Natrix.JSCore.IJSEnum<CompressionFormat>
 {
     private readonly string _value;
 

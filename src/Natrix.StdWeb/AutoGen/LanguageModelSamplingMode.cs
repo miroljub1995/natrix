@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class LanguageModelSamplingMode
+public sealed partial class LanguageModelSamplingMode: global::Natrix.JSCore.IJSEnum<LanguageModelSamplingMode>
 {
     private readonly string _value;
 

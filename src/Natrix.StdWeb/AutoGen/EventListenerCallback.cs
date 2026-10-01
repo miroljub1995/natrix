@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void EventListenerCallbackManaged(global::Natrix.StdWeb.Event @event);
 
-public partial class EventListenerCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class EventListenerCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<EventListenerCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public EventListenerCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static EventListenerCallback global::Natrix.JSCore.IJSObjectProxy<EventListenerCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public EventListenerCallback(EventListenerCallbackManaged input): this(ToJSObject(input))

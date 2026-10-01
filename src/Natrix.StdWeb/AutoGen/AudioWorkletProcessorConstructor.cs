@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate global::Natrix.StdWeb.AudioWorkletProcessor AudioWorkletProcessorConstructorManaged(global::System.Runtime.InteropServices.JavaScript.JSObject options);
 
-public partial class AudioWorkletProcessorConstructor: global::Natrix.JSCore.JSObjectProxy
+public partial class AudioWorkletProcessorConstructor: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<AudioWorkletProcessorConstructor>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AudioWorkletProcessorConstructor(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static AudioWorkletProcessorConstructor global::Natrix.JSCore.IJSObjectProxy<AudioWorkletProcessorConstructor>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AudioWorkletProcessorConstructor(AudioWorkletProcessorConstructorManaged input): this(ToJSObject(input))

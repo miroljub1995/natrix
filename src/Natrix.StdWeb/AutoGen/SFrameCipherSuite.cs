@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class SFrameCipherSuite
+public sealed partial class SFrameCipherSuite: global::Natrix.JSCore.IJSEnum<SFrameCipherSuite>
 {
     private readonly string _value;
 

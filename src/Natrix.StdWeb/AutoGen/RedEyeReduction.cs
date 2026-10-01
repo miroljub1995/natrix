@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RedEyeReduction
+public sealed partial class RedEyeReduction: global::Natrix.JSCore.IJSEnum<RedEyeReduction>
 {
     private readonly string _value;
 

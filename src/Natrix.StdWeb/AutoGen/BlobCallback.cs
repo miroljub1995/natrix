@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void BlobCallbackManaged(global::Natrix.StdWeb.Blob? blob);
 
-public partial class BlobCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class BlobCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<BlobCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public BlobCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static BlobCallback global::Natrix.JSCore.IJSObjectProxy<BlobCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public BlobCallback(BlobCallbackManaged input): this(ToJSObject(input))

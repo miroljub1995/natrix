@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SensorErrorEventInit: global::Natrix.StdWeb.EventInit
+public partial class SensorErrorEventInit: global::Natrix.StdWeb.EventInit, global::Natrix.JSCore.IJSObjectProxy<SensorErrorEventInit>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class SensorErrorEventInit: global::Natrix.StdWeb.EventInit
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SensorErrorEventInit global::Natrix.JSCore.IJSObjectProxy<SensorErrorEventInit>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SensorErrorEventInit(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class SensorErrorEventInit: global::Natrix.StdWeb.EventInit
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.DOMException Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMException, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "error");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMException, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "error", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMException, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMException>>(JSObject, "error");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMException, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMException>>(JSObject, "error", value);
     }
 }
 

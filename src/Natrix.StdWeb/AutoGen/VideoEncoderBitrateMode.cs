@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class VideoEncoderBitrateMode
+public sealed partial class VideoEncoderBitrateMode: global::Natrix.JSCore.IJSEnum<VideoEncoderBitrateMode>
 {
     private readonly string _value;
 

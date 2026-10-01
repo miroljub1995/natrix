@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SubmitEvent: global::Natrix.StdWeb.Event
+public partial class SubmitEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<SubmitEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SubmitEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SubmitEvent global::Natrix.JSCore.IJSObjectProxy<SubmitEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<SubmitEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.SubmitEvent New(string type)
@@ -51,7 +55,7 @@ public partial class SubmitEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HTMLElement? Submitter
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLElement?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "submitter");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLElement?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.HTMLElement>>(JSObject, "submitter");
     }
 }
 

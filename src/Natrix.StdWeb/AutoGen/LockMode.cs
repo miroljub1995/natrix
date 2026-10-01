@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class LockMode
+public sealed partial class LockMode: global::Natrix.JSCore.IJSEnum<LockMode>
 {
     private readonly string _value;
 

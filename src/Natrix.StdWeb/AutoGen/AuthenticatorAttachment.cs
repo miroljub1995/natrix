@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AuthenticatorAttachment
+public sealed partial class AuthenticatorAttachment: global::Natrix.JSCore.IJSEnum<AuthenticatorAttachment>
 {
     private readonly string _value;
 

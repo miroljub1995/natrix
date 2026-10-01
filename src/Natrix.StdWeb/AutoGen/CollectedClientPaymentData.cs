@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CollectedClientPaymentData: global::Natrix.StdWeb.CollectedClientData
+public partial class CollectedClientPaymentData: global::Natrix.StdWeb.CollectedClientData, global::Natrix.JSCore.IJSObjectProxy<CollectedClientPaymentData>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,15 +15,19 @@ public partial class CollectedClientPaymentData: global::Natrix.StdWeb.Collected
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CollectedClientPaymentData global::Natrix.JSCore.IJSObjectProxy<CollectedClientPaymentData>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CollectedClientPaymentData(): base()
     {
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public required global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CollectedClientAdditionalPaymentData, global::Natrix.StdWeb.CollectedClientAdditionalPaymentRegistrationData, global::Natrix.StdWeb.GenericMarshaller.Union> Payment
+    public required global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CollectedClientAdditionalPaymentData, global::Natrix.StdWeb.CollectedClientAdditionalPaymentRegistrationData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CollectedClientAdditionalPaymentData>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CollectedClientAdditionalPaymentRegistrationData>> Payment
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CollectedClientAdditionalPaymentData, global::Natrix.StdWeb.CollectedClientAdditionalPaymentRegistrationData, global::Natrix.StdWeb.GenericMarshaller.Union>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "payment");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CollectedClientAdditionalPaymentData, global::Natrix.StdWeb.CollectedClientAdditionalPaymentRegistrationData, global::Natrix.StdWeb.GenericMarshaller.Union>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "payment", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CollectedClientAdditionalPaymentData, global::Natrix.StdWeb.CollectedClientAdditionalPaymentRegistrationData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CollectedClientAdditionalPaymentData>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CollectedClientAdditionalPaymentRegistrationData>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CollectedClientAdditionalPaymentData, global::Natrix.StdWeb.CollectedClientAdditionalPaymentRegistrationData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CollectedClientAdditionalPaymentData>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CollectedClientAdditionalPaymentRegistrationData>>>>(JSObject, "payment");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CollectedClientAdditionalPaymentData, global::Natrix.StdWeb.CollectedClientAdditionalPaymentRegistrationData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CollectedClientAdditionalPaymentData>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CollectedClientAdditionalPaymentRegistrationData>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CollectedClientAdditionalPaymentData, global::Natrix.StdWeb.CollectedClientAdditionalPaymentRegistrationData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CollectedClientAdditionalPaymentData>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CollectedClientAdditionalPaymentRegistrationData>>>>(JSObject, "payment", value);
     }
 }
 

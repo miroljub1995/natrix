@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ReferrerPolicy
+public sealed partial class ReferrerPolicy: global::Natrix.JSCore.IJSEnum<ReferrerPolicy>
 {
     private readonly string _value;
 

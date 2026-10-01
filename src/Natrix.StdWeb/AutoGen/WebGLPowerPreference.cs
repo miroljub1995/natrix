@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class WebGLPowerPreference
+public sealed partial class WebGLPowerPreference: global::Natrix.JSCore.IJSEnum<WebGLPowerPreference>
 {
     private readonly string _value;
 

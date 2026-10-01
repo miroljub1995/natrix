@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PresentationConnectionAvailableEvent: global::Natrix.StdWeb.Event
+public partial class PresentationConnectionAvailableEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<PresentationConnectionAvailableEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PresentationConnectionAvailableEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PresentationConnectionAvailableEvent global::Natrix.JSCore.IJSObjectProxy<PresentationConnectionAvailableEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PresentationConnectionAvailableEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.PresentationConnectionAvailableEvent New(string type, global::Natrix.StdWeb.PresentationConnectionAvailableEventInit eventInitDict)
@@ -35,7 +39,7 @@ public partial class PresentationConnectionAvailableEvent: global::Natrix.StdWeb
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PresentationConnection Connection
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PresentationConnection, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "connection");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PresentationConnection, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PresentationConnection>>(JSObject, "connection");
     }
 }
 

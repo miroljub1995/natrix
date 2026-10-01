@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUAddressMode
+public sealed partial class GPUAddressMode: global::Natrix.JSCore.IJSEnum<GPUAddressMode>
 {
     private readonly string _value;
 

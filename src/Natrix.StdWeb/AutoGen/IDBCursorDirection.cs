@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class IDBCursorDirection
+public sealed partial class IDBCursorDirection: global::Natrix.JSCore.IJSEnum<IDBCursorDirection>
 {
     private readonly string _value;
 

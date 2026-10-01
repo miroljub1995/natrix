@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate bool AudioWorkletProcessCallbackManaged(global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> inputs, global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> outputs, global::System.Runtime.InteropServices.JavaScript.JSObject parameters);
+public delegate bool AudioWorkletProcessCallbackManaged(global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>>> inputs, global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>>> outputs, global::System.Runtime.InteropServices.JavaScript.JSObject parameters);
 
-public partial class AudioWorkletProcessCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class AudioWorkletProcessCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<AudioWorkletProcessCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AudioWorkletProcessCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static AudioWorkletProcessCallback global::Natrix.JSCore.IJSObjectProxy<AudioWorkletProcessCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AudioWorkletProcessCallback(AudioWorkletProcessCallbackManaged input): this(ToJSObject(input))
@@ -79,16 +83,16 @@ public partial class AudioWorkletProcessCallback: global::Natrix.JSCore.JSObject
             using (___res_9)
             {
                 // Argument 1
-                global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> ___arg_2;
+                global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>>> ___arg_2;
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_3;
                 ___propObject_3 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(___args_0, 0);
-                ___arg_2 = new global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___propObject_3);
+                ___arg_2 = new global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>>>(___propObject_3);
 
                 // Argument 2
-                global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor> ___arg_4;
+                global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>>> ___arg_4;
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_5;
                 ___propObject_5 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(___args_0, 1);
-                ___arg_4 = new global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___propObject_5);
+                ___arg_4 = new global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>>>(___propObject_5);
 
                 // Argument 3
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___arg_6;

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class FileSystemDirectoryEntry: global::Natrix.StdWeb.FileSystemEntry
+public partial class FileSystemDirectoryEntry: global::Natrix.StdWeb.FileSystemEntry, global::Natrix.JSCore.IJSObjectProxy<FileSystemDirectoryEntry>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FileSystemDirectoryEntry(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static FileSystemDirectoryEntry global::Natrix.JSCore.IJSObjectProxy<FileSystemDirectoryEntry>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<FileSystemDirectoryEntry>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FileSystemDirectoryReader CreateReader()
@@ -19,7 +23,7 @@ public partial class FileSystemDirectoryEntry: global::Natrix.StdWeb.FileSystemE
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "createReader", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FileSystemDirectoryReader, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FileSystemDirectoryReader, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemDirectoryReader>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AudioSampleFormat
+public sealed partial class AudioSampleFormat: global::Natrix.JSCore.IJSEnum<AudioSampleFormat>
 {
     private readonly string _value;
 

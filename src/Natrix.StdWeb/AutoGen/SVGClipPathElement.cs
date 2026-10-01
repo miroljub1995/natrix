@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SVGClipPathElement: global::Natrix.StdWeb.SVGElement
+public partial class SVGClipPathElement: global::Natrix.StdWeb.SVGElement, global::Natrix.JSCore.IJSObjectProxy<SVGClipPathElement>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SVGClipPathElement(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,15 +12,19 @@ public partial class SVGClipPathElement: global::Natrix.StdWeb.SVGElement
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SVGClipPathElement global::Natrix.JSCore.IJSObjectProxy<SVGClipPathElement>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<SVGClipPathElement>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGAnimatedEnumeration ClipPathUnits
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGAnimatedEnumeration, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "clipPathUnits");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGAnimatedEnumeration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGAnimatedEnumeration>>(JSObject, "clipPathUnits");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGAnimatedTransformList Transform
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGAnimatedTransformList, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "transform");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGAnimatedTransformList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGAnimatedTransformList>>(JSObject, "transform");
     }
 }
 

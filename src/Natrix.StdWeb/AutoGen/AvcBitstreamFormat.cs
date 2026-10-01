@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AvcBitstreamFormat
+public sealed partial class AvcBitstreamFormat: global::Natrix.JSCore.IJSEnum<AvcBitstreamFormat>
 {
     private readonly string _value;
 

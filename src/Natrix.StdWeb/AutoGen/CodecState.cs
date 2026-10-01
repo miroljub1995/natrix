@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CodecState
+public sealed partial class CodecState: global::Natrix.JSCore.IJSEnum<CodecState>
 {
     private readonly string _value;
 

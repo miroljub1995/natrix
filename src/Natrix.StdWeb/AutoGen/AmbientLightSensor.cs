@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class AmbientLightSensor: global::Natrix.StdWeb.Sensor
+public partial class AmbientLightSensor: global::Natrix.StdWeb.Sensor, global::Natrix.JSCore.IJSObjectProxy<AmbientLightSensor>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AmbientLightSensor(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static AmbientLightSensor global::Natrix.JSCore.IJSObjectProxy<AmbientLightSensor>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<AmbientLightSensor>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.AmbientLightSensor New()
@@ -37,7 +41,7 @@ public partial class AmbientLightSensor: global::Natrix.StdWeb.Sensor
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Illuminance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "illuminance");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "illuminance");
     }
 }
 

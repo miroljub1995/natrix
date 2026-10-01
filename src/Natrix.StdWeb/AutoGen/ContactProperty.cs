@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ContactProperty
+public sealed partial class ContactProperty: global::Natrix.JSCore.IJSEnum<ContactProperty>
 {
     private readonly string _value;
 

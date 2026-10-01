@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GamepadHapticsResult
+public sealed partial class GamepadHapticsResult: global::Natrix.JSCore.IJSEnum<GamepadHapticsResult>
 {
     private readonly string _value;
 

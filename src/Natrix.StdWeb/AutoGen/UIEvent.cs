@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class UIEvent: global::Natrix.StdWeb.Event
+public partial class UIEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<UIEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public UIEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,9 +12,13 @@ public partial class UIEvent: global::Natrix.StdWeb.Event
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static UIEvent global::Natrix.JSCore.IJSObjectProxy<UIEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<UIEvent>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.InputDeviceCapabilities? SourceCapabilities
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.InputDeviceCapabilities?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "sourceCapabilities");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.InputDeviceCapabilities?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.InputDeviceCapabilities>>(JSObject, "sourceCapabilities");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
@@ -57,13 +61,13 @@ public partial class UIEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Window? View
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Window?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "view");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Window?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Window>>(JSObject, "view");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Detail
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "detail");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "detail");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -210,7 +214,7 @@ public partial class UIEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Which
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "which");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "which");
     }
 }
 

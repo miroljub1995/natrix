@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RunAt
+public sealed partial class RunAt: global::Natrix.JSCore.IJSEnum<RunAt>
 {
     private readonly string _value;
 

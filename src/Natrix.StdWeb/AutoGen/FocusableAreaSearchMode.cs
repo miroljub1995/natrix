@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class FocusableAreaSearchMode
+public sealed partial class FocusableAreaSearchMode: global::Natrix.JSCore.IJSEnum<FocusableAreaSearchMode>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PremultiplyAlpha
+public sealed partial class PremultiplyAlpha: global::Natrix.JSCore.IJSEnum<PremultiplyAlpha>
 {
     private readonly string _value;
 

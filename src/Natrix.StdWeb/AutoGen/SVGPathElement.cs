@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SVGPathElement: global::Natrix.StdWeb.SVGGeometryElement
+public partial class SVGPathElement: global::Natrix.StdWeb.SVGGeometryElement, global::Natrix.JSCore.IJSObjectProxy<SVGPathElement>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SVGPathElement(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,9 +12,13 @@ public partial class SVGPathElement: global::Natrix.StdWeb.SVGGeometryElement
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SVGPathElement global::Natrix.JSCore.IJSObjectProxy<SVGPathElement>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<SVGPathElement>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGAnimatedNumber PathLength
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGAnimatedNumber, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "pathLength");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGAnimatedNumber, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGAnimatedNumber>>(JSObject, "pathLength");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -25,7 +29,7 @@ public partial class SVGPathElement: global::Natrix.StdWeb.SVGGeometryElement
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getTotalLength", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -45,7 +49,7 @@ public partial class SVGPathElement: global::Natrix.StdWeb.SVGGeometryElement
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getPointAtLength", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPoint, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPoint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPoint>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -65,22 +69,22 @@ public partial class SVGPathElement: global::Natrix.StdWeb.SVGGeometryElement
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getPathSegmentAtLength", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGPathSegment?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGPathSegment?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.SVGPathSegment>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SVGPathSegment, global::Natrix.StdWeb.PropertyAccessor> GetPathData()
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SVGPathSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGPathSegment>> GetPathData()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getPathData", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SVGPathSegment, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SVGPathSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGPathSegment>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SVGPathSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGPathSegment>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SVGPathSegment, global::Natrix.StdWeb.PropertyAccessor> GetPathData(global::Natrix.StdWeb.SVGPathDataSettings settings)
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SVGPathSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGPathSegment>> GetPathData(global::Natrix.StdWeb.SVGPathDataSettings settings)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -96,11 +100,11 @@ public partial class SVGPathElement: global::Natrix.StdWeb.SVGGeometryElement
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getPathData", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SVGPathSegment, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SVGPathSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGPathSegment>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SVGPathSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGPathSegment>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void SetPathData(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SVGPathSegment, global::Natrix.StdWeb.PropertyAccessor> pathData)
+    public void SetPathData(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SVGPathSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGPathSegment>> pathData)
     {
         int ___argsArrayLength_2 = 1;
 

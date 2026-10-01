@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ServiceWorkerUpdateViaCache
+public sealed partial class ServiceWorkerUpdateViaCache: global::Natrix.JSCore.IJSEnum<ServiceWorkerUpdateViaCache>
 {
     private readonly string _value;
 

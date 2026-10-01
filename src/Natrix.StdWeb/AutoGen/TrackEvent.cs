@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class TrackEvent: global::Natrix.StdWeb.Event
+public partial class TrackEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<TrackEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TrackEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TrackEvent global::Natrix.JSCore.IJSObjectProxy<TrackEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<TrackEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.TrackEvent New(string type)
@@ -49,9 +53,9 @@ public partial class TrackEvent: global::Natrix.StdWeb.Event
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.VideoTrack, global::Natrix.StdWeb.AudioTrack, global::Natrix.StdWeb.TextTrack, global::Natrix.StdWeb.GenericMarshaller.Union>? Track
+    public global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.VideoTrack, global::Natrix.StdWeb.AudioTrack, global::Natrix.StdWeb.TextTrack, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoTrack>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioTrack>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextTrack>>? Track
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.VideoTrack, global::Natrix.StdWeb.AudioTrack, global::Natrix.StdWeb.TextTrack, global::Natrix.StdWeb.GenericMarshaller.Union>?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "track");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.VideoTrack, global::Natrix.StdWeb.AudioTrack, global::Natrix.StdWeb.TextTrack, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoTrack>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioTrack>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextTrack>>?, global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.VideoTrack, global::Natrix.StdWeb.AudioTrack, global::Natrix.StdWeb.TextTrack, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoTrack>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioTrack>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextTrack>>>>(JSObject, "track");
     }
 }
 

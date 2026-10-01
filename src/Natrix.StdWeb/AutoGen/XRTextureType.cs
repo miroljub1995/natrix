@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRTextureType
+public sealed partial class XRTextureType: global::Natrix.JSCore.IJSEnum<XRTextureType>
 {
     private readonly string _value;
 

@@ -4,15 +4,19 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class USBIsochronousInTransferResult: global::Natrix.JSCore.JSObjectProxy
+public partial class USBIsochronousInTransferResult: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<USBIsochronousInTransferResult>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public USBIsochronousInTransferResult(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
 
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static USBIsochronousInTransferResult global::Natrix.JSCore.IJSObjectProxy<USBIsochronousInTransferResult>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<USBIsochronousInTransferResult>(obj);
+
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.USBIsochronousInTransferResult New(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBIsochronousInTransferPacket, global::Natrix.StdWeb.PropertyAccessor> packets)
+    public static global::Natrix.StdWeb.USBIsochronousInTransferResult New(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBIsochronousInTransferPacket, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousInTransferPacket>> packets)
     {
         int ___argsArrayLength_3 = 1;
 
@@ -27,7 +31,7 @@ public partial class USBIsochronousInTransferResult: global::Natrix.JSCore.JSObj
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.USBIsochronousInTransferResult New(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBIsochronousInTransferPacket, global::Natrix.StdWeb.PropertyAccessor> packets, global::Natrix.JSCore.DataView? data)
+    public static global::Natrix.StdWeb.USBIsochronousInTransferResult New(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBIsochronousInTransferPacket, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousInTransferPacket>> packets, global::Natrix.JSCore.DataView? data)
     {
         int ___argsArrayLength_3 = 2;
 
@@ -57,13 +61,13 @@ public partial class USBIsochronousInTransferResult: global::Natrix.JSCore.JSObj
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.DataView? Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.DataView?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.DataView?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.DataView>>(JSObject, "data");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBIsochronousInTransferPacket, global::Natrix.StdWeb.PropertyAccessor> Packets
+    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBIsochronousInTransferPacket, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousInTransferPacket>> Packets
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBIsochronousInTransferPacket, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "packets");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBIsochronousInTransferPacket, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousInTransferPacket>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBIsochronousInTransferPacket, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousInTransferPacket>>>>(JSObject, "packets");
     }
 }
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PeriodicWave: global::Natrix.JSCore.JSObjectProxy
+public partial class PeriodicWave: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<PeriodicWave>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PeriodicWave(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PeriodicWave global::Natrix.JSCore.IJSObjectProxy<PeriodicWave>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PeriodicWave>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.PeriodicWave New(global::Natrix.StdWeb.BaseAudioContext context)

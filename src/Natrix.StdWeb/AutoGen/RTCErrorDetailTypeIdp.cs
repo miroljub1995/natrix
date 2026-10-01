@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCErrorDetailTypeIdp
+public sealed partial class RTCErrorDetailTypeIdp: global::Natrix.JSCore.IJSEnum<RTCErrorDetailTypeIdp>
 {
     private readonly string _value;
 

@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate global::Natrix.JSCore.Promise NavigationPrecommitHandlerManaged(global::Natrix.StdWeb.NavigationPrecommitController controller);
 
-public partial class NavigationPrecommitHandler: global::Natrix.JSCore.JSObjectProxy
+public partial class NavigationPrecommitHandler: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<NavigationPrecommitHandler>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NavigationPrecommitHandler(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NavigationPrecommitHandler global::Natrix.JSCore.IJSObjectProxy<NavigationPrecommitHandler>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NavigationPrecommitHandler(NavigationPrecommitHandlerManaged input): this(ToJSObject(input))

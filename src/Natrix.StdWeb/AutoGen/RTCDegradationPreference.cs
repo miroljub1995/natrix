@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCDegradationPreference
+public sealed partial class RTCDegradationPreference: global::Natrix.JSCore.IJSEnum<RTCDegradationPreference>
 {
     private readonly string _value;
 

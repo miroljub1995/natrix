@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class NotificationPermission
+public sealed partial class NotificationPermission: global::Natrix.JSCore.IJSEnum<NotificationPermission>
 {
     private readonly string _value;
 

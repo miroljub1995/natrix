@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class IdentityCredentialRequestOptionsContext
+public sealed partial class IdentityCredentialRequestOptionsContext: global::Natrix.JSCore.IJSEnum<IdentityCredentialRequestOptionsContext>
 {
     private readonly string _value;
 

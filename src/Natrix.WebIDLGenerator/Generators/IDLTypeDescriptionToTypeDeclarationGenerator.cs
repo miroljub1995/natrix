@@ -7,8 +7,7 @@ namespace Natrix.WebIDLGenerator.Generators;
 public class IDLTypeDescriptionToTypeDeclarationGenerator(
     IServiceProvider provider,
     ILogger<IDLTypeDescriptionToTypeDeclarationGenerator> logger,
-    GenTypeDescriptors genTypeDescriptors,
-    GenericMarshallerGenerator genericMarshallerGenerator
+    GenTypeDescriptors genTypeDescriptors
 )
 {
     public string Generate(IDLTypeDescription input, bool marshalled = false)
@@ -70,7 +69,7 @@ public class IDLTypeDescriptionToTypeDeclarationGenerator(
 
     private string MapFrozenArrayToManagedType(FrozenArrayTypeDescription input, bool marshalled)
     {
-        var propertyAccessorGenerator = provider.GetRequiredService<PropertyAccessorGenerator>();
+        var propertyAccessorResolver = provider.GetRequiredService<PropertyAccessorResolver>();
 
         var elementType = input.IdlType.Single();
         var elementManagedType = Generate(elementType);
@@ -80,7 +79,7 @@ public class IDLTypeDescriptionToTypeDeclarationGenerator(
             return MakeNullableIfNeeded($"{elementManagedType}[]", input.Nullable);
         }
 
-        var propertyAccessor = propertyAccessorGenerator.GetOrCreateAccessor(elementType);
+        var propertyAccessor = propertyAccessorResolver.Resolve(elementType);
 
         return MakeNullableIfNeeded(
             $"global::Natrix.JSCore.Generics.FrozenArray<{elementManagedType}, {propertyAccessor}>",
@@ -90,7 +89,7 @@ public class IDLTypeDescriptionToTypeDeclarationGenerator(
 
     private string MapObservableArrayToManagedType(ObservableArrayTypeDescription input, bool marshalled)
     {
-        var propertyAccessorGenerator = provider.GetRequiredService<PropertyAccessorGenerator>();
+        var propertyAccessorResolver = provider.GetRequiredService<PropertyAccessorResolver>();
 
         var elementType = input.IdlType.Single();
         var elementManagedType = Generate(elementType);
@@ -100,7 +99,7 @@ public class IDLTypeDescriptionToTypeDeclarationGenerator(
             return MakeNullableIfNeeded($"{elementManagedType}[]", input.Nullable);
         }
 
-        var propertyAccessor = propertyAccessorGenerator.GetOrCreateAccessor(elementType);
+        var propertyAccessor = propertyAccessorResolver.Resolve(elementType);
 
         return MakeNullableIfNeeded(
             $"global::Natrix.JSCore.Generics.ObservableArray<{elementManagedType}, {propertyAccessor}>",
@@ -110,7 +109,7 @@ public class IDLTypeDescriptionToTypeDeclarationGenerator(
 
     private string MapPromiseToManagedType(PromiseTypeDescription input, bool marshalled)
     {
-        var propertyAccessorGenerator = provider.GetRequiredService<PropertyAccessorGenerator>();
+        var propertyAccessorResolver = provider.GetRequiredService<PropertyAccessorResolver>();
 
         var elementType = input.IdlType.Single();
         if (elementType is SingleTypeDescription { IdlType: BuiltinTypes.Undefined })
@@ -125,7 +124,7 @@ public class IDLTypeDescriptionToTypeDeclarationGenerator(
             return MakeNullableIfNeeded($"global::System.Threading.Tasks.Task<{elementManagedType}>", input.Nullable);
         }
 
-        var propertyAccessor = propertyAccessorGenerator.GetOrCreateAccessor(elementType);
+        var propertyAccessor = propertyAccessorResolver.Resolve(elementType);
 
         return MakeNullableIfNeeded(
             $"global::Natrix.JSCore.Generics.Promise<{elementManagedType}, {propertyAccessor}>",
@@ -135,7 +134,7 @@ public class IDLTypeDescriptionToTypeDeclarationGenerator(
 
     private string MapRecordToManagedType(RecordTypeDescription input)
     {
-        var propertyAccessorGenerator = provider.GetRequiredService<PropertyAccessorGenerator>();
+        var propertyAccessorResolver = provider.GetRequiredService<PropertyAccessorResolver>();
 
         if (input.IdlType.First() is not SingleTypeDescription { IdlType: BuiltinTypes.String })
         {
@@ -147,7 +146,7 @@ public class IDLTypeDescriptionToTypeDeclarationGenerator(
         var elementManagedType = Generate(valueType);
 
 
-        var propertyAccessor = propertyAccessorGenerator.GetOrCreateAccessor(valueType);
+        var propertyAccessor = propertyAccessorResolver.Resolve(valueType);
 
         return MakeNullableIfNeeded(
             $"global::Natrix.JSCore.Generics.Record<{elementManagedType}, {propertyAccessor}>",
@@ -157,7 +156,7 @@ public class IDLTypeDescriptionToTypeDeclarationGenerator(
 
     private string MapSequenceToManagedType(SequenceTypeDescription input, bool marshalled)
     {
-        var propertyAccessorGenerator = provider.GetRequiredService<PropertyAccessorGenerator>();
+        var propertyAccessorResolver = provider.GetRequiredService<PropertyAccessorResolver>();
 
         var elementType = input.IdlType.Single();
         var elementManagedType = Generate(elementType);
@@ -167,7 +166,7 @@ public class IDLTypeDescriptionToTypeDeclarationGenerator(
             return MakeNullableIfNeeded($"{elementManagedType}[]", input.Nullable);
         }
 
-        var propertyAccessor = propertyAccessorGenerator.GetOrCreateAccessor(elementType);
+        var propertyAccessor = propertyAccessorResolver.Resolve(elementType);
 
         return MakeNullableIfNeeded(
             $"global::Natrix.JSCore.Generics.JSArray<{elementManagedType}, {propertyAccessor}>",
@@ -177,12 +176,17 @@ public class IDLTypeDescriptionToTypeDeclarationGenerator(
 
     private string MapUnionToManagedType(UnionTypeDescription input)
     {
+        var propertyAccessorResolver = provider.GetRequiredService<PropertyAccessorResolver>();
+
         var itemManagedTypes = input.IdlType
             .Select(x => Generate(x))
             .ToList();
 
-        var marshaller = genericMarshallerGenerator.GetOrCreateMarshaller(input);
-        var genericArgs = string.Join(", ", [..itemManagedTypes, marshaller]);
+        var itemAccessors = input.IdlType
+            .Select(propertyAccessorResolver.Resolve)
+            .ToList();
+
+        var genericArgs = string.Join(", ", [..itemManagedTypes, ..itemAccessors]);
 
         return MakeNullableIfNeeded(
             $"global::Natrix.JSCore.Generics.Union<{genericArgs}>",

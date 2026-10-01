@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class JsonLdErrorCode
+public sealed partial class JsonLdErrorCode: global::Natrix.JSCore.IJSEnum<JsonLdErrorCode>
 {
     private readonly string _value;
 

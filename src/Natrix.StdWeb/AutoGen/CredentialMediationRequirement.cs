@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CredentialMediationRequirement
+public sealed partial class CredentialMediationRequirement: global::Natrix.JSCore.IJSEnum<CredentialMediationRequirement>
 {
     private readonly string _value;
 

@@ -30,12 +30,16 @@ public class CallbackTypeGenerator(
 
                         public delegate {{returnType}} {{input.Name}}Managed({{args}});
 
-                        public partial class {{input.Name}}: global::Natrix.JSCore.JSObjectProxy
+                        public partial class {{input.Name}}: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<{{input.Name}}>
                         {
                             [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
                             public {{input.Name}}(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
                             {
                             }
+
+                            [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+                            static {{input.Name}} global::Natrix.JSCore.IJSObjectProxy<{{input.Name}}>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+                                new(obj);
                         
                             [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
                             public {{input.Name}}({{input.Name}}Managed input): this(ToJSObject(input))

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCErrorEvent: global::Natrix.StdWeb.Event
+public partial class RTCErrorEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<RTCErrorEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCErrorEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCErrorEvent global::Natrix.JSCore.IJSObjectProxy<RTCErrorEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<RTCErrorEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.RTCErrorEvent New(string type, global::Natrix.StdWeb.RTCErrorEventInit eventInitDict)
@@ -35,7 +39,7 @@ public partial class RTCErrorEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCError Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCError, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "error");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCError, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCError>>(JSObject, "error");
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CSSNumericBaseType
+public sealed partial class CSSNumericBaseType: global::Natrix.JSCore.IJSEnum<CSSNumericBaseType>
 {
     private readonly string _value;
 

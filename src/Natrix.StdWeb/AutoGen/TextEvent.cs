@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class TextEvent: global::Natrix.StdWeb.UIEvent
+public partial class TextEvent: global::Natrix.StdWeb.UIEvent, global::Natrix.JSCore.IJSObjectProxy<TextEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TextEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,9 +12,13 @@ public partial class TextEvent: global::Natrix.StdWeb.UIEvent
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TextEvent global::Natrix.JSCore.IJSObjectProxy<TextEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<TextEvent>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "data");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

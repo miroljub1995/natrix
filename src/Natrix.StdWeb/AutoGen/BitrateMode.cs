@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class BitrateMode
+public sealed partial class BitrateMode: global::Natrix.JSCore.IJSEnum<BitrateMode>
 {
     private readonly string _value;
 

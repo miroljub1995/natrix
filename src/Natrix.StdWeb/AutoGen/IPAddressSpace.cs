@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class IPAddressSpace
+public sealed partial class IPAddressSpace: global::Natrix.JSCore.IJSEnum<IPAddressSpace>
 {
     private readonly string _value;
 

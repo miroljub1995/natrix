@@ -4,15 +4,19 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class XRWebGLLayer: global::Natrix.StdWeb.XRLayer
+public partial class XRWebGLLayer: global::Natrix.StdWeb.XRLayer, global::Natrix.JSCore.IJSObjectProxy<XRWebGLLayer>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XRWebGLLayer(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
 
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static XRWebGLLayer global::Natrix.JSCore.IJSObjectProxy<XRWebGLLayer>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<XRWebGLLayer>(obj);
+
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.XRWebGLLayer New(global::Natrix.StdWeb.XRSession session, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WebGLRenderingContext, global::Natrix.StdWeb.WebGL2RenderingContext, global::Natrix.StdWeb.GenericMarshaller.Union> context)
+    public static global::Natrix.StdWeb.XRWebGLLayer New(global::Natrix.StdWeb.XRSession session, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WebGLRenderingContext, global::Natrix.StdWeb.WebGL2RenderingContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGLRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGL2RenderingContext>> context)
     {
         int ___argsArrayLength_3 = 2;
 
@@ -32,7 +36,7 @@ public partial class XRWebGLLayer: global::Natrix.StdWeb.XRLayer
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.XRWebGLLayer New(global::Natrix.StdWeb.XRSession session, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WebGLRenderingContext, global::Natrix.StdWeb.WebGL2RenderingContext, global::Natrix.StdWeb.GenericMarshaller.Union> context, global::Natrix.StdWeb.XRWebGLLayerInit layerInit)
+    public static global::Natrix.StdWeb.XRWebGLLayer New(global::Natrix.StdWeb.XRSession session, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WebGLRenderingContext, global::Natrix.StdWeb.WebGL2RenderingContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGLRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGL2RenderingContext>> context, global::Natrix.StdWeb.XRWebGLLayerInit layerInit)
     {
         int ___argsArrayLength_3 = 3;
 
@@ -59,38 +63,38 @@ public partial class XRWebGLLayer: global::Natrix.StdWeb.XRLayer
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Antialias
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "antialias");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "antialias");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IgnoreDepthValues
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "ignoreDepthValues");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreDepthValues");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float? FixedFoveation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "fixedFoveation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "fixedFoveation", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float?, global::Natrix.JSCore.Generics.NullableSingleAccessor>(JSObject, "fixedFoveation");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float?, global::Natrix.JSCore.Generics.NullableSingleAccessor>(JSObject, "fixedFoveation", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebGLFramebuffer? Framebuffer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebGLFramebuffer?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "framebuffer");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebGLFramebuffer?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WebGLFramebuffer>>(JSObject, "framebuffer");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint FramebufferWidth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "framebufferWidth");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "framebufferWidth");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint FramebufferHeight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "framebufferHeight");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "framebufferHeight");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -110,7 +114,7 @@ public partial class XRWebGLLayer: global::Natrix.StdWeb.XRLayer
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getViewport", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRViewport?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRViewport?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRViewport>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -130,7 +134,7 @@ public partial class XRWebGLLayer: global::Natrix.StdWeb.XRLayer
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "XRWebGLLayer"), "getNativeFramebufferScaleFactor", global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "XRWebGLLayer"), ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(___resOwner_1.JSObject, "value");
     }
 }
 

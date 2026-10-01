@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ResidentKeyRequirement
+public sealed partial class ResidentKeyRequirement: global::Natrix.JSCore.IJSEnum<ResidentKeyRequirement>
 {
     private readonly string _value;
 

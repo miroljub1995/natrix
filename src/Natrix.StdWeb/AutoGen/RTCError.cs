@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCError: global::Natrix.StdWeb.DOMException
+public partial class RTCError: global::Natrix.StdWeb.DOMException, global::Natrix.JSCore.IJSObjectProxy<RTCError>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCError(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,9 +12,13 @@ public partial class RTCError: global::Natrix.StdWeb.DOMException
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCError global::Natrix.JSCore.IJSObjectProxy<RTCError>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<RTCError>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int? HttpRequestStatusCode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "httpRequestStatusCode");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int?, global::Natrix.JSCore.Generics.NullableInt32Accessor>(JSObject, "httpRequestStatusCode");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
@@ -57,31 +61,31 @@ public partial class RTCError: global::Natrix.StdWeb.DOMException
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCErrorDetailType ErrorDetail
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCErrorDetailType, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "errorDetail");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCErrorDetailType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCErrorDetailType>>(JSObject, "errorDetail");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int? SdpLineNumber
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "sdpLineNumber");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int?, global::Natrix.JSCore.Generics.NullableInt32Accessor>(JSObject, "sdpLineNumber");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int? SctpCauseCode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "sctpCauseCode");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int?, global::Natrix.JSCore.Generics.NullableInt32Accessor>(JSObject, "sctpCauseCode");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint? ReceivedAlert
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "receivedAlert");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.JSCore.Generics.NullableUInt32Accessor>(JSObject, "receivedAlert");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint? SentAlert
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "sentAlert");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.JSCore.Generics.NullableUInt32Accessor>(JSObject, "sentAlert");
     }
 }
 

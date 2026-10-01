@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RequestPriority
+public sealed partial class RequestPriority: global::Natrix.JSCore.IJSEnum<RequestPriority>
 {
     private readonly string _value;
 

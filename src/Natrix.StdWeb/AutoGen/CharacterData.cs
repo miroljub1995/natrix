@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CharacterData: global::Natrix.StdWeb.Node
+public partial class CharacterData: global::Natrix.StdWeb.Node, global::Natrix.JSCore.IJSObjectProxy<CharacterData>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CharacterData(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,16 +12,20 @@ public partial class CharacterData: global::Natrix.StdWeb.Node
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CharacterData global::Natrix.JSCore.IJSObjectProxy<CharacterData>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CharacterData>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "data");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "data", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "data");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "data", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "length");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -46,7 +50,7 @@ public partial class CharacterData: global::Natrix.StdWeb.Node
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "substringData", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -132,17 +136,17 @@ public partial class CharacterData: global::Natrix.StdWeb.Node
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? PreviousElementSibling
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "previousElementSibling");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "previousElementSibling");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? NextElementSibling
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "nextElementSibling");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "nextElementSibling");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void Before(params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.StdWeb.GenericMarshaller.Union>[] nodes)
+    public void Before(params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>, global::Natrix.JSCore.Generics.StringAccessor>[] nodes)
     {
         int ___argsArrayLength_2 = nodes.Length + 0;
 
@@ -151,7 +155,7 @@ public partial class CharacterData: global::Natrix.StdWeb.Node
         // Argument 1
         for (int ___i_3 = 0; ___i_3 < nodes.Length; ___i_3++)
         {
-        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.StdWeb.GenericMarshaller.Union> ___elem_4 = nodes[___i_3];
+        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>, global::Natrix.JSCore.Generics.StringAccessor> ___elem_4 = nodes[___i_3];
             global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_5 = ___elem_4.JSObject;
             global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(___argsArray_0.JSObject, 0 + ___i_3, ___propObject_5);
         }
@@ -160,7 +164,7 @@ public partial class CharacterData: global::Natrix.StdWeb.Node
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void After(params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.StdWeb.GenericMarshaller.Union>[] nodes)
+    public void After(params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>, global::Natrix.JSCore.Generics.StringAccessor>[] nodes)
     {
         int ___argsArrayLength_2 = nodes.Length + 0;
 
@@ -169,7 +173,7 @@ public partial class CharacterData: global::Natrix.StdWeb.Node
         // Argument 1
         for (int ___i_3 = 0; ___i_3 < nodes.Length; ___i_3++)
         {
-        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.StdWeb.GenericMarshaller.Union> ___elem_4 = nodes[___i_3];
+        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>, global::Natrix.JSCore.Generics.StringAccessor> ___elem_4 = nodes[___i_3];
             global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_5 = ___elem_4.JSObject;
             global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(___argsArray_0.JSObject, 0 + ___i_3, ___propObject_5);
         }
@@ -178,7 +182,7 @@ public partial class CharacterData: global::Natrix.StdWeb.Node
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void ReplaceWith(params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.StdWeb.GenericMarshaller.Union>[] nodes)
+    public void ReplaceWith(params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>, global::Natrix.JSCore.Generics.StringAccessor>[] nodes)
     {
         int ___argsArrayLength_2 = nodes.Length + 0;
 
@@ -187,7 +191,7 @@ public partial class CharacterData: global::Natrix.StdWeb.Node
         // Argument 1
         for (int ___i_3 = 0; ___i_3 < nodes.Length; ___i_3++)
         {
-        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.StdWeb.GenericMarshaller.Union> ___elem_4 = nodes[___i_3];
+        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Node, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>, global::Natrix.JSCore.Generics.StringAccessor> ___elem_4 = nodes[___i_3];
             global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_5 = ___elem_4.JSObject;
             global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(___argsArray_0.JSObject, 0 + ___i_3, ___propObject_5);
         }

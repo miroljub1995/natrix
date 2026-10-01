@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class RTCIdentityProvider: global::Natrix.JSCore.JSObjectProxy
+public partial class RTCIdentityProvider: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<RTCIdentityProvider>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class RTCIdentityProvider: global::Natrix.JSCore.JSObjectProxy
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static RTCIdentityProvider global::Natrix.JSCore.IJSObjectProxy<RTCIdentityProvider>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public RTCIdentityProvider(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,15 +26,15 @@ public partial class RTCIdentityProvider: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GenerateAssertionCallback GenerateAssertion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GenerateAssertionCallback, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "generateAssertion");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GenerateAssertionCallback, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "generateAssertion", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GenerateAssertionCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GenerateAssertionCallback>>(JSObject, "generateAssertion");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GenerateAssertionCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GenerateAssertionCallback>>(JSObject, "generateAssertion", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.ValidateAssertionCallback ValidateAssertion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ValidateAssertionCallback, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "validateAssertion");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ValidateAssertionCallback, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "validateAssertion", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ValidateAssertionCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ValidateAssertionCallback>>(JSObject, "validateAssertion");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ValidateAssertionCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ValidateAssertionCallback>>(JSObject, "validateAssertion", value);
     }
 }
 

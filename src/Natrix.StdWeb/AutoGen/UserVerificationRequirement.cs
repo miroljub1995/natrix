@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class UserVerificationRequirement
+public sealed partial class UserVerificationRequirement: global::Natrix.JSCore.IJSEnum<UserVerificationRequirement>
 {
     private readonly string _value;
 

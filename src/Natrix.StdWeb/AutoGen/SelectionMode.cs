@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class SelectionMode
+public sealed partial class SelectionMode: global::Natrix.JSCore.IJSEnum<SelectionMode>
 {
     private readonly string _value;
 

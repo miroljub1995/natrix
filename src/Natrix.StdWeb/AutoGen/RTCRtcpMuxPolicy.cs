@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCRtcpMuxPolicy
+public sealed partial class RTCRtcpMuxPolicy: global::Natrix.JSCore.IJSEnum<RTCRtcpMuxPolicy>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class FullscreenOptions: global::Natrix.JSCore.JSObjectProxy
+public partial class FullscreenOptions: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<FullscreenOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class FullscreenOptions: global::Natrix.JSCore.JSObjectProxy
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static FullscreenOptions global::Natrix.JSCore.IJSObjectProxy<FullscreenOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FullscreenOptions(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
@@ -22,22 +26,22 @@ public partial class FullscreenOptions: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FullscreenKeyboardLock KeyboardLock
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FullscreenKeyboardLock, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "keyboardLock");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FullscreenKeyboardLock, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "keyboardLock", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FullscreenKeyboardLock, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FullscreenKeyboardLock>>(JSObject, "keyboardLock");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FullscreenKeyboardLock, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FullscreenKeyboardLock>>(JSObject, "keyboardLock", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FullscreenNavigationUI NavigationUI
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FullscreenNavigationUI, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "navigationUI");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FullscreenNavigationUI, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "navigationUI", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FullscreenNavigationUI, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FullscreenNavigationUI>>(JSObject, "navigationUI");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FullscreenNavigationUI, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FullscreenNavigationUI>>(JSObject, "navigationUI", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ScreenDetailed Screen
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ScreenDetailed, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "screen");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ScreenDetailed, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "screen", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ScreenDetailed, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ScreenDetailed>>(JSObject, "screen");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ScreenDetailed, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ScreenDetailed>>(JSObject, "screen", value);
     }
 }
 

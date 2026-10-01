@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class GravitySensor: global::Natrix.StdWeb.Accelerometer
+public partial class GravitySensor: global::Natrix.StdWeb.Accelerometer, global::Natrix.JSCore.IJSObjectProxy<GravitySensor>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GravitySensor(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GravitySensor global::Natrix.JSCore.IJSObjectProxy<GravitySensor>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<GravitySensor>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.GravitySensor New()

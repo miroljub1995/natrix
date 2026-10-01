@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class TogglePopoverOptions: global::Natrix.StdWeb.ShowPopoverOptions
+public partial class TogglePopoverOptions: global::Natrix.StdWeb.ShowPopoverOptions, global::Natrix.JSCore.IJSObjectProxy<TogglePopoverOptions>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class TogglePopoverOptions: global::Natrix.StdWeb.ShowPopoverOpti
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TogglePopoverOptions global::Natrix.JSCore.IJSObjectProxy<TogglePopoverOptions>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TogglePopoverOptions(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class TogglePopoverOptions: global::Natrix.StdWeb.ShowPopoverOpti
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Force
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "force");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "force", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "force");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "force", value);
     }
 }
 

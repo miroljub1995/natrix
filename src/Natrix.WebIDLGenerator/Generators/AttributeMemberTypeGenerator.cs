@@ -12,7 +12,7 @@ public class AttributeMemberTypeGenerator(
     {
         var descriptionToTypeDeclarationGenerator =
             provider.GetRequiredService<IDLTypeDescriptionToTypeDeclarationGenerator>();
-        var propertyAccessorGenerator = provider.GetRequiredService<PropertyAccessorGenerator>();
+        var propertyAccessorResolver = provider.GetRequiredService<PropertyAccessorResolver>();
 
         List<string> bodyParts = [];
 
@@ -23,7 +23,7 @@ public class AttributeMemberTypeGenerator(
 
         var returnTypeDeclaration = descriptionToTypeDeclarationGenerator.Generate(input.IdlType);
 
-        var accessor = propertyAccessorGenerator.GetOrCreateAccessor(input.IdlType);
+        var accessor = propertyAccessorResolver.Resolve(input.IdlType);
 
         // Getter
         {

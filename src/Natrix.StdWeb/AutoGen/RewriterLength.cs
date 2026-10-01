@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RewriterLength
+public sealed partial class RewriterLength: global::Natrix.JSCore.IJSEnum<RewriterLength>
 {
     private readonly string _value;
 

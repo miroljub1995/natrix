@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class DelegatedInkTrailPresenter: global::Natrix.JSCore.JSObjectProxy
+public partial class DelegatedInkTrailPresenter: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<DelegatedInkTrailPresenter>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public DelegatedInkTrailPresenter(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,9 +12,13 @@ public partial class DelegatedInkTrailPresenter: global::Natrix.JSCore.JSObjectP
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static DelegatedInkTrailPresenter global::Natrix.JSCore.IJSObjectProxy<DelegatedInkTrailPresenter>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<DelegatedInkTrailPresenter>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? PresentationArea
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "presentationArea");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "presentationArea");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

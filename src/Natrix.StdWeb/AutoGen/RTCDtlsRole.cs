@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCDtlsRole
+public sealed partial class RTCDtlsRole: global::Natrix.JSCore.IJSEnum<RTCDtlsRole>
 {
     private readonly string _value;
 

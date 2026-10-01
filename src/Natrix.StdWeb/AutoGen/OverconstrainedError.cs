@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class OverconstrainedError: global::Natrix.StdWeb.DOMException
+public partial class OverconstrainedError: global::Natrix.StdWeb.DOMException, global::Natrix.JSCore.IJSObjectProxy<OverconstrainedError>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public OverconstrainedError(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static OverconstrainedError global::Natrix.JSCore.IJSObjectProxy<OverconstrainedError>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<OverconstrainedError>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.OverconstrainedError New(string constraint)
@@ -51,7 +55,7 @@ public partial class OverconstrainedError: global::Natrix.StdWeb.DOMException
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Constraint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "constraint");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "constraint");
     }
 }
 

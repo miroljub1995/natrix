@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RequestMode
+public sealed partial class RequestMode: global::Natrix.JSCore.IJSEnum<RequestMode>
 {
     private readonly string _value;
 

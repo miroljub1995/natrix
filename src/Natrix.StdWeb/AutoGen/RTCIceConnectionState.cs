@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCIceConnectionState
+public sealed partial class RTCIceConnectionState: global::Natrix.JSCore.IJSEnum<RTCIceConnectionState>
 {
     private readonly string _value;
 

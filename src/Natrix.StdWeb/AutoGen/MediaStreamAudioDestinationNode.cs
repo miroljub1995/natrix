@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MediaStreamAudioDestinationNode: global::Natrix.StdWeb.AudioNode
+public partial class MediaStreamAudioDestinationNode: global::Natrix.StdWeb.AudioNode, global::Natrix.JSCore.IJSObjectProxy<MediaStreamAudioDestinationNode>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MediaStreamAudioDestinationNode(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MediaStreamAudioDestinationNode global::Natrix.JSCore.IJSObjectProxy<MediaStreamAudioDestinationNode>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<MediaStreamAudioDestinationNode>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.MediaStreamAudioDestinationNode New(global::Natrix.StdWeb.AudioContext context)
@@ -51,7 +55,7 @@ public partial class MediaStreamAudioDestinationNode: global::Natrix.StdWeb.Audi
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaStream Stream
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaStream, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stream");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaStream>>(JSObject, "stream");
     }
 }
 

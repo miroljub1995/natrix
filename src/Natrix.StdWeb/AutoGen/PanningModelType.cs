@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class PanningModelType
+public sealed partial class PanningModelType: global::Natrix.JSCore.IJSEnum<PanningModelType>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CredentialsContainer: global::Natrix.JSCore.JSObjectProxy
+public partial class CredentialsContainer: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<CredentialsContainer>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CredentialsContainer(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,18 +12,22 @@ public partial class CredentialsContainer: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.StdWeb.PropertyAccessorNullable> Get()
+    static CredentialsContainer global::Natrix.JSCore.IJSObjectProxy<CredentialsContainer>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CredentialsContainer>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Credential>> Get()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "get", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.StdWeb.PropertyAccessorNullable>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Credential>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Credential>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.StdWeb.PropertyAccessorNullable> Get(global::Natrix.StdWeb.CredentialRequestOptions options)
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Credential>> Get(global::Natrix.StdWeb.CredentialRequestOptions options)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -39,7 +43,7 @@ public partial class CredentialsContainer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "get", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.StdWeb.PropertyAccessorNullable>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Credential>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Credential>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -59,22 +63,22 @@ public partial class CredentialsContainer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "store", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.StdWeb.PropertyAccessorNullable> Create()
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Credential>> Create()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "create", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.StdWeb.PropertyAccessorNullable>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Credential>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Credential>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.StdWeb.PropertyAccessorNullable> Create(global::Natrix.StdWeb.CredentialCreationOptions options)
+    public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Credential>> Create(global::Natrix.StdWeb.CredentialCreationOptions options)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -90,7 +94,7 @@ public partial class CredentialsContainer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "create", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.StdWeb.PropertyAccessorNullable>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Credential>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Credential?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Credential>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -101,7 +105,7 @@ public partial class CredentialsContainer: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "preventSilentAccess", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
     }
 }
 

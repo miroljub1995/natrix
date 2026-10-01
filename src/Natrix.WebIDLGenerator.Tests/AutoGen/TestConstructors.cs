@@ -4,12 +4,16 @@ namespace Natrix.WebIDLGenerator.Tests;
 
 #nullable enable
 
-public partial class TestConstructors: global::Natrix.JSCore.JSObjectProxy
+public partial class TestConstructors: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<TestConstructors>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TestConstructors(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static TestConstructors global::Natrix.JSCore.IJSObjectProxy<TestConstructors>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<TestConstructors>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.WebIDLGenerator.Tests.TestConstructors New()

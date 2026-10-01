@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class VideoTransferCharacteristics
+public sealed partial class VideoTransferCharacteristics: global::Natrix.JSCore.IJSEnum<VideoTransferCharacteristics>
 {
     private readonly string _value;
 

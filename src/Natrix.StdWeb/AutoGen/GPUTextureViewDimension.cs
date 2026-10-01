@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUTextureViewDimension
+public sealed partial class GPUTextureViewDimension: global::Natrix.JSCore.IJSEnum<GPUTextureViewDimension>
 {
     private readonly string _value;
 

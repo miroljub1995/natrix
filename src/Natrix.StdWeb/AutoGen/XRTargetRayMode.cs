@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRTargetRayMode
+public sealed partial class XRTargetRayMode: global::Natrix.JSCore.IJSEnum<XRTargetRayMode>
 {
     private readonly string _value;
 

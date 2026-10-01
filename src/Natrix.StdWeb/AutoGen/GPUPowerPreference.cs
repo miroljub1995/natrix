@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUPowerPreference
+public sealed partial class GPUPowerPreference: global::Natrix.JSCore.IJSEnum<GPUPowerPreference>
 {
     private readonly string _value;
 

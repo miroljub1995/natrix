@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ImageData: global::Natrix.JSCore.JSObjectProxy
+public partial class ImageData: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<ImageData>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ImageData(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ImageData global::Natrix.JSCore.IJSObjectProxy<ImageData>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ImageData>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.ImageData New(uint sw, uint sh)
@@ -59,7 +63,7 @@ public partial class ImageData: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.ImageData New(global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Uint8ClampedArray, global::Natrix.JSCore.Float16Array, global::Natrix.StdWeb.GenericMarshaller.Union> data, uint sw)
+    public static global::Natrix.StdWeb.ImageData New(global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Uint8ClampedArray, global::Natrix.JSCore.Float16Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8ClampedArray>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float16Array>> data, uint sw)
     {
         int ___argsArrayLength_3 = 2;
 
@@ -79,7 +83,7 @@ public partial class ImageData: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.ImageData New(global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Uint8ClampedArray, global::Natrix.JSCore.Float16Array, global::Natrix.StdWeb.GenericMarshaller.Union> data, uint sw, uint sh)
+    public static global::Natrix.StdWeb.ImageData New(global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Uint8ClampedArray, global::Natrix.JSCore.Float16Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8ClampedArray>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float16Array>> data, uint sw, uint sh)
     {
         int ___argsArrayLength_3 = 3;
 
@@ -104,7 +108,7 @@ public partial class ImageData: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.ImageData New(global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Uint8ClampedArray, global::Natrix.JSCore.Float16Array, global::Natrix.StdWeb.GenericMarshaller.Union> data, uint sw, uint sh, global::Natrix.StdWeb.ImageDataSettings settings)
+    public static global::Natrix.StdWeb.ImageData New(global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Uint8ClampedArray, global::Natrix.JSCore.Float16Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8ClampedArray>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float16Array>> data, uint sw, uint sh, global::Natrix.StdWeb.ImageDataSettings settings)
     {
         int ___argsArrayLength_3 = 4;
 
@@ -136,31 +140,31 @@ public partial class ImageData: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "width");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "width");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "height");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "height");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Uint8ClampedArray, global::Natrix.JSCore.Float16Array, global::Natrix.StdWeb.GenericMarshaller.Union> Data
+    public global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Uint8ClampedArray, global::Natrix.JSCore.Float16Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8ClampedArray>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float16Array>> Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Uint8ClampedArray, global::Natrix.JSCore.Float16Array, global::Natrix.StdWeb.GenericMarshaller.Union>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Uint8ClampedArray, global::Natrix.JSCore.Float16Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8ClampedArray>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float16Array>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Uint8ClampedArray, global::Natrix.JSCore.Float16Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8ClampedArray>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float16Array>>>>(JSObject, "data");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ImageDataPixelFormat PixelFormat
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ImageDataPixelFormat, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "pixelFormat");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ImageDataPixelFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImageDataPixelFormat>>(JSObject, "pixelFormat");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PredefinedColorSpace ColorSpace
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PredefinedColorSpace, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "colorSpace");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PredefinedColorSpace, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PredefinedColorSpace>>(JSObject, "colorSpace");
     }
 }
 

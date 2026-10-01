@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class OrientationType
+public sealed partial class OrientationType: global::Natrix.JSCore.IJSEnum<OrientationType>
 {
     private readonly string _value;
 

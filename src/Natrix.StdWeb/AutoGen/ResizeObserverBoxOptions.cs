@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ResizeObserverBoxOptions
+public sealed partial class ResizeObserverBoxOptions: global::Natrix.JSCore.IJSEnum<ResizeObserverBoxOptions>
 {
     private readonly string _value;
 

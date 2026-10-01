@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MediaKeyMessageEvent: global::Natrix.StdWeb.Event
+public partial class MediaKeyMessageEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<MediaKeyMessageEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MediaKeyMessageEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MediaKeyMessageEvent global::Natrix.JSCore.IJSObjectProxy<MediaKeyMessageEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<MediaKeyMessageEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.MediaKeyMessageEvent New(string type, global::Natrix.StdWeb.MediaKeyMessageEventInit eventInitDict)
@@ -35,13 +39,13 @@ public partial class MediaKeyMessageEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaKeyMessageType MessageType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaKeyMessageType, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "messageType");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaKeyMessageType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaKeyMessageType>>(JSObject, "messageType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.ArrayBuffer Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.ArrayBuffer, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "message");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.ArrayBuffer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.ArrayBuffer>>(JSObject, "message");
     }
 }
 

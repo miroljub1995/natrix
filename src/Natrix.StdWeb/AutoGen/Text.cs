@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class Text: global::Natrix.StdWeb.CharacterData
+public partial class Text: global::Natrix.StdWeb.CharacterData, global::Natrix.JSCore.IJSObjectProxy<Text>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public Text(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static Text global::Natrix.JSCore.IJSObjectProxy<Text>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<Text>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.Text New()
@@ -51,28 +55,28 @@ public partial class Text: global::Natrix.StdWeb.CharacterData
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "splitText", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Text, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Text, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Text>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string WholeText
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "wholeText");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "wholeText");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DOMQuad, global::Natrix.StdWeb.PropertyAccessor> GetBoxQuads()
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DOMQuad, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMQuad>> GetBoxQuads()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getBoxQuads", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DOMQuad, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DOMQuad, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMQuad>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DOMQuad, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMQuad>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DOMQuad, global::Natrix.StdWeb.PropertyAccessor> GetBoxQuads(global::Natrix.StdWeb.BoxQuadOptions options)
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DOMQuad, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMQuad>> GetBoxQuads(global::Natrix.StdWeb.BoxQuadOptions options)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -88,11 +92,11 @@ public partial class Text: global::Natrix.StdWeb.CharacterData
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getBoxQuads", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DOMQuad, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DOMQuad, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMQuad>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DOMQuad, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMQuad>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.DOMQuad ConvertQuadFromNode(global::Natrix.StdWeb.DOMQuadInit quad, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Text, global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.Document, global::Natrix.StdWeb.GenericMarshaller.Union> from)
+    public global::Natrix.StdWeb.DOMQuad ConvertQuadFromNode(global::Natrix.StdWeb.DOMQuadInit quad, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Text, global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.Document, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Text>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPseudoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Document>> from)
     {
         int ___argsArrayLength_2 = 2;
 
@@ -112,11 +116,11 @@ public partial class Text: global::Natrix.StdWeb.CharacterData
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "convertQuadFromNode", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMQuad, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMQuad, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMQuad>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.DOMQuad ConvertQuadFromNode(global::Natrix.StdWeb.DOMQuadInit quad, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Text, global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.Document, global::Natrix.StdWeb.GenericMarshaller.Union> from, global::Natrix.StdWeb.ConvertCoordinateOptions options)
+    public global::Natrix.StdWeb.DOMQuad ConvertQuadFromNode(global::Natrix.StdWeb.DOMQuadInit quad, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Text, global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.Document, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Text>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPseudoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Document>> from, global::Natrix.StdWeb.ConvertCoordinateOptions options)
     {
         int ___argsArrayLength_2 = 3;
 
@@ -141,11 +145,11 @@ public partial class Text: global::Natrix.StdWeb.CharacterData
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "convertQuadFromNode", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMQuad, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMQuad, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMQuad>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.DOMQuad ConvertRectFromNode(global::Natrix.StdWeb.DOMRectReadOnly rect, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Text, global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.Document, global::Natrix.StdWeb.GenericMarshaller.Union> from)
+    public global::Natrix.StdWeb.DOMQuad ConvertRectFromNode(global::Natrix.StdWeb.DOMRectReadOnly rect, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Text, global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.Document, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Text>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPseudoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Document>> from)
     {
         int ___argsArrayLength_2 = 2;
 
@@ -165,11 +169,11 @@ public partial class Text: global::Natrix.StdWeb.CharacterData
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "convertRectFromNode", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMQuad, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMQuad, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMQuad>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.DOMQuad ConvertRectFromNode(global::Natrix.StdWeb.DOMRectReadOnly rect, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Text, global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.Document, global::Natrix.StdWeb.GenericMarshaller.Union> from, global::Natrix.StdWeb.ConvertCoordinateOptions options)
+    public global::Natrix.StdWeb.DOMQuad ConvertRectFromNode(global::Natrix.StdWeb.DOMRectReadOnly rect, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Text, global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.Document, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Text>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPseudoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Document>> from, global::Natrix.StdWeb.ConvertCoordinateOptions options)
     {
         int ___argsArrayLength_2 = 3;
 
@@ -194,11 +198,11 @@ public partial class Text: global::Natrix.StdWeb.CharacterData
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "convertRectFromNode", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMQuad, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMQuad, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMQuad>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.DOMPoint ConvertPointFromNode(global::Natrix.StdWeb.DOMPointInit point, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Text, global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.Document, global::Natrix.StdWeb.GenericMarshaller.Union> from)
+    public global::Natrix.StdWeb.DOMPoint ConvertPointFromNode(global::Natrix.StdWeb.DOMPointInit point, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Text, global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.Document, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Text>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPseudoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Document>> from)
     {
         int ___argsArrayLength_2 = 2;
 
@@ -218,11 +222,11 @@ public partial class Text: global::Natrix.StdWeb.CharacterData
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "convertPointFromNode", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPoint, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPoint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPoint>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.DOMPoint ConvertPointFromNode(global::Natrix.StdWeb.DOMPointInit point, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Text, global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.Document, global::Natrix.StdWeb.GenericMarshaller.Union> from, global::Natrix.StdWeb.ConvertCoordinateOptions options)
+    public global::Natrix.StdWeb.DOMPoint ConvertPointFromNode(global::Natrix.StdWeb.DOMPointInit point, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Text, global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.Document, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Text>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPseudoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Document>> from, global::Natrix.StdWeb.ConvertCoordinateOptions options)
     {
         int ___argsArrayLength_2 = 3;
 
@@ -247,13 +251,13 @@ public partial class Text: global::Natrix.StdWeb.CharacterData
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "convertPointFromNode", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPoint, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMPoint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMPoint>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HTMLSlotElement? AssignedSlot
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLSlotElement?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "assignedSlot");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLSlotElement?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.HTMLSlotElement>>(JSObject, "assignedSlot");
     }
 }
 

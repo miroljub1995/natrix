@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WEBGL_compressed_texture_astc: global::Natrix.JSCore.JSObjectProxy
+public partial class WEBGL_compressed_texture_astc: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<WEBGL_compressed_texture_astc>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WEBGL_compressed_texture_astc(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WEBGL_compressed_texture_astc global::Natrix.JSCore.IJSObjectProxy<WEBGL_compressed_texture_astc>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WEBGL_compressed_texture_astc>(obj);
 
     public const uint COMPRESSED_RGBA_ASTC_4x4_KHR = 0x93B0;
 
@@ -68,14 +72,14 @@ public partial class WEBGL_compressed_texture_astc: global::Natrix.JSCore.JSObje
     public const uint COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR = 0x93DD;
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.StdWeb.PropertyAccessor> GetSupportedProfiles()
+    public global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor> GetSupportedProfiles()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getSupportedProfiles", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(___resOwner_1.JSObject, "value");
     }
 }
 

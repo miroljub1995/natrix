@@ -4,7 +4,7 @@ namespace Natrix.WebIDLGenerator.Tests;
 
 #nullable enable
 
-public partial class TestArrayProperties: global::Natrix.JSCore.JSObjectProxy
+public partial class TestArrayProperties: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<TestArrayProperties>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public TestArrayProperties(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,10 +12,14 @@ public partial class TestArrayProperties: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> BoolArray
+    static TestArrayProperties global::Natrix.JSCore.IJSObjectProxy<TestArrayProperties>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<TestArrayProperties>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor> BoolArray
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "boolArray");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(JSObject, "boolArray", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>>(JSObject, "boolArray");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>>(JSObject, "boolArray", value);
     }
 }
 

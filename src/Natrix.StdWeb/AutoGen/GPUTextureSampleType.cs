@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUTextureSampleType
+public sealed partial class GPUTextureSampleType: global::Natrix.JSCore.IJSEnum<GPUTextureSampleType>
 {
     private readonly string _value;
 

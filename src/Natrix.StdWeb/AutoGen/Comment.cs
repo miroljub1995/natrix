@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class Comment: global::Natrix.StdWeb.CharacterData
+public partial class Comment: global::Natrix.StdWeb.CharacterData, global::Natrix.JSCore.IJSObjectProxy<Comment>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public Comment(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static Comment global::Natrix.JSCore.IJSObjectProxy<Comment>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<Comment>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.Comment New()

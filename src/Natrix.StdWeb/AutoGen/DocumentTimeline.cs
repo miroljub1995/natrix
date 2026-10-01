@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class DocumentTimeline: global::Natrix.StdWeb.AnimationTimeline
+public partial class DocumentTimeline: global::Natrix.StdWeb.AnimationTimeline, global::Natrix.JSCore.IJSObjectProxy<DocumentTimeline>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public DocumentTimeline(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static DocumentTimeline global::Natrix.JSCore.IJSObjectProxy<DocumentTimeline>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<DocumentTimeline>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.DocumentTimeline New()

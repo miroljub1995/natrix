@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class SlotAssignmentMode
+public sealed partial class SlotAssignmentMode: global::Natrix.JSCore.IJSEnum<SlotAssignmentMode>
 {
     private readonly string _value;
 

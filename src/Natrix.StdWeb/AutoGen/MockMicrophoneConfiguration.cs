@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MockMicrophoneConfiguration: global::Natrix.StdWeb.MockCaptureDeviceConfiguration
+public partial class MockMicrophoneConfiguration: global::Natrix.StdWeb.MockCaptureDeviceConfiguration, global::Natrix.JSCore.IJSObjectProxy<MockMicrophoneConfiguration>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class MockMicrophoneConfiguration: global::Natrix.StdWeb.MockCapt
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MockMicrophoneConfiguration global::Natrix.JSCore.IJSObjectProxy<MockMicrophoneConfiguration>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MockMicrophoneConfiguration(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class MockMicrophoneConfiguration: global::Natrix.StdWeb.MockCapt
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint DefaultSampleRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "defaultSampleRate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "defaultSampleRate", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "defaultSampleRate");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "defaultSampleRate", value);
     }
 }
 

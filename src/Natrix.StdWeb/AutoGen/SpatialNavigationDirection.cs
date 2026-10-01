@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class SpatialNavigationDirection
+public sealed partial class SpatialNavigationDirection: global::Natrix.JSCore.IJSEnum<SpatialNavigationDirection>
 {
     private readonly string _value;
 

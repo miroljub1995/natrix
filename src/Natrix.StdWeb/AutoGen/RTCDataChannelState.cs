@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RTCDataChannelState
+public sealed partial class RTCDataChannelState: global::Natrix.JSCore.IJSEnum<RTCDataChannelState>
 {
     private readonly string _value;
 

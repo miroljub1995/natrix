@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ScrollTimeline: global::Natrix.StdWeb.AnimationTimeline
+public partial class ScrollTimeline: global::Natrix.StdWeb.AnimationTimeline, global::Natrix.JSCore.IJSObjectProxy<ScrollTimeline>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ScrollTimeline(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ScrollTimeline global::Natrix.JSCore.IJSObjectProxy<ScrollTimeline>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ScrollTimeline>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.ScrollTimeline New()
@@ -37,13 +41,13 @@ public partial class ScrollTimeline: global::Natrix.StdWeb.AnimationTimeline
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? Source
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "source");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "source");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ScrollAxis Axis
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ScrollAxis, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "axis");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ScrollAxis, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollAxis>>(JSObject, "axis");
     }
 }
 

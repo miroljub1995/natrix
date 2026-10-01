@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MediaKeysRequirement
+public sealed partial class MediaKeysRequirement: global::Natrix.JSCore.IJSEnum<MediaKeysRequirement>
 {
     private readonly string _value;
 

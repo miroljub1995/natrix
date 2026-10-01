@@ -4,15 +4,19 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CSSUnparsedValue: global::Natrix.StdWeb.CSSStyleValue
+public partial class CSSUnparsedValue: global::Natrix.StdWeb.CSSStyleValue, global::Natrix.JSCore.IJSObjectProxy<CSSUnparsedValue>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CSSUnparsedValue(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
 
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CSSUnparsedValue global::Natrix.JSCore.IJSObjectProxy<CSSUnparsedValue>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CSSUnparsedValue>(obj);
+
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.CSSUnparsedValue New(global::Natrix.JSCore.Generics.JSArray<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CSSVariableReferenceValue, global::Natrix.StdWeb.GenericMarshaller.Union>, global::Natrix.StdWeb.PropertyAccessor> members)
+    public static global::Natrix.StdWeb.CSSUnparsedValue New(global::Natrix.JSCore.Generics.JSArray<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CSSVariableReferenceValue, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSVariableReferenceValue>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CSSVariableReferenceValue, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSVariableReferenceValue>>>> members)
     {
         int ___argsArrayLength_3 = 1;
 
@@ -29,11 +33,11 @@ public partial class CSSUnparsedValue: global::Natrix.StdWeb.CSSStyleValue
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "length");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CSSVariableReferenceValue, global::Natrix.StdWeb.GenericMarshaller.Union> Get(uint index)
+    public global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CSSVariableReferenceValue, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSVariableReferenceValue>> Get(uint index)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -49,11 +53,11 @@ public partial class CSSUnparsedValue: global::Natrix.StdWeb.CSSStyleValue
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallGetter(JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CSSVariableReferenceValue, global::Natrix.StdWeb.GenericMarshaller.Union>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CSSVariableReferenceValue, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSVariableReferenceValue>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CSSVariableReferenceValue, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSVariableReferenceValue>>>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void Set(uint index, global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CSSVariableReferenceValue, global::Natrix.StdWeb.GenericMarshaller.Union> val)
+    public void Set(uint index, global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CSSVariableReferenceValue, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSVariableReferenceValue>> val)
     {
         int ___argsArrayLength_2 = 2;
 

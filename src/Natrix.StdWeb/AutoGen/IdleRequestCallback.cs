@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void IdleRequestCallbackManaged(global::Natrix.StdWeb.IdleDeadline deadline);
 
-public partial class IdleRequestCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class IdleRequestCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<IdleRequestCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public IdleRequestCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static IdleRequestCallback global::Natrix.JSCore.IJSObjectProxy<IdleRequestCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public IdleRequestCallback(IdleRequestCallbackManaged input): this(ToJSObject(input))

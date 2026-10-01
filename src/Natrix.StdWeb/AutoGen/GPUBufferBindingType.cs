@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUBufferBindingType
+public sealed partial class GPUBufferBindingType: global::Natrix.JSCore.IJSEnum<GPUBufferBindingType>
 {
     private readonly string _value;
 

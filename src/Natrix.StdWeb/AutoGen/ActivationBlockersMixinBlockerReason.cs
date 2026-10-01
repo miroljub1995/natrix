@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ActivationBlockersMixinBlockerReason
+public sealed partial class ActivationBlockersMixinBlockerReason: global::Natrix.JSCore.IJSEnum<ActivationBlockersMixinBlockerReason>
 {
     private readonly string _value;
 

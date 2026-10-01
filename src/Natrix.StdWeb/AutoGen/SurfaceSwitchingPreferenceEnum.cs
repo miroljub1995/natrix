@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class SurfaceSwitchingPreferenceEnum
+public sealed partial class SurfaceSwitchingPreferenceEnum: global::Natrix.JSCore.IJSEnum<SurfaceSwitchingPreferenceEnum>
 {
     private readonly string _value;
 

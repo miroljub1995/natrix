@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class NavigationScrollBehavior
+public sealed partial class NavigationScrollBehavior: global::Natrix.JSCore.IJSEnum<NavigationScrollBehavior>
 {
     private readonly string _value;
 

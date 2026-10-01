@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CSSBoxType
+public sealed partial class CSSBoxType: global::Natrix.JSCore.IJSEnum<CSSBoxType>
 {
     private readonly string _value;
 

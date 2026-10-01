@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class NavigationCurrentEntryChangeEvent: global::Natrix.StdWeb.Event
+public partial class NavigationCurrentEntryChangeEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<NavigationCurrentEntryChangeEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NavigationCurrentEntryChangeEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NavigationCurrentEntryChangeEvent global::Natrix.JSCore.IJSObjectProxy<NavigationCurrentEntryChangeEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<NavigationCurrentEntryChangeEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.NavigationCurrentEntryChangeEvent New(string type, global::Natrix.StdWeb.NavigationCurrentEntryChangeEventInit eventInitDict)
@@ -35,13 +39,13 @@ public partial class NavigationCurrentEntryChangeEvent: global::Natrix.StdWeb.Ev
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NavigationType? NavigationType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NavigationType?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "navigationType");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NavigationType?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.NavigationType>>(JSObject, "navigationType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NavigationHistoryEntry From
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NavigationHistoryEntry, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "from");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NavigationHistoryEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NavigationHistoryEntry>>(JSObject, "from");
     }
 }
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WEBGL_provoking_vertex: global::Natrix.JSCore.JSObjectProxy
+public partial class WEBGL_provoking_vertex: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<WEBGL_provoking_vertex>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WEBGL_provoking_vertex(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static WEBGL_provoking_vertex global::Natrix.JSCore.IJSObjectProxy<WEBGL_provoking_vertex>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WEBGL_provoking_vertex>(obj);
 
     public const uint FIRST_VERTEX_CONVENTION_WEBGL = 0x8E4D;
 

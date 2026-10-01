@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class XRLayerLayout
+public sealed partial class XRLayerLayout: global::Natrix.JSCore.IJSEnum<XRLayerLayout>
 {
     private readonly string _value;
 

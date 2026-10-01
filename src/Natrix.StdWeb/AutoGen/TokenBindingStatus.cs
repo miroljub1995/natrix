@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class TokenBindingStatus
+public sealed partial class TokenBindingStatus: global::Natrix.JSCore.IJSEnum<TokenBindingStatus>
 {
     private readonly string _value;
 

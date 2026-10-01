@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class AudioNode: global::Natrix.StdWeb.EventTarget
+public partial class AudioNode: global::Natrix.StdWeb.EventTarget, global::Natrix.JSCore.IJSObjectProxy<AudioNode>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public AudioNode(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static AudioNode global::Natrix.JSCore.IJSObjectProxy<AudioNode>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<AudioNode>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioNode Connect(global::Natrix.StdWeb.AudioNode destinationNode)
@@ -28,7 +32,7 @@ public partial class AudioNode: global::Natrix.StdWeb.EventTarget
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "connect", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioNode, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioNode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioNode>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -53,7 +57,7 @@ public partial class AudioNode: global::Natrix.StdWeb.EventTarget
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "connect", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioNode, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioNode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioNode>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -83,7 +87,7 @@ public partial class AudioNode: global::Natrix.StdWeb.EventTarget
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "connect", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioNode, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioNode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioNode>>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -240,40 +244,40 @@ public partial class AudioNode: global::Natrix.StdWeb.EventTarget
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BaseAudioContext Context
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BaseAudioContext, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "context");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BaseAudioContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BaseAudioContext>>(JSObject, "context");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint NumberOfInputs
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "numberOfInputs");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "numberOfInputs");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint NumberOfOutputs
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "numberOfOutputs");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "numberOfOutputs");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ChannelCount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "channelCount");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "channelCount", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "channelCount");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "channelCount", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ChannelCountMode ChannelCountMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ChannelCountMode, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "channelCountMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ChannelCountMode, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "channelCountMode", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ChannelCountMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChannelCountMode>>(JSObject, "channelCountMode");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ChannelCountMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChannelCountMode>>(JSObject, "channelCountMode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ChannelInterpretation ChannelInterpretation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ChannelInterpretation, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "channelInterpretation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ChannelInterpretation, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "channelInterpretation", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ChannelInterpretation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChannelInterpretation>>(JSObject, "channelInterpretation");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ChannelInterpretation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChannelInterpretation>>(JSObject, "channelInterpretation", value);
     }
 }
 

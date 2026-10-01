@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CanvasTextBaseline
+public sealed partial class CanvasTextBaseline: global::Natrix.JSCore.IJSEnum<CanvasTextBaseline>
 {
     private readonly string _value;
 

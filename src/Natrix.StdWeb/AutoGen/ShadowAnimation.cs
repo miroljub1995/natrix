@@ -4,15 +4,19 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ShadowAnimation: global::Natrix.StdWeb.Animation
+public partial class ShadowAnimation: global::Natrix.StdWeb.Animation, global::Natrix.JSCore.IJSObjectProxy<ShadowAnimation>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ShadowAnimation(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
 
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ShadowAnimation global::Natrix.JSCore.IJSObjectProxy<ShadowAnimation>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ShadowAnimation>(obj);
+
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.ShadowAnimation New(global::Natrix.StdWeb.Animation source, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.StdWeb.GenericMarshaller.Union> newTarget)
+    public static global::Natrix.StdWeb.ShadowAnimation New(global::Natrix.StdWeb.Animation source, global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Element, global::Natrix.StdWeb.CSSPseudoElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPseudoElement>> newTarget)
     {
         int ___argsArrayLength_3 = 2;
 
@@ -34,7 +38,7 @@ public partial class ShadowAnimation: global::Natrix.StdWeb.Animation
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Animation SourceAnimation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Animation, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "sourceAnimation");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Animation, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Animation>>(JSObject, "sourceAnimation");
     }
 }
 

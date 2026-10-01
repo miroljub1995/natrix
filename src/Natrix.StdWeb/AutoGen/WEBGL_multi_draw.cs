@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class WEBGL_multi_draw: global::Natrix.JSCore.JSObjectProxy
+public partial class WEBGL_multi_draw: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<WEBGL_multi_draw>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public WEBGL_multi_draw(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,7 +12,11 @@ public partial class WEBGL_multi_draw: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void MultiDrawArraysWEBGL(uint mode, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.GenericMarshaller.Union> firstsList, ulong firstsOffset, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.GenericMarshaller.Union> countsList, ulong countsOffset, int drawcount)
+    static WEBGL_multi_draw global::Natrix.JSCore.IJSObjectProxy<WEBGL_multi_draw>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WEBGL_multi_draw>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void MultiDrawArraysWEBGL(uint mode, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Int32Array>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>> firstsList, ulong firstsOffset, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Int32Array>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>> countsList, ulong countsOffset, int drawcount)
     {
         int ___argsArrayLength_2 = 6;
 
@@ -50,7 +54,7 @@ public partial class WEBGL_multi_draw: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void MultiDrawElementsWEBGL(uint mode, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.GenericMarshaller.Union> countsList, ulong countsOffset, uint type, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.GenericMarshaller.Union> offsetsList, ulong offsetsOffset, int drawcount)
+    public void MultiDrawElementsWEBGL(uint mode, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Int32Array>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>> countsList, ulong countsOffset, uint type, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Int32Array>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>> offsetsList, ulong offsetsOffset, int drawcount)
     {
         int ___argsArrayLength_2 = 7;
 
@@ -93,7 +97,7 @@ public partial class WEBGL_multi_draw: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void MultiDrawArraysInstancedWEBGL(uint mode, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.GenericMarshaller.Union> firstsList, ulong firstsOffset, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.GenericMarshaller.Union> countsList, ulong countsOffset, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.GenericMarshaller.Union> instanceCountsList, ulong instanceCountsOffset, int drawcount)
+    public void MultiDrawArraysInstancedWEBGL(uint mode, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Int32Array>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>> firstsList, ulong firstsOffset, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Int32Array>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>> countsList, ulong countsOffset, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Int32Array>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>> instanceCountsList, ulong instanceCountsOffset, int drawcount)
     {
         int ___argsArrayLength_2 = 8;
 
@@ -140,7 +144,7 @@ public partial class WEBGL_multi_draw: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void MultiDrawElementsInstancedWEBGL(uint mode, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.GenericMarshaller.Union> countsList, ulong countsOffset, uint type, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.GenericMarshaller.Union> offsetsList, ulong offsetsOffset, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.GenericMarshaller.Union> instanceCountsList, ulong instanceCountsOffset, int drawcount)
+    public void MultiDrawElementsInstancedWEBGL(uint mode, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Int32Array>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>> countsList, ulong countsOffset, uint type, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Int32Array>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>> offsetsList, ulong offsetsOffset, global::Natrix.JSCore.Generics.Union<global::Natrix.JSCore.Int32Array, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Int32Array>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>> instanceCountsList, ulong instanceCountsOffset, int drawcount)
     {
         int ___argsArrayLength_2 = 9;
 

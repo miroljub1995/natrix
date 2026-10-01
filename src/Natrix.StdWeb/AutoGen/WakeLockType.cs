@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class WakeLockType
+public sealed partial class WakeLockType: global::Natrix.JSCore.IJSEnum<WakeLockType>
 {
     private readonly string _value;
 

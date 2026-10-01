@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class NavigationPrecommitController: global::Natrix.JSCore.JSObjectProxy
+public partial class NavigationPrecommitController: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<NavigationPrecommitController>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public NavigationPrecommitController(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static NavigationPrecommitController global::Natrix.JSCore.IJSObjectProxy<NavigationPrecommitController>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<NavigationPrecommitController>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public void Redirect(string url)

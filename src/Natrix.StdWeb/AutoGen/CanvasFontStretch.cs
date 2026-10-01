@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class CanvasFontStretch
+public sealed partial class CanvasFontStretch: global::Natrix.JSCore.IJSEnum<CanvasFontStretch>
 {
     private readonly string _value;
 

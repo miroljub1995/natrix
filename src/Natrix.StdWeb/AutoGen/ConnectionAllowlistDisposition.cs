@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ConnectionAllowlistDisposition
+public sealed partial class ConnectionAllowlistDisposition: global::Natrix.JSCore.IJSEnum<ConnectionAllowlistDisposition>
 {
     private readonly string _value;
 

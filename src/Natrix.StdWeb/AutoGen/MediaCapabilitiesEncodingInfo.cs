@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MediaCapabilitiesEncodingInfo: global::Natrix.StdWeb.MediaCapabilitiesInfo
+public partial class MediaCapabilitiesEncodingInfo: global::Natrix.StdWeb.MediaCapabilitiesInfo, global::Natrix.JSCore.IJSObjectProxy<MediaCapabilitiesEncodingInfo>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class MediaCapabilitiesEncodingInfo: global::Natrix.StdWeb.MediaC
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MediaCapabilitiesEncodingInfo global::Natrix.JSCore.IJSObjectProxy<MediaCapabilitiesEncodingInfo>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MediaCapabilitiesEncodingInfo(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class MediaCapabilitiesEncodingInfo: global::Natrix.StdWeb.MediaC
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.MediaEncodingConfiguration Configuration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaEncodingConfiguration, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "configuration");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MediaEncodingConfiguration, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "configuration", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaEncodingConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaEncodingConfiguration>>(JSObject, "configuration");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MediaEncodingConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaEncodingConfiguration>>(JSObject, "configuration", value);
     }
 }
 

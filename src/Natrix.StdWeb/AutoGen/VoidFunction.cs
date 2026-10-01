@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void VoidFunctionManaged();
 
-public partial class VoidFunction: global::Natrix.JSCore.JSObjectProxy
+public partial class VoidFunction: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<VoidFunction>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public VoidFunction(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static VoidFunction global::Natrix.JSCore.IJSObjectProxy<VoidFunction>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public VoidFunction(VoidFunctionManaged input): this(ToJSObject(input))

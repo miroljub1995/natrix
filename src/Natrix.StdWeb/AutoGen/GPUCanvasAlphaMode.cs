@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUCanvasAlphaMode
+public sealed partial class GPUCanvasAlphaMode: global::Natrix.JSCore.IJSEnum<GPUCanvasAlphaMode>
 {
     private readonly string _value;
 

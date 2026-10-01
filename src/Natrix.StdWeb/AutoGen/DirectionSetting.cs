@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class DirectionSetting
+public sealed partial class DirectionSetting: global::Natrix.JSCore.IJSEnum<DirectionSetting>
 {
     private readonly string _value;
 

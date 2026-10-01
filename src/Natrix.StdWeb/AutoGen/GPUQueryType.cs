@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class GPUQueryType
+public sealed partial class GPUQueryType: global::Natrix.JSCore.IJSEnum<GPUQueryType>
 {
     private readonly string _value;
 

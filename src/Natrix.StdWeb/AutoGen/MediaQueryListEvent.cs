@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class MediaQueryListEvent: global::Natrix.StdWeb.Event
+public partial class MediaQueryListEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<MediaQueryListEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public MediaQueryListEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static MediaQueryListEvent global::Natrix.JSCore.IJSObjectProxy<MediaQueryListEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<MediaQueryListEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.MediaQueryListEvent New(string type)
@@ -51,13 +55,13 @@ public partial class MediaQueryListEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Media
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "media");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "media");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Matches
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "matches");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "matches");
     }
 }
 

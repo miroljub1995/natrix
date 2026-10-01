@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class PaintWorkletGlobalScope: global::Natrix.StdWeb.WorkletGlobalScope
+public partial class PaintWorkletGlobalScope: global::Natrix.StdWeb.WorkletGlobalScope, global::Natrix.JSCore.IJSObjectProxy<PaintWorkletGlobalScope>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PaintWorkletGlobalScope(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PaintWorkletGlobalScope global::Natrix.JSCore.IJSObjectProxy<PaintWorkletGlobalScope>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<PaintWorkletGlobalScope>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public void RegisterPaint(string name, global::Natrix.StdWeb.VoidFunction paintCtor)
@@ -34,7 +38,7 @@ public partial class PaintWorkletGlobalScope: global::Natrix.StdWeb.WorkletGloba
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DevicePixelRatio
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "devicePixelRatio");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "devicePixelRatio");
     }
 }
 

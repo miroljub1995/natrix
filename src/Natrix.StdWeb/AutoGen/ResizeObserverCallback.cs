@@ -4,14 +4,18 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public delegate void ResizeObserverCallbackManaged(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ResizeObserverEntry, global::Natrix.StdWeb.PropertyAccessor> entries, global::Natrix.StdWeb.ResizeObserver observer);
+public delegate void ResizeObserverCallbackManaged(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ResizeObserverEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverEntry>> entries, global::Natrix.StdWeb.ResizeObserver observer);
 
-public partial class ResizeObserverCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class ResizeObserverCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<ResizeObserverCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ResizeObserverCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ResizeObserverCallback global::Natrix.JSCore.IJSObjectProxy<ResizeObserverCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ResizeObserverCallback(ResizeObserverCallbackManaged input): this(ToJSObject(input))
@@ -66,10 +70,10 @@ public partial class ResizeObserverCallback: global::Natrix.JSCore.JSObjectProxy
             using (___args_0)
             {
                 // Argument 1
-                global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ResizeObserverEntry, global::Natrix.StdWeb.PropertyAccessor> ___arg_2;
+                global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ResizeObserverEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverEntry>> ___arg_2;
                 global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_3;
                 ___propObject_3 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(___args_0, 0);
-                ___arg_2 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ResizeObserverEntry, global::Natrix.StdWeb.PropertyAccessor>(___propObject_3);
+                ___arg_2 = new global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ResizeObserverEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverEntry>>(___propObject_3);
 
                 // Argument 2
                 global::Natrix.StdWeb.ResizeObserver ___arg_4;

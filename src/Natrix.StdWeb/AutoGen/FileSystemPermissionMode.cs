@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class FileSystemPermissionMode
+public sealed partial class FileSystemPermissionMode: global::Natrix.JSCore.IJSEnum<FileSystemPermissionMode>
 {
     private readonly string _value;
 

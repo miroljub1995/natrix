@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class NavigationFocusReset
+public sealed partial class NavigationFocusReset: global::Natrix.JSCore.IJSEnum<NavigationFocusReset>
 {
     private readonly string _value;
 

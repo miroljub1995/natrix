@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void FileCallbackManaged(global::Natrix.StdWeb.File file);
 
-public partial class FileCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class FileCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<FileCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FileCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static FileCallback global::Natrix.JSCore.IJSObjectProxy<FileCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FileCallback(FileCallbackManaged input): this(ToJSObject(input))

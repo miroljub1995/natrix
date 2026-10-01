@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class GPURenderBundleEncoderDescriptor: global::Natrix.StdWeb.GPURenderPassLayout
+public partial class GPURenderBundleEncoderDescriptor: global::Natrix.StdWeb.GPURenderPassLayout, global::Natrix.JSCore.IJSObjectProxy<GPURenderBundleEncoderDescriptor>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class GPURenderBundleEncoderDescriptor: global::Natrix.StdWeb.GPU
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GPURenderBundleEncoderDescriptor global::Natrix.JSCore.IJSObjectProxy<GPURenderBundleEncoderDescriptor>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GPURenderBundleEncoderDescriptor(): base()
     {
     }
@@ -22,15 +26,15 @@ public partial class GPURenderBundleEncoderDescriptor: global::Natrix.StdWeb.GPU
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool DepthReadOnly
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "depthReadOnly");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "depthReadOnly", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "depthReadOnly");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "depthReadOnly", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool StencilReadOnly
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stencilReadOnly");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stencilReadOnly", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "stencilReadOnly");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "stencilReadOnly", value);
     }
 }
 

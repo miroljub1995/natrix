@@ -4,15 +4,19 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class SequenceEffect: global::Natrix.StdWeb.GroupEffect
+public partial class SequenceEffect: global::Natrix.StdWeb.GroupEffect, global::Natrix.JSCore.IJSObjectProxy<SequenceEffect>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public SequenceEffect(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
 
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static SequenceEffect global::Natrix.JSCore.IJSObjectProxy<SequenceEffect>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<SequenceEffect>(obj);
+
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.SequenceEffect New(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AnimationEffect, global::Natrix.StdWeb.PropertyAccessor>? children)
+    public static global::Natrix.StdWeb.SequenceEffect New(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AnimationEffect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AnimationEffect>>? children)
     {
         int ___argsArrayLength_3 = 1;
 
@@ -36,7 +40,7 @@ public partial class SequenceEffect: global::Natrix.StdWeb.GroupEffect
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.SequenceEffect New(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AnimationEffect, global::Natrix.StdWeb.PropertyAccessor>? children, global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.EffectTiming, global::Natrix.StdWeb.GenericMarshaller.Union> timing)
+    public static global::Natrix.StdWeb.SequenceEffect New(global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AnimationEffect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AnimationEffect>>? children, global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.EffectTiming, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EffectTiming>> timing)
     {
         int ___argsArrayLength_3 = 2;
 
@@ -71,7 +75,7 @@ public partial class SequenceEffect: global::Natrix.StdWeb.GroupEffect
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "clone", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SequenceEffect, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SequenceEffect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SequenceEffect>>(___resOwner_1.JSObject, "value");
     }
 }
 

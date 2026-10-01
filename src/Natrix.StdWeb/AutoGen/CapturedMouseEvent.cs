@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class CapturedMouseEvent: global::Natrix.StdWeb.Event
+public partial class CapturedMouseEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<CapturedMouseEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public CapturedMouseEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static CapturedMouseEvent global::Natrix.JSCore.IJSObjectProxy<CapturedMouseEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<CapturedMouseEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.CapturedMouseEvent New(string type)
@@ -51,13 +55,13 @@ public partial class CapturedMouseEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int SurfaceX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "surfaceX");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "surfaceX");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int SurfaceY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "surfaceY");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "surfaceY");
     }
 }
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RequestCredentials
+public sealed partial class RequestCredentials: global::Natrix.JSCore.IJSEnum<RequestCredentials>
 {
     private readonly string _value;
 

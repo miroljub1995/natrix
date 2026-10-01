@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class GPUComputePassDescriptor: global::Natrix.StdWeb.GPUObjectDescriptorBase
+public partial class GPUComputePassDescriptor: global::Natrix.StdWeb.GPUObjectDescriptorBase, global::Natrix.JSCore.IJSObjectProxy<GPUComputePassDescriptor>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,6 +15,10 @@ public partial class GPUComputePassDescriptor: global::Natrix.StdWeb.GPUObjectDe
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static GPUComputePassDescriptor global::Natrix.JSCore.IJSObjectProxy<GPUComputePassDescriptor>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public GPUComputePassDescriptor(): base()
     {
     }
@@ -22,8 +26,8 @@ public partial class GPUComputePassDescriptor: global::Natrix.StdWeb.GPUObjectDe
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUComputePassTimestampWrites TimestampWrites
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUComputePassTimestampWrites, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "timestampWrites");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUComputePassTimestampWrites, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "timestampWrites", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUComputePassTimestampWrites, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUComputePassTimestampWrites>>(JSObject, "timestampWrites");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUComputePassTimestampWrites, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUComputePassTimestampWrites>>(JSObject, "timestampWrites", value);
     }
 }
 

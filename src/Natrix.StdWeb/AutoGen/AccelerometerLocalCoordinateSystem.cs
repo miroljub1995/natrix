@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AccelerometerLocalCoordinateSystem
+public sealed partial class AccelerometerLocalCoordinateSystem: global::Natrix.JSCore.IJSEnum<AccelerometerLocalCoordinateSystem>
 {
     private readonly string _value;
 

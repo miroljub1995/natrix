@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AttributionAggregationProtocol
+public sealed partial class AttributionAggregationProtocol: global::Natrix.JSCore.IJSEnum<AttributionAggregationProtocol>
 {
     private readonly string _value;
 

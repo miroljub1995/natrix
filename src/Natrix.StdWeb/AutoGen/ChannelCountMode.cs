@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class ChannelCountMode
+public sealed partial class ChannelCountMode: global::Natrix.JSCore.IJSEnum<ChannelCountMode>
 {
     private readonly string _value;
 

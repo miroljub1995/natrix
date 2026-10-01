@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class StylePropertyMap: global::Natrix.StdWeb.StylePropertyMapReadOnly
+public partial class StylePropertyMap: global::Natrix.StdWeb.StylePropertyMapReadOnly, global::Natrix.JSCore.IJSObjectProxy<StylePropertyMap>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public StylePropertyMap(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
@@ -12,7 +12,11 @@ public partial class StylePropertyMap: global::Natrix.StdWeb.StylePropertyMapRea
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void Set(string property, params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSStyleValue, string, global::Natrix.StdWeb.GenericMarshaller.Union>[] values)
+    static StylePropertyMap global::Natrix.JSCore.IJSObjectProxy<StylePropertyMap>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<StylePropertyMap>(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void Set(string property, params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSStyleValue, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleValue>, global::Natrix.JSCore.Generics.StringAccessor>[] values)
     {
         int ___argsArrayLength_2 = values.Length + 1;
 
@@ -26,7 +30,7 @@ public partial class StylePropertyMap: global::Natrix.StdWeb.StylePropertyMapRea
         // Argument 2
         for (int ___i_4 = 0; ___i_4 < values.Length; ___i_4++)
         {
-        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSStyleValue, string, global::Natrix.StdWeb.GenericMarshaller.Union> ___elem_5 = values[___i_4];
+        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSStyleValue, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleValue>, global::Natrix.JSCore.Generics.StringAccessor> ___elem_5 = values[___i_4];
             global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_6 = ___elem_5.JSObject;
             global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(___argsArray_0.JSObject, 1 + ___i_4, ___propObject_6);
         }
@@ -35,7 +39,7 @@ public partial class StylePropertyMap: global::Natrix.StdWeb.StylePropertyMapRea
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void Append(string property, params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSStyleValue, string, global::Natrix.StdWeb.GenericMarshaller.Union>[] values)
+    public void Append(string property, params global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSStyleValue, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleValue>, global::Natrix.JSCore.Generics.StringAccessor>[] values)
     {
         int ___argsArrayLength_2 = values.Length + 1;
 
@@ -49,7 +53,7 @@ public partial class StylePropertyMap: global::Natrix.StdWeb.StylePropertyMapRea
         // Argument 2
         for (int ___i_4 = 0; ___i_4 < values.Length; ___i_4++)
         {
-        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSStyleValue, string, global::Natrix.StdWeb.GenericMarshaller.Union> ___elem_5 = values[___i_4];
+        global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSStyleValue, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleValue>, global::Natrix.JSCore.Generics.StringAccessor> ___elem_5 = values[___i_4];
             global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_6 = ___elem_5.JSObject;
             global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(___argsArray_0.JSObject, 1 + ___i_4, ___propObject_6);
         }

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class AudioContextRenderSizeCategory
+public sealed partial class AudioContextRenderSizeCategory: global::Natrix.JSCore.IJSEnum<AudioContextRenderSizeCategory>
 {
     private readonly string _value;
 

@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ReportingObserver: global::Natrix.JSCore.JSObjectProxy
+public partial class ReportingObserver: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<ReportingObserver>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ReportingObserver(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ReportingObserver global::Natrix.JSCore.IJSObjectProxy<ReportingObserver>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ReportingObserver>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.ReportingObserver New(global::Natrix.StdWeb.ReportingObserverCallback callback)
@@ -61,14 +65,14 @@ public partial class ReportingObserver: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.StdWeb.PropertyAccessor> TakeRecords()
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Report>> TakeRecords()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "takeRecords", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Report>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Report>>>>(___resOwner_1.JSObject, "value");
     }
 }
 

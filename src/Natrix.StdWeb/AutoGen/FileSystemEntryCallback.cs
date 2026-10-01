@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void FileSystemEntryCallbackManaged(global::Natrix.StdWeb.FileSystemEntry entry);
 
-public partial class FileSystemEntryCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class FileSystemEntryCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<FileSystemEntryCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FileSystemEntryCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static FileSystemEntryCallback global::Natrix.JSCore.IJSObjectProxy<FileSystemEntryCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public FileSystemEntryCallback(FileSystemEntryCallbackManaged input): this(ToJSObject(input))

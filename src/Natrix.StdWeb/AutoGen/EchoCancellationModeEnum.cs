@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class EchoCancellationModeEnum
+public sealed partial class EchoCancellationModeEnum: global::Natrix.JSCore.IJSEnum<EchoCancellationModeEnum>
 {
     private readonly string _value;
 

@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class MLConvTranspose2dFilterOperandLayout
+public sealed partial class MLConvTranspose2dFilterOperandLayout: global::Natrix.JSCore.IJSEnum<MLConvTranspose2dFilterOperandLayout>
 {
     private readonly string _value;
 

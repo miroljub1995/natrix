@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class RequestDestination
+public sealed partial class RequestDestination: global::Natrix.JSCore.IJSEnum<RequestDestination>
 {
     private readonly string _value;
 

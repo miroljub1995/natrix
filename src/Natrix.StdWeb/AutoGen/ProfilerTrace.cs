@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class ProfilerTrace: global::Natrix.JSCore.JSObjectProxy
+public partial class ProfilerTrace: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<ProfilerTrace>
 {
 #pragma warning disable CS8618 // When constructing using obj, we assume that all members are initialized.
     [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembersAttribute]
@@ -15,36 +15,40 @@ public partial class ProfilerTrace: global::Natrix.JSCore.JSObjectProxy
 #pragma warning restore CS8618
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static ProfilerTrace global::Natrix.JSCore.IJSObjectProxy<ProfilerTrace>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ProfilerTrace(): base(global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object"))
     {
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public required global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.StdWeb.PropertyAccessor> Resources
+    public required global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor> Resources
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "resources");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "resources", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "resources");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "resources", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerFrame, global::Natrix.StdWeb.PropertyAccessor> Frames
+    public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerFrame>> Frames
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerFrame, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "frames");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerFrame, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "frames", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerFrame>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerFrame>>>>(JSObject, "frames");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerFrame>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerFrame>>>>(JSObject, "frames", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerStack, global::Natrix.StdWeb.PropertyAccessor> Stacks
+    public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerStack, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerStack>> Stacks
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerStack, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stacks");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerStack, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "stacks", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerStack, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerStack>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerStack, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerStack>>>>(JSObject, "stacks");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerStack, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerStack>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerStack, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerStack>>>>(JSObject, "stacks", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerSample, global::Natrix.StdWeb.PropertyAccessor> Samples
+    public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerSample, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerSample>> Samples
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerSample, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "samples");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerSample, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "samples", value);
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerSample, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerSample>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerSample, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerSample>>>>(JSObject, "samples");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerSample, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerSample>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProfilerSample, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProfilerSample>>>>(JSObject, "samples", value);
     }
 }
 

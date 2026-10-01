@@ -6,12 +6,16 @@ namespace Natrix.StdWeb;
 
 public delegate void PositionErrorCallbackManaged(global::Natrix.StdWeb.GeolocationPositionError positionError);
 
-public partial class PositionErrorCallback: global::Natrix.JSCore.JSObjectProxy
+public partial class PositionErrorCallback: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<PositionErrorCallback>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PositionErrorCallback(global::System.Runtime.InteropServices.JavaScript.JSObject obj) : base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static PositionErrorCallback global::Natrix.JSCore.IJSObjectProxy<PositionErrorCallback>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        new(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public PositionErrorCallback(PositionErrorCallbackManaged input): this(ToJSObject(input))

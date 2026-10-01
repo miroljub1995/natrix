@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class XRLayerEvent: global::Natrix.StdWeb.Event
+public partial class XRLayerEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore.IJSObjectProxy<XRLayerEvent>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public XRLayerEvent(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static XRLayerEvent global::Natrix.JSCore.IJSObjectProxy<XRLayerEvent>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<XRLayerEvent>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.XRLayerEvent New(string type, global::Natrix.StdWeb.XRLayerEventInit eventInitDict)
@@ -35,7 +39,7 @@ public partial class XRLayerEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRLayer Layer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRLayer, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "layer");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRLayer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRLayer>>(JSObject, "layer");
     }
 }
 

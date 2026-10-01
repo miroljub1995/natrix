@@ -4,12 +4,16 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public partial class OVR_multiview2: global::Natrix.JSCore.JSObjectProxy
+public partial class OVR_multiview2: global::Natrix.JSCore.JSObjectProxy, global::Natrix.JSCore.IJSObjectProxy<OVR_multiview2>
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public OVR_multiview2(global::System.Runtime.InteropServices.JavaScript.JSObject obj): base(obj)
     {
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static OVR_multiview2 global::Natrix.JSCore.IJSObjectProxy<OVR_multiview2>.Create(global::System.Runtime.InteropServices.JavaScript.JSObject obj) =>
+        global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<OVR_multiview2>(obj);
 
     public const uint FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR = 0x9630;
 

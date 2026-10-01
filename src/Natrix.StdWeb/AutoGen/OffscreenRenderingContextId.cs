@@ -4,7 +4,7 @@ namespace Natrix.StdWeb;
 
 #nullable enable
 
-public sealed partial class OffscreenRenderingContextId
+public sealed partial class OffscreenRenderingContextId: global::Natrix.JSCore.IJSEnum<OffscreenRenderingContextId>
 {
     private readonly string _value;
 
