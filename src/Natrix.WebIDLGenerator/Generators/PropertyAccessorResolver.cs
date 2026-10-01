@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Natrix.WebIDLGenerator.Models;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -59,7 +60,7 @@ public class PropertyAccessorResolver(
         };
     }
 
-    private static bool TryResolvePrimitive(string idlType, out string name)
+    private static bool TryResolvePrimitive(string idlType, [NotNullWhen(true)] out string? name)
     {
         name = idlType switch
         {
@@ -78,9 +79,9 @@ public class PropertyAccessorResolver(
             BuiltinTypes.String => "String",
             BuiltinTypes.Object => "JSObject",
             BuiltinTypes.ManagedObject => "Object",
-            _ => "",
+            _ => null,
         };
 
-        return name.Length > 0;
+        return name is not null;
     }
 }
