@@ -20,6 +20,41 @@ public partial class AuthenticationExtensionsClientOutputs: global::Natrix.JSCor
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool CredBlob
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "credBlob");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "credBlob", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.ArrayBuffer GetCredBlob
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.ArrayBuffer, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "getCredBlob");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.ArrayBuffer, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "getCredBlob", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool HmacCreateSecret
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hmacCreateSecret");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hmacCreateSecret", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.HMACGetSecretOutput HmacGetSecret
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HMACGetSecretOutput, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hmacGetSecret");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.HMACGetSecretOutput, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hmacGetSecret", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.AuthenticationExtensionsPaymentOutputs Payment
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AuthenticationExtensionsPaymentOutputs, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "payment");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AuthenticationExtensionsPaymentOutputs, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "payment", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Appid
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "appid");
@@ -59,41 +94,6 @@ public partial class AuthenticationExtensionsClientOutputs: global::Natrix.JSCor
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "remoteClientDataJSON");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "remoteClientDataJSON", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.AuthenticationExtensionsPaymentOutputs Payment
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AuthenticationExtensionsPaymentOutputs, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "payment");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AuthenticationExtensionsPaymentOutputs, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "payment", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool CredBlob
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "credBlob");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "credBlob", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.ArrayBuffer GetCredBlob
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.ArrayBuffer, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "getCredBlob");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.ArrayBuffer, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "getCredBlob", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool HmacCreateSecret
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hmacCreateSecret");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hmacCreateSecret", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.HMACGetSecretOutput HmacGetSecret
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HMACGetSecretOutput, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hmacGetSecret");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.HMACGetSecretOutput, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hmacGetSecret", value);
     }
 }
 

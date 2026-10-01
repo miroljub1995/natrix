@@ -68,13 +68,6 @@ public partial class HTMLBodyElement: global::Natrix.StdWeb.HTMLElement
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.EventHandlerNonNull? Onportalactivate
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onportalactivate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onportalactivate", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventHandlerNonNull? Ongamepadconnected
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "ongamepadconnected");
@@ -212,6 +205,13 @@ public partial class HTMLBodyElement: global::Natrix.StdWeb.HTMLElement
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onunload");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onunload", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.EventHandlerNonNull? Onportalactivate
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onportalactivate");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onportalactivate", value);
     }
 }
 

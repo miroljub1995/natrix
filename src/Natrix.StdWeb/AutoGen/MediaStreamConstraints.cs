@@ -34,17 +34,17 @@ public partial class MediaStreamConstraints: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public string PeerIdentity
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "peerIdentity");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "peerIdentity", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool PreferCurrentTab
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "preferCurrentTab");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "preferCurrentTab", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public string PeerIdentity
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "peerIdentity");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "peerIdentity", value);
     }
 }
 

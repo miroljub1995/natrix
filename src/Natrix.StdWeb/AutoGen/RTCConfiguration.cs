@@ -20,6 +20,13 @@ public partial class RTCConfiguration: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public string PeerIdentity
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "peerIdentity");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "peerIdentity", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.StdWeb.PropertyAccessor> IceServers
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "iceServers");
@@ -59,13 +66,6 @@ public partial class RTCConfiguration: global::Natrix.JSCore.JSObjectProxy
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "iceCandidatePoolSize");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<byte, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "iceCandidatePoolSize", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public string PeerIdentity
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "peerIdentity");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "peerIdentity", value);
     }
 }
 

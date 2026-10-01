@@ -11,106 +11,6 @@ public partial class RTCIceTransport: global::Natrix.StdWeb.EventTarget
     {
     }
 
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.RTCIceRole Role
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceRole, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "role");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.RTCIceComponent Component
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceComponent, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "component");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.RTCIceTransportState State
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceTransportState, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "state");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.RTCIceGathererState GatheringState
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceGathererState, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "gatheringState");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.StdWeb.PropertyAccessor> GetLocalCandidates()
-    {
-        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
-
-        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getLocalCandidates", JSObject, ___resOwner_1.JSObject);
-
-        // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.StdWeb.PropertyAccessor> GetRemoteCandidates()
-    {
-        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
-
-        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getRemoteCandidates", JSObject, ___resOwner_1.JSObject);
-
-        // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.RTCIceCandidatePair? GetSelectedCandidatePair()
-    {
-        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
-
-        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getSelectedCandidatePair", JSObject, ___resOwner_1.JSObject);
-
-        // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceCandidatePair?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.RTCIceParameters? GetLocalParameters()
-    {
-        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
-
-        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getLocalParameters", JSObject, ___resOwner_1.JSObject);
-
-        // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceParameters?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.RTCIceParameters? GetRemoteParameters()
-    {
-        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
-
-        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getRemoteParameters", JSObject, ___resOwner_1.JSObject);
-
-        // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceParameters?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.EventHandlerNonNull? Onstatechange
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onstatechange");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onstatechange", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.EventHandlerNonNull? Ongatheringstatechange
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "ongatheringstatechange");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "ongatheringstatechange", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.EventHandlerNonNull? Onselectedcandidatepairchange
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onselectedcandidatepairchange");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onselectedcandidatepairchange", value);
-    }
-
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.RTCIceTransport New()
     {
@@ -219,6 +119,106 @@ public partial class RTCIceTransport: global::Natrix.StdWeb.EventTarget
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onicecandidate");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onicecandidate", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.RTCIceRole Role
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceRole, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "role");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.RTCIceComponent Component
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceComponent, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "component");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.RTCIceTransportState State
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceTransportState, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "state");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.RTCIceGathererState GatheringState
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceGathererState, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "gatheringState");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.StdWeb.PropertyAccessor> GetLocalCandidates()
+    {
+        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getLocalCandidates", JSObject, ___resOwner_1.JSObject);
+
+        // Return Value
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.StdWeb.PropertyAccessor> GetRemoteCandidates()
+    {
+        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getRemoteCandidates", JSObject, ___resOwner_1.JSObject);
+
+        // Return Value
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.RTCIceCandidatePair? GetSelectedCandidatePair()
+    {
+        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getSelectedCandidatePair", JSObject, ___resOwner_1.JSObject);
+
+        // Return Value
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceCandidatePair?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.RTCIceParameters? GetLocalParameters()
+    {
+        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getLocalParameters", JSObject, ___resOwner_1.JSObject);
+
+        // Return Value
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceParameters?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.RTCIceParameters? GetRemoteParameters()
+    {
+        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getRemoteParameters", JSObject, ___resOwner_1.JSObject);
+
+        // Return Value
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceParameters?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.EventHandlerNonNull? Onstatechange
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onstatechange");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onstatechange", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.EventHandlerNonNull? Ongatheringstatechange
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "ongatheringstatechange");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "ongatheringstatechange", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.EventHandlerNonNull? Onselectedcandidatepairchange
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onselectedcandidatepairchange");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onselectedcandidatepairchange", value);
     }
 }
 

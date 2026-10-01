@@ -12,13 +12,6 @@ public partial class HTMLIFrameElement: global::Natrix.StdWeb.HTMLElement
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public string Csp
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "csp");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "csp", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Credentialless
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "credentialless");
@@ -26,9 +19,17 @@ public partial class HTMLIFrameElement: global::Natrix.StdWeb.HTMLElement
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.PermissionsPolicy PermissionsPolicy
+    public string ConnectionAllowlist
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PermissionsPolicy, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "permissionsPolicy");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "connectionAllowlist");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "connectionAllowlist", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public string Csp
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "csp");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "csp", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
@@ -173,17 +174,16 @@ public partial class HTMLIFrameElement: global::Natrix.StdWeb.HTMLElement
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.PermissionsPolicy PermissionsPolicy
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PermissionsPolicy, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "permissionsPolicy");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string PrivateToken
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "privateToken");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "privateToken", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public string ConnectionAllowlist
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "connectionAllowlist");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "connectionAllowlist", value);
     }
 }
 

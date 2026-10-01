@@ -12,13 +12,6 @@ public partial class MediaStreamTrack: global::Natrix.StdWeb.EventTarget
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public string ContentHint
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "contentHint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "contentHint", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CaptureHandle? GetCaptureHandle()
     {
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
@@ -34,6 +27,37 @@ public partial class MediaStreamTrack: global::Natrix.StdWeb.EventTarget
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "oncapturehandlechange");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "oncapturehandlechange", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.StdWeb.PropertyAccessor> GetSupportedCaptureActions()
+    {
+        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getSupportedCaptureActions", JSObject, ___resOwner_1.JSObject);
+
+        // Return Value
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Promise SendCaptureAction(global::Natrix.StdWeb.CaptureAction action)
+    {
+        int ___argsArrayLength_2 = 1;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        string ___marshalledValue_3;
+        ___marshalledValue_3 = action.ToString();
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "sendCaptureAction", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
+
+        // Return Value
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -176,6 +200,13 @@ public partial class MediaStreamTrack: global::Natrix.StdWeb.EventTarget
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public string ContentHint
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "contentHint");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "contentHint", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Isolated
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "isolated");
@@ -186,37 +217,6 @@ public partial class MediaStreamTrack: global::Natrix.StdWeb.EventTarget
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onisolationchange");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onisolationchange", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.StdWeb.PropertyAccessor> GetSupportedCaptureActions()
-    {
-        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
-
-        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getSupportedCaptureActions", JSObject, ___resOwner_1.JSObject);
-
-        // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Promise SendCaptureAction(global::Natrix.StdWeb.CaptureAction action)
-    {
-        int ___argsArrayLength_2 = 1;
-
-        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
-
-        // Argument 1
-        string ___marshalledValue_3;
-        ___marshalledValue_3 = action.ToString();
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
-
-        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
-
-        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "sendCaptureAction", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
-
-        // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
     }
 }
 

@@ -336,31 +336,13 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
     }
 }
 
-public partial class ServiceWorkerGlobalScope
-{
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.WebAssemblyNamespace WebAssembly => new global::Natrix.StdWeb.WebAssemblyNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "WebAssembly"));
-}
-
 public partial class Window
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebAssemblyNamespace WebAssembly => new global::Natrix.StdWeb.WebAssemblyNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "WebAssembly"));
 }
 
-public partial class DedicatedWorkerGlobalScope
-{
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.WebAssemblyNamespace WebAssembly => new global::Natrix.StdWeb.WebAssemblyNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "WebAssembly"));
-}
-
-public partial class PaintWorkletGlobalScope
-{
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.WebAssemblyNamespace WebAssembly => new global::Natrix.StdWeb.WebAssemblyNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "WebAssembly"));
-}
-
-public partial class RTCIdentityProviderGlobalScope
+public partial class ServiceWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebAssemblyNamespace WebAssembly => new global::Natrix.StdWeb.WebAssemblyNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "WebAssembly"));
@@ -372,7 +354,19 @@ public partial class AnimationWorkletGlobalScope
     public global::Natrix.StdWeb.WebAssemblyNamespace WebAssembly => new global::Natrix.StdWeb.WebAssemblyNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "WebAssembly"));
 }
 
-public partial class JsonLd
+public partial class LayoutWorkletGlobalScope
+{
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.WebAssemblyNamespace WebAssembly => new global::Natrix.StdWeb.WebAssemblyNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "WebAssembly"));
+}
+
+public partial class PaintWorkletGlobalScope
+{
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.WebAssemblyNamespace WebAssembly => new global::Natrix.StdWeb.WebAssemblyNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "WebAssembly"));
+}
+
+public partial class DedicatedWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebAssemblyNamespace WebAssembly => new global::Natrix.StdWeb.WebAssemblyNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "WebAssembly"));
@@ -384,13 +378,19 @@ public partial class SharedWorkerGlobalScope
     public global::Natrix.StdWeb.WebAssemblyNamespace WebAssembly => new global::Natrix.StdWeb.WebAssemblyNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "WebAssembly"));
 }
 
-public partial class LayoutWorkletGlobalScope
+public partial class JsonLd
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebAssemblyNamespace WebAssembly => new global::Natrix.StdWeb.WebAssemblyNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "WebAssembly"));
 }
 
 public partial class AudioWorkletGlobalScope
+{
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.WebAssemblyNamespace WebAssembly => new global::Natrix.StdWeb.WebAssemblyNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "WebAssembly"));
+}
+
+public partial class RTCIdentityProviderGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebAssemblyNamespace WebAssembly => new global::Natrix.StdWeb.WebAssemblyNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "WebAssembly"));

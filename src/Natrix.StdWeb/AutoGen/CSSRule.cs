@@ -17,6 +17,10 @@ public partial class CSSRule: global::Natrix.JSCore.JSObjectProxy
 
     public const ushort SUPPORTS_RULE = 12;
 
+    public const ushort COUNTER_STYLE_RULE = 11;
+
+    public const ushort FONT_FEATURE_VALUES_RULE = 14;
+
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string CssText
     {
@@ -57,10 +61,6 @@ public partial class CSSRule: global::Natrix.JSCore.JSObjectProxy
     public const ushort MARGIN_RULE = 9;
 
     public const ushort NAMESPACE_RULE = 10;
-
-    public const ushort COUNTER_STYLE_RULE = 11;
-
-    public const ushort FONT_FEATURE_VALUES_RULE = 14;
 }
 
 #nullable disable

@@ -12,7 +12,7 @@ public partial class XRWebGLBinding: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.WebGLTexture? GetReflectionCubeMap(global::Natrix.StdWeb.XRLightProbe lightProbe)
+    public global::Natrix.StdWeb.WebGLTexture? GetCameraImage(global::Natrix.StdWeb.XRCamera camera)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -20,12 +20,12 @@ public partial class XRWebGLBinding: global::Natrix.JSCore.JSObjectProxy
 
         // Argument 1
         global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_3;
-        ___marshalledValue_3 = lightProbe.JSObject;
+        ___marshalledValue_3 = camera.JSObject;
         global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
 
         using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
 
-        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getReflectionCubeMap", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getCameraImage", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
         return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebGLTexture?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
@@ -49,6 +49,26 @@ public partial class XRWebGLBinding: global::Natrix.JSCore.JSObjectProxy
 
         // Return Value
         return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRWebGLDepthInformation?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.WebGLTexture? GetReflectionCubeMap(global::Natrix.StdWeb.XRLightProbe lightProbe)
+    {
+        int ___argsArrayLength_2 = 1;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_3;
+        ___marshalledValue_3 = lightProbe.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getReflectionCubeMap", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
+
+        // Return Value
+        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebGLTexture?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
@@ -336,26 +356,6 @@ public partial class XRWebGLBinding: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 1, ___marshalledValue_4);
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "foveateBoundTexture", JSObject, ___argsArray_0.JSObject);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.WebGLTexture? GetCameraImage(global::Natrix.StdWeb.XRCamera camera)
-    {
-        int ___argsArrayLength_2 = 1;
-
-        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
-
-        // Argument 1
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_3;
-        ___marshalledValue_3 = camera.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
-
-        using global::Natrix.JSCore.FunctionResPool.Owner ___resOwner_1 = global::Natrix.JSCore.FunctionResPool.Shared.Rent();
-
-        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getCameraImage", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
-
-        // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebGLTexture?, global::Natrix.StdWeb.PropertyAccessorNullable>(___resOwner_1.JSObject, "value");
     }
 }
 

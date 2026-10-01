@@ -20,13 +20,6 @@ public partial class RTCRtpEncodingParameters: global::Natrix.JSCore.JSObjectPro
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public string ScalabilityMode
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "scalabilityMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "scalabilityMode", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCPriorityType Priority
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCPriorityType, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "priority");
@@ -38,6 +31,13 @@ public partial class RTCRtpEncodingParameters: global::Natrix.JSCore.JSObjectPro
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCPriorityType, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "networkPriority");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCPriorityType, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "networkPriority", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public string ScalabilityMode
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "scalabilityMode");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "scalabilityMode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

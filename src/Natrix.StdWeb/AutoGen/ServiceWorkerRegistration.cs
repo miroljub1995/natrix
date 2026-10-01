@@ -12,33 +12,27 @@ public partial class ServiceWorkerRegistration: global::Natrix.StdWeb.EventTarge
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.BackgroundFetchManager BackgroundFetch
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BackgroundFetchManager, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "backgroundFetch");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.SyncManager Sync
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SyncManager, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "sync");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ContentIndex Index
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ContentIndex, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "index");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.PaymentManager PaymentManager
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PaymentManager, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "paymentManager");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.PeriodicSyncManager PeriodicSync
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PeriodicSyncManager, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "periodicSync");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CookieStoreManager Cookies
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CookieStoreManager, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "cookies");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.BackgroundFetchManager BackgroundFetch
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BackgroundFetchManager, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "backgroundFetch");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -118,6 +112,12 @@ public partial class ServiceWorkerRegistration: global::Natrix.StdWeb.EventTarge
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.PeriodicSyncManager PeriodicSync
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PeriodicSyncManager, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "periodicSync");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ServiceWorker? Installing
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ServiceWorker?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "installing");
@@ -183,9 +183,9 @@ public partial class ServiceWorkerRegistration: global::Natrix.StdWeb.EventTarge
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.SyncManager Sync
+    public global::Natrix.StdWeb.PaymentManager PaymentManager
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SyncManager, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "sync");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PaymentManager, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "paymentManager");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

@@ -12,12 +12,6 @@ public partial class PerformanceResourceTiming: global::Natrix.StdWeb.Performanc
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PerformanceServerTiming, global::Natrix.StdWeb.PropertyAccessor> ServerTiming
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PerformanceServerTiming, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "serverTiming");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string InitiatorType
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "initiatorType");
@@ -194,6 +188,12 @@ public partial class PerformanceResourceTiming: global::Natrix.StdWeb.Performanc
 
         // Return Value
         return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PerformanceServerTiming, global::Natrix.StdWeb.PropertyAccessor> ServerTiming
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PerformanceServerTiming, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "serverTiming");
     }
 }
 

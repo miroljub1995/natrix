@@ -536,31 +536,13 @@ public partial class ConsoleNamespace: global::Natrix.JSCore.JSObjectProxy
     }
 }
 
-public partial class ServiceWorkerGlobalScope
-{
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.ConsoleNamespace Console => new global::Natrix.StdWeb.ConsoleNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "console"));
-}
-
 public partial class Window
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ConsoleNamespace Console => new global::Natrix.StdWeb.ConsoleNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "console"));
 }
 
-public partial class DedicatedWorkerGlobalScope
-{
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.ConsoleNamespace Console => new global::Natrix.StdWeb.ConsoleNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "console"));
-}
-
-public partial class PaintWorkletGlobalScope
-{
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.ConsoleNamespace Console => new global::Natrix.StdWeb.ConsoleNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "console"));
-}
-
-public partial class RTCIdentityProviderGlobalScope
+public partial class ServiceWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ConsoleNamespace Console => new global::Natrix.StdWeb.ConsoleNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "console"));
@@ -572,7 +554,19 @@ public partial class AnimationWorkletGlobalScope
     public global::Natrix.StdWeb.ConsoleNamespace Console => new global::Natrix.StdWeb.ConsoleNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "console"));
 }
 
-public partial class JsonLd
+public partial class LayoutWorkletGlobalScope
+{
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.ConsoleNamespace Console => new global::Natrix.StdWeb.ConsoleNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "console"));
+}
+
+public partial class PaintWorkletGlobalScope
+{
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.ConsoleNamespace Console => new global::Natrix.StdWeb.ConsoleNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "console"));
+}
+
+public partial class DedicatedWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ConsoleNamespace Console => new global::Natrix.StdWeb.ConsoleNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "console"));
@@ -584,13 +578,19 @@ public partial class SharedWorkerGlobalScope
     public global::Natrix.StdWeb.ConsoleNamespace Console => new global::Natrix.StdWeb.ConsoleNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "console"));
 }
 
-public partial class LayoutWorkletGlobalScope
+public partial class JsonLd
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ConsoleNamespace Console => new global::Natrix.StdWeb.ConsoleNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "console"));
 }
 
 public partial class AudioWorkletGlobalScope
+{
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.ConsoleNamespace Console => new global::Natrix.StdWeb.ConsoleNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "console"));
+}
+
+public partial class RTCIdentityProviderGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ConsoleNamespace Console => new global::Natrix.StdWeb.ConsoleNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "console"));

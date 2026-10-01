@@ -22,13 +22,13 @@ public partial class GPUColorWriteNamespace: global::Natrix.JSCore.JSObjectProxy
     public const uint ALL = 0xF;
 }
 
-public partial class ServiceWorkerGlobalScope
+public partial class Window
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUColorWriteNamespace GPUColorWrite => new global::Natrix.StdWeb.GPUColorWriteNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUColorWrite"));
 }
 
-public partial class Window
+public partial class ServiceWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUColorWriteNamespace GPUColorWrite => new global::Natrix.StdWeb.GPUColorWriteNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUColorWrite"));
@@ -40,13 +40,13 @@ public partial class DedicatedWorkerGlobalScope
     public global::Natrix.StdWeb.GPUColorWriteNamespace GPUColorWrite => new global::Natrix.StdWeb.GPUColorWriteNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUColorWrite"));
 }
 
-public partial class RTCIdentityProviderGlobalScope
+public partial class SharedWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUColorWriteNamespace GPUColorWrite => new global::Natrix.StdWeb.GPUColorWriteNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUColorWrite"));
 }
 
-public partial class SharedWorkerGlobalScope
+public partial class RTCIdentityProviderGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUColorWriteNamespace GPUColorWrite => new global::Natrix.StdWeb.GPUColorWriteNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUColorWrite"));

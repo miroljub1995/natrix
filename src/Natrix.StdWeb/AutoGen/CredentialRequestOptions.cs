@@ -20,13 +20,6 @@ public partial class CredentialRequestOptions: global::Natrix.JSCore.JSObjectPro
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.IdentityCredentialRequestOptions Identity
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IdentityCredentialRequestOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "identity");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.IdentityCredentialRequestOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "identity", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CredentialMediationRequirement Mediation
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CredentialMediationRequirement, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "mediation");
@@ -62,13 +55,6 @@ public partial class CredentialRequestOptions: global::Natrix.JSCore.JSObjectPro
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.PublicKeyCredentialRequestOptions PublicKey
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PublicKeyCredentialRequestOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "publicKey");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PublicKeyCredentialRequestOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "publicKey", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DigitalCredentialRequestOptions Digital
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DigitalCredentialRequestOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "digital");
@@ -76,10 +62,24 @@ public partial class CredentialRequestOptions: global::Natrix.JSCore.JSObjectPro
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.IdentityCredentialRequestOptions Identity
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IdentityCredentialRequestOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "identity");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.IdentityCredentialRequestOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "identity", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.OTPCredentialRequestOptions Otp
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.OTPCredentialRequestOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "otp");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.OTPCredentialRequestOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "otp", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.PublicKeyCredentialRequestOptions PublicKey
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PublicKeyCredentialRequestOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "publicKey");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PublicKeyCredentialRequestOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "publicKey", value);
     }
 }
 

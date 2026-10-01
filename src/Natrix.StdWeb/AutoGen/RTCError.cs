@@ -11,6 +11,12 @@ public partial class RTCError: global::Natrix.StdWeb.DOMException
     {
     }
 
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public int? HttpRequestStatusCode
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "httpRequestStatusCode");
+    }
+
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.RTCError New(global::Natrix.StdWeb.RTCErrorInit init)
     {
@@ -76,12 +82,6 @@ public partial class RTCError: global::Natrix.StdWeb.DOMException
     public uint? SentAlert
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "sentAlert");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public int? HttpRequestStatusCode
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "httpRequestStatusCode");
     }
 }
 

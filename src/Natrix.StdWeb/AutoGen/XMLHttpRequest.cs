@@ -11,6 +11,21 @@ public partial class XMLHttpRequest: global::Natrix.StdWeb.XMLHttpRequestEventTa
     {
     }
 
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public void SetPrivateToken(global::Natrix.StdWeb.PrivateToken privateToken)
+    {
+        int ___argsArrayLength_2 = 1;
+
+        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
+
+        // Argument 1
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_3;
+        ___marshalledValue_3 = privateToken.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
+
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "setPrivateToken", JSObject, ___argsArray_0.JSObject);
+    }
+
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.XMLHttpRequest New()
     {
@@ -337,21 +352,6 @@ public partial class XMLHttpRequest: global::Natrix.StdWeb.XMLHttpRequestEventTa
     public global::Natrix.StdWeb.Document? ResponseXML
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Document?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "responseXML");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void SetPrivateToken(global::Natrix.StdWeb.PrivateToken privateToken)
-    {
-        int ___argsArrayLength_2 = 1;
-
-        using global::Natrix.JSCore.ArgsArrayPool.Owner ___argsArray_0 = global::Natrix.JSCore.ArgsArrayPool.Shared.Rent(___argsArrayLength_2);
-
-        // Argument 1
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_3;
-        ___marshalledValue_3 = privateToken.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
-
-        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "setPrivateToken", JSObject, ___argsArray_0.JSObject);
     }
 }
 

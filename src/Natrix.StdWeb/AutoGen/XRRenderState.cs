@@ -12,12 +12,6 @@ public partial class XRRenderState: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.XRLayer, global::Natrix.StdWeb.PropertyAccessor> Layers
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.XRLayer, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "layers");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DepthNear
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "depthNear");
@@ -45,6 +39,12 @@ public partial class XRRenderState: global::Natrix.JSCore.JSObjectProxy
     public global::Natrix.StdWeb.XRWebGLLayer? BaseLayer
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRWebGLLayer?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "baseLayer");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.XRLayer, global::Natrix.StdWeb.PropertyAccessor> Layers
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.XRLayer, global::Natrix.StdWeb.PropertyAccessor>, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "layers");
     }
 }
 

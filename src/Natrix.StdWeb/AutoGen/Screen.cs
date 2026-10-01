@@ -48,6 +48,12 @@ public partial class Screen: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.ScreenOrientation Orientation
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ScreenOrientation, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "orientation");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IsExtended
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "isExtended");
@@ -58,12 +64,6 @@ public partial class Screen: global::Natrix.JSCore.JSObjectProxy
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onchange");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "onchange", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.ScreenOrientation Orientation
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ScreenOrientation, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "orientation");
     }
 }
 

@@ -47,18 +47,6 @@ public partial class MouseEvent: global::Natrix.StdWeb.UIEvent
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "offsetY");
     }
 
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public double MovementX
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "movementX");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public double MovementY
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "movementY");
-    }
-
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.MouseEvent New(string type)
     {
@@ -1046,6 +1034,18 @@ public partial class MouseEvent: global::Natrix.StdWeb.UIEvent
         global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2AsNullable(___argsArray_0.JSObject, 14, ___marshalledValue_18);
 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "initMouseEvent", JSObject, ___argsArray_0.JSObject);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public double MovementX
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "movementX");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public double MovementY
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "movementY");
     }
 }
 

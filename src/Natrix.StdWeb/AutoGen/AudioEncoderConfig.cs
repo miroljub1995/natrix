@@ -20,10 +20,24 @@ public partial class AudioEncoderConfig: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.AacEncoderConfig Aac
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AacEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "aac");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AacEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "aac", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FlacEncoderConfig Flac
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FlacEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "flac");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FlacEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "flac", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.OpusEncoderConfig Opus
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.OpusEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "opus");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.OpusEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "opus", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -59,20 +73,6 @@ public partial class AudioEncoderConfig: global::Natrix.JSCore.JSObjectProxy
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BitrateMode, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "bitrateMode");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.BitrateMode, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "bitrateMode", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.OpusEncoderConfig Opus
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.OpusEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "opus");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.OpusEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "opus", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.AacEncoderConfig Aac
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AacEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "aac");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AacEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "aac", value);
     }
 }
 

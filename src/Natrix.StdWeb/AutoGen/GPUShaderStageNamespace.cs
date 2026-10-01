@@ -18,13 +18,13 @@ public partial class GPUShaderStageNamespace: global::Natrix.JSCore.JSObjectProx
     public const uint COMPUTE = 0x4;
 }
 
-public partial class ServiceWorkerGlobalScope
+public partial class Window
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUShaderStageNamespace GPUShaderStage => new global::Natrix.StdWeb.GPUShaderStageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUShaderStage"));
 }
 
-public partial class Window
+public partial class ServiceWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUShaderStageNamespace GPUShaderStage => new global::Natrix.StdWeb.GPUShaderStageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUShaderStage"));
@@ -36,13 +36,13 @@ public partial class DedicatedWorkerGlobalScope
     public global::Natrix.StdWeb.GPUShaderStageNamespace GPUShaderStage => new global::Natrix.StdWeb.GPUShaderStageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUShaderStage"));
 }
 
-public partial class RTCIdentityProviderGlobalScope
+public partial class SharedWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUShaderStageNamespace GPUShaderStage => new global::Natrix.StdWeb.GPUShaderStageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUShaderStage"));
 }
 
-public partial class SharedWorkerGlobalScope
+public partial class RTCIdentityProviderGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUShaderStageNamespace GPUShaderStage => new global::Natrix.StdWeb.GPUShaderStageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUShaderStage"));

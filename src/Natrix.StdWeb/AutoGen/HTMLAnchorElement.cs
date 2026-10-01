@@ -11,13 +11,6 @@ public partial class HTMLAnchorElement: global::Natrix.StdWeb.HTMLElement
     {
     }
 
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public uint AttributionSourceId
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "attributionSourceId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "attributionSourceId", value);
-    }
-
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.HTMLAnchorElement New()
     {
@@ -99,6 +92,13 @@ public partial class HTMLAnchorElement: global::Natrix.StdWeb.HTMLElement
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "shape");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "shape", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public uint AttributionSourceId
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "attributionSourceId");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "attributionSourceId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

@@ -20,24 +20,17 @@ public partial class VideoEncoderEncodeOptions: global::Natrix.JSCore.JSObjectPr
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAvc Avc
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAvc, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "avc");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAvc, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "avc", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool KeyFrame
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "keyFrame");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "keyFrame", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAv1 Av1
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAv1, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "av1");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAv1, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "av1", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAvc Avc
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAvc, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "avc");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAvc, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "avc", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -52,6 +45,13 @@ public partial class VideoEncoderEncodeOptions: global::Natrix.JSCore.JSObjectPr
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForVp9, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "vp9");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForVp9, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "vp9", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool KeyFrame
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "keyFrame");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "keyFrame", value);
     }
 }
 

@@ -12,15 +12,15 @@ public partial class XRInputSource: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.XRHand? Hand
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRHand?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "hand");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Gamepad? Gamepad
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Gamepad?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "gamepad");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.XRHand? Hand
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRHand?, global::Natrix.StdWeb.PropertyAccessorNullable>(JSObject, "hand");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

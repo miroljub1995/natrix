@@ -439,7 +439,9 @@ public class GenerateCommand : Command
                 return [input];
             }
 
-            var files = Directory.GetFiles(input, "*.json", SearchOption.AllDirectories);
+            var files = Directory.GetFiles(input, "*.json", SearchOption.AllDirectories)
+                .Order(StringComparer.Ordinal)
+                .ToArray();
             res.AddRange(files.ToList());
         }
 

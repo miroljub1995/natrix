@@ -10,19 +10,19 @@ public static partial class GenericMarshaller
     private static partial global::System.Runtime.InteropServices.JavaScript.JSObject ConstructObject(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string constructorName);
 
     public class Union:
-        global::Natrix.JSCore.Generics.IUnionTypeMarshaller<bool>,
-        global::Natrix.JSCore.Generics.IUnionTypeMarshaller<int>,
-        global::Natrix.JSCore.Generics.IUnionTypeMarshaller<string>,
         global::Natrix.JSCore.Generics.IUnionTypeMarshaller<double>,
         global::Natrix.JSCore.Generics.IUnionTypeMarshaller<global::System.Numerics.BigInteger>,
+        global::Natrix.JSCore.Generics.IUnionTypeMarshaller<string>,
+        global::Natrix.JSCore.Generics.IUnionTypeMarshaller<bool>,
         global::Natrix.JSCore.Generics.IUnionTypeMarshaller<global::System.Runtime.InteropServices.JavaScript.JSObject>,
-        global::Natrix.JSCore.Generics.IUnionTypeMarshaller<object>
+        global::Natrix.JSCore.Generics.IUnionTypeMarshaller<object>,
+        global::Natrix.JSCore.Generics.IUnionTypeMarshaller<int>
     {
         [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-        static bool global::Natrix.JSCore.Generics.IUnionTypeMarshaller<bool>.TryToManaged(global::System.Runtime.InteropServices.JavaScript.JSObject input, [global::System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out bool value)
+        static bool global::Natrix.JSCore.Generics.IUnionTypeMarshaller<double>.TryToManaged(global::System.Runtime.InteropServices.JavaScript.JSObject input, [global::System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out double value)
         {
             double __type_0 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(input, "type");
-            if (__type_0 != 1)
+            if (__type_0 != 2)
             {
                 value = default;
                 return false;
@@ -30,8 +30,8 @@ public static partial class GenericMarshaller
 
             try
             {
-                bool __value_1;
-                bool __res_2 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsBooleanV2(input, "value");
+                double __value_1;
+                double __res_2 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(input, "value");
                 __value_1 = __res_2;
 
                 value = __value_1;
@@ -45,20 +45,20 @@ public static partial class GenericMarshaller
         }
 
         [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-        static global::System.Runtime.InteropServices.JavaScript.JSObject global::Natrix.JSCore.Generics.IUnionTypeMarshaller<bool>.ToJS(bool input)
+        static global::System.Runtime.InteropServices.JavaScript.JSObject global::Natrix.JSCore.Generics.IUnionTypeMarshaller<double>.ToJS(double input)
         {
             global::System.Runtime.InteropServices.JavaScript.JSObject __jsUnion_3 = ConstructObject(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object");
-            bool __marshalledValue_4;
+            double __marshalledValue_4;
             __marshalledValue_4 = input;
-            global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBooleanV2(__jsUnion_3, "value", __marshalledValue_4);
+            global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(__jsUnion_3, "value", __marshalledValue_4);
             return __jsUnion_3;
         }
 
         [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-        static bool global::Natrix.JSCore.Generics.IUnionTypeMarshaller<int>.TryToManaged(global::System.Runtime.InteropServices.JavaScript.JSObject input, [global::System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out int value)
+        static bool global::Natrix.JSCore.Generics.IUnionTypeMarshaller<global::System.Numerics.BigInteger>.TryToManaged(global::System.Runtime.InteropServices.JavaScript.JSObject input, [global::System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out global::System.Numerics.BigInteger value)
         {
             double __type_5 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(input, "type");
-            if (__type_5 != 2)
+            if (__type_5 != 3)
             {
                 value = default;
                 return false;
@@ -66,9 +66,9 @@ public static partial class GenericMarshaller
 
             try
             {
-                int __value_6;
-                double __res_7 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(input, "value");
-                __value_6 = Convert.ToInt32(__res_7);
+                global::System.Numerics.BigInteger __value_6;
+                global::System.Numerics.BigInteger __res_7 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsBigIntegerV2(input, "value");
+                __value_6 = __res_7;
 
                 value = __value_6;
                 return true;
@@ -81,12 +81,12 @@ public static partial class GenericMarshaller
         }
 
         [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-        static global::System.Runtime.InteropServices.JavaScript.JSObject global::Natrix.JSCore.Generics.IUnionTypeMarshaller<int>.ToJS(int input)
+        static global::System.Runtime.InteropServices.JavaScript.JSObject global::Natrix.JSCore.Generics.IUnionTypeMarshaller<global::System.Numerics.BigInteger>.ToJS(global::System.Numerics.BigInteger input)
         {
             global::System.Runtime.InteropServices.JavaScript.JSObject __jsUnion_8 = ConstructObject(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object");
-            double __marshalledValue_9;
-            __marshalledValue_9 = Convert.ToDouble(input);
-            global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(__jsUnion_8, "value", __marshalledValue_9);
+            global::System.Numerics.BigInteger __marshalledValue_9;
+            __marshalledValue_9 = input;
+            global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBigIntegerV2(__jsUnion_8, "value", __marshalledValue_9);
             return __jsUnion_8;
         }
 
@@ -127,10 +127,10 @@ public static partial class GenericMarshaller
         }
 
         [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-        static bool global::Natrix.JSCore.Generics.IUnionTypeMarshaller<double>.TryToManaged(global::System.Runtime.InteropServices.JavaScript.JSObject input, [global::System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out double value)
+        static bool global::Natrix.JSCore.Generics.IUnionTypeMarshaller<bool>.TryToManaged(global::System.Runtime.InteropServices.JavaScript.JSObject input, [global::System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out bool value)
         {
             double __type_15 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(input, "type");
-            if (__type_15 != 2)
+            if (__type_15 != 1)
             {
                 value = default;
                 return false;
@@ -138,8 +138,8 @@ public static partial class GenericMarshaller
 
             try
             {
-                double __value_16;
-                double __res_17 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(input, "value");
+                bool __value_16;
+                bool __res_17 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsBooleanV2(input, "value");
                 __value_16 = __res_17;
 
                 value = __value_16;
@@ -153,20 +153,20 @@ public static partial class GenericMarshaller
         }
 
         [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-        static global::System.Runtime.InteropServices.JavaScript.JSObject global::Natrix.JSCore.Generics.IUnionTypeMarshaller<double>.ToJS(double input)
+        static global::System.Runtime.InteropServices.JavaScript.JSObject global::Natrix.JSCore.Generics.IUnionTypeMarshaller<bool>.ToJS(bool input)
         {
             global::System.Runtime.InteropServices.JavaScript.JSObject __jsUnion_18 = ConstructObject(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object");
-            double __marshalledValue_19;
+            bool __marshalledValue_19;
             __marshalledValue_19 = input;
-            global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(__jsUnion_18, "value", __marshalledValue_19);
+            global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBooleanV2(__jsUnion_18, "value", __marshalledValue_19);
             return __jsUnion_18;
         }
 
         [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-        static bool global::Natrix.JSCore.Generics.IUnionTypeMarshaller<global::System.Numerics.BigInteger>.TryToManaged(global::System.Runtime.InteropServices.JavaScript.JSObject input, [global::System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out global::System.Numerics.BigInteger value)
+        static bool global::Natrix.JSCore.Generics.IUnionTypeMarshaller<global::System.Runtime.InteropServices.JavaScript.JSObject>.TryToManaged(global::System.Runtime.InteropServices.JavaScript.JSObject input, [global::System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out global::System.Runtime.InteropServices.JavaScript.JSObject value)
         {
             double __type_20 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(input, "type");
-            if (__type_20 != 3)
+            if (__type_20 != 7)
             {
                 value = default;
                 return false;
@@ -174,8 +174,8 @@ public static partial class GenericMarshaller
 
             try
             {
-                global::System.Numerics.BigInteger __value_21;
-                global::System.Numerics.BigInteger __res_22 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsBigIntegerV2(input, "value");
+                global::System.Runtime.InteropServices.JavaScript.JSObject __value_21;
+                global::System.Runtime.InteropServices.JavaScript.JSObject __res_22 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(input, "value");
                 __value_21 = __res_22;
 
                 value = __value_21;
@@ -189,20 +189,20 @@ public static partial class GenericMarshaller
         }
 
         [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-        static global::System.Runtime.InteropServices.JavaScript.JSObject global::Natrix.JSCore.Generics.IUnionTypeMarshaller<global::System.Numerics.BigInteger>.ToJS(global::System.Numerics.BigInteger input)
+        static global::System.Runtime.InteropServices.JavaScript.JSObject global::Natrix.JSCore.Generics.IUnionTypeMarshaller<global::System.Runtime.InteropServices.JavaScript.JSObject>.ToJS(global::System.Runtime.InteropServices.JavaScript.JSObject input)
         {
             global::System.Runtime.InteropServices.JavaScript.JSObject __jsUnion_23 = ConstructObject(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object");
-            global::System.Numerics.BigInteger __marshalledValue_24;
+            global::System.Runtime.InteropServices.JavaScript.JSObject __marshalledValue_24;
             __marshalledValue_24 = input;
-            global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBigIntegerV2(__jsUnion_23, "value", __marshalledValue_24);
+            global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(__jsUnion_23, "value", __marshalledValue_24);
             return __jsUnion_23;
         }
 
         [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-        static bool global::Natrix.JSCore.Generics.IUnionTypeMarshaller<global::System.Runtime.InteropServices.JavaScript.JSObject>.TryToManaged(global::System.Runtime.InteropServices.JavaScript.JSObject input, [global::System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out global::System.Runtime.InteropServices.JavaScript.JSObject value)
+        static bool global::Natrix.JSCore.Generics.IUnionTypeMarshaller<object>.TryToManaged(global::System.Runtime.InteropServices.JavaScript.JSObject input, [global::System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out object value)
         {
             double __type_25 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(input, "type");
-            if (__type_25 != 7)
+            if (__type_25 != 8)
             {
                 value = default;
                 return false;
@@ -210,8 +210,8 @@ public static partial class GenericMarshaller
 
             try
             {
-                global::System.Runtime.InteropServices.JavaScript.JSObject __value_26;
-                global::System.Runtime.InteropServices.JavaScript.JSObject __res_27 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(input, "value");
+                object __value_26;
+                object __res_27 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsObjectV2(input, "value");
                 __value_26 = __res_27;
 
                 value = __value_26;
@@ -225,20 +225,20 @@ public static partial class GenericMarshaller
         }
 
         [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-        static global::System.Runtime.InteropServices.JavaScript.JSObject global::Natrix.JSCore.Generics.IUnionTypeMarshaller<global::System.Runtime.InteropServices.JavaScript.JSObject>.ToJS(global::System.Runtime.InteropServices.JavaScript.JSObject input)
+        static global::System.Runtime.InteropServices.JavaScript.JSObject global::Natrix.JSCore.Generics.IUnionTypeMarshaller<object>.ToJS(object input)
         {
             global::System.Runtime.InteropServices.JavaScript.JSObject __jsUnion_28 = ConstructObject(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object");
-            global::System.Runtime.InteropServices.JavaScript.JSObject __marshalledValue_29;
+            object __marshalledValue_29;
             __marshalledValue_29 = input;
-            global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(__jsUnion_28, "value", __marshalledValue_29);
+            global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsObjectV2(__jsUnion_28, "value", __marshalledValue_29);
             return __jsUnion_28;
         }
 
         [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-        static bool global::Natrix.JSCore.Generics.IUnionTypeMarshaller<object>.TryToManaged(global::System.Runtime.InteropServices.JavaScript.JSObject input, [global::System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out object value)
+        static bool global::Natrix.JSCore.Generics.IUnionTypeMarshaller<int>.TryToManaged(global::System.Runtime.InteropServices.JavaScript.JSObject input, [global::System.Diagnostics.CodeAnalysis.MaybeNullWhenAttribute(false)] out int value)
         {
             double __type_30 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(input, "type");
-            if (__type_30 != 8)
+            if (__type_30 != 2)
             {
                 value = default;
                 return false;
@@ -246,9 +246,9 @@ public static partial class GenericMarshaller
 
             try
             {
-                object __value_31;
-                object __res_32 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsObjectV2(input, "value");
-                __value_31 = __res_32;
+                int __value_31;
+                double __res_32 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsDoubleV2(input, "value");
+                __value_31 = Convert.ToInt32(__res_32);
 
                 value = __value_31;
                 return true;
@@ -261,12 +261,12 @@ public static partial class GenericMarshaller
         }
 
         [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-        static global::System.Runtime.InteropServices.JavaScript.JSObject global::Natrix.JSCore.Generics.IUnionTypeMarshaller<object>.ToJS(object input)
+        static global::System.Runtime.InteropServices.JavaScript.JSObject global::Natrix.JSCore.Generics.IUnionTypeMarshaller<int>.ToJS(int input)
         {
             global::System.Runtime.InteropServices.JavaScript.JSObject __jsUnion_33 = ConstructObject(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "Object");
-            object __marshalledValue_34;
-            __marshalledValue_34 = input;
-            global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsObjectV2(__jsUnion_33, "value", __marshalledValue_34);
+            double __marshalledValue_34;
+            __marshalledValue_34 = Convert.ToDouble(input);
+            global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(__jsUnion_33, "value", __marshalledValue_34);
             return __jsUnion_33;
         }
     }

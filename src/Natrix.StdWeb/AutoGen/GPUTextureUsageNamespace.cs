@@ -24,13 +24,13 @@ public partial class GPUTextureUsageNamespace: global::Natrix.JSCore.JSObjectPro
     public const uint TRANSIENT_ATTACHMENT = 0x20;
 }
 
-public partial class ServiceWorkerGlobalScope
+public partial class Window
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUTextureUsageNamespace GPUTextureUsage => new global::Natrix.StdWeb.GPUTextureUsageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUTextureUsage"));
 }
 
-public partial class Window
+public partial class ServiceWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUTextureUsageNamespace GPUTextureUsage => new global::Natrix.StdWeb.GPUTextureUsageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUTextureUsage"));
@@ -42,13 +42,13 @@ public partial class DedicatedWorkerGlobalScope
     public global::Natrix.StdWeb.GPUTextureUsageNamespace GPUTextureUsage => new global::Natrix.StdWeb.GPUTextureUsageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUTextureUsage"));
 }
 
-public partial class RTCIdentityProviderGlobalScope
+public partial class SharedWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUTextureUsageNamespace GPUTextureUsage => new global::Natrix.StdWeb.GPUTextureUsageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUTextureUsage"));
 }
 
-public partial class SharedWorkerGlobalScope
+public partial class RTCIdentityProviderGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUTextureUsageNamespace GPUTextureUsage => new global::Natrix.StdWeb.GPUTextureUsageNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUTextureUsage"));

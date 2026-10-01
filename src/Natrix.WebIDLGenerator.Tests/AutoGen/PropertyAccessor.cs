@@ -5,13 +5,22 @@ namespace Natrix.WebIDLGenerator.Tests;
 #nullable enable
 
 public class PropertyAccessor:
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>,
     global::Natrix.JSCore.Generics.IPropertyAccessor<int>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<string>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback>,
     global::Natrix.JSCore.Generics.IPropertyAccessor<bool>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<string>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
     global::Natrix.JSCore.Generics.IPropertyAccessor<byte>,
     global::Natrix.JSCore.Generics.IPropertyAccessor<sbyte>,
     global::Natrix.JSCore.Generics.IPropertyAccessor<short>,
@@ -23,52 +32,9 @@ public class PropertyAccessor:
     global::Natrix.JSCore.Generics.IPropertyAccessor<double>,
     global::Natrix.JSCore.Generics.IPropertyAccessor<global::System.Runtime.InteropServices.JavaScript.JSObject>,
     global::Natrix.JSCore.Generics.IPropertyAccessor<global::System.Numerics.BigInteger>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>,
-    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Record<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Record<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>,
+    global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>>
 {
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum ___element_0;
-        string ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
-        ___element_0 = global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum.Create(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum ___element_0;
-        string ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
-        ___element_0 = global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum.Create(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum value)
-    {
-        string ___marshalledValue_0;
-        ___marshalledValue_0 = value.ToString();
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum value)
-    {
-        string ___marshalledValue_0;
-        ___marshalledValue_0 = value.ToString();
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
-    }
-
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     static int global::Natrix.JSCore.Generics.IPropertyAccessor<int>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
@@ -104,102 +70,68 @@ public class PropertyAccessor:
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    static bool global::Natrix.JSCore.Generics.IPropertyAccessor<bool>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
-        global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        bool ___element_0;
+        bool ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsBooleanV2(obj, propertyIndex);
+        ___element_0 = ___res_1;
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static bool global::Natrix.JSCore.Generics.IPropertyAccessor<bool>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        bool ___element_0;
+        bool ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsBooleanV2(obj, propertyName);
+        ___element_0 = ___res_1;
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<bool>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, bool value)
+    {
+        bool ___marshalledValue_0;
+        ___marshalledValue_0 = value;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBooleanV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<bool>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, bool value)
+    {
+        bool ___marshalledValue_0;
+        ___marshalledValue_0 = value;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBooleanV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
         global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
         ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        ___element_0 = new global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
         return ___element_0;
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    static global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
     {
-        global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
         global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
         ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        ___element_0 = new global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
         return ___element_0;
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
         global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static string global::Natrix.JSCore.Generics.IPropertyAccessor<string>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        string ___element_0;
-        string ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
-        ___element_0 = ___res_1;
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static string global::Natrix.JSCore.Generics.IPropertyAccessor<string>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        string ___element_0;
-        string ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
-        ___element_0 = ___res_1;
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<string>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, string value)
-    {
-        string ___marshalledValue_0;
-        ___marshalledValue_0 = value;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<string>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, string value)
-    {
-        string ___marshalledValue_0;
-        ___marshalledValue_0 = value;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
         global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
@@ -240,37 +172,411 @@ public class PropertyAccessor:
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static bool global::Natrix.JSCore.Generics.IPropertyAccessor<bool>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    static string global::Natrix.JSCore.Generics.IPropertyAccessor<string>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
-        bool ___element_0;
-        bool ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsBooleanV2(obj, propertyIndex);
+        string ___element_0;
+        string ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
         ___element_0 = ___res_1;
         return ___element_0;
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static bool global::Natrix.JSCore.Generics.IPropertyAccessor<bool>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    static string global::Natrix.JSCore.Generics.IPropertyAccessor<string>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
     {
-        bool ___element_0;
-        bool ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsBooleanV2(obj, propertyName);
+        string ___element_0;
+        string ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
         ___element_0 = ___res_1;
         return ___element_0;
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<bool>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, bool value)
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<string>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, string value)
     {
-        bool ___marshalledValue_0;
+        string ___marshalledValue_0;
         ___marshalledValue_0 = value;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBooleanV2(obj, propertyIndex, ___marshalledValue_0);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<bool>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, bool value)
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<string>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, string value)
     {
-        bool ___marshalledValue_0;
+        string ___marshalledValue_0;
         ___marshalledValue_0 = value;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsBooleanV2(obj, propertyName, ___marshalledValue_0);
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum ___element_0;
+        string ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyIndex);
+        ___element_0 = global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum.Create(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum ___element_0;
+        string ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsStringV2(obj, propertyName);
+        ___element_0 = global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum.Create(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum value)
+    {
+        string ___marshalledValue_0;
+        ___marshalledValue_0 = value.ToString();
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>(___res_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
+        ___marshalledValue_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.Promise<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
+        ___element_0 = new global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
+        ___element_0 = new global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.Promise<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -648,346 +954,6 @@ public class PropertyAccessor:
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyIndex);
-        ___element_0 = new global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyName);
-        ___element_0 = new global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.JSArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.Record<string, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
-        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>(___propObject_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
-    {
-        global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyIndex);
-        ___element_0 = new global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
-    {
-        global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback ___element_0;
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(obj, propertyName);
-        ___element_0 = new global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback(___res_1);
-        return ___element_0;
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyIndex, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback value)
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___marshalledValue_0;
-        ___marshalledValue_0 = value.JSObject;
-        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___marshalledValue_0);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     static global::Natrix.JSCore.Generics.Record<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Record<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
     {
         global::Natrix.JSCore.Generics.Record<int, global::Natrix.WebIDLGenerator.Tests.PropertyAccessor> ___element_0;
@@ -1019,6 +985,40 @@ public class PropertyAccessor:
     {
         global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
         global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsJSObjectV2(obj, propertyName, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex)
+    {
+        global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyIndex);
+        ___element_0 = new global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union> global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>>.Get(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName)
+    {
+        global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union> ___element_0;
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_1;
+        ___propObject_1 = global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsUnionV2(obj, propertyName);
+        ___element_0 = new global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>(___propObject_1);
+        return ___element_0;
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, int propertyIndex, global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyIndex, ___propObject_0);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    static void global::Natrix.JSCore.Generics.IPropertyAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union>>.Set(global::System.Runtime.InteropServices.JavaScript.JSObject obj, string propertyName, global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.WebIDLGenerator.Tests.GenericMarshaller.Union> value)
+    {
+        global::System.Runtime.InteropServices.JavaScript.JSObject ___propObject_0 = value.JSObject;
+        global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsUnion(obj, propertyName, ___propObject_0);
     }
 }
 

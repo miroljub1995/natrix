@@ -16,13 +16,13 @@ public partial class GPUMapModeNamespace: global::Natrix.JSCore.JSObjectProxy
     public const uint WRITE = 0x0002;
 }
 
-public partial class ServiceWorkerGlobalScope
+public partial class Window
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUMapModeNamespace GPUMapMode => new global::Natrix.StdWeb.GPUMapModeNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUMapMode"));
 }
 
-public partial class Window
+public partial class ServiceWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUMapModeNamespace GPUMapMode => new global::Natrix.StdWeb.GPUMapModeNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUMapMode"));
@@ -34,13 +34,13 @@ public partial class DedicatedWorkerGlobalScope
     public global::Natrix.StdWeb.GPUMapModeNamespace GPUMapMode => new global::Natrix.StdWeb.GPUMapModeNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUMapMode"));
 }
 
-public partial class RTCIdentityProviderGlobalScope
+public partial class SharedWorkerGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUMapModeNamespace GPUMapMode => new global::Natrix.StdWeb.GPUMapModeNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUMapMode"));
 }
 
-public partial class SharedWorkerGlobalScope
+public partial class RTCIdentityProviderGlobalScope
 {
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUMapModeNamespace GPUMapMode => new global::Natrix.StdWeb.GPUMapModeNamespace(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsJSObjectV2(JSObject, "GPUMapMode"));

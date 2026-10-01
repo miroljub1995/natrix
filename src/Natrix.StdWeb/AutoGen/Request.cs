@@ -11,12 +11,6 @@ public partial class Request: global::Natrix.JSCore.JSObjectProxy
     {
     }
 
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.IPAddressSpace TargetAddressSpace
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IPAddressSpace, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "targetAddressSpace");
-    }
-
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.Request New(global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Request, string, global::Natrix.StdWeb.GenericMarshaller.Union> input)
     {
@@ -157,6 +151,12 @@ public partial class Request: global::Natrix.JSCore.JSObjectProxy
 
         // Return Value
         return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Request, global::Natrix.StdWeb.PropertyAccessor>(___resOwner_1.JSObject, "value");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.IPAddressSpace TargetAddressSpace
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IPAddressSpace, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "targetAddressSpace");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

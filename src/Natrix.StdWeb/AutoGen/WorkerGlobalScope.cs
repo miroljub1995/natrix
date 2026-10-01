@@ -96,27 +96,9 @@ public partial class WorkerGlobalScope: global::Natrix.StdWeb.EventTarget
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.Scheduler Scheduler
+    public global::Natrix.StdWeb.IDBFactory IndexedDB
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Scheduler, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "scheduler");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.TrustedTypePolicyFactory TrustedTypes
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.TrustedTypePolicyFactory, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "trustedTypes");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.Crypto Crypto
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Crypto, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "crypto");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.Performance Performance
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Performance, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "performance");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IDBFactory, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "indexedDB");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -163,9 +145,9 @@ public partial class WorkerGlobalScope: global::Natrix.StdWeb.EventTarget
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.CacheStorage Caches
+    public global::Natrix.StdWeb.Performance Performance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CacheStorage, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "caches");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Performance, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "performance");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -576,9 +558,27 @@ public partial class WorkerGlobalScope: global::Natrix.StdWeb.EventTarget
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.IDBFactory IndexedDB
+    public global::Natrix.StdWeb.Scheduler Scheduler
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IDBFactory, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "indexedDB");
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Scheduler, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "scheduler");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.CacheStorage Caches
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CacheStorage, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "caches");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.TrustedTypePolicyFactory TrustedTypes
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.TrustedTypePolicyFactory, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "trustedTypes");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.Crypto Crypto
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Crypto, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "crypto");
     }
 }
 

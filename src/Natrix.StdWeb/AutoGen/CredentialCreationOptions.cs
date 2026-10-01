@@ -48,17 +48,17 @@ public partial class CredentialCreationOptions: global::Natrix.JSCore.JSObjectPr
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.PublicKeyCredentialCreationOptions PublicKey
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PublicKeyCredentialCreationOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "publicKey");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PublicKeyCredentialCreationOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "publicKey", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DigitalCredentialCreationOptions Digital
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DigitalCredentialCreationOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "digital");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DigitalCredentialCreationOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "digital", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.PublicKeyCredentialCreationOptions PublicKey
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PublicKeyCredentialCreationOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "publicKey");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PublicKeyCredentialCreationOptions, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "publicKey", value);
     }
 }
 

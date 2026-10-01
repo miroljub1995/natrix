@@ -27,6 +27,13 @@ public partial class VideoEncoderConfig: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.HevcEncoderConfig Hevc
+    {
+        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HevcEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hevc");
+        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.HevcEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hevc", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Codec
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "codec");
@@ -115,13 +122,6 @@ public partial class VideoEncoderConfig: global::Natrix.JSCore.JSObjectProxy
     {
         get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "contentHint");
         set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "contentHint", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.HevcEncoderConfig Hevc
-    {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HevcEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hevc");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.HevcEncoderConfig, global::Natrix.StdWeb.PropertyAccessor>(JSObject, "hevc", value);
     }
 }
 
