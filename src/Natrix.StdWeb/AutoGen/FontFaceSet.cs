@@ -32,7 +32,7 @@ public partial class FontFaceSet: global::Natrix.StdWeb.EventTarget, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "add", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FontFaceSet, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFaceSet>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFaceSet>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -52,7 +52,7 @@ public partial class FontFaceSet: global::Natrix.StdWeb.EventTarget, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "delete", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -64,22 +64,22 @@ public partial class FontFaceSet: global::Natrix.StdWeb.EventTarget, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventHandlerNonNull? Onloading
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "onloading");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "onloading", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Get(JSObject, "onloading");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Set(JSObject, "onloading", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventHandlerNonNull? Onloadingdone
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "onloadingdone");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "onloadingdone", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Get(JSObject, "onloadingdone");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Set(JSObject, "onloadingdone", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventHandlerNonNull? Onloadingerror
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "onloadingerror");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "onloadingerror", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Get(JSObject, "onloadingerror");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Set(JSObject, "onloadingerror", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -99,7 +99,7 @@ public partial class FontFaceSet: global::Natrix.StdWeb.EventTarget, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "load", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -124,7 +124,7 @@ public partial class FontFaceSet: global::Natrix.StdWeb.EventTarget, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "load", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -144,7 +144,7 @@ public partial class FontFaceSet: global::Natrix.StdWeb.EventTarget, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "check", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -169,19 +169,19 @@ public partial class FontFaceSet: global::Natrix.StdWeb.EventTarget, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "check", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FontFaceSet, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFaceSet>> Ready
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FontFaceSet, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFaceSet>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FontFaceSet, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFaceSet>>>>(JSObject, "ready");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FontFaceSet, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFaceSet>>>.Get(JSObject, "ready");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FontFaceSetLoadStatus Status
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FontFaceSetLoadStatus, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FontFaceSetLoadStatus>>(JSObject, "status");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FontFaceSetLoadStatus>.Get(JSObject, "status");
     }
 }
 

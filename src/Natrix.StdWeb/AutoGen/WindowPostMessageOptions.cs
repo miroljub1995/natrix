@@ -26,8 +26,8 @@ public partial class WindowPostMessageOptions: global::Natrix.StdWeb.StructuredS
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string TargetOrigin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "targetOrigin");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "targetOrigin", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "targetOrigin");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "targetOrigin", value);
     }
 }
 

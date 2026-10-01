@@ -26,15 +26,15 @@ public partial class WebTransportErrorOptions: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebTransportErrorSource Source
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebTransportErrorSource, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WebTransportErrorSource>>(JSObject, "source");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.WebTransportErrorSource, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WebTransportErrorSource>>(JSObject, "source", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WebTransportErrorSource>.Get(JSObject, "source");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WebTransportErrorSource>.Set(JSObject, "source", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint? StreamErrorCode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.JSCore.Generics.NullableUInt32Accessor>(JSObject, "streamErrorCode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint?, global::Natrix.JSCore.Generics.NullableUInt32Accessor>(JSObject, "streamErrorCode", value);
+        get => global::Natrix.JSCore.Generics.NullableUInt32Accessor.Get(JSObject, "streamErrorCode");
+        set => global::Natrix.JSCore.Generics.NullableUInt32Accessor.Set(JSObject, "streamErrorCode", value);
     }
 }
 

@@ -31,7 +31,7 @@ public partial class CookieStoreManager: global::Natrix.JSCore.JSObjectProxy, gl
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "subscribe", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -42,7 +42,7 @@ public partial class CookieStoreManager: global::Natrix.JSCore.JSObjectProxy, gl
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getSubscriptions", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CookieStoreGetOptions>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CookieStoreGetOptions>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CookieStoreGetOptions>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CookieStoreGetOptions>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CookieStoreGetOptions>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.CookieStoreGetOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CookieStoreGetOptions>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -61,7 +61,7 @@ public partial class CookieStoreManager: global::Natrix.JSCore.JSObjectProxy, gl
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "unsubscribe", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

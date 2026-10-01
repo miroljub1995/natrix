@@ -26,78 +26,78 @@ public partial class ItemDetails: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string ItemId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "itemId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "itemId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "itemId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "itemId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Title
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "title");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "title", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "title");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "title", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.PaymentCurrencyAmount Price
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PaymentCurrencyAmount, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentCurrencyAmount>>(JSObject, "price");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PaymentCurrencyAmount, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentCurrencyAmount>>(JSObject, "price", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentCurrencyAmount>.Get(JSObject, "price");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentCurrencyAmount>.Set(JSObject, "price", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ItemType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ItemType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ItemType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ItemType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ItemType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ItemType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ItemType>.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Description
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "description");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "description", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "description");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "description", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor> IconURLs
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "iconURLs");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "iconURLs", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "iconURLs");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "iconURLs", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string SubscriptionPeriod
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "subscriptionPeriod");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "subscriptionPeriod", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "subscriptionPeriod");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "subscriptionPeriod", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string FreeTrialPeriod
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "freeTrialPeriod");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "freeTrialPeriod", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "freeTrialPeriod");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "freeTrialPeriod", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PaymentCurrencyAmount IntroductoryPrice
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PaymentCurrencyAmount, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentCurrencyAmount>>(JSObject, "introductoryPrice");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PaymentCurrencyAmount, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentCurrencyAmount>>(JSObject, "introductoryPrice", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentCurrencyAmount>.Get(JSObject, "introductoryPrice");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentCurrencyAmount>.Set(JSObject, "introductoryPrice", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string IntroductoryPricePeriod
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "introductoryPricePeriod");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "introductoryPricePeriod", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "introductoryPricePeriod");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "introductoryPricePeriod", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong IntroductoryPriceCycles
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "introductoryPriceCycles");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "introductoryPriceCycles", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "introductoryPriceCycles");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "introductoryPriceCycles", value);
     }
 }
 

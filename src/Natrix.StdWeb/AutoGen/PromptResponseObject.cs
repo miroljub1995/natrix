@@ -26,8 +26,8 @@ public partial class PromptResponseObject: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AppBannerPromptOutcome UserChoice
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AppBannerPromptOutcome, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AppBannerPromptOutcome>>(JSObject, "userChoice");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AppBannerPromptOutcome, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AppBannerPromptOutcome>>(JSObject, "userChoice", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AppBannerPromptOutcome>.Get(JSObject, "userChoice");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AppBannerPromptOutcome>.Set(JSObject, "userChoice", value);
     }
 }
 

@@ -18,7 +18,7 @@ public partial class CSSGroupingRule: global::Natrix.StdWeb.CSSRule, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSRuleList CssRules
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSRuleList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSRuleList>>(JSObject, "cssRules");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSRuleList>.Get(JSObject, "cssRules");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -38,7 +38,7 @@ public partial class CSSGroupingRule: global::Natrix.StdWeb.CSSRule, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "insertRule", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.UInt32Accessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -63,7 +63,7 @@ public partial class CSSGroupingRule: global::Natrix.StdWeb.CSSRule, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "insertRule", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.UInt32Accessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

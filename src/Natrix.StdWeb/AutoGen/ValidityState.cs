@@ -18,67 +18,67 @@ public partial class ValidityState: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ValueMissing
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "valueMissing");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "valueMissing");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool TypeMismatch
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "typeMismatch");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "typeMismatch");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool PatternMismatch
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "patternMismatch");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "patternMismatch");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool TooLong
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "tooLong");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "tooLong");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool TooShort
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "tooShort");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "tooShort");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool RangeUnderflow
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "rangeUnderflow");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "rangeUnderflow");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool RangeOverflow
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "rangeOverflow");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "rangeOverflow");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool StepMismatch
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "stepMismatch");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "stepMismatch");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool BadInput
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "badInput");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "badInput");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool CustomError
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "customError");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "customError");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Valid
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "valid");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "valid");
     }
 }
 

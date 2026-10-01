@@ -18,7 +18,7 @@ public partial class CSSNestedDeclarations: global::Natrix.StdWeb.CSSRule, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSStyleProperties Style
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSStyleProperties, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleProperties>>(JSObject, "style");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleProperties>.Get(JSObject, "style");
     }
 }
 

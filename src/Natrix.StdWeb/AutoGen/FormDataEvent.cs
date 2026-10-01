@@ -39,7 +39,7 @@ public partial class FormDataEvent: global::Natrix.StdWeb.Event, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FormData FormData
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FormData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FormData>>(JSObject, "formData");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FormData>.Get(JSObject, "formData");
     }
 }
 

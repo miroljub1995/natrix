@@ -26,29 +26,29 @@ public partial class AuthenticatorAssertionResponseJSON: global::Natrix.JSCore.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string ClientDataJSON
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "clientDataJSON");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "clientDataJSON", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "clientDataJSON");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "clientDataJSON", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string AuthenticatorData
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "authenticatorData");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "authenticatorData", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "authenticatorData");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "authenticatorData", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Signature
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "signature");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "signature", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "signature");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "signature", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string UserHandle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "userHandle");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "userHandle", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "userHandle");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "userHandle", value);
     }
 }
 

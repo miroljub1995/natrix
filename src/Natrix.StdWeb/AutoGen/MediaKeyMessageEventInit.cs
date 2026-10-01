@@ -26,15 +26,15 @@ public partial class MediaKeyMessageEventInit: global::Natrix.StdWeb.EventInit, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.MediaKeyMessageType MessageType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaKeyMessageType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaKeyMessageType>>(JSObject, "messageType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MediaKeyMessageType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaKeyMessageType>>(JSObject, "messageType", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaKeyMessageType>.Get(JSObject, "messageType");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaKeyMessageType>.Set(JSObject, "messageType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.ArrayBuffer Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.ArrayBuffer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.ArrayBuffer>>(JSObject, "message");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.ArrayBuffer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.ArrayBuffer>>(JSObject, "message", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.ArrayBuffer>.Get(JSObject, "message");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.ArrayBuffer>.Set(JSObject, "message", value);
     }
 }
 

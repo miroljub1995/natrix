@@ -26,8 +26,8 @@ public partial class TextFormatUpdateEventInit: global::Natrix.StdWeb.EventInit,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.TextFormat, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextFormat>> TextFormats
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.TextFormat, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextFormat>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.TextFormat, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextFormat>>>>(JSObject, "textFormats");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.TextFormat, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextFormat>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.TextFormat, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextFormat>>>>(JSObject, "textFormats", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.TextFormat, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextFormat>>>.Get(JSObject, "textFormats");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.TextFormat, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextFormat>>>.Set(JSObject, "textFormats", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class RsaPssParams: global::Natrix.StdWeb.Algorithm, global::Natr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint SaltLength
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "saltLength");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "saltLength", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "saltLength");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "saltLength", value);
     }
 }
 

@@ -26,50 +26,50 @@ public partial class GPUBindGroupLayoutEntry: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint Binding
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "binding");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "binding", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "binding");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "binding", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint Visibility
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "visibility");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "visibility", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "visibility");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "visibility", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUBufferBindingLayout Buffer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUBufferBindingLayout, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBufferBindingLayout>>(JSObject, "buffer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUBufferBindingLayout, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBufferBindingLayout>>(JSObject, "buffer", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBufferBindingLayout>.Get(JSObject, "buffer");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBufferBindingLayout>.Set(JSObject, "buffer", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUSamplerBindingLayout Sampler
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUSamplerBindingLayout, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUSamplerBindingLayout>>(JSObject, "sampler");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUSamplerBindingLayout, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUSamplerBindingLayout>>(JSObject, "sampler", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUSamplerBindingLayout>.Get(JSObject, "sampler");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUSamplerBindingLayout>.Set(JSObject, "sampler", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUTextureBindingLayout Texture
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUTextureBindingLayout, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUTextureBindingLayout>>(JSObject, "texture");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUTextureBindingLayout, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUTextureBindingLayout>>(JSObject, "texture", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUTextureBindingLayout>.Get(JSObject, "texture");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUTextureBindingLayout>.Set(JSObject, "texture", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUStorageTextureBindingLayout StorageTexture
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUStorageTextureBindingLayout, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUStorageTextureBindingLayout>>(JSObject, "storageTexture");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUStorageTextureBindingLayout, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUStorageTextureBindingLayout>>(JSObject, "storageTexture", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUStorageTextureBindingLayout>.Get(JSObject, "storageTexture");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUStorageTextureBindingLayout>.Set(JSObject, "storageTexture", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUExternalTextureBindingLayout ExternalTexture
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUExternalTextureBindingLayout, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUExternalTextureBindingLayout>>(JSObject, "externalTexture");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUExternalTextureBindingLayout, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUExternalTextureBindingLayout>>(JSObject, "externalTexture", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUExternalTextureBindingLayout>.Get(JSObject, "externalTexture");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUExternalTextureBindingLayout>.Set(JSObject, "externalTexture", value);
     }
 }
 

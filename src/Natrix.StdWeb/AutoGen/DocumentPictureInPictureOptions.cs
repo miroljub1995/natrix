@@ -26,29 +26,29 @@ public partial class DocumentPictureInPictureOptions: global::Natrix.JSCore.JSOb
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "width");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "width", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "width");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "width", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "height");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "height", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "height");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "height", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool DisallowReturnToOpener
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "disallowReturnToOpener");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "disallowReturnToOpener", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "disallowReturnToOpener");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "disallowReturnToOpener", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool PreferInitialWindowPlacement
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "preferInitialWindowPlacement");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "preferInitialWindowPlacement", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "preferInitialWindowPlacement");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "preferInitialWindowPlacement", value);
     }
 }
 

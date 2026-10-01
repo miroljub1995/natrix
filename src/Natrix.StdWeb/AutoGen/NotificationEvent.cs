@@ -39,13 +39,13 @@ public partial class NotificationEvent: global::Natrix.StdWeb.ExtendableEvent, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Notification Notification
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Notification, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Notification>>(JSObject, "notification");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Notification>.Get(JSObject, "notification");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Action
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "action");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "action");
     }
 }
 

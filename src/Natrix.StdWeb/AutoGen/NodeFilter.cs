@@ -84,8 +84,8 @@ public partial class NodeFilter: global::Natrix.JSCore.JSObjectProxy, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.NodeFilterCallback AcceptNode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NodeFilterCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NodeFilterCallback>>(JSObject, "acceptNode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.NodeFilterCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NodeFilterCallback>>(JSObject, "acceptNode", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NodeFilterCallback>.Get(JSObject, "acceptNode");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NodeFilterCallback>.Set(JSObject, "acceptNode", value);
     }
 }
 

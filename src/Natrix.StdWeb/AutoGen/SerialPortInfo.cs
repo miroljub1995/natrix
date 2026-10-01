@@ -26,22 +26,22 @@ public partial class SerialPortInfo: global::Natrix.JSCore.JSObjectProxy, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort UsbVendorId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "usbVendorId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "usbVendorId", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "usbVendorId");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "usbVendorId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort UsbProductId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "usbProductId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "usbProductId", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "usbProductId");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "usbProductId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<string, uint, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.UInt32Accessor> BluetoothServiceClassId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<string, uint, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.UInt32Accessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, uint, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.UInt32Accessor>>>(JSObject, "bluetoothServiceClassId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<string, uint, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.UInt32Accessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, uint, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.UInt32Accessor>>>(JSObject, "bluetoothServiceClassId", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, uint, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.UInt32Accessor>>.Get(JSObject, "bluetoothServiceClassId");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, uint, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.UInt32Accessor>>.Set(JSObject, "bluetoothServiceClassId", value);
     }
 }
 

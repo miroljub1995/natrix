@@ -26,43 +26,43 @@ public partial class AttributionImpressionOptions: global::Natrix.JSCore.JSObjec
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint HistogramIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "histogramIndex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "histogramIndex", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "histogramIndex");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "histogramIndex", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint MatchValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "matchValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "matchValue", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "matchValue");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "matchValue", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor> ConversionSites
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "conversionSites");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "conversionSites", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "conversionSites");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "conversionSites", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor> ConversionCallers
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "conversionCallers");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "conversionCallers", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "conversionCallers");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "conversionCallers", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint LifetimeDays
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "lifetimeDays");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "lifetimeDays", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "lifetimeDays");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "lifetimeDays", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Priority
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "priority");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "priority", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "priority");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "priority", value);
     }
 }
 

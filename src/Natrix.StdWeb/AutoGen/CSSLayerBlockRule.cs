@@ -18,7 +18,7 @@ public partial class CSSLayerBlockRule: global::Natrix.StdWeb.CSSGroupingRule, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 }
 

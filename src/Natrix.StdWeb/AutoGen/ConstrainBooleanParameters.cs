@@ -26,15 +26,15 @@ public partial class ConstrainBooleanParameters: global::Natrix.JSCore.JSObjectP
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Exact
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "exact");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "exact", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "exact");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "exact", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Ideal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ideal");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ideal", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ideal");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "ideal", value);
     }
 }
 

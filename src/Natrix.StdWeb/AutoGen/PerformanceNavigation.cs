@@ -26,13 +26,13 @@ public partial class PerformanceNavigation: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "type");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "type");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort RedirectCount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "redirectCount");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "redirectCount");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -43,7 +43,7 @@ public partial class PerformanceNavigation: global::Natrix.JSCore.JSObjectProxy,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toJSON", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.JSObjectAccessor.Get(___resOwner_1.JSObject, "value");
     }
 }
 

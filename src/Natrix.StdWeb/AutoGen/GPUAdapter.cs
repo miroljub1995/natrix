@@ -18,19 +18,19 @@ public partial class GPUAdapter: global::Natrix.JSCore.JSObjectProxy, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUSupportedFeatures Features
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUSupportedFeatures, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUSupportedFeatures>>(JSObject, "features");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUSupportedFeatures>.Get(JSObject, "features");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUSupportedLimits Limits
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUSupportedLimits, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUSupportedLimits>>(JSObject, "limits");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUSupportedLimits>.Get(JSObject, "limits");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUAdapterInfo Info
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUAdapterInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUAdapterInfo>>(JSObject, "info");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUAdapterInfo>.Get(JSObject, "info");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -41,7 +41,7 @@ public partial class GPUAdapter: global::Natrix.JSCore.JSObjectProxy, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "requestDevice", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GPUDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUDevice>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GPUDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUDevice>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GPUDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUDevice>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -61,7 +61,7 @@ public partial class GPUAdapter: global::Natrix.JSCore.JSObjectProxy, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "requestDevice", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GPUDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUDevice>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GPUDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUDevice>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GPUDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUDevice>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

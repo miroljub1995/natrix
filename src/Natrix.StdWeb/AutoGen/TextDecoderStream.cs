@@ -62,31 +62,31 @@ public partial class TextDecoderStream: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Encoding
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "encoding");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "encoding");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Fatal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "fatal");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "fatal");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IgnoreBOM
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreBOM");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ignoreBOM");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ReadableStream Readable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ReadableStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStream>>(JSObject, "readable");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStream>.Get(JSObject, "readable");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WritableStream Writable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WritableStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WritableStream>>(JSObject, "writable");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WritableStream>.Get(JSObject, "writable");
     }
 }
 

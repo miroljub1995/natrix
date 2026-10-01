@@ -44,71 +44,71 @@ public partial class VTTCue: global::Natrix.StdWeb.TextTrackCue, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VTTRegion? Region
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VTTRegion?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.VTTRegion>>(JSObject, "region");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VTTRegion?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.VTTRegion>>(JSObject, "region", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.VTTRegion>.Get(JSObject, "region");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.VTTRegion>.Set(JSObject, "region", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DirectionSetting Vertical
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DirectionSetting, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DirectionSetting>>(JSObject, "vertical");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DirectionSetting, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DirectionSetting>>(JSObject, "vertical", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DirectionSetting>.Get(JSObject, "vertical");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DirectionSetting>.Set(JSObject, "vertical", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool SnapToLines
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "snapToLines");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "snapToLines", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "snapToLines");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "snapToLines", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>> Line
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>>>>(JSObject, "line");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>>>>(JSObject, "line", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>>>.Get(JSObject, "line");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>>>.Set(JSObject, "line", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.LineAlignSetting LineAlign
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.LineAlignSetting, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LineAlignSetting>>(JSObject, "lineAlign");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.LineAlignSetting, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LineAlignSetting>>(JSObject, "lineAlign", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LineAlignSetting>.Get(JSObject, "lineAlign");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LineAlignSetting>.Set(JSObject, "lineAlign", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>> Position
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>>>>(JSObject, "position");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>>>>(JSObject, "position", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>>>.Get(JSObject, "position");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::Natrix.StdWeb.AutoKeyword, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutoKeyword>>>.Set(JSObject, "position", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PositionAlignSetting PositionAlign
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PositionAlignSetting, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PositionAlignSetting>>(JSObject, "positionAlign");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PositionAlignSetting, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PositionAlignSetting>>(JSObject, "positionAlign", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PositionAlignSetting>.Get(JSObject, "positionAlign");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PositionAlignSetting>.Set(JSObject, "positionAlign", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Size
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "size");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "size", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "size");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "size", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AlignSetting Align
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AlignSetting, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AlignSetting>>(JSObject, "align");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AlignSetting, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AlignSetting>>(JSObject, "align", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AlignSetting>.Get(JSObject, "align");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AlignSetting>.Set(JSObject, "align", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Text
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "text");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "text", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "text");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "text", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -119,7 +119,7 @@ public partial class VTTCue: global::Natrix.StdWeb.TextTrackCue, global::Natrix.
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getCueAsHTML", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DocumentFragment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DocumentFragment>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DocumentFragment>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

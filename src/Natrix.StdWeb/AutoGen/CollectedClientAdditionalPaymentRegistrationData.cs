@@ -26,8 +26,8 @@ public partial class CollectedClientAdditionalPaymentRegistrationData: global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string BrowserBoundPublicKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "browserBoundPublicKey");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "browserBoundPublicKey", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "browserBoundPublicKey");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "browserBoundPublicKey", value);
     }
 }
 

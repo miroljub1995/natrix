@@ -25,8 +25,8 @@ public partial class HTMLTitleElement: global::Natrix.StdWeb.HTMLElement, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Text
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "text");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "text", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "text");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "text", value);
     }
 }
 

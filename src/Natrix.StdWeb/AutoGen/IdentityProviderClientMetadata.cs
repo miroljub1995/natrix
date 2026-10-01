@@ -26,22 +26,22 @@ public partial class IdentityProviderClientMetadata: global::Natrix.JSCore.JSObj
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Privacy_policy_url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "privacy_policy_url");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "privacy_policy_url", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "privacy_policy_url");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "privacy_policy_url", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Terms_of_service_url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "terms_of_service_url");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "terms_of_service_url", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "terms_of_service_url");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "terms_of_service_url", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Client_is_third_party_to_top_frame_origin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "client_is_third_party_to_top_frame_origin");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "client_is_third_party_to_top_frame_origin", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "client_is_third_party_to_top_frame_origin");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "client_is_third_party_to_top_frame_origin", value);
     }
 }
 

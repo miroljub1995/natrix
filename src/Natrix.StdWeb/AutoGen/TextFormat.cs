@@ -41,25 +41,25 @@ public partial class TextFormat: global::Natrix.JSCore.JSObjectProxy, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint RangeStart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rangeStart");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "rangeStart");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint RangeEnd
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rangeEnd");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "rangeEnd");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.UnderlineStyle UnderlineStyle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.UnderlineStyle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.UnderlineStyle>>(JSObject, "underlineStyle");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.UnderlineStyle>.Get(JSObject, "underlineStyle");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.UnderlineThickness UnderlineThickness
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.UnderlineThickness, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.UnderlineThickness>>(JSObject, "underlineThickness");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.UnderlineThickness>.Get(JSObject, "underlineThickness");
     }
 }
 

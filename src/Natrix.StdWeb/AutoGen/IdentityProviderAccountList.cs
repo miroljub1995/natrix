@@ -26,8 +26,8 @@ public partial class IdentityProviderAccountList: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderAccount, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderAccount>> Accounts
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderAccount, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderAccount>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderAccount, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderAccount>>>>(JSObject, "accounts");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderAccount, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderAccount>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderAccount, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderAccount>>>>(JSObject, "accounts", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderAccount, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderAccount>>>.Get(JSObject, "accounts");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderAccount, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderAccount>>>.Set(JSObject, "accounts", value);
     }
 }
 

@@ -18,7 +18,7 @@ public partial class TextTrackCueList: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "length");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -38,7 +38,7 @@ public partial class TextTrackCueList: global::Natrix.JSCore.JSObjectProxy, glob
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallGetter(JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.TextTrackCue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextTrackCue>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextTrackCue>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -58,7 +58,7 @@ public partial class TextTrackCueList: global::Natrix.JSCore.JSObjectProxy, glob
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getCueById", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.TextTrackCue?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.TextTrackCue>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.TextTrackCue>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

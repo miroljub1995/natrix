@@ -18,49 +18,49 @@ public partial class Selection: global::Natrix.JSCore.JSObjectProxy, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Node? AnchorNode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Node?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Node>>(JSObject, "anchorNode");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Node>.Get(JSObject, "anchorNode");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint AnchorOffset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "anchorOffset");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "anchorOffset");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Node? FocusNode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Node?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Node>>(JSObject, "focusNode");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Node>.Get(JSObject, "focusNode");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint FocusOffset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "focusOffset");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "focusOffset");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IsCollapsed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isCollapsed");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isCollapsed");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint RangeCount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rangeCount");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "rangeCount");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "type");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "type");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Direction
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "direction");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "direction");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -80,7 +80,7 @@ public partial class Selection: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getRangeAt", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Range, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Range>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Range>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -133,7 +133,7 @@ public partial class Selection: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getComposedRanges", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.StaticRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StaticRange>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.StaticRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StaticRange>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.StaticRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StaticRange>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -153,7 +153,7 @@ public partial class Selection: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getComposedRanges", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.StaticRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StaticRange>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.StaticRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StaticRange>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.StaticRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StaticRange>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -439,7 +439,7 @@ public partial class Selection: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "containsNode", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -464,7 +464,7 @@ public partial class Selection: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "containsNode", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

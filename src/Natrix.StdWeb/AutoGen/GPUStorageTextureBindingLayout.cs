@@ -26,22 +26,22 @@ public partial class GPUStorageTextureBindingLayout: global::Natrix.JSCore.JSObj
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUStorageTextureAccess Access
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUStorageTextureAccess, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStorageTextureAccess>>(JSObject, "access");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUStorageTextureAccess, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStorageTextureAccess>>(JSObject, "access", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStorageTextureAccess>.Get(JSObject, "access");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStorageTextureAccess>.Set(JSObject, "access", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GPUTextureFormat Format
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUTextureFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUTextureFormat>>(JSObject, "format");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUTextureFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUTextureFormat>>(JSObject, "format", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUTextureFormat>.Get(JSObject, "format");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUTextureFormat>.Set(JSObject, "format", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUTextureViewDimension ViewDimension
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUTextureViewDimension, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUTextureViewDimension>>(JSObject, "viewDimension");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUTextureViewDimension, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUTextureViewDimension>>(JSObject, "viewDimension", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUTextureViewDimension>.Get(JSObject, "viewDimension");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUTextureViewDimension>.Set(JSObject, "viewDimension", value);
     }
 }
 

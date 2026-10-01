@@ -26,8 +26,8 @@ public partial class ElementDefinitionOptions: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Extends
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "extends");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "extends", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "extends");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "extends", value);
     }
 }
 

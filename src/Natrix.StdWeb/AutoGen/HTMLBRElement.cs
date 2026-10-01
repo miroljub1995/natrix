@@ -25,8 +25,8 @@ public partial class HTMLBRElement: global::Natrix.StdWeb.HTMLElement, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Clear
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "clear");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "clear", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "clear");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "clear", value);
     }
 }
 

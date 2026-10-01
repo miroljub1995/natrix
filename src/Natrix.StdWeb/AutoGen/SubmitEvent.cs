@@ -55,7 +55,7 @@ public partial class SubmitEvent: global::Natrix.StdWeb.Event, global::Natrix.JS
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HTMLElement? Submitter
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLElement?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.HTMLElement>>(JSObject, "submitter");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.HTMLElement>.Get(JSObject, "submitter");
     }
 }
 

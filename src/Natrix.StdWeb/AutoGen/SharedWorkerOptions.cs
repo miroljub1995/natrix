@@ -26,15 +26,15 @@ public partial class SharedWorkerOptions: global::Natrix.StdWeb.WorkerOptions, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ExtendedLifetime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "extendedLifetime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "extendedLifetime", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "extendedLifetime");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "extendedLifetime", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SameSiteCookiesType SameSiteCookies
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SameSiteCookiesType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SameSiteCookiesType>>(JSObject, "sameSiteCookies");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SameSiteCookiesType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SameSiteCookiesType>>(JSObject, "sameSiteCookies", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SameSiteCookiesType>.Get(JSObject, "sameSiteCookies");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SameSiteCookiesType>.Set(JSObject, "sameSiteCookies", value);
     }
 }
 

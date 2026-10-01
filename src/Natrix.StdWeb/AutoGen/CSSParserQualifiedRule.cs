@@ -61,13 +61,13 @@ public partial class CSSParserQualifiedRule: global::Natrix.StdWeb.CSSParserRule
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSParserValue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSParserValue>> Prelude
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSParserValue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSParserValue>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSParserValue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSParserValue>>>>(JSObject, "prelude");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSParserValue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSParserValue>>>.Get(JSObject, "prelude");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSParserRule, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSParserRule>> Body
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSParserRule, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSParserRule>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSParserRule, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSParserRule>>>>(JSObject, "body");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSParserRule, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSParserRule>>>.Get(JSObject, "body");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

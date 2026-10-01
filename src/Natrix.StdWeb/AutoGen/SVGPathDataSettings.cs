@@ -26,8 +26,8 @@ public partial class SVGPathDataSettings: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Normalize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "normalize");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "normalize", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "normalize");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "normalize", value);
     }
 }
 

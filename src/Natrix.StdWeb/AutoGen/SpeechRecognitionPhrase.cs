@@ -55,13 +55,13 @@ public partial class SpeechRecognitionPhrase: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Phrase
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "phrase");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "phrase");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Boost
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "boost");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "boost");
     }
 }
 

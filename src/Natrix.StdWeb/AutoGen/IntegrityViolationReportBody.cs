@@ -26,29 +26,29 @@ public partial class IntegrityViolationReportBody: global::Natrix.StdWeb.ReportB
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string DocumentURL
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "documentURL");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "documentURL", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "documentURL");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "documentURL", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string BlockedURL
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "blockedURL");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "blockedURL", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "blockedURL");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "blockedURL", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Destination
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "destination");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "destination", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "destination");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "destination", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ReportOnly
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "reportOnly");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "reportOnly", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "reportOnly");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "reportOnly", value);
     }
 }
 

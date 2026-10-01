@@ -26,15 +26,15 @@ public partial class StorageEstimate: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Usage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "usage");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "usage", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "usage");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "usage", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Quota
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "quota");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "quota", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "quota");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "quota", value);
     }
 }
 

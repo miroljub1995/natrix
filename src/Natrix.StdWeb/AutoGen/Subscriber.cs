@@ -85,13 +85,13 @@ public partial class Subscriber: global::Natrix.JSCore.JSObjectProxy, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Active
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "active");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "active");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AbortSignal Signal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AbortSignal, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AbortSignal>>(JSObject, "signal");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AbortSignal>.Get(JSObject, "signal");
     }
 }
 

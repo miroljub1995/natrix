@@ -26,57 +26,57 @@ public partial class RTCDataChannelStats: global::Natrix.StdWeb.RTCStats, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Label
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "label");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "label", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Protocol
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "protocol");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "protocol", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "protocol");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "protocol", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort DataChannelIdentifier
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "dataChannelIdentifier");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "dataChannelIdentifier", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "dataChannelIdentifier");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "dataChannelIdentifier", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.RTCDataChannelState State
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCDataChannelState, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCDataChannelState>>(JSObject, "state");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCDataChannelState, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCDataChannelState>>(JSObject, "state", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCDataChannelState>.Get(JSObject, "state");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCDataChannelState>.Set(JSObject, "state", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint MessagesSent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "messagesSent");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "messagesSent", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "messagesSent");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "messagesSent", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong BytesSent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytesSent");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytesSent", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "bytesSent");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "bytesSent", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint MessagesReceived
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "messagesReceived");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "messagesReceived", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "messagesReceived");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "messagesReceived", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong BytesReceived
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytesReceived");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytesReceived", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "bytesReceived");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "bytesReceived", value);
     }
 }
 

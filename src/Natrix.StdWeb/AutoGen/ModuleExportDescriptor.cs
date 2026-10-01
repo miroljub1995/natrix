@@ -26,15 +26,15 @@ public partial class ModuleExportDescriptor: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "name", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.ImportExportKind Kind
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ImportExportKind, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImportExportKind>>(JSObject, "kind");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ImportExportKind, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImportExportKind>>(JSObject, "kind", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImportExportKind>.Get(JSObject, "kind");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImportExportKind>.Set(JSObject, "kind", value);
     }
 }
 

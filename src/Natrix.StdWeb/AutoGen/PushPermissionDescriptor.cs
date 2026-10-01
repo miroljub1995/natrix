@@ -26,8 +26,8 @@ public partial class PushPermissionDescriptor: global::Natrix.StdWeb.PermissionD
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool UserVisibleOnly
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "userVisibleOnly");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "userVisibleOnly", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "userVisibleOnly");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "userVisibleOnly", value);
     }
 }
 

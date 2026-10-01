@@ -18,8 +18,8 @@ public partial class CSSStyleProperties: global::Natrix.StdWeb.CSSStyleDeclarati
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string CssFloat
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "cssFloat");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "cssFloat", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "cssFloat");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "cssFloat", value);
     }
 }
 

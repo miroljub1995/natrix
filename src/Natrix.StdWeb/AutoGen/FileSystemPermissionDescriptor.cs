@@ -26,15 +26,15 @@ public partial class FileSystemPermissionDescriptor: global::Natrix.StdWeb.Permi
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.FileSystemHandle Handle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>(JSObject, "handle");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>(JSObject, "handle", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>.Get(JSObject, "handle");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>.Set(JSObject, "handle", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FileSystemPermissionMode Mode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FileSystemPermissionMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FileSystemPermissionMode>>(JSObject, "mode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FileSystemPermissionMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FileSystemPermissionMode>>(JSObject, "mode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FileSystemPermissionMode>.Get(JSObject, "mode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FileSystemPermissionMode>.Set(JSObject, "mode", value);
     }
 }
 

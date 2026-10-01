@@ -26,29 +26,29 @@ public partial class PaymentShippingOption: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "id");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "id", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Label
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "label");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "label", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.PaymentCurrencyAmount Amount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PaymentCurrencyAmount, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentCurrencyAmount>>(JSObject, "amount");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PaymentCurrencyAmount, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentCurrencyAmount>>(JSObject, "amount", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentCurrencyAmount>.Get(JSObject, "amount");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentCurrencyAmount>.Set(JSObject, "amount", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Selected
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "selected");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "selected", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "selected");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "selected", value);
     }
 }
 

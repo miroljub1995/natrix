@@ -26,22 +26,22 @@ public partial class MediaSettingsRange: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Max
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "max");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "max", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "max");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "max", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Min
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "min");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "min", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "min");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "min", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Step
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "step");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "step", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "step");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "step", value);
     }
 }
 

@@ -18,7 +18,7 @@ public partial class GPUCompilationInfo: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GPUCompilationMessage, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUCompilationMessage>> Messages
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GPUCompilationMessage, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUCompilationMessage>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GPUCompilationMessage, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUCompilationMessage>>>>(JSObject, "messages");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GPUCompilationMessage, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUCompilationMessage>>>.Get(JSObject, "messages");
     }
 }
 

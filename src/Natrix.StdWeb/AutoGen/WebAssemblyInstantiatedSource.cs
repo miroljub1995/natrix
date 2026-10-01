@@ -26,15 +26,15 @@ public partial class WebAssemblyInstantiatedSource: global::Natrix.JSCore.JSObje
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.Module Module
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>(JSObject, "module");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>(JSObject, "module", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>.Get(JSObject, "module");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>.Set(JSObject, "module", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.Instance Instance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Instance, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Instance>>(JSObject, "instance");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.Instance, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Instance>>(JSObject, "instance", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Instance>.Get(JSObject, "instance");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Instance>.Set(JSObject, "instance", value);
     }
 }
 

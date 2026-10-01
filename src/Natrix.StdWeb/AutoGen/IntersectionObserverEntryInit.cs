@@ -26,57 +26,57 @@ public partial class IntersectionObserverEntryInit: global::Natrix.JSCore.JSObje
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required double Time
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "time");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "time", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "time");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "time", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.DOMRectInit? RootBounds
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMRectInit?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DOMRectInit>>(JSObject, "rootBounds");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMRectInit?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DOMRectInit>>(JSObject, "rootBounds", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DOMRectInit>.Get(JSObject, "rootBounds");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DOMRectInit>.Set(JSObject, "rootBounds", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.DOMRectInit BoundingClientRect
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMRectInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRectInit>>(JSObject, "boundingClientRect");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMRectInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRectInit>>(JSObject, "boundingClientRect", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRectInit>.Get(JSObject, "boundingClientRect");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRectInit>.Set(JSObject, "boundingClientRect", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.DOMRectInit IntersectionRect
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMRectInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRectInit>>(JSObject, "intersectionRect");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMRectInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRectInit>>(JSObject, "intersectionRect", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRectInit>.Get(JSObject, "intersectionRect");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRectInit>.Set(JSObject, "intersectionRect", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required bool IsIntersecting
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isIntersecting");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isIntersecting", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isIntersecting");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "isIntersecting", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required bool IsVisible
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isVisible");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isVisible", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isVisible");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "isVisible", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required double IntersectionRatio
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "intersectionRatio");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "intersectionRatio", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "intersectionRatio");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "intersectionRatio", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.Element Target
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "target");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.Element, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "target", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>.Get(JSObject, "target");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>.Set(JSObject, "target", value);
     }
 }
 

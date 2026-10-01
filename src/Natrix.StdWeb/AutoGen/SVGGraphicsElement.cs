@@ -18,7 +18,7 @@ public partial class SVGGraphicsElement: global::Natrix.StdWeb.SVGElement, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGAnimatedTransformList Transform
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGAnimatedTransformList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGAnimatedTransformList>>(JSObject, "transform");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGAnimatedTransformList>.Get(JSObject, "transform");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -29,7 +29,7 @@ public partial class SVGGraphicsElement: global::Natrix.StdWeb.SVGElement, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getBBox", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGRect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGRect>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGRect>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -49,7 +49,7 @@ public partial class SVGGraphicsElement: global::Natrix.StdWeb.SVGElement, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getBBox", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGRect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGRect>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGRect>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -60,7 +60,7 @@ public partial class SVGGraphicsElement: global::Natrix.StdWeb.SVGElement, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getCTM", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGMatrix?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.SVGMatrix>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.SVGMatrix>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -71,19 +71,19 @@ public partial class SVGGraphicsElement: global::Natrix.StdWeb.SVGElement, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getScreenCTM", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGMatrix?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.SVGMatrix>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.SVGMatrix>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGStringList RequiredExtensions
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGStringList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGStringList>>(JSObject, "requiredExtensions");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGStringList>.Get(JSObject, "requiredExtensions");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGStringList SystemLanguage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGStringList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGStringList>>(JSObject, "systemLanguage");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGStringList>.Get(JSObject, "systemLanguage");
     }
 }
 

@@ -38,15 +38,15 @@ public partial class Highlight: global::Natrix.JSCore.JSObjectProxy, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Priority
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "priority");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "priority", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "priority");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "priority", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HighlightType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HighlightType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HighlightType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.HighlightType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HighlightType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HighlightType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HighlightType>.Set(JSObject, "type", value);
     }
 }
 

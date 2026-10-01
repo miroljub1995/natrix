@@ -23,19 +23,19 @@ public partial class DigitalCredential: global::Natrix.StdWeb.Credential, global
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toJSON", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.JSObjectAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.DigitalCredentialPresentationProtocol, global::Natrix.StdWeb.DigitalCredentialIssuanceProtocol, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DigitalCredentialPresentationProtocol>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DigitalCredentialIssuanceProtocol>> Protocol
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.DigitalCredentialPresentationProtocol, global::Natrix.StdWeb.DigitalCredentialIssuanceProtocol, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DigitalCredentialPresentationProtocol>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DigitalCredentialIssuanceProtocol>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.DigitalCredentialPresentationProtocol, global::Natrix.StdWeb.DigitalCredentialIssuanceProtocol, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DigitalCredentialPresentationProtocol>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DigitalCredentialIssuanceProtocol>>>>(JSObject, "protocol");
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.DigitalCredentialPresentationProtocol, global::Natrix.StdWeb.DigitalCredentialIssuanceProtocol, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DigitalCredentialPresentationProtocol>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DigitalCredentialIssuanceProtocol>>>.Get(JSObject, "protocol");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.JSObjectAccessor.Get(JSObject, "data");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -55,7 +55,7 @@ public partial class DigitalCredential: global::Natrix.StdWeb.Credential, global
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "DigitalCredential"), "userAgentAllowsProtocol", global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "DigitalCredential"), ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 }
 

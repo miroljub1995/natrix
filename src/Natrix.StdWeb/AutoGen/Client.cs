@@ -18,31 +18,31 @@ public partial class Client: global::Natrix.JSCore.JSObjectProxy, global::Natrix
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ClientLifecycleState LifecycleState
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ClientLifecycleState, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ClientLifecycleState>>(JSObject, "lifecycleState");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ClientLifecycleState>.Get(JSObject, "lifecycleState");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "url");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FrameType FrameType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FrameType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FrameType>>(JSObject, "frameType");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FrameType>.Get(JSObject, "frameType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "id");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ClientType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ClientType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ClientType>>(JSObject, "type");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ClientType>.Get(JSObject, "type");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

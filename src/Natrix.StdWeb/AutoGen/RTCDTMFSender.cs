@@ -78,20 +78,20 @@ public partial class RTCDTMFSender: global::Natrix.StdWeb.EventTarget, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventHandlerNonNull? Ontonechange
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "ontonechange");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "ontonechange", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Get(JSObject, "ontonechange");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Set(JSObject, "ontonechange", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool CanInsertDTMF
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "canInsertDTMF");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "canInsertDTMF");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ToneBuffer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "toneBuffer");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "toneBuffer");
     }
 }
 

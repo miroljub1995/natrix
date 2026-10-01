@@ -18,20 +18,20 @@ public partial class RTCRtpSender: global::Natrix.JSCore.JSObjectProxy, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCRtpSFrameEncryptor, global::Natrix.StdWeb.RTCRtpScriptTransform, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpSFrameEncryptor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpScriptTransform>>? Transform
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCRtpSFrameEncryptor, global::Natrix.StdWeb.RTCRtpScriptTransform, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpSFrameEncryptor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpScriptTransform>>?, global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCRtpSFrameEncryptor, global::Natrix.StdWeb.RTCRtpScriptTransform, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpSFrameEncryptor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpScriptTransform>>>>(JSObject, "transform");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCRtpSFrameEncryptor, global::Natrix.StdWeb.RTCRtpScriptTransform, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpSFrameEncryptor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpScriptTransform>>?, global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCRtpSFrameEncryptor, global::Natrix.StdWeb.RTCRtpScriptTransform, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpSFrameEncryptor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpScriptTransform>>>>(JSObject, "transform", value);
+        get => global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCRtpSFrameEncryptor, global::Natrix.StdWeb.RTCRtpScriptTransform, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpSFrameEncryptor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpScriptTransform>>>.Get(JSObject, "transform");
+        set => global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCRtpSFrameEncryptor, global::Natrix.StdWeb.RTCRtpScriptTransform, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpSFrameEncryptor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpScriptTransform>>>.Set(JSObject, "transform", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaStreamTrack? Track
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaStreamTrack?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.MediaStreamTrack>>(JSObject, "track");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.MediaStreamTrack>.Get(JSObject, "track");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCDtlsTransport? Transport
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCDtlsTransport?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.RTCDtlsTransport>>(JSObject, "transport");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.RTCDtlsTransport>.Get(JSObject, "transport");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -51,7 +51,7 @@ public partial class RTCRtpSender: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "RTCRtpSender"), "getCapabilities", global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "RTCRtpSender"), ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCRtpCapabilities?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.RTCRtpCapabilities>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.RTCRtpCapabilities>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -71,7 +71,7 @@ public partial class RTCRtpSender: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "setParameters", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -96,7 +96,7 @@ public partial class RTCRtpSender: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "setParameters", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -107,7 +107,7 @@ public partial class RTCRtpSender: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getParameters", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCRtpSendParameters, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpSendParameters>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCRtpSendParameters>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -135,7 +135,7 @@ public partial class RTCRtpSender: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "replaceTrack", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -165,13 +165,13 @@ public partial class RTCRtpSender: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getStats", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RTCStatsReport, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCStatsReport>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RTCStatsReport, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCStatsReport>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RTCStatsReport, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCStatsReport>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCDTMFSender? Dtmf
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCDTMFSender?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.RTCDTMFSender>>(JSObject, "dtmf");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.RTCDTMFSender>.Get(JSObject, "dtmf");
     }
 }
 

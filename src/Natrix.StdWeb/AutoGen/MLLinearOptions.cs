@@ -26,15 +26,15 @@ public partial class MLLinearOptions: global::Natrix.StdWeb.MLOperatorOptions, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Alpha
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "alpha");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "alpha", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "alpha");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "alpha", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Beta
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "beta");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "beta", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "beta");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "beta", value);
     }
 }
 

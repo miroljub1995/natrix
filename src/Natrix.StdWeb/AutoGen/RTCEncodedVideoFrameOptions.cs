@@ -26,8 +26,8 @@ public partial class RTCEncodedVideoFrameOptions: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCEncodedVideoFrameMetadata Metadata
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCEncodedVideoFrameMetadata, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedVideoFrameMetadata>>(JSObject, "metadata");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCEncodedVideoFrameMetadata, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedVideoFrameMetadata>>(JSObject, "metadata", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedVideoFrameMetadata>.Get(JSObject, "metadata");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedVideoFrameMetadata>.Set(JSObject, "metadata", value);
     }
 }
 

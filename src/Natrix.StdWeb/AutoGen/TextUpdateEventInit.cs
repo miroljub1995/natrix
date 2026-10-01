@@ -26,36 +26,36 @@ public partial class TextUpdateEventInit: global::Natrix.StdWeb.EventInit, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint UpdateRangeStart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "updateRangeStart");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "updateRangeStart", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "updateRangeStart");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "updateRangeStart", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint UpdateRangeEnd
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "updateRangeEnd");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "updateRangeEnd", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "updateRangeEnd");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "updateRangeEnd", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Text
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "text");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "text", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "text");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "text", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint SelectionStart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "selectionStart");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "selectionStart", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "selectionStart");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "selectionStart", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint SelectionEnd
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "selectionEnd");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "selectionEnd", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "selectionEnd");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "selectionEnd", value);
     }
 }
 

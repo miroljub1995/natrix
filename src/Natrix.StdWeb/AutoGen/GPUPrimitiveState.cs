@@ -26,36 +26,36 @@ public partial class GPUPrimitiveState: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUPrimitiveTopology Topology
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUPrimitiveTopology, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPrimitiveTopology>>(JSObject, "topology");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUPrimitiveTopology, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPrimitiveTopology>>(JSObject, "topology", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPrimitiveTopology>.Get(JSObject, "topology");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPrimitiveTopology>.Set(JSObject, "topology", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUIndexFormat StripIndexFormat
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUIndexFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUIndexFormat>>(JSObject, "stripIndexFormat");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUIndexFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUIndexFormat>>(JSObject, "stripIndexFormat", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUIndexFormat>.Get(JSObject, "stripIndexFormat");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUIndexFormat>.Set(JSObject, "stripIndexFormat", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUFrontFace FrontFace
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUFrontFace, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUFrontFace>>(JSObject, "frontFace");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUFrontFace, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUFrontFace>>(JSObject, "frontFace", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUFrontFace>.Get(JSObject, "frontFace");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUFrontFace>.Set(JSObject, "frontFace", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUCullMode CullMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUCullMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCullMode>>(JSObject, "cullMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUCullMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCullMode>>(JSObject, "cullMode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCullMode>.Get(JSObject, "cullMode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCullMode>.Set(JSObject, "cullMode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool UnclippedDepth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "unclippedDepth");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "unclippedDepth", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "unclippedDepth");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "unclippedDepth", value);
     }
 }
 

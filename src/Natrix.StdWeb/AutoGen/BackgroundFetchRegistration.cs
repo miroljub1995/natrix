@@ -18,56 +18,56 @@ public partial class BackgroundFetchRegistration: global::Natrix.StdWeb.EventTar
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "id");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong UploadTotal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "uploadTotal");
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "uploadTotal");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Uploaded
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "uploaded");
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "uploaded");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong DownloadTotal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "downloadTotal");
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "downloadTotal");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Downloaded
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "downloaded");
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "downloaded");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BackgroundFetchResult Result
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BackgroundFetchResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BackgroundFetchResult>>(JSObject, "result");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BackgroundFetchResult>.Get(JSObject, "result");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BackgroundFetchFailureReason FailureReason
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BackgroundFetchFailureReason, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BackgroundFetchFailureReason>>(JSObject, "failureReason");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BackgroundFetchFailureReason>.Get(JSObject, "failureReason");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool RecordsAvailable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "recordsAvailable");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "recordsAvailable");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventHandlerNonNull? Onprogress
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "onprogress");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "onprogress", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Get(JSObject, "onprogress");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Set(JSObject, "onprogress", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -78,7 +78,7 @@ public partial class BackgroundFetchRegistration: global::Natrix.StdWeb.EventTar
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "abort", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<bool, global::Natrix.JSCore.Generics.BooleanAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -97,7 +97,7 @@ public partial class BackgroundFetchRegistration: global::Natrix.StdWeb.EventTar
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "match", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -121,7 +121,7 @@ public partial class BackgroundFetchRegistration: global::Natrix.StdWeb.EventTar
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "match", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -132,7 +132,7 @@ public partial class BackgroundFetchRegistration: global::Natrix.StdWeb.EventTar
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "matchAll", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -151,7 +151,7 @@ public partial class BackgroundFetchRegistration: global::Natrix.StdWeb.EventTar
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "matchAll", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -175,7 +175,7 @@ public partial class BackgroundFetchRegistration: global::Natrix.StdWeb.EventTar
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "matchAll", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BackgroundFetchRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRecord>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

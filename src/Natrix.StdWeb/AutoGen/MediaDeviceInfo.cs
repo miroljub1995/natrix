@@ -18,25 +18,25 @@ public partial class MediaDeviceInfo: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string DeviceId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "deviceId");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "deviceId");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaDeviceKind Kind
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaDeviceKind, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaDeviceKind>>(JSObject, "kind");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaDeviceKind>.Get(JSObject, "kind");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Label
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "label");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string GroupId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "groupId");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "groupId");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -47,7 +47,7 @@ public partial class MediaDeviceInfo: global::Natrix.JSCore.JSObjectProxy, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toJSON", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.JSObjectAccessor.Get(___resOwner_1.JSObject, "value");
     }
 }
 

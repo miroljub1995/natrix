@@ -26,57 +26,57 @@ public partial class CookieInit: global::Natrix.JSCore.JSObjectProxy, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "name", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "value", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Expires
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "expires");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "expires", value);
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "expires");
+        set => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Set(JSObject, "expires", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Domain
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "domain");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "domain", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "domain");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "domain", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Path
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "path");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "path", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "path");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "path", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CookieSameSite SameSite
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CookieSameSite, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CookieSameSite>>(JSObject, "sameSite");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CookieSameSite, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CookieSameSite>>(JSObject, "sameSite", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CookieSameSite>.Get(JSObject, "sameSite");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CookieSameSite>.Set(JSObject, "sameSite", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Partitioned
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "partitioned");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "partitioned", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "partitioned");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "partitioned", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public long? MaxAge
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<long?, global::Natrix.JSCore.Generics.NullableInt64Accessor>(JSObject, "maxAge");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<long?, global::Natrix.JSCore.Generics.NullableInt64Accessor>(JSObject, "maxAge", value);
+        get => global::Natrix.JSCore.Generics.NullableInt64Accessor.Get(JSObject, "maxAge");
+        set => global::Natrix.JSCore.Generics.NullableInt64Accessor.Set(JSObject, "maxAge", value);
     }
 }
 

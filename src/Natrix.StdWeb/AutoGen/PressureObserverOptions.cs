@@ -26,8 +26,8 @@ public partial class PressureObserverOptions: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint SampleInterval
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "sampleInterval");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "sampleInterval", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "sampleInterval");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "sampleInterval", value);
     }
 }
 

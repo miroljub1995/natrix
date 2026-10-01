@@ -63,55 +63,55 @@ public partial class KeyboardEvent: global::Natrix.StdWeb.UIEvent, global::Natri
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Key
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "key");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "key");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Code
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "code");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "code");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Location
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "location");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "location");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool CtrlKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ctrlKey");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ctrlKey");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ShiftKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "shiftKey");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "shiftKey");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool AltKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "altKey");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "altKey");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool MetaKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "metaKey");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "metaKey");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Repeat
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "repeat");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "repeat");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IsComposing
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isComposing");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isComposing");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -131,7 +131,7 @@ public partial class KeyboardEvent: global::Natrix.StdWeb.UIEvent, global::Natri
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getModifierState", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -568,13 +568,13 @@ public partial class KeyboardEvent: global::Natrix.StdWeb.UIEvent, global::Natri
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint CharCode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "charCode");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "charCode");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint KeyCode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "keyCode");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "keyCode");
     }
 }
 

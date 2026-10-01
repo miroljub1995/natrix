@@ -61,31 +61,31 @@ public partial class WheelEvent: global::Natrix.StdWeb.MouseEvent, global::Natri
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DeltaX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "deltaX");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "deltaX");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DeltaY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "deltaY");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "deltaY");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DeltaZ
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "deltaZ");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "deltaZ");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint DeltaMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "deltaMode");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "deltaMode");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Momentum
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "momentum");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "momentum");
     }
 }
 

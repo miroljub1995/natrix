@@ -26,15 +26,15 @@ public partial class SpeechRecognitionEventInit: global::Natrix.StdWeb.EventInit
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ResultIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "resultIndex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "resultIndex", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "resultIndex");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "resultIndex", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.SpeechRecognitionResultList Results
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpeechRecognitionResultList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechRecognitionResultList>>(JSObject, "results");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SpeechRecognitionResultList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechRecognitionResultList>>(JSObject, "results", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechRecognitionResultList>.Get(JSObject, "results");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechRecognitionResultList>.Set(JSObject, "results", value);
     }
 }
 

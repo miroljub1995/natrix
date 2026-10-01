@@ -41,13 +41,13 @@ public partial class ScrollTimeline: global::Natrix.StdWeb.AnimationTimeline, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? Source
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "source");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>.Get(JSObject, "source");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ScrollAxis Axis
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ScrollAxis, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollAxis>>(JSObject, "axis");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollAxis>.Get(JSObject, "axis");
     }
 }
 

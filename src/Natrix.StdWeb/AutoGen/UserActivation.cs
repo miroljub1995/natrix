@@ -18,13 +18,13 @@ public partial class UserActivation: global::Natrix.JSCore.JSObjectProxy, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool HasBeenActive
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "hasBeenActive");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "hasBeenActive");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IsActive
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isActive");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isActive");
     }
 }
 

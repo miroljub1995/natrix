@@ -26,43 +26,43 @@ public partial class RegistrationResponseJSON: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "id");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "id", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string RawId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "rawId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "rawId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "rawId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "rawId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.AuthenticatorAttestationResponseJSON Response
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AuthenticatorAttestationResponseJSON, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticatorAttestationResponseJSON>>(JSObject, "response");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AuthenticatorAttestationResponseJSON, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticatorAttestationResponseJSON>>(JSObject, "response", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticatorAttestationResponseJSON>.Get(JSObject, "response");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticatorAttestationResponseJSON>.Set(JSObject, "response", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string AuthenticatorAttachment
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "authenticatorAttachment");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "authenticatorAttachment", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "authenticatorAttachment");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "authenticatorAttachment", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.AuthenticationExtensionsClientOutputsJSON ClientExtensionResults
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AuthenticationExtensionsClientOutputsJSON, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsClientOutputsJSON>>(JSObject, "clientExtensionResults");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AuthenticationExtensionsClientOutputsJSON, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsClientOutputsJSON>>(JSObject, "clientExtensionResults", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsClientOutputsJSON>.Get(JSObject, "clientExtensionResults");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsClientOutputsJSON>.Set(JSObject, "clientExtensionResults", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "type", value);
     }
 }
 

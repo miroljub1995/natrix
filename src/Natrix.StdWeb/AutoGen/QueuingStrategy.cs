@@ -26,15 +26,15 @@ public partial class QueuingStrategy: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double HighWaterMark
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "highWaterMark");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "highWaterMark", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "highWaterMark");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "highWaterMark", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.QueuingStrategySize Size
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.QueuingStrategySize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.QueuingStrategySize>>(JSObject, "size");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.QueuingStrategySize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.QueuingStrategySize>>(JSObject, "size", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.QueuingStrategySize>.Get(JSObject, "size");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.QueuingStrategySize>.Set(JSObject, "size", value);
     }
 }
 

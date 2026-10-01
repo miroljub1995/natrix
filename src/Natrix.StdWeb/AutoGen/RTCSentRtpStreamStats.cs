@@ -26,15 +26,15 @@ public partial class RTCSentRtpStreamStats: global::Natrix.StdWeb.RTCRtpStreamSt
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong PacketsSent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsSent");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsSent", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "packetsSent");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "packetsSent", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong BytesSent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytesSent");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytesSent", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "bytesSent");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "bytesSent", value);
     }
 }
 

@@ -18,39 +18,39 @@ public partial class XRProjectionLayer: global::Natrix.StdWeb.XRCompositionLayer
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint TextureWidth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "textureWidth");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "textureWidth");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint TextureHeight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "textureHeight");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "textureHeight");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint TextureArrayLength
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "textureArrayLength");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "textureArrayLength");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IgnoreDepthValues
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreDepthValues");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ignoreDepthValues");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float? FixedFoveation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float?, global::Natrix.JSCore.Generics.NullableSingleAccessor>(JSObject, "fixedFoveation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float?, global::Natrix.JSCore.Generics.NullableSingleAccessor>(JSObject, "fixedFoveation", value);
+        get => global::Natrix.JSCore.Generics.NullableSingleAccessor.Get(JSObject, "fixedFoveation");
+        set => global::Natrix.JSCore.Generics.NullableSingleAccessor.Set(JSObject, "fixedFoveation", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRRigidTransform? DeltaPose
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRRigidTransform?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>>(JSObject, "deltaPose");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.XRRigidTransform?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>>(JSObject, "deltaPose", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>.Get(JSObject, "deltaPose");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>.Set(JSObject, "deltaPose", value);
     }
 }
 

@@ -26,15 +26,15 @@ public partial class GPUOrigin2DDict: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint X
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "x");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "x", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "x");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "x", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Y
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "y");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "y", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "y");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "y", value);
     }
 }
 

@@ -26,22 +26,22 @@ public partial class GPUBlendComponent: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUBlendOperation Operation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUBlendOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBlendOperation>>(JSObject, "operation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUBlendOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBlendOperation>>(JSObject, "operation", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBlendOperation>.Get(JSObject, "operation");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBlendOperation>.Set(JSObject, "operation", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUBlendFactor SrcFactor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUBlendFactor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBlendFactor>>(JSObject, "srcFactor");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUBlendFactor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBlendFactor>>(JSObject, "srcFactor", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBlendFactor>.Get(JSObject, "srcFactor");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBlendFactor>.Set(JSObject, "srcFactor", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUBlendFactor DstFactor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUBlendFactor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBlendFactor>>(JSObject, "dstFactor");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUBlendFactor, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBlendFactor>>(JSObject, "dstFactor", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBlendFactor>.Get(JSObject, "dstFactor");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBlendFactor>.Set(JSObject, "dstFactor", value);
     }
 }
 

@@ -26,15 +26,15 @@ public partial class SyncEventInit: global::Natrix.StdWeb.ExtendableEventInit, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Tag
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "tag");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "tag", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "tag");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "tag", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool LastChance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "lastChance");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "lastChance", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "lastChance");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "lastChance", value);
     }
 }
 

@@ -23,7 +23,7 @@ public partial class WorkletAnimationEffect: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getTiming", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EffectTiming, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EffectTiming>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EffectTiming>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -34,14 +34,14 @@ public partial class WorkletAnimationEffect: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getComputedTiming", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ComputedEffectTiming, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ComputedEffectTiming>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ComputedEffectTiming>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? LocalTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "localTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "localTime", value);
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "localTime");
+        set => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Set(JSObject, "localTime", value);
     }
 }
 

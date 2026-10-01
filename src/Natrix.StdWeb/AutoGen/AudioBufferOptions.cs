@@ -26,22 +26,22 @@ public partial class AudioBufferOptions: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint NumberOfChannels
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "numberOfChannels");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "numberOfChannels", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "numberOfChannels");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "numberOfChannels", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "length");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "length", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required float SampleRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "sampleRate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "sampleRate", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "sampleRate");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "sampleRate", value);
     }
 }
 

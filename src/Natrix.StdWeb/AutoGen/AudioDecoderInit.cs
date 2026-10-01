@@ -26,15 +26,15 @@ public partial class AudioDecoderInit: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.AudioDataOutputCallback Output
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioDataOutputCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioDataOutputCallback>>(JSObject, "output");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AudioDataOutputCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioDataOutputCallback>>(JSObject, "output", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioDataOutputCallback>.Get(JSObject, "output");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioDataOutputCallback>.Set(JSObject, "output", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.WebCodecsErrorCallback Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebCodecsErrorCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebCodecsErrorCallback>>(JSObject, "error");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.WebCodecsErrorCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebCodecsErrorCallback>>(JSObject, "error", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebCodecsErrorCallback>.Get(JSObject, "error");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebCodecsErrorCallback>.Set(JSObject, "error", value);
     }
 }
 

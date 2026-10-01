@@ -26,29 +26,29 @@ public partial class PaymentCredentialInstrument: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string DisplayName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "displayName");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "displayName", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "displayName");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "displayName", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Icon
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "icon");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "icon", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "icon");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "icon", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IconMustBeShown
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "iconMustBeShown");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "iconMustBeShown", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "iconMustBeShown");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "iconMustBeShown", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Details
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "details");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "details", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "details");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "details", value);
     }
 }
 

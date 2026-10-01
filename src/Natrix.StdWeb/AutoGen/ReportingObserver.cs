@@ -72,7 +72,7 @@ public partial class ReportingObserver: global::Natrix.JSCore.JSObjectProxy, glo
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "takeRecords", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Report>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Report>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Report, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Report>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

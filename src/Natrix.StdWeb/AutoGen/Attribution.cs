@@ -18,7 +18,7 @@ public partial class Attribution: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AttributionAggregationServices AggregationServices
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AttributionAggregationServices, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AttributionAggregationServices>>(JSObject, "aggregationServices");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AttributionAggregationServices>.Get(JSObject, "aggregationServices");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -38,7 +38,7 @@ public partial class Attribution: global::Natrix.JSCore.JSObjectProxy, global::N
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "saveImpression", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.AttributionImpressionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AttributionImpressionResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.AttributionImpressionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AttributionImpressionResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.AttributionImpressionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AttributionImpressionResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -58,7 +58,7 @@ public partial class Attribution: global::Natrix.JSCore.JSObjectProxy, global::N
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "measureConversion", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.AttributionConversionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AttributionConversionResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.AttributionConversionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AttributionConversionResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.AttributionConversionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AttributionConversionResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

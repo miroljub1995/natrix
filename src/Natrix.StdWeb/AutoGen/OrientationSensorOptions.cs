@@ -26,8 +26,8 @@ public partial class OrientationSensorOptions: global::Natrix.StdWeb.SensorOptio
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.OrientationSensorLocalCoordinateSystem ReferenceFrame
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.OrientationSensorLocalCoordinateSystem, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OrientationSensorLocalCoordinateSystem>>(JSObject, "referenceFrame");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.OrientationSensorLocalCoordinateSystem, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OrientationSensorLocalCoordinateSystem>>(JSObject, "referenceFrame", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OrientationSensorLocalCoordinateSystem>.Get(JSObject, "referenceFrame");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OrientationSensorLocalCoordinateSystem>.Set(JSObject, "referenceFrame", value);
     }
 }
 

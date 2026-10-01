@@ -60,7 +60,7 @@ public partial class WebTransport: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getStats", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportConnectionStats, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportConnectionStats>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportConnectionStats, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportConnectionStats>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportConnectionStats, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportConnectionStats>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -88,63 +88,63 @@ public partial class WebTransport: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "exportKeyingMaterial", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Uint8Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8Array>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Uint8Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8Array>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Uint8Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8Array>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Promise Ready
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(JSObject, "ready");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(JSObject, "ready");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebTransportReliabilityMode Reliability
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebTransportReliabilityMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WebTransportReliabilityMode>>(JSObject, "reliability");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WebTransportReliabilityMode>.Get(JSObject, "reliability");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebTransportCongestionControl CongestionControl
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebTransportCongestionControl, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WebTransportCongestionControl>>(JSObject, "congestionControl");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WebTransportCongestionControl>.Get(JSObject, "congestionControl");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort? AnticipatedConcurrentIncomingUnidirectionalStreams
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "anticipatedConcurrentIncomingUnidirectionalStreams");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "anticipatedConcurrentIncomingUnidirectionalStreams", value);
+        get => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Get(JSObject, "anticipatedConcurrentIncomingUnidirectionalStreams");
+        set => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Set(JSObject, "anticipatedConcurrentIncomingUnidirectionalStreams", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort? AnticipatedConcurrentIncomingBidirectionalStreams
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "anticipatedConcurrentIncomingBidirectionalStreams");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "anticipatedConcurrentIncomingBidirectionalStreams", value);
+        get => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Get(JSObject, "anticipatedConcurrentIncomingBidirectionalStreams");
+        set => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Set(JSObject, "anticipatedConcurrentIncomingBidirectionalStreams", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Headers? ResponseHeaders
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Headers?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Headers>>(JSObject, "responseHeaders");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Headers>.Get(JSObject, "responseHeaders");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Protocol
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "protocol");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "protocol");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportCloseInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportCloseInfo>> Closed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportCloseInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportCloseInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportCloseInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportCloseInfo>>>>(JSObject, "closed");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportCloseInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportCloseInfo>>>.Get(JSObject, "closed");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Promise Draining
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(JSObject, "draining");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(JSObject, "draining");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -171,7 +171,7 @@ public partial class WebTransport: global::Natrix.JSCore.JSObjectProxy, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebTransportDatagramDuplexStream Datagrams
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebTransportDatagramDuplexStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportDatagramDuplexStream>>(JSObject, "datagrams");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportDatagramDuplexStream>.Get(JSObject, "datagrams");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -182,7 +182,7 @@ public partial class WebTransport: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "createBidirectionalStream", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportBidirectionalStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportBidirectionalStream>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportBidirectionalStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportBidirectionalStream>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportBidirectionalStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportBidirectionalStream>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -202,13 +202,13 @@ public partial class WebTransport: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createBidirectionalStream", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportBidirectionalStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportBidirectionalStream>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportBidirectionalStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportBidirectionalStream>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportBidirectionalStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportBidirectionalStream>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ReadableStream IncomingBidirectionalStreams
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ReadableStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStream>>(JSObject, "incomingBidirectionalStreams");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStream>.Get(JSObject, "incomingBidirectionalStreams");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -219,7 +219,7 @@ public partial class WebTransport: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "createUnidirectionalStream", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportSendStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportSendStream>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportSendStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportSendStream>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportSendStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportSendStream>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -239,13 +239,13 @@ public partial class WebTransport: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createUnidirectionalStream", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportSendStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportSendStream>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportSendStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportSendStream>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportSendStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportSendStream>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ReadableStream IncomingUnidirectionalStreams
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ReadableStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStream>>(JSObject, "incomingUnidirectionalStreams");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStream>.Get(JSObject, "incomingUnidirectionalStreams");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -256,13 +256,13 @@ public partial class WebTransport: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "createSendGroup", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebTransportSendGroup, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportSendGroup>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportSendGroup>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public static bool SupportsReliableOnly
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "WebTransport"), "supportsReliableOnly");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "WebTransport"), "supportsReliableOnly");
     }
 }
 

@@ -26,8 +26,8 @@ public partial class ScrollOptions: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ScrollBehavior Behavior
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ScrollBehavior, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollBehavior>>(JSObject, "behavior");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ScrollBehavior, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollBehavior>>(JSObject, "behavior", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollBehavior>.Get(JSObject, "behavior");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollBehavior>.Set(JSObject, "behavior", value);
     }
 }
 

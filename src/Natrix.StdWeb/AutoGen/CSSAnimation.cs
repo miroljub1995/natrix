@@ -18,7 +18,7 @@ public partial class CSSAnimation: global::Natrix.StdWeb.Animation, global::Natr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string AnimationName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "animationName");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "animationName");
     }
 }
 

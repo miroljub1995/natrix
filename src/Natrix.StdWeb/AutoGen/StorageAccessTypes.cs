@@ -26,92 +26,92 @@ public partial class StorageAccessTypes: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool All
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "all");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "all", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "all");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "all", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Cookies
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "cookies");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "cookies", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "cookies");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "cookies", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool SessionStorage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "sessionStorage");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "sessionStorage", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "sessionStorage");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "sessionStorage", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool LocalStorage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "localStorage");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "localStorage", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "localStorage");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "localStorage", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IndexedDB
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "indexedDB");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "indexedDB", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "indexedDB");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "indexedDB", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Locks
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "locks");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "locks", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "locks");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "locks", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Caches
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "caches");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "caches", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "caches");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "caches", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool GetDirectory
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "getDirectory");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "getDirectory", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "getDirectory");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "getDirectory", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Estimate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "estimate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "estimate", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "estimate");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "estimate", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool CreateObjectURL
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "createObjectURL");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "createObjectURL", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "createObjectURL");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "createObjectURL", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool RevokeObjectURL
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "revokeObjectURL");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "revokeObjectURL", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "revokeObjectURL");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "revokeObjectURL", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool BroadcastChannel
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "BroadcastChannel");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "BroadcastChannel", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "BroadcastChannel");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "BroadcastChannel", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool SharedWorker
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "SharedWorker");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "SharedWorker", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "SharedWorker");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "SharedWorker", value);
     }
 }
 

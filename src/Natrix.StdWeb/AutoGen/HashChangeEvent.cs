@@ -55,13 +55,13 @@ public partial class HashChangeEvent: global::Natrix.StdWeb.Event, global::Natri
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string OldURL
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "oldURL");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "oldURL");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string NewURL
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "newURL");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "newURL");
     }
 }
 

@@ -26,8 +26,8 @@ public partial class XRDOMOverlayState: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRDOMOverlayType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRDOMOverlayType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDOMOverlayType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.XRDOMOverlayType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDOMOverlayType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDOMOverlayType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDOMOverlayType>.Set(JSObject, "type", value);
     }
 }
 

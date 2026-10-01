@@ -26,15 +26,15 @@ public partial class MLCumulativeSumOptions: global::Natrix.StdWeb.MLOperatorOpt
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Exclusive
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "exclusive");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "exclusive", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "exclusive");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "exclusive", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Reversed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "reversed");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "reversed", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "reversed");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "reversed", value);
     }
 }
 

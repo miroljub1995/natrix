@@ -39,19 +39,19 @@ public partial class HIDInputReportEvent: global::Natrix.StdWeb.Event, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HIDDevice Device
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HIDDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDevice>>(JSObject, "device");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDevice>.Get(JSObject, "device");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte ReportId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "reportId");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "reportId");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.DataView Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.DataView, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.DataView>>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.DataView>.Get(JSObject, "data");
     }
 }
 

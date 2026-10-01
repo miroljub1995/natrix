@@ -26,8 +26,8 @@ public partial class MultiCacheQueryOptions: global::Natrix.StdWeb.CacheQueryOpt
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string CacheName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "cacheName");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "cacheName", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "cacheName");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "cacheName", value);
     }
 }
 

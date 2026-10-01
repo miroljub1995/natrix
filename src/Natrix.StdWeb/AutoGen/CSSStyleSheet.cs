@@ -41,13 +41,13 @@ public partial class CSSStyleSheet: global::Natrix.StdWeb.StyleSheet, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSRule? OwnerRule
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSRule?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSRule>>(JSObject, "ownerRule");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSRule>.Get(JSObject, "ownerRule");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSRuleList CssRules
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSRuleList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSRuleList>>(JSObject, "cssRules");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSRuleList>.Get(JSObject, "cssRules");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -67,7 +67,7 @@ public partial class CSSStyleSheet: global::Natrix.StdWeb.StyleSheet, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "insertRule", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.UInt32Accessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -92,7 +92,7 @@ public partial class CSSStyleSheet: global::Natrix.StdWeb.StyleSheet, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "insertRule", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.UInt32Accessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -127,7 +127,7 @@ public partial class CSSStyleSheet: global::Natrix.StdWeb.StyleSheet, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "replace", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CSSStyleSheet, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleSheet>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CSSStyleSheet, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleSheet>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CSSStyleSheet, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleSheet>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -148,7 +148,7 @@ public partial class CSSStyleSheet: global::Natrix.StdWeb.StyleSheet, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSRuleList Rules
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSRuleList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSRuleList>>(JSObject, "rules");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSRuleList>.Get(JSObject, "rules");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -159,7 +159,7 @@ public partial class CSSStyleSheet: global::Natrix.StdWeb.StyleSheet, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "addRule", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.Int32Accessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -179,7 +179,7 @@ public partial class CSSStyleSheet: global::Natrix.StdWeb.StyleSheet, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "addRule", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.Int32Accessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -204,7 +204,7 @@ public partial class CSSStyleSheet: global::Natrix.StdWeb.StyleSheet, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "addRule", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.Int32Accessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -234,7 +234,7 @@ public partial class CSSStyleSheet: global::Natrix.StdWeb.StyleSheet, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "addRule", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.Int32Accessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

@@ -23,7 +23,7 @@ public partial class WebTransportReceiveStream: global::Natrix.StdWeb.ReadableSt
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getStats", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportReceiveStreamStats, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportReceiveStreamStats>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportReceiveStreamStats, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportReceiveStreamStats>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebTransportReceiveStreamStats, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportReceiveStreamStats>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

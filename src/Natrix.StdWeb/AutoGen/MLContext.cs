@@ -55,7 +55,7 @@ public partial class MLContext: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createTensor", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLTensor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLTensor>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLTensor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLTensor>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLTensor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLTensor>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -79,7 +79,7 @@ public partial class MLContext: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createConstantTensor", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLTensor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLTensor>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLTensor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLTensor>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLTensor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLTensor>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -99,7 +99,7 @@ public partial class MLContext: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "readTensor", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.ArrayBuffer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.ArrayBuffer>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.ArrayBuffer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.ArrayBuffer>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.ArrayBuffer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.ArrayBuffer>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -123,7 +123,7 @@ public partial class MLContext: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "readTensor", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -153,7 +153,7 @@ public partial class MLContext: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "opSupportLimits", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MLOpSupportLimits, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLOpSupportLimits>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLOpSupportLimits>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -165,13 +165,13 @@ public partial class MLContext: global::Natrix.JSCore.JSObjectProxy, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Accelerated
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "accelerated");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "accelerated");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContextLostInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLContextLostInfo>> Lost
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContextLostInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLContextLostInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContextLostInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLContextLostInfo>>>>(JSObject, "lost");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MLContextLostInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MLContextLostInfo>>>.Get(JSObject, "lost");
     }
 }
 

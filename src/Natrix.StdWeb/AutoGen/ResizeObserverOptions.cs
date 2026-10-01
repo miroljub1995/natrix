@@ -26,8 +26,8 @@ public partial class ResizeObserverOptions: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ResizeObserverBoxOptions Box
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ResizeObserverBoxOptions, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ResizeObserverBoxOptions>>(JSObject, "box");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ResizeObserverBoxOptions, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ResizeObserverBoxOptions>>(JSObject, "box", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ResizeObserverBoxOptions>.Get(JSObject, "box");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ResizeObserverBoxOptions>.Set(JSObject, "box", value);
     }
 }
 

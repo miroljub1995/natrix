@@ -38,31 +38,31 @@ public partial class AudioWorkletGlobalScope: global::Natrix.StdWeb.WorkletGloba
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong CurrentFrame
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "currentFrame");
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "currentFrame");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double CurrentTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "currentTime");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "currentTime");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float SampleRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "sampleRate");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "sampleRate");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint RenderQuantumSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "renderQuantumSize");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "renderQuantumSize");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MessagePort Port
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MessagePort, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MessagePort>>(JSObject, "port");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MessagePort>.Get(JSObject, "port");
     }
 }
 

@@ -18,7 +18,7 @@ public partial class XRSubImage: global::Natrix.JSCore.JSObjectProxy, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRViewport Viewport
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRViewport, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRViewport>>(JSObject, "viewport");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRViewport>.Get(JSObject, "viewport");
     }
 }
 

@@ -55,13 +55,13 @@ public partial class USBIsochronousOutTransferPacket: global::Natrix.JSCore.JSOb
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint BytesWritten
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "bytesWritten");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "bytesWritten");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.USBTransferStatus Status
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBTransferStatus, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBTransferStatus>>(JSObject, "status");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBTransferStatus>.Get(JSObject, "status");
     }
 }
 

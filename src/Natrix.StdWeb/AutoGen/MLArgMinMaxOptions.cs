@@ -26,15 +26,15 @@ public partial class MLArgMinMaxOptions: global::Natrix.StdWeb.MLOperatorOptions
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool KeepDimensions
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "keepDimensions");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "keepDimensions", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "keepDimensions");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "keepDimensions", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MLOperandDataType OutputDataType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MLOperandDataType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLOperandDataType>>(JSObject, "outputDataType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MLOperandDataType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLOperandDataType>>(JSObject, "outputDataType", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLOperandDataType>.Get(JSObject, "outputDataType");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLOperandDataType>.Set(JSObject, "outputDataType", value);
     }
 }
 

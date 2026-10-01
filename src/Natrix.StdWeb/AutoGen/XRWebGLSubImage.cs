@@ -18,49 +18,49 @@ public partial class XRWebGLSubImage: global::Natrix.StdWeb.XRSubImage, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebGLTexture ColorTexture
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebGLTexture, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGLTexture>>(JSObject, "colorTexture");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGLTexture>.Get(JSObject, "colorTexture");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebGLTexture? DepthStencilTexture
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebGLTexture?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WebGLTexture>>(JSObject, "depthStencilTexture");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WebGLTexture>.Get(JSObject, "depthStencilTexture");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebGLTexture? MotionVectorTexture
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebGLTexture?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WebGLTexture>>(JSObject, "motionVectorTexture");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WebGLTexture>.Get(JSObject, "motionVectorTexture");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint? ImageIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.JSCore.Generics.NullableUInt32Accessor>(JSObject, "imageIndex");
+        get => global::Natrix.JSCore.Generics.NullableUInt32Accessor.Get(JSObject, "imageIndex");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ColorTextureWidth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "colorTextureWidth");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "colorTextureWidth");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ColorTextureHeight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "colorTextureHeight");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "colorTextureHeight");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint? DepthStencilTextureWidth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.JSCore.Generics.NullableUInt32Accessor>(JSObject, "depthStencilTextureWidth");
+        get => global::Natrix.JSCore.Generics.NullableUInt32Accessor.Get(JSObject, "depthStencilTextureWidth");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint? DepthStencilTextureHeight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.JSCore.Generics.NullableUInt32Accessor>(JSObject, "depthStencilTextureHeight");
+        get => global::Natrix.JSCore.Generics.NullableUInt32Accessor.Get(JSObject, "depthStencilTextureHeight");
     }
 }
 

@@ -18,13 +18,13 @@ public partial class CSSScopeRule: global::Natrix.StdWeb.CSSGroupingRule, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Start
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "start");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "start");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? End
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "end");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "end");
     }
 }
 

@@ -26,29 +26,29 @@ public partial class GPURequestAdapterOptions: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string FeatureLevel
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "featureLevel");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "featureLevel", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "featureLevel");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "featureLevel", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUPowerPreference PowerPreference
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUPowerPreference, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPowerPreference>>(JSObject, "powerPreference");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUPowerPreference, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPowerPreference>>(JSObject, "powerPreference", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPowerPreference>.Get(JSObject, "powerPreference");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPowerPreference>.Set(JSObject, "powerPreference", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ForceFallbackAdapter
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "forceFallbackAdapter");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "forceFallbackAdapter", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "forceFallbackAdapter");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "forceFallbackAdapter", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool XrCompatible
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "xrCompatible");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "xrCompatible", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "xrCompatible");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "xrCompatible", value);
     }
 }
 

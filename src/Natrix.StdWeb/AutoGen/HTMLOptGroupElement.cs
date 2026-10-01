@@ -25,15 +25,15 @@ public partial class HTMLOptGroupElement: global::Natrix.StdWeb.HTMLElement, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Disabled
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "disabled");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "disabled", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "disabled");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "disabled", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Label
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "label");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "label", value);
     }
 }
 

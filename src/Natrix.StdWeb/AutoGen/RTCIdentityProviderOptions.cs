@@ -26,22 +26,22 @@ public partial class RTCIdentityProviderOptions: global::Natrix.JSCore.JSObjectP
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Protocol
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "protocol");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "protocol", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "protocol");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "protocol", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string UsernameHint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "usernameHint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "usernameHint", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "usernameHint");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "usernameHint", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string PeerIdentity
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "peerIdentity");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "peerIdentity", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "peerIdentity");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "peerIdentity", value);
     }
 }
 

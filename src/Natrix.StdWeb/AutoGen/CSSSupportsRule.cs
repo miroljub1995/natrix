@@ -18,7 +18,7 @@ public partial class CSSSupportsRule: global::Natrix.StdWeb.CSSConditionRule, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Matches
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "matches");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "matches");
     }
 }
 

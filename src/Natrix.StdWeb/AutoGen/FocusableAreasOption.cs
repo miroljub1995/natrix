@@ -26,8 +26,8 @@ public partial class FocusableAreasOption: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FocusableAreaSearchMode Mode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FocusableAreaSearchMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FocusableAreaSearchMode>>(JSObject, "mode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FocusableAreaSearchMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FocusableAreaSearchMode>>(JSObject, "mode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FocusableAreaSearchMode>.Get(JSObject, "mode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FocusableAreaSearchMode>.Set(JSObject, "mode", value);
     }
 }
 

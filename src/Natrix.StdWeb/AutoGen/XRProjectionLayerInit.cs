@@ -26,36 +26,36 @@ public partial class XRProjectionLayerInit: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRTextureType TextureType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRTextureType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRTextureType>>(JSObject, "textureType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.XRTextureType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRTextureType>>(JSObject, "textureType", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRTextureType>.Get(JSObject, "textureType");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRTextureType>.Set(JSObject, "textureType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ColorFormat
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "colorFormat");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "colorFormat", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "colorFormat");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "colorFormat", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint DepthFormat
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "depthFormat");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "depthFormat", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "depthFormat");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "depthFormat", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ScaleFactor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "scaleFactor");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "scaleFactor", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "scaleFactor");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "scaleFactor", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ClearOnAccess
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "clearOnAccess");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "clearOnAccess", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "clearOnAccess");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "clearOnAccess", value);
     }
 }
 

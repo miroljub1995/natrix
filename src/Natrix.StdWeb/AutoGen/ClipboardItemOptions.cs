@@ -26,8 +26,8 @@ public partial class ClipboardItemOptions: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PresentationStyle PresentationStyle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PresentationStyle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PresentationStyle>>(JSObject, "presentationStyle");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PresentationStyle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PresentationStyle>>(JSObject, "presentationStyle", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PresentationStyle>.Get(JSObject, "presentationStyle");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PresentationStyle>.Set(JSObject, "presentationStyle", value);
     }
 }
 

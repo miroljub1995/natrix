@@ -39,7 +39,7 @@ public partial class XRSessionEvent: global::Natrix.StdWeb.Event, global::Natrix
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRSession Session
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRSession, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSession>>(JSObject, "session");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSession>.Get(JSObject, "session");
     }
 }
 

@@ -26,22 +26,22 @@ public partial class FunctionParameter: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "name", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string DefaultValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "defaultValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "defaultValue", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "defaultValue");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "defaultValue", value);
     }
 }
 

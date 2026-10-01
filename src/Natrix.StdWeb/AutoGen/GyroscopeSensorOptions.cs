@@ -26,8 +26,8 @@ public partial class GyroscopeSensorOptions: global::Natrix.StdWeb.SensorOptions
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GyroscopeLocalCoordinateSystem ReferenceFrame
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GyroscopeLocalCoordinateSystem, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GyroscopeLocalCoordinateSystem>>(JSObject, "referenceFrame");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GyroscopeLocalCoordinateSystem, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GyroscopeLocalCoordinateSystem>>(JSObject, "referenceFrame", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GyroscopeLocalCoordinateSystem>.Get(JSObject, "referenceFrame");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GyroscopeLocalCoordinateSystem>.Set(JSObject, "referenceFrame", value);
     }
 }
 

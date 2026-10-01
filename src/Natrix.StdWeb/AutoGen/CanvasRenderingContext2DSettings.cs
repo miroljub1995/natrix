@@ -26,36 +26,36 @@ public partial class CanvasRenderingContext2DSettings: global::Natrix.JSCore.JSO
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Alpha
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "alpha");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "alpha", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "alpha");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "alpha", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Desynchronized
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "desynchronized");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "desynchronized", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "desynchronized");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "desynchronized", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PredefinedColorSpace ColorSpace
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PredefinedColorSpace, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PredefinedColorSpace>>(JSObject, "colorSpace");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PredefinedColorSpace, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PredefinedColorSpace>>(JSObject, "colorSpace", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PredefinedColorSpace>.Get(JSObject, "colorSpace");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PredefinedColorSpace>.Set(JSObject, "colorSpace", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CanvasColorType ColorType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasColorType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasColorType>>(JSObject, "colorType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CanvasColorType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasColorType>>(JSObject, "colorType", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasColorType>.Get(JSObject, "colorType");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasColorType>.Set(JSObject, "colorType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool WillReadFrequently
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "willReadFrequently");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "willReadFrequently", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "willReadFrequently");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "willReadFrequently", value);
     }
 }
 

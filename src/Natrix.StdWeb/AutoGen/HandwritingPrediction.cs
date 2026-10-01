@@ -26,15 +26,15 @@ public partial class HandwritingPrediction: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Text
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "text");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "text", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "text");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "text", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingSegment>> SegmentationResult
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingSegment>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingSegment>>>>(JSObject, "segmentationResult");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingSegment>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingSegment>>>>(JSObject, "segmentationResult", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingSegment>>>.Get(JSObject, "segmentationResult");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingSegment>>>.Set(JSObject, "segmentationResult", value);
     }
 }
 

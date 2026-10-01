@@ -18,13 +18,13 @@ public partial class BackgroundFetchRecord: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Request Request
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Request, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Request>>(JSObject, "request");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Request>.Get(JSObject, "request");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Response, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Response>> ResponseReady
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Response, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Response>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Response, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Response>>>>(JSObject, "responseReady");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Response, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Response>>>.Get(JSObject, "responseReady");
     }
 }
 

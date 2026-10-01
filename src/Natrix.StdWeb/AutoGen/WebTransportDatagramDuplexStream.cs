@@ -23,7 +23,7 @@ public partial class WebTransportDatagramDuplexStream: global::Natrix.JSCore.JSO
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "createWritable", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebTransportDatagramsWritable, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportDatagramsWritable>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportDatagramsWritable>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -43,47 +43,47 @@ public partial class WebTransportDatagramDuplexStream: global::Natrix.JSCore.JSO
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createWritable", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebTransportDatagramsWritable, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportDatagramsWritable>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebTransportDatagramsWritable>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ReadableStream Readable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ReadableStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStream>>(JSObject, "readable");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStream>.Get(JSObject, "readable");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint MaxDatagramSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "maxDatagramSize");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "maxDatagramSize");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? IncomingMaxAge
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "incomingMaxAge");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "incomingMaxAge", value);
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "incomingMaxAge");
+        set => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Set(JSObject, "incomingMaxAge", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? OutgoingMaxAge
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "outgoingMaxAge");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "outgoingMaxAge", value);
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "outgoingMaxAge");
+        set => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Set(JSObject, "outgoingMaxAge", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint IncomingMaxBufferedDatagrams
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "incomingMaxBufferedDatagrams");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "incomingMaxBufferedDatagrams", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "incomingMaxBufferedDatagrams");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "incomingMaxBufferedDatagrams", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint OutgoingMaxBufferedDatagrams
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "outgoingMaxBufferedDatagrams");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "outgoingMaxBufferedDatagrams", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "outgoingMaxBufferedDatagrams");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "outgoingMaxBufferedDatagrams", value);
     }
 }
 

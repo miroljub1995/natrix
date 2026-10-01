@@ -26,22 +26,22 @@ public partial class GPUBufferBinding: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GPUBuffer Buffer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUBuffer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBuffer>>(JSObject, "buffer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUBuffer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBuffer>>(JSObject, "buffer", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBuffer>.Get(JSObject, "buffer");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBuffer>.Set(JSObject, "buffer", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Offset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "offset");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "offset", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "offset");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "offset", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Size
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "size");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "size", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "size");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "size", value);
     }
 }
 

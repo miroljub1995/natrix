@@ -55,7 +55,7 @@ public partial class MIDIMessageEvent: global::Natrix.StdWeb.Event, global::Natr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Uint8Array? Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Uint8Array?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Uint8Array>>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Uint8Array>.Get(JSObject, "data");
     }
 }
 

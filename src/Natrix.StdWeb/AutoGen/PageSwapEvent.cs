@@ -55,13 +55,13 @@ public partial class PageSwapEvent: global::Natrix.StdWeb.Event, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NavigationActivation? Activation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NavigationActivation?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.NavigationActivation>>(JSObject, "activation");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.NavigationActivation>.Get(JSObject, "activation");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ViewTransition? ViewTransition
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ViewTransition?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.ViewTransition>>(JSObject, "viewTransition");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.ViewTransition>.Get(JSObject, "viewTransition");
     }
 }
 

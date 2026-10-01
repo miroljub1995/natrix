@@ -25,8 +25,8 @@ public partial class HTMLPreElement: global::Natrix.StdWeb.HTMLElement, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "width");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "width", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "width");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "width", value);
     }
 }
 

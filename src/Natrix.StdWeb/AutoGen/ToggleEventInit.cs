@@ -26,22 +26,22 @@ public partial class ToggleEventInit: global::Natrix.StdWeb.EventInit, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string OldState
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "oldState");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "oldState", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "oldState");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "oldState", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string NewState
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "newState");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "newState", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "newState");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "newState", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? Source
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "source");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "source", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>.Get(JSObject, "source");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>.Set(JSObject, "source", value);
     }
 }
 

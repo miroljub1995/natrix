@@ -25,49 +25,49 @@ public partial class HTMLTemplateElement: global::Natrix.StdWeb.HTMLElement, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DocumentFragment Content
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DocumentFragment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DocumentFragment>>(JSObject, "content");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DocumentFragment>.Get(JSObject, "content");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ShadowRootMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "shadowRootMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "shadowRootMode", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "shadowRootMode");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "shadowRootMode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ShadowRootDelegatesFocus
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "shadowRootDelegatesFocus");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "shadowRootDelegatesFocus", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "shadowRootDelegatesFocus");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "shadowRootDelegatesFocus", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ShadowRootSlotAssignment
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "shadowRootSlotAssignment");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "shadowRootSlotAssignment", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "shadowRootSlotAssignment");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "shadowRootSlotAssignment", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ShadowRootClonable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "shadowRootClonable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "shadowRootClonable", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "shadowRootClonable");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "shadowRootClonable", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ShadowRootSerializable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "shadowRootSerializable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "shadowRootSerializable", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "shadowRootSerializable");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "shadowRootSerializable", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ShadowRootCustomElementRegistry
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "shadowRootCustomElementRegistry");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "shadowRootCustomElementRegistry", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "shadowRootCustomElementRegistry");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "shadowRootCustomElementRegistry", value);
     }
 }
 

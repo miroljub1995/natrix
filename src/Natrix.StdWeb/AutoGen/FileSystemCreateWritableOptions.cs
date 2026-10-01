@@ -26,8 +26,8 @@ public partial class FileSystemCreateWritableOptions: global::Natrix.JSCore.JSOb
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool KeepExistingData
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "keepExistingData");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "keepExistingData", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "keepExistingData");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "keepExistingData", value);
     }
 }
 

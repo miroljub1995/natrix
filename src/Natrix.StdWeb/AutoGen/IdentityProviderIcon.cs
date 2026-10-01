@@ -26,15 +26,15 @@ public partial class IdentityProviderIcon: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "url");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "url", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Size
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "size");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "size", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "size");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "size", value);
     }
 }
 

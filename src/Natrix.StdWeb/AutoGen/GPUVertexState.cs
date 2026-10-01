@@ -26,8 +26,8 @@ public partial class GPUVertexState: global::Natrix.StdWeb.GPUProgrammableStage,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexBufferLayout?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GPUVertexBufferLayout>> Buffers
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexBufferLayout?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GPUVertexBufferLayout>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexBufferLayout?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GPUVertexBufferLayout>>>>(JSObject, "buffers");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexBufferLayout?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GPUVertexBufferLayout>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexBufferLayout?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GPUVertexBufferLayout>>>>(JSObject, "buffers", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexBufferLayout?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GPUVertexBufferLayout>>>.Get(JSObject, "buffers");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexBufferLayout?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GPUVertexBufferLayout>>>.Set(JSObject, "buffers", value);
     }
 }
 

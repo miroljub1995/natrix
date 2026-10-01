@@ -26,15 +26,15 @@ public partial class MemoryAttributionContainer: global::Natrix.JSCore.JSObjectP
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "id");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "id", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Src
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "src");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "src", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "src");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "src", value);
     }
 }
 

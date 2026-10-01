@@ -55,13 +55,13 @@ public partial class PaymentMethodChangeEvent: global::Natrix.StdWeb.PaymentRequ
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string MethodName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "methodName");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "methodName");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject? MethodDetails
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject?, global::Natrix.JSCore.Generics.NullableJSObjectAccessor>(JSObject, "methodDetails");
+        get => global::Natrix.JSCore.Generics.NullableJSObjectAccessor.Get(JSObject, "methodDetails");
     }
 }
 

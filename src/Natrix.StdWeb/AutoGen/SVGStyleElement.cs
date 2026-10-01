@@ -18,35 +18,35 @@ public partial class SVGStyleElement: global::Natrix.StdWeb.SVGElement, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Media
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "media");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "media", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "media");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "media", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Title
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "title");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "title", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "title");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "title", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Disabled
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "disabled");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "disabled", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "disabled");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "disabled", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSStyleSheet? Sheet
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSStyleSheet?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSStyleSheet>>(JSObject, "sheet");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSStyleSheet>.Get(JSObject, "sheet");
     }
 }
 

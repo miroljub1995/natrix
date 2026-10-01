@@ -26,22 +26,22 @@ public partial class MediaPositionState: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Duration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "duration");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "duration", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "duration");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "duration", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double PlaybackRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "playbackRate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "playbackRate", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "playbackRate");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "playbackRate", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Position
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "position");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "position", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "position");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "position", value);
     }
 }
 

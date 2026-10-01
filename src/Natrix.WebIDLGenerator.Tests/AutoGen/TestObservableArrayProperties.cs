@@ -18,8 +18,8 @@ public partial class TestObservableArrayProperties: global::Natrix.JSCore.JSObje
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor> BoolObservableArray
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>>(JSObject, "boolObservableArray");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>>(JSObject, "boolObservableArray", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>.Get(JSObject, "boolObservableArray");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.ObservableArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>.Set(JSObject, "boolObservableArray", value);
     }
 }
 

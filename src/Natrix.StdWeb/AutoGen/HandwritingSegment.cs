@@ -26,29 +26,29 @@ public partial class HandwritingSegment: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Grapheme
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "grapheme");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "grapheme", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "grapheme");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "grapheme", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint BeginIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "beginIndex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "beginIndex", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "beginIndex");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "beginIndex", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint EndIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "endIndex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "endIndex", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "endIndex");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "endIndex", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingDrawingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingDrawingSegment>> DrawingSegments
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingDrawingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingDrawingSegment>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingDrawingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingDrawingSegment>>>>(JSObject, "drawingSegments");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingDrawingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingDrawingSegment>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingDrawingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingDrawingSegment>>>>(JSObject, "drawingSegments", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingDrawingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingDrawingSegment>>>.Get(JSObject, "drawingSegments");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingDrawingSegment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingDrawingSegment>>>.Set(JSObject, "drawingSegments", value);
     }
 }
 

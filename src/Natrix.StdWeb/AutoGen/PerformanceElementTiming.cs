@@ -18,55 +18,55 @@ public partial class PerformanceElementTiming: global::Natrix.StdWeb.Performance
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double RenderTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "renderTime");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "renderTime");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double LoadTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "loadTime");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "loadTime");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMRectReadOnly IntersectionRect
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMRectReadOnly, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRectReadOnly>>(JSObject, "intersectionRect");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRectReadOnly>.Get(JSObject, "intersectionRect");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Identifier
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "identifier");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "identifier");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint NaturalWidth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "naturalWidth");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "naturalWidth");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint NaturalHeight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "naturalHeight");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "naturalHeight");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "id");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? Element
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "element");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>.Get(JSObject, "element");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "url");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -77,19 +77,19 @@ public partial class PerformanceElementTiming: global::Natrix.StdWeb.Performance
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toJSON", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.JSObjectAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double PaintTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "paintTime");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "paintTime");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? PresentationTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "presentationTime");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "presentationTime");
     }
 }
 

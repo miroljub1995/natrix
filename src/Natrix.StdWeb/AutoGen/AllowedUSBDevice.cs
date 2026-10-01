@@ -26,22 +26,22 @@ public partial class AllowedUSBDevice: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required byte VendorId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "vendorId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "vendorId", value);
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "vendorId");
+        set => global::Natrix.JSCore.Generics.ByteAccessor.Set(JSObject, "vendorId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required byte ProductId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "productId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "productId", value);
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "productId");
+        set => global::Natrix.JSCore.Generics.ByteAccessor.Set(JSObject, "productId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string SerialNumber
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "serialNumber");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "serialNumber", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "serialNumber");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "serialNumber", value);
     }
 }
 

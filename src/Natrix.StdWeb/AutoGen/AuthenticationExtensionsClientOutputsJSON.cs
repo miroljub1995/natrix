@@ -26,43 +26,43 @@ public partial class AuthenticationExtensionsClientOutputsJSON: global::Natrix.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Appid
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "appid");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "appid", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "appid");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "appid", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool AppidExclude
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "appidExclude");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "appidExclude", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "appidExclude");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "appidExclude", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CredentialPropertiesOutput CredProps
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CredentialPropertiesOutput, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CredentialPropertiesOutput>>(JSObject, "credProps");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CredentialPropertiesOutput, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CredentialPropertiesOutput>>(JSObject, "credProps", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CredentialPropertiesOutput>.Get(JSObject, "credProps");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CredentialPropertiesOutput>.Set(JSObject, "credProps", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AuthenticationExtensionsPRFOutputsJSON Prf
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AuthenticationExtensionsPRFOutputsJSON, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsPRFOutputsJSON>>(JSObject, "prf");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AuthenticationExtensionsPRFOutputsJSON, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsPRFOutputsJSON>>(JSObject, "prf", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsPRFOutputsJSON>.Get(JSObject, "prf");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsPRFOutputsJSON>.Set(JSObject, "prf", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AuthenticationExtensionsLargeBlobOutputsJSON LargeBlob
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AuthenticationExtensionsLargeBlobOutputsJSON, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsLargeBlobOutputsJSON>>(JSObject, "largeBlob");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AuthenticationExtensionsLargeBlobOutputsJSON, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsLargeBlobOutputsJSON>>(JSObject, "largeBlob", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsLargeBlobOutputsJSON>.Get(JSObject, "largeBlob");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsLargeBlobOutputsJSON>.Set(JSObject, "largeBlob", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool RemoteClientDataJSON
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "remoteClientDataJSON");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "remoteClientDataJSON", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "remoteClientDataJSON");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "remoteClientDataJSON", value);
     }
 }
 

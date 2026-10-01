@@ -18,7 +18,7 @@ public partial class XRBody: global::Natrix.JSCore.JSObjectProxy, global::Natrix
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Size
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "size");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "size");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -38,7 +38,7 @@ public partial class XRBody: global::Natrix.JSCore.JSObjectProxy, global::Natrix
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "get", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRBodySpace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRBodySpace>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRBodySpace>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

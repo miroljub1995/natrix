@@ -26,8 +26,8 @@ public partial class MediaElementAudioSourceOptions: global::Natrix.JSCore.JSObj
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.HTMLMediaElement MediaElement
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLMediaElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLMediaElement>>(JSObject, "mediaElement");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.HTMLMediaElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLMediaElement>>(JSObject, "mediaElement", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLMediaElement>.Get(JSObject, "mediaElement");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLMediaElement>.Set(JSObject, "mediaElement", value);
     }
 }
 

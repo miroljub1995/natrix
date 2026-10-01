@@ -26,15 +26,15 @@ public partial class ObservableEventListenerOptions: global::Natrix.JSCore.JSObj
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Capture
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "capture");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "capture", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "capture");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "capture", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Passive
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "passive");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "passive", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "passive");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "passive", value);
     }
 }
 

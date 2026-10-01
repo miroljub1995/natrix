@@ -26,15 +26,15 @@ public partial class NotificationEventInit: global::Natrix.StdWeb.ExtendableEven
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.Notification Notification
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Notification, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Notification>>(JSObject, "notification");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.Notification, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Notification>>(JSObject, "notification", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Notification>.Get(JSObject, "notification");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Notification>.Set(JSObject, "notification", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Action
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "action");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "action", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "action");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "action", value);
     }
 }
 

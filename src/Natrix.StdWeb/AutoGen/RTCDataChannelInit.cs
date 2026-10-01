@@ -26,50 +26,50 @@ public partial class RTCDataChannelInit: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCPriorityType Priority
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCPriorityType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCPriorityType>>(JSObject, "priority");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCPriorityType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCPriorityType>>(JSObject, "priority", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCPriorityType>.Get(JSObject, "priority");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCPriorityType>.Set(JSObject, "priority", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Ordered
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ordered");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ordered", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ordered");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "ordered", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort MaxPacketLifeTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "maxPacketLifeTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "maxPacketLifeTime", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "maxPacketLifeTime");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "maxPacketLifeTime", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort MaxRetransmits
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "maxRetransmits");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "maxRetransmits", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "maxRetransmits");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "maxRetransmits", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Protocol
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "protocol");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "protocol", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "protocol");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "protocol", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Negotiated
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "negotiated");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "negotiated", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "negotiated");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "negotiated", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "id");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "id", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "id");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "id", value);
     }
 }
 

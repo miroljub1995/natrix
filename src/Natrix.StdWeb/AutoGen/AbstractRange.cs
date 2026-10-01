@@ -18,31 +18,31 @@ public partial class AbstractRange: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Node StartContainer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Node, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>>(JSObject, "startContainer");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>.Get(JSObject, "startContainer");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint StartOffset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "startOffset");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "startOffset");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Node EndContainer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Node, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>>(JSObject, "endContainer");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>.Get(JSObject, "endContainer");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint EndOffset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "endOffset");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "endOffset");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Collapsed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "collapsed");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "collapsed");
     }
 }
 

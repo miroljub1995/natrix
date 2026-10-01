@@ -18,73 +18,73 @@ public partial class TextMetrics: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "width");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "width");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ActualBoundingBoxLeft
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "actualBoundingBoxLeft");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "actualBoundingBoxLeft");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ActualBoundingBoxRight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "actualBoundingBoxRight");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "actualBoundingBoxRight");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double FontBoundingBoxAscent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "fontBoundingBoxAscent");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "fontBoundingBoxAscent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double FontBoundingBoxDescent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "fontBoundingBoxDescent");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "fontBoundingBoxDescent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ActualBoundingBoxAscent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "actualBoundingBoxAscent");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "actualBoundingBoxAscent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ActualBoundingBoxDescent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "actualBoundingBoxDescent");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "actualBoundingBoxDescent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double EmHeightAscent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "emHeightAscent");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "emHeightAscent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double EmHeightDescent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "emHeightDescent");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "emHeightDescent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double HangingBaseline
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "hangingBaseline");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "hangingBaseline");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double AlphabeticBaseline
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "alphabeticBaseline");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "alphabeticBaseline");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double IdeographicBaseline
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "ideographicBaseline");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "ideographicBaseline");
     }
 }
 

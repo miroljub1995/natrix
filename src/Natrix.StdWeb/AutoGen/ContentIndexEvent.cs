@@ -39,7 +39,7 @@ public partial class ContentIndexEvent: global::Natrix.StdWeb.ExtendableEvent, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "id");
     }
 }
 

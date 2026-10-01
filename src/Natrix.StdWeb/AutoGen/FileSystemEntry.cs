@@ -18,31 +18,31 @@ public partial class FileSystemEntry: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IsFile
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isFile");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isFile");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IsDirectory
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isDirectory");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isDirectory");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string FullPath
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "fullPath");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "fullPath");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FileSystem Filesystem
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FileSystem, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystem>>(JSObject, "filesystem");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystem>.Get(JSObject, "filesystem");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

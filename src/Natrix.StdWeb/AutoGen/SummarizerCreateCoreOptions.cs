@@ -26,50 +26,50 @@ public partial class SummarizerCreateCoreOptions: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SummarizerType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SummarizerType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SummarizerType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SummarizerType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SummarizerType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SummarizerType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SummarizerType>.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SummarizerFormat Format
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SummarizerFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SummarizerFormat>>(JSObject, "format");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SummarizerFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SummarizerFormat>>(JSObject, "format", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SummarizerFormat>.Get(JSObject, "format");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SummarizerFormat>.Set(JSObject, "format", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SummarizerLength Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SummarizerLength, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SummarizerLength>>(JSObject, "length");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SummarizerLength, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SummarizerLength>>(JSObject, "length", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SummarizerLength>.Get(JSObject, "length");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SummarizerLength>.Set(JSObject, "length", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PerformancePreference Preference
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PerformancePreference, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PerformancePreference>>(JSObject, "preference");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PerformancePreference, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PerformancePreference>>(JSObject, "preference", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PerformancePreference>.Get(JSObject, "preference");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PerformancePreference>.Set(JSObject, "preference", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor> ExpectedInputLanguages
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "expectedInputLanguages");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "expectedInputLanguages", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "expectedInputLanguages");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "expectedInputLanguages", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor> ExpectedContextLanguages
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "expectedContextLanguages");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "expectedContextLanguages", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "expectedContextLanguages");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "expectedContextLanguages", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string OutputLanguage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "outputLanguage");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "outputLanguage", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "outputLanguage");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "outputLanguage", value);
     }
 }
 

@@ -25,15 +25,15 @@ public partial class HTMLModElement: global::Natrix.StdWeb.HTMLElement, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Cite
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "cite");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "cite", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "cite");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "cite", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string DateTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "dateTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "dateTime", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "dateTime");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "dateTime", value);
     }
 }
 

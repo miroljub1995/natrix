@@ -25,7 +25,7 @@ public partial class HTMLTableSectionElement: global::Natrix.StdWeb.HTMLElement,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HTMLCollection Rows
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLCollection, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLCollection>>(JSObject, "rows");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLCollection>.Get(JSObject, "rows");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -36,7 +36,7 @@ public partial class HTMLTableSectionElement: global::Natrix.StdWeb.HTMLElement,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "insertRow", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLTableRowElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLTableRowElement>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLTableRowElement>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -56,7 +56,7 @@ public partial class HTMLTableSectionElement: global::Natrix.StdWeb.HTMLElement,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "insertRow", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLTableRowElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLTableRowElement>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLTableRowElement>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -77,29 +77,29 @@ public partial class HTMLTableSectionElement: global::Natrix.StdWeb.HTMLElement,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Align
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "align");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "align", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "align");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "align", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Ch
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "ch");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "ch", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "ch");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "ch", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ChOff
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "chOff");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "chOff", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "chOff");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "chOff", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string VAlign
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "vAlign");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "vAlign", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "vAlign");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "vAlign", value);
     }
 }
 

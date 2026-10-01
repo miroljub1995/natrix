@@ -26,57 +26,57 @@ public partial class IdentityProviderAPIConfig: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Accounts_endpoint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "accounts_endpoint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "accounts_endpoint", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "accounts_endpoint");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "accounts_endpoint", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Client_metadata_endpoint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "client_metadata_endpoint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "client_metadata_endpoint", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "client_metadata_endpoint");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "client_metadata_endpoint", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Id_assertion_endpoint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id_assertion_endpoint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id_assertion_endpoint", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "id_assertion_endpoint");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "id_assertion_endpoint", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Login_url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "login_url");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "login_url", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "login_url");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "login_url", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Disconnect_endpoint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "disconnect_endpoint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "disconnect_endpoint", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "disconnect_endpoint");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "disconnect_endpoint", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.IdentityProviderBranding Branding
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IdentityProviderBranding, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderBranding>>(JSObject, "branding");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.IdentityProviderBranding, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderBranding>>(JSObject, "branding", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderBranding>.Get(JSObject, "branding");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderBranding>.Set(JSObject, "branding", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Supports_use_other_account
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "supports_use_other_account");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "supports_use_other_account", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "supports_use_other_account");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "supports_use_other_account", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Account_label
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "account_label");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "account_label", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "account_label");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "account_label", value);
     }
 }
 

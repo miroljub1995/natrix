@@ -26,43 +26,43 @@ public partial class ImageBitmapOptions: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ImageOrientation ImageOrientation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ImageOrientation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImageOrientation>>(JSObject, "imageOrientation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ImageOrientation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImageOrientation>>(JSObject, "imageOrientation", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImageOrientation>.Get(JSObject, "imageOrientation");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImageOrientation>.Set(JSObject, "imageOrientation", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PremultiplyAlpha PremultiplyAlpha
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PremultiplyAlpha, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PremultiplyAlpha>>(JSObject, "premultiplyAlpha");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PremultiplyAlpha, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PremultiplyAlpha>>(JSObject, "premultiplyAlpha", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PremultiplyAlpha>.Get(JSObject, "premultiplyAlpha");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PremultiplyAlpha>.Set(JSObject, "premultiplyAlpha", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ColorSpaceConversion ColorSpaceConversion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ColorSpaceConversion, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ColorSpaceConversion>>(JSObject, "colorSpaceConversion");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ColorSpaceConversion, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ColorSpaceConversion>>(JSObject, "colorSpaceConversion", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ColorSpaceConversion>.Get(JSObject, "colorSpaceConversion");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ColorSpaceConversion>.Set(JSObject, "colorSpaceConversion", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ResizeWidth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "resizeWidth");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "resizeWidth", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "resizeWidth");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "resizeWidth", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ResizeHeight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "resizeHeight");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "resizeHeight", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "resizeHeight");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "resizeHeight", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ResizeQuality ResizeQuality
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ResizeQuality, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ResizeQuality>>(JSObject, "resizeQuality");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ResizeQuality, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ResizeQuality>>(JSObject, "resizeQuality", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ResizeQuality>.Get(JSObject, "resizeQuality");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ResizeQuality>.Set(JSObject, "resizeQuality", value);
     }
 }
 

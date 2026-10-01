@@ -26,15 +26,15 @@ public partial class PresentationConnectionCloseEventInit: global::Natrix.StdWeb
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.PresentationConnectionCloseReason Reason
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PresentationConnectionCloseReason, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PresentationConnectionCloseReason>>(JSObject, "reason");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PresentationConnectionCloseReason, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PresentationConnectionCloseReason>>(JSObject, "reason", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PresentationConnectionCloseReason>.Get(JSObject, "reason");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PresentationConnectionCloseReason>.Set(JSObject, "reason", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "message");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "message", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "message");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "message", value);
     }
 }
 

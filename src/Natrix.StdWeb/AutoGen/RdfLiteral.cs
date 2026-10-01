@@ -25,19 +25,19 @@ public partial class RdfLiteral: global::Natrix.JSCore.JSObjectProxy, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "value");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Datatype
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "datatype");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "datatype");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Language
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "language");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "language");
     }
 }
 

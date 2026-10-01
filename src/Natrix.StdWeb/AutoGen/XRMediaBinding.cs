@@ -48,7 +48,7 @@ public partial class XRMediaBinding: global::Natrix.JSCore.JSObjectProxy, global
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createQuadLayer", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRQuadLayer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRQuadLayer>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRQuadLayer>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -73,7 +73,7 @@ public partial class XRMediaBinding: global::Natrix.JSCore.JSObjectProxy, global
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createQuadLayer", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRQuadLayer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRQuadLayer>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRQuadLayer>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -93,7 +93,7 @@ public partial class XRMediaBinding: global::Natrix.JSCore.JSObjectProxy, global
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createCylinderLayer", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRCylinderLayer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRCylinderLayer>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRCylinderLayer>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -118,7 +118,7 @@ public partial class XRMediaBinding: global::Natrix.JSCore.JSObjectProxy, global
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createCylinderLayer", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRCylinderLayer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRCylinderLayer>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRCylinderLayer>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -138,7 +138,7 @@ public partial class XRMediaBinding: global::Natrix.JSCore.JSObjectProxy, global
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createEquirectLayer", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XREquirectLayer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XREquirectLayer>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XREquirectLayer>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -163,7 +163,7 @@ public partial class XRMediaBinding: global::Natrix.JSCore.JSObjectProxy, global
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createEquirectLayer", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XREquirectLayer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XREquirectLayer>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XREquirectLayer>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

@@ -39,7 +39,7 @@ public partial class PeriodicSyncEvent: global::Natrix.StdWeb.ExtendableEvent, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Tag
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "tag");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "tag");
     }
 }
 

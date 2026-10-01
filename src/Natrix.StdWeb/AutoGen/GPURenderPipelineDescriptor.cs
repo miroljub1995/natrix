@@ -26,36 +26,36 @@ public partial class GPURenderPipelineDescriptor: global::Natrix.StdWeb.GPUPipel
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GPUVertexState Vertex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUVertexState, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexState>>(JSObject, "vertex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUVertexState, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexState>>(JSObject, "vertex", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexState>.Get(JSObject, "vertex");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexState>.Set(JSObject, "vertex", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUPrimitiveState Primitive
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUPrimitiveState, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUPrimitiveState>>(JSObject, "primitive");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUPrimitiveState, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUPrimitiveState>>(JSObject, "primitive", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUPrimitiveState>.Get(JSObject, "primitive");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUPrimitiveState>.Set(JSObject, "primitive", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUDepthStencilState DepthStencil
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUDepthStencilState, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUDepthStencilState>>(JSObject, "depthStencil");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUDepthStencilState, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUDepthStencilState>>(JSObject, "depthStencil", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUDepthStencilState>.Get(JSObject, "depthStencil");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUDepthStencilState>.Set(JSObject, "depthStencil", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUMultisampleState Multisample
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUMultisampleState, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUMultisampleState>>(JSObject, "multisample");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUMultisampleState, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUMultisampleState>>(JSObject, "multisample", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUMultisampleState>.Get(JSObject, "multisample");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUMultisampleState>.Set(JSObject, "multisample", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUFragmentState Fragment
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUFragmentState, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUFragmentState>>(JSObject, "fragment");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUFragmentState, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUFragmentState>>(JSObject, "fragment", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUFragmentState>.Get(JSObject, "fragment");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUFragmentState>.Set(JSObject, "fragment", value);
     }
 }
 

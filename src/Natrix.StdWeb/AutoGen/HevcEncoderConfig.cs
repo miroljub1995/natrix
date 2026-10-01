@@ -26,8 +26,8 @@ public partial class HevcEncoderConfig: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HevcBitstreamFormat Format
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HevcBitstreamFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HevcBitstreamFormat>>(JSObject, "format");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.HevcBitstreamFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HevcBitstreamFormat>>(JSObject, "format", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HevcBitstreamFormat>.Get(JSObject, "format");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HevcBitstreamFormat>.Set(JSObject, "format", value);
     }
 }
 

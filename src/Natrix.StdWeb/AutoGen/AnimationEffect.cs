@@ -23,7 +23,7 @@ public partial class AnimationEffect: global::Natrix.JSCore.JSObjectProxy, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getTiming", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EffectTiming, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EffectTiming>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EffectTiming>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -34,7 +34,7 @@ public partial class AnimationEffect: global::Natrix.JSCore.JSObjectProxy, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getComputedTiming", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ComputedEffectTiming, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ComputedEffectTiming>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ComputedEffectTiming>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -61,19 +61,19 @@ public partial class AnimationEffect: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GroupEffect? Parent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GroupEffect?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GroupEffect>>(JSObject, "parent");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GroupEffect>.Get(JSObject, "parent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AnimationEffect? PreviousSibling
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AnimationEffect?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AnimationEffect>>(JSObject, "previousSibling");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AnimationEffect>.Get(JSObject, "previousSibling");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AnimationEffect? NextSibling
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AnimationEffect?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AnimationEffect>>(JSObject, "nextSibling");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AnimationEffect>.Get(JSObject, "nextSibling");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

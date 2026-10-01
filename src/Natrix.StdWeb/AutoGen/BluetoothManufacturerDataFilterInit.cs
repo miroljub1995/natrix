@@ -26,8 +26,8 @@ public partial class BluetoothManufacturerDataFilterInit: global::Natrix.StdWeb.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ushort CompanyIdentifier
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "companyIdentifier");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "companyIdentifier", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "companyIdentifier");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "companyIdentifier", value);
     }
 }
 

@@ -18,13 +18,13 @@ public partial class ReadableByteStreamController: global::Natrix.JSCore.JSObjec
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ReadableStreamBYOBRequest? ByobRequest
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ReadableStreamBYOBRequest?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.ReadableStreamBYOBRequest>>(JSObject, "byobRequest");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.ReadableStreamBYOBRequest>.Get(JSObject, "byobRequest");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? DesiredSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "desiredSize");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "desiredSize");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

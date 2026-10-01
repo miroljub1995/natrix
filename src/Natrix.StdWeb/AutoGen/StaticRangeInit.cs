@@ -26,29 +26,29 @@ public partial class StaticRangeInit: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.Node StartContainer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Node, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>>(JSObject, "startContainer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.Node, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>>(JSObject, "startContainer", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>.Get(JSObject, "startContainer");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>.Set(JSObject, "startContainer", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint StartOffset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "startOffset");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "startOffset", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "startOffset");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "startOffset", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.Node EndContainer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Node, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>>(JSObject, "endContainer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.Node, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>>(JSObject, "endContainer", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>.Get(JSObject, "endContainer");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>.Set(JSObject, "endContainer", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint EndOffset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "endOffset");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "endOffset", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "endOffset");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "endOffset", value);
     }
 }
 

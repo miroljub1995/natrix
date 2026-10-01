@@ -26,22 +26,22 @@ public partial class XRTransientInputHitTestOptionsInit: global::Natrix.JSCore.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Profile
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "profile");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "profile", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "profile");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "profile", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRHitTestTrackableType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRHitTestTrackableType>> EntityTypes
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRHitTestTrackableType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRHitTestTrackableType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRHitTestTrackableType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRHitTestTrackableType>>>>(JSObject, "entityTypes");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRHitTestTrackableType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRHitTestTrackableType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRHitTestTrackableType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRHitTestTrackableType>>>>(JSObject, "entityTypes", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRHitTestTrackableType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRHitTestTrackableType>>>.Get(JSObject, "entityTypes");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRHitTestTrackableType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRHitTestTrackableType>>>.Set(JSObject, "entityTypes", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRRay OffsetRay
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRRay, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRRay>>(JSObject, "offsetRay");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.XRRay, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRRay>>(JSObject, "offsetRay", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRRay>.Get(JSObject, "offsetRay");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRRay>.Set(JSObject, "offsetRay", value);
     }
 }
 

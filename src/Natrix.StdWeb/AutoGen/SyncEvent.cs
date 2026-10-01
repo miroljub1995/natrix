@@ -39,13 +39,13 @@ public partial class SyncEvent: global::Natrix.StdWeb.ExtendableEvent, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Tag
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "tag");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "tag");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool LastChance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "lastChance");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "lastChance");
     }
 }
 

@@ -26,36 +26,36 @@ public partial class AudioParamDescriptor: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "name", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float DefaultValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "defaultValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "defaultValue", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "defaultValue");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "defaultValue", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float MinValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "minValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "minValue", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "minValue");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "minValue", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float MaxValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "maxValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "maxValue", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "maxValue");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "maxValue", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AutomationRate AutomationRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AutomationRate, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutomationRate>>(JSObject, "automationRate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AutomationRate, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutomationRate>>(JSObject, "automationRate", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutomationRate>.Get(JSObject, "automationRate");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AutomationRate>.Set(JSObject, "automationRate", value);
     }
 }
 

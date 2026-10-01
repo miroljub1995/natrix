@@ -20,11 +20,11 @@ public class FieldTypeGenerator(
         var accessor = propertyAccessorResolver.Resolve(input.IdlType);
 
         var getter = $$"""
-                       get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<{{returnTypeDeclaration}}, {{accessor}}>(JSObject, "{{input.Name}}");
+                       get => {{accessor}}.Get(JSObject, "{{input.Name}}");
                        """;
 
         var setter = $$"""
-                       set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<{{returnTypeDeclaration}}, {{accessor}}>(JSObject, "{{input.Name}}", value);
+                       set => {{accessor}}.Set(JSObject, "{{input.Name}}", value);
                        """;
 
         var content = $$"""

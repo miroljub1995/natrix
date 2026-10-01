@@ -26,8 +26,8 @@ public partial class EventSourceInit: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool WithCredentials
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "withCredentials");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "withCredentials", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "withCredentials");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "withCredentials", value);
     }
 }
 

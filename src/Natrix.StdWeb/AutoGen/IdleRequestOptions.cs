@@ -26,8 +26,8 @@ public partial class IdleRequestOptions: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Timeout
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "timeout");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "timeout", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "timeout");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "timeout", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class RTCCertificateExpiration: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Expires
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "expires");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "expires", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "expires");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "expires", value);
     }
 }
 

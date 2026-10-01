@@ -84,7 +84,7 @@ public partial class CustomElementRegistry: global::Natrix.JSCore.JSObjectProxy,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "get", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CustomElementConstructor?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CustomElementConstructor>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CustomElementConstructor>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -104,7 +104,7 @@ public partial class CustomElementRegistry: global::Natrix.JSCore.JSObjectProxy,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getName", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableStringAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -124,7 +124,7 @@ public partial class CustomElementRegistry: global::Natrix.JSCore.JSObjectProxy,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "whenDefined", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CustomElementConstructor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CustomElementConstructor>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CustomElementConstructor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CustomElementConstructor>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CustomElementConstructor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CustomElementConstructor>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

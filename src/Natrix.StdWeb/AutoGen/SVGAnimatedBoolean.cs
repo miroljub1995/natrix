@@ -18,14 +18,14 @@ public partial class SVGAnimatedBoolean: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool BaseVal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "baseVal");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "baseVal", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "baseVal");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "baseVal", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool AnimVal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "animVal");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "animVal");
     }
 }
 

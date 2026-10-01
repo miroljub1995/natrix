@@ -18,8 +18,8 @@ public partial class BeforeUnloadEvent: global::Natrix.StdWeb.Event, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ReturnValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "returnValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "returnValue", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "returnValue");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "returnValue", value);
     }
 }
 

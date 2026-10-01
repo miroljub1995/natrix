@@ -26,15 +26,15 @@ public partial class AudioDecoderSupport: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Supported
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "supported");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "supported", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "supported");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "supported", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioDecoderConfig Config
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioDecoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioDecoderConfig>>(JSObject, "config");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AudioDecoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioDecoderConfig>>(JSObject, "config", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioDecoderConfig>.Get(JSObject, "config");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioDecoderConfig>.Set(JSObject, "config", value);
     }
 }
 

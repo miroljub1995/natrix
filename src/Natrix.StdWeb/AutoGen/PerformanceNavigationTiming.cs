@@ -18,79 +18,79 @@ public partial class PerformanceNavigationTiming: global::Natrix.StdWeb.Performa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double UnloadEventStart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "unloadEventStart");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "unloadEventStart");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double UnloadEventEnd
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "unloadEventEnd");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "unloadEventEnd");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DomInteractive
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "domInteractive");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "domInteractive");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DomContentLoadedEventStart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "domContentLoadedEventStart");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "domContentLoadedEventStart");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DomContentLoadedEventEnd
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "domContentLoadedEventEnd");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "domContentLoadedEventEnd");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DomComplete
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "domComplete");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "domComplete");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double LoadEventStart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "loadEventStart");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "loadEventStart");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double LoadEventEnd
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "loadEventEnd");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "loadEventEnd");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NavigationTimingType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NavigationTimingType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.NavigationTimingType>>(JSObject, "type");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.NavigationTimingType>.Get(JSObject, "type");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort RedirectCount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "redirectCount");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "redirectCount");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double CriticalCHRestart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "criticalCHRestart");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "criticalCHRestart");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NotRestoredReasons? NotRestoredReasons
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NotRestoredReasons?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.NotRestoredReasons>>(JSObject, "notRestoredReasons");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.NotRestoredReasons>.Get(JSObject, "notRestoredReasons");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PerformanceTimingConfidence Confidence
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PerformanceTimingConfidence, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PerformanceTimingConfidence>>(JSObject, "confidence");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PerformanceTimingConfidence>.Get(JSObject, "confidence");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -101,13 +101,13 @@ public partial class PerformanceNavigationTiming: global::Natrix.StdWeb.Performa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toJSON", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.JSObjectAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ActivationStart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "activationStart");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "activationStart");
     }
 }
 

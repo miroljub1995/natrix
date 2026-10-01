@@ -25,15 +25,15 @@ public partial class HTMLCanvasElement: global::Natrix.StdWeb.HTMLElement, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "width");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "width", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "width");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "width", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "height");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "height", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "height");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "height", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -53,7 +53,7 @@ public partial class HTMLCanvasElement: global::Natrix.StdWeb.HTMLElement, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getContext", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CanvasRenderingContext2D, global::Natrix.StdWeb.ImageBitmapRenderingContext, global::Natrix.StdWeb.WebGLRenderingContext, global::Natrix.StdWeb.WebGL2RenderingContext, global::Natrix.StdWeb.GPUCanvasContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasRenderingContext2D>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageBitmapRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGLRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGL2RenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUCanvasContext>>?, global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CanvasRenderingContext2D, global::Natrix.StdWeb.ImageBitmapRenderingContext, global::Natrix.StdWeb.WebGLRenderingContext, global::Natrix.StdWeb.WebGL2RenderingContext, global::Natrix.StdWeb.GPUCanvasContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasRenderingContext2D>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageBitmapRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGLRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGL2RenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUCanvasContext>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CanvasRenderingContext2D, global::Natrix.StdWeb.ImageBitmapRenderingContext, global::Natrix.StdWeb.WebGLRenderingContext, global::Natrix.StdWeb.WebGL2RenderingContext, global::Natrix.StdWeb.GPUCanvasContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasRenderingContext2D>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageBitmapRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGLRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGL2RenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUCanvasContext>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -86,7 +86,7 @@ public partial class HTMLCanvasElement: global::Natrix.StdWeb.HTMLElement, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getContext", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CanvasRenderingContext2D, global::Natrix.StdWeb.ImageBitmapRenderingContext, global::Natrix.StdWeb.WebGLRenderingContext, global::Natrix.StdWeb.WebGL2RenderingContext, global::Natrix.StdWeb.GPUCanvasContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasRenderingContext2D>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageBitmapRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGLRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGL2RenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUCanvasContext>>?, global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CanvasRenderingContext2D, global::Natrix.StdWeb.ImageBitmapRenderingContext, global::Natrix.StdWeb.WebGLRenderingContext, global::Natrix.StdWeb.WebGL2RenderingContext, global::Natrix.StdWeb.GPUCanvasContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasRenderingContext2D>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageBitmapRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGLRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGL2RenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUCanvasContext>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CanvasRenderingContext2D, global::Natrix.StdWeb.ImageBitmapRenderingContext, global::Natrix.StdWeb.WebGLRenderingContext, global::Natrix.StdWeb.WebGL2RenderingContext, global::Natrix.StdWeb.GPUCanvasContext, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasRenderingContext2D>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageBitmapRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGLRenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGL2RenderingContext>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUCanvasContext>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -97,7 +97,7 @@ public partial class HTMLCanvasElement: global::Natrix.StdWeb.HTMLElement, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toDataURL", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.StringAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -117,7 +117,7 @@ public partial class HTMLCanvasElement: global::Natrix.StdWeb.HTMLElement, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "toDataURL", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.StringAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -150,7 +150,7 @@ public partial class HTMLCanvasElement: global::Natrix.StdWeb.HTMLElement, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "toDataURL", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.StringAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -229,7 +229,7 @@ public partial class HTMLCanvasElement: global::Natrix.StdWeb.HTMLElement, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "transferControlToOffscreen", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.OffscreenCanvas, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.OffscreenCanvas>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.OffscreenCanvas>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -240,7 +240,7 @@ public partial class HTMLCanvasElement: global::Natrix.StdWeb.HTMLElement, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "captureStream", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaStream>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaStream>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -260,7 +260,7 @@ public partial class HTMLCanvasElement: global::Natrix.StdWeb.HTMLElement, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "captureStream", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaStream>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaStream>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

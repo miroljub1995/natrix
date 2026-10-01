@@ -26,8 +26,8 @@ public partial class ChannelMergerOptions: global::Natrix.StdWeb.AudioNodeOption
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint NumberOfInputs
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "numberOfInputs");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "numberOfInputs", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "numberOfInputs");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "numberOfInputs", value);
     }
 }
 

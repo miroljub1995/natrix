@@ -18,13 +18,13 @@ public partial class CSSPositionTryRule: global::Natrix.StdWeb.CSSRule, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSPositionTryDescriptors Style
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSPositionTryDescriptors, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPositionTryDescriptors>>(JSObject, "style");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPositionTryDescriptors>.Get(JSObject, "style");
     }
 }
 

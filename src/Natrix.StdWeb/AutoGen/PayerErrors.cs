@@ -26,22 +26,22 @@ public partial class PayerErrors: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Email
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "email");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "email", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "email");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "email", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "name", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Phone
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "phone");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "phone", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "phone");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "phone", value);
     }
 }
 

@@ -26,15 +26,15 @@ public partial class VideoEncoderInit: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.EncodedVideoChunkOutputCallback Output
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EncodedVideoChunkOutputCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EncodedVideoChunkOutputCallback>>(JSObject, "output");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EncodedVideoChunkOutputCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EncodedVideoChunkOutputCallback>>(JSObject, "output", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EncodedVideoChunkOutputCallback>.Get(JSObject, "output");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EncodedVideoChunkOutputCallback>.Set(JSObject, "output", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.WebCodecsErrorCallback Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebCodecsErrorCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebCodecsErrorCallback>>(JSObject, "error");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.WebCodecsErrorCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebCodecsErrorCallback>>(JSObject, "error", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebCodecsErrorCallback>.Get(JSObject, "error");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebCodecsErrorCallback>.Set(JSObject, "error", value);
     }
 }
 

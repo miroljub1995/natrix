@@ -64,7 +64,7 @@ public partial class Fence: global::Natrix.JSCore.JSObjectProxy, global::Natrix.
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getNestedConfigs", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FencedFrameConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FencedFrameConfig>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FencedFrameConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FencedFrameConfig>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FencedFrameConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FencedFrameConfig>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -75,7 +75,7 @@ public partial class Fence: global::Natrix.JSCore.JSObjectProxy, global::Natrix.
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "disableUntrustedNetwork", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

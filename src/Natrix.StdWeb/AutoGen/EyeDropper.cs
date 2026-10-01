@@ -30,7 +30,7 @@ public partial class EyeDropper: global::Natrix.JSCore.JSObjectProxy, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "open", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.ColorSelectionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ColorSelectionResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.ColorSelectionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ColorSelectionResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.ColorSelectionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ColorSelectionResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -50,7 +50,7 @@ public partial class EyeDropper: global::Natrix.JSCore.JSObjectProxy, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "open", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.ColorSelectionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ColorSelectionResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.ColorSelectionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ColorSelectionResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.ColorSelectionResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ColorSelectionResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

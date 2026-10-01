@@ -60,7 +60,7 @@ public partial class TextFormatUpdateEvent: global::Natrix.StdWeb.Event, global:
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getTextFormats", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.TextFormat, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextFormat>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.TextFormat, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextFormat>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.TextFormat, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextFormat>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

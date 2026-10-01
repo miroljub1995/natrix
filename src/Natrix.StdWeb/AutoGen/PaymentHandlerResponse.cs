@@ -26,50 +26,50 @@ public partial class PaymentHandlerResponse: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string MethodName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "methodName");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "methodName", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "methodName");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "methodName", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject Details
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "details");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "details", value);
+        get => global::Natrix.JSCore.Generics.JSObjectAccessor.Get(JSObject, "details");
+        set => global::Natrix.JSCore.Generics.JSObjectAccessor.Set(JSObject, "details", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? PayerName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "payerName");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "payerName", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "payerName");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "payerName", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? PayerEmail
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "payerEmail");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "payerEmail", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "payerEmail");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "payerEmail", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? PayerPhone
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "payerPhone");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "payerPhone", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "payerPhone");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "payerPhone", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AddressInit ShippingAddress
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AddressInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AddressInit>>(JSObject, "shippingAddress");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AddressInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AddressInit>>(JSObject, "shippingAddress", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AddressInit>.Get(JSObject, "shippingAddress");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AddressInit>.Set(JSObject, "shippingAddress", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? ShippingOption
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "shippingOption");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "shippingOption", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "shippingOption");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "shippingOption", value);
     }
 }
 

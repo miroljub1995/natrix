@@ -18,7 +18,7 @@ public partial class AudioDestinationNode: global::Natrix.StdWeb.AudioNode, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint MaxChannelCount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "maxChannelCount");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "maxChannelCount");
     }
 }
 

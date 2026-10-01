@@ -26,15 +26,15 @@ public partial class RTCSessionDescriptionInit: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.RTCSdpType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCSdpType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCSdpType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCSdpType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCSdpType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCSdpType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCSdpType>.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Sdp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "sdp");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "sdp", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "sdp");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "sdp", value);
     }
 }
 

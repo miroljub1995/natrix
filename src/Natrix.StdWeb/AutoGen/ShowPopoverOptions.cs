@@ -26,8 +26,8 @@ public partial class ShowPopoverOptions: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HTMLElement Source
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLElement>>(JSObject, "source");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.HTMLElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLElement>>(JSObject, "source", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLElement>.Get(JSObject, "source");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLElement>.Set(JSObject, "source", value);
     }
 }
 

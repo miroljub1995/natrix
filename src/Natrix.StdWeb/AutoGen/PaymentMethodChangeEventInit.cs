@@ -26,15 +26,15 @@ public partial class PaymentMethodChangeEventInit: global::Natrix.StdWeb.Payment
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string MethodName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "methodName");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "methodName", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "methodName");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "methodName", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject? MethodDetails
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject?, global::Natrix.JSCore.Generics.NullableJSObjectAccessor>(JSObject, "methodDetails");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::System.Runtime.InteropServices.JavaScript.JSObject?, global::Natrix.JSCore.Generics.NullableJSObjectAccessor>(JSObject, "methodDetails", value);
+        get => global::Natrix.JSCore.Generics.NullableJSObjectAccessor.Get(JSObject, "methodDetails");
+        set => global::Natrix.JSCore.Generics.NullableJSObjectAccessor.Set(JSObject, "methodDetails", value);
     }
 }
 

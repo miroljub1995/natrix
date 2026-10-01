@@ -18,22 +18,22 @@ public partial class HTMLIFrameElement: global::Natrix.StdWeb.HTMLElement, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Credentialless
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "credentialless");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "credentialless", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "credentialless");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "credentialless", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ConnectionAllowlist
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "connectionAllowlist");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "connectionAllowlist", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "connectionAllowlist");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "connectionAllowlist", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Csp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "csp");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "csp", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "csp");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "csp", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
@@ -46,82 +46,82 @@ public partial class HTMLIFrameElement: global::Natrix.StdWeb.HTMLElement, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Src
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "src");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "src", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "src");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "src", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.TrustedHTML, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TrustedHTML>, global::Natrix.JSCore.Generics.StringAccessor> Srcdoc
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.TrustedHTML, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TrustedHTML>, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.TrustedHTML, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TrustedHTML>, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "srcdoc");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.TrustedHTML, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TrustedHTML>, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.TrustedHTML, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TrustedHTML>, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "srcdoc", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.TrustedHTML, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TrustedHTML>, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "srcdoc");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.TrustedHTML, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TrustedHTML>, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "srcdoc", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "name", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMTokenList Sandbox
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMTokenList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMTokenList>>(JSObject, "sandbox");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMTokenList>.Get(JSObject, "sandbox");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Allow
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "allow");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "allow", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "allow");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "allow", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool AllowFullscreen
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "allowFullscreen");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "allowFullscreen", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "allowFullscreen");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "allowFullscreen", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "width");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "width", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "width");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "width", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "height");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "height", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "height");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "height", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ReferrerPolicy
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "referrerPolicy");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "referrerPolicy", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "referrerPolicy");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "referrerPolicy", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Loading
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "loading");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "loading", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "loading");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "loading", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Document? ContentDocument
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Document?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Document>>(JSObject, "contentDocument");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Document>.Get(JSObject, "contentDocument");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Window? ContentWindow
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Window?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Window>>(JSObject, "contentWindow");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Window>.Get(JSObject, "contentWindow");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -132,62 +132,62 @@ public partial class HTMLIFrameElement: global::Natrix.StdWeb.HTMLElement, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getSVGDocument", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Document?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Document>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Document>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Align
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "align");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "align", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "align");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "align", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Scrolling
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "scrolling");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "scrolling", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "scrolling");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "scrolling", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string FrameBorder
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "frameBorder");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "frameBorder", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "frameBorder");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "frameBorder", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string LongDesc
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "longDesc");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "longDesc", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "longDesc");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "longDesc", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string MarginHeight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "marginHeight");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "marginHeight", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "marginHeight");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "marginHeight", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string MarginWidth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "marginWidth");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "marginWidth", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "marginWidth");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "marginWidth", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PermissionsPolicy PermissionsPolicy
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PermissionsPolicy, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PermissionsPolicy>>(JSObject, "permissionsPolicy");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PermissionsPolicy>.Get(JSObject, "permissionsPolicy");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string PrivateToken
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "privateToken");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "privateToken", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "privateToken");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "privateToken", value);
     }
 }
 

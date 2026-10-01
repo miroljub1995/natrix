@@ -55,7 +55,7 @@ public partial class DelayNode: global::Natrix.StdWeb.AudioNode, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioParam DelayTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioParam, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>>(JSObject, "delayTime");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>.Get(JSObject, "delayTime");
     }
 }
 

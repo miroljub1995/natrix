@@ -26,29 +26,29 @@ public partial class RTCIceCandidateInit: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Candidate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "candidate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "candidate", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "candidate");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "candidate", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? SdpMid
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "sdpMid");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "sdpMid", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "sdpMid");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "sdpMid", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort? SdpMLineIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "sdpMLineIndex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "sdpMLineIndex", value);
+        get => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Get(JSObject, "sdpMLineIndex");
+        set => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Set(JSObject, "sdpMLineIndex", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? UsernameFragment
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "usernameFragment");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "usernameFragment", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "usernameFragment");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "usernameFragment", value);
     }
 }
 

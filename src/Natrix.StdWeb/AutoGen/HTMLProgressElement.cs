@@ -25,27 +25,27 @@ public partial class HTMLProgressElement: global::Natrix.StdWeb.HTMLElement, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "value", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Max
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "max");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "max", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "max");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "max", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Position
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "position");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "position");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NodeList Labels
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NodeList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NodeList>>(JSObject, "labels");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NodeList>.Get(JSObject, "labels");
     }
 }
 

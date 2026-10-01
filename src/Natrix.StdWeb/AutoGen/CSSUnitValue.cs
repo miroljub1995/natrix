@@ -39,14 +39,14 @@ public partial class CSSUnitValue: global::Natrix.StdWeb.CSSNumericValue, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "value", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Unit
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "unit");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "unit");
     }
 }
 

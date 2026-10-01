@@ -62,19 +62,19 @@ public partial class DOMException: global::Natrix.JSCore.JSObjectProxy, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "message");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "message");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Code
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "code");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "code");
     }
 
     public const ushort INDEX_SIZE_ERR = 1;

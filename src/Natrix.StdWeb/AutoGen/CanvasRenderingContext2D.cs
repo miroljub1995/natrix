@@ -18,7 +18,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HTMLCanvasElement Canvas
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLCanvasElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLCanvasElement>>(JSObject, "canvas");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLCanvasElement>.Get(JSObject, "canvas");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -29,7 +29,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getContextAttributes", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasRenderingContext2DSettings, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasRenderingContext2DSettings>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasRenderingContext2DSettings>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -58,7 +58,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "isContextLost", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -164,7 +164,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getTransform", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMMatrix, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMMatrix>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMMatrix>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -237,43 +237,43 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double GlobalAlpha
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "globalAlpha");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "globalAlpha", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "globalAlpha");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "globalAlpha", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string GlobalCompositeOperation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "globalCompositeOperation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "globalCompositeOperation", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "globalCompositeOperation");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "globalCompositeOperation", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ImageSmoothingEnabled
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "imageSmoothingEnabled");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "imageSmoothingEnabled", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "imageSmoothingEnabled");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "imageSmoothingEnabled", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ImageSmoothingQuality ImageSmoothingQuality
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ImageSmoothingQuality, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImageSmoothingQuality>>(JSObject, "imageSmoothingQuality");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ImageSmoothingQuality, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImageSmoothingQuality>>(JSObject, "imageSmoothingQuality", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImageSmoothingQuality>.Get(JSObject, "imageSmoothingQuality");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImageSmoothingQuality>.Set(JSObject, "imageSmoothingQuality", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>> StrokeStyle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>>>>(JSObject, "strokeStyle");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>>>>(JSObject, "strokeStyle", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>>>.Get(JSObject, "strokeStyle");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>>>.Set(JSObject, "strokeStyle", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>> FillStyle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>>>>(JSObject, "fillStyle");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>>>>(JSObject, "fillStyle", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>>>.Get(JSObject, "fillStyle");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.CanvasGradient, global::Natrix.StdWeb.CanvasPattern, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasPattern>>>.Set(JSObject, "fillStyle", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -308,7 +308,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createLinearGradient", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasGradient, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -353,7 +353,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createRadialGradient", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasGradient, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -383,7 +383,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createConicGradient", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasGradient, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CanvasGradient>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -407,42 +407,42 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createPattern", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasPattern?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CanvasPattern>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CanvasPattern>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ShadowOffsetX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "shadowOffsetX");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "shadowOffsetX", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "shadowOffsetX");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "shadowOffsetX", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ShadowOffsetY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "shadowOffsetY");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "shadowOffsetY", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "shadowOffsetY");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "shadowOffsetY", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ShadowBlur
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "shadowBlur");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "shadowBlur", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "shadowBlur");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "shadowBlur", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ShadowColor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "shadowColor");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "shadowColor", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "shadowColor");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "shadowColor", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Filter
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "filter");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "filter", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "filter");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "filter", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -696,7 +696,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "isPointInPath", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -726,7 +726,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "isPointInPath", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -756,7 +756,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "isPointInPath", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -791,7 +791,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "isPointInPath", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -816,7 +816,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "isPointInStroke", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -846,7 +846,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "isPointInStroke", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -1011,7 +1011,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "measureText", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.TextMetrics, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextMetrics>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextMetrics>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -1148,7 +1148,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createImageData", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ImageData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageData>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageData>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -1178,7 +1178,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createImageData", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ImageData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageData>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageData>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -1198,7 +1198,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "createImageData", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ImageData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageData>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageData>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -1233,7 +1233,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getImageData", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ImageData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageData>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageData>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -1273,7 +1273,7 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getImageData", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ImageData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageData>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageData>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -1349,29 +1349,29 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double LineWidth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "lineWidth");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "lineWidth", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "lineWidth");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "lineWidth", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CanvasLineCap LineCap
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasLineCap, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasLineCap>>(JSObject, "lineCap");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CanvasLineCap, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasLineCap>>(JSObject, "lineCap", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasLineCap>.Get(JSObject, "lineCap");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasLineCap>.Set(JSObject, "lineCap", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CanvasLineJoin LineJoin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasLineJoin, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasLineJoin>>(JSObject, "lineJoin");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CanvasLineJoin, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasLineJoin>>(JSObject, "lineJoin", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasLineJoin>.Get(JSObject, "lineJoin");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasLineJoin>.Set(JSObject, "lineJoin", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double MiterLimit
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "miterLimit");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "miterLimit", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "miterLimit");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "miterLimit", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -1396,91 +1396,91 @@ public partial class CanvasRenderingContext2D: global::Natrix.JSCore.JSObjectPro
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getLineDash", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<double, global::Natrix.JSCore.Generics.DoubleAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<double, global::Natrix.JSCore.Generics.DoubleAccessor>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<double, global::Natrix.JSCore.Generics.DoubleAccessor>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double LineDashOffset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "lineDashOffset");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "lineDashOffset", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "lineDashOffset");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "lineDashOffset", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Lang
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "lang");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "lang", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "lang");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "lang", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Font
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "font");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "font", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "font");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "font", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CanvasTextAlign TextAlign
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasTextAlign, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasTextAlign>>(JSObject, "textAlign");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CanvasTextAlign, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasTextAlign>>(JSObject, "textAlign", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasTextAlign>.Get(JSObject, "textAlign");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasTextAlign>.Set(JSObject, "textAlign", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CanvasTextBaseline TextBaseline
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasTextBaseline, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasTextBaseline>>(JSObject, "textBaseline");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CanvasTextBaseline, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasTextBaseline>>(JSObject, "textBaseline", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasTextBaseline>.Get(JSObject, "textBaseline");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasTextBaseline>.Set(JSObject, "textBaseline", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CanvasDirection Direction
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasDirection, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasDirection>>(JSObject, "direction");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CanvasDirection, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasDirection>>(JSObject, "direction", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasDirection>.Get(JSObject, "direction");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasDirection>.Set(JSObject, "direction", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string LetterSpacing
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "letterSpacing");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "letterSpacing", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "letterSpacing");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "letterSpacing", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CanvasFontKerning FontKerning
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasFontKerning, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasFontKerning>>(JSObject, "fontKerning");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CanvasFontKerning, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasFontKerning>>(JSObject, "fontKerning", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasFontKerning>.Get(JSObject, "fontKerning");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasFontKerning>.Set(JSObject, "fontKerning", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CanvasFontStretch FontStretch
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasFontStretch, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasFontStretch>>(JSObject, "fontStretch");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CanvasFontStretch, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasFontStretch>>(JSObject, "fontStretch", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasFontStretch>.Get(JSObject, "fontStretch");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasFontStretch>.Set(JSObject, "fontStretch", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CanvasFontVariantCaps FontVariantCaps
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasFontVariantCaps, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasFontVariantCaps>>(JSObject, "fontVariantCaps");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CanvasFontVariantCaps, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasFontVariantCaps>>(JSObject, "fontVariantCaps", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasFontVariantCaps>.Get(JSObject, "fontVariantCaps");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasFontVariantCaps>.Set(JSObject, "fontVariantCaps", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CanvasTextRendering TextRendering
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CanvasTextRendering, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasTextRendering>>(JSObject, "textRendering");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CanvasTextRendering, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasTextRendering>>(JSObject, "textRendering", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasTextRendering>.Get(JSObject, "textRendering");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CanvasTextRendering>.Set(JSObject, "textRendering", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string WordSpacing
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "wordSpacing");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "wordSpacing", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "wordSpacing");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "wordSpacing", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

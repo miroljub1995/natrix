@@ -55,13 +55,13 @@ public partial class MediaEncryptedEvent: global::Natrix.StdWeb.Event, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string InitDataType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "initDataType");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "initDataType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.ArrayBuffer? InitData
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.ArrayBuffer?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.ArrayBuffer>>(JSObject, "initData");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.ArrayBuffer>.Get(JSObject, "initData");
     }
 }
 

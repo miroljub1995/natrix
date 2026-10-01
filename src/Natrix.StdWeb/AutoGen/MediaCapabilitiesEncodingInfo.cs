@@ -26,8 +26,8 @@ public partial class MediaCapabilitiesEncodingInfo: global::Natrix.StdWeb.MediaC
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.MediaEncodingConfiguration Configuration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaEncodingConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaEncodingConfiguration>>(JSObject, "configuration");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MediaEncodingConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaEncodingConfiguration>>(JSObject, "configuration", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaEncodingConfiguration>.Get(JSObject, "configuration");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaEncodingConfiguration>.Set(JSObject, "configuration", value);
     }
 }
 

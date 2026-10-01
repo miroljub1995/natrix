@@ -26,8 +26,8 @@ public partial class FocusEventInit: global::Natrix.StdWeb.UIEventInit, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventTarget? RelatedTarget
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventTarget?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>>(JSObject, "relatedTarget");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventTarget?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>>(JSObject, "relatedTarget", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>.Get(JSObject, "relatedTarget");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>.Set(JSObject, "relatedTarget", value);
     }
 }
 

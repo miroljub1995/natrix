@@ -26,57 +26,57 @@ public partial class CSSNumericType: global::Natrix.JSCore.JSObjectProxy, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "length");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "length", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "length");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "length", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Angle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "angle");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "angle", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "angle");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "angle", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Time
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "time");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "time", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "time");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "time", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Frequency
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "frequency");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "frequency", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "frequency");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "frequency", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Resolution
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "resolution");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "resolution", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "resolution");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "resolution", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Flex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "flex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "flex", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "flex");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "flex", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Percent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "percent");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "percent", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "percent");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "percent", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSNumericBaseType PercentHint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSNumericBaseType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSNumericBaseType>>(JSObject, "percentHint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CSSNumericBaseType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSNumericBaseType>>(JSObject, "percentHint", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSNumericBaseType>.Get(JSObject, "percentHint");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSNumericBaseType>.Set(JSObject, "percentHint", value);
     }
 }
 

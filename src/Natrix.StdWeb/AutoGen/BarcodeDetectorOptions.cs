@@ -26,8 +26,8 @@ public partial class BarcodeDetectorOptions: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BarcodeFormat>> Formats
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BarcodeFormat>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BarcodeFormat>>>>(JSObject, "formats");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BarcodeFormat>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BarcodeFormat>>>>(JSObject, "formats", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BarcodeFormat>>>.Get(JSObject, "formats");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BarcodeFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BarcodeFormat>>>.Set(JSObject, "formats", value);
     }
 }
 

@@ -18,7 +18,7 @@ public partial class ReadableStreamBYOBRequest: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Uint8Array? View
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Uint8Array?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Uint8Array>>(JSObject, "view");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Uint8Array>.Get(JSObject, "view");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

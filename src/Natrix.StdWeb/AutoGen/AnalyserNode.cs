@@ -115,35 +115,35 @@ public partial class AnalyserNode: global::Natrix.StdWeb.AudioNode, global::Natr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint FftSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "fftSize");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "fftSize", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "fftSize");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "fftSize", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint FrequencyBinCount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "frequencyBinCount");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "frequencyBinCount");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double MinDecibels
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "minDecibels");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "minDecibels", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "minDecibels");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "minDecibels", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double MaxDecibels
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "maxDecibels");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "maxDecibels", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "maxDecibels");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "maxDecibels", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double SmoothingTimeConstant
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "smoothingTimeConstant");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "smoothingTimeConstant", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "smoothingTimeConstant");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "smoothingTimeConstant", value);
     }
 }
 

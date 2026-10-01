@@ -18,19 +18,19 @@ public partial class XRGPUSubImage: global::Natrix.StdWeb.XRSubImage, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUTexture ColorTexture
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUTexture, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUTexture>>(JSObject, "colorTexture");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUTexture>.Get(JSObject, "colorTexture");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUTexture? DepthStencilTexture
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUTexture?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GPUTexture>>(JSObject, "depthStencilTexture");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GPUTexture>.Get(JSObject, "depthStencilTexture");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUTexture? MotionVectorTexture
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUTexture?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GPUTexture>>(JSObject, "motionVectorTexture");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.GPUTexture>.Get(JSObject, "motionVectorTexture");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -41,7 +41,7 @@ public partial class XRGPUSubImage: global::Natrix.StdWeb.XRSubImage, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getViewDescriptor", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUTextureViewDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUTextureViewDescriptor>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUTextureViewDescriptor>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

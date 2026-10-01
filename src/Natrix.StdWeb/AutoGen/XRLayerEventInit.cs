@@ -26,8 +26,8 @@ public partial class XRLayerEventInit: global::Natrix.StdWeb.EventInit, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.XRLayer Layer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRLayer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRLayer>>(JSObject, "layer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.XRLayer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRLayer>>(JSObject, "layer", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRLayer>.Get(JSObject, "layer");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRLayer>.Set(JSObject, "layer", value);
     }
 }
 

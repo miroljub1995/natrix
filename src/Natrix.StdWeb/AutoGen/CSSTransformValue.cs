@@ -33,7 +33,7 @@ public partial class CSSTransformValue: global::Natrix.StdWeb.CSSStyleValue, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "length");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -53,7 +53,7 @@ public partial class CSSTransformValue: global::Natrix.StdWeb.CSSStyleValue, glo
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallGetter(JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSTransformComponent, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSTransformComponent>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSTransformComponent>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -79,7 +79,7 @@ public partial class CSSTransformValue: global::Natrix.StdWeb.CSSStyleValue, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Is2D
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "is2D");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "is2D");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -90,7 +90,7 @@ public partial class CSSTransformValue: global::Natrix.StdWeb.CSSStyleValue, glo
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toMatrix", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMMatrix, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMMatrix>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMMatrix>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

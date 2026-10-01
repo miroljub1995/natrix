@@ -18,7 +18,7 @@ public partial class MediaKeyStatusMap: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Size
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "size");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "size");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -37,7 +37,7 @@ public partial class MediaKeyStatusMap: global::Natrix.JSCore.JSObjectProxy, glo
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "has", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -56,7 +56,7 @@ public partial class MediaKeyStatusMap: global::Natrix.JSCore.JSObjectProxy, glo
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "get", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaKeyStatus?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.MediaKeyStatus>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.MediaKeyStatus>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

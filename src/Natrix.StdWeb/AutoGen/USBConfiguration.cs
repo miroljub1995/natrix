@@ -39,19 +39,19 @@ public partial class USBConfiguration: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte ConfigurationValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "configurationValue");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "configurationValue");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? ConfigurationName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "configurationName");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "configurationName");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBInterface, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBInterface>> Interfaces
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBInterface, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBInterface>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBInterface, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBInterface>>>>(JSObject, "interfaces");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBInterface, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBInterface>>>.Get(JSObject, "interfaces");
     }
 }
 

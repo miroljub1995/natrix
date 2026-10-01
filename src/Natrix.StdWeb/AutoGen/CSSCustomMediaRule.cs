@@ -18,13 +18,13 @@ public partial class CSSCustomMediaRule: global::Natrix.StdWeb.CSSRule, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.MediaList, bool, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaList>, global::Natrix.JSCore.Generics.BooleanAccessor> Query
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.MediaList, bool, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaList>, global::Natrix.JSCore.Generics.BooleanAccessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.MediaList, bool, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaList>, global::Natrix.JSCore.Generics.BooleanAccessor>>>(JSObject, "query");
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.MediaList, bool, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaList>, global::Natrix.JSCore.Generics.BooleanAccessor>>.Get(JSObject, "query");
     }
 }
 

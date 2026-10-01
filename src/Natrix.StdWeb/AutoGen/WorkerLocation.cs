@@ -18,55 +18,55 @@ public partial class WorkerLocation: global::Natrix.JSCore.JSObjectProxy, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Href
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "href");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "href");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Origin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "origin");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "origin");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Protocol
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "protocol");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "protocol");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Host
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "host");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "host");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Hostname
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "hostname");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "hostname");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Port
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "port");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "port");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Pathname
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "pathname");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "pathname");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Search
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "search");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "search");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Hash
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "hash");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "hash");
     }
 }
 

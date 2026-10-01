@@ -26,15 +26,15 @@ public partial class MemoryMeasurement: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Bytes
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytes");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytes", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "bytes");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "bytes", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryBreakdownEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryBreakdownEntry>> Breakdown
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryBreakdownEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryBreakdownEntry>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryBreakdownEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryBreakdownEntry>>>>(JSObject, "breakdown");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryBreakdownEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryBreakdownEntry>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryBreakdownEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryBreakdownEntry>>>>(JSObject, "breakdown", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryBreakdownEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryBreakdownEntry>>>.Get(JSObject, "breakdown");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryBreakdownEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryBreakdownEntry>>>.Set(JSObject, "breakdown", value);
     }
 }
 

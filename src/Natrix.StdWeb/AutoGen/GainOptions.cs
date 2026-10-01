@@ -26,8 +26,8 @@ public partial class GainOptions: global::Natrix.StdWeb.AudioNodeOptions, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Gain
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "gain");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "gain", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "gain");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "gain", value);
     }
 }
 

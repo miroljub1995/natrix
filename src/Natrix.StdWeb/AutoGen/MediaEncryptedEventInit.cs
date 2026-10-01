@@ -26,15 +26,15 @@ public partial class MediaEncryptedEventInit: global::Natrix.StdWeb.EventInit, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string InitDataType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "initDataType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "initDataType", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "initDataType");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "initDataType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.ArrayBuffer? InitData
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.ArrayBuffer?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.ArrayBuffer>>(JSObject, "initData");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.ArrayBuffer?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.ArrayBuffer>>(JSObject, "initData", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.ArrayBuffer>.Get(JSObject, "initData");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.ArrayBuffer>.Set(JSObject, "initData", value);
     }
 }
 

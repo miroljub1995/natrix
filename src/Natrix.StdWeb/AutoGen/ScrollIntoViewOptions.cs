@@ -26,22 +26,22 @@ public partial class ScrollIntoViewOptions: global::Natrix.StdWeb.ScrollOptions,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ScrollLogicalPosition Block
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ScrollLogicalPosition, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollLogicalPosition>>(JSObject, "block");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ScrollLogicalPosition, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollLogicalPosition>>(JSObject, "block", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollLogicalPosition>.Get(JSObject, "block");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollLogicalPosition>.Set(JSObject, "block", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ScrollLogicalPosition Inline
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ScrollLogicalPosition, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollLogicalPosition>>(JSObject, "inline");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ScrollLogicalPosition, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollLogicalPosition>>(JSObject, "inline", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollLogicalPosition>.Get(JSObject, "inline");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollLogicalPosition>.Set(JSObject, "inline", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ScrollIntoViewContainer Container
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ScrollIntoViewContainer, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollIntoViewContainer>>(JSObject, "container");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ScrollIntoViewContainer, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollIntoViewContainer>>(JSObject, "container", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollIntoViewContainer>.Get(JSObject, "container");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollIntoViewContainer>.Set(JSObject, "container", value);
     }
 }
 

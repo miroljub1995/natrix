@@ -26,36 +26,36 @@ public partial class CheckVisibilityOptions: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool CheckOpacity
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "checkOpacity");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "checkOpacity", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "checkOpacity");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "checkOpacity", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool CheckVisibilityCSS
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "checkVisibilityCSS");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "checkVisibilityCSS", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "checkVisibilityCSS");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "checkVisibilityCSS", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ContentVisibilityAuto
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "contentVisibilityAuto");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "contentVisibilityAuto", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "contentVisibilityAuto");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "contentVisibilityAuto", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool OpacityProperty
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "opacityProperty");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "opacityProperty", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "opacityProperty");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "opacityProperty", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool VisibilityProperty
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "visibilityProperty");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "visibilityProperty", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "visibilityProperty");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "visibilityProperty", value);
     }
 }
 

@@ -26,43 +26,43 @@ public partial class XRWebGLLayerInit: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Antialias
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "antialias");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "antialias", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "antialias");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "antialias", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Depth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "depth");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "depth", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "depth");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "depth", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Stencil
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "stencil");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "stencil", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "stencil");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "stencil", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Alpha
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "alpha");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "alpha", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "alpha");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "alpha", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IgnoreDepthValues
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreDepthValues");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreDepthValues", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ignoreDepthValues");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "ignoreDepthValues", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double FramebufferScaleFactor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "framebufferScaleFactor");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "framebufferScaleFactor", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "framebufferScaleFactor");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "framebufferScaleFactor", value);
     }
 }
 

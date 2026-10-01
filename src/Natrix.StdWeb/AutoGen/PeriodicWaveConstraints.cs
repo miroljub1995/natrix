@@ -26,8 +26,8 @@ public partial class PeriodicWaveConstraints: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool DisableNormalization
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "disableNormalization");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "disableNormalization", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "disableNormalization");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "disableNormalization", value);
     }
 }
 

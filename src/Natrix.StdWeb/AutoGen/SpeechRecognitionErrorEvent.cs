@@ -39,13 +39,13 @@ public partial class SpeechRecognitionErrorEvent: global::Natrix.StdWeb.Event, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SpeechRecognitionErrorCode Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpeechRecognitionErrorCode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpeechRecognitionErrorCode>>(JSObject, "error");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpeechRecognitionErrorCode>.Get(JSObject, "error");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "message");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "message");
     }
 }
 

@@ -26,22 +26,22 @@ public partial class HandwritingPoint: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required double X
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "x");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "x", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "x");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "x", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required double Y
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "y");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "y", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "y");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "y", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double T
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "t");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "t", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "t");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "t", value);
     }
 }
 

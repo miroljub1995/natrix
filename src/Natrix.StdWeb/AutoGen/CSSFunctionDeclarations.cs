@@ -18,7 +18,7 @@ public partial class CSSFunctionDeclarations: global::Natrix.StdWeb.CSSRule, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSFunctionDescriptors Style
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSFunctionDescriptors, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFunctionDescriptors>>(JSObject, "style");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFunctionDescriptors>.Get(JSObject, "style");
     }
 }
 

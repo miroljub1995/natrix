@@ -25,36 +25,36 @@ public partial class HTMLTrackElement: global::Natrix.StdWeb.HTMLElement, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Kind
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "kind");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "kind", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "kind");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "kind", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Src
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "src");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "src", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "src");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "src", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Srclang
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "srclang");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "srclang", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "srclang");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "srclang", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Label
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "label");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "label", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Default
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "default");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "default", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "default");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "default", value);
     }
 
     public const ushort NONE = 0;
@@ -68,13 +68,13 @@ public partial class HTMLTrackElement: global::Natrix.StdWeb.HTMLElement, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort ReadyState
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "readyState");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "readyState");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.TextTrack Track
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.TextTrack, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextTrack>>(JSObject, "track");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TextTrack>.Get(JSObject, "track");
     }
 }
 

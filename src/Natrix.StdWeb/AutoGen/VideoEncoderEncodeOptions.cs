@@ -26,36 +26,36 @@ public partial class VideoEncoderEncodeOptions: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAv1 Av1
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAv1, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAv1>>(JSObject, "av1");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAv1, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAv1>>(JSObject, "av1", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAv1>.Get(JSObject, "av1");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAv1>.Set(JSObject, "av1", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAvc Avc
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAvc, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAvc>>(JSObject, "avc");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAvc, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAvc>>(JSObject, "avc", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAvc>.Get(JSObject, "avc");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForAvc>.Set(JSObject, "avc", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoEncoderEncodeOptionsForHevc Hevc
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForHevc, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForHevc>>(JSObject, "hevc");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForHevc, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForHevc>>(JSObject, "hevc", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForHevc>.Get(JSObject, "hevc");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForHevc>.Set(JSObject, "hevc", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoEncoderEncodeOptionsForVp9 Vp9
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForVp9, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForVp9>>(JSObject, "vp9");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForVp9, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForVp9>>(JSObject, "vp9", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForVp9>.Get(JSObject, "vp9");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoEncoderEncodeOptionsForVp9>.Set(JSObject, "vp9", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool KeyFrame
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "keyFrame");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "keyFrame", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "keyFrame");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "keyFrame", value);
     }
 }
 

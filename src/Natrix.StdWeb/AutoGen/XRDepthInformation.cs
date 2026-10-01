@@ -18,37 +18,37 @@ public partial class XRDepthInformation: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "width");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "width");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "height");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "height");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRRigidTransform NormDepthBufferFromNormView
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRRigidTransform, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>>(JSObject, "normDepthBufferFromNormView");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>.Get(JSObject, "normDepthBufferFromNormView");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float RawValueToMeters
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "rawValueToMeters");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "rawValueToMeters");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Float32Array ProjectionMatrix
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>(JSObject, "projectionMatrix");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>.Get(JSObject, "projectionMatrix");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRRigidTransform Transform
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRRigidTransform, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>>(JSObject, "transform");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>.Get(JSObject, "transform");
     }
 }
 

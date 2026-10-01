@@ -26,15 +26,15 @@ public partial class PlaneLayout: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint Offset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "offset");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "offset", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "offset");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "offset", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint Stride
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "stride");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "stride", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "stride");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "stride", value);
     }
 }
 

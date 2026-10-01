@@ -26,8 +26,8 @@ public partial class AttributionAggregationService: global::Natrix.JSCore.JSObje
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.AttributionAggregationProtocol Protocol
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AttributionAggregationProtocol, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AttributionAggregationProtocol>>(JSObject, "protocol");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AttributionAggregationProtocol, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AttributionAggregationProtocol>>(JSObject, "protocol", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AttributionAggregationProtocol>.Get(JSObject, "protocol");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AttributionAggregationProtocol>.Set(JSObject, "protocol", value);
     }
 }
 

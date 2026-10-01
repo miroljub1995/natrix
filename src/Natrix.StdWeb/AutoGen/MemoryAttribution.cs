@@ -26,22 +26,22 @@ public partial class MemoryAttribution: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "url");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "url", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MemoryAttributionContainer Container
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MemoryAttributionContainer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryAttributionContainer>>(JSObject, "container");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MemoryAttributionContainer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryAttributionContainer>>(JSObject, "container", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryAttributionContainer>.Get(JSObject, "container");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryAttributionContainer>.Set(JSObject, "container", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Scope
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "scope");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "scope", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "scope");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "scope", value);
     }
 }
 

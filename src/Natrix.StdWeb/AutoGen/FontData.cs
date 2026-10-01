@@ -23,31 +23,31 @@ public partial class FontData: global::Natrix.JSCore.JSObjectProxy, global::Natr
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "blob", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Blob, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Blob>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Blob, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Blob>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Blob, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Blob>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string PostscriptName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "postscriptName");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "postscriptName");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string FullName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "fullName");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "fullName");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Family
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "family");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "family");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Style
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "style");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "style");
     }
 }
 

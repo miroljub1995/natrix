@@ -39,13 +39,13 @@ public partial class SpeechRecognitionEvent: global::Natrix.StdWeb.Event, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ResultIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "resultIndex");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "resultIndex");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SpeechRecognitionResultList Results
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpeechRecognitionResultList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechRecognitionResultList>>(JSObject, "results");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechRecognitionResultList>.Get(JSObject, "results");
     }
 }
 

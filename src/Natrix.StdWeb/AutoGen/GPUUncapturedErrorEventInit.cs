@@ -26,8 +26,8 @@ public partial class GPUUncapturedErrorEventInit: global::Natrix.StdWeb.EventIni
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GPUError Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUError, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUError>>(JSObject, "error");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUError, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUError>>(JSObject, "error", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUError>.Get(JSObject, "error");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUError>.Set(JSObject, "error", value);
     }
 }
 

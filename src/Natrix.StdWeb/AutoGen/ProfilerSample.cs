@@ -26,15 +26,15 @@ public partial class ProfilerSample: global::Natrix.JSCore.JSObjectProxy, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required double Timestamp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "timestamp");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "timestamp", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "timestamp");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "timestamp", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong StackId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "stackId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "stackId", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "stackId");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "stackId", value);
     }
 }
 

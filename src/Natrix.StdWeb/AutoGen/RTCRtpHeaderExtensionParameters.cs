@@ -26,22 +26,22 @@ public partial class RTCRtpHeaderExtensionParameters: global::Natrix.JSCore.JSOb
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Uri
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "uri");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "uri", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "uri");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "uri", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ushort Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "id");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "id", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "id");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "id", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Encrypted
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "encrypted");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "encrypted", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "encrypted");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "encrypted", value);
     }
 }
 

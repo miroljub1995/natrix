@@ -26,8 +26,8 @@ public partial class GPUSamplerBindingLayout: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUSamplerBindingType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUSamplerBindingType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUSamplerBindingType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUSamplerBindingType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUSamplerBindingType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUSamplerBindingType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUSamplerBindingType>.Set(JSObject, "type", value);
     }
 }
 

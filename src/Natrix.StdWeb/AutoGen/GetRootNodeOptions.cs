@@ -26,8 +26,8 @@ public partial class GetRootNodeOptions: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Composed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "composed");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "composed", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "composed");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "composed", value);
     }
 }
 

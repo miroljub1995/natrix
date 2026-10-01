@@ -26,15 +26,15 @@ public partial class CryptoKeyPair: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CryptoKey PublicKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CryptoKey, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CryptoKey>>(JSObject, "publicKey");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CryptoKey, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CryptoKey>>(JSObject, "publicKey", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CryptoKey>.Get(JSObject, "publicKey");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CryptoKey>.Set(JSObject, "publicKey", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CryptoKey PrivateKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CryptoKey, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CryptoKey>>(JSObject, "privateKey");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CryptoKey, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CryptoKey>>(JSObject, "privateKey", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CryptoKey>.Get(JSObject, "privateKey");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CryptoKey>.Set(JSObject, "privateKey", value);
     }
 }
 

@@ -26,15 +26,15 @@ public partial class MockCameraConfiguration: global::Natrix.StdWeb.MockCaptureD
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DefaultFrameRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "defaultFrameRate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "defaultFrameRate", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "defaultFrameRate");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "defaultFrameRate", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string FacingMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "facingMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "facingMode", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "facingMode");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "facingMode", value);
     }
 }
 

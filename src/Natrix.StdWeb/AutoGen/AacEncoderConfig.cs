@@ -26,8 +26,8 @@ public partial class AacEncoderConfig: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AacBitstreamFormat Format
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AacBitstreamFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AacBitstreamFormat>>(JSObject, "format");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AacBitstreamFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AacBitstreamFormat>>(JSObject, "format", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AacBitstreamFormat>.Get(JSObject, "format");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AacBitstreamFormat>.Set(JSObject, "format", value);
     }
 }
 

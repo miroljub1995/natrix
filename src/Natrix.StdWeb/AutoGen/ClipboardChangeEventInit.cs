@@ -26,15 +26,15 @@ public partial class ClipboardChangeEventInit: global::Natrix.StdWeb.EventInit, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor> Types
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "types");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "types", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "types");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "types", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Numerics.BigInteger ChangeId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Numerics.BigInteger, global::Natrix.JSCore.Generics.BigIntegerAccessor>(JSObject, "changeId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::System.Numerics.BigInteger, global::Natrix.JSCore.Generics.BigIntegerAccessor>(JSObject, "changeId", value);
+        get => global::Natrix.JSCore.Generics.BigIntegerAccessor.Get(JSObject, "changeId");
+        set => global::Natrix.JSCore.Generics.BigIntegerAccessor.Set(JSObject, "changeId", value);
     }
 }
 

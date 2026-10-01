@@ -32,7 +32,7 @@ public partial class IDBFactory: global::Natrix.JSCore.JSObjectProxy, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "open", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IDBOpenDBRequest, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IDBOpenDBRequest>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IDBOpenDBRequest>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -57,7 +57,7 @@ public partial class IDBFactory: global::Natrix.JSCore.JSObjectProxy, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "open", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IDBOpenDBRequest, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IDBOpenDBRequest>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IDBOpenDBRequest>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -77,7 +77,7 @@ public partial class IDBFactory: global::Natrix.JSCore.JSObjectProxy, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "deleteDatabase", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IDBOpenDBRequest, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IDBOpenDBRequest>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IDBOpenDBRequest>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -88,7 +88,7 @@ public partial class IDBFactory: global::Natrix.JSCore.JSObjectProxy, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "databases", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IDBDatabaseInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IDBDatabaseInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IDBDatabaseInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IDBDatabaseInfo>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IDBDatabaseInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IDBDatabaseInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IDBDatabaseInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IDBDatabaseInfo>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IDBDatabaseInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IDBDatabaseInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IDBDatabaseInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IDBDatabaseInfo>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -129,7 +129,7 @@ public partial class IDBFactory: global::Natrix.JSCore.JSObjectProxy, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "cmp", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<short, global::Natrix.JSCore.Generics.Int16Accessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.Int16Accessor.Get(___resOwner_1.JSObject, "value");
     }
 }
 

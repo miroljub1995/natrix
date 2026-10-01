@@ -26,15 +26,15 @@ public partial class FileSystemFlags: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Create
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "create");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "create", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "create");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "create", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Exclusive
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "exclusive");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "exclusive", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "exclusive");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "exclusive", value);
     }
 }
 

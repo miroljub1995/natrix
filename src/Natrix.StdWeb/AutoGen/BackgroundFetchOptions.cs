@@ -26,8 +26,8 @@ public partial class BackgroundFetchOptions: global::Natrix.StdWeb.BackgroundFet
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong DownloadTotal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "downloadTotal");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "downloadTotal", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "downloadTotal");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "downloadTotal", value);
     }
 }
 

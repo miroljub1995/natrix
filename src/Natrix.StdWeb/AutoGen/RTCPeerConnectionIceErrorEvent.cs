@@ -39,31 +39,31 @@ public partial class RTCPeerConnectionIceErrorEvent: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Address
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "address");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "address");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort? Port
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "port");
+        get => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Get(JSObject, "port");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "url");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort ErrorCode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "errorCode");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "errorCode");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ErrorText
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "errorText");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "errorText");
     }
 }
 

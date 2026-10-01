@@ -26,15 +26,15 @@ public partial class GetAnimationsOptions: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Subtree
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "subtree");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "subtree", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "subtree");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "subtree", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? PseudoElement
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "pseudoElement");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "pseudoElement", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "pseudoElement");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "pseudoElement", value);
     }
 }
 

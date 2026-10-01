@@ -28,28 +28,28 @@ public partial class SVGAngle: global::Natrix.JSCore.JSObjectProxy, global::Natr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort UnitType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "unitType");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "unitType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "value", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float ValueInSpecifiedUnits
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "valueInSpecifiedUnits");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "valueInSpecifiedUnits", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "valueInSpecifiedUnits");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "valueInSpecifiedUnits", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ValueAsString
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "valueAsString");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "valueAsString", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "valueAsString");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "valueAsString", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

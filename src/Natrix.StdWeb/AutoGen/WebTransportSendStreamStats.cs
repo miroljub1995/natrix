@@ -26,22 +26,22 @@ public partial class WebTransportSendStreamStats: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong BytesWritten
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytesWritten");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytesWritten", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "bytesWritten");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "bytesWritten", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong BytesSent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytesSent");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytesSent", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "bytesSent");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "bytesSent", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong BytesAcknowledged
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytesAcknowledged");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytesAcknowledged", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "bytesAcknowledged");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "bytesAcknowledged", value);
     }
 }
 

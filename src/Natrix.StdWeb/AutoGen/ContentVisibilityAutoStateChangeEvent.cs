@@ -55,7 +55,7 @@ public partial class ContentVisibilityAutoStateChangeEvent: global::Natrix.StdWe
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Skipped
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "skipped");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "skipped");
     }
 }
 

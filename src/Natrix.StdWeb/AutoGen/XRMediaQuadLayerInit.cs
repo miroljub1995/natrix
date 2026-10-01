@@ -26,22 +26,22 @@ public partial class XRMediaQuadLayerInit: global::Natrix.StdWeb.XRMediaLayerIni
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRRigidTransform? Transform
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRRigidTransform?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>>(JSObject, "transform");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.XRRigidTransform?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>>(JSObject, "transform", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>.Get(JSObject, "transform");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>.Set(JSObject, "transform", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float? Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float?, global::Natrix.JSCore.Generics.NullableSingleAccessor>(JSObject, "width");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float?, global::Natrix.JSCore.Generics.NullableSingleAccessor>(JSObject, "width", value);
+        get => global::Natrix.JSCore.Generics.NullableSingleAccessor.Get(JSObject, "width");
+        set => global::Natrix.JSCore.Generics.NullableSingleAccessor.Set(JSObject, "width", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float? Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float?, global::Natrix.JSCore.Generics.NullableSingleAccessor>(JSObject, "height");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float?, global::Natrix.JSCore.Generics.NullableSingleAccessor>(JSObject, "height", value);
+        get => global::Natrix.JSCore.Generics.NullableSingleAccessor.Get(JSObject, "height");
+        set => global::Natrix.JSCore.Generics.NullableSingleAccessor.Set(JSObject, "height", value);
     }
 }
 

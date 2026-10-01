@@ -37,7 +37,7 @@ public partial class HighlightRegistry: global::Natrix.JSCore.JSObjectProxy, glo
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "highlightsFromPoint", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HighlightHitResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HighlightHitResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HighlightHitResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -67,7 +67,7 @@ public partial class HighlightRegistry: global::Natrix.JSCore.JSObjectProxy, glo
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "highlightsFromPoint", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HighlightHitResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HighlightHitResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HighlightHitResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HighlightHitResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

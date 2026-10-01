@@ -26,15 +26,15 @@ public partial class VideoDecoderSupport: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Supported
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "supported");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "supported", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "supported");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "supported", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoDecoderConfig Config
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoDecoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoDecoderConfig>>(JSObject, "config");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoDecoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoDecoderConfig>>(JSObject, "config", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoDecoderConfig>.Get(JSObject, "config");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoDecoderConfig>.Set(JSObject, "config", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class USBConnectionEventInit: global::Natrix.StdWeb.EventInit, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.USBDevice Device
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDevice>>(JSObject, "device");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.USBDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDevice>>(JSObject, "device", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDevice>.Get(JSObject, "device");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDevice>.Set(JSObject, "device", value);
     }
 }
 

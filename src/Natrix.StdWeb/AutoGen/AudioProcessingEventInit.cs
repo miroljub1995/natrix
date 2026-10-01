@@ -26,22 +26,22 @@ public partial class AudioProcessingEventInit: global::Natrix.StdWeb.EventInit, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required double PlaybackTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "playbackTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "playbackTime", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "playbackTime");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "playbackTime", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.AudioBuffer InputBuffer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioBuffer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioBuffer>>(JSObject, "inputBuffer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AudioBuffer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioBuffer>>(JSObject, "inputBuffer", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioBuffer>.Get(JSObject, "inputBuffer");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioBuffer>.Set(JSObject, "inputBuffer", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.AudioBuffer OutputBuffer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioBuffer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioBuffer>>(JSObject, "outputBuffer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AudioBuffer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioBuffer>>(JSObject, "outputBuffer", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioBuffer>.Get(JSObject, "outputBuffer");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioBuffer>.Set(JSObject, "outputBuffer", value);
     }
 }
 

@@ -37,7 +37,7 @@ public partial class CSSMathSum: global::Natrix.StdWeb.CSSMathValue, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSNumericArray Values
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSNumericArray, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSNumericArray>>(JSObject, "values");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSNumericArray>.Get(JSObject, "values");
     }
 }
 

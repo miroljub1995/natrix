@@ -26,15 +26,15 @@ public partial class PeriodicWaveOptions: global::Natrix.StdWeb.PeriodicWaveCons
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor> Real
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>>>(JSObject, "real");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>>>(JSObject, "real", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>>.Get(JSObject, "real");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>>.Set(JSObject, "real", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor> Imag
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>>>(JSObject, "imag");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>>>(JSObject, "imag", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>>.Get(JSObject, "imag");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>>.Set(JSObject, "imag", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class MagnetometerSensorOptions: global::Natrix.StdWeb.SensorOpti
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MagnetometerLocalCoordinateSystem ReferenceFrame
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MagnetometerLocalCoordinateSystem, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MagnetometerLocalCoordinateSystem>>(JSObject, "referenceFrame");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MagnetometerLocalCoordinateSystem, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MagnetometerLocalCoordinateSystem>>(JSObject, "referenceFrame", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MagnetometerLocalCoordinateSystem>.Get(JSObject, "referenceFrame");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MagnetometerLocalCoordinateSystem>.Set(JSObject, "referenceFrame", value);
     }
 }
 

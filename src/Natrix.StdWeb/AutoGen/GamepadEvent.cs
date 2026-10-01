@@ -55,7 +55,7 @@ public partial class GamepadEvent: global::Natrix.StdWeb.Event, global::Natrix.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Gamepad Gamepad
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Gamepad, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Gamepad>>(JSObject, "gamepad");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Gamepad>.Get(JSObject, "gamepad");
     }
 }
 

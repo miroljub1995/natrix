@@ -26,106 +26,106 @@ public partial class VideoEncoderConfig: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AvcEncoderConfig Avc
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AvcEncoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AvcEncoderConfig>>(JSObject, "avc");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AvcEncoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AvcEncoderConfig>>(JSObject, "avc", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AvcEncoderConfig>.Get(JSObject, "avc");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AvcEncoderConfig>.Set(JSObject, "avc", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HevcEncoderConfig Hevc
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HevcEncoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HevcEncoderConfig>>(JSObject, "hevc");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.HevcEncoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HevcEncoderConfig>>(JSObject, "hevc", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HevcEncoderConfig>.Get(JSObject, "hevc");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HevcEncoderConfig>.Set(JSObject, "hevc", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Codec
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "codec");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "codec", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "codec");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "codec", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "width");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "width", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "width");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "width", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "height");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "height", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "height");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "height", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint DisplayWidth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "displayWidth");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "displayWidth", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "displayWidth");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "displayWidth", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint DisplayHeight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "displayHeight");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "displayHeight", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "displayHeight");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "displayHeight", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Bitrate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bitrate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bitrate", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "bitrate");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "bitrate", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Framerate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "framerate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "framerate", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "framerate");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "framerate", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HardwareAcceleration HardwareAcceleration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HardwareAcceleration, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HardwareAcceleration>>(JSObject, "hardwareAcceleration");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.HardwareAcceleration, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HardwareAcceleration>>(JSObject, "hardwareAcceleration", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HardwareAcceleration>.Get(JSObject, "hardwareAcceleration");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HardwareAcceleration>.Set(JSObject, "hardwareAcceleration", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AlphaOption Alpha
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AlphaOption, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AlphaOption>>(JSObject, "alpha");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AlphaOption, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AlphaOption>>(JSObject, "alpha", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AlphaOption>.Get(JSObject, "alpha");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AlphaOption>.Set(JSObject, "alpha", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ScalabilityMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "scalabilityMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "scalabilityMode", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "scalabilityMode");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "scalabilityMode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoEncoderBitrateMode BitrateMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoEncoderBitrateMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.VideoEncoderBitrateMode>>(JSObject, "bitrateMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoEncoderBitrateMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.VideoEncoderBitrateMode>>(JSObject, "bitrateMode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.VideoEncoderBitrateMode>.Get(JSObject, "bitrateMode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.VideoEncoderBitrateMode>.Set(JSObject, "bitrateMode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.LatencyMode LatencyMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.LatencyMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LatencyMode>>(JSObject, "latencyMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.LatencyMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LatencyMode>>(JSObject, "latencyMode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LatencyMode>.Get(JSObject, "latencyMode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LatencyMode>.Set(JSObject, "latencyMode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ContentHint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "contentHint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "contentHint", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "contentHint");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "contentHint", value);
     }
 }
 

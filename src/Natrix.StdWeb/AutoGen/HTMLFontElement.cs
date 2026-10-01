@@ -25,22 +25,22 @@ public partial class HTMLFontElement: global::Natrix.StdWeb.HTMLElement, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Color
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "color");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "color", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "color");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "color", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Face
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "face");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "face", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "face");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "face", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Size
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "size");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "size", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "size");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "size", value);
     }
 }
 

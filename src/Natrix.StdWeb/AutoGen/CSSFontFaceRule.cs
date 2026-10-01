@@ -18,7 +18,7 @@ public partial class CSSFontFaceRule: global::Natrix.StdWeb.CSSRule, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSFontFaceDescriptors Style
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSFontFaceDescriptors, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFaceDescriptors>>(JSObject, "style");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFaceDescriptors>.Get(JSObject, "style");
     }
 }
 

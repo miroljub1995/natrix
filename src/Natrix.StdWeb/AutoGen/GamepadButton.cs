@@ -18,19 +18,19 @@ public partial class GamepadButton: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Pressed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "pressed");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "pressed");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Touched
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "touched");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "touched");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "value");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "value");
     }
 }
 

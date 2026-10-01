@@ -26,15 +26,15 @@ public partial class ImportNodeOptions: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CustomElementRegistry CustomElementRegistry
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CustomElementRegistry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CustomElementRegistry>>(JSObject, "customElementRegistry");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CustomElementRegistry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CustomElementRegistry>>(JSObject, "customElementRegistry", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CustomElementRegistry>.Get(JSObject, "customElementRegistry");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CustomElementRegistry>.Set(JSObject, "customElementRegistry", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool SelfOnly
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "selfOnly");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "selfOnly", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "selfOnly");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "selfOnly", value);
     }
 }
 

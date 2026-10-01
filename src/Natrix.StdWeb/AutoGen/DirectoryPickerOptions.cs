@@ -26,22 +26,22 @@ public partial class DirectoryPickerOptions: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "id");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "id", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>> StartIn
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>>>(JSObject, "startIn");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>>>(JSObject, "startIn", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>>.Get(JSObject, "startIn");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>>.Set(JSObject, "startIn", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FileSystemPermissionMode Mode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FileSystemPermissionMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FileSystemPermissionMode>>(JSObject, "mode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FileSystemPermissionMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FileSystemPermissionMode>>(JSObject, "mode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FileSystemPermissionMode>.Get(JSObject, "mode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FileSystemPermissionMode>.Set(JSObject, "mode", value);
     }
 }
 

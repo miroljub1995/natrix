@@ -26,15 +26,15 @@ public partial class LockManagerSnapshot: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>> Held
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>>>>(JSObject, "held");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>>>>(JSObject, "held", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>>>.Get(JSObject, "held");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>>>.Set(JSObject, "held", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>> Pending
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>>>>(JSObject, "pending");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>>>>(JSObject, "pending", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>>>.Get(JSObject, "pending");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.LockInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LockInfo>>>.Set(JSObject, "pending", value);
     }
 }
 

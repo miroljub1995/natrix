@@ -26,15 +26,15 @@ public partial class MLContextOptions: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MLPowerPreference PowerPreference
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MLPowerPreference, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLPowerPreference>>(JSObject, "powerPreference");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MLPowerPreference, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLPowerPreference>>(JSObject, "powerPreference", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLPowerPreference>.Get(JSObject, "powerPreference");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLPowerPreference>.Set(JSObject, "powerPreference", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Accelerated
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "accelerated");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "accelerated", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "accelerated");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "accelerated", value);
     }
 }
 

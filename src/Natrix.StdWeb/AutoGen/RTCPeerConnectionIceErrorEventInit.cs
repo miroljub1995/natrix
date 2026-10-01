@@ -26,36 +26,36 @@ public partial class RTCPeerConnectionIceErrorEventInit: global::Natrix.StdWeb.E
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Address
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "address");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "address", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "address");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "address", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort? Port
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "port");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "port", value);
+        get => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Get(JSObject, "port");
+        set => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Set(JSObject, "port", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "url");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "url", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ushort ErrorCode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "errorCode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "errorCode", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "errorCode");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "errorCode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ErrorText
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "errorText");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "errorText", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "errorText");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "errorText", value);
     }
 }
 

@@ -55,37 +55,37 @@ public partial class IntersectionObserver: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Element, global::Natrix.StdWeb.Document, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Document>>? Root
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Element, global::Natrix.StdWeb.Document, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Document>>?, global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Element, global::Natrix.StdWeb.Document, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Document>>>>(JSObject, "root");
+        get => global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.Element, global::Natrix.StdWeb.Document, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Document>>>.Get(JSObject, "root");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string RootMargin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "rootMargin");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "rootMargin");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ScrollMargin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "scrollMargin");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "scrollMargin");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<double, global::Natrix.JSCore.Generics.DoubleAccessor> Thresholds
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<double, global::Natrix.JSCore.Generics.DoubleAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<double, global::Natrix.JSCore.Generics.DoubleAccessor>>>(JSObject, "thresholds");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<double, global::Natrix.JSCore.Generics.DoubleAccessor>>.Get(JSObject, "thresholds");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Delay
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "delay");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "delay");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool TrackVisibility
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "trackVisibility");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "trackVisibility");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -132,7 +132,7 @@ public partial class IntersectionObserver: global::Natrix.JSCore.JSObjectProxy, 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "takeRecords", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IntersectionObserverEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IntersectionObserverEntry>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IntersectionObserverEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IntersectionObserverEntry>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IntersectionObserverEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IntersectionObserverEntry>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

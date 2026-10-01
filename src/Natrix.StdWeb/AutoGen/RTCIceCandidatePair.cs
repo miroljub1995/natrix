@@ -18,13 +18,13 @@ public partial class RTCIceCandidatePair: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIceCandidate Local
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceCandidate>>(JSObject, "local");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceCandidate>.Get(JSObject, "local");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIceCandidate Remote
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceCandidate, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceCandidate>>(JSObject, "remote");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceCandidate>.Get(JSObject, "remote");
     }
 }
 

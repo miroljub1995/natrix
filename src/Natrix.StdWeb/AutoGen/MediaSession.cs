@@ -18,15 +18,15 @@ public partial class MediaSession: global::Natrix.JSCore.JSObjectProxy, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaMetadata? Metadata
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaMetadata?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.MediaMetadata>>(JSObject, "metadata");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MediaMetadata?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.MediaMetadata>>(JSObject, "metadata", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.MediaMetadata>.Get(JSObject, "metadata");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.MediaMetadata>.Set(JSObject, "metadata", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaSessionPlaybackState PlaybackState
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaSessionPlaybackState, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaSessionPlaybackState>>(JSObject, "playbackState");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MediaSessionPlaybackState, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaSessionPlaybackState>>(JSObject, "playbackState", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaSessionPlaybackState>.Get(JSObject, "playbackState");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaSessionPlaybackState>.Set(JSObject, "playbackState", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -95,7 +95,7 @@ public partial class MediaSession: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "setMicrophoneActive", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -115,7 +115,7 @@ public partial class MediaSession: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "setCameraActive", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -135,7 +135,7 @@ public partial class MediaSession: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "setScreenshareActive", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

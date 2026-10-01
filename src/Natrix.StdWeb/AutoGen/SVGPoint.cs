@@ -18,15 +18,15 @@ public partial class SVGPoint: global::Natrix.JSCore.JSObjectProxy, global::Natr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float X
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "x");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "x", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "x");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "x", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Y
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "y");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "y", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "y");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "y", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -46,7 +46,7 @@ public partial class SVGPoint: global::Natrix.JSCore.JSObjectProxy, global::Natr
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "matrixTransform", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGPoint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGPoint>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGPoint>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

@@ -18,13 +18,13 @@ public partial class SVGAnimatedLengthList: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGLengthList BaseVal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGLengthList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGLengthList>>(JSObject, "baseVal");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGLengthList>.Get(JSObject, "baseVal");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGLengthList AnimVal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGLengthList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGLengthList>>(JSObject, "animVal");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGLengthList>.Get(JSObject, "animVal");
     }
 }
 

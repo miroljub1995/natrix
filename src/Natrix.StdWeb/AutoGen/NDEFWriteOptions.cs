@@ -26,15 +26,15 @@ public partial class NDEFWriteOptions: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Overwrite
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "overwrite");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "overwrite", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "overwrite");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "overwrite", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AbortSignal? Signal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AbortSignal?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AbortSignal>>(JSObject, "signal");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AbortSignal?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AbortSignal>>(JSObject, "signal", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AbortSignal>.Get(JSObject, "signal");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AbortSignal>.Set(JSObject, "signal", value);
     }
 }
 

@@ -26,29 +26,29 @@ public partial class DOMRectInit: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double X
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "x");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "x", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "x");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "x", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Y
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "y");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "y", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "y");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "y", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "width");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "width", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "width");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "width", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "height");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "height", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "height");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "height", value);
     }
 }
 

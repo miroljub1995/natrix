@@ -26,15 +26,15 @@ public partial class InputDeviceCapabilitiesInit: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool FiresTouchEvents
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "firesTouchEvents");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "firesTouchEvents", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "firesTouchEvents");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "firesTouchEvents", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool PointerMovementScrolls
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "pointerMovementScrolls");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "pointerMovementScrolls", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "pointerMovementScrolls");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "pointerMovementScrolls", value);
     }
 }
 

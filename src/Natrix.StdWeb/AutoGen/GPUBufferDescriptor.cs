@@ -26,22 +26,22 @@ public partial class GPUBufferDescriptor: global::Natrix.StdWeb.GPUObjectDescrip
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ulong Size
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "size");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "size", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "size");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "size", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint Usage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "usage");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "usage", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "usage");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "usage", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool MappedAtCreation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "mappedAtCreation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "mappedAtCreation", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "mappedAtCreation");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "mappedAtCreation", value);
     }
 }
 

@@ -26,29 +26,29 @@ public partial class SerialInputSignals: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required bool DataCarrierDetect
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "dataCarrierDetect");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "dataCarrierDetect", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "dataCarrierDetect");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "dataCarrierDetect", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required bool ClearToSend
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "clearToSend");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "clearToSend", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "clearToSend");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "clearToSend", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required bool RingIndicator
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ringIndicator");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ringIndicator", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ringIndicator");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "ringIndicator", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required bool DataSetReady
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "dataSetReady");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "dataSetReady", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "dataSetReady");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "dataSetReady", value);
     }
 }
 

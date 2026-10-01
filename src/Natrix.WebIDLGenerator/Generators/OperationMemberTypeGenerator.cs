@@ -129,13 +129,12 @@ public class OperationMemberTypeGenerator(
 
             if (!isVoid && input.IdlType is not null)
             {
-                var returnType = descriptionToTypeDeclarationGenerator.Generate(input.IdlType);
                 var resPropertyAccessor = propertyAccessorResolver.Resolve(input.IdlType);
 
                 bodyStatements.Add(
                     $$"""
                       // Return Value
-                      return global::Natrix.JSCore.Generics.PropertyAccessor.Get<{{returnType}}, {{resPropertyAccessor}}>({{resOwnerVar}}.JSObject, "value");
+                      return {{resPropertyAccessor}}.Get({{resOwnerVar}}.JSObject, "value");
                       """
                 );
             }

@@ -26,15 +26,15 @@ public partial class ProfilerInitOptions: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required double SampleInterval
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "sampleInterval");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "sampleInterval", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "sampleInterval");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "sampleInterval", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint MaxBufferSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "maxBufferSize");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "maxBufferSize", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "maxBufferSize");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "maxBufferSize", value);
     }
 }
 

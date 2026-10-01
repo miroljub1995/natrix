@@ -26,8 +26,8 @@ public partial class TaskControllerInit: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.TaskPriority Priority
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.TaskPriority, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.TaskPriority>>(JSObject, "priority");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.TaskPriority, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.TaskPriority>>(JSObject, "priority", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.TaskPriority>.Get(JSObject, "priority");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.TaskPriority>.Set(JSObject, "priority", value);
     }
 }
 

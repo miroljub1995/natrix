@@ -39,7 +39,7 @@ public partial class MediaStreamAudioSourceNode: global::Natrix.StdWeb.AudioNode
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaStream MediaStream
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaStream>>(JSObject, "mediaStream");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaStream>.Get(JSObject, "mediaStream");
     }
 }
 

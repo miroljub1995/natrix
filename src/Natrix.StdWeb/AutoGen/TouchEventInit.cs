@@ -26,22 +26,22 @@ public partial class TouchEventInit: global::Natrix.StdWeb.EventModifierInit, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>> Touches
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>>>(JSObject, "touches");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>>>(JSObject, "touches", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>>.Get(JSObject, "touches");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>>.Set(JSObject, "touches", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>> TargetTouches
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>>>(JSObject, "targetTouches");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>>>(JSObject, "targetTouches", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>>.Get(JSObject, "targetTouches");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>>.Set(JSObject, "targetTouches", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>> ChangedTouches
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>>>(JSObject, "changedTouches");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>>>(JSObject, "changedTouches", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>>.Get(JSObject, "changedTouches");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Touch, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Touch>>>.Set(JSObject, "changedTouches", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class AudioOutputOptions: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string DeviceId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "deviceId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "deviceId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "deviceId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "deviceId", value);
     }
 }
 

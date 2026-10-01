@@ -34,13 +34,13 @@ public partial class ByteLengthQueuingStrategy: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double HighWaterMark
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "highWaterMark");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "highWaterMark");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Function Size
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Function, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Function>>(JSObject, "size");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Function>.Get(JSObject, "size");
     }
 }
 

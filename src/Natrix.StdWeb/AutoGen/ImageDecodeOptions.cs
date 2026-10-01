@@ -26,15 +26,15 @@ public partial class ImageDecodeOptions: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint FrameIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "frameIndex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "frameIndex", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "frameIndex");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "frameIndex", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool CompleteFramesOnly
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "completeFramesOnly");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "completeFramesOnly", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "completeFramesOnly");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "completeFramesOnly", value);
     }
 }
 

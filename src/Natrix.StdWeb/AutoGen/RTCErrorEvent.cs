@@ -39,7 +39,7 @@ public partial class RTCErrorEvent: global::Natrix.StdWeb.Event, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCError Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCError, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCError>>(JSObject, "error");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCError>.Get(JSObject, "error");
     }
 }
 

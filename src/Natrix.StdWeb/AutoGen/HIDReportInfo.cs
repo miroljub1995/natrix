@@ -26,15 +26,15 @@ public partial class HIDReportInfo: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte ReportId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "reportId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "reportId", value);
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "reportId");
+        set => global::Natrix.JSCore.Generics.ByteAccessor.Set(JSObject, "reportId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDReportItem, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDReportItem>> Items
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDReportItem, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDReportItem>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDReportItem, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDReportItem>>>>(JSObject, "items");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDReportItem, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDReportItem>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDReportItem, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDReportItem>>>>(JSObject, "items", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDReportItem, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDReportItem>>>.Get(JSObject, "items");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDReportItem, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDReportItem>>>.Set(JSObject, "items", value);
     }
 }
 

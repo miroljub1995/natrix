@@ -18,7 +18,7 @@ public partial class XRInputSourceArray: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "length");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -38,7 +38,7 @@ public partial class XRInputSourceArray: global::Natrix.JSCore.JSObjectProxy, gl
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallGetter(JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRInputSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRInputSource>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRInputSource>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

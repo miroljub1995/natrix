@@ -26,15 +26,15 @@ public partial class ScrollToOptions: global::Natrix.StdWeb.ScrollOptions, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Left
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "left");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "left", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "left");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "left", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Top
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "top");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "top", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "top");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "top", value);
     }
 }
 

@@ -18,29 +18,29 @@ public partial class TestUnionProperties: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.Int32Accessor, global::Natrix.JSCore.Generics.StringAccessor> Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.Int32Accessor, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.Int32Accessor, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.Int32Accessor, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.Int32Accessor, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.Int32Accessor, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<bool, int, string, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.Int32Accessor, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "value", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum, int, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>, global::Natrix.JSCore.Generics.Int32Accessor> EnumValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum, int, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum, int, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>, global::Natrix.JSCore.Generics.Int32Accessor>>>(JSObject, "enumValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum, int, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum, int, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>, global::Natrix.JSCore.Generics.Int32Accessor>>>(JSObject, "enumValue", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum, int, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>, global::Natrix.JSCore.Generics.Int32Accessor>>.Get(JSObject, "enumValue");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum, int, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>, global::Natrix.JSCore.Generics.Int32Accessor>>.Set(JSObject, "enumValue", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback, int, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>, global::Natrix.JSCore.Generics.Int32Accessor> CallbackValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback, int, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback, int, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>, global::Natrix.JSCore.Generics.Int32Accessor>>>(JSObject, "callbackValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback, int, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback, int, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>, global::Natrix.JSCore.Generics.Int32Accessor>>>(JSObject, "callbackValue", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback, int, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>, global::Natrix.JSCore.Generics.Int32Accessor>>.Get(JSObject, "callbackValue");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback, int, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>, global::Natrix.JSCore.Generics.Int32Accessor>>.Set(JSObject, "callbackValue", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int CallCallbackValueOnSet
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "callCallbackValueOnSet");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "callCallbackValueOnSet", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "callCallbackValueOnSet");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "callCallbackValueOnSet", value);
     }
 }
 

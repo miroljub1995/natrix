@@ -26,8 +26,8 @@ public partial class AuthenticationExtensionsPaymentOutputs: global::Natrix.JSCo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BrowserBoundSignature BrowserBoundSignature
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BrowserBoundSignature, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BrowserBoundSignature>>(JSObject, "browserBoundSignature");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.BrowserBoundSignature, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BrowserBoundSignature>>(JSObject, "browserBoundSignature", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BrowserBoundSignature>.Get(JSObject, "browserBoundSignature");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BrowserBoundSignature>.Set(JSObject, "browserBoundSignature", value);
     }
 }
 

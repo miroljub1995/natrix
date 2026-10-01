@@ -34,7 +34,7 @@ public partial class NDEFMessage: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NDEFRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecord>> Records
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NDEFRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NDEFRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecord>>>>(JSObject, "records");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.NDEFRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecord>>>.Get(JSObject, "records");
     }
 }
 

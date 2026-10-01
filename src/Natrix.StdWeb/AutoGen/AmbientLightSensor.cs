@@ -41,7 +41,7 @@ public partial class AmbientLightSensor: global::Natrix.StdWeb.Sensor, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Illuminance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "illuminance");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "illuminance");
     }
 }
 

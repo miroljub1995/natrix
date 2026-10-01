@@ -26,22 +26,22 @@ public partial class PushSubscriptionJSON: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Endpoint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "endpoint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "endpoint", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "endpoint");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "endpoint", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong? ExpirationTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor>(JSObject, "expirationTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor>(JSObject, "expirationTime", value);
+        get => global::Natrix.JSCore.Generics.NullableUInt64Accessor.Get(JSObject, "expirationTime");
+        set => global::Natrix.JSCore.Generics.NullableUInt64Accessor.Set(JSObject, "expirationTime", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Record<string, global::Natrix.JSCore.Generics.StringAccessor> Keys
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Record<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "keys");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Record<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "keys", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "keys");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "keys", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class IsInputPendingOptions: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IncludeContinuous
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "includeContinuous");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "includeContinuous", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "includeContinuous");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "includeContinuous", value);
     }
 }
 

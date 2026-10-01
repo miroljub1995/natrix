@@ -18,7 +18,7 @@ public partial class XRViewerPose: global::Natrix.StdWeb.XRPose, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.XRView, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRView>> Views
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.XRView, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRView>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.XRView, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRView>>>>(JSObject, "views");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.XRView, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRView>>>.Get(JSObject, "views");
     }
 }
 

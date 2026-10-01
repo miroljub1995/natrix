@@ -18,26 +18,26 @@ public partial class SpeechSynthesis: global::Natrix.StdWeb.EventTarget, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Pending
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "pending");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "pending");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Speaking
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "speaking");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "speaking");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Paused
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "paused");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "paused");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventHandlerNonNull? Onvoiceschanged
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "onvoiceschanged");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "onvoiceschanged", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Get(JSObject, "onvoiceschanged");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Set(JSObject, "onvoiceschanged", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -81,7 +81,7 @@ public partial class SpeechSynthesis: global::Natrix.StdWeb.EventTarget, global:
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getVoices", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SpeechSynthesisVoice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechSynthesisVoice>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SpeechSynthesisVoice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechSynthesisVoice>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.SpeechSynthesisVoice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechSynthesisVoice>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

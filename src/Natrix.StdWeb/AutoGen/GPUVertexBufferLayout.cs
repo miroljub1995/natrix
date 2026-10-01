@@ -26,22 +26,22 @@ public partial class GPUVertexBufferLayout: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ulong ArrayStride
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "arrayStride");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "arrayStride", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "arrayStride");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "arrayStride", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUVertexStepMode StepMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUVertexStepMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUVertexStepMode>>(JSObject, "stepMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUVertexStepMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUVertexStepMode>>(JSObject, "stepMode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUVertexStepMode>.Get(JSObject, "stepMode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUVertexStepMode>.Set(JSObject, "stepMode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexAttribute, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexAttribute>> Attributes
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexAttribute, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexAttribute>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexAttribute, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexAttribute>>>>(JSObject, "attributes");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexAttribute, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexAttribute>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexAttribute, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexAttribute>>>>(JSObject, "attributes", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexAttribute, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexAttribute>>>.Get(JSObject, "attributes");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUVertexAttribute, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUVertexAttribute>>>.Set(JSObject, "attributes", value);
     }
 }
 

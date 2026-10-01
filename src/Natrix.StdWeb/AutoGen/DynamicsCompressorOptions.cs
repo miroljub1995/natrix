@@ -26,36 +26,36 @@ public partial class DynamicsCompressorOptions: global::Natrix.StdWeb.AudioNodeO
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Attack
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "attack");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "attack", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "attack");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "attack", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Knee
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "knee");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "knee", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "knee");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "knee", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Ratio
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "ratio");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "ratio", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "ratio");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "ratio", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Release
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "release");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "release", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "release");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "release", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Threshold
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "threshold");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "threshold", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "threshold");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "threshold", value);
     }
 }
 

@@ -62,13 +62,13 @@ public partial class IdentityCredentialError: global::Natrix.StdWeb.DOMException
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "error");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "error");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "url");
     }
 }
 

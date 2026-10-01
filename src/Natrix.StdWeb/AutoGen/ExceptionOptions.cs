@@ -26,8 +26,8 @@ public partial class ExceptionOptions: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool TraceStack
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "traceStack");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "traceStack", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "traceStack");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "traceStack", value);
     }
 }
 

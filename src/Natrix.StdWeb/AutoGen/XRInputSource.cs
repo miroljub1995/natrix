@@ -18,49 +18,49 @@ public partial class XRInputSource: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Gamepad? Gamepad
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Gamepad?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Gamepad>>(JSObject, "gamepad");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Gamepad>.Get(JSObject, "gamepad");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRHand? Hand
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRHand?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRHand>>(JSObject, "hand");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRHand>.Get(JSObject, "hand");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRHandedness Handedness
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRHandedness, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRHandedness>>(JSObject, "handedness");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRHandedness>.Get(JSObject, "handedness");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRTargetRayMode TargetRayMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRTargetRayMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRTargetRayMode>>(JSObject, "targetRayMode");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRTargetRayMode>.Get(JSObject, "targetRayMode");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRSpace TargetRaySpace
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRSpace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSpace>>(JSObject, "targetRaySpace");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSpace>.Get(JSObject, "targetRaySpace");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRSpace? GripSpace
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRSpace?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRSpace>>(JSObject, "gripSpace");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRSpace>.Get(JSObject, "gripSpace");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor> Profiles
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "profiles");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "profiles");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool SkipRendering
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "skipRendering");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "skipRendering");
     }
 }
 

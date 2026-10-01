@@ -18,13 +18,13 @@ public partial class CaretPosition: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Node OffsetNode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Node, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>>(JSObject, "offsetNode");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Node>.Get(JSObject, "offsetNode");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Offset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "offset");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "offset");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -35,7 +35,7 @@ public partial class CaretPosition: global::Natrix.JSCore.JSObjectProxy, global:
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getClientRect", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMRect?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DOMRect>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DOMRect>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

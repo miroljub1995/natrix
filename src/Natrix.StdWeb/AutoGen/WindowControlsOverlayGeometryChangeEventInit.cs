@@ -26,15 +26,15 @@ public partial class WindowControlsOverlayGeometryChangeEventInit: global::Natri
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.DOMRect TitlebarAreaRect
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMRect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRect>>(JSObject, "titlebarAreaRect");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMRect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRect>>(JSObject, "titlebarAreaRect", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRect>.Get(JSObject, "titlebarAreaRect");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRect>.Set(JSObject, "titlebarAreaRect", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Visible
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "visible");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "visible", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "visible");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "visible", value);
     }
 }
 

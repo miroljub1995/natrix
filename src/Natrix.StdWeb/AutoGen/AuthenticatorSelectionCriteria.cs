@@ -26,29 +26,29 @@ public partial class AuthenticatorSelectionCriteria: global::Natrix.JSCore.JSObj
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string AuthenticatorAttachment
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "authenticatorAttachment");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "authenticatorAttachment", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "authenticatorAttachment");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "authenticatorAttachment", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ResidentKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "residentKey");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "residentKey", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "residentKey");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "residentKey", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool RequireResidentKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "requireResidentKey");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "requireResidentKey", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "requireResidentKey");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "requireResidentKey", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string UserVerification
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "userVerification");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "userVerification", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "userVerification");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "userVerification", value);
     }
 }
 

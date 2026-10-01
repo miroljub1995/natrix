@@ -55,7 +55,7 @@ public partial class GainNode: global::Natrix.StdWeb.AudioNode, global::Natrix.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioParam Gain
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioParam, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>>(JSObject, "gain");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>.Get(JSObject, "gain");
     }
 }
 

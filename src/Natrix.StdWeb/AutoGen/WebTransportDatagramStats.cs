@@ -26,29 +26,29 @@ public partial class WebTransportDatagramStats: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong DroppedIncoming
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "droppedIncoming");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "droppedIncoming", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "droppedIncoming");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "droppedIncoming", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong ExpiredIncoming
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "expiredIncoming");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "expiredIncoming", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "expiredIncoming");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "expiredIncoming", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong ExpiredOutgoing
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "expiredOutgoing");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "expiredOutgoing", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "expiredOutgoing");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "expiredOutgoing", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong LostOutgoing
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "lostOutgoing");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "lostOutgoing", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "lostOutgoing");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "lostOutgoing", value);
     }
 }
 

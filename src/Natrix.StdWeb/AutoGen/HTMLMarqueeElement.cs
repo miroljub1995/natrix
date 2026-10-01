@@ -25,78 +25,78 @@ public partial class HTMLMarqueeElement: global::Natrix.StdWeb.HTMLElement, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Behavior
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "behavior");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "behavior", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "behavior");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "behavior", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string BgColor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "bgColor");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "bgColor", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "bgColor");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "bgColor", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Direction
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "direction");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "direction", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "direction");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "direction", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "height");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "height", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "height");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "height", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Hspace
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "hspace");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "hspace", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "hspace");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "hspace", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Loop
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "loop");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "loop", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "loop");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "loop", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ScrollAmount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "scrollAmount");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "scrollAmount", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "scrollAmount");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "scrollAmount", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ScrollDelay
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "scrollDelay");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "scrollDelay", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "scrollDelay");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "scrollDelay", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool TrueSpeed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "trueSpeed");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "trueSpeed", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "trueSpeed");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "trueSpeed", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Vspace
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "vspace");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "vspace", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "vspace");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "vspace", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "width");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "width", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "width");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "width", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

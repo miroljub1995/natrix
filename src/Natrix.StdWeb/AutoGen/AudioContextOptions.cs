@@ -26,29 +26,29 @@ public partial class AudioContextOptions: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextLatencyCategory, double, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextLatencyCategory>, global::Natrix.JSCore.Generics.DoubleAccessor> LatencyHint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextLatencyCategory, double, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextLatencyCategory>, global::Natrix.JSCore.Generics.DoubleAccessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextLatencyCategory, double, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextLatencyCategory>, global::Natrix.JSCore.Generics.DoubleAccessor>>>(JSObject, "latencyHint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextLatencyCategory, double, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextLatencyCategory>, global::Natrix.JSCore.Generics.DoubleAccessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextLatencyCategory, double, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextLatencyCategory>, global::Natrix.JSCore.Generics.DoubleAccessor>>>(JSObject, "latencyHint", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextLatencyCategory, double, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextLatencyCategory>, global::Natrix.JSCore.Generics.DoubleAccessor>>.Get(JSObject, "latencyHint");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextLatencyCategory, double, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextLatencyCategory>, global::Natrix.JSCore.Generics.DoubleAccessor>>.Set(JSObject, "latencyHint", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float SampleRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "sampleRate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "sampleRate", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "sampleRate");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "sampleRate", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.AudioSinkOptions, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioSinkOptions>> SinkId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.AudioSinkOptions, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioSinkOptions>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.AudioSinkOptions, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioSinkOptions>>>>(JSObject, "sinkId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.AudioSinkOptions, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioSinkOptions>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.AudioSinkOptions, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioSinkOptions>>>>(JSObject, "sinkId", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.AudioSinkOptions, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioSinkOptions>>>.Get(JSObject, "sinkId");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<string, global::Natrix.StdWeb.AudioSinkOptions, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioSinkOptions>>>.Set(JSObject, "sinkId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextRenderSizeCategory, uint, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextRenderSizeCategory>, global::Natrix.JSCore.Generics.UInt32Accessor> RenderSizeHint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextRenderSizeCategory, uint, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextRenderSizeCategory>, global::Natrix.JSCore.Generics.UInt32Accessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextRenderSizeCategory, uint, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextRenderSizeCategory>, global::Natrix.JSCore.Generics.UInt32Accessor>>>(JSObject, "renderSizeHint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextRenderSizeCategory, uint, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextRenderSizeCategory>, global::Natrix.JSCore.Generics.UInt32Accessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextRenderSizeCategory, uint, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextRenderSizeCategory>, global::Natrix.JSCore.Generics.UInt32Accessor>>>(JSObject, "renderSizeHint", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextRenderSizeCategory, uint, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextRenderSizeCategory>, global::Natrix.JSCore.Generics.UInt32Accessor>>.Get(JSObject, "renderSizeHint");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.AudioContextRenderSizeCategory, uint, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioContextRenderSizeCategory>, global::Natrix.JSCore.Generics.UInt32Accessor>>.Set(JSObject, "renderSizeHint", value);
     }
 }
 

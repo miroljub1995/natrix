@@ -26,29 +26,29 @@ public partial class ShareData: global::Natrix.JSCore.JSObjectProxy, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.File, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.File>> Files
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.File, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.File>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.File, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.File>>>>(JSObject, "files");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.File, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.File>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.File, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.File>>>>(JSObject, "files", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.File, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.File>>>.Get(JSObject, "files");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.File, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.File>>>.Set(JSObject, "files", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Title
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "title");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "title", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "title");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "title", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Text
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "text");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "text", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "text");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "text", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "url");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "url", value);
     }
 }
 

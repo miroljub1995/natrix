@@ -26,43 +26,43 @@ public partial class AuthenticatorAttestationResponseJSON: global::Natrix.JSCore
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string ClientDataJSON
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "clientDataJSON");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "clientDataJSON", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "clientDataJSON");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "clientDataJSON", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string AuthenticatorData
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "authenticatorData");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "authenticatorData", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "authenticatorData");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "authenticatorData", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor> Transports
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "transports");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "transports", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "transports");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "transports", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string PublicKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "publicKey");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "publicKey", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "publicKey");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "publicKey", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required int PublicKeyAlgorithm
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "publicKeyAlgorithm");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "publicKeyAlgorithm", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "publicKeyAlgorithm");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "publicKeyAlgorithm", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string AttestationObject
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "attestationObject");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "attestationObject", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "attestationObject");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "attestationObject", value);
     }
 }
 

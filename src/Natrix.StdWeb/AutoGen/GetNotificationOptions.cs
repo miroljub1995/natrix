@@ -26,8 +26,8 @@ public partial class GetNotificationOptions: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Tag
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "tag");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "tag", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "tag");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "tag", value);
     }
 }
 

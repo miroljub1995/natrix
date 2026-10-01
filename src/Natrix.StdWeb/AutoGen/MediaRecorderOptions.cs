@@ -26,50 +26,50 @@ public partial class MediaRecorderOptions: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string MimeType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "mimeType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "mimeType", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "mimeType");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "mimeType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint AudioBitsPerSecond
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "audioBitsPerSecond");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "audioBitsPerSecond", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "audioBitsPerSecond");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "audioBitsPerSecond", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint VideoBitsPerSecond
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "videoBitsPerSecond");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "videoBitsPerSecond", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "videoBitsPerSecond");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "videoBitsPerSecond", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint BitsPerSecond
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "bitsPerSecond");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "bitsPerSecond", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "bitsPerSecond");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "bitsPerSecond", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BitrateMode AudioBitrateMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BitrateMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BitrateMode>>(JSObject, "audioBitrateMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.BitrateMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BitrateMode>>(JSObject, "audioBitrateMode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BitrateMode>.Get(JSObject, "audioBitrateMode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BitrateMode>.Set(JSObject, "audioBitrateMode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double VideoKeyFrameIntervalDuration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "videoKeyFrameIntervalDuration");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "videoKeyFrameIntervalDuration", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "videoKeyFrameIntervalDuration");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "videoKeyFrameIntervalDuration", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint VideoKeyFrameIntervalCount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "videoKeyFrameIntervalCount");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "videoKeyFrameIntervalCount", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "videoKeyFrameIntervalCount");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "videoKeyFrameIntervalCount", value);
     }
 }
 

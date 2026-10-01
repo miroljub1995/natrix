@@ -18,8 +18,8 @@ public partial class TestFrozenArrayProperties: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor> BoolArray
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>>(JSObject, "boolArray");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>>(JSObject, "boolArray", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>.Get(JSObject, "boolArray");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>.Set(JSObject, "boolArray", value);
     }
 }
 

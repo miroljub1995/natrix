@@ -55,7 +55,7 @@ public partial class KeyFrameRequestEvent: global::Natrix.StdWeb.Event, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Rid
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "rid");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "rid");
     }
 }
 

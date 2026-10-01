@@ -18,8 +18,8 @@ public partial class GPUComputePipeline: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Label
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "label");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "label", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -39,7 +39,7 @@ public partial class GPUComputePipeline: global::Natrix.JSCore.JSObjectProxy, gl
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getBindGroupLayout", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUBindGroupLayout, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBindGroupLayout>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBindGroupLayout>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

@@ -26,8 +26,8 @@ public partial class ContactsSelectOptions: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Multiple
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "multiple");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "multiple", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "multiple");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "multiple", value);
     }
 }
 

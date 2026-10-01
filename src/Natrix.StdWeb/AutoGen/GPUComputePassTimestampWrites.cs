@@ -26,22 +26,22 @@ public partial class GPUComputePassTimestampWrites: global::Natrix.JSCore.JSObje
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GPUQuerySet QuerySet
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUQuerySet, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUQuerySet>>(JSObject, "querySet");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUQuerySet, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUQuerySet>>(JSObject, "querySet", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUQuerySet>.Get(JSObject, "querySet");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUQuerySet>.Set(JSObject, "querySet", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint BeginningOfPassWriteIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "beginningOfPassWriteIndex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "beginningOfPassWriteIndex", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "beginningOfPassWriteIndex");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "beginningOfPassWriteIndex", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint EndOfPassWriteIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "endOfPassWriteIndex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "endOfPassWriteIndex", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "endOfPassWriteIndex");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "endOfPassWriteIndex", value);
     }
 }
 

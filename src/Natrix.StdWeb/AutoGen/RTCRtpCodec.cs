@@ -26,29 +26,29 @@ public partial class RTCRtpCodec: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string MimeType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "mimeType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "mimeType", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "mimeType");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "mimeType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint ClockRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "clockRate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "clockRate", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "clockRate");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "clockRate", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Channels
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "channels");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "channels", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "channels");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "channels", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string SdpFmtpLine
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "sdpFmtpLine");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "sdpFmtpLine", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "sdpFmtpLine");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "sdpFmtpLine", value);
     }
 }
 

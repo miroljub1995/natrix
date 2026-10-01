@@ -55,15 +55,15 @@ public partial class WaveShaperNode: global::Natrix.StdWeb.AudioNode, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Float32Array? Curve
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Float32Array?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>>(JSObject, "curve");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Float32Array?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>>(JSObject, "curve", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>.Get(JSObject, "curve");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>.Set(JSObject, "curve", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.OverSampleType Oversample
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.OverSampleType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OverSampleType>>(JSObject, "oversample");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.OverSampleType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OverSampleType>>(JSObject, "oversample", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OverSampleType>.Get(JSObject, "oversample");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OverSampleType>.Set(JSObject, "oversample", value);
     }
 }
 

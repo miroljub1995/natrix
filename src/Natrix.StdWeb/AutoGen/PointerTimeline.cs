@@ -41,13 +41,13 @@ public partial class PointerTimeline: global::Natrix.StdWeb.AnimationTimeline, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? Source
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "source");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>.Get(JSObject, "source");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PointerAxis Axis
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PointerAxis, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PointerAxis>>(JSObject, "axis");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PointerAxis>.Get(JSObject, "axis");
     }
 }
 

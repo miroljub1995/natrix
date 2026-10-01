@@ -26,8 +26,8 @@ public partial class VideoEncoderEncodeOptionsForHevc: global::Natrix.JSCore.JSO
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort? Quantizer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "quantizer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "quantizer", value);
+        get => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Get(JSObject, "quantizer");
+        set => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Set(JSObject, "quantizer", value);
     }
 }
 

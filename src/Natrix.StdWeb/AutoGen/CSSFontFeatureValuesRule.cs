@@ -18,50 +18,50 @@ public partial class CSSFontFeatureValuesRule: global::Natrix.StdWeb.CSSRule, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string FontFamily
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "fontFamily");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "fontFamily", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "fontFamily");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "fontFamily", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSFontFeatureValuesMap Annotation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSFontFeatureValuesMap, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>>(JSObject, "annotation");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>.Get(JSObject, "annotation");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSFontFeatureValuesMap Ornaments
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSFontFeatureValuesMap, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>>(JSObject, "ornaments");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>.Get(JSObject, "ornaments");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSFontFeatureValuesMap Stylistic
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSFontFeatureValuesMap, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>>(JSObject, "stylistic");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>.Get(JSObject, "stylistic");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSFontFeatureValuesMap Swash
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSFontFeatureValuesMap, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>>(JSObject, "swash");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>.Get(JSObject, "swash");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSFontFeatureValuesMap CharacterVariant
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSFontFeatureValuesMap, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>>(JSObject, "characterVariant");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>.Get(JSObject, "characterVariant");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSFontFeatureValuesMap Styleset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSFontFeatureValuesMap, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>>(JSObject, "styleset");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>.Get(JSObject, "styleset");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSFontFeatureValuesMap HistoricalForms
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSFontFeatureValuesMap, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>>(JSObject, "historicalForms");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSFontFeatureValuesMap>.Get(JSObject, "historicalForms");
     }
 }
 

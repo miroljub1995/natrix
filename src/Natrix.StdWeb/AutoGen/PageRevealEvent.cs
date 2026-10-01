@@ -55,7 +55,7 @@ public partial class PageRevealEvent: global::Natrix.StdWeb.Event, global::Natri
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ViewTransition? ViewTransition
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ViewTransition?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.ViewTransition>>(JSObject, "viewTransition");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.ViewTransition>.Get(JSObject, "viewTransition");
     }
 }
 

@@ -26,57 +26,57 @@ public partial class AudioEncoderConfig: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AacEncoderConfig Aac
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AacEncoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AacEncoderConfig>>(JSObject, "aac");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AacEncoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AacEncoderConfig>>(JSObject, "aac", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AacEncoderConfig>.Get(JSObject, "aac");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AacEncoderConfig>.Set(JSObject, "aac", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FlacEncoderConfig Flac
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FlacEncoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FlacEncoderConfig>>(JSObject, "flac");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FlacEncoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FlacEncoderConfig>>(JSObject, "flac", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FlacEncoderConfig>.Get(JSObject, "flac");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FlacEncoderConfig>.Set(JSObject, "flac", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.OpusEncoderConfig Opus
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.OpusEncoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.OpusEncoderConfig>>(JSObject, "opus");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.OpusEncoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.OpusEncoderConfig>>(JSObject, "opus", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.OpusEncoderConfig>.Get(JSObject, "opus");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.OpusEncoderConfig>.Set(JSObject, "opus", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Codec
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "codec");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "codec", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "codec");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "codec", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint SampleRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "sampleRate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "sampleRate", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "sampleRate");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "sampleRate", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint NumberOfChannels
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "numberOfChannels");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "numberOfChannels", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "numberOfChannels");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "numberOfChannels", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Bitrate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bitrate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bitrate", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "bitrate");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "bitrate", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BitrateMode BitrateMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BitrateMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BitrateMode>>(JSObject, "bitrateMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.BitrateMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BitrateMode>>(JSObject, "bitrateMode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BitrateMode>.Get(JSObject, "bitrateMode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BitrateMode>.Set(JSObject, "bitrateMode", value);
     }
 }
 

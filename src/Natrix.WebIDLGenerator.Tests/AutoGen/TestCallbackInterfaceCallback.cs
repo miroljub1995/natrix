@@ -56,8 +56,8 @@ public partial class TestCallbackInterfaceCallback: global::Natrix.JSCore.JSObje
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback ProcessValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback>>(JSObject, "processValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback>>(JSObject, "processValue", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback>.Get(JSObject, "processValue");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackInterfaceCallbackCallback>.Set(JSObject, "processValue", value);
     }
 }
 

@@ -55,13 +55,13 @@ public partial class CapturedMouseEvent: global::Natrix.StdWeb.Event, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int SurfaceX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "surfaceX");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "surfaceX");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int SurfaceY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "surfaceY");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "surfaceY");
     }
 }
 

@@ -26,8 +26,8 @@ public partial class XRSessionEventInit: global::Natrix.StdWeb.EventInit, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.XRSession Session
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRSession, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSession>>(JSObject, "session");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.XRSession, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSession>>(JSObject, "session", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSession>.Get(JSObject, "session");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSession>.Set(JSObject, "session", value);
     }
 }
 

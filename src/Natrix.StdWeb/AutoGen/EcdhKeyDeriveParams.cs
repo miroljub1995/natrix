@@ -26,8 +26,8 @@ public partial class EcdhKeyDeriveParams: global::Natrix.StdWeb.Algorithm, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.CryptoKey Public
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CryptoKey, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CryptoKey>>(JSObject, "public");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CryptoKey, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CryptoKey>>(JSObject, "public", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CryptoKey>.Get(JSObject, "public");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CryptoKey>.Set(JSObject, "public", value);
     }
 }
 

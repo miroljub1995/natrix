@@ -26,22 +26,22 @@ public partial class SubscriptionObserver: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ObservableSubscriptionCallback Next
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ObservableSubscriptionCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ObservableSubscriptionCallback>>(JSObject, "next");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ObservableSubscriptionCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ObservableSubscriptionCallback>>(JSObject, "next", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ObservableSubscriptionCallback>.Get(JSObject, "next");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ObservableSubscriptionCallback>.Set(JSObject, "next", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ObservableSubscriptionCallback Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ObservableSubscriptionCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ObservableSubscriptionCallback>>(JSObject, "error");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ObservableSubscriptionCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ObservableSubscriptionCallback>>(JSObject, "error", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ObservableSubscriptionCallback>.Get(JSObject, "error");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ObservableSubscriptionCallback>.Set(JSObject, "error", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VoidFunction Complete
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VoidFunction, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VoidFunction>>(JSObject, "complete");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VoidFunction, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VoidFunction>>(JSObject, "complete", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VoidFunction>.Get(JSObject, "complete");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VoidFunction>.Set(JSObject, "complete", value);
     }
 }
 

@@ -32,7 +32,7 @@ public partial class XPathExpression: global::Natrix.JSCore.JSObjectProxy, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "evaluate", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XPathResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XPathResult>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XPathResult>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -57,7 +57,7 @@ public partial class XPathExpression: global::Natrix.JSCore.JSObjectProxy, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "evaluate", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XPathResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XPathResult>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XPathResult>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -95,7 +95,7 @@ public partial class XPathExpression: global::Natrix.JSCore.JSObjectProxy, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "evaluate", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XPathResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XPathResult>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XPathResult>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

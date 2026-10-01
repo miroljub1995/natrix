@@ -26,15 +26,15 @@ public partial class DelayOptions: global::Natrix.StdWeb.AudioNodeOptions, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double MaxDelayTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "maxDelayTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "maxDelayTime", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "maxDelayTime");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "maxDelayTime", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DelayTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "delayTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "delayTime", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "delayTime");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "delayTime", value);
     }
 }
 

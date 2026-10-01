@@ -55,13 +55,13 @@ public partial class PushSubscriptionChangeEvent: global::Natrix.StdWeb.Extendab
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PushSubscription? NewSubscription
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PushSubscription?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PushSubscription>>(JSObject, "newSubscription");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PushSubscription>.Get(JSObject, "newSubscription");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PushSubscription? OldSubscription
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PushSubscription?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PushSubscription>>(JSObject, "oldSubscription");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PushSubscription>.Get(JSObject, "oldSubscription");
     }
 }
 

@@ -18,7 +18,7 @@ public partial class UIEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.InputDeviceCapabilities? SourceCapabilities
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.InputDeviceCapabilities?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.InputDeviceCapabilities>>(JSObject, "sourceCapabilities");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.InputDeviceCapabilities>.Get(JSObject, "sourceCapabilities");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
@@ -61,13 +61,13 @@ public partial class UIEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Window? View
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Window?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Window>>(JSObject, "view");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Window>.Get(JSObject, "view");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Detail
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "detail");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "detail");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -214,7 +214,7 @@ public partial class UIEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCore
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Which
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "which");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "which");
     }
 }
 

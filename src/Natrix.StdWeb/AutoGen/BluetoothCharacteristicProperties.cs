@@ -18,55 +18,55 @@ public partial class BluetoothCharacteristicProperties: global::Natrix.JSCore.JS
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Broadcast
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "broadcast");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "broadcast");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Read
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "read");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "read");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool WriteWithoutResponse
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "writeWithoutResponse");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "writeWithoutResponse");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Write
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "write");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "write");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Notify
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "notify");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "notify");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Indicate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "indicate");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "indicate");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool AuthenticatedSignedWrites
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "authenticatedSignedWrites");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "authenticatedSignedWrites");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ReliableWrite
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "reliableWrite");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "reliableWrite");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool WritableAuxiliaries
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "writableAuxiliaries");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "writableAuxiliaries");
     }
 }
 

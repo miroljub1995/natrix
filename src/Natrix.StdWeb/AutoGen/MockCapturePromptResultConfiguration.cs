@@ -26,15 +26,15 @@ public partial class MockCapturePromptResultConfiguration: global::Natrix.JSCore
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MockCapturePromptResult GetUserMedia
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MockCapturePromptResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MockCapturePromptResult>>(JSObject, "getUserMedia");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MockCapturePromptResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MockCapturePromptResult>>(JSObject, "getUserMedia", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MockCapturePromptResult>.Get(JSObject, "getUserMedia");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MockCapturePromptResult>.Set(JSObject, "getUserMedia", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MockCapturePromptResult GetDisplayMedia
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MockCapturePromptResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MockCapturePromptResult>>(JSObject, "getDisplayMedia");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MockCapturePromptResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MockCapturePromptResult>>(JSObject, "getDisplayMedia", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MockCapturePromptResult>.Get(JSObject, "getDisplayMedia");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MockCapturePromptResult>.Set(JSObject, "getDisplayMedia", value);
     }
 }
 

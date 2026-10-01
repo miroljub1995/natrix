@@ -26,15 +26,15 @@ public partial class NavigatorUABrandVersion: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Brand
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "brand");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "brand", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "brand");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "brand", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Version
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "version");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "version", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "version");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "version", value);
     }
 }
 

@@ -46,15 +46,15 @@ public partial class SVGPreserveAspectRatio: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Align
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "align");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "align", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "align");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "align", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort MeetOrSlice
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "meetOrSlice");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "meetOrSlice", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "meetOrSlice");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "meetOrSlice", value);
     }
 }
 

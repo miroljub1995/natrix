@@ -26,85 +26,85 @@ public partial class DOMMatrix2DInit: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double A
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "a");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "a", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "a");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "a", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double B
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "b");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "b", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "b");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "b", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double C
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "c");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "c", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "c");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "c", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double D
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "d");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "d", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "d");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "d", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double E
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "e");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "e", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "e");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "e", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double F
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "f");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "f", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "f");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "f", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double M11
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "m11");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "m11", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "m11");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "m11", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double M12
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "m12");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "m12", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "m12");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "m12", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double M21
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "m21");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "m21", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "m21");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "m21", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double M22
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "m22");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "m22", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "m22");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "m22", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double M41
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "m41");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "m41", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "m41");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "m41", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double M42
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "m42");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "m42", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "m42");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "m42", value);
     }
 }
 

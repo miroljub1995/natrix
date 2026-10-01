@@ -26,8 +26,8 @@ public partial class ImageBitmapRenderingContextSettings: global::Natrix.JSCore.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Alpha
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "alpha");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "alpha", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "alpha");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "alpha", value);
     }
 }
 

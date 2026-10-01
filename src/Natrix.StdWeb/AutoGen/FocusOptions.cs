@@ -26,15 +26,15 @@ public partial class FocusOptions: global::Natrix.JSCore.JSObjectProxy, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool PreventScroll
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "preventScroll");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "preventScroll", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "preventScroll");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "preventScroll", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool FocusVisible
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "focusVisible");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "focusVisible", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "focusVisible");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "focusVisible", value);
     }
 }
 

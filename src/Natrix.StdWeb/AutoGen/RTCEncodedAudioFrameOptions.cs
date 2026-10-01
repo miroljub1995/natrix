@@ -26,8 +26,8 @@ public partial class RTCEncodedAudioFrameOptions: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCEncodedAudioFrameMetadata Metadata
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCEncodedAudioFrameMetadata, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedAudioFrameMetadata>>(JSObject, "metadata");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCEncodedAudioFrameMetadata, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedAudioFrameMetadata>>(JSObject, "metadata", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedAudioFrameMetadata>.Get(JSObject, "metadata");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedAudioFrameMetadata>.Set(JSObject, "metadata", value);
     }
 }
 

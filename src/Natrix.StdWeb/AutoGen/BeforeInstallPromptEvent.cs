@@ -60,7 +60,7 @@ public partial class BeforeInstallPromptEvent: global::Natrix.StdWeb.Event, glob
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "prompt", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PromptResponseObject, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PromptResponseObject>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PromptResponseObject, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PromptResponseObject>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PromptResponseObject, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PromptResponseObject>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

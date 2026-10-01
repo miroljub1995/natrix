@@ -33,7 +33,7 @@ public partial class USBIsochronousOutTransferResult: global::Natrix.JSCore.JSOb
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBIsochronousOutTransferPacket, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousOutTransferPacket>> Packets
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBIsochronousOutTransferPacket, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousOutTransferPacket>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBIsochronousOutTransferPacket, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousOutTransferPacket>>>>(JSObject, "packets");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBIsochronousOutTransferPacket, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousOutTransferPacket>>>.Get(JSObject, "packets");
     }
 }
 

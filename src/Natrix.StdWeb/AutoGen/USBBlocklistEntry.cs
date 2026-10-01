@@ -26,22 +26,22 @@ public partial class USBBlocklistEntry: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ushort IdVendor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "idVendor");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "idVendor", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "idVendor");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "idVendor", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ushort IdProduct
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "idProduct");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "idProduct", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "idProduct");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "idProduct", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ushort BcdDevice
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "bcdDevice");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "bcdDevice", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "bcdDevice");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "bcdDevice", value);
     }
 }
 

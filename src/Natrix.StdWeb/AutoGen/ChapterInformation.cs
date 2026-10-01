@@ -18,19 +18,19 @@ public partial class ChapterInformation: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Title
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "title");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "title");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double StartTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "startTime");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "startTime");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.MediaImage, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaImage>> Artwork
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.MediaImage, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaImage>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.MediaImage, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaImage>>>>(JSObject, "artwork");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.MediaImage, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaImage>>>.Get(JSObject, "artwork");
     }
 }
 

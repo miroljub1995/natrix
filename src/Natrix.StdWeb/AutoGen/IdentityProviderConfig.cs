@@ -26,15 +26,15 @@ public partial class IdentityProviderConfig: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string ConfigURL
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "configURL");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "configURL", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "configURL");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "configURL", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string ClientId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "clientId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "clientId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "clientId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "clientId", value);
     }
 }
 

@@ -52,8 +52,8 @@ public partial class XPathNSResolver: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.XPathNSResolverCallback LookupNamespaceURI
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XPathNSResolverCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XPathNSResolverCallback>>(JSObject, "lookupNamespaceURI");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.XPathNSResolverCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XPathNSResolverCallback>>(JSObject, "lookupNamespaceURI", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XPathNSResolverCallback>.Get(JSObject, "lookupNamespaceURI");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XPathNSResolverCallback>.Set(JSObject, "lookupNamespaceURI", value);
     }
 }
 

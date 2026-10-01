@@ -18,13 +18,13 @@ public partial class ChildBreakToken: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BreakType BreakType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BreakType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BreakType>>(JSObject, "breakType");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BreakType>.Get(JSObject, "breakType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.LayoutChild Child
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.LayoutChild, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LayoutChild>>(JSObject, "child");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.LayoutChild>.Get(JSObject, "child");
     }
 }
 

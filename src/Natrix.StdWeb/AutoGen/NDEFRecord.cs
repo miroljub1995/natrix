@@ -34,37 +34,37 @@ public partial class NDEFRecord: global::Natrix.JSCore.JSObjectProxy, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string RecordType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "recordType");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "recordType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? MediaType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "mediaType");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "mediaType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "id");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "id");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.DataView? Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.DataView?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.DataView>>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.DataView>.Get(JSObject, "data");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Encoding
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "encoding");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "encoding");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Lang
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "lang");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "lang");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -75,7 +75,7 @@ public partial class NDEFRecord: global::Natrix.JSCore.JSObjectProxy, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toRecords", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.NDEFRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecord>>?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.NDEFRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecord>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.NDEFRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecord>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

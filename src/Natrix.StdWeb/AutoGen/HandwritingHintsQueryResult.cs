@@ -26,29 +26,29 @@ public partial class HandwritingHintsQueryResult: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingRecognitionType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingRecognitionType>> RecognitionType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingRecognitionType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingRecognitionType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingRecognitionType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingRecognitionType>>>>(JSObject, "recognitionType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingRecognitionType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingRecognitionType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingRecognitionType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingRecognitionType>>>>(JSObject, "recognitionType", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingRecognitionType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingRecognitionType>>>.Get(JSObject, "recognitionType");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingRecognitionType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingRecognitionType>>>.Set(JSObject, "recognitionType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingInputType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingInputType>> InputType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingInputType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingInputType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingInputType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingInputType>>>>(JSObject, "inputType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingInputType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingInputType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingInputType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingInputType>>>>(JSObject, "inputType", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingInputType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingInputType>>>.Get(JSObject, "inputType");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingInputType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.HandwritingInputType>>>.Set(JSObject, "inputType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool TextContext
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "textContext");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "textContext", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "textContext");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "textContext", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Alternatives
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "alternatives");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "alternatives", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "alternatives");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "alternatives", value);
     }
 }
 

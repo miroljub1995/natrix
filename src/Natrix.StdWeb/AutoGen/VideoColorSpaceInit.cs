@@ -26,29 +26,29 @@ public partial class VideoColorSpaceInit: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoColorPrimaries? Primaries
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoColorPrimaries?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoColorPrimaries>>(JSObject, "primaries");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoColorPrimaries?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoColorPrimaries>>(JSObject, "primaries", value);
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoColorPrimaries>.Get(JSObject, "primaries");
+        set => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoColorPrimaries>.Set(JSObject, "primaries", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoTransferCharacteristics? Transfer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoTransferCharacteristics?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoTransferCharacteristics>>(JSObject, "transfer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoTransferCharacteristics?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoTransferCharacteristics>>(JSObject, "transfer", value);
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoTransferCharacteristics>.Get(JSObject, "transfer");
+        set => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoTransferCharacteristics>.Set(JSObject, "transfer", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoMatrixCoefficients? Matrix
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoMatrixCoefficients?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoMatrixCoefficients>>(JSObject, "matrix");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoMatrixCoefficients?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoMatrixCoefficients>>(JSObject, "matrix", value);
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoMatrixCoefficients>.Get(JSObject, "matrix");
+        set => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoMatrixCoefficients>.Set(JSObject, "matrix", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool? FullRange
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool?, global::Natrix.JSCore.Generics.NullableBooleanAccessor>(JSObject, "fullRange");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool?, global::Natrix.JSCore.Generics.NullableBooleanAccessor>(JSObject, "fullRange", value);
+        get => global::Natrix.JSCore.Generics.NullableBooleanAccessor.Get(JSObject, "fullRange");
+        set => global::Natrix.JSCore.Generics.NullableBooleanAccessor.Set(JSObject, "fullRange", value);
     }
 }
 

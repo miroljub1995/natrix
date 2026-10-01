@@ -63,84 +63,84 @@ public partial class FontFace: global::Natrix.JSCore.JSObjectProxy, global::Natr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Family
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "family");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "family", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "family");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "family", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Style
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "style");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "style", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "style");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "style", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Weight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "weight");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "weight", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "weight");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "weight", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Stretch
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "stretch");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "stretch", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "stretch");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "stretch", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string UnicodeRange
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "unicodeRange");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "unicodeRange", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "unicodeRange");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "unicodeRange", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string FeatureSettings
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "featureSettings");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "featureSettings", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "featureSettings");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "featureSettings", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string VariationSettings
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "variationSettings");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "variationSettings", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "variationSettings");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "variationSettings", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Display
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "display");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "display", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "display");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "display", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string AscentOverride
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "ascentOverride");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "ascentOverride", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "ascentOverride");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "ascentOverride", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string DescentOverride
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "descentOverride");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "descentOverride", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "descentOverride");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "descentOverride", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string LineGapOverride
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "lineGapOverride");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "lineGapOverride", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "lineGapOverride");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "lineGapOverride", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FontFaceLoadStatus Status
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FontFaceLoadStatus, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FontFaceLoadStatus>>(JSObject, "status");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FontFaceLoadStatus>.Get(JSObject, "status");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -151,31 +151,31 @@ public partial class FontFace: global::Natrix.JSCore.JSObjectProxy, global::Natr
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "load", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>> Loaded
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>>>(JSObject, "loaded");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.FontFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFace>>>.Get(JSObject, "loaded");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FontFaceFeatures Features
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FontFaceFeatures, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFaceFeatures>>(JSObject, "features");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFaceFeatures>.Get(JSObject, "features");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FontFaceVariations Variations
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FontFaceVariations, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFaceVariations>>(JSObject, "variations");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFaceVariations>.Get(JSObject, "variations");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FontFacePalettes Palettes
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FontFacePalettes, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFacePalettes>>(JSObject, "palettes");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FontFacePalettes>.Get(JSObject, "palettes");
     }
 }
 

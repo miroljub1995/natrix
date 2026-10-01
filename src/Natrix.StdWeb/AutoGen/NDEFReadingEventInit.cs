@@ -26,15 +26,15 @@ public partial class NDEFReadingEventInit: global::Natrix.StdWeb.EventInit, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? SerialNumber
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "serialNumber");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "serialNumber", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "serialNumber");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "serialNumber", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.NDEFMessageInit Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NDEFMessageInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFMessageInit>>(JSObject, "message");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.NDEFMessageInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFMessageInit>>(JSObject, "message", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFMessageInit>.Get(JSObject, "message");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFMessageInit>.Set(JSObject, "message", value);
     }
 }
 

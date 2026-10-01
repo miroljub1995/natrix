@@ -26,8 +26,8 @@ public partial class AvcEncoderConfig: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AvcBitstreamFormat Format
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AvcBitstreamFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AvcBitstreamFormat>>(JSObject, "format");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AvcBitstreamFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AvcBitstreamFormat>>(JSObject, "format", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AvcBitstreamFormat>.Get(JSObject, "format");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AvcBitstreamFormat>.Set(JSObject, "format", value);
     }
 }
 

@@ -26,36 +26,36 @@ public partial class CollectedClientData: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Challenge
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "challenge");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "challenge", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "challenge");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "challenge", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Origin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "origin");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "origin", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "origin");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "origin", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool CrossOrigin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "crossOrigin");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "crossOrigin", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "crossOrigin");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "crossOrigin", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string TopOrigin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "topOrigin");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "topOrigin", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "topOrigin");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "topOrigin", value);
     }
 }
 

@@ -41,7 +41,7 @@ public partial class CaptureActionEvent: global::Natrix.StdWeb.Event, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CaptureAction Action
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CaptureAction, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CaptureAction>>(JSObject, "action");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CaptureAction>.Get(JSObject, "action");
     }
 }
 

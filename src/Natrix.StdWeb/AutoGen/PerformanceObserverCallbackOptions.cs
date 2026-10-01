@@ -26,8 +26,8 @@ public partial class PerformanceObserverCallbackOptions: global::Natrix.JSCore.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong DroppedEntriesCount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "droppedEntriesCount");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "droppedEntriesCount", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "droppedEntriesCount");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "droppedEntriesCount", value);
     }
 }
 

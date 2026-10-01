@@ -26,15 +26,15 @@ public partial class TextDecoderOptions: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Fatal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "fatal");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "fatal", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "fatal");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "fatal", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IgnoreBOM
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreBOM");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreBOM", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ignoreBOM");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "ignoreBOM", value);
     }
 }
 

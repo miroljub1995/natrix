@@ -26,29 +26,29 @@ public partial class PhotoCapabilities: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RedEyeReduction RedEyeReduction
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RedEyeReduction, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RedEyeReduction>>(JSObject, "redEyeReduction");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RedEyeReduction, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RedEyeReduction>>(JSObject, "redEyeReduction", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RedEyeReduction>.Get(JSObject, "redEyeReduction");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RedEyeReduction>.Set(JSObject, "redEyeReduction", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaSettingsRange ImageHeight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaSettingsRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaSettingsRange>>(JSObject, "imageHeight");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MediaSettingsRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaSettingsRange>>(JSObject, "imageHeight", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaSettingsRange>.Get(JSObject, "imageHeight");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaSettingsRange>.Set(JSObject, "imageHeight", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaSettingsRange ImageWidth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaSettingsRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaSettingsRange>>(JSObject, "imageWidth");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MediaSettingsRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaSettingsRange>>(JSObject, "imageWidth", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaSettingsRange>.Get(JSObject, "imageWidth");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaSettingsRange>.Set(JSObject, "imageWidth", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FillLightMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FillLightMode>> FillLightMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FillLightMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FillLightMode>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FillLightMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FillLightMode>>>>(JSObject, "fillLightMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FillLightMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FillLightMode>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FillLightMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FillLightMode>>>>(JSObject, "fillLightMode", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FillLightMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FillLightMode>>>.Get(JSObject, "fillLightMode");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FillLightMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FillLightMode>>>.Set(JSObject, "fillLightMode", value);
     }
 }
 

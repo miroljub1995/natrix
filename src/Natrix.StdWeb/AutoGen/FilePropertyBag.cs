@@ -26,8 +26,8 @@ public partial class FilePropertyBag: global::Natrix.StdWeb.BlobPropertyBag, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public long LastModified
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<long, global::Natrix.JSCore.Generics.Int64Accessor>(JSObject, "lastModified");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<long, global::Natrix.JSCore.Generics.Int64Accessor>(JSObject, "lastModified", value);
+        get => global::Natrix.JSCore.Generics.Int64Accessor.Get(JSObject, "lastModified");
+        set => global::Natrix.JSCore.Generics.Int64Accessor.Set(JSObject, "lastModified", value);
     }
 }
 

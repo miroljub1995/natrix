@@ -18,13 +18,13 @@ public partial class GeolocationPosition: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GeolocationCoordinates Coords
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GeolocationCoordinates, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GeolocationCoordinates>>(JSObject, "coords");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GeolocationCoordinates>.Get(JSObject, "coords");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Timestamp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "timestamp");
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "timestamp");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -35,7 +35,7 @@ public partial class GeolocationPosition: global::Natrix.JSCore.JSObjectProxy, g
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toJSON", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.JSObjectAccessor.Get(___resOwner_1.JSObject, "value");
     }
 }
 

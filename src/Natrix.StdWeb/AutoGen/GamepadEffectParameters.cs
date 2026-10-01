@@ -26,43 +26,43 @@ public partial class GamepadEffectParameters: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Duration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "duration");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "duration", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "duration");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "duration", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong StartDelay
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "startDelay");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "startDelay", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "startDelay");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "startDelay", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double StrongMagnitude
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "strongMagnitude");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "strongMagnitude", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "strongMagnitude");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "strongMagnitude", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double WeakMagnitude
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "weakMagnitude");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "weakMagnitude", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "weakMagnitude");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "weakMagnitude", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double LeftTrigger
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "leftTrigger");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "leftTrigger", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "leftTrigger");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "leftTrigger", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double RightTrigger
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "rightTrigger");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "rightTrigger", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "rightTrigger");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "rightTrigger", value);
     }
 }
 

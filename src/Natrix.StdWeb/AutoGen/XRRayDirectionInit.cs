@@ -26,29 +26,29 @@ public partial class XRRayDirectionInit: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double X
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "x");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "x", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "x");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "x", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Y
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "y");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "y", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "y");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "y", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Z
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "z");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "z", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "z");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "z", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double W
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "w");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "w", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "w");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "w", value);
     }
 }
 

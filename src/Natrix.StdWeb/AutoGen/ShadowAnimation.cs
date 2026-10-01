@@ -38,7 +38,7 @@ public partial class ShadowAnimation: global::Natrix.StdWeb.Animation, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Animation SourceAnimation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Animation, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Animation>>(JSObject, "sourceAnimation");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Animation>.Get(JSObject, "sourceAnimation");
     }
 }
 

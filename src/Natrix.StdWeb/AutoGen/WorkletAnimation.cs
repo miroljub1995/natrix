@@ -160,7 +160,7 @@ public partial class WorkletAnimation: global::Natrix.StdWeb.Animation, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string AnimatorName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "animatorName");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "animatorName");
     }
 }
 

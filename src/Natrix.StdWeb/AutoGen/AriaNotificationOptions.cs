@@ -26,8 +26,8 @@ public partial class AriaNotificationOptions: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AriaNotifyPriority Priority
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AriaNotifyPriority, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AriaNotifyPriority>>(JSObject, "priority");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AriaNotifyPriority, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AriaNotifyPriority>>(JSObject, "priority", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AriaNotifyPriority>.Get(JSObject, "priority");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AriaNotifyPriority>.Set(JSObject, "priority", value);
     }
 }
 

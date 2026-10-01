@@ -26,8 +26,8 @@ public partial class XRLightProbeInit: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRReflectionFormat ReflectionFormat
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRReflectionFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRReflectionFormat>>(JSObject, "reflectionFormat");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.XRReflectionFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRReflectionFormat>>(JSObject, "reflectionFormat", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRReflectionFormat>.Get(JSObject, "reflectionFormat");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRReflectionFormat>.Set(JSObject, "reflectionFormat", value);
     }
 }
 

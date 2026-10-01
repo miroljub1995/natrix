@@ -26,22 +26,22 @@ public partial class GPUBufferBindingLayout: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUBufferBindingType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUBufferBindingType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBufferBindingType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUBufferBindingType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBufferBindingType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBufferBindingType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUBufferBindingType>.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool HasDynamicOffset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "hasDynamicOffset");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "hasDynamicOffset", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "hasDynamicOffset");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "hasDynamicOffset", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong MinBindingSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "minBindingSize");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "minBindingSize", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "minBindingSize");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "minBindingSize", value);
     }
 }
 

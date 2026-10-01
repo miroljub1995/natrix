@@ -55,31 +55,31 @@ public partial class StorageEvent: global::Natrix.StdWeb.Event, global::Natrix.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Key
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "key");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "key");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? OldValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "oldValue");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "oldValue");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? NewValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "newValue");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "newValue");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "url");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "url");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Storage? StorageArea
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Storage?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Storage>>(JSObject, "storageArea");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Storage>.Get(JSObject, "storageArea");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

@@ -55,37 +55,37 @@ public partial class DynamicsCompressorNode: global::Natrix.StdWeb.AudioNode, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioParam Threshold
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioParam, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>>(JSObject, "threshold");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>.Get(JSObject, "threshold");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioParam Knee
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioParam, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>>(JSObject, "knee");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>.Get(JSObject, "knee");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioParam Ratio
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioParam, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>>(JSObject, "ratio");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>.Get(JSObject, "ratio");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Reduction
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "reduction");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "reduction");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioParam Attack
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioParam, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>>(JSObject, "attack");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>.Get(JSObject, "attack");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioParam Release
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioParam, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>>(JSObject, "release");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioParam>.Get(JSObject, "release");
     }
 }
 

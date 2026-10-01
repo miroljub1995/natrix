@@ -55,8 +55,8 @@ public partial class CSSMatrixComponent: global::Natrix.StdWeb.CSSTransformCompo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMMatrix Matrix
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMMatrix, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMMatrix>>(JSObject, "matrix");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMMatrix, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMMatrix>>(JSObject, "matrix", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMMatrix>.Get(JSObject, "matrix");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMMatrix>.Set(JSObject, "matrix", value);
     }
 }
 

@@ -18,20 +18,20 @@ public partial class CSSStyleRule: global::Natrix.StdWeb.CSSGroupingRule, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.StylePropertyMap StyleMap
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.StylePropertyMap, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StylePropertyMap>>(JSObject, "styleMap");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StylePropertyMap>.Get(JSObject, "styleMap");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string SelectorText
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "selectorText");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "selectorText", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "selectorText");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "selectorText", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSStyleProperties Style
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSStyleProperties, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleProperties>>(JSObject, "style");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleProperties>.Get(JSObject, "style");
     }
 }
 

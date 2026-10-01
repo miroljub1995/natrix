@@ -26,8 +26,8 @@ public partial class GPUPipelineErrorInit: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GPUPipelineErrorReason Reason
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUPipelineErrorReason, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPipelineErrorReason>>(JSObject, "reason");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUPipelineErrorReason, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPipelineErrorReason>>(JSObject, "reason", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPipelineErrorReason>.Get(JSObject, "reason");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPipelineErrorReason>.Set(JSObject, "reason", value);
     }
 }
 

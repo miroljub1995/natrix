@@ -26,8 +26,8 @@ public partial class USBPermissionStorage: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AllowedUSBDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AllowedUSBDevice>> AllowedDevices
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AllowedUSBDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AllowedUSBDevice>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AllowedUSBDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AllowedUSBDevice>>>>(JSObject, "allowedDevices");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AllowedUSBDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AllowedUSBDevice>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AllowedUSBDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AllowedUSBDevice>>>>(JSObject, "allowedDevices", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AllowedUSBDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AllowedUSBDevice>>>.Get(JSObject, "allowedDevices");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AllowedUSBDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AllowedUSBDevice>>>.Set(JSObject, "allowedDevices", value);
     }
 }
 

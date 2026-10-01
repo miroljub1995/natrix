@@ -26,29 +26,29 @@ public partial class FilePickerOptions: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FilePickerAcceptType, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FilePickerAcceptType>> Types
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FilePickerAcceptType, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FilePickerAcceptType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FilePickerAcceptType, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FilePickerAcceptType>>>>(JSObject, "types");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FilePickerAcceptType, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FilePickerAcceptType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FilePickerAcceptType, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FilePickerAcceptType>>>>(JSObject, "types", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FilePickerAcceptType, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FilePickerAcceptType>>>.Get(JSObject, "types");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FilePickerAcceptType, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FilePickerAcceptType>>>.Set(JSObject, "types", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ExcludeAcceptAllOption
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "excludeAcceptAllOption");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "excludeAcceptAllOption", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "excludeAcceptAllOption");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "excludeAcceptAllOption", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "id");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "id", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>> StartIn
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>>>(JSObject, "startIn");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>>>(JSObject, "startIn", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>>.Get(JSObject, "startIn");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.WellKnownDirectory, global::Natrix.StdWeb.FileSystemHandle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WellKnownDirectory>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.FileSystemHandle>>>.Set(JSObject, "startIn", value);
     }
 }
 

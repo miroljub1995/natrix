@@ -55,19 +55,19 @@ public partial class ProgressEvent: global::Natrix.StdWeb.Event, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool LengthComputable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "lengthComputable");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "lengthComputable");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Loaded
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "loaded");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "loaded");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Total
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "total");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "total");
     }
 }
 

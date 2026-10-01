@@ -18,13 +18,13 @@ public partial class XRTransientInputHitTestResult: global::Natrix.JSCore.JSObje
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRInputSource InputSource
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRInputSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRInputSource>>(JSObject, "inputSource");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRInputSource>.Get(JSObject, "inputSource");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.XRHitTestResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRHitTestResult>> Results
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.XRHitTestResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRHitTestResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.XRHitTestResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRHitTestResult>>>>(JSObject, "results");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.XRHitTestResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRHitTestResult>>>.Get(JSObject, "results");
     }
 }
 

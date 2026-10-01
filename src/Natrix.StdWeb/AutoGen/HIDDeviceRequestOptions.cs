@@ -26,15 +26,15 @@ public partial class HIDDeviceRequestOptions: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>> Filters
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>>>>(JSObject, "filters");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>>>>(JSObject, "filters", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>>>.Get(JSObject, "filters");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>>>.Set(JSObject, "filters", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>> ExclusionFilters
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>>>>(JSObject, "exclusionFilters");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>>>>(JSObject, "exclusionFilters", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>>>.Get(JSObject, "exclusionFilters");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HIDDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HIDDeviceFilter>>>.Set(JSObject, "exclusionFilters", value);
     }
 }
 

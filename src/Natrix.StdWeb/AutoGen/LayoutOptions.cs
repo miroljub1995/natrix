@@ -26,15 +26,15 @@ public partial class LayoutOptions: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ChildDisplayType ChildDisplay
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ChildDisplayType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChildDisplayType>>(JSObject, "childDisplay");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ChildDisplayType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChildDisplayType>>(JSObject, "childDisplay", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChildDisplayType>.Get(JSObject, "childDisplay");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChildDisplayType>.Set(JSObject, "childDisplay", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.LayoutSizingMode Sizing
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.LayoutSizingMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LayoutSizingMode>>(JSObject, "sizing");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.LayoutSizingMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LayoutSizingMode>>(JSObject, "sizing", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LayoutSizingMode>.Get(JSObject, "sizing");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LayoutSizingMode>.Set(JSObject, "sizing", value);
     }
 }
 

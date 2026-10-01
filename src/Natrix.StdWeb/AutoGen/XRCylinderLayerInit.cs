@@ -26,29 +26,29 @@ public partial class XRCylinderLayerInit: global::Natrix.StdWeb.XRLayerInit, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRRigidTransform? Transform
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRRigidTransform?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>>(JSObject, "transform");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.XRRigidTransform?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>>(JSObject, "transform", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>.Get(JSObject, "transform");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.XRRigidTransform>.Set(JSObject, "transform", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Radius
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "radius");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "radius", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "radius");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "radius", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float CentralAngle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "centralAngle");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "centralAngle", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "centralAngle");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "centralAngle", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float AspectRatio
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "aspectRatio");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "aspectRatio", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "aspectRatio");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "aspectRatio", value);
     }
 }
 

@@ -18,8 +18,8 @@ public partial class TestInterfacePropertiesInterface: global::Natrix.JSCore.JSO
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "value", value);
     }
 }
 

@@ -26,15 +26,15 @@ public partial class KeySystemTrackConfiguration: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Robustness
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "robustness");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "robustness", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "robustness");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "robustness", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? EncryptionScheme
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "encryptionScheme");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "encryptionScheme", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "encryptionScheme");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "encryptionScheme", value);
     }
 }
 

@@ -25,49 +25,49 @@ public partial class HTMLMeterElement: global::Natrix.StdWeb.HTMLElement, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "value", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Min
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "min");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "min", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "min");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "min", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Max
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "max");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "max", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "max");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "max", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Low
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "low");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "low", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "low");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "low", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double High
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "high");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "high", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "high");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "high", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Optimum
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "optimum");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "optimum", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "optimum");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "optimum", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NodeList Labels
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NodeList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NodeList>>(JSObject, "labels");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NodeList>.Get(JSObject, "labels");
     }
 }
 

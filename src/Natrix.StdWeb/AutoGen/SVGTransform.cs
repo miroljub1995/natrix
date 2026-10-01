@@ -32,19 +32,19 @@ public partial class SVGTransform: global::Natrix.JSCore.JSObjectProxy, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "type");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "type");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGMatrix Matrix
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGMatrix, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGMatrix>>(JSObject, "matrix");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGMatrix>.Get(JSObject, "matrix");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Angle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "angle");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "angle");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

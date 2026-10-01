@@ -26,15 +26,15 @@ public partial class AuthenticationExtensionsPRFOutputsJSON: global::Natrix.JSCo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Enabled
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "enabled");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "enabled", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "enabled");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "enabled", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AuthenticationExtensionsPRFValuesJSON Results
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AuthenticationExtensionsPRFValuesJSON, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsPRFValuesJSON>>(JSObject, "results");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AuthenticationExtensionsPRFValuesJSON, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsPRFValuesJSON>>(JSObject, "results", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsPRFValuesJSON>.Get(JSObject, "results");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AuthenticationExtensionsPRFValuesJSON>.Set(JSObject, "results", value);
     }
 }
 

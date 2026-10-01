@@ -18,7 +18,7 @@ public partial class ReadableStreamDefaultController: global::Natrix.JSCore.JSOb
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? DesiredSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "desiredSize");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "desiredSize");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

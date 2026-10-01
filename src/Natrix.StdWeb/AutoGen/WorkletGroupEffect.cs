@@ -23,7 +23,7 @@ public partial class WorkletGroupEffect: global::Natrix.JSCore.JSObjectProxy, gl
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getChildren", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.WorkletAnimationEffect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WorkletAnimationEffect>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.WorkletAnimationEffect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WorkletAnimationEffect>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.WorkletAnimationEffect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WorkletAnimationEffect>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

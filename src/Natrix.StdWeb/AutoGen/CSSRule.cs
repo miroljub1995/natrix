@@ -28,26 +28,26 @@ public partial class CSSRule: global::Natrix.JSCore.JSObjectProxy, global::Natri
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string CssText
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "cssText");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "cssText", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "cssText");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "cssText", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSRule? ParentRule
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSRule?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSRule>>(JSObject, "parentRule");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSRule>.Get(JSObject, "parentRule");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSStyleSheet? ParentStyleSheet
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSStyleSheet?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSStyleSheet>>(JSObject, "parentStyleSheet");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSStyleSheet>.Get(JSObject, "parentStyleSheet");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "type");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "type");
     }
 
     public const ushort STYLE_RULE = 1;

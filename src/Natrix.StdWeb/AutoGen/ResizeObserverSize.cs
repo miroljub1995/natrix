@@ -18,13 +18,13 @@ public partial class ResizeObserverSize: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double InlineSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "inlineSize");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "inlineSize");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double BlockSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "blockSize");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "blockSize");
     }
 }
 

@@ -55,7 +55,7 @@ public partial class CompositionEvent: global::Natrix.StdWeb.UIEvent, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "data");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

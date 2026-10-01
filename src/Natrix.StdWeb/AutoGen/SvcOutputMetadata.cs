@@ -26,8 +26,8 @@ public partial class SvcOutputMetadata: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint TemporalLayerId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "temporalLayerId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "temporalLayerId", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "temporalLayerId");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "temporalLayerId", value);
     }
 }
 

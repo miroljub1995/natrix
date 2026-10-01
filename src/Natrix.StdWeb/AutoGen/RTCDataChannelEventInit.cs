@@ -26,8 +26,8 @@ public partial class RTCDataChannelEventInit: global::Natrix.StdWeb.EventInit, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.RTCDataChannel Channel
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCDataChannel, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCDataChannel>>(JSObject, "channel");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCDataChannel, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCDataChannel>>(JSObject, "channel", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCDataChannel>.Get(JSObject, "channel");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCDataChannel>.Set(JSObject, "channel", value);
     }
 }
 

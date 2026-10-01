@@ -26,8 +26,8 @@ public partial class CredentialPropertiesOutput: global::Natrix.JSCore.JSObjectP
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Rk
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "rk");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "rk", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "rk");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "rk", value);
     }
 }
 

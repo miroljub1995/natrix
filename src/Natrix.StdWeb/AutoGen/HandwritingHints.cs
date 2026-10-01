@@ -26,29 +26,29 @@ public partial class HandwritingHints: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string RecognitionType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "recognitionType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "recognitionType", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "recognitionType");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "recognitionType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string InputType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "inputType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "inputType", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "inputType");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "inputType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string TextContext
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "textContext");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "textContext", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "textContext");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "textContext", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Alternatives
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "alternatives");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "alternatives", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "alternatives");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "alternatives", value);
     }
 }
 

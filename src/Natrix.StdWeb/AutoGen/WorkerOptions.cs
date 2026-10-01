@@ -26,22 +26,22 @@ public partial class WorkerOptions: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "name", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WorkerType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WorkerType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WorkerType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.WorkerType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WorkerType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WorkerType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WorkerType>.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RequestCredentials Credentials
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RequestCredentials, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RequestCredentials>>(JSObject, "credentials");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RequestCredentials, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RequestCredentials>>(JSObject, "credentials", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RequestCredentials>.Get(JSObject, "credentials");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RequestCredentials>.Set(JSObject, "credentials", value);
     }
 }
 

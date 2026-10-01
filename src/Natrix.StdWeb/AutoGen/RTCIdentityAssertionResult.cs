@@ -26,15 +26,15 @@ public partial class RTCIdentityAssertionResult: global::Natrix.JSCore.JSObjectP
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.RTCIdentityProviderDetails Idp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIdentityProviderDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIdentityProviderDetails>>(JSObject, "idp");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCIdentityProviderDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIdentityProviderDetails>>(JSObject, "idp", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIdentityProviderDetails>.Get(JSObject, "idp");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIdentityProviderDetails>.Set(JSObject, "idp", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Assertion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "assertion");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "assertion", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "assertion");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "assertion", value);
     }
 }
 

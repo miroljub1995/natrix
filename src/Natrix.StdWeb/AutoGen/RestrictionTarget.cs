@@ -32,7 +32,7 @@ public partial class RestrictionTarget: global::Natrix.JSCore.JSObjectProxy, glo
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "RestrictionTarget"), "fromElement", global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "RestrictionTarget"), ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RestrictionTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RestrictionTarget>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RestrictionTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RestrictionTarget>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.RestrictionTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RestrictionTarget>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

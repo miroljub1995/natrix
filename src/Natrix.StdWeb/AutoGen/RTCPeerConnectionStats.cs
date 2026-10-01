@@ -26,15 +26,15 @@ public partial class RTCPeerConnectionStats: global::Natrix.StdWeb.RTCStats, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint DataChannelsOpened
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "dataChannelsOpened");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "dataChannelsOpened", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "dataChannelsOpened");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "dataChannelsOpened", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint DataChannelsClosed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "dataChannelsClosed");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "dataChannelsClosed", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "dataChannelsClosed");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "dataChannelsClosed", value);
     }
 }
 

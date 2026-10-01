@@ -18,7 +18,7 @@ public partial class RTCIdentityProviderGlobalScope: global::Natrix.StdWeb.Worke
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIdentityProviderRegistrar RtcIdentityProvider
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIdentityProviderRegistrar, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIdentityProviderRegistrar>>(JSObject, "rtcIdentityProvider");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIdentityProviderRegistrar>.Get(JSObject, "rtcIdentityProvider");
     }
 }
 

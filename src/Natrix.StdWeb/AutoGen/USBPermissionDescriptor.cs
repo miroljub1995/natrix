@@ -26,15 +26,15 @@ public partial class USBPermissionDescriptor: global::Natrix.StdWeb.PermissionDe
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>> Filters
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>>>(JSObject, "filters");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>>>(JSObject, "filters", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>>.Get(JSObject, "filters");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>>.Set(JSObject, "filters", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>> ExclusionFilters
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>>>(JSObject, "exclusionFilters");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>>>(JSObject, "exclusionFilters", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>>.Get(JSObject, "exclusionFilters");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.USBDeviceFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDeviceFilter>>>.Set(JSObject, "exclusionFilters", value);
     }
 }
 

@@ -18,7 +18,7 @@ public partial class CSSTransition: global::Natrix.StdWeb.Animation, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string TransitionProperty
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "transitionProperty");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "transitionProperty");
     }
 }
 

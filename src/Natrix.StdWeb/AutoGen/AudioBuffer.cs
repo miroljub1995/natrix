@@ -34,25 +34,25 @@ public partial class AudioBuffer: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float SampleRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "sampleRate");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "sampleRate");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "length");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Duration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "duration");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "duration");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint NumberOfChannels
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "numberOfChannels");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "numberOfChannels");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -72,7 +72,7 @@ public partial class AudioBuffer: global::Natrix.JSCore.JSObjectProxy, global::N
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getChannelData", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

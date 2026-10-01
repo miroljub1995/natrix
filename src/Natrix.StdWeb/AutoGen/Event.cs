@@ -55,25 +55,25 @@ public partial class Event: global::Natrix.JSCore.JSObjectProxy, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "type");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "type");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventTarget? Target
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventTarget?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>>(JSObject, "target");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>.Get(JSObject, "target");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventTarget? SrcElement
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventTarget?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>>(JSObject, "srcElement");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>.Get(JSObject, "srcElement");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventTarget? CurrentTarget
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventTarget?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>>(JSObject, "currentTarget");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>.Get(JSObject, "currentTarget");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -84,7 +84,7 @@ public partial class Event: global::Natrix.JSCore.JSObjectProxy, global::Natrix.
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "composedPath", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.EventTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EventTarget>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.EventTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EventTarget>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.EventTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EventTarget>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     public const ushort NONE = 0;
@@ -98,7 +98,7 @@ public partial class Event: global::Natrix.JSCore.JSObjectProxy, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort EventPhase
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "eventPhase");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "eventPhase");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -110,8 +110,8 @@ public partial class Event: global::Natrix.JSCore.JSObjectProxy, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool CancelBubble
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "cancelBubble");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "cancelBubble", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "cancelBubble");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "cancelBubble", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -123,20 +123,20 @@ public partial class Event: global::Natrix.JSCore.JSObjectProxy, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Bubbles
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "bubbles");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "bubbles");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Cancelable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "cancelable");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "cancelable");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ReturnValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "returnValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "returnValue", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "returnValue");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "returnValue", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -148,25 +148,25 @@ public partial class Event: global::Natrix.JSCore.JSObjectProxy, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool DefaultPrevented
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "defaultPrevented");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "defaultPrevented");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Composed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "composed");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "composed");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IsTrusted
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isTrusted");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isTrusted");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double TimeStamp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "timeStamp");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "timeStamp");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

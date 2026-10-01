@@ -62,13 +62,13 @@ public partial class WebTransportError: global::Natrix.StdWeb.DOMException, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebTransportErrorSource Source
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebTransportErrorSource, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WebTransportErrorSource>>(JSObject, "source");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WebTransportErrorSource>.Get(JSObject, "source");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint? StreamErrorCode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.JSCore.Generics.NullableUInt32Accessor>(JSObject, "streamErrorCode");
+        get => global::Natrix.JSCore.Generics.NullableUInt32Accessor.Get(JSObject, "streamErrorCode");
     }
 }
 

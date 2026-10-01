@@ -26,22 +26,22 @@ public partial class MediaCapabilitiesInfo: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required bool Supported
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "supported");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "supported", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "supported");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "supported", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required bool Smooth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "smooth");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "smooth", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "smooth");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "smooth", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required bool PowerEfficient
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "powerEfficient");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "powerEfficient", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "powerEfficient");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "powerEfficient", value);
     }
 }
 

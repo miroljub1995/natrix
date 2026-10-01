@@ -18,13 +18,13 @@ public partial class CSSMediaRule: global::Natrix.StdWeb.CSSConditionRule, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaList Media
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaList>>(JSObject, "media");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaList>.Get(JSObject, "media");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Matches
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "matches");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "matches");
     }
 }
 

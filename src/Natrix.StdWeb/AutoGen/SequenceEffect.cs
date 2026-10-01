@@ -75,7 +75,7 @@ public partial class SequenceEffect: global::Natrix.StdWeb.GroupEffect, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "clone", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SequenceEffect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SequenceEffect>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SequenceEffect>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

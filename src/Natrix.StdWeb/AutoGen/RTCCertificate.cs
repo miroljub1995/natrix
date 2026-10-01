@@ -18,7 +18,7 @@ public partial class RTCCertificate: global::Natrix.JSCore.JSObjectProxy, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Expires
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "expires");
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "expires");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -29,7 +29,7 @@ public partial class RTCCertificate: global::Natrix.JSCore.JSObjectProxy, global
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getFingerprints", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCDtlsFingerprint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCDtlsFingerprint>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCDtlsFingerprint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCDtlsFingerprint>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCDtlsFingerprint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCDtlsFingerprint>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

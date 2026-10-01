@@ -18,19 +18,19 @@ public partial class DocumentType: global::Natrix.StdWeb.Node, global::Natrix.JS
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string PublicId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "publicId");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "publicId");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string SystemId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "systemId");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "systemId");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

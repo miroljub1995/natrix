@@ -26,15 +26,15 @@ public partial class MLTriangularOptions: global::Natrix.StdWeb.MLOperatorOption
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Upper
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "upper");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "upper", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "upper");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "upper", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Diagonal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "diagonal");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "diagonal", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "diagonal");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "diagonal", value);
     }
 }
 

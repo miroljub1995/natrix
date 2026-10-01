@@ -18,13 +18,13 @@ public partial class SpeechRecognitionAlternative: global::Natrix.JSCore.JSObjec
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Transcript
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "transcript");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "transcript");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Confidence
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "confidence");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "confidence");
     }
 }
 

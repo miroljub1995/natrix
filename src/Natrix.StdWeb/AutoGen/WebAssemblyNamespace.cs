@@ -27,7 +27,7 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "validate", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -51,7 +51,7 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "validate", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -70,7 +70,7 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "compile", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -94,7 +94,7 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "compile", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -113,7 +113,7 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "instantiate", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -137,7 +137,7 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "instantiate", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -166,7 +166,7 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "instantiate", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -186,7 +186,7 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "instantiate", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Instance, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Instance>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Instance, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Instance>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Instance, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Instance>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -211,13 +211,13 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "instantiate", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Instance, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Instance>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Instance, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Instance>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Instance, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Instance>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Tag JSTag
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Tag, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Tag>>(JSObject, "JSTag");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Tag>.Get(JSObject, "JSTag");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -236,7 +236,7 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "compileStreaming", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -260,7 +260,7 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "compileStreaming", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Module, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Module>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -279,7 +279,7 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "instantiateStreaming", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -303,7 +303,7 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "instantiateStreaming", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -332,7 +332,7 @@ public partial class WebAssemblyNamespace: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "instantiateStreaming", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WebAssemblyInstantiatedSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebAssemblyInstantiatedSource>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

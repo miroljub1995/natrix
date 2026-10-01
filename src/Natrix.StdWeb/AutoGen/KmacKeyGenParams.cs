@@ -26,8 +26,8 @@ public partial class KmacKeyGenParams: global::Natrix.StdWeb.Algorithm, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "length");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "length", value);
     }
 }
 

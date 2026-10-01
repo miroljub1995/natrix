@@ -18,31 +18,31 @@ public partial class ResizeObserverEntry: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element Target
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "target");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>.Get(JSObject, "target");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMRectReadOnly ContentRect
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMRectReadOnly, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRectReadOnly>>(JSObject, "contentRect");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRectReadOnly>.Get(JSObject, "contentRect");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.ResizeObserverSize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverSize>> BorderBoxSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.ResizeObserverSize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverSize>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.ResizeObserverSize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverSize>>>>(JSObject, "borderBoxSize");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.ResizeObserverSize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverSize>>>.Get(JSObject, "borderBoxSize");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.ResizeObserverSize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverSize>> ContentBoxSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.ResizeObserverSize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverSize>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.ResizeObserverSize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverSize>>>>(JSObject, "contentBoxSize");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.ResizeObserverSize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverSize>>>.Get(JSObject, "contentBoxSize");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.ResizeObserverSize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverSize>> DevicePixelContentBoxSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.ResizeObserverSize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverSize>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.ResizeObserverSize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverSize>>>>(JSObject, "devicePixelContentBoxSize");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.ResizeObserverSize, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ResizeObserverSize>>>.Get(JSObject, "devicePixelContentBoxSize");
     }
 }
 

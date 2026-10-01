@@ -39,7 +39,7 @@ public partial class TaskPriorityChangeEvent: global::Natrix.StdWeb.Event, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.TaskPriority PreviousPriority
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.TaskPriority, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.TaskPriority>>(JSObject, "previousPriority");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.TaskPriority>.Get(JSObject, "previousPriority");
     }
 }
 

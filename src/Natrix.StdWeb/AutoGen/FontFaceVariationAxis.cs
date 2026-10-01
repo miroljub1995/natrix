@@ -18,31 +18,31 @@ public partial class FontFaceVariationAxis: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string AxisTag
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "axisTag");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "axisTag");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double MinimumValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "minimumValue");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "minimumValue");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double MaximumValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "maximumValue");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "maximumValue");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DefaultValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "defaultValue");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "defaultValue");
     }
 }
 

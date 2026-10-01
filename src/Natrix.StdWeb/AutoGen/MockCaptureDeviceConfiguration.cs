@@ -26,22 +26,22 @@ public partial class MockCaptureDeviceConfiguration: global::Natrix.JSCore.JSObj
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Label
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "label");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "label", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string DeviceId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "deviceId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "deviceId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "deviceId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "deviceId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string GroupId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "groupId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "groupId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "groupId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "groupId", value);
     }
 }
 

@@ -18,37 +18,37 @@ public partial class MouseEvent: global::Natrix.StdWeb.UIEvent, global::Natrix.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double PageX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "pageX");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "pageX");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double PageY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "pageY");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "pageY");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double X
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "x");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "x");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Y
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "y");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "y");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double OffsetX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "offsetX");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "offsetX");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double OffsetY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "offsetY");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "offsetY");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
@@ -91,79 +91,79 @@ public partial class MouseEvent: global::Natrix.StdWeb.UIEvent, global::Natrix.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int ScreenX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "screenX");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "screenX");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int ScreenY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "screenY");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "screenY");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int ClientX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "clientX");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "clientX");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int ClientY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "clientY");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "clientY");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int LayerX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "layerX");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "layerX");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int LayerY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "layerY");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "layerY");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool CtrlKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ctrlKey");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ctrlKey");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ShiftKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "shiftKey");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "shiftKey");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool AltKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "altKey");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "altKey");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool MetaKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "metaKey");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "metaKey");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public short Button
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<short, global::Natrix.JSCore.Generics.Int16Accessor>(JSObject, "button");
+        get => global::Natrix.JSCore.Generics.Int16Accessor.Get(JSObject, "button");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Buttons
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "buttons");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "buttons");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventTarget? RelatedTarget
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventTarget?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>>(JSObject, "relatedTarget");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>.Get(JSObject, "relatedTarget");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -183,7 +183,7 @@ public partial class MouseEvent: global::Natrix.StdWeb.UIEvent, global::Natrix.J
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getModifierState", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -1043,13 +1043,13 @@ public partial class MouseEvent: global::Natrix.StdWeb.UIEvent, global::Natrix.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double MovementX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "movementX");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "movementX");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double MovementY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "movementY");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "movementY");
     }
 }
 

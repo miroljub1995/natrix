@@ -26,8 +26,8 @@ public partial class GPUComputePassDescriptor: global::Natrix.StdWeb.GPUObjectDe
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUComputePassTimestampWrites TimestampWrites
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUComputePassTimestampWrites, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUComputePassTimestampWrites>>(JSObject, "timestampWrites");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUComputePassTimestampWrites, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUComputePassTimestampWrites>>(JSObject, "timestampWrites", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUComputePassTimestampWrites>.Get(JSObject, "timestampWrites");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUComputePassTimestampWrites>.Set(JSObject, "timestampWrites", value);
     }
 }
 

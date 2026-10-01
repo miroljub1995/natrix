@@ -18,14 +18,14 @@ public partial class Presentation: global::Natrix.JSCore.JSObjectProxy, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PresentationRequest? DefaultRequest
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PresentationRequest?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PresentationRequest>>(JSObject, "defaultRequest");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PresentationRequest?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PresentationRequest>>(JSObject, "defaultRequest", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PresentationRequest>.Get(JSObject, "defaultRequest");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PresentationRequest>.Set(JSObject, "defaultRequest", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PresentationReceiver? Receiver
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PresentationReceiver?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PresentationReceiver>>(JSObject, "receiver");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PresentationReceiver>.Get(JSObject, "receiver");
     }
 }
 

@@ -25,14 +25,14 @@ public partial class HTMLLegendElement: global::Natrix.StdWeb.HTMLElement, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HTMLFormElement? Form
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLFormElement?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.HTMLFormElement>>(JSObject, "form");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.HTMLFormElement>.Get(JSObject, "form");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Align
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "align");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "align", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "align");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "align", value);
     }
 }
 

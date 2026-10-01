@@ -18,7 +18,7 @@ public partial class GPUError: global::Natrix.JSCore.JSObjectProxy, global::Natr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "message");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "message");
     }
 }
 

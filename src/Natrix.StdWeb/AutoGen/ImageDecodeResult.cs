@@ -26,15 +26,15 @@ public partial class ImageDecodeResult: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.VideoFrame Image
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoFrame>>(JSObject, "image");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoFrame>>(JSObject, "image", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoFrame>.Get(JSObject, "image");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoFrame>.Set(JSObject, "image", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required bool Complete
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "complete");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "complete", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "complete");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "complete", value);
     }
 }
 

@@ -18,7 +18,7 @@ public partial class OTPCredential: global::Natrix.StdWeb.Credential, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Code
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "code");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "code");
     }
 }
 

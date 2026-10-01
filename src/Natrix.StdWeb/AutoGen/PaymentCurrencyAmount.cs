@@ -26,15 +26,15 @@ public partial class PaymentCurrencyAmount: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Currency
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "currency");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "currency", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "currency");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "currency", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "value", value);
     }
 }
 

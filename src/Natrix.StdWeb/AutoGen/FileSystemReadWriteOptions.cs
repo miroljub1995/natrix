@@ -26,8 +26,8 @@ public partial class FileSystemReadWriteOptions: global::Natrix.JSCore.JSObjectP
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong At
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "at");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "at", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "at");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "at", value);
     }
 }
 

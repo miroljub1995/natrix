@@ -55,13 +55,13 @@ public partial class ClipboardChangeEvent: global::Natrix.StdWeb.Event, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor> Types
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "types");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "types");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Numerics.BigInteger ChangeId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Numerics.BigInteger, global::Natrix.JSCore.Generics.BigIntegerAccessor>(JSObject, "changeId");
+        get => global::Natrix.JSCore.Generics.BigIntegerAccessor.Get(JSObject, "changeId");
     }
 }
 

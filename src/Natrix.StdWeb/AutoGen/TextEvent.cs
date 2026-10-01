@@ -18,7 +18,7 @@ public partial class TextEvent: global::Natrix.StdWeb.UIEvent, global::Natrix.JS
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "data");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

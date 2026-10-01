@@ -26,8 +26,8 @@ public partial class TextDecodeOptions: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Stream
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "stream");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "stream", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "stream");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "stream", value);
     }
 }
 

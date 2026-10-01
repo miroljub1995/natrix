@@ -26,15 +26,15 @@ public partial class WebTransportSendOptions: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebTransportSendGroup? SendGroup
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebTransportSendGroup?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WebTransportSendGroup>>(JSObject, "sendGroup");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.WebTransportSendGroup?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WebTransportSendGroup>>(JSObject, "sendGroup", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WebTransportSendGroup>.Get(JSObject, "sendGroup");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WebTransportSendGroup>.Set(JSObject, "sendGroup", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public long SendOrder
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<long, global::Natrix.JSCore.Generics.Int64Accessor>(JSObject, "sendOrder");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<long, global::Natrix.JSCore.Generics.Int64Accessor>(JSObject, "sendOrder", value);
+        get => global::Natrix.JSCore.Generics.Int64Accessor.Get(JSObject, "sendOrder");
+        set => global::Natrix.JSCore.Generics.Int64Accessor.Set(JSObject, "sendOrder", value);
     }
 }
 

@@ -32,7 +32,7 @@ public partial class Clients: global::Natrix.JSCore.JSObjectProxy, global::Natri
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "get", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Client?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Client>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Client?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Client>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.Client?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Client>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -43,7 +43,7 @@ public partial class Clients: global::Natrix.JSCore.JSObjectProxy, global::Natri
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "matchAll", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Client, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Client>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Client, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Client>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Client, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Client>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Client, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Client>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Client, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Client>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Client, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Client>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -63,7 +63,7 @@ public partial class Clients: global::Natrix.JSCore.JSObjectProxy, global::Natri
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "matchAll", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Client, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Client>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Client, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Client>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Client, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Client>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Client, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Client>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Client, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Client>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Client, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Client>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -83,7 +83,7 @@ public partial class Clients: global::Natrix.JSCore.JSObjectProxy, global::Natri
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "openWindow", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WindowClient?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WindowClient>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WindowClient?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WindowClient>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WindowClient?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WindowClient>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -94,7 +94,7 @@ public partial class Clients: global::Natrix.JSCore.JSObjectProxy, global::Natri
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "claim", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

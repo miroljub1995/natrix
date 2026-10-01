@@ -18,8 +18,8 @@ public partial class SVGNumber: global::Natrix.JSCore.JSObjectProxy, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "value", value);
     }
 }
 

@@ -26,15 +26,15 @@ public partial class RTCIceGatherOptions: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIceTransportPolicy GatherPolicy
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceTransportPolicy, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCIceTransportPolicy>>(JSObject, "gatherPolicy");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCIceTransportPolicy, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCIceTransportPolicy>>(JSObject, "gatherPolicy", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCIceTransportPolicy>.Get(JSObject, "gatherPolicy");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCIceTransportPolicy>.Set(JSObject, "gatherPolicy", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>> IceServers
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>>>>(JSObject, "iceServers");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>>>>(JSObject, "iceServers", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>>>.Get(JSObject, "iceServers");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>>>.Set(JSObject, "iceServers", value);
     }
 }
 

@@ -39,31 +39,31 @@ public partial class XRVisibilityMaskChangeEvent: global::Natrix.StdWeb.Event, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRSession Session
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRSession, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSession>>(JSObject, "session");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSession>.Get(JSObject, "session");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XREye Eye
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XREye, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XREye>>(JSObject, "eye");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XREye>.Get(JSObject, "eye");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Index
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "index");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "index");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Float32Array Vertices
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>(JSObject, "vertices");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>.Get(JSObject, "vertices");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Uint32Array Indices
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Uint32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint32Array>>(JSObject, "indices");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint32Array>.Get(JSObject, "indices");
     }
 }
 

@@ -26,15 +26,15 @@ public partial class ConvertCoordinateOptions: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSBoxType FromBox
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSBoxType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSBoxType>>(JSObject, "fromBox");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CSSBoxType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSBoxType>>(JSObject, "fromBox", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSBoxType>.Get(JSObject, "fromBox");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSBoxType>.Set(JSObject, "fromBox", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSBoxType ToBox
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSBoxType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSBoxType>>(JSObject, "toBox");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CSSBoxType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSBoxType>>(JSObject, "toBox", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSBoxType>.Get(JSObject, "toBox");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSBoxType>.Set(JSObject, "toBox", value);
     }
 }
 

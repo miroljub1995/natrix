@@ -18,31 +18,31 @@ public partial class XRMesh: global::Natrix.JSCore.JSObjectProxy, global::Natrix
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRSpace MeshSpace
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRSpace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSpace>>(JSObject, "meshSpace");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRSpace>.Get(JSObject, "meshSpace");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Float32Array Vertices
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Float32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>>(JSObject, "vertices");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Float32Array>.Get(JSObject, "vertices");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Uint32Array Indices
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Uint32Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint32Array>>(JSObject, "indices");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint32Array>.Get(JSObject, "indices");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double LastChangedTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "lastChangedTime");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "lastChangedTime");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? SemanticLabel
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "semanticLabel");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "semanticLabel");
     }
 }
 

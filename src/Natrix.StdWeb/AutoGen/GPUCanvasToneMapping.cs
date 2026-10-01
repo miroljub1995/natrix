@@ -26,8 +26,8 @@ public partial class GPUCanvasToneMapping: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUCanvasToneMappingMode Mode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUCanvasToneMappingMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCanvasToneMappingMode>>(JSObject, "mode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUCanvasToneMappingMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCanvasToneMappingMode>>(JSObject, "mode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCanvasToneMappingMode>.Get(JSObject, "mode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCanvasToneMappingMode>.Set(JSObject, "mode", value);
     }
 }
 

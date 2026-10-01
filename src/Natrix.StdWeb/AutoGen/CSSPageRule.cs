@@ -18,14 +18,14 @@ public partial class CSSPageRule: global::Natrix.StdWeb.CSSGroupingRule, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string SelectorText
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "selectorText");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "selectorText", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "selectorText");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "selectorText", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSPageDescriptors Style
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSPageDescriptors, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPageDescriptors>>(JSObject, "style");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSPageDescriptors>.Get(JSObject, "style");
     }
 }
 

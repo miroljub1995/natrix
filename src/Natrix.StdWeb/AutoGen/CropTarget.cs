@@ -32,7 +32,7 @@ public partial class CropTarget: global::Natrix.JSCore.JSObjectProxy, global::Na
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "CropTarget"), "fromElement", global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "CropTarget"), ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CropTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CropTarget>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CropTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CropTarget>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.CropTarget, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CropTarget>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

@@ -18,13 +18,13 @@ public partial class SVGAnimatedAngle: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGAngle BaseVal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGAngle, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGAngle>>(JSObject, "baseVal");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGAngle>.Get(JSObject, "baseVal");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGAngle AnimVal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGAngle, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGAngle>>(JSObject, "animVal");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGAngle>.Get(JSObject, "animVal");
     }
 }
 

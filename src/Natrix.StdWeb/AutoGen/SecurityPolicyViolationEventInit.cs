@@ -26,85 +26,85 @@ public partial class SecurityPolicyViolationEventInit: global::Natrix.StdWeb.Eve
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string DocumentURI
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "documentURI");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "documentURI", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "documentURI");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "documentURI", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Referrer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "referrer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "referrer", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "referrer");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "referrer", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string BlockedURI
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "blockedURI");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "blockedURI", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "blockedURI");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "blockedURI", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ViolatedDirective
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "violatedDirective");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "violatedDirective", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "violatedDirective");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "violatedDirective", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string EffectiveDirective
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "effectiveDirective");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "effectiveDirective", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "effectiveDirective");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "effectiveDirective", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string OriginalPolicy
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "originalPolicy");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "originalPolicy", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "originalPolicy");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "originalPolicy", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string SourceFile
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "sourceFile");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "sourceFile", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "sourceFile");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "sourceFile", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Sample
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "sample");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "sample", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "sample");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "sample", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SecurityPolicyViolationEventDisposition Disposition
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SecurityPolicyViolationEventDisposition, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SecurityPolicyViolationEventDisposition>>(JSObject, "disposition");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SecurityPolicyViolationEventDisposition, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SecurityPolicyViolationEventDisposition>>(JSObject, "disposition", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SecurityPolicyViolationEventDisposition>.Get(JSObject, "disposition");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SecurityPolicyViolationEventDisposition>.Set(JSObject, "disposition", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort StatusCode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "statusCode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "statusCode", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "statusCode");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "statusCode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint LineNumber
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "lineNumber");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "lineNumber", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "lineNumber");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "lineNumber", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ColumnNumber
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "columnNumber");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "columnNumber", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "columnNumber");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "columnNumber", value);
     }
 }
 

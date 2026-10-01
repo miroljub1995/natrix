@@ -26,29 +26,29 @@ public partial class XRDepthStateInit: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthUsage, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthUsage>> UsagePreference
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthUsage, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthUsage>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthUsage, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthUsage>>>>(JSObject, "usagePreference");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthUsage, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthUsage>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthUsage, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthUsage>>>>(JSObject, "usagePreference", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthUsage, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthUsage>>>.Get(JSObject, "usagePreference");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthUsage, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthUsage>>>.Set(JSObject, "usagePreference", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthDataFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthDataFormat>> DataFormatPreference
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthDataFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthDataFormat>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthDataFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthDataFormat>>>>(JSObject, "dataFormatPreference");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthDataFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthDataFormat>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthDataFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthDataFormat>>>>(JSObject, "dataFormatPreference", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthDataFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthDataFormat>>>.Get(JSObject, "dataFormatPreference");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthDataFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthDataFormat>>>.Set(JSObject, "dataFormatPreference", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthType>> DepthTypeRequest
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthType>>>>(JSObject, "depthTypeRequest");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthType>>>>(JSObject, "depthTypeRequest", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthType>>>.Get(JSObject, "depthTypeRequest");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.XRDepthType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRDepthType>>>.Set(JSObject, "depthTypeRequest", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool MatchDepthView
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "matchDepthView");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "matchDepthView", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "matchDepthView");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "matchDepthView", value);
     }
 }
 

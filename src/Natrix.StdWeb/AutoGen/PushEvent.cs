@@ -55,13 +55,13 @@ public partial class PushEvent: global::Natrix.StdWeb.ExtendableEvent, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PushMessageData? Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PushMessageData?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PushMessageData>>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PushMessageData>.Get(JSObject, "data");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Notification? Notification
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Notification?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Notification>>(JSObject, "notification");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Notification>.Get(JSObject, "notification");
     }
 }
 

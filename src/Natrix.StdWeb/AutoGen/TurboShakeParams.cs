@@ -26,15 +26,15 @@ public partial class TurboShakeParams: global::Natrix.StdWeb.Algorithm, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint OutputLength
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "outputLength");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "outputLength", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "outputLength");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "outputLength", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte DomainSeparation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "domainSeparation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "domainSeparation", value);
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "domainSeparation");
+        set => global::Natrix.JSCore.Generics.ByteAccessor.Set(JSObject, "domainSeparation", value);
     }
 }
 

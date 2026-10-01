@@ -26,99 +26,99 @@ public partial class PannerOptions: global::Natrix.StdWeb.AudioNodeOptions, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PanningModelType PanningModel
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PanningModelType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PanningModelType>>(JSObject, "panningModel");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PanningModelType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PanningModelType>>(JSObject, "panningModel", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PanningModelType>.Get(JSObject, "panningModel");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PanningModelType>.Set(JSObject, "panningModel", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DistanceModelType DistanceModel
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DistanceModelType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DistanceModelType>>(JSObject, "distanceModel");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DistanceModelType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DistanceModelType>>(JSObject, "distanceModel", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DistanceModelType>.Get(JSObject, "distanceModel");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DistanceModelType>.Set(JSObject, "distanceModel", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float PositionX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "positionX");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "positionX", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "positionX");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "positionX", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float PositionY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "positionY");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "positionY", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "positionY");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "positionY", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float PositionZ
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "positionZ");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "positionZ", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "positionZ");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "positionZ", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float OrientationX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "orientationX");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "orientationX", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "orientationX");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "orientationX", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float OrientationY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "orientationY");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "orientationY", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "orientationY");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "orientationY", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float OrientationZ
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "orientationZ");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "orientationZ", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "orientationZ");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "orientationZ", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double RefDistance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "refDistance");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "refDistance", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "refDistance");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "refDistance", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double MaxDistance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "maxDistance");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "maxDistance", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "maxDistance");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "maxDistance", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double RolloffFactor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "rolloffFactor");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "rolloffFactor", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "rolloffFactor");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "rolloffFactor", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ConeInnerAngle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "coneInnerAngle");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "coneInnerAngle", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "coneInnerAngle");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "coneInnerAngle", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ConeOuterAngle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "coneOuterAngle");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "coneOuterAngle", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "coneOuterAngle");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "coneOuterAngle", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ConeOuterGain
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "coneOuterGain");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "coneOuterGain", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "coneOuterGain");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "coneOuterGain", value);
     }
 }
 

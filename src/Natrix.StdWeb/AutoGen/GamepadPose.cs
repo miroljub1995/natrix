@@ -18,49 +18,49 @@ public partial class GamepadPose: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool HasOrientation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "hasOrientation");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "hasOrientation");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool HasPosition
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "hasPosition");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "hasPosition");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Float32Array? Position
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Float32Array?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>>(JSObject, "position");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>.Get(JSObject, "position");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Float32Array? LinearVelocity
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Float32Array?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>>(JSObject, "linearVelocity");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>.Get(JSObject, "linearVelocity");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Float32Array? LinearAcceleration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Float32Array?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>>(JSObject, "linearAcceleration");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>.Get(JSObject, "linearAcceleration");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Float32Array? Orientation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Float32Array?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>>(JSObject, "orientation");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>.Get(JSObject, "orientation");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Float32Array? AngularVelocity
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Float32Array?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>>(JSObject, "angularVelocity");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>.Get(JSObject, "angularVelocity");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Float32Array? AngularAcceleration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Float32Array?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>>(JSObject, "angularAcceleration");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Float32Array>.Get(JSObject, "angularAcceleration");
     }
 }
 

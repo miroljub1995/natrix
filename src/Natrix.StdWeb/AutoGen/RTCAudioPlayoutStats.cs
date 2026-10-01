@@ -26,43 +26,43 @@ public partial class RTCAudioPlayoutStats: global::Natrix.StdWeb.RTCStats, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Kind
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "kind");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "kind", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "kind");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "kind", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double SynthesizedSamplesDuration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "synthesizedSamplesDuration");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "synthesizedSamplesDuration", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "synthesizedSamplesDuration");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "synthesizedSamplesDuration", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint SynthesizedSamplesEvents
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "synthesizedSamplesEvents");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "synthesizedSamplesEvents", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "synthesizedSamplesEvents");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "synthesizedSamplesEvents", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double TotalSamplesDuration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalSamplesDuration");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalSamplesDuration", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "totalSamplesDuration");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "totalSamplesDuration", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double TotalPlayoutDelay
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalPlayoutDelay");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalPlayoutDelay", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "totalPlayoutDelay");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "totalPlayoutDelay", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong TotalSamplesCount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "totalSamplesCount");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "totalSamplesCount", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "totalSamplesCount");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "totalSamplesCount", value);
     }
 }
 

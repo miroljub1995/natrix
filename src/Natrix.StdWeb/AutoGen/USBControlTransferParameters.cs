@@ -26,36 +26,36 @@ public partial class USBControlTransferParameters: global::Natrix.JSCore.JSObjec
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.USBRequestType RequestType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBRequestType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBRequestType>>(JSObject, "requestType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.USBRequestType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBRequestType>>(JSObject, "requestType", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBRequestType>.Get(JSObject, "requestType");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBRequestType>.Set(JSObject, "requestType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.USBRecipient Recipient
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBRecipient, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBRecipient>>(JSObject, "recipient");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.USBRecipient, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBRecipient>>(JSObject, "recipient", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBRecipient>.Get(JSObject, "recipient");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBRecipient>.Set(JSObject, "recipient", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required byte Request
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "request");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "request", value);
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "request");
+        set => global::Natrix.JSCore.Generics.ByteAccessor.Set(JSObject, "request", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ushort Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "value", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ushort Index
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "index");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "index", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "index");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "index", value);
     }
 }
 

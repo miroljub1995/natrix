@@ -26,8 +26,8 @@ public partial class GPUBindGroupLayoutDescriptor: global::Natrix.StdWeb.GPUObje
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUBindGroupLayoutEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBindGroupLayoutEntry>> Entries
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUBindGroupLayoutEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBindGroupLayoutEntry>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUBindGroupLayoutEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBindGroupLayoutEntry>>>>(JSObject, "entries");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUBindGroupLayoutEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBindGroupLayoutEntry>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUBindGroupLayoutEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBindGroupLayoutEntry>>>>(JSObject, "entries", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUBindGroupLayoutEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBindGroupLayoutEntry>>>.Get(JSObject, "entries");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUBindGroupLayoutEntry, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBindGroupLayoutEntry>>>.Set(JSObject, "entries", value);
     }
 }
 

@@ -26,22 +26,22 @@ public partial class SFrameTransformErrorEventInit: global::Natrix.StdWeb.EventI
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.SFrameTransformErrorEventType ErrorType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SFrameTransformErrorEventType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameTransformErrorEventType>>(JSObject, "errorType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SFrameTransformErrorEventType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameTransformErrorEventType>>(JSObject, "errorType", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameTransformErrorEventType>.Get(JSObject, "errorType");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameTransformErrorEventType>.Set(JSObject, "errorType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCEncodedVideoFrame, global::Natrix.StdWeb.RTCEncodedAudioFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedVideoFrame>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedAudioFrame>> Frame
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCEncodedVideoFrame, global::Natrix.StdWeb.RTCEncodedAudioFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedVideoFrame>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedAudioFrame>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCEncodedVideoFrame, global::Natrix.StdWeb.RTCEncodedAudioFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedVideoFrame>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedAudioFrame>>>>(JSObject, "frame");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCEncodedVideoFrame, global::Natrix.StdWeb.RTCEncodedAudioFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedVideoFrame>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedAudioFrame>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCEncodedVideoFrame, global::Natrix.StdWeb.RTCEncodedAudioFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedVideoFrame>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedAudioFrame>>>>(JSObject, "frame", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCEncodedVideoFrame, global::Natrix.StdWeb.RTCEncodedAudioFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedVideoFrame>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedAudioFrame>>>.Get(JSObject, "frame");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RTCEncodedVideoFrame, global::Natrix.StdWeb.RTCEncodedAudioFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedVideoFrame>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCEncodedAudioFrame>>>.Set(JSObject, "frame", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<ulong, global::System.Numerics.BigInteger, global::Natrix.JSCore.Generics.UInt64Accessor, global::Natrix.JSCore.Generics.BigIntegerAccessor>? KeyID
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<ulong, global::System.Numerics.BigInteger, global::Natrix.JSCore.Generics.UInt64Accessor, global::Natrix.JSCore.Generics.BigIntegerAccessor>?, global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<ulong, global::System.Numerics.BigInteger, global::Natrix.JSCore.Generics.UInt64Accessor, global::Natrix.JSCore.Generics.BigIntegerAccessor>>>(JSObject, "keyID");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<ulong, global::System.Numerics.BigInteger, global::Natrix.JSCore.Generics.UInt64Accessor, global::Natrix.JSCore.Generics.BigIntegerAccessor>?, global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<ulong, global::System.Numerics.BigInteger, global::Natrix.JSCore.Generics.UInt64Accessor, global::Natrix.JSCore.Generics.BigIntegerAccessor>>>(JSObject, "keyID", value);
+        get => global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<ulong, global::System.Numerics.BigInteger, global::Natrix.JSCore.Generics.UInt64Accessor, global::Natrix.JSCore.Generics.BigIntegerAccessor>>.Get(JSObject, "keyID");
+        set => global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<ulong, global::System.Numerics.BigInteger, global::Natrix.JSCore.Generics.UInt64Accessor, global::Natrix.JSCore.Generics.BigIntegerAccessor>>.Set(JSObject, "keyID", value);
     }
 }
 

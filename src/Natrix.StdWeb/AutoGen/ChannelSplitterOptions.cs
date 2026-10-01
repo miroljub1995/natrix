@@ -26,8 +26,8 @@ public partial class ChannelSplitterOptions: global::Natrix.StdWeb.AudioNodeOpti
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint NumberOfOutputs
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "numberOfOutputs");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "numberOfOutputs", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "numberOfOutputs");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "numberOfOutputs", value);
     }
 }
 

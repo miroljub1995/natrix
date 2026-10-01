@@ -26,8 +26,8 @@ public partial class ConstantSourceOptions: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Offset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "offset");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "offset", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "offset");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "offset", value);
     }
 }
 

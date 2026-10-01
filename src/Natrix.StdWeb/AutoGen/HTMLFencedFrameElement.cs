@@ -25,35 +25,35 @@ public partial class HTMLFencedFrameElement: global::Natrix.StdWeb.HTMLElement, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FencedFrameConfig? Config
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FencedFrameConfig?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.FencedFrameConfig>>(JSObject, "config");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FencedFrameConfig?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.FencedFrameConfig>>(JSObject, "config", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.FencedFrameConfig>.Get(JSObject, "config");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.FencedFrameConfig>.Set(JSObject, "config", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "width");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "width", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "width");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "width", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "height");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "height", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "height");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "height", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMTokenList Sandbox
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMTokenList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMTokenList>>(JSObject, "sandbox");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMTokenList>.Get(JSObject, "sandbox");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Allow
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "allow");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "allow", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "allow");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "allow", value);
     }
 }
 

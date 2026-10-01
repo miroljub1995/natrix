@@ -39,7 +39,7 @@ public partial class SpeechSynthesisErrorEvent: global::Natrix.StdWeb.SpeechSynt
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SpeechSynthesisErrorCode Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpeechSynthesisErrorCode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpeechSynthesisErrorCode>>(JSObject, "error");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpeechSynthesisErrorCode>.Get(JSObject, "error");
     }
 }
 

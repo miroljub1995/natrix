@@ -18,7 +18,7 @@ public partial class FetchLaterResult: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Activated
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "activated");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "activated");
     }
 }
 

@@ -55,13 +55,13 @@ public partial class NavigationEvent: global::Natrix.StdWeb.UIEvent, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SpatialNavigationDirection Dir
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpatialNavigationDirection, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpatialNavigationDirection>>(JSObject, "dir");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpatialNavigationDirection>.Get(JSObject, "dir");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventTarget? RelatedTarget
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventTarget?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>>(JSObject, "relatedTarget");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>.Get(JSObject, "relatedTarget");
     }
 }
 

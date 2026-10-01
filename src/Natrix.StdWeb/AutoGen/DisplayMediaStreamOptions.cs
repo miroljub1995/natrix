@@ -26,64 +26,64 @@ public partial class DisplayMediaStreamOptions: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>> Video
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>>>>(JSObject, "video");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>>>>(JSObject, "video", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>>>.Get(JSObject, "video");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>>>.Set(JSObject, "video", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>> Audio
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>>>>(JSObject, "audio");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>>>>(JSObject, "audio", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>>>.Get(JSObject, "audio");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>>>.Set(JSObject, "audio", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CaptureController Controller
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CaptureController, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CaptureController>>(JSObject, "controller");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CaptureController, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CaptureController>>(JSObject, "controller", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CaptureController>.Get(JSObject, "controller");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CaptureController>.Set(JSObject, "controller", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SelfCapturePreferenceEnum SelfBrowserSurface
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SelfCapturePreferenceEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SelfCapturePreferenceEnum>>(JSObject, "selfBrowserSurface");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SelfCapturePreferenceEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SelfCapturePreferenceEnum>>(JSObject, "selfBrowserSurface", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SelfCapturePreferenceEnum>.Get(JSObject, "selfBrowserSurface");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SelfCapturePreferenceEnum>.Set(JSObject, "selfBrowserSurface", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SystemAudioPreferenceEnum SystemAudio
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SystemAudioPreferenceEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SystemAudioPreferenceEnum>>(JSObject, "systemAudio");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SystemAudioPreferenceEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SystemAudioPreferenceEnum>>(JSObject, "systemAudio", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SystemAudioPreferenceEnum>.Get(JSObject, "systemAudio");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SystemAudioPreferenceEnum>.Set(JSObject, "systemAudio", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WindowAudioPreferenceEnum WindowAudio
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WindowAudioPreferenceEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WindowAudioPreferenceEnum>>(JSObject, "windowAudio");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.WindowAudioPreferenceEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WindowAudioPreferenceEnum>>(JSObject, "windowAudio", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WindowAudioPreferenceEnum>.Get(JSObject, "windowAudio");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WindowAudioPreferenceEnum>.Set(JSObject, "windowAudio", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SurfaceSwitchingPreferenceEnum SurfaceSwitching
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SurfaceSwitchingPreferenceEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SurfaceSwitchingPreferenceEnum>>(JSObject, "surfaceSwitching");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SurfaceSwitchingPreferenceEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SurfaceSwitchingPreferenceEnum>>(JSObject, "surfaceSwitching", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SurfaceSwitchingPreferenceEnum>.Get(JSObject, "surfaceSwitching");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SurfaceSwitchingPreferenceEnum>.Set(JSObject, "surfaceSwitching", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MonitorTypeSurfacesEnum MonitorTypeSurfaces
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MonitorTypeSurfacesEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MonitorTypeSurfacesEnum>>(JSObject, "monitorTypeSurfaces");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MonitorTypeSurfacesEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MonitorTypeSurfacesEnum>>(JSObject, "monitorTypeSurfaces", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MonitorTypeSurfacesEnum>.Get(JSObject, "monitorTypeSurfaces");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MonitorTypeSurfacesEnum>.Set(JSObject, "monitorTypeSurfaces", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioSelectionPreferenceEnum AudioSelection
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioSelectionPreferenceEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioSelectionPreferenceEnum>>(JSObject, "audioSelection");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AudioSelectionPreferenceEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioSelectionPreferenceEnum>>(JSObject, "audioSelection", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioSelectionPreferenceEnum>.Get(JSObject, "audioSelection");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioSelectionPreferenceEnum>.Set(JSObject, "audioSelection", value);
     }
 }
 

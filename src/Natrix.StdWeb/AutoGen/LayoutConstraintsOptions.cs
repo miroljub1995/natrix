@@ -26,64 +26,64 @@ public partial class LayoutConstraintsOptions: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double AvailableInlineSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "availableInlineSize");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "availableInlineSize", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "availableInlineSize");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "availableInlineSize", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double AvailableBlockSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "availableBlockSize");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "availableBlockSize", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "availableBlockSize");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "availableBlockSize", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double FixedInlineSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "fixedInlineSize");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "fixedInlineSize", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "fixedInlineSize");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "fixedInlineSize", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double FixedBlockSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "fixedBlockSize");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "fixedBlockSize", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "fixedBlockSize");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "fixedBlockSize", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double PercentageInlineSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "percentageInlineSize");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "percentageInlineSize", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "percentageInlineSize");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "percentageInlineSize", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double PercentageBlockSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "percentageBlockSize");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "percentageBlockSize", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "percentageBlockSize");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "percentageBlockSize", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double BlockFragmentationOffset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "blockFragmentationOffset");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "blockFragmentationOffset", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "blockFragmentationOffset");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "blockFragmentationOffset", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BlockFragmentationType BlockFragmentationType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BlockFragmentationType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BlockFragmentationType>>(JSObject, "blockFragmentationType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.BlockFragmentationType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BlockFragmentationType>>(JSObject, "blockFragmentationType", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BlockFragmentationType>.Get(JSObject, "blockFragmentationType");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BlockFragmentationType>.Set(JSObject, "blockFragmentationType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>? Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>?, global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>>>(JSObject, "data");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>?, global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>>>(JSObject, "data", value);
+        get => global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>>.Get(JSObject, "data");
+        set => global::Natrix.JSCore.Generics.NullableUnionAccessor<global::Natrix.JSCore.Generics.Union<double, global::System.Numerics.BigInteger, string, bool, global::System.Runtime.InteropServices.JavaScript.JSObject, object, global::Natrix.JSCore.Generics.DoubleAccessor, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.StringAccessor, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.ObjectAccessor>>.Set(JSObject, "data", value);
     }
 }
 

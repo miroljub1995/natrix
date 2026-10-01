@@ -26,15 +26,15 @@ public partial class GPUBlendState: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GPUBlendComponent Color
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUBlendComponent, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBlendComponent>>(JSObject, "color");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUBlendComponent, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBlendComponent>>(JSObject, "color", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBlendComponent>.Get(JSObject, "color");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBlendComponent>.Set(JSObject, "color", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GPUBlendComponent Alpha
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUBlendComponent, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBlendComponent>>(JSObject, "alpha");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUBlendComponent, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBlendComponent>>(JSObject, "alpha", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBlendComponent>.Get(JSObject, "alpha");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUBlendComponent>.Set(JSObject, "alpha", value);
     }
 }
 

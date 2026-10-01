@@ -26,8 +26,8 @@ public partial class MLContextLostInfo: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "message");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "message", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "message");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "message", value);
     }
 }
 

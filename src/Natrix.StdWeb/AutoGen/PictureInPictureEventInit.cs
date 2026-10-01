@@ -26,8 +26,8 @@ public partial class PictureInPictureEventInit: global::Natrix.StdWeb.EventInit,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.PictureInPictureWindow PictureInPictureWindow
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PictureInPictureWindow, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PictureInPictureWindow>>(JSObject, "pictureInPictureWindow");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PictureInPictureWindow, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PictureInPictureWindow>>(JSObject, "pictureInPictureWindow", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PictureInPictureWindow>.Get(JSObject, "pictureInPictureWindow");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PictureInPictureWindow>.Set(JSObject, "pictureInPictureWindow", value);
     }
 }
 

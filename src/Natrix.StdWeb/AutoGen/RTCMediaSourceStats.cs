@@ -26,15 +26,15 @@ public partial class RTCMediaSourceStats: global::Natrix.StdWeb.RTCStats, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string TrackIdentifier
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "trackIdentifier");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "trackIdentifier", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "trackIdentifier");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "trackIdentifier", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Kind
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "kind");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "kind", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "kind");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "kind", value);
     }
 }
 

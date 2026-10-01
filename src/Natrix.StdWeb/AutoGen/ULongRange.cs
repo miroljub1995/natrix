@@ -26,15 +26,15 @@ public partial class ULongRange: global::Natrix.JSCore.JSObjectProxy, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Max
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "max");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "max", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "max");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "max", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Min
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "min");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "min", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "min");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "min", value);
     }
 }
 

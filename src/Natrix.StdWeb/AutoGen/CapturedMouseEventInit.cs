@@ -26,15 +26,15 @@ public partial class CapturedMouseEventInit: global::Natrix.StdWeb.EventInit, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int SurfaceX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "surfaceX");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "surfaceX", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "surfaceX");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "surfaceX", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int SurfaceY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "surfaceY");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "surfaceY", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "surfaceY");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "surfaceY", value);
     }
 }
 

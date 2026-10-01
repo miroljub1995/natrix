@@ -26,15 +26,15 @@ public partial class WebTransportCloseInfo: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint CloseCode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "closeCode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "closeCode", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "closeCode");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "closeCode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Reason
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "reason");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "reason", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "reason");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "reason", value);
     }
 }
 

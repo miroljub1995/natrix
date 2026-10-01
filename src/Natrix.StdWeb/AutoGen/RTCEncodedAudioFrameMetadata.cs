@@ -26,15 +26,15 @@ public partial class RTCEncodedAudioFrameMetadata: global::Natrix.StdWeb.RTCEnco
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public short SequenceNumber
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<short, global::Natrix.JSCore.Generics.Int16Accessor>(JSObject, "sequenceNumber");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<short, global::Natrix.JSCore.Generics.Int16Accessor>(JSObject, "sequenceNumber", value);
+        get => global::Natrix.JSCore.Generics.Int16Accessor.Get(JSObject, "sequenceNumber");
+        set => global::Natrix.JSCore.Generics.Int16Accessor.Set(JSObject, "sequenceNumber", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double AudioLevel
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "audioLevel");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "audioLevel", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "audioLevel");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "audioLevel", value);
     }
 }
 

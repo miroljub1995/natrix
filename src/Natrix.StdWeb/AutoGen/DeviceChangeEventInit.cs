@@ -26,8 +26,8 @@ public partial class DeviceChangeEventInit: global::Natrix.StdWeb.EventInit, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MediaDeviceInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaDeviceInfo>> Devices
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MediaDeviceInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaDeviceInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MediaDeviceInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaDeviceInfo>>>>(JSObject, "devices");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MediaDeviceInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaDeviceInfo>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MediaDeviceInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaDeviceInfo>>>>(JSObject, "devices", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MediaDeviceInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaDeviceInfo>>>.Get(JSObject, "devices");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MediaDeviceInfo, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaDeviceInfo>>>.Set(JSObject, "devices", value);
     }
 }
 

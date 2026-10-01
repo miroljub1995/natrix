@@ -39,13 +39,13 @@ public partial class XRInputSourceEvent: global::Natrix.StdWeb.Event, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRFrame Frame
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRFrame>>(JSObject, "frame");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRFrame>.Get(JSObject, "frame");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRInputSource InputSource
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRInputSource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRInputSource>>(JSObject, "inputSource");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.XRInputSource>.Get(JSObject, "inputSource");
     }
 }
 

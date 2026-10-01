@@ -55,7 +55,7 @@ public partial class WebGLContextEvent: global::Natrix.StdWeb.Event, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string StatusMessage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "statusMessage");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "statusMessage");
     }
 }
 

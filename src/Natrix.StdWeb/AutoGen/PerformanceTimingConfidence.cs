@@ -18,13 +18,13 @@ public partial class PerformanceTimingConfidence: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double RandomizedTriggerRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "randomizedTriggerRate");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "randomizedTriggerRate");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PerformanceTimingConfidenceValue Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PerformanceTimingConfidenceValue, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PerformanceTimingConfidenceValue>>(JSObject, "value");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PerformanceTimingConfidenceValue>.Get(JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -35,7 +35,7 @@ public partial class PerformanceTimingConfidence: global::Natrix.JSCore.JSObject
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toJSON", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.JSObjectAccessor.Get(___resOwner_1.JSObject, "value");
     }
 }
 

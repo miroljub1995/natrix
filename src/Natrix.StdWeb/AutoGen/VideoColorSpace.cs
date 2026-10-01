@@ -41,25 +41,25 @@ public partial class VideoColorSpace: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoColorPrimaries? Primaries
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoColorPrimaries?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoColorPrimaries>>(JSObject, "primaries");
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoColorPrimaries>.Get(JSObject, "primaries");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoTransferCharacteristics? Transfer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoTransferCharacteristics?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoTransferCharacteristics>>(JSObject, "transfer");
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoTransferCharacteristics>.Get(JSObject, "transfer");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoMatrixCoefficients? Matrix
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoMatrixCoefficients?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoMatrixCoefficients>>(JSObject, "matrix");
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.VideoMatrixCoefficients>.Get(JSObject, "matrix");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool? FullRange
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool?, global::Natrix.JSCore.Generics.NullableBooleanAccessor>(JSObject, "fullRange");
+        get => global::Natrix.JSCore.Generics.NullableBooleanAccessor.Get(JSObject, "fullRange");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -70,7 +70,7 @@ public partial class VideoColorSpace: global::Natrix.JSCore.JSObjectProxy, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toJSON", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoColorSpaceInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoColorSpaceInit>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoColorSpaceInit>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

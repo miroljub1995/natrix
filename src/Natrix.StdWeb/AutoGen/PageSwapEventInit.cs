@@ -26,15 +26,15 @@ public partial class PageSwapEventInit: global::Natrix.StdWeb.EventInit, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NavigationActivation? Activation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NavigationActivation?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.NavigationActivation>>(JSObject, "activation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.NavigationActivation?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.NavigationActivation>>(JSObject, "activation", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.NavigationActivation>.Get(JSObject, "activation");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.NavigationActivation>.Set(JSObject, "activation", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ViewTransition? ViewTransition
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ViewTransition?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.ViewTransition>>(JSObject, "viewTransition");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ViewTransition?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.ViewTransition>>(JSObject, "viewTransition", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.ViewTransition>.Get(JSObject, "viewTransition");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.ViewTransition>.Set(JSObject, "viewTransition", value);
     }
 }
 

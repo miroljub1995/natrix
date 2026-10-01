@@ -26,8 +26,8 @@ public partial class RTCRtpCodingParameters: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Rid
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "rid");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "rid", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "rid");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "rid", value);
     }
 }
 

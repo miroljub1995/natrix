@@ -26,8 +26,8 @@ public partial class XRSessionSupportedPermissionDescriptor: global::Natrix.StdW
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRSessionMode Mode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRSessionMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRSessionMode>>(JSObject, "mode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.XRSessionMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRSessionMode>>(JSObject, "mode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRSessionMode>.Get(JSObject, "mode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRSessionMode>.Set(JSObject, "mode", value);
     }
 }
 

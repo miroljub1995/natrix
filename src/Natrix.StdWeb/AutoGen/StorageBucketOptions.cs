@@ -26,22 +26,22 @@ public partial class StorageBucketOptions: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Persisted
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "persisted");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "persisted", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "persisted");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "persisted", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Quota
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "quota");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "quota", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "quota");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "quota", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Expires
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "expires");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "expires", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "expires");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "expires", value);
     }
 }
 

@@ -26,22 +26,22 @@ public partial class KeyframeEffectOptions: global::Natrix.StdWeb.EffectTiming, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CompositeOperation Composite
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CompositeOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CompositeOperation>>(JSObject, "composite");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CompositeOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CompositeOperation>>(JSObject, "composite", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CompositeOperation>.Get(JSObject, "composite");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CompositeOperation>.Set(JSObject, "composite", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? PseudoElement
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "pseudoElement");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "pseudoElement", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "pseudoElement");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "pseudoElement", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.IterationCompositeOperation IterationComposite
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IterationCompositeOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IterationCompositeOperation>>(JSObject, "iterationComposite");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.IterationCompositeOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IterationCompositeOperation>>(JSObject, "iterationComposite", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IterationCompositeOperation>.Get(JSObject, "iterationComposite");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IterationCompositeOperation>.Set(JSObject, "iterationComposite", value);
     }
 }
 

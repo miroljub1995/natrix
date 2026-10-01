@@ -26,15 +26,15 @@ public partial class JsonLdError: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.JsonLdErrorCode Code
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.JsonLdErrorCode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.JsonLdErrorCode>>(JSObject, "code");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.JsonLdErrorCode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.JsonLdErrorCode>>(JSObject, "code", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.JsonLdErrorCode>.Get(JSObject, "code");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.JsonLdErrorCode>.Set(JSObject, "code", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "message");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "message", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "message");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "message", value);
     }
 }
 

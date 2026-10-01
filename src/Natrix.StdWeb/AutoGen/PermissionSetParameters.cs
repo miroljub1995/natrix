@@ -26,15 +26,15 @@ public partial class PermissionSetParameters: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::System.Runtime.InteropServices.JavaScript.JSObject Descriptor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "descriptor");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "descriptor", value);
+        get => global::Natrix.JSCore.Generics.JSObjectAccessor.Get(JSObject, "descriptor");
+        set => global::Natrix.JSCore.Generics.JSObjectAccessor.Set(JSObject, "descriptor", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.PermissionState State
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PermissionState, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PermissionState>>(JSObject, "state");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PermissionState, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PermissionState>>(JSObject, "state", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PermissionState>.Get(JSObject, "state");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PermissionState>.Set(JSObject, "state", value);
     }
 }
 

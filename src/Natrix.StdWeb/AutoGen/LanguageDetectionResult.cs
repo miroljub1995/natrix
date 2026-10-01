@@ -26,15 +26,15 @@ public partial class LanguageDetectionResult: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string DetectedLanguage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "detectedLanguage");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "detectedLanguage", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "detectedLanguage");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "detectedLanguage", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Confidence
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "confidence");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "confidence", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "confidence");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "confidence", value);
     }
 }
 

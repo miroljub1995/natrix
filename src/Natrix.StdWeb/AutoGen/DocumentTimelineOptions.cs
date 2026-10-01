@@ -26,8 +26,8 @@ public partial class DocumentTimelineOptions: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double OriginTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "originTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "originTime", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "originTime");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "originTime", value);
     }
 }
 

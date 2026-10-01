@@ -26,8 +26,8 @@ public partial class CSSParserOptions: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject AtRules
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "atRules");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "atRules", value);
+        get => global::Natrix.JSCore.Generics.JSObjectAccessor.Get(JSObject, "atRules");
+        set => global::Natrix.JSCore.Generics.JSObjectAccessor.Set(JSObject, "atRules", value);
     }
 }
 

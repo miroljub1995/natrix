@@ -26,8 +26,8 @@ public partial class RTCRtpCodecParameters: global::Natrix.StdWeb.RTCRtpCodec, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required byte PayloadType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "payloadType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "payloadType", value);
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "payloadType");
+        set => global::Natrix.JSCore.Generics.ByteAccessor.Set(JSObject, "payloadType", value);
     }
 }
 

@@ -26,15 +26,15 @@ public partial class RouterRule: global::Natrix.JSCore.JSObjectProxy, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.RouterCondition Condition
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RouterCondition, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterCondition>>(JSObject, "condition");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RouterCondition, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterCondition>>(JSObject, "condition", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterCondition>.Get(JSObject, "condition");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterCondition>.Set(JSObject, "condition", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RouterSourceDict, global::Natrix.StdWeb.RouterSourceEnum, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterSourceDict>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RouterSourceEnum>> Source
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RouterSourceDict, global::Natrix.StdWeb.RouterSourceEnum, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterSourceDict>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RouterSourceEnum>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RouterSourceDict, global::Natrix.StdWeb.RouterSourceEnum, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterSourceDict>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RouterSourceEnum>>>>(JSObject, "source");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RouterSourceDict, global::Natrix.StdWeb.RouterSourceEnum, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterSourceDict>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RouterSourceEnum>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RouterSourceDict, global::Natrix.StdWeb.RouterSourceEnum, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterSourceDict>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RouterSourceEnum>>>>(JSObject, "source", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RouterSourceDict, global::Natrix.StdWeb.RouterSourceEnum, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterSourceDict>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RouterSourceEnum>>>.Get(JSObject, "source");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.RouterSourceDict, global::Natrix.StdWeb.RouterSourceEnum, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RouterSourceDict>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RouterSourceEnum>>>.Set(JSObject, "source", value);
     }
 }
 

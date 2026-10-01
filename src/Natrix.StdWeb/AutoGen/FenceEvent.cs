@@ -26,43 +26,43 @@ public partial class FenceEvent: global::Natrix.JSCore.JSObjectProxy, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string EventType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "eventType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "eventType", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "eventType");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "eventType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string EventData
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "eventData");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "eventData", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "eventData");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "eventData", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FenceReportingDestination, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FenceReportingDestination>> Destination
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FenceReportingDestination, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FenceReportingDestination>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FenceReportingDestination, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FenceReportingDestination>>>>(JSObject, "destination");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FenceReportingDestination, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FenceReportingDestination>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FenceReportingDestination, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FenceReportingDestination>>>>(JSObject, "destination", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FenceReportingDestination, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FenceReportingDestination>>>.Get(JSObject, "destination");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.FenceReportingDestination, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FenceReportingDestination>>>.Set(JSObject, "destination", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool CrossOriginExposed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "crossOriginExposed");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "crossOriginExposed", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "crossOriginExposed");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "crossOriginExposed", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Once
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "once");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "once", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "once");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "once", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string DestinationURL
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "destinationURL");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "destinationURL", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "destinationURL");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "destinationURL", value);
     }
 }
 

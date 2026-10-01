@@ -26,8 +26,8 @@ public partial class AttributionConversionResult: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Uint8Array Report
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Uint8Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8Array>>(JSObject, "report");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Uint8Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8Array>>(JSObject, "report", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8Array>.Get(JSObject, "report");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8Array>.Set(JSObject, "report", value);
     }
 }
 

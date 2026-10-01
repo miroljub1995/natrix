@@ -26,22 +26,22 @@ public partial class PositionOptions: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool EnableHighAccuracy
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "enableHighAccuracy");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "enableHighAccuracy", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "enableHighAccuracy");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "enableHighAccuracy", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Timeout
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "timeout");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "timeout", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "timeout");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "timeout", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint MaximumAge
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "maximumAge");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "maximumAge", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "maximumAge");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "maximumAge", value);
     }
 }
 

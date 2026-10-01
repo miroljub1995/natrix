@@ -26,43 +26,43 @@ public partial class ModelContextTool: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "name", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Title
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "title");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "title", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "title");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "title", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Description
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "description");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "description", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "description");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "description", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject InputSchema
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "inputSchema");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "inputSchema", value);
+        get => global::Natrix.JSCore.Generics.JSObjectAccessor.Get(JSObject, "inputSchema");
+        set => global::Natrix.JSCore.Generics.JSObjectAccessor.Set(JSObject, "inputSchema", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.ToolExecuteCallback Execute
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ToolExecuteCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ToolExecuteCallback>>(JSObject, "execute");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ToolExecuteCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ToolExecuteCallback>>(JSObject, "execute", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ToolExecuteCallback>.Get(JSObject, "execute");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ToolExecuteCallback>.Set(JSObject, "execute", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ToolAnnotations Annotations
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ToolAnnotations, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ToolAnnotations>>(JSObject, "annotations");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ToolAnnotations, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ToolAnnotations>>(JSObject, "annotations", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ToolAnnotations>.Get(JSObject, "annotations");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ToolAnnotations>.Set(JSObject, "annotations", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class MediaKeysPolicy: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string MinHdcpVersion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "minHdcpVersion");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "minHdcpVersion", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "minHdcpVersion");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "minHdcpVersion", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class ReadableStreamGetReaderOptions: global::Natrix.JSCore.JSObj
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ReadableStreamReaderMode Mode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ReadableStreamReaderMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ReadableStreamReaderMode>>(JSObject, "mode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ReadableStreamReaderMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ReadableStreamReaderMode>>(JSObject, "mode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ReadableStreamReaderMode>.Get(JSObject, "mode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ReadableStreamReaderMode>.Set(JSObject, "mode", value);
     }
 }
 

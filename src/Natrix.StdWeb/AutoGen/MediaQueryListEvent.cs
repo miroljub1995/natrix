@@ -55,13 +55,13 @@ public partial class MediaQueryListEvent: global::Natrix.StdWeb.Event, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Media
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "media");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "media");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Matches
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "matches");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "matches");
     }
 }
 

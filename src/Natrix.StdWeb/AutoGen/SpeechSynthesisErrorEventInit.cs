@@ -26,8 +26,8 @@ public partial class SpeechSynthesisErrorEventInit: global::Natrix.StdWeb.Speech
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.SpeechSynthesisErrorCode Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpeechSynthesisErrorCode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpeechSynthesisErrorCode>>(JSObject, "error");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SpeechSynthesisErrorCode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpeechSynthesisErrorCode>>(JSObject, "error", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpeechSynthesisErrorCode>.Get(JSObject, "error");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpeechSynthesisErrorCode>.Set(JSObject, "error", value);
     }
 }
 

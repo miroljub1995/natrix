@@ -18,7 +18,7 @@ public partial class CanvasCaptureMediaStreamTrack: global::Natrix.StdWeb.MediaS
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HTMLCanvasElement Canvas
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLCanvasElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLCanvasElement>>(JSObject, "canvas");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLCanvasElement>.Get(JSObject, "canvas");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

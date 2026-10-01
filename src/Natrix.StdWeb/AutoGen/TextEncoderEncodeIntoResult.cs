@@ -26,15 +26,15 @@ public partial class TextEncoderEncodeIntoResult: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Read
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "read");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "read", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "read");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "read", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Written
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "written");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "written", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "written");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "written", value);
     }
 }
 

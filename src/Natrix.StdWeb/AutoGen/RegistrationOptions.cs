@@ -26,22 +26,22 @@ public partial class RegistrationOptions: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Scope
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "scope");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "scope", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "scope");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "scope", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WorkerType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WorkerType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WorkerType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.WorkerType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WorkerType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WorkerType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.WorkerType>.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ServiceWorkerUpdateViaCache UpdateViaCache
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ServiceWorkerUpdateViaCache, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ServiceWorkerUpdateViaCache>>(JSObject, "updateViaCache");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ServiceWorkerUpdateViaCache, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ServiceWorkerUpdateViaCache>>(JSObject, "updateViaCache", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ServiceWorkerUpdateViaCache>.Get(JSObject, "updateViaCache");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ServiceWorkerUpdateViaCache>.Set(JSObject, "updateViaCache", value);
     }
 }
 

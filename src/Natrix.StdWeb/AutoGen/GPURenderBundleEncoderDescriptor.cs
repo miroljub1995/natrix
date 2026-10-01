@@ -26,15 +26,15 @@ public partial class GPURenderBundleEncoderDescriptor: global::Natrix.StdWeb.GPU
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool DepthReadOnly
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "depthReadOnly");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "depthReadOnly", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "depthReadOnly");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "depthReadOnly", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool StencilReadOnly
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "stencilReadOnly");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "stencilReadOnly", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "stencilReadOnly");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "stencilReadOnly", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class RTCRtpSFrameEncryptorOptions: global::Natrix.StdWeb.SFrameT
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SFrameType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SFrameType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SFrameType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameType>.Set(JSObject, "type", value);
     }
 }
 

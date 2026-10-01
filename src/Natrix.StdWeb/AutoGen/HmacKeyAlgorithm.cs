@@ -26,15 +26,15 @@ public partial class HmacKeyAlgorithm: global::Natrix.StdWeb.KeyAlgorithm, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.KeyAlgorithm Hash
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.KeyAlgorithm, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeyAlgorithm>>(JSObject, "hash");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.KeyAlgorithm, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeyAlgorithm>>(JSObject, "hash", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeyAlgorithm>.Get(JSObject, "hash");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeyAlgorithm>.Set(JSObject, "hash", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "length");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "length", value);
     }
 }
 

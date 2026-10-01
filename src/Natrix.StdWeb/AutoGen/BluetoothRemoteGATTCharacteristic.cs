@@ -18,25 +18,25 @@ public partial class BluetoothRemoteGATTCharacteristic: global::Natrix.StdWeb.Ev
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BluetoothRemoteGATTService Service
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BluetoothRemoteGATTService, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTService>>(JSObject, "service");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTService>.Get(JSObject, "service");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Uuid
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "uuid");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "uuid");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BluetoothCharacteristicProperties Properties
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BluetoothCharacteristicProperties, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothCharacteristicProperties>>(JSObject, "properties");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothCharacteristicProperties>.Get(JSObject, "properties");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.DataView? Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.DataView?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.DataView>>(JSObject, "value");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.DataView>.Get(JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -55,7 +55,7 @@ public partial class BluetoothRemoteGATTCharacteristic: global::Natrix.StdWeb.Ev
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getDescriptor", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -66,7 +66,7 @@ public partial class BluetoothRemoteGATTCharacteristic: global::Natrix.StdWeb.Ev
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getDescriptors", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -85,7 +85,7 @@ public partial class BluetoothRemoteGATTCharacteristic: global::Natrix.StdWeb.Ev
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getDescriptors", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTDescriptor>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -96,7 +96,7 @@ public partial class BluetoothRemoteGATTCharacteristic: global::Natrix.StdWeb.Ev
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "readValue", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.DataView, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.DataView>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.DataView, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.DataView>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.DataView, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.DataView>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -115,7 +115,7 @@ public partial class BluetoothRemoteGATTCharacteristic: global::Natrix.StdWeb.Ev
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "writeValue", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -134,7 +134,7 @@ public partial class BluetoothRemoteGATTCharacteristic: global::Natrix.StdWeb.Ev
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "writeValueWithResponse", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -153,7 +153,7 @@ public partial class BluetoothRemoteGATTCharacteristic: global::Natrix.StdWeb.Ev
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "writeValueWithoutResponse", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -164,7 +164,7 @@ public partial class BluetoothRemoteGATTCharacteristic: global::Natrix.StdWeb.Ev
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "startNotifications", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BluetoothRemoteGATTCharacteristic, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTCharacteristic>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BluetoothRemoteGATTCharacteristic, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTCharacteristic>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BluetoothRemoteGATTCharacteristic, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTCharacteristic>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -175,14 +175,14 @@ public partial class BluetoothRemoteGATTCharacteristic: global::Natrix.StdWeb.Ev
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "stopNotifications", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BluetoothRemoteGATTCharacteristic, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTCharacteristic>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BluetoothRemoteGATTCharacteristic, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTCharacteristic>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.BluetoothRemoteGATTCharacteristic, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothRemoteGATTCharacteristic>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventHandlerNonNull? Oncharacteristicvaluechanged
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "oncharacteristicvaluechanged");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "oncharacteristicvaluechanged", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Get(JSObject, "oncharacteristicvaluechanged");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Set(JSObject, "oncharacteristicvaluechanged", value);
     }
 }
 

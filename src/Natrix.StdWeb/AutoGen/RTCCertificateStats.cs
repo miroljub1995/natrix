@@ -26,29 +26,29 @@ public partial class RTCCertificateStats: global::Natrix.StdWeb.RTCStats, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Fingerprint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "fingerprint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "fingerprint", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "fingerprint");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "fingerprint", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string FingerprintAlgorithm
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "fingerprintAlgorithm");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "fingerprintAlgorithm", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "fingerprintAlgorithm");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "fingerprintAlgorithm", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Base64Certificate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "base64Certificate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "base64Certificate", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "base64Certificate");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "base64Certificate", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string IssuerCertificateId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "issuerCertificateId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "issuerCertificateId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "issuerCertificateId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "issuerCertificateId", value);
     }
 }
 

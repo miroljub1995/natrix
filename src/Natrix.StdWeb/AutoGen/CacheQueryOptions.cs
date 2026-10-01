@@ -26,22 +26,22 @@ public partial class CacheQueryOptions: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IgnoreSearch
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreSearch");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreSearch", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ignoreSearch");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "ignoreSearch", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IgnoreMethod
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreMethod");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreMethod", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ignoreMethod");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "ignoreMethod", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IgnoreVary
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreVary");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreVary", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ignoreVary");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "ignoreVary", value);
     }
 }
 

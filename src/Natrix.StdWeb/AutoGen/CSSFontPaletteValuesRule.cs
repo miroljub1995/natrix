@@ -18,25 +18,25 @@ public partial class CSSFontPaletteValuesRule: global::Natrix.StdWeb.CSSRule, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string FontFamily
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "fontFamily");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "fontFamily");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string BasePalette
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "basePalette");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "basePalette");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string OverrideColors
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "overrideColors");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "overrideColors");
     }
 }
 

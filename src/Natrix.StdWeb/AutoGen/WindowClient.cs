@@ -18,19 +18,19 @@ public partial class WindowClient: global::Natrix.StdWeb.Client, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DocumentVisibilityState VisibilityState
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DocumentVisibilityState, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DocumentVisibilityState>>(JSObject, "visibilityState");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DocumentVisibilityState>.Get(JSObject, "visibilityState");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Focused
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "focused");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "focused");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor> AncestorOrigins
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "ancestorOrigins");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "ancestorOrigins");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -41,7 +41,7 @@ public partial class WindowClient: global::Natrix.StdWeb.Client, global::Natrix.
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "focus", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WindowClient, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WindowClient>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WindowClient, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WindowClient>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WindowClient, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WindowClient>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -61,7 +61,7 @@ public partial class WindowClient: global::Natrix.StdWeb.Client, global::Natrix.
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "navigate", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WindowClient?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WindowClient>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WindowClient?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WindowClient>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WindowClient?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WindowClient>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

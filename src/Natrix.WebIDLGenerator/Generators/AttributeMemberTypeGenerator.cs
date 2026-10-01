@@ -33,7 +33,7 @@ public class AttributeMemberTypeGenerator(
                 : "JSObject";
 
             var getter = $$"""
-                           get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<{{returnTypeDeclaration}}, {{accessor}}>({{inputVar}}, "{{input.Name}}");
+                           get => {{accessor}}.Get({{inputVar}}, "{{input.Name}}");
                            """;
 
             bodyParts.Add(getter);
@@ -48,7 +48,7 @@ public class AttributeMemberTypeGenerator(
                 : "JSObject";
 
             var setter = $$"""
-                           set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<{{returnTypeDeclaration}}, {{accessor}}>({{inputVar}}, "{{input.Name}}", value);
+                           set => {{accessor}}.Set({{inputVar}}, "{{input.Name}}", value);
                            """;
 
             bodyParts.Add(setter);

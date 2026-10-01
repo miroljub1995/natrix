@@ -39,7 +39,7 @@ public partial class MediaElementAudioSourceNode: global::Natrix.StdWeb.AudioNod
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HTMLMediaElement MediaElement
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HTMLMediaElement, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLMediaElement>>(JSObject, "mediaElement");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLMediaElement>.Get(JSObject, "mediaElement");
     }
 }
 

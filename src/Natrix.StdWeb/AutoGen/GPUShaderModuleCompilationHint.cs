@@ -26,15 +26,15 @@ public partial class GPUShaderModuleCompilationHint: global::Natrix.JSCore.JSObj
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string EntryPoint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "entryPoint");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "entryPoint", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "entryPoint");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "entryPoint", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.GPUPipelineLayout, global::Natrix.StdWeb.GPUAutoLayoutMode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUPipelineLayout>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUAutoLayoutMode>> Layout
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.GPUPipelineLayout, global::Natrix.StdWeb.GPUAutoLayoutMode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUPipelineLayout>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUAutoLayoutMode>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.GPUPipelineLayout, global::Natrix.StdWeb.GPUAutoLayoutMode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUPipelineLayout>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUAutoLayoutMode>>>>(JSObject, "layout");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.GPUPipelineLayout, global::Natrix.StdWeb.GPUAutoLayoutMode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUPipelineLayout>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUAutoLayoutMode>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.GPUPipelineLayout, global::Natrix.StdWeb.GPUAutoLayoutMode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUPipelineLayout>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUAutoLayoutMode>>>>(JSObject, "layout", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.GPUPipelineLayout, global::Natrix.StdWeb.GPUAutoLayoutMode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUPipelineLayout>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUAutoLayoutMode>>>.Get(JSObject, "layout");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.GPUPipelineLayout, global::Natrix.StdWeb.GPUAutoLayoutMode, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUPipelineLayout>, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUAutoLayoutMode>>>.Set(JSObject, "layout", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class PointerLockOptions: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool UnadjustedMovement
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "unadjustedMovement");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "unadjustedMovement", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "unadjustedMovement");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "unadjustedMovement", value);
     }
 }
 

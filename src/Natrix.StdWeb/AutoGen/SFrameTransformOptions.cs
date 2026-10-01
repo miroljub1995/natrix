@@ -26,8 +26,8 @@ public partial class SFrameTransformOptions: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.SFrameCipherSuite CipherSuite
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SFrameCipherSuite, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameCipherSuite>>(JSObject, "cipherSuite");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SFrameCipherSuite, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameCipherSuite>>(JSObject, "cipherSuite", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameCipherSuite>.Get(JSObject, "cipherSuite");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SFrameCipherSuite>.Set(JSObject, "cipherSuite", value);
     }
 }
 

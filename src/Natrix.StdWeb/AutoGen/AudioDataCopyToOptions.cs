@@ -26,29 +26,29 @@ public partial class AudioDataCopyToOptions: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint PlaneIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "planeIndex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "planeIndex", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "planeIndex");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "planeIndex", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint FrameOffset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "frameOffset");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "frameOffset", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "frameOffset");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "frameOffset", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint FrameCount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "frameCount");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "frameCount", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "frameCount");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "frameCount", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioSampleFormat Format
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioSampleFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioSampleFormat>>(JSObject, "format");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AudioSampleFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioSampleFormat>>(JSObject, "format", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioSampleFormat>.Get(JSObject, "format");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioSampleFormat>.Set(JSObject, "format", value);
     }
 }
 

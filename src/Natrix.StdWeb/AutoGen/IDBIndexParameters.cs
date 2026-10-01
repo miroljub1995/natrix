@@ -26,15 +26,15 @@ public partial class IDBIndexParameters: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Unique
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "unique");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "unique", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "unique");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "unique", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool MultiEntry
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "multiEntry");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "multiEntry", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "multiEntry");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "multiEntry", value);
     }
 }
 

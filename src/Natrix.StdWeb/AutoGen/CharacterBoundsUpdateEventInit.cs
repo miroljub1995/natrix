@@ -26,15 +26,15 @@ public partial class CharacterBoundsUpdateEventInit: global::Natrix.StdWeb.Event
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint RangeStart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rangeStart");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rangeStart", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "rangeStart");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "rangeStart", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint RangeEnd
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rangeEnd");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rangeEnd", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "rangeEnd");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "rangeEnd", value);
     }
 }
 

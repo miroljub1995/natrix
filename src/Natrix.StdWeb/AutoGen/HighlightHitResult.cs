@@ -26,15 +26,15 @@ public partial class HighlightHitResult: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Highlight Highlight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Highlight, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Highlight>>(JSObject, "highlight");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.Highlight, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Highlight>>(JSObject, "highlight", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Highlight>.Get(JSObject, "highlight");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Highlight>.Set(JSObject, "highlight", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AbstractRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AbstractRange>> Ranges
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AbstractRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AbstractRange>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AbstractRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AbstractRange>>>>(JSObject, "ranges");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AbstractRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AbstractRange>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AbstractRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AbstractRange>>>>(JSObject, "ranges", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AbstractRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AbstractRange>>>.Get(JSObject, "ranges");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.AbstractRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AbstractRange>>>.Set(JSObject, "ranges", value);
     }
 }
 

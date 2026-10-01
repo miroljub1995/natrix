@@ -26,8 +26,8 @@ public partial class MockMicrophoneConfiguration: global::Natrix.StdWeb.MockCapt
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint DefaultSampleRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "defaultSampleRate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "defaultSampleRate", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "defaultSampleRate");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "defaultSampleRate", value);
     }
 }
 

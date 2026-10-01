@@ -55,49 +55,49 @@ public partial class PaymentRequestEvent: global::Natrix.StdWeb.ExtendableEvent,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string TopOrigin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "topOrigin");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "topOrigin");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string PaymentRequestOrigin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "paymentRequestOrigin");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "paymentRequestOrigin");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string PaymentRequestId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "paymentRequestId");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "paymentRequestId");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PaymentMethodData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentMethodData>> MethodData
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PaymentMethodData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentMethodData>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PaymentMethodData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentMethodData>>>>(JSObject, "methodData");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PaymentMethodData, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentMethodData>>>.Get(JSObject, "methodData");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject Total
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "total");
+        get => global::Natrix.JSCore.Generics.JSObjectAccessor.Get(JSObject, "total");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PaymentDetailsModifier, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentDetailsModifier>> Modifiers
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PaymentDetailsModifier, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentDetailsModifier>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PaymentDetailsModifier, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentDetailsModifier>>>>(JSObject, "modifiers");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PaymentDetailsModifier, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentDetailsModifier>>>.Get(JSObject, "modifiers");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject? PaymentOptions
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject?, global::Natrix.JSCore.Generics.NullableJSObjectAccessor>(JSObject, "paymentOptions");
+        get => global::Natrix.JSCore.Generics.NullableJSObjectAccessor.Get(JSObject, "paymentOptions");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PaymentShippingOption, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentShippingOption>>? ShippingOptions
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PaymentShippingOption, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentShippingOption>>?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PaymentShippingOption, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentShippingOption>>>>(JSObject, "shippingOptions");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.PaymentShippingOption, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PaymentShippingOption>>>.Get(JSObject, "shippingOptions");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -117,7 +117,7 @@ public partial class PaymentRequestEvent: global::Natrix.StdWeb.ExtendableEvent,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "openWindow", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WindowClient?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WindowClient>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WindowClient?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WindowClient>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.WindowClient?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.WindowClient>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -137,7 +137,7 @@ public partial class PaymentRequestEvent: global::Natrix.StdWeb.ExtendableEvent,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "changePaymentMethod", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -170,7 +170,7 @@ public partial class PaymentRequestEvent: global::Natrix.StdWeb.ExtendableEvent,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "changePaymentMethod", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -181,7 +181,7 @@ public partial class PaymentRequestEvent: global::Natrix.StdWeb.ExtendableEvent,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "changeShippingAddress", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -201,7 +201,7 @@ public partial class PaymentRequestEvent: global::Natrix.StdWeb.ExtendableEvent,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "changeShippingAddress", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -221,7 +221,7 @@ public partial class PaymentRequestEvent: global::Natrix.StdWeb.ExtendableEvent,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "changeShippingOption", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.PaymentRequestDetailsUpdate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.PaymentRequestDetailsUpdate>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

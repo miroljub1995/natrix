@@ -26,15 +26,15 @@ public partial class ClientQueryOptions: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IncludeUncontrolled
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "includeUncontrolled");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "includeUncontrolled", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "includeUncontrolled");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "includeUncontrolled", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ClientType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ClientType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ClientType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ClientType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ClientType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ClientType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ClientType>.Set(JSObject, "type", value);
     }
 }
 

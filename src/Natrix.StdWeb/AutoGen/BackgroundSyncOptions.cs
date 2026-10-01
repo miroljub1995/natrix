@@ -26,8 +26,8 @@ public partial class BackgroundSyncOptions: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong MinInterval
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "minInterval");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "minInterval", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "minInterval");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "minInterval", value);
     }
 }
 

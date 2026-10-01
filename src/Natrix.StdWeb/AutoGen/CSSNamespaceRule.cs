@@ -18,13 +18,13 @@ public partial class CSSNamespaceRule: global::Natrix.StdWeb.CSSRule, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string NamespaceURI
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "namespaceURI");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "namespaceURI");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Prefix
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "prefix");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "prefix");
     }
 }
 

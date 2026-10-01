@@ -26,36 +26,36 @@ public partial class CrashReportBody: global::Natrix.StdWeb.ReportBody, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Reason
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "reason");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "reason", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "reason");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "reason", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Stack
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "stack");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "stack", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "stack");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "stack", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Is_top_level
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "is_top_level");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "is_top_level", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "is_top_level");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "is_top_level", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DocumentVisibilityState Visibility_state
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DocumentVisibilityState, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DocumentVisibilityState>>(JSObject, "visibility_state");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DocumentVisibilityState, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DocumentVisibilityState>>(JSObject, "visibility_state", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DocumentVisibilityState>.Get(JSObject, "visibility_state");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.DocumentVisibilityState>.Set(JSObject, "visibility_state", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject Crash_report_api
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "crash_report_api");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "crash_report_api", value);
+        get => global::Natrix.JSCore.Generics.JSObjectAccessor.Get(JSObject, "crash_report_api");
+        set => global::Natrix.JSCore.Generics.JSObjectAccessor.Set(JSObject, "crash_report_api", value);
     }
 }
 

@@ -39,13 +39,13 @@ public partial class NDEFReadingEvent: global::Natrix.StdWeb.Event, global::Natr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string SerialNumber
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "serialNumber");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "serialNumber");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NDEFMessage Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NDEFMessage, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFMessage>>(JSObject, "message");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFMessage>.Get(JSObject, "message");
     }
 }
 

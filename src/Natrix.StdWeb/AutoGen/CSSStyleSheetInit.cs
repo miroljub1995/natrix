@@ -26,22 +26,22 @@ public partial class CSSStyleSheetInit: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? BaseURL
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "baseURL");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "baseURL", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "baseURL");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "baseURL", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.MediaList, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaList>, global::Natrix.JSCore.Generics.StringAccessor> Media
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.MediaList, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaList>, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.MediaList, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaList>, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "media");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.MediaList, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaList>, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.MediaList, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaList>, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "media", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.MediaList, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaList>, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "media");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.MediaList, string, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaList>, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "media", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Disabled
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "disabled");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "disabled", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "disabled");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "disabled", value);
     }
 }
 

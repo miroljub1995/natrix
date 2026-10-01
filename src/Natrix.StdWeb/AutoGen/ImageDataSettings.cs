@@ -26,15 +26,15 @@ public partial class ImageDataSettings: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PredefinedColorSpace ColorSpace
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PredefinedColorSpace, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PredefinedColorSpace>>(JSObject, "colorSpace");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PredefinedColorSpace, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PredefinedColorSpace>>(JSObject, "colorSpace", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PredefinedColorSpace>.Get(JSObject, "colorSpace");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PredefinedColorSpace>.Set(JSObject, "colorSpace", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ImageDataPixelFormat PixelFormat
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ImageDataPixelFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImageDataPixelFormat>>(JSObject, "pixelFormat");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ImageDataPixelFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImageDataPixelFormat>>(JSObject, "pixelFormat", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImageDataPixelFormat>.Get(JSObject, "pixelFormat");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ImageDataPixelFormat>.Set(JSObject, "pixelFormat", value);
     }
 }
 

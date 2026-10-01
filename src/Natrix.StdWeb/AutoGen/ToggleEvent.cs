@@ -55,19 +55,19 @@ public partial class ToggleEvent: global::Natrix.StdWeb.Event, global::Natrix.JS
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string OldState
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "oldState");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "oldState");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string NewState
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "newState");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "newState");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? Source
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "source");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>.Get(JSObject, "source");
     }
 }
 

@@ -26,43 +26,43 @@ public partial class AudioBufferSourceOptions: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioBuffer? Buffer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioBuffer?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AudioBuffer>>(JSObject, "buffer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AudioBuffer?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AudioBuffer>>(JSObject, "buffer", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AudioBuffer>.Get(JSObject, "buffer");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AudioBuffer>.Set(JSObject, "buffer", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Detune
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "detune");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "detune", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "detune");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "detune", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Loop
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "loop");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "loop", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "loop");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "loop", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double LoopEnd
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "loopEnd");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "loopEnd", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "loopEnd");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "loopEnd", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double LoopStart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "loopStart");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "loopStart", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "loopStart");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "loopStart", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float PlaybackRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "playbackRate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "playbackRate", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "playbackRate");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "playbackRate", value);
     }
 }
 

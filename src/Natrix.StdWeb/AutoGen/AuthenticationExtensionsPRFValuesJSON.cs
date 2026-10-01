@@ -26,15 +26,15 @@ public partial class AuthenticationExtensionsPRFValuesJSON: global::Natrix.JSCor
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string First
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "first");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "first", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "first");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "first", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Second
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "second");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "second", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "second");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "second", value);
     }
 }
 

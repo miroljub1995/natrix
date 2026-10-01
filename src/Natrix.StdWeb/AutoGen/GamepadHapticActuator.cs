@@ -37,13 +37,13 @@ public partial class GamepadHapticActuator: global::Natrix.JSCore.JSObjectProxy,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "pulse", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<bool, global::Natrix.JSCore.Generics.BooleanAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<bool, global::Natrix.JSCore.Generics.BooleanAccessor>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadHapticEffectType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHapticEffectType>> Effects
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadHapticEffectType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHapticEffectType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadHapticEffectType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHapticEffectType>>>>(JSObject, "effects");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.GamepadHapticEffectType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHapticEffectType>>>.Get(JSObject, "effects");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -63,7 +63,7 @@ public partial class GamepadHapticActuator: global::Natrix.JSCore.JSObjectProxy,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "playEffect", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GamepadHapticsResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHapticsResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GamepadHapticsResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHapticsResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GamepadHapticsResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHapticsResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -88,7 +88,7 @@ public partial class GamepadHapticActuator: global::Natrix.JSCore.JSObjectProxy,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "playEffect", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GamepadHapticsResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHapticsResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GamepadHapticsResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHapticsResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GamepadHapticsResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHapticsResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -99,7 +99,7 @@ public partial class GamepadHapticActuator: global::Natrix.JSCore.JSObjectProxy,
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "reset", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GamepadHapticsResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHapticsResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GamepadHapticsResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHapticsResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.GamepadHapticsResult, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GamepadHapticsResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

@@ -26,15 +26,15 @@ public partial class ConstrainDoubleRange: global::Natrix.StdWeb.DoubleRange, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Exact
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "exact");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "exact", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "exact");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "exact", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Ideal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "ideal");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "ideal", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "ideal");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "ideal", value);
     }
 }
 

@@ -26,29 +26,29 @@ public partial class NavigationInterceptOptions: global::Natrix.JSCore.JSObjectP
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NavigationPrecommitHandler PrecommitHandler
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NavigationPrecommitHandler, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NavigationPrecommitHandler>>(JSObject, "precommitHandler");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.NavigationPrecommitHandler, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NavigationPrecommitHandler>>(JSObject, "precommitHandler", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NavigationPrecommitHandler>.Get(JSObject, "precommitHandler");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NavigationPrecommitHandler>.Set(JSObject, "precommitHandler", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NavigationInterceptHandler Handler
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NavigationInterceptHandler, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NavigationInterceptHandler>>(JSObject, "handler");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.NavigationInterceptHandler, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NavigationInterceptHandler>>(JSObject, "handler", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NavigationInterceptHandler>.Get(JSObject, "handler");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NavigationInterceptHandler>.Set(JSObject, "handler", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NavigationFocusReset FocusReset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NavigationFocusReset, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.NavigationFocusReset>>(JSObject, "focusReset");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.NavigationFocusReset, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.NavigationFocusReset>>(JSObject, "focusReset", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.NavigationFocusReset>.Get(JSObject, "focusReset");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.NavigationFocusReset>.Set(JSObject, "focusReset", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.NavigationScrollBehavior Scroll
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.NavigationScrollBehavior, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.NavigationScrollBehavior>>(JSObject, "scroll");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.NavigationScrollBehavior, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.NavigationScrollBehavior>>(JSObject, "scroll", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.NavigationScrollBehavior>.Get(JSObject, "scroll");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.NavigationScrollBehavior>.Set(JSObject, "scroll", value);
     }
 }
 

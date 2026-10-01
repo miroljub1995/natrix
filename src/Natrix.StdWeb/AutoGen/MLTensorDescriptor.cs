@@ -26,15 +26,15 @@ public partial class MLTensorDescriptor: global::Natrix.StdWeb.MLOperandDescript
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Readable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "readable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "readable", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "readable");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "readable", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Writable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "writable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "writable", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "writable");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "writable", value);
     }
 }
 

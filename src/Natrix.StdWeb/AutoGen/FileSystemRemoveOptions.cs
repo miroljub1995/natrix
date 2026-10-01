@@ -26,8 +26,8 @@ public partial class FileSystemRemoveOptions: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Recursive
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "recursive");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "recursive", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "recursive");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "recursive", value);
     }
 }
 

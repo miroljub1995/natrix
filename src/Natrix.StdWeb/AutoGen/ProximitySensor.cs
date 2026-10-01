@@ -41,19 +41,19 @@ public partial class ProximitySensor: global::Natrix.StdWeb.Sensor, global::Natr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Distance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "distance");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "distance");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Max
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "max");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "max");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool? Near
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool?, global::Natrix.JSCore.Generics.NullableBooleanAccessor>(JSObject, "near");
+        get => global::Natrix.JSCore.Generics.NullableBooleanAccessor.Get(JSObject, "near");
     }
 }
 

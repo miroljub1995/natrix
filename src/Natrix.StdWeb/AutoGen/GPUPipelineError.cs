@@ -39,7 +39,7 @@ public partial class GPUPipelineError: global::Natrix.StdWeb.DOMException, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUPipelineErrorReason Reason
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUPipelineErrorReason, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPipelineErrorReason>>(JSObject, "reason");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUPipelineErrorReason>.Get(JSObject, "reason");
     }
 }
 

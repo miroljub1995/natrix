@@ -26,29 +26,29 @@ public partial class RTCRtpStreamStats: global::Natrix.StdWeb.RTCStats, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint Ssrc
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "ssrc");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "ssrc", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "ssrc");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "ssrc", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Kind
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "kind");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "kind", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "kind");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "kind", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string TransportId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "transportId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "transportId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "transportId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "transportId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string CodecId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "codecId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "codecId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "codecId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "codecId", value);
     }
 }
 

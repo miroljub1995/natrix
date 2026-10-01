@@ -26,15 +26,15 @@ public partial class ConstrainULongRange: global::Natrix.StdWeb.ULongRange, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Exact
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "exact");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "exact", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "exact");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "exact", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Ideal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "ideal");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "ideal", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "ideal");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "ideal", value);
     }
 }
 

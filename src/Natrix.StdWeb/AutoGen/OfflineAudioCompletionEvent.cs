@@ -39,7 +39,7 @@ public partial class OfflineAudioCompletionEvent: global::Natrix.StdWeb.Event, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioBuffer RenderedBuffer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioBuffer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioBuffer>>(JSObject, "renderedBuffer");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioBuffer>.Get(JSObject, "renderedBuffer");
     }
 }
 

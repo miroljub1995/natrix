@@ -26,22 +26,22 @@ public partial class GPUMultisampleState: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Count
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "count");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "count", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "count");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "count", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Mask
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "mask");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "mask", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "mask");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "mask", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool AlphaToCoverageEnabled
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "alphaToCoverageEnabled");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "alphaToCoverageEnabled", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "alphaToCoverageEnabled");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "alphaToCoverageEnabled", value);
     }
 }
 

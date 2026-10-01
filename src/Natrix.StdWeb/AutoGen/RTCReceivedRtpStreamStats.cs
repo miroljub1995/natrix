@@ -26,50 +26,50 @@ public partial class RTCReceivedRtpStreamStats: global::Natrix.StdWeb.RTCRtpStre
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong PacketsReceived
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsReceived");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsReceived", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "packetsReceived");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "packetsReceived", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong PacketsReceivedWithEct1
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsReceivedWithEct1");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsReceivedWithEct1", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "packetsReceivedWithEct1");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "packetsReceivedWithEct1", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong PacketsReceivedWithCe
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsReceivedWithCe");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsReceivedWithCe", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "packetsReceivedWithCe");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "packetsReceivedWithCe", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong PacketsReportedAsLost
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsReportedAsLost");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsReportedAsLost", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "packetsReportedAsLost");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "packetsReportedAsLost", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong PacketsReportedAsLostButRecovered
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsReportedAsLostButRecovered");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsReportedAsLostButRecovered", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "packetsReportedAsLostButRecovered");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "packetsReportedAsLostButRecovered", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public long PacketsLost
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<long, global::Natrix.JSCore.Generics.Int64Accessor>(JSObject, "packetsLost");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<long, global::Natrix.JSCore.Generics.Int64Accessor>(JSObject, "packetsLost", value);
+        get => global::Natrix.JSCore.Generics.Int64Accessor.Get(JSObject, "packetsLost");
+        set => global::Natrix.JSCore.Generics.Int64Accessor.Set(JSObject, "packetsLost", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Jitter
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "jitter");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "jitter", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "jitter");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "jitter", value);
     }
 }
 

@@ -18,13 +18,13 @@ public partial class GPUDeviceLostInfo: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUDeviceLostReason Reason
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUDeviceLostReason, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUDeviceLostReason>>(JSObject, "reason");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUDeviceLostReason>.Get(JSObject, "reason");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "message");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "message");
     }
 }
 

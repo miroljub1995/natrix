@@ -18,43 +18,43 @@ public partial class GeolocationCoordinates: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Accuracy
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "accuracy");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "accuracy");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Latitude
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "latitude");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "latitude");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Longitude
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "longitude");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "longitude");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Altitude
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "altitude");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "altitude");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? AltitudeAccuracy
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "altitudeAccuracy");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "altitudeAccuracy");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Heading
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "heading");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "heading");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Speed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "speed");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "speed");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -65,7 +65,7 @@ public partial class GeolocationCoordinates: global::Natrix.JSCore.JSObjectProxy
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toJSON", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.JSObjectAccessor.Get(___resOwner_1.JSObject, "value");
     }
 }
 

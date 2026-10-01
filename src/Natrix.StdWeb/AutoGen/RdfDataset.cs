@@ -25,7 +25,7 @@ public partial class RdfDataset: global::Natrix.JSCore.JSObjectProxy, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RdfGraph DefaultGraph
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RdfGraph, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RdfGraph>>(JSObject, "defaultGraph");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RdfGraph>.Get(JSObject, "defaultGraph");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

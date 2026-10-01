@@ -18,49 +18,49 @@ public partial class ScreenDetailed: global::Natrix.StdWeb.Screen, global::Natri
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int AvailLeft
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "availLeft");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "availLeft");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int AvailTop
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "availTop");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "availTop");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Left
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "left");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "left");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Top
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "top");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "top");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IsPrimary
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isPrimary");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isPrimary");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IsInternal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isInternal");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isInternal");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float DevicePixelRatio
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "devicePixelRatio");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "devicePixelRatio");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Label
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "label");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "label");
     }
 }
 

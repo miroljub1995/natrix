@@ -26,29 +26,29 @@ public partial class OscillatorOptions: global::Natrix.StdWeb.AudioNodeOptions, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.OscillatorType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.OscillatorType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OscillatorType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.OscillatorType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OscillatorType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OscillatorType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OscillatorType>.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Frequency
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "frequency");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "frequency", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "frequency");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "frequency", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Detune
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "detune");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "detune", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "detune");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "detune", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PeriodicWave PeriodicWave
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PeriodicWave, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PeriodicWave>>(JSObject, "periodicWave");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PeriodicWave, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PeriodicWave>>(JSObject, "periodicWave", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PeriodicWave>.Get(JSObject, "periodicWave");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PeriodicWave>.Set(JSObject, "periodicWave", value);
     }
 }
 

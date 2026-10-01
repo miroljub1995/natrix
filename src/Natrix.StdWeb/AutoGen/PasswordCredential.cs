@@ -50,19 +50,19 @@ public partial class PasswordCredential: global::Natrix.StdWeb.Credential, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Password
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "password");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "password");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string IconURL
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "iconURL");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "iconURL");
     }
 }
 

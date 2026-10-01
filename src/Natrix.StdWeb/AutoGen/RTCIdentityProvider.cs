@@ -26,15 +26,15 @@ public partial class RTCIdentityProvider: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GenerateAssertionCallback GenerateAssertion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GenerateAssertionCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GenerateAssertionCallback>>(JSObject, "generateAssertion");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GenerateAssertionCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GenerateAssertionCallback>>(JSObject, "generateAssertion", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GenerateAssertionCallback>.Get(JSObject, "generateAssertion");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GenerateAssertionCallback>.Set(JSObject, "generateAssertion", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.ValidateAssertionCallback ValidateAssertion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ValidateAssertionCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ValidateAssertionCallback>>(JSObject, "validateAssertion");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ValidateAssertionCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ValidateAssertionCallback>>(JSObject, "validateAssertion", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ValidateAssertionCallback>.Get(JSObject, "validateAssertion");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ValidateAssertionCallback>.Set(JSObject, "validateAssertion", value);
     }
 }
 

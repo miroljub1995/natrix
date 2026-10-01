@@ -62,13 +62,13 @@ public partial class QuotaExceededError: global::Natrix.StdWeb.DOMException, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Quota
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "quota");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "quota");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Requested
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "requested");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "requested");
     }
 }
 

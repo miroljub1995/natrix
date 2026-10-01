@@ -26,15 +26,15 @@ public partial class URLPatternComponentResult: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Input
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "input");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "input", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "input");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "input", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Record<string?, global::Natrix.JSCore.Generics.NullableStringAccessor> Groups
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Record<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>>>(JSObject, "groups");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Record<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>>>(JSObject, "groups", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>>.Get(JSObject, "groups");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>>.Set(JSObject, "groups", value);
     }
 }
 

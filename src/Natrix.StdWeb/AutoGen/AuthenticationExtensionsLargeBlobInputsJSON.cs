@@ -26,22 +26,22 @@ public partial class AuthenticationExtensionsLargeBlobInputsJSON: global::Natrix
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Support
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "support");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "support", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "support");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "support", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Read
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "read");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "read", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "read");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "read", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Write
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "write");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "write", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "write");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "write", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class IDBTransactionOptions: global::Natrix.JSCore.JSObjectProxy,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.IDBTransactionDurability Durability
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IDBTransactionDurability, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IDBTransactionDurability>>(JSObject, "durability");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.IDBTransactionDurability, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IDBTransactionDurability>>(JSObject, "durability", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IDBTransactionDurability>.Get(JSObject, "durability");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IDBTransactionDurability>.Set(JSObject, "durability", value);
     }
 }
 

@@ -26,43 +26,43 @@ public partial class ShadowRootInit: global::Natrix.JSCore.JSObjectProxy, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.ShadowRootMode Mode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ShadowRootMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ShadowRootMode>>(JSObject, "mode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ShadowRootMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ShadowRootMode>>(JSObject, "mode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ShadowRootMode>.Get(JSObject, "mode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ShadowRootMode>.Set(JSObject, "mode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool DelegatesFocus
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "delegatesFocus");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "delegatesFocus", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "delegatesFocus");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "delegatesFocus", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SlotAssignmentMode SlotAssignment
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SlotAssignmentMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SlotAssignmentMode>>(JSObject, "slotAssignment");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SlotAssignmentMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SlotAssignmentMode>>(JSObject, "slotAssignment", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SlotAssignmentMode>.Get(JSObject, "slotAssignment");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SlotAssignmentMode>.Set(JSObject, "slotAssignment", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Clonable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "clonable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "clonable", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "clonable");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "clonable", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Serializable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "serializable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "serializable", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "serializable");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "serializable", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CustomElementRegistry? CustomElementRegistry
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CustomElementRegistry?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CustomElementRegistry>>(JSObject, "customElementRegistry");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CustomElementRegistry?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CustomElementRegistry>>(JSObject, "customElementRegistry", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CustomElementRegistry>.Get(JSObject, "customElementRegistry");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CustomElementRegistry>.Set(JSObject, "customElementRegistry", value);
     }
 }
 

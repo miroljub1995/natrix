@@ -18,25 +18,25 @@ public partial class BluetoothLEScan: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.BluetoothLEScanFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothLEScanFilter>> Filters
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.BluetoothLEScanFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothLEScanFilter>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.BluetoothLEScanFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothLEScanFilter>>>>(JSObject, "filters");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.BluetoothLEScanFilter, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BluetoothLEScanFilter>>>.Get(JSObject, "filters");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool KeepRepeatedDevices
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "keepRepeatedDevices");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "keepRepeatedDevices");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool AcceptAllAdvertisements
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "acceptAllAdvertisements");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "acceptAllAdvertisements");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Active
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "active");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "active");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

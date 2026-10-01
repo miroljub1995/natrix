@@ -26,22 +26,22 @@ public partial class RTCIceParameters: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IceLite
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "iceLite");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "iceLite", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "iceLite");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "iceLite", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string UsernameFragment
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "usernameFragment");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "usernameFragment", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "usernameFragment");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "usernameFragment", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Password
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "password");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "password", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "password");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "password", value);
     }
 }
 

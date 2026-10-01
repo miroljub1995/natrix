@@ -18,13 +18,13 @@ public partial class MediaQueryList: global::Natrix.StdWeb.EventTarget, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Media
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "media");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "media");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Matches
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "matches");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "matches");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -76,8 +76,8 @@ public partial class MediaQueryList: global::Natrix.StdWeb.EventTarget, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventHandlerNonNull? Onchange
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "onchange");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventHandlerNonNull?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>>(JSObject, "onchange", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Get(JSObject, "onchange");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventHandlerNonNull>.Set(JSObject, "onchange", value);
     }
 }
 

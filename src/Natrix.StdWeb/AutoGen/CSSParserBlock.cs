@@ -38,13 +38,13 @@ public partial class CSSParserBlock: global::Natrix.StdWeb.CSSParserValue, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSParserValue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSParserValue>> Body
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSParserValue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSParserValue>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSParserValue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSParserValue>>>>(JSObject, "body");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSParserValue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSParserValue>>>.Get(JSObject, "body");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

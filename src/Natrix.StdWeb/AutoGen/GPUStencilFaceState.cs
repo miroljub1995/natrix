@@ -26,29 +26,29 @@ public partial class GPUStencilFaceState: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUCompareFunction Compare
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUCompareFunction, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCompareFunction>>(JSObject, "compare");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUCompareFunction, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCompareFunction>>(JSObject, "compare", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCompareFunction>.Get(JSObject, "compare");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUCompareFunction>.Set(JSObject, "compare", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUStencilOperation FailOp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUStencilOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStencilOperation>>(JSObject, "failOp");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUStencilOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStencilOperation>>(JSObject, "failOp", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStencilOperation>.Get(JSObject, "failOp");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStencilOperation>.Set(JSObject, "failOp", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUStencilOperation DepthFailOp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUStencilOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStencilOperation>>(JSObject, "depthFailOp");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUStencilOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStencilOperation>>(JSObject, "depthFailOp", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStencilOperation>.Get(JSObject, "depthFailOp");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStencilOperation>.Set(JSObject, "depthFailOp", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUStencilOperation PassOp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUStencilOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStencilOperation>>(JSObject, "passOp");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUStencilOperation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStencilOperation>>(JSObject, "passOp", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStencilOperation>.Get(JSObject, "passOp");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUStencilOperation>.Set(JSObject, "passOp", value);
     }
 }
 

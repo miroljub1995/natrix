@@ -26,8 +26,8 @@ public partial class AesKeyGenParams: global::Natrix.StdWeb.Algorithm, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ushort Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "length");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "length", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "length");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "length", value);
     }
 }
 

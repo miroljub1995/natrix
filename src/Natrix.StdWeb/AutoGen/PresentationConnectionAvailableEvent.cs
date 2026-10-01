@@ -39,7 +39,7 @@ public partial class PresentationConnectionAvailableEvent: global::Natrix.StdWeb
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PresentationConnection Connection
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PresentationConnection, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PresentationConnection>>(JSObject, "connection");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PresentationConnection>.Get(JSObject, "connection");
     }
 }
 

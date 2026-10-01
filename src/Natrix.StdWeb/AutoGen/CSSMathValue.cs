@@ -18,7 +18,7 @@ public partial class CSSMathValue: global::Natrix.StdWeb.CSSNumericValue, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSMathOperator Operator
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSMathOperator, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSMathOperator>>(JSObject, "operator");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CSSMathOperator>.Get(JSObject, "operator");
     }
 }
 

@@ -26,36 +26,36 @@ public partial class BiquadFilterOptions: global::Natrix.StdWeb.AudioNodeOptions
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BiquadFilterType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BiquadFilterType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BiquadFilterType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.BiquadFilterType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BiquadFilterType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BiquadFilterType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.BiquadFilterType>.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Q
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "Q");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "Q", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "Q");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "Q", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Detune
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "detune");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "detune", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "detune");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "detune", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Frequency
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "frequency");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "frequency", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "frequency");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "frequency", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Gain
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "gain");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "gain", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "gain");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "gain", value);
     }
 }
 

@@ -18,31 +18,31 @@ public partial class MLTensor: global::Natrix.JSCore.JSObjectProxy, global::Natr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MLOperandDataType DataType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MLOperandDataType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLOperandDataType>>(JSObject, "dataType");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLOperandDataType>.Get(JSObject, "dataType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<uint, global::Natrix.JSCore.Generics.UInt32Accessor> Shape
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<uint, global::Natrix.JSCore.Generics.UInt32Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<uint, global::Natrix.JSCore.Generics.UInt32Accessor>>>(JSObject, "shape");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<uint, global::Natrix.JSCore.Generics.UInt32Accessor>>.Get(JSObject, "shape");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Readable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "readable");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "readable");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Writable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "writable");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "writable");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Constant
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "constant");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "constant");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

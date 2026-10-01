@@ -55,13 +55,13 @@ public partial class RTCPeerConnectionIceEvent: global::Natrix.StdWeb.Event, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIceCandidate? Candidate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceCandidate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.RTCIceCandidate>>(JSObject, "candidate");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.RTCIceCandidate>.Get(JSObject, "candidate");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "url");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "url");
     }
 }
 

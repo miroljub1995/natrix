@@ -26,8 +26,8 @@ public partial class QueuingStrategyInit: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required double HighWaterMark
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "highWaterMark");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "highWaterMark", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "highWaterMark");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "highWaterMark", value);
     }
 }
 

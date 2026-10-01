@@ -18,49 +18,49 @@ public partial class TaskAttributionTiming: global::Natrix.StdWeb.PerformanceEnt
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double StartTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "startTime");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "startTime");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Duration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "duration");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "duration");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string EntryType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "entryType");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "entryType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ContainerType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "containerType");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "containerType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ContainerSrc
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "containerSrc");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "containerSrc");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ContainerId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "containerId");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "containerId");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ContainerName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "containerName");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "containerName");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -71,7 +71,7 @@ public partial class TaskAttributionTiming: global::Natrix.StdWeb.PerformanceEnt
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toJSON", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.JSObjectAccessor.Get(___resOwner_1.JSObject, "value");
     }
 }
 

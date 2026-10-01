@@ -26,22 +26,22 @@ public partial class BaseKeyframe: global::Natrix.JSCore.JSObjectProxy, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Offset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "offset");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "offset", value);
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "offset");
+        set => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Set(JSObject, "offset", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Easing
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "easing");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "easing", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "easing");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "easing", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CompositeOperationOrAuto Composite
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CompositeOperationOrAuto, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CompositeOperationOrAuto>>(JSObject, "composite");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CompositeOperationOrAuto, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CompositeOperationOrAuto>>(JSObject, "composite", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CompositeOperationOrAuto>.Get(JSObject, "composite");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.CompositeOperationOrAuto>.Set(JSObject, "composite", value);
     }
 }
 

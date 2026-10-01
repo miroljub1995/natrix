@@ -26,15 +26,15 @@ public partial class RTCRtcpParameters: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Cname
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "cname");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "cname", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "cname");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "cname", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ReducedSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "reducedSize");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "reducedSize", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "reducedSize");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "reducedSize", value);
     }
 }
 

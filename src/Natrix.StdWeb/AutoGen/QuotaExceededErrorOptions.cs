@@ -26,15 +26,15 @@ public partial class QuotaExceededErrorOptions: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Quota
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "quota");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "quota", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "quota");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "quota", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Requested
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "requested");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "requested", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "requested");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "requested", value);
     }
 }
 

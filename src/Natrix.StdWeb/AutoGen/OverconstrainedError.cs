@@ -55,7 +55,7 @@ public partial class OverconstrainedError: global::Natrix.StdWeb.DOMException, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Constraint
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "constraint");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "constraint");
     }
 }
 

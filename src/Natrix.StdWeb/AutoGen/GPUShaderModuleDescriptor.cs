@@ -26,15 +26,15 @@ public partial class GPUShaderModuleDescriptor: global::Natrix.StdWeb.GPUObjectD
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Code
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "code");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "code", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "code");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "code", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUShaderModuleCompilationHint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUShaderModuleCompilationHint>> CompilationHints
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUShaderModuleCompilationHint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUShaderModuleCompilationHint>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUShaderModuleCompilationHint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUShaderModuleCompilationHint>>>>(JSObject, "compilationHints");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUShaderModuleCompilationHint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUShaderModuleCompilationHint>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUShaderModuleCompilationHint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUShaderModuleCompilationHint>>>>(JSObject, "compilationHints", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUShaderModuleCompilationHint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUShaderModuleCompilationHint>>>.Get(JSObject, "compilationHints");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUShaderModuleCompilationHint, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUShaderModuleCompilationHint>>>.Set(JSObject, "compilationHints", value);
     }
 }
 

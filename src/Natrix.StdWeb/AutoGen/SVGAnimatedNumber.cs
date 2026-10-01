@@ -18,14 +18,14 @@ public partial class SVGAnimatedNumber: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float BaseVal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "baseVal");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "baseVal", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "baseVal");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "baseVal", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float AnimVal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "animVal");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "animVal");
     }
 }
 

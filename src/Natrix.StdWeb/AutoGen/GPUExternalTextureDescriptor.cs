@@ -26,15 +26,15 @@ public partial class GPUExternalTextureDescriptor: global::Natrix.StdWeb.GPUObje
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLVideoElement, global::Natrix.StdWeb.VideoFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLVideoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoFrame>> Source
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLVideoElement, global::Natrix.StdWeb.VideoFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLVideoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoFrame>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLVideoElement, global::Natrix.StdWeb.VideoFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLVideoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoFrame>>>>(JSObject, "source");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLVideoElement, global::Natrix.StdWeb.VideoFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLVideoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoFrame>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLVideoElement, global::Natrix.StdWeb.VideoFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLVideoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoFrame>>>>(JSObject, "source", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLVideoElement, global::Natrix.StdWeb.VideoFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLVideoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoFrame>>>.Get(JSObject, "source");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.HTMLVideoElement, global::Natrix.StdWeb.VideoFrame, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HTMLVideoElement>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoFrame>>>.Set(JSObject, "source", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PredefinedColorSpace ColorSpace
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PredefinedColorSpace, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PredefinedColorSpace>>(JSObject, "colorSpace");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PredefinedColorSpace, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PredefinedColorSpace>>(JSObject, "colorSpace", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PredefinedColorSpace>.Get(JSObject, "colorSpace");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PredefinedColorSpace>.Set(JSObject, "colorSpace", value);
     }
 }
 

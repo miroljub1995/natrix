@@ -18,19 +18,19 @@ public partial class DeviceMotionEventAcceleration: global::Natrix.JSCore.JSObje
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? X
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "x");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "x");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Y
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "y");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "y");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Z
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "z");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "z");
     }
 }
 

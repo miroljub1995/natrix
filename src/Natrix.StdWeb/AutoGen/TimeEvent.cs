@@ -18,13 +18,13 @@ public partial class TimeEvent: global::Natrix.StdWeb.Event, global::Natrix.JSCo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Window? View
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Window?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Window>>(JSObject, "view");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Window>.Get(JSObject, "view");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Detail
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "detail");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "detail");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

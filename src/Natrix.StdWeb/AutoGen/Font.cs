@@ -18,13 +18,13 @@ public partial class Font: global::Natrix.JSCore.JSObjectProxy, global::Natrix.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint GlyphsRendered
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "glyphsRendered");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "glyphsRendered");
     }
 }
 

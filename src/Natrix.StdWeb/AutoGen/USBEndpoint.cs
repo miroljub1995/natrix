@@ -44,25 +44,25 @@ public partial class USBEndpoint: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte EndpointNumber
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "endpointNumber");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "endpointNumber");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.USBDirection Direction
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBDirection, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBDirection>>(JSObject, "direction");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBDirection>.Get(JSObject, "direction");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.USBEndpointType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBEndpointType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBEndpointType>>(JSObject, "type");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBEndpointType>.Get(JSObject, "type");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint PacketSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "packetSize");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "packetSize");
     }
 }
 

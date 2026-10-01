@@ -26,36 +26,36 @@ public partial class InputEventInit: global::Natrix.JSCore.JSObjectProxy, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DataTransfer? DataTransfer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DataTransfer?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DataTransfer>>(JSObject, "dataTransfer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DataTransfer?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DataTransfer>>(JSObject, "dataTransfer", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DataTransfer>.Get(JSObject, "dataTransfer");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.DataTransfer>.Set(JSObject, "dataTransfer", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.StaticRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StaticRange>> TargetRanges
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.StaticRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StaticRange>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.StaticRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StaticRange>>>>(JSObject, "targetRanges");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.StaticRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StaticRange>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.StaticRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StaticRange>>>>(JSObject, "targetRanges", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.StaticRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StaticRange>>>.Get(JSObject, "targetRanges");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.StaticRange, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.StaticRange>>>.Set(JSObject, "targetRanges", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "data");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "data", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "data");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "data", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IsComposing
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isComposing");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isComposing", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isComposing");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "isComposing", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string InputType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "inputType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "inputType", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "inputType");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "inputType", value);
     }
 }
 

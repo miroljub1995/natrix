@@ -26,8 +26,8 @@ public partial class StereoPannerOptions: global::Natrix.StdWeb.AudioNodeOptions
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Pan
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "pan");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "pan", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "pan");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "pan", value);
     }
 }
 

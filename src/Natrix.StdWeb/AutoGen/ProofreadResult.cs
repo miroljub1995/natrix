@@ -26,15 +26,15 @@ public partial class ProofreadResult: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string CorrectedInput
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "correctedInput");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "correctedInput", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "correctedInput");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "correctedInput", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProofreadCorrection, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProofreadCorrection>> Corrections
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProofreadCorrection, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProofreadCorrection>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProofreadCorrection, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProofreadCorrection>>>>(JSObject, "corrections");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProofreadCorrection, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProofreadCorrection>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProofreadCorrection, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProofreadCorrection>>>>(JSObject, "corrections", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProofreadCorrection, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProofreadCorrection>>>.Get(JSObject, "corrections");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ProofreadCorrection, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ProofreadCorrection>>>.Set(JSObject, "corrections", value);
     }
 }
 

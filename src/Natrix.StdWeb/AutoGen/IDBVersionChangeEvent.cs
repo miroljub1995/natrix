@@ -55,13 +55,13 @@ public partial class IDBVersionChangeEvent: global::Natrix.StdWeb.Event, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong OldVersion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "oldVersion");
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "oldVersion");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong? NewVersion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor>(JSObject, "newVersion");
+        get => global::Natrix.JSCore.Generics.NullableUInt64Accessor.Get(JSObject, "newVersion");
     }
 }
 

@@ -26,15 +26,15 @@ public partial class FaceDetectorOptions: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort MaxDetectedFaces
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "maxDetectedFaces");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "maxDetectedFaces", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "maxDetectedFaces");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "maxDetectedFaces", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool FastMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "fastMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "fastMode", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "fastMode");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "fastMode", value);
     }
 }
 

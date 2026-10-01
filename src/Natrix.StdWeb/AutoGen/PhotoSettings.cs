@@ -26,29 +26,29 @@ public partial class PhotoSettings: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FillLightMode FillLightMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FillLightMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FillLightMode>>(JSObject, "fillLightMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FillLightMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FillLightMode>>(JSObject, "fillLightMode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FillLightMode>.Get(JSObject, "fillLightMode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FillLightMode>.Set(JSObject, "fillLightMode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ImageHeight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "imageHeight");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "imageHeight", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "imageHeight");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "imageHeight", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ImageWidth
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "imageWidth");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "imageWidth", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "imageWidth");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "imageWidth", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool RedEyeReduction
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "redEyeReduction");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "redEyeReduction", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "redEyeReduction");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "redEyeReduction", value);
     }
 }
 

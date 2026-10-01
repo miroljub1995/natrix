@@ -26,15 +26,15 @@ public partial class PushSubscriptionChangeEventInit: global::Natrix.StdWeb.Exte
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PushSubscription NewSubscription
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PushSubscription, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PushSubscription>>(JSObject, "newSubscription");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PushSubscription, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PushSubscription>>(JSObject, "newSubscription", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PushSubscription>.Get(JSObject, "newSubscription");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PushSubscription>.Set(JSObject, "newSubscription", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PushSubscription OldSubscription
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PushSubscription, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PushSubscription>>(JSObject, "oldSubscription");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PushSubscription, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PushSubscription>>(JSObject, "oldSubscription", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PushSubscription>.Get(JSObject, "oldSubscription");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PushSubscription>.Set(JSObject, "oldSubscription", value);
     }
 }
 

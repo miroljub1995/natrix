@@ -26,8 +26,8 @@ public partial class ReadableStreamBYOBReaderReadOptions: global::Natrix.JSCore.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Min
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "min");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "min", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "min");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "min", value);
     }
 }
 

@@ -18,29 +18,29 @@ public partial class SVGRect: global::Natrix.JSCore.JSObjectProxy, global::Natri
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float X
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "x");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "x", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "x");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "x", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Y
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "y");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "y", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "y");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "y", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "width");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "width", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "width");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "width", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "height");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "height", value);
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "height");
+        set => global::Natrix.JSCore.Generics.SingleAccessor.Set(JSObject, "height", value);
     }
 }
 

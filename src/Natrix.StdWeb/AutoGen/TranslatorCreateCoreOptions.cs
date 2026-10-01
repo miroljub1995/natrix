@@ -26,15 +26,15 @@ public partial class TranslatorCreateCoreOptions: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string SourceLanguage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "sourceLanguage");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "sourceLanguage", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "sourceLanguage");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "sourceLanguage", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string TargetLanguage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "targetLanguage");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "targetLanguage", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "targetLanguage");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "targetLanguage", value);
     }
 }
 

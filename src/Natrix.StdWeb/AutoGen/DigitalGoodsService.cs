@@ -31,7 +31,7 @@ public partial class DigitalGoodsService: global::Natrix.JSCore.JSObjectProxy, g
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getDetails", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ItemDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ItemDetails>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ItemDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ItemDetails>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ItemDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ItemDetails>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ItemDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ItemDetails>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ItemDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ItemDetails>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ItemDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ItemDetails>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -42,7 +42,7 @@ public partial class DigitalGoodsService: global::Natrix.JSCore.JSObjectProxy, g
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "listPurchases", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PurchaseDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PurchaseDetails>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PurchaseDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PurchaseDetails>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PurchaseDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PurchaseDetails>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PurchaseDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PurchaseDetails>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PurchaseDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PurchaseDetails>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PurchaseDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PurchaseDetails>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -53,7 +53,7 @@ public partial class DigitalGoodsService: global::Natrix.JSCore.JSObjectProxy, g
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "listPurchaseHistory", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PurchaseDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PurchaseDetails>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PurchaseDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PurchaseDetails>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PurchaseDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PurchaseDetails>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PurchaseDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PurchaseDetails>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PurchaseDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PurchaseDetails>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.PurchaseDetails, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PurchaseDetails>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -73,7 +73,7 @@ public partial class DigitalGoodsService: global::Natrix.JSCore.JSObjectProxy, g
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "consume", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

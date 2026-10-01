@@ -26,8 +26,8 @@ public partial class DisconnectedAccount: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Account_id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "account_id");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "account_id", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "account_id");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "account_id", value);
     }
 }
 

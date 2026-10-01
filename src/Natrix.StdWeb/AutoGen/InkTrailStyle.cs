@@ -26,15 +26,15 @@ public partial class InkTrailStyle: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Color
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "color");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "color", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "color");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "color", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required double Diameter
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "diameter");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "diameter", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "diameter");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "diameter", value);
     }
 }
 

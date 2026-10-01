@@ -26,8 +26,8 @@ public partial class TogglePopoverOptions: global::Natrix.StdWeb.ShowPopoverOpti
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Force
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "force");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "force", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "force");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "force", value);
     }
 }
 

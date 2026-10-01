@@ -26,8 +26,8 @@ public partial class MidiPermissionDescriptor: global::Natrix.StdWeb.PermissionD
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Sysex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "sysex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "sysex", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "sysex");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "sysex", value);
     }
 }
 

@@ -26,22 +26,22 @@ public partial class GPUVertexAttribute: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GPUVertexFormat Format
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUVertexFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUVertexFormat>>(JSObject, "format");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUVertexFormat, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUVertexFormat>>(JSObject, "format", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUVertexFormat>.Get(JSObject, "format");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUVertexFormat>.Set(JSObject, "format", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ulong Offset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "offset");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "offset", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "offset");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "offset", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint ShaderLocation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "shaderLocation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "shaderLocation", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "shaderLocation");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "shaderLocation", value);
     }
 }
 

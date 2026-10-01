@@ -26,15 +26,15 @@ public partial class GenerateTestReportParameters: global::Natrix.JSCore.JSObjec
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "message");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "message", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "message");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "message", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Group
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "group");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "group", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "group");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "group", value);
     }
 }
 

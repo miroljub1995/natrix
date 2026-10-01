@@ -55,43 +55,43 @@ public partial class TouchEvent: global::Natrix.StdWeb.UIEvent, global::Natrix.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.TouchList Touches
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.TouchList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TouchList>>(JSObject, "touches");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TouchList>.Get(JSObject, "touches");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.TouchList TargetTouches
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.TouchList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TouchList>>(JSObject, "targetTouches");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TouchList>.Get(JSObject, "targetTouches");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.TouchList ChangedTouches
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.TouchList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TouchList>>(JSObject, "changedTouches");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.TouchList>.Get(JSObject, "changedTouches");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool AltKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "altKey");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "altKey");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool MetaKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "metaKey");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "metaKey");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool CtrlKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ctrlKey");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ctrlKey");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ShiftKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "shiftKey");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "shiftKey");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -111,7 +111,7 @@ public partial class TouchEvent: global::Natrix.StdWeb.UIEvent, global::Natrix.J
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "getModifierState", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.BooleanAccessor.Get(___resOwner_1.JSObject, "value");
     }
 }
 

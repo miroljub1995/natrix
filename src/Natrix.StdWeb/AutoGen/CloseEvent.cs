@@ -55,19 +55,19 @@ public partial class CloseEvent: global::Natrix.StdWeb.Event, global::Natrix.JSC
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool WasClean
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "wasClean");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "wasClean");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Code
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "code");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "code");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Reason
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "reason");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "reason");
     }
 }
 

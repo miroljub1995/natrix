@@ -26,15 +26,15 @@ public partial class GetHTMLOptions: global::Natrix.JSCore.JSObjectProxy, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool SerializableShadowRoots
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "serializableShadowRoots");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "serializableShadowRoots", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "serializableShadowRoots");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "serializableShadowRoots", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>> ShadowRoots
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>>>>(JSObject, "shadowRoots");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>>>>(JSObject, "shadowRoots", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>>>.Get(JSObject, "shadowRoots");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>>>.Set(JSObject, "shadowRoots", value);
     }
 }
 

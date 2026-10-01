@@ -70,19 +70,19 @@ public partial class GroupEffect: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AnimationNodeList Children
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AnimationNodeList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AnimationNodeList>>(JSObject, "children");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AnimationNodeList>.Get(JSObject, "children");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AnimationEffect? FirstChild
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AnimationEffect?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AnimationEffect>>(JSObject, "firstChild");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AnimationEffect>.Get(JSObject, "firstChild");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AnimationEffect? LastChild
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AnimationEffect?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AnimationEffect>>(JSObject, "lastChild");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.AnimationEffect>.Get(JSObject, "lastChild");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -93,7 +93,7 @@ public partial class GroupEffect: global::Natrix.JSCore.JSObjectProxy, global::N
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "clone", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GroupEffect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GroupEffect>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GroupEffect>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

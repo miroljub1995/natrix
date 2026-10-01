@@ -26,8 +26,8 @@ public partial class CameraDevicePermissionDescriptor: global::Natrix.StdWeb.Per
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool PanTiltZoom
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "panTiltZoom");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "panTiltZoom", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "panTiltZoom");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "panTiltZoom", value);
     }
 }
 

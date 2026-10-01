@@ -26,8 +26,8 @@ public partial class PaymentCompleteDetails: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject? Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject?, global::Natrix.JSCore.Generics.NullableJSObjectAccessor>(JSObject, "data");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::System.Runtime.InteropServices.JavaScript.JSObject?, global::Natrix.JSCore.Generics.NullableJSObjectAccessor>(JSObject, "data", value);
+        get => global::Natrix.JSCore.Generics.NullableJSObjectAccessor.Get(JSObject, "data");
+        set => global::Natrix.JSCore.Generics.NullableJSObjectAccessor.Set(JSObject, "data", value);
     }
 }
 

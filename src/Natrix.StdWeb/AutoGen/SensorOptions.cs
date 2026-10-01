@@ -26,8 +26,8 @@ public partial class SensorOptions: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Frequency
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "frequency");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "frequency", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "frequency");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "frequency", value);
     }
 }
 

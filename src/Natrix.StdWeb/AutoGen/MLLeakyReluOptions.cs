@@ -26,8 +26,8 @@ public partial class MLLeakyReluOptions: global::Natrix.StdWeb.MLOperatorOptions
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Alpha
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "alpha");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "alpha", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "alpha");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "alpha", value);
     }
 }
 

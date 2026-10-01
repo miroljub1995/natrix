@@ -26,15 +26,15 @@ public partial class MediaConfiguration: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.VideoConfiguration Video
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.VideoConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoConfiguration>>(JSObject, "video");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.VideoConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoConfiguration>>(JSObject, "video", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoConfiguration>.Get(JSObject, "video");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.VideoConfiguration>.Set(JSObject, "video", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioConfiguration Audio
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioConfiguration>>(JSObject, "audio");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AudioConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioConfiguration>>(JSObject, "audio", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioConfiguration>.Get(JSObject, "audio");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioConfiguration>.Set(JSObject, "audio", value);
     }
 }
 

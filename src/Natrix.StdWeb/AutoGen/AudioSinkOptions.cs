@@ -26,8 +26,8 @@ public partial class AudioSinkOptions: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.AudioSinkType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioSinkType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioSinkType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AudioSinkType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioSinkType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioSinkType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AudioSinkType>.Set(JSObject, "type", value);
     }
 }
 

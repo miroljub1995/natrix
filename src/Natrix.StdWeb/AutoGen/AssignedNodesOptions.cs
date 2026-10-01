@@ -26,8 +26,8 @@ public partial class AssignedNodesOptions: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Flatten
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "flatten");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "flatten", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "flatten");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "flatten", value);
     }
 }
 

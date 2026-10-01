@@ -25,57 +25,57 @@ public partial class VTTRegion: global::Natrix.JSCore.JSObjectProxy, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Id
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "id", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "id");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "id", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "width");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "width", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "width");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "width", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Lines
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "lines");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "lines", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "lines");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "lines", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double RegionAnchorX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "regionAnchorX");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "regionAnchorX", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "regionAnchorX");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "regionAnchorX", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double RegionAnchorY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "regionAnchorY");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "regionAnchorY", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "regionAnchorY");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "regionAnchorY", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ViewportAnchorX
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "viewportAnchorX");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "viewportAnchorX", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "viewportAnchorX");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "viewportAnchorX", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ViewportAnchorY
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "viewportAnchorY");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "viewportAnchorY", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "viewportAnchorY");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "viewportAnchorY", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ScrollSetting Scroll
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ScrollSetting, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollSetting>>(JSObject, "scroll");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ScrollSetting, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollSetting>>(JSObject, "scroll", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollSetting>.Get(JSObject, "scroll");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ScrollSetting>.Set(JSObject, "scroll", value);
     }
 }
 

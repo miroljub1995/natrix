@@ -26,15 +26,15 @@ public partial class HmacKeyGenParams: global::Natrix.StdWeb.Algorithm, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.Union<global::System.Runtime.InteropServices.JavaScript.JSObject, string, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.StringAccessor> Hash
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::System.Runtime.InteropServices.JavaScript.JSObject, string, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::System.Runtime.InteropServices.JavaScript.JSObject, string, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "hash");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::System.Runtime.InteropServices.JavaScript.JSObject, string, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::System.Runtime.InteropServices.JavaScript.JSObject, string, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "hash", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::System.Runtime.InteropServices.JavaScript.JSObject, string, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "hash");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::System.Runtime.InteropServices.JavaScript.JSObject, string, global::Natrix.JSCore.Generics.JSObjectAccessor, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "hash", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Length
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "length", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "length");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "length", value);
     }
 }
 

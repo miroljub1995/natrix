@@ -26,43 +26,43 @@ public partial class RTCCodecStats: global::Natrix.StdWeb.RTCStats, global::Natr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint PayloadType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "payloadType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "payloadType", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "payloadType");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "payloadType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string TransportId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "transportId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "transportId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "transportId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "transportId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string MimeType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "mimeType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "mimeType", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "mimeType");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "mimeType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ClockRate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "clockRate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "clockRate", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "clockRate");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "clockRate", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Channels
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "channels");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "channels", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "channels");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "channels", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string SdpFmtpLine
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "sdpFmtpLine");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "sdpFmtpLine", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "sdpFmtpLine");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "sdpFmtpLine", value);
     }
 }
 

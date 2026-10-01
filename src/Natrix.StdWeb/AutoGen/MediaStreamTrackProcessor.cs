@@ -34,19 +34,19 @@ public partial class MediaStreamTrackProcessor: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ReadableStream Readable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ReadableStream, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStream>>(JSObject, "readable");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ReadableStream>.Get(JSObject, "readable");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong DiscardedFrames
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "discardedFrames");
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "discardedFrames");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong TotalFrames
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "totalFrames");
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "totalFrames");
     }
 }
 

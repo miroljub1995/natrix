@@ -26,8 +26,8 @@ public partial class AccelerometerSensorOptions: global::Natrix.StdWeb.SensorOpt
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AccelerometerLocalCoordinateSystem ReferenceFrame
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AccelerometerLocalCoordinateSystem, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AccelerometerLocalCoordinateSystem>>(JSObject, "referenceFrame");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AccelerometerLocalCoordinateSystem, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AccelerometerLocalCoordinateSystem>>(JSObject, "referenceFrame", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AccelerometerLocalCoordinateSystem>.Get(JSObject, "referenceFrame");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.AccelerometerLocalCoordinateSystem>.Set(JSObject, "referenceFrame", value);
     }
 }
 

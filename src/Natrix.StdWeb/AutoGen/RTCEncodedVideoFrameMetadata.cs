@@ -26,50 +26,50 @@ public partial class RTCEncodedVideoFrameMetadata: global::Natrix.StdWeb.RTCEnco
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong FrameId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "frameId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "frameId", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "frameId");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "frameId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<ulong, global::Natrix.JSCore.Generics.UInt64Accessor> Dependencies
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>>>(JSObject, "dependencies");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>>>(JSObject, "dependencies", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>>.Get(JSObject, "dependencies");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>>.Set(JSObject, "dependencies", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "width");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "width", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "width");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "width", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "height");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "height", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "height");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "height", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint SpatialIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "spatialIndex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "spatialIndex", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "spatialIndex");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "spatialIndex", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint TemporalIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "temporalIndex");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "temporalIndex", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "temporalIndex");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "temporalIndex", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public long Timestamp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<long, global::Natrix.JSCore.Generics.Int64Accessor>(JSObject, "timestamp");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<long, global::Natrix.JSCore.Generics.Int64Accessor>(JSObject, "timestamp", value);
+        get => global::Natrix.JSCore.Generics.Int64Accessor.Get(JSObject, "timestamp");
+        set => global::Natrix.JSCore.Generics.Int64Accessor.Set(JSObject, "timestamp", value);
     }
 }
 

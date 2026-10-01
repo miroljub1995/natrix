@@ -26,22 +26,22 @@ public partial class AuthenticationExtensionsLargeBlobOutputsJSON: global::Natri
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Supported
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "supported");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "supported", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "supported");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "supported", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Blob
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "blob");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "blob", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "blob");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "blob", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Written
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "written");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "written", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "written");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "written", value);
     }
 }
 

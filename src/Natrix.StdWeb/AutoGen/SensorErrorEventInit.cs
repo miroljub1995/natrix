@@ -26,8 +26,8 @@ public partial class SensorErrorEventInit: global::Natrix.StdWeb.EventInit, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.DOMException Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMException, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMException>>(JSObject, "error");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.DOMException, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMException>>(JSObject, "error", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMException>.Get(JSObject, "error");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMException>.Set(JSObject, "error", value);
     }
 }
 

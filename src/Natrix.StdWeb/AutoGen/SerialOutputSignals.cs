@@ -26,22 +26,22 @@ public partial class SerialOutputSignals: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool DataTerminalReady
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "dataTerminalReady");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "dataTerminalReady", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "dataTerminalReady");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "dataTerminalReady", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool RequestToSend
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "requestToSend");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "requestToSend", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "requestToSend");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "requestToSend", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Break
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "break");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "break", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "break");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "break", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class EcKeyGenParams: global::Natrix.StdWeb.Algorithm, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string NamedCurve
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "namedCurve");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "namedCurve", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "namedCurve");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "namedCurve", value);
     }
 }
 

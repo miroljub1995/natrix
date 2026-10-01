@@ -25,15 +25,15 @@ public partial class HTMLBaseElement: global::Natrix.StdWeb.HTMLElement, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Href
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "href");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "href", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "href");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "href", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Target
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "target");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "target", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "target");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "target", value);
     }
 }
 

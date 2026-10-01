@@ -59,7 +59,7 @@ public partial class HandwritingDrawing: global::Natrix.JSCore.JSObjectProxy, gl
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getStrokes", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingStroke, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingStroke>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingStroke, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingStroke>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingStroke, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingStroke>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -70,7 +70,7 @@ public partial class HandwritingDrawing: global::Natrix.JSCore.JSObjectProxy, gl
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getPrediction", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingPrediction, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingPrediction>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingPrediction, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingPrediction>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingPrediction, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingPrediction>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingPrediction, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingPrediction>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingPrediction, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingPrediction>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.HandwritingPrediction, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingPrediction>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

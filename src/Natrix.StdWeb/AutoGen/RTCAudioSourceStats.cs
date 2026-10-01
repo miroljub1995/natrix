@@ -26,36 +26,36 @@ public partial class RTCAudioSourceStats: global::Natrix.StdWeb.RTCMediaSourceSt
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double AudioLevel
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "audioLevel");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "audioLevel", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "audioLevel");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "audioLevel", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double TotalAudioEnergy
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalAudioEnergy");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalAudioEnergy", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "totalAudioEnergy");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "totalAudioEnergy", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double TotalSamplesDuration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalSamplesDuration");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalSamplesDuration", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "totalSamplesDuration");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "totalSamplesDuration", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double EchoReturnLoss
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "echoReturnLoss");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "echoReturnLoss", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "echoReturnLoss");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "echoReturnLoss", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double EchoReturnLossEnhancement
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "echoReturnLossEnhancement");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "echoReturnLossEnhancement", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "echoReturnLossEnhancement");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "echoReturnLossEnhancement", value);
     }
 }
 

@@ -26,22 +26,22 @@ public partial class CloseEventInit: global::Natrix.StdWeb.EventInit, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool WasClean
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "wasClean");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "wasClean", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "wasClean");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "wasClean", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Code
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "code");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "code", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "code");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "code", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Reason
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "reason");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "reason", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "reason");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "reason", value);
     }
 }
 

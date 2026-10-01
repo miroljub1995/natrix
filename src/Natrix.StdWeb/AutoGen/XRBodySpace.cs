@@ -18,7 +18,7 @@ public partial class XRBodySpace: global::Natrix.StdWeb.XRSpace, global::Natrix.
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRBodyJoint JointName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRBodyJoint, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRBodyJoint>>(JSObject, "jointName");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRBodyJoint>.Get(JSObject, "jointName");
     }
 }
 

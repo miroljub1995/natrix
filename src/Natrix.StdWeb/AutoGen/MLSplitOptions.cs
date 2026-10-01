@@ -26,8 +26,8 @@ public partial class MLSplitOptions: global::Natrix.StdWeb.MLOperatorOptions, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Axis
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "axis");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "axis", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "axis");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "axis", value);
     }
 }
 

@@ -38,7 +38,7 @@ public partial class PaintWorkletGlobalScope: global::Natrix.StdWeb.WorkletGloba
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double DevicePixelRatio
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "devicePixelRatio");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "devicePixelRatio");
     }
 }
 

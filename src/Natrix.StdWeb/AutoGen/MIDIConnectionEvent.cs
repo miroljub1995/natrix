@@ -55,7 +55,7 @@ public partial class MIDIConnectionEvent: global::Natrix.StdWeb.Event, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MIDIPort? Port
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MIDIPort?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.MIDIPort>>(JSObject, "port");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.MIDIPort>.Get(JSObject, "port");
     }
 }
 

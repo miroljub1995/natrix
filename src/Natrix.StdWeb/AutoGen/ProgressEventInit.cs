@@ -26,22 +26,22 @@ public partial class ProgressEventInit: global::Natrix.StdWeb.EventInit, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool LengthComputable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "lengthComputable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "lengthComputable", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "lengthComputable");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "lengthComputable", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Loaded
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "loaded");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "loaded", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "loaded");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "loaded", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Total
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "total");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "total", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "total");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "total", value);
     }
 }
 

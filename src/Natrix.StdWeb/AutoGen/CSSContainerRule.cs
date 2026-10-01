@@ -18,19 +18,19 @@ public partial class CSSContainerRule: global::Natrix.StdWeb.CSSConditionRule, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ContainerName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "containerName");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "containerName");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ContainerQuery
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "containerQuery");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "containerQuery");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSContainerCondition, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSContainerCondition>> Conditions
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSContainerCondition, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSContainerCondition>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSContainerCondition, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSContainerCondition>>>>(JSObject, "conditions");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.CSSContainerCondition, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSContainerCondition>>>.Get(JSObject, "conditions");
     }
 }
 

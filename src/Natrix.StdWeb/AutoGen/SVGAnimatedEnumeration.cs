@@ -18,14 +18,14 @@ public partial class SVGAnimatedEnumeration: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort BaseVal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "baseVal");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "baseVal", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "baseVal");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "baseVal", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort AnimVal
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "animVal");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "animVal");
     }
 }
 

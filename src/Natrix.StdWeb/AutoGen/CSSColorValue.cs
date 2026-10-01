@@ -32,7 +32,7 @@ public partial class CSSColorValue: global::Natrix.StdWeb.CSSStyleValue, global:
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "CSSColorValue"), "parse", global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.GetPropertyAsConstructorProxy(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "CSSColorValue"), ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSColorValue, global::Natrix.StdWeb.CSSStyleValue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSColorValue>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleValue>>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSColorValue, global::Natrix.StdWeb.CSSStyleValue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSColorValue>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleValue>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::Natrix.StdWeb.CSSColorValue, global::Natrix.StdWeb.CSSStyleValue, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSColorValue>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleValue>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

@@ -26,15 +26,15 @@ public partial class PurchaseDetails: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string ItemId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "itemId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "itemId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "itemId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "itemId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string PurchaseToken
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "purchaseToken");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "purchaseToken", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "purchaseToken");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "purchaseToken", value);
     }
 }
 

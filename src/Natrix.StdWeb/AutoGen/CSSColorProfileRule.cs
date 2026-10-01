@@ -18,25 +18,25 @@ public partial class CSSColorProfileRule: global::Natrix.StdWeb.CSSRule, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Src
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "src");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "src");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string RenderingIntent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "renderingIntent");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "renderingIntent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Components
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "components");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "components");
     }
 }
 

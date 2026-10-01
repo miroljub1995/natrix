@@ -26,22 +26,22 @@ public partial class MemoryBreakdownEntry: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Bytes
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytes");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "bytes", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "bytes");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "bytes", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryAttribution, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryAttribution>> Attribution
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryAttribution, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryAttribution>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryAttribution, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryAttribution>>>>(JSObject, "attribution");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryAttribution, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryAttribution>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryAttribution, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryAttribution>>>>(JSObject, "attribution", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryAttribution, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryAttribution>>>.Get(JSObject, "attribution");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MemoryAttribution, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MemoryAttribution>>>.Set(JSObject, "attribution", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor> Types
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "types");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "types", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "types");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "types", value);
     }
 }
 

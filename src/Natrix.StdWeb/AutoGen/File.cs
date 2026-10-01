@@ -63,19 +63,19 @@ public partial class File: global::Natrix.StdWeb.Blob, global::Natrix.JSCore.IJS
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public long LastModified
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<long, global::Natrix.JSCore.Generics.Int64Accessor>(JSObject, "lastModified");
+        get => global::Natrix.JSCore.Generics.Int64Accessor.Get(JSObject, "lastModified");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string WebkitRelativePath
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "webkitRelativePath");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "webkitRelativePath");
     }
 }
 

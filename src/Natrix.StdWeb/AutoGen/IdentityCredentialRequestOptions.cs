@@ -26,22 +26,22 @@ public partial class IdentityCredentialRequestOptions: global::Natrix.JSCore.JSO
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderRequestOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderRequestOptions>> Providers
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderRequestOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderRequestOptions>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderRequestOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderRequestOptions>>>>(JSObject, "providers");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderRequestOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderRequestOptions>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderRequestOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderRequestOptions>>>>(JSObject, "providers", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderRequestOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderRequestOptions>>>.Get(JSObject, "providers");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.IdentityProviderRequestOptions, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.IdentityProviderRequestOptions>>>.Set(JSObject, "providers", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.IdentityCredentialRequestOptionsContext Context
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IdentityCredentialRequestOptionsContext, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IdentityCredentialRequestOptionsContext>>(JSObject, "context");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.IdentityCredentialRequestOptionsContext, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IdentityCredentialRequestOptionsContext>>(JSObject, "context", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IdentityCredentialRequestOptionsContext>.Get(JSObject, "context");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IdentityCredentialRequestOptionsContext>.Set(JSObject, "context", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.IdentityCredentialRequestOptionsMode Mode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.IdentityCredentialRequestOptionsMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IdentityCredentialRequestOptionsMode>>(JSObject, "mode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.IdentityCredentialRequestOptionsMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IdentityCredentialRequestOptionsMode>>(JSObject, "mode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IdentityCredentialRequestOptionsMode>.Get(JSObject, "mode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.IdentityCredentialRequestOptionsMode>.Set(JSObject, "mode", value);
     }
 }
 

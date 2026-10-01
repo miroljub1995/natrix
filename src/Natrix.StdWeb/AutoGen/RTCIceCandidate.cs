@@ -41,97 +41,97 @@ public partial class RTCIceCandidate: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Candidate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "candidate");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "candidate");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? SdpMid
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "sdpMid");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "sdpMid");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort? SdpMLineIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "sdpMLineIndex");
+        get => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Get(JSObject, "sdpMLineIndex");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Foundation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "foundation");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "foundation");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIceComponent? Component
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceComponent?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.RTCIceComponent>>(JSObject, "component");
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.RTCIceComponent>.Get(JSObject, "component");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint? Priority
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.JSCore.Generics.NullableUInt32Accessor>(JSObject, "priority");
+        get => global::Natrix.JSCore.Generics.NullableUInt32Accessor.Get(JSObject, "priority");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Address
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "address");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "address");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIceProtocol? Protocol
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceProtocol?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.RTCIceProtocol>>(JSObject, "protocol");
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.RTCIceProtocol>.Get(JSObject, "protocol");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort? Port
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "port");
+        get => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Get(JSObject, "port");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIceCandidateType? Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceCandidateType?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.RTCIceCandidateType>>(JSObject, "type");
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.RTCIceCandidateType>.Get(JSObject, "type");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIceTcpCandidateType? TcpType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceTcpCandidateType?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.RTCIceTcpCandidateType>>(JSObject, "tcpType");
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.RTCIceTcpCandidateType>.Get(JSObject, "tcpType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? RelatedAddress
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "relatedAddress");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "relatedAddress");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort? RelatedPort
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort?, global::Natrix.JSCore.Generics.NullableUInt16Accessor>(JSObject, "relatedPort");
+        get => global::Natrix.JSCore.Generics.NullableUInt16Accessor.Get(JSObject, "relatedPort");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? UsernameFragment
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "usernameFragment");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "usernameFragment");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIceServerTransportProtocol? RelayProtocol
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceServerTransportProtocol?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.RTCIceServerTransportProtocol>>(JSObject, "relayProtocol");
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.StdWeb.RTCIceServerTransportProtocol>.Get(JSObject, "relayProtocol");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "url");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "url");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -142,7 +142,7 @@ public partial class RTCIceCandidate: global::Natrix.JSCore.JSObjectProxy, globa
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "toJSON", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceCandidateInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceCandidateInit>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceCandidateInit>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

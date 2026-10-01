@@ -26,50 +26,50 @@ public partial class MediaCapabilitiesKeySystemConfiguration: global::Natrix.JSC
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string KeySystem
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "keySystem");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "keySystem", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "keySystem");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "keySystem", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string InitDataType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "initDataType");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "initDataType", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "initDataType");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "initDataType", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaKeysRequirement DistinctiveIdentifier
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaKeysRequirement, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaKeysRequirement>>(JSObject, "distinctiveIdentifier");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MediaKeysRequirement, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaKeysRequirement>>(JSObject, "distinctiveIdentifier", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaKeysRequirement>.Get(JSObject, "distinctiveIdentifier");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaKeysRequirement>.Set(JSObject, "distinctiveIdentifier", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaKeysRequirement PersistentState
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaKeysRequirement, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaKeysRequirement>>(JSObject, "persistentState");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MediaKeysRequirement, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaKeysRequirement>>(JSObject, "persistentState", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaKeysRequirement>.Get(JSObject, "persistentState");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MediaKeysRequirement>.Set(JSObject, "persistentState", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor> SessionTypes
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "sessionTypes");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>>(JSObject, "sessionTypes", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "sessionTypes");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "sessionTypes", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.KeySystemTrackConfiguration Audio
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.KeySystemTrackConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeySystemTrackConfiguration>>(JSObject, "audio");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.KeySystemTrackConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeySystemTrackConfiguration>>(JSObject, "audio", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeySystemTrackConfiguration>.Get(JSObject, "audio");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeySystemTrackConfiguration>.Set(JSObject, "audio", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.KeySystemTrackConfiguration Video
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.KeySystemTrackConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeySystemTrackConfiguration>>(JSObject, "video");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.KeySystemTrackConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeySystemTrackConfiguration>>(JSObject, "video", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeySystemTrackConfiguration>.Get(JSObject, "video");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeySystemTrackConfiguration>.Set(JSObject, "video", value);
     }
 }
 

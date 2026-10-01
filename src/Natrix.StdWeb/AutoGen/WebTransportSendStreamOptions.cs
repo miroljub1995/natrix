@@ -26,8 +26,8 @@ public partial class WebTransportSendStreamOptions: global::Natrix.StdWeb.WebTra
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool WaitUntilAvailable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "waitUntilAvailable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "waitUntilAvailable", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "waitUntilAvailable");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "waitUntilAvailable", value);
     }
 }
 

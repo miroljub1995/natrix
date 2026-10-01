@@ -26,22 +26,22 @@ public partial class GPUExtent3DDict: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "width");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "width", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "width");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "width", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "height");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "height", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "height");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "height", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint DepthOrArrayLayers
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "depthOrArrayLayers");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "depthOrArrayLayers", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "depthOrArrayLayers");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "depthOrArrayLayers", value);
     }
 }
 

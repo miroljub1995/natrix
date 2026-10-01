@@ -26,15 +26,15 @@ public partial class GPUQuerySetDescriptor: global::Natrix.StdWeb.GPUObjectDescr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GPUQueryType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUQueryType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUQueryType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUQueryType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUQueryType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUQueryType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUQueryType>.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint Count
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "count");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "count", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "count");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "count", value);
     }
 }
 

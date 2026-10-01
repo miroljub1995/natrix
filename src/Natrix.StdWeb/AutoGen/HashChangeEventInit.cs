@@ -26,15 +26,15 @@ public partial class HashChangeEventInit: global::Natrix.StdWeb.EventInit, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string OldURL
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "oldURL");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "oldURL", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "oldURL");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "oldURL", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string NewURL
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "newURL");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "newURL", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "newURL");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "newURL", value);
     }
 }
 

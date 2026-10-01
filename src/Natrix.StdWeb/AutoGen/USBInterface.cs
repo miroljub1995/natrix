@@ -39,25 +39,25 @@ public partial class USBInterface: global::Natrix.JSCore.JSObjectProxy, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte InterfaceNumber
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "interfaceNumber");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "interfaceNumber");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.USBAlternateInterface Alternate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBAlternateInterface, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBAlternateInterface>>(JSObject, "alternate");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBAlternateInterface>.Get(JSObject, "alternate");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBAlternateInterface, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBAlternateInterface>> Alternates
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBAlternateInterface, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBAlternateInterface>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBAlternateInterface, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBAlternateInterface>>>>(JSObject, "alternates");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBAlternateInterface, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBAlternateInterface>>>.Get(JSObject, "alternates");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Claimed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "claimed");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "claimed");
     }
 }
 

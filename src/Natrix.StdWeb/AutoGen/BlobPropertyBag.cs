@@ -26,15 +26,15 @@ public partial class BlobPropertyBag: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "type", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EndingType Endings
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EndingType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.EndingType>>(JSObject, "endings");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EndingType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.EndingType>>(JSObject, "endings", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.EndingType>.Get(JSObject, "endings");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.EndingType>.Set(JSObject, "endings", value);
     }
 }
 

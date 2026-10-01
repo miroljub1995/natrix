@@ -18,19 +18,19 @@ public partial class XRWebGLDepthInformation: global::Natrix.StdWeb.XRDepthInfor
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.WebGLTexture Texture
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.WebGLTexture, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGLTexture>>(JSObject, "texture");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.WebGLTexture>.Get(JSObject, "texture");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.XRTextureType TextureType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.XRTextureType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRTextureType>>(JSObject, "textureType");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.XRTextureType>.Get(JSObject, "textureType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint? ImageIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint?, global::Natrix.JSCore.Generics.NullableUInt32Accessor>(JSObject, "imageIndex");
+        get => global::Natrix.JSCore.Generics.NullableUInt32Accessor.Get(JSObject, "imageIndex");
     }
 }
 

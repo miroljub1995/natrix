@@ -26,22 +26,22 @@ public partial class GPUDeviceDescriptor: global::Natrix.StdWeb.GPUObjectDescrip
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUFeatureName, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUFeatureName>> RequiredFeatures
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUFeatureName, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUFeatureName>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUFeatureName, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUFeatureName>>>>(JSObject, "requiredFeatures");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUFeatureName, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUFeatureName>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUFeatureName, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUFeatureName>>>>(JSObject, "requiredFeatures", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUFeatureName, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUFeatureName>>>.Get(JSObject, "requiredFeatures");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.GPUFeatureName, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GPUFeatureName>>>.Set(JSObject, "requiredFeatures", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Record<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor> RequiredLimits
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Record<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor>>>(JSObject, "requiredLimits");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Record<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor>>>(JSObject, "requiredLimits", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor>>.Get(JSObject, "requiredLimits");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor>>.Set(JSObject, "requiredLimits", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.GPUQueueDescriptor DefaultQueue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUQueueDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUQueueDescriptor>>(JSObject, "defaultQueue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUQueueDescriptor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUQueueDescriptor>>(JSObject, "defaultQueue", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUQueueDescriptor>.Get(JSObject, "defaultQueue");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUQueueDescriptor>.Set(JSObject, "defaultQueue", value);
     }
 }
 

@@ -18,25 +18,25 @@ public partial class CSSPropertyRule: global::Natrix.StdWeb.CSSRule, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Syntax
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "syntax");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "syntax");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Inherits
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "inherits");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "inherits");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? InitialValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "initialValue");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "initialValue");
     }
 }
 

@@ -26,15 +26,15 @@ public partial class FlacEncoderConfig: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint BlockSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "blockSize");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "blockSize", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "blockSize");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "blockSize", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint CompressLevel
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "compressLevel");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "compressLevel", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "compressLevel");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "compressLevel", value);
     }
 }
 

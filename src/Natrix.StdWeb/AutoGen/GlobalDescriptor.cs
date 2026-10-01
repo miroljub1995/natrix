@@ -26,15 +26,15 @@ public partial class GlobalDescriptor: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.ValueType Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ValueType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ValueType>>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ValueType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ValueType>>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ValueType>.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ValueType>.Set(JSObject, "value", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Mutable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "mutable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "mutable", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "mutable");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "mutable", value);
     }
 }
 

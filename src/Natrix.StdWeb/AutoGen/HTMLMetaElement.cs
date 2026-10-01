@@ -25,36 +25,36 @@ public partial class HTMLMetaElement: global::Natrix.StdWeb.HTMLElement, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "name", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string HttpEquiv
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "httpEquiv");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "httpEquiv", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "httpEquiv");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "httpEquiv", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Content
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "content");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "content", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "content");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "content", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Media
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "media");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "media", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "media");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "media", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Scheme
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "scheme");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "scheme", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "scheme");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "scheme", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class CaretPositionFromPointOptions: global::Natrix.JSCore.JSObje
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>> ShadowRoots
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>>>>(JSObject, "shadowRoots");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>>>>(JSObject, "shadowRoots", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>>>.Get(JSObject, "shadowRoots");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ShadowRoot, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ShadowRoot>>>.Set(JSObject, "shadowRoots", value);
     }
 }
 

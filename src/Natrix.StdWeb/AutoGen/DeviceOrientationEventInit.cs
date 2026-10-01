@@ -26,29 +26,29 @@ public partial class DeviceOrientationEventInit: global::Natrix.StdWeb.EventInit
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Alpha
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "alpha");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "alpha", value);
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "alpha");
+        set => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Set(JSObject, "alpha", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Beta
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "beta");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "beta", value);
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "beta");
+        set => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Set(JSObject, "beta", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Gamma
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "gamma");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "gamma", value);
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "gamma");
+        set => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Set(JSObject, "gamma", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Absolute
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "absolute");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "absolute", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "absolute");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "absolute", value);
     }
 }
 

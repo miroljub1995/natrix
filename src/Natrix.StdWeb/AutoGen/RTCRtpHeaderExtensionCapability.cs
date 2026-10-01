@@ -26,8 +26,8 @@ public partial class RTCRtpHeaderExtensionCapability: global::Natrix.JSCore.JSOb
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Uri
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "uri");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "uri", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "uri");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "uri", value);
     }
 }
 

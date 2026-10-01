@@ -26,8 +26,8 @@ public partial class SaveFilePickerOptions: global::Natrix.StdWeb.FilePickerOpti
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? SuggestedName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "suggestedName");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "suggestedName", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "suggestedName");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "suggestedName", value);
     }
 }
 

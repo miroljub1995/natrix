@@ -26,15 +26,15 @@ public partial class RTCIdentityValidationResult: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Identity
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "identity");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "identity", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "identity");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "identity", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Contents
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "contents");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "contents", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "contents");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "contents", value);
     }
 }
 

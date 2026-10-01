@@ -38,43 +38,43 @@ public partial class XPathResult: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort ResultType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "resultType");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "resultType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double NumberValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "numberValue");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "numberValue");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string StringValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "stringValue");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "stringValue");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool BooleanValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "booleanValue");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "booleanValue");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Node? SingleNodeValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Node?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Node>>(JSObject, "singleNodeValue");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Node>.Get(JSObject, "singleNodeValue");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool InvalidIteratorState
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "invalidIteratorState");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "invalidIteratorState");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint SnapshotLength
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "snapshotLength");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "snapshotLength");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -85,7 +85,7 @@ public partial class XPathResult: global::Natrix.JSCore.JSObjectProxy, global::N
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "iterateNext", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Node?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Node>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Node>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -105,7 +105,7 @@ public partial class XPathResult: global::Natrix.JSCore.JSObjectProxy, global::N
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "snapshotItem", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Node?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Node>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Node>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

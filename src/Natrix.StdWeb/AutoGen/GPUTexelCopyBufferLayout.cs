@@ -26,22 +26,22 @@ public partial class GPUTexelCopyBufferLayout: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong Offset
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "offset");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "offset", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "offset");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "offset", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint BytesPerRow
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "bytesPerRow");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "bytesPerRow", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "bytesPerRow");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "bytesPerRow", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint RowsPerImage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rowsPerImage");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rowsPerImage", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "rowsPerImage");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "rowsPerImage", value);
     }
 }
 

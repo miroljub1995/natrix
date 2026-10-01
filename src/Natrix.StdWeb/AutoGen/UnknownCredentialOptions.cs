@@ -26,15 +26,15 @@ public partial class UnknownCredentialOptions: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string RpId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "rpId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "rpId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "rpId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "rpId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string CredentialId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "credentialId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "credentialId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "credentialId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "credentialId", value);
     }
 }
 

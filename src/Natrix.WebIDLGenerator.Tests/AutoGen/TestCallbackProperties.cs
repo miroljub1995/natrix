@@ -18,42 +18,42 @@ public partial class TestCallbackProperties: global::Natrix.JSCore.JSObjectProxy
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback VoidCallback
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>>(JSObject, "voidCallback");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>>(JSObject, "voidCallback", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>.Get(JSObject, "voidCallback");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesCallback>.Set(JSObject, "voidCallback", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int CallVoidCallbackOnSet
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "callVoidCallbackOnSet");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "callVoidCallbackOnSet", value);
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "callVoidCallbackOnSet");
+        set => global::Natrix.JSCore.Generics.Int32Accessor.Set(JSObject, "callVoidCallbackOnSet", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback VariadicCallback
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>>(JSObject, "variadicCallback");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>>(JSObject, "variadicCallback", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>.Get(JSObject, "variadicCallback");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesVariadicCallback>.Set(JSObject, "variadicCallback", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor> CallVariadicCallbackOnSet
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>>(JSObject, "callVariadicCallbackOnSet");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>>(JSObject, "callVariadicCallbackOnSet", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>.Get(JSObject, "callVariadicCallbackOnSet");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<int, global::Natrix.JSCore.Generics.Int32Accessor>>.Set(JSObject, "callVariadicCallbackOnSet", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback NonVoidCallback
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>>(JSObject, "nonVoidCallback");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>>(JSObject, "nonVoidCallback", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>.Get(JSObject, "nonVoidCallback");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestCallbackPropertiesNonVoidCallback>.Set(JSObject, "nonVoidCallback", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int NonVoidCallbackCallAndGetResult
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "nonVoidCallbackCallAndGetResult");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "nonVoidCallbackCallAndGetResult");
     }
 }
 

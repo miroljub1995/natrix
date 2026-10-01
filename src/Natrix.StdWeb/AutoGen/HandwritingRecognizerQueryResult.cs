@@ -26,22 +26,22 @@ public partial class HandwritingRecognizerQueryResult: global::Natrix.JSCore.JSO
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool TextAlternatives
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "textAlternatives");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "textAlternatives", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "textAlternatives");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "textAlternatives", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool TextSegmentation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "textSegmentation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "textSegmentation", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "textSegmentation");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "textSegmentation", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.HandwritingHintsQueryResult Hints
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.HandwritingHintsQueryResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingHintsQueryResult>>(JSObject, "hints");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.HandwritingHintsQueryResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingHintsQueryResult>>(JSObject, "hints", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingHintsQueryResult>.Get(JSObject, "hints");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HandwritingHintsQueryResult>.Set(JSObject, "hints", value);
     }
 }
 

@@ -18,13 +18,13 @@ public partial class SVGPolylineElement: global::Natrix.StdWeb.SVGGeometryElemen
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGPointList Points
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGPointList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGPointList>>(JSObject, "points");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGPointList>.Get(JSObject, "points");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SVGPointList AnimatedPoints
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SVGPointList, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGPointList>>(JSObject, "animatedPoints");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGPointList>.Get(JSObject, "animatedPoints");
     }
 }
 

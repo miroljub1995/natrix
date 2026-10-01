@@ -26,15 +26,15 @@ public partial class WorkerAndParameters: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.Worker Worker
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Worker, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Worker>>(JSObject, "worker");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.Worker, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Worker>>(JSObject, "worker", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Worker>.Get(JSObject, "worker");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Worker>.Set(JSObject, "worker", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCRtpScriptTransformType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCRtpScriptTransformType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCRtpScriptTransformType>>(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCRtpScriptTransformType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCRtpScriptTransformType>>(JSObject, "type", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCRtpScriptTransformType>.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCRtpScriptTransformType>.Set(JSObject, "type", value);
     }
 }
 

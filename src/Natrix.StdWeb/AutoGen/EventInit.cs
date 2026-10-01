@@ -26,22 +26,22 @@ public partial class EventInit: global::Natrix.JSCore.JSObjectProxy, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Bubbles
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "bubbles");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "bubbles", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "bubbles");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "bubbles", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Cancelable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "cancelable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "cancelable", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "cancelable");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "cancelable", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Composed
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "composed");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "composed", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "composed");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "composed", value);
     }
 }
 

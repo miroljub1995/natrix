@@ -26,8 +26,8 @@ public partial class EncodedAudioChunkMetadata: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AudioDecoderConfig DecoderConfig
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AudioDecoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioDecoderConfig>>(JSObject, "decoderConfig");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AudioDecoderConfig, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioDecoderConfig>>(JSObject, "decoderConfig", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioDecoderConfig>.Get(JSObject, "decoderConfig");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AudioDecoderConfig>.Set(JSObject, "decoderConfig", value);
     }
 }
 

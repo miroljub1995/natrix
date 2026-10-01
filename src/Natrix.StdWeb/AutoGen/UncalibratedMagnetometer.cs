@@ -41,37 +41,37 @@ public partial class UncalibratedMagnetometer: global::Natrix.StdWeb.Sensor, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? X
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "x");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "x");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Y
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "y");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "y");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? Z
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "z");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "z");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? XBias
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "xBias");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "xBias");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? YBias
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "yBias");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "yBias");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double? ZBias
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double?, global::Natrix.JSCore.Generics.NullableDoubleAccessor>(JSObject, "zBias");
+        get => global::Natrix.JSCore.Generics.NullableDoubleAccessor.Get(JSObject, "zBias");
     }
 }
 

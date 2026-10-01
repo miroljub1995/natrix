@@ -18,7 +18,7 @@ public partial class XRJointPose: global::Natrix.StdWeb.XRPose, global::Natrix.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float Radius
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "radius");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "radius");
     }
 }
 

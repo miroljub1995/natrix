@@ -18,13 +18,13 @@ public partial class Lock: global::Natrix.JSCore.JSObjectProxy, global::Natrix.J
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.LockMode Mode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.LockMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LockMode>>(JSObject, "mode");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.LockMode>.Get(JSObject, "mode");
     }
 }
 

@@ -26,29 +26,29 @@ public partial class HIDDeviceFilter: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint VendorId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "vendorId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "vendorId", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "vendorId");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "vendorId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort ProductId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "productId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "productId", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "productId");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "productId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort UsagePage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "usagePage");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "usagePage", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "usagePage");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "usagePage", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort Usage
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "usage");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "usage", value);
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "usage");
+        set => global::Natrix.JSCore.Generics.UInt16Accessor.Set(JSObject, "usage", value);
     }
 }
 

@@ -80,7 +80,7 @@ public partial class MutationObserver: global::Natrix.JSCore.JSObjectProxy, glob
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "takeRecords", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MutationRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MutationRecord>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MutationRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MutationRecord>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.MutationRecord, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MutationRecord>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

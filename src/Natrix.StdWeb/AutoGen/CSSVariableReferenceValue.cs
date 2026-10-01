@@ -63,14 +63,14 @@ public partial class CSSVariableReferenceValue: global::Natrix.JSCore.JSObjectPr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Variable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "variable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "variable", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "variable");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "variable", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSUnparsedValue? Fallback
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSUnparsedValue?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSUnparsedValue>>(JSObject, "fallback");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSUnparsedValue>.Get(JSObject, "fallback");
     }
 }
 

@@ -18,33 +18,33 @@ public partial class TestEnumProperties: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Set(JSObject, "value", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum? ValueNullable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>>(JSObject, "valueNullable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>>(JSObject, "valueNullable", value);
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Get(JSObject, "valueNullable");
+        set => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Set(JSObject, "valueNullable", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum? ValueNullableReadonlyAsNotNull
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>>(JSObject, "valueNullableReadonlyAsNotNull");
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Get(JSObject, "valueNullableReadonlyAsNotNull");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum? ValueNullableReadonlyAsNull
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>>(JSObject, "valueNullableReadonlyAsNull");
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Get(JSObject, "valueNullableReadonlyAsNull");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum? ValueInvalid
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum?, global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>>(JSObject, "valueInvalid");
+        get => global::Natrix.JSCore.Generics.NullableEnumAccessor<global::Natrix.WebIDLGenerator.Tests.TestEnumPropertiesEnum>.Get(JSObject, "valueInvalid");
     }
 }
 

@@ -26,8 +26,8 @@ public partial class URLPatternOptions: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IgnoreCase
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreCase");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ignoreCase", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ignoreCase");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "ignoreCase", value);
     }
 }
 

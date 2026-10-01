@@ -26,8 +26,8 @@ public partial class NDEFMessageInit: global::Natrix.JSCore.JSObjectProxy, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.NDEFRecordInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecordInit>> Records
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.NDEFRecordInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecordInit>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.NDEFRecordInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecordInit>>>>(JSObject, "records");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.NDEFRecordInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecordInit>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.NDEFRecordInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecordInit>>>>(JSObject, "records", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.NDEFRecordInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecordInit>>>.Get(JSObject, "records");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.NDEFRecordInit, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.NDEFRecordInit>>>.Set(JSObject, "records", value);
     }
 }
 

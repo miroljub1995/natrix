@@ -26,8 +26,8 @@ public partial class RsaHashedKeyAlgorithm: global::Natrix.StdWeb.RsaKeyAlgorith
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.KeyAlgorithm Hash
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.KeyAlgorithm, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeyAlgorithm>>(JSObject, "hash");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.KeyAlgorithm, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeyAlgorithm>>(JSObject, "hash", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeyAlgorithm>.Get(JSObject, "hash");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.KeyAlgorithm>.Set(JSObject, "hash", value);
     }
 }
 

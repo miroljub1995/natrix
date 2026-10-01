@@ -26,8 +26,8 @@ public partial class ClipboardPermissionDescriptor: global::Natrix.StdWeb.Permis
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool AllowWithoutGesture
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "allowWithoutGesture");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "allowWithoutGesture", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "allowWithoutGesture");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "allowWithoutGesture", value);
     }
 }
 

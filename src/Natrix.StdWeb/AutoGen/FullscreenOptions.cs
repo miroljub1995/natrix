@@ -26,22 +26,22 @@ public partial class FullscreenOptions: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FullscreenKeyboardLock KeyboardLock
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FullscreenKeyboardLock, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FullscreenKeyboardLock>>(JSObject, "keyboardLock");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FullscreenKeyboardLock, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FullscreenKeyboardLock>>(JSObject, "keyboardLock", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FullscreenKeyboardLock>.Get(JSObject, "keyboardLock");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FullscreenKeyboardLock>.Set(JSObject, "keyboardLock", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.FullscreenNavigationUI NavigationUI
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.FullscreenNavigationUI, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FullscreenNavigationUI>>(JSObject, "navigationUI");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.FullscreenNavigationUI, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FullscreenNavigationUI>>(JSObject, "navigationUI", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FullscreenNavigationUI>.Get(JSObject, "navigationUI");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.FullscreenNavigationUI>.Set(JSObject, "navigationUI", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ScreenDetailed Screen
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ScreenDetailed, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ScreenDetailed>>(JSObject, "screen");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ScreenDetailed, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ScreenDetailed>>(JSObject, "screen", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ScreenDetailed>.Get(JSObject, "screen");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ScreenDetailed>.Set(JSObject, "screen", value);
     }
 }
 

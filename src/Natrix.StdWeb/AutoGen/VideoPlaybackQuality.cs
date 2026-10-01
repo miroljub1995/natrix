@@ -18,25 +18,25 @@ public partial class VideoPlaybackQuality: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double CreationTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "creationTime");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "creationTime");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint DroppedVideoFrames
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "droppedVideoFrames");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "droppedVideoFrames");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint TotalVideoFrames
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "totalVideoFrames");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "totalVideoFrames");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint CorruptedVideoFrames
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "corruptedVideoFrames");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "corruptedVideoFrames");
     }
 }
 

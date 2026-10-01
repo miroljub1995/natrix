@@ -26,8 +26,8 @@ public partial class GPUComputePipelineDescriptor: global::Natrix.StdWeb.GPUPipe
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.GPUProgrammableStage Compute
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.GPUProgrammableStage, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUProgrammableStage>>(JSObject, "compute");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.GPUProgrammableStage, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUProgrammableStage>>(JSObject, "compute", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUProgrammableStage>.Get(JSObject, "compute");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.GPUProgrammableStage>.Set(JSObject, "compute", value);
     }
 }
 

@@ -55,7 +55,7 @@ public partial class PageTransitionEvent: global::Natrix.StdWeb.Event, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Persisted
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "persisted");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "persisted");
     }
 }
 

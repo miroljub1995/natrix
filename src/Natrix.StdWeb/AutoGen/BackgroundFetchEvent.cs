@@ -39,7 +39,7 @@ public partial class BackgroundFetchEvent: global::Natrix.StdWeb.ExtendableEvent
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.BackgroundFetchRegistration Registration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.BackgroundFetchRegistration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRegistration>>(JSObject, "registration");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundFetchRegistration>.Get(JSObject, "registration");
     }
 }
 

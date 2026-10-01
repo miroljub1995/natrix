@@ -18,27 +18,27 @@ public partial class TestInterfaceProperties: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Set(JSObject, "value", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface? ValueNullable
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>>(JSObject, "valueNullable");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>>(JSObject, "valueNullable", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Get(JSObject, "valueNullable");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Set(JSObject, "valueNullable", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface? ValueNullableReadonlyAsNotNull
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>>(JSObject, "valueNullableReadonlyAsNotNull");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Get(JSObject, "valueNullableReadonlyAsNotNull");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface? ValueNullableReadonlyAsNull
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>>(JSObject, "valueNullableReadonlyAsNull");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.WebIDLGenerator.Tests.TestInterfacePropertiesInterface>.Get(JSObject, "valueNullableReadonlyAsNull");
     }
 }
 

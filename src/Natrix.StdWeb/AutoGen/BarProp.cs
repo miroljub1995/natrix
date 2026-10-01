@@ -18,7 +18,7 @@ public partial class BarProp: global::Natrix.JSCore.JSObjectProxy, global::Natri
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Visible
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "visible");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "visible");
     }
 }
 

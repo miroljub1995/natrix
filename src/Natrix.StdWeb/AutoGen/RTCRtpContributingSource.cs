@@ -26,29 +26,29 @@ public partial class RTCRtpContributingSource: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required double Timestamp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "timestamp");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "timestamp", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "timestamp");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "timestamp", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint Source
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "source");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "source", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "source");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "source", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double AudioLevel
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "audioLevel");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "audioLevel", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "audioLevel");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "audioLevel", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint RtpTimestamp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rtpTimestamp");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rtpTimestamp", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "rtpTimestamp");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "rtpTimestamp", value);
     }
 }
 

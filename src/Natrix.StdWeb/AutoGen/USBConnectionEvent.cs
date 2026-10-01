@@ -39,7 +39,7 @@ public partial class USBConnectionEvent: global::Natrix.StdWeb.Event, global::Na
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.USBDevice Device
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBDevice, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDevice>>(JSObject, "device");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBDevice>.Get(JSObject, "device");
     }
 }
 

@@ -26,15 +26,15 @@ public partial class AudioTimestamp: global::Natrix.JSCore.JSObjectProxy, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ContextTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "contextTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "contextTime", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "contextTime");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "contextTime", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double PerformanceTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "performanceTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "performanceTime", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "performanceTime");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "performanceTime", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class OTPCredentialRequestOptions: global::Natrix.JSCore.JSObject
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.OTPCredentialTransportType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OTPCredentialTransportType>> Transport
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.OTPCredentialTransportType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OTPCredentialTransportType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.OTPCredentialTransportType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OTPCredentialTransportType>>>>(JSObject, "transport");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.OTPCredentialTransportType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OTPCredentialTransportType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.OTPCredentialTransportType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OTPCredentialTransportType>>>>(JSObject, "transport", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.OTPCredentialTransportType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OTPCredentialTransportType>>>.Get(JSObject, "transport");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.OTPCredentialTransportType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OTPCredentialTransportType>>>.Set(JSObject, "transport", value);
     }
 }
 

@@ -26,99 +26,99 @@ public partial class EventModifierInit: global::Natrix.StdWeb.UIEventInit, globa
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool CtrlKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ctrlKey");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "ctrlKey", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "ctrlKey");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "ctrlKey", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ShiftKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "shiftKey");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "shiftKey", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "shiftKey");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "shiftKey", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool AltKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "altKey");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "altKey", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "altKey");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "altKey", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool MetaKey
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "metaKey");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "metaKey", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "metaKey");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "metaKey", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ModifierAltGraph
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierAltGraph");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierAltGraph", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "modifierAltGraph");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "modifierAltGraph", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ModifierCapsLock
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierCapsLock");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierCapsLock", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "modifierCapsLock");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "modifierCapsLock", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ModifierFn
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierFn");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierFn", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "modifierFn");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "modifierFn", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ModifierFnLock
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierFnLock");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierFnLock", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "modifierFnLock");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "modifierFnLock", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ModifierHyper
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierHyper");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierHyper", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "modifierHyper");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "modifierHyper", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ModifierNumLock
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierNumLock");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierNumLock", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "modifierNumLock");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "modifierNumLock", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ModifierScrollLock
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierScrollLock");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierScrollLock", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "modifierScrollLock");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "modifierScrollLock", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ModifierSuper
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierSuper");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierSuper", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "modifierSuper");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "modifierSuper", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ModifierSymbol
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierSymbol");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierSymbol", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "modifierSymbol");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "modifierSymbol", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool ModifierSymbolLock
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierSymbolLock");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "modifierSymbolLock", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "modifierSymbolLock");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "modifierSymbolLock", value);
     }
 }
 

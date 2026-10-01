@@ -26,15 +26,15 @@ public partial class CaptureHandle: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Origin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "origin");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "origin", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "origin");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "origin", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Handle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "handle");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "handle", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "handle");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "handle", value);
     }
 }
 

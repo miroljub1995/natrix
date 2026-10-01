@@ -26,15 +26,15 @@ public partial class BackgroundFetchUIOptions: global::Natrix.JSCore.JSObjectPro
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ImageResource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageResource>> Icons
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ImageResource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageResource>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ImageResource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageResource>>>>(JSObject, "icons");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ImageResource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageResource>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ImageResource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageResource>>>>(JSObject, "icons", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ImageResource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageResource>>>.Get(JSObject, "icons");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ImageResource, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageResource>>>.Set(JSObject, "icons", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Title
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "title");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "title", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "title");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "title", value);
     }
 }
 

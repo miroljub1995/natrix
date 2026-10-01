@@ -26,29 +26,29 @@ public partial class AnimationEventInit: global::Natrix.StdWeb.EventInit, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string AnimationName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "animationName");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "animationName", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "animationName");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "animationName", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ElapsedTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "elapsedTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "elapsedTime", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "elapsedTime");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "elapsedTime", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string PseudoElement
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "pseudoElement");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "pseudoElement", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "pseudoElement");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "pseudoElement", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSAnimation? Animation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSAnimation?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSAnimation>>(JSObject, "animation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.CSSAnimation?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSAnimation>>(JSObject, "animation", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSAnimation>.Get(JSObject, "animation");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.CSSAnimation>.Set(JSObject, "animation", value);
     }
 }
 

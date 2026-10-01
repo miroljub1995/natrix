@@ -26,22 +26,22 @@ public partial class AudioNodeOptions: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ChannelCount
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "channelCount");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "channelCount", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "channelCount");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "channelCount", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ChannelCountMode ChannelCountMode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ChannelCountMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChannelCountMode>>(JSObject, "channelCountMode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ChannelCountMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChannelCountMode>>(JSObject, "channelCountMode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChannelCountMode>.Get(JSObject, "channelCountMode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChannelCountMode>.Set(JSObject, "channelCountMode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.ChannelInterpretation ChannelInterpretation
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.ChannelInterpretation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChannelInterpretation>>(JSObject, "channelInterpretation");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.ChannelInterpretation, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChannelInterpretation>>(JSObject, "channelInterpretation", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChannelInterpretation>.Get(JSObject, "channelInterpretation");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ChannelInterpretation>.Set(JSObject, "channelInterpretation", value);
     }
 }
 

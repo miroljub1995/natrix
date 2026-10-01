@@ -26,50 +26,50 @@ public partial class RTCConfiguration: global::Natrix.JSCore.JSObjectProxy, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string PeerIdentity
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "peerIdentity");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "peerIdentity", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "peerIdentity");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "peerIdentity", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>> IceServers
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>>>>(JSObject, "iceServers");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>>>>(JSObject, "iceServers", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>>>.Get(JSObject, "iceServers");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCIceServer, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCIceServer>>>.Set(JSObject, "iceServers", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIceTransportPolicy IceTransportPolicy
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceTransportPolicy, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCIceTransportPolicy>>(JSObject, "iceTransportPolicy");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCIceTransportPolicy, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCIceTransportPolicy>>(JSObject, "iceTransportPolicy", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCIceTransportPolicy>.Get(JSObject, "iceTransportPolicy");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCIceTransportPolicy>.Set(JSObject, "iceTransportPolicy", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCBundlePolicy BundlePolicy
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCBundlePolicy, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCBundlePolicy>>(JSObject, "bundlePolicy");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCBundlePolicy, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCBundlePolicy>>(JSObject, "bundlePolicy", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCBundlePolicy>.Get(JSObject, "bundlePolicy");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCBundlePolicy>.Set(JSObject, "bundlePolicy", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCRtcpMuxPolicy RtcpMuxPolicy
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCRtcpMuxPolicy, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCRtcpMuxPolicy>>(JSObject, "rtcpMuxPolicy");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCRtcpMuxPolicy, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCRtcpMuxPolicy>>(JSObject, "rtcpMuxPolicy", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCRtcpMuxPolicy>.Get(JSObject, "rtcpMuxPolicy");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.RTCRtcpMuxPolicy>.Set(JSObject, "rtcpMuxPolicy", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCCertificate, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCCertificate>> Certificates
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCCertificate, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCCertificate>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCCertificate, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCCertificate>>>>(JSObject, "certificates");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCCertificate, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCCertificate>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCCertificate, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCCertificate>>>>(JSObject, "certificates", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCCertificate, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCCertificate>>>.Get(JSObject, "certificates");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.RTCCertificate, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.RTCCertificate>>>.Set(JSObject, "certificates", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte IceCandidatePoolSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "iceCandidatePoolSize");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "iceCandidatePoolSize", value);
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "iceCandidatePoolSize");
+        set => global::Natrix.JSCore.Generics.ByteAccessor.Set(JSObject, "iceCandidatePoolSize", value);
     }
 }
 

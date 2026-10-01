@@ -26,15 +26,15 @@ public partial class RTCPeerConnectionIceEventInit: global::Natrix.StdWeb.EventI
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.RTCIceCandidate? Candidate
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.RTCIceCandidate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.RTCIceCandidate>>(JSObject, "candidate");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.RTCIceCandidate?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.RTCIceCandidate>>(JSObject, "candidate", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.RTCIceCandidate>.Get(JSObject, "candidate");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.RTCIceCandidate>.Set(JSObject, "candidate", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Url
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "url");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "url", value);
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "url");
+        set => global::Natrix.JSCore.Generics.NullableStringAccessor.Set(JSObject, "url", value);
     }
 }
 

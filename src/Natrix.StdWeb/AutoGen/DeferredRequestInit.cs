@@ -26,8 +26,8 @@ public partial class DeferredRequestInit: global::Natrix.StdWeb.RequestInit, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double ActivateAfter
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "activateAfter");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "activateAfter", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "activateAfter");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "activateAfter", value);
     }
 }
 

@@ -18,13 +18,13 @@ public partial class IntrinsicSizes: global::Natrix.JSCore.JSObjectProxy, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double MinContentSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "minContentSize");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "minContentSize");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double MaxContentSize
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "maxContentSize");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "maxContentSize");
     }
 }
 

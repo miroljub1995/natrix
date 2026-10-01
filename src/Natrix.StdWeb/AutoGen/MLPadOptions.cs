@@ -26,15 +26,15 @@ public partial class MLPadOptions: global::Natrix.StdWeb.MLOperatorOptions, glob
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MLPaddingMode Mode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MLPaddingMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLPaddingMode>>(JSObject, "mode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.MLPaddingMode, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLPaddingMode>>(JSObject, "mode", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLPaddingMode>.Get(JSObject, "mode");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.MLPaddingMode>.Set(JSObject, "mode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.DoubleAccessor> Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.DoubleAccessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.DoubleAccessor>>>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.DoubleAccessor>, global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.DoubleAccessor>>>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.DoubleAccessor>>.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<global::System.Numerics.BigInteger, double, global::Natrix.JSCore.Generics.BigIntegerAccessor, global::Natrix.JSCore.Generics.DoubleAccessor>>.Set(JSObject, "value", value);
     }
 }
 

@@ -54,7 +54,7 @@ public partial class FaceDetector: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "detect", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DetectedFace>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DetectedFace>>>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DetectedFace>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DetectedFace>>>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DetectedFace>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.DetectedFace, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DetectedFace>>>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

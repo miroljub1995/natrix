@@ -26,15 +26,15 @@ public partial class RsaKeyAlgorithm: global::Natrix.StdWeb.KeyAlgorithm, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required uint ModulusLength
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "modulusLength");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "modulusLength", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "modulusLength");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "modulusLength", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Uint8Array PublicExponent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Uint8Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8Array>>(JSObject, "publicExponent");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Uint8Array, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8Array>>(JSObject, "publicExponent", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8Array>.Get(JSObject, "publicExponent");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Uint8Array>.Set(JSObject, "publicExponent", value);
     }
 }
 

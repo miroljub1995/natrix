@@ -18,31 +18,31 @@ public partial class PreferenceManager: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PreferenceObject ColorScheme
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PreferenceObject, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PreferenceObject>>(JSObject, "colorScheme");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PreferenceObject>.Get(JSObject, "colorScheme");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PreferenceObject Contrast
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PreferenceObject, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PreferenceObject>>(JSObject, "contrast");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PreferenceObject>.Get(JSObject, "contrast");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PreferenceObject ReducedMotion
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PreferenceObject, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PreferenceObject>>(JSObject, "reducedMotion");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PreferenceObject>.Get(JSObject, "reducedMotion");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PreferenceObject ReducedTransparency
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PreferenceObject, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PreferenceObject>>(JSObject, "reducedTransparency");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PreferenceObject>.Get(JSObject, "reducedTransparency");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PreferenceObject ReducedData
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PreferenceObject, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PreferenceObject>>(JSObject, "reducedData");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PreferenceObject>.Get(JSObject, "reducedData");
     }
 }
 

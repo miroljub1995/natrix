@@ -18,7 +18,7 @@ public partial class MediaKeySystemAccess: global::Natrix.JSCore.JSObjectProxy, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string KeySystem
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "keySystem");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "keySystem");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -29,7 +29,7 @@ public partial class MediaKeySystemAccess: global::Natrix.JSCore.JSObjectProxy, 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "getConfiguration", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.MediaKeySystemConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaKeySystemConfiguration>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaKeySystemConfiguration>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -40,7 +40,7 @@ public partial class MediaKeySystemAccess: global::Natrix.JSCore.JSObjectProxy, 
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "createMediaKeys", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MediaKeys, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaKeys>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MediaKeys, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaKeys>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.MediaKeys, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaKeys>>>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

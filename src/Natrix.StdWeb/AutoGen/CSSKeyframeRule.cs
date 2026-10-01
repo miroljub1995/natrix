@@ -18,14 +18,14 @@ public partial class CSSKeyframeRule: global::Natrix.StdWeb.CSSRule, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string KeyText
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "keyText");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "keyText", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "keyText");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "keyText", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.CSSStyleProperties Style
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.CSSStyleProperties, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleProperties>>(JSObject, "style");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.CSSStyleProperties>.Get(JSObject, "style");
     }
 }
 

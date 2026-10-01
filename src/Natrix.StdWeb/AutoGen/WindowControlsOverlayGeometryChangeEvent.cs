@@ -39,13 +39,13 @@ public partial class WindowControlsOverlayGeometryChangeEvent: global::Natrix.St
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.DOMRect TitlebarAreaRect
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.DOMRect, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRect>>(JSObject, "titlebarAreaRect");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.DOMRect>.Get(JSObject, "titlebarAreaRect");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Visible
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "visible");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "visible");
     }
 }
 

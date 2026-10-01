@@ -34,25 +34,25 @@ public partial class EncodedAudioChunk: global::Natrix.JSCore.JSObjectProxy, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EncodedAudioChunkType Type
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EncodedAudioChunkType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.EncodedAudioChunkType>>(JSObject, "type");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.EncodedAudioChunkType>.Get(JSObject, "type");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public long Timestamp
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<long, global::Natrix.JSCore.Generics.Int64Accessor>(JSObject, "timestamp");
+        get => global::Natrix.JSCore.Generics.Int64Accessor.Get(JSObject, "timestamp");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong? Duration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong?, global::Natrix.JSCore.Generics.NullableUInt64Accessor>(JSObject, "duration");
+        get => global::Natrix.JSCore.Generics.NullableUInt64Accessor.Get(JSObject, "duration");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint ByteLength
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "byteLength");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "byteLength");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

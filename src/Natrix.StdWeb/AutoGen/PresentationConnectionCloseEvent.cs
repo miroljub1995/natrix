@@ -39,13 +39,13 @@ public partial class PresentationConnectionCloseEvent: global::Natrix.StdWeb.Eve
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PresentationConnectionCloseReason Reason
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PresentationConnectionCloseReason, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PresentationConnectionCloseReason>>(JSObject, "reason");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.PresentationConnectionCloseReason>.Get(JSObject, "reason");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Message
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "message");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "message");
     }
 }
 

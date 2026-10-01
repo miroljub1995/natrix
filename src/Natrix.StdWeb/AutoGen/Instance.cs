@@ -55,7 +55,7 @@ public partial class Instance: global::Natrix.JSCore.JSObjectProxy, global::Natr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject Exports
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "exports");
+        get => global::Natrix.JSCore.Generics.JSObjectAccessor.Get(JSObject, "exports");
     }
 }
 

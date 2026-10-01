@@ -26,29 +26,29 @@ public partial class PropertyDefinition: global::Natrix.JSCore.JSObjectProxy, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "name", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Syntax
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "syntax");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "syntax", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "syntax");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "syntax", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required bool Inherits
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "inherits");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "inherits", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "inherits");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "inherits", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string InitialValue
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "initialValue");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "initialValue", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "initialValue");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "initialValue", value);
     }
 }
 

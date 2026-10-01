@@ -18,85 +18,85 @@ public partial class FontMetrics: global::Natrix.JSCore.JSObjectProxy, global::N
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Width
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "width");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "width");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<double, global::Natrix.JSCore.Generics.DoubleAccessor> Advances
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<double, global::Natrix.JSCore.Generics.DoubleAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<double, global::Natrix.JSCore.Generics.DoubleAccessor>>>(JSObject, "advances");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<double, global::Natrix.JSCore.Generics.DoubleAccessor>>.Get(JSObject, "advances");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double BoundingBoxLeft
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "boundingBoxLeft");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "boundingBoxLeft");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double BoundingBoxRight
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "boundingBoxRight");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "boundingBoxRight");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double Height
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "height");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "height");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double EmHeightAscent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "emHeightAscent");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "emHeightAscent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double EmHeightDescent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "emHeightDescent");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "emHeightDescent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double BoundingBoxAscent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "boundingBoxAscent");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "boundingBoxAscent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double BoundingBoxDescent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "boundingBoxDescent");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "boundingBoxDescent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double FontBoundingBoxAscent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "fontBoundingBoxAscent");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "fontBoundingBoxAscent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double FontBoundingBoxDescent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "fontBoundingBoxDescent");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "fontBoundingBoxDescent");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Baseline DominantBaseline
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Baseline, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Baseline>>(JSObject, "dominantBaseline");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Baseline>.Get(JSObject, "dominantBaseline");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Baseline, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Baseline>> Baselines
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Baseline, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Baseline>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Baseline, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Baseline>>>>(JSObject, "baselines");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Baseline, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Baseline>>>.Get(JSObject, "baselines");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Font, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Font>> Fonts
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Font, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Font>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Font, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Font>>>>(JSObject, "fonts");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.Font, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Font>>>.Get(JSObject, "fonts");
     }
 }
 

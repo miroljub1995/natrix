@@ -39,31 +39,31 @@ public partial class SpeechSynthesisEvent: global::Natrix.StdWeb.Event, global::
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SpeechSynthesisUtterance Utterance
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpeechSynthesisUtterance, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechSynthesisUtterance>>(JSObject, "utterance");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechSynthesisUtterance>.Get(JSObject, "utterance");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint CharIndex
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "charIndex");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "charIndex");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint CharLength
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "charLength");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "charLength");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public float ElapsedTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<float, global::Natrix.JSCore.Generics.SingleAccessor>(JSObject, "elapsedTime");
+        get => global::Natrix.JSCore.Generics.SingleAccessor.Get(JSObject, "elapsedTime");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 }
 

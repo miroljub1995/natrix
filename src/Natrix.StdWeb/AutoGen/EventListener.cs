@@ -52,8 +52,8 @@ public partial class EventListener: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.StdWeb.EventListenerCallback HandleEvent
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventListenerCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EventListenerCallback>>(JSObject, "handleEvent");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventListenerCallback, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EventListenerCallback>>(JSObject, "handleEvent", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EventListenerCallback>.Get(JSObject, "handleEvent");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.EventListenerCallback>.Set(JSObject, "handleEvent", value);
     }
 }
 

@@ -26,8 +26,8 @@ public partial class TagType: global::Natrix.JSCore.JSObjectProxy, global::Natri
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ValueType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ValueType>> Parameters
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ValueType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ValueType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ValueType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ValueType>>>>(JSObject, "parameters");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ValueType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ValueType>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ValueType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ValueType>>>>(JSObject, "parameters", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ValueType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ValueType>>>.Get(JSObject, "parameters");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.ValueType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.ValueType>>>.Set(JSObject, "parameters", value);
     }
 }
 

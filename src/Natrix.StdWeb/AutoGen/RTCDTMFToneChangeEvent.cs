@@ -55,7 +55,7 @@ public partial class RTCDTMFToneChangeEvent: global::Natrix.StdWeb.Event, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Tone
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "tone");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "tone");
     }
 }
 

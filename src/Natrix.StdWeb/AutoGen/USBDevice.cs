@@ -18,103 +18,103 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte UsbVersionMajor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "usbVersionMajor");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "usbVersionMajor");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte UsbVersionMinor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "usbVersionMinor");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "usbVersionMinor");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte UsbVersionSubminor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "usbVersionSubminor");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "usbVersionSubminor");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte DeviceClass
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "deviceClass");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "deviceClass");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte DeviceSubclass
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "deviceSubclass");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "deviceSubclass");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte DeviceProtocol
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "deviceProtocol");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "deviceProtocol");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort VendorId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "vendorId");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "vendorId");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ushort ProductId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ushort, global::Natrix.JSCore.Generics.UInt16Accessor>(JSObject, "productId");
+        get => global::Natrix.JSCore.Generics.UInt16Accessor.Get(JSObject, "productId");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte DeviceVersionMajor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "deviceVersionMajor");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "deviceVersionMajor");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte DeviceVersionMinor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "deviceVersionMinor");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "deviceVersionMinor");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public byte DeviceVersionSubminor
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<byte, global::Natrix.JSCore.Generics.ByteAccessor>(JSObject, "deviceVersionSubminor");
+        get => global::Natrix.JSCore.Generics.ByteAccessor.Get(JSObject, "deviceVersionSubminor");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? ManufacturerName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "manufacturerName");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "manufacturerName");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? ProductName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "productName");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "productName");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? SerialNumber
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "serialNumber");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "serialNumber");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.USBConfiguration? Configuration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBConfiguration?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.USBConfiguration>>(JSObject, "configuration");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.USBConfiguration>.Get(JSObject, "configuration");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBConfiguration>> Configurations
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBConfiguration>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBConfiguration>>>>(JSObject, "configurations");
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.FrozenArray<global::Natrix.StdWeb.USBConfiguration, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBConfiguration>>>.Get(JSObject, "configurations");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Opened
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "opened");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "opened");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -125,7 +125,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "open", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -136,7 +136,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "close", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -147,7 +147,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "forget", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -167,7 +167,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "selectConfiguration", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -187,7 +187,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "claimInterface", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -207,7 +207,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "releaseInterface", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -232,7 +232,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "selectAlternateInterface", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -257,7 +257,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "controlTransferIn", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBInTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBInTransferResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBInTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBInTransferResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBInTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBInTransferResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -277,7 +277,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "controlTransferOut", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBOutTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBOutTransferResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBOutTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBOutTransferResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBOutTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBOutTransferResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -301,7 +301,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "controlTransferOut", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBOutTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBOutTransferResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBOutTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBOutTransferResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBOutTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBOutTransferResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -326,7 +326,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "clearHalt", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -351,7 +351,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "transferIn", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBInTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBInTransferResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBInTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBInTransferResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBInTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBInTransferResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -375,7 +375,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "transferOut", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBOutTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBOutTransferResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBOutTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBOutTransferResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBOutTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBOutTransferResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -399,7 +399,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "isochronousTransferIn", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBIsochronousInTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousInTransferResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBIsochronousInTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousInTransferResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBIsochronousInTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousInTransferResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -427,7 +427,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "isochronousTransferOut", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBIsochronousOutTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousOutTransferResult>>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBIsochronousOutTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousOutTransferResult>>>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Promise<global::Natrix.StdWeb.USBIsochronousOutTransferResult, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.USBIsochronousOutTransferResult>>>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -438,7 +438,7 @@ public partial class USBDevice: global::Natrix.JSCore.JSObjectProxy, global::Nat
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "reset", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Promise, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Promise>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

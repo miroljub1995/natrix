@@ -18,44 +18,44 @@ public partial class Attr: global::Natrix.StdWeb.Node, global::Natrix.JSCore.IJS
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? NamespaceURI
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "namespaceURI");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "namespaceURI");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string? Prefix
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string?, global::Natrix.JSCore.Generics.NullableStringAccessor>(JSObject, "prefix");
+        get => global::Natrix.JSCore.Generics.NullableStringAccessor.Get(JSObject, "prefix");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string LocalName
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "localName");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "localName");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Value
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "value");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "value", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "value");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "value", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? OwnerElement
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.Element?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>>(JSObject, "ownerElement");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>.Get(JSObject, "ownerElement");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Specified
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "specified");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "specified");
     }
 }
 

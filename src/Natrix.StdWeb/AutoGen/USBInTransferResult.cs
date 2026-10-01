@@ -63,13 +63,13 @@ public partial class USBInTransferResult: global::Natrix.JSCore.JSObjectProxy, g
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.DataView? Data
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.DataView?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.DataView>>(JSObject, "data");
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.JSCore.DataView>.Get(JSObject, "data");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.USBTransferStatus Status
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.USBTransferStatus, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBTransferStatus>>(JSObject, "status");
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.USBTransferStatus>.Get(JSObject, "status");
     }
 }
 

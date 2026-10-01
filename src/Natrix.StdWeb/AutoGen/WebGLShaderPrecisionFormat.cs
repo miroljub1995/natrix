@@ -18,19 +18,19 @@ public partial class WebGLShaderPrecisionFormat: global::Natrix.JSCore.JSObjectP
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int RangeMin
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "rangeMin");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "rangeMin");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int RangeMax
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "rangeMax");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "rangeMax");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public int Precision
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<int, global::Natrix.JSCore.Generics.Int32Accessor>(JSObject, "precision");
+        get => global::Natrix.JSCore.Generics.Int32Accessor.Get(JSObject, "precision");
     }
 }
 

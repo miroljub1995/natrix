@@ -26,15 +26,15 @@ public partial class WaveShaperOptions: global::Natrix.StdWeb.AudioNodeOptions, 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor> Curve
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>>>(JSObject, "curve");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>>>(JSObject, "curve", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>>.Get(JSObject, "curve");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<float, global::Natrix.JSCore.Generics.SingleAccessor>>.Set(JSObject, "curve", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.OverSampleType Oversample
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.OverSampleType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OverSampleType>>(JSObject, "oversample");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.OverSampleType, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OverSampleType>>(JSObject, "oversample", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OverSampleType>.Get(JSObject, "oversample");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.OverSampleType>.Set(JSObject, "oversample", value);
     }
 }
 

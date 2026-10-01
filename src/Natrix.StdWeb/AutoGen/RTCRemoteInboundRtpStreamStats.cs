@@ -26,43 +26,43 @@ public partial class RTCRemoteInboundRtpStreamStats: global::Natrix.StdWeb.RTCRe
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string LocalId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "localId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "localId", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "localId");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "localId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double RoundTripTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "roundTripTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "roundTripTime", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "roundTripTime");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "roundTripTime", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double TotalRoundTripTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalRoundTripTime");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "totalRoundTripTime", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "totalRoundTripTime");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "totalRoundTripTime", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double FractionLost
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "fractionLost");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "fractionLost", value);
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "fractionLost");
+        set => global::Natrix.JSCore.Generics.DoubleAccessor.Set(JSObject, "fractionLost", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong RoundTripTimeMeasurements
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "roundTripTimeMeasurements");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "roundTripTimeMeasurements", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "roundTripTimeMeasurements");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "roundTripTimeMeasurements", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong PacketsWithBleachedEct1Marking
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsWithBleachedEct1Marking");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "packetsWithBleachedEct1Marking", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "packetsWithBleachedEct1Marking");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "packetsWithBleachedEct1Marking", value);
     }
 }
 

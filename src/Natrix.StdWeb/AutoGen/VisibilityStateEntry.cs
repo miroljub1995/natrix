@@ -18,25 +18,25 @@ public partial class VisibilityStateEntry: global::Natrix.StdWeb.PerformanceEntr
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Name
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "name");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "name");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string EntryType
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "entryType");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "entryType");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public double StartTime
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(JSObject, "startTime");
+        get => global::Natrix.JSCore.Generics.DoubleAccessor.Get(JSObject, "startTime");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Duration
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "duration");
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "duration");
     }
 }
 

@@ -26,15 +26,15 @@ public partial class ProfilerStack: global::Natrix.JSCore.JSObjectProxy, global:
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public ulong ParentId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "parentId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "parentId", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "parentId");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "parentId", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public required ulong FrameId
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "frameId");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<ulong, global::Natrix.JSCore.Generics.UInt64Accessor>(JSObject, "frameId", value);
+        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "frameId");
+        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "frameId", value);
     }
 }
 

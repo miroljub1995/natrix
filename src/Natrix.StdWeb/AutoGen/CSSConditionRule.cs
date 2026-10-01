@@ -18,7 +18,7 @@ public partial class CSSConditionRule: global::Natrix.StdWeb.CSSGroupingRule, gl
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ConditionText
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "conditionText");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "conditionText");
     }
 }
 

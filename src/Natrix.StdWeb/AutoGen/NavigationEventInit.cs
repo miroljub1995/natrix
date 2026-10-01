@@ -26,15 +26,15 @@ public partial class NavigationEventInit: global::Natrix.StdWeb.UIEventInit, glo
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SpatialNavigationDirection Dir
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.SpatialNavigationDirection, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpatialNavigationDirection>>(JSObject, "dir");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.SpatialNavigationDirection, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpatialNavigationDirection>>(JSObject, "dir", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpatialNavigationDirection>.Get(JSObject, "dir");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SpatialNavigationDirection>.Set(JSObject, "dir", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.EventTarget? RelatedTarget
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.EventTarget?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>>(JSObject, "relatedTarget");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.EventTarget?, global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>>(JSObject, "relatedTarget", value);
+        get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>.Get(JSObject, "relatedTarget");
+        set => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.EventTarget>.Set(JSObject, "relatedTarget", value);
     }
 }
 

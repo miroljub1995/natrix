@@ -25,8 +25,8 @@ public partial class HTMLDListElement: global::Natrix.StdWeb.HTMLElement, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Compact
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "compact");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "compact", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "compact");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "compact", value);
     }
 }
 

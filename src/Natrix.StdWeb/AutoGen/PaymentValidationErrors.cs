@@ -26,29 +26,29 @@ public partial class PaymentValidationErrors: global::Natrix.JSCore.JSObjectProx
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.PayerErrors Payer
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.PayerErrors, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PayerErrors>>(JSObject, "payer");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.PayerErrors, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PayerErrors>>(JSObject, "payer", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PayerErrors>.Get(JSObject, "payer");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PayerErrors>.Set(JSObject, "payer", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.AddressErrors ShippingAddress
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.AddressErrors, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AddressErrors>>(JSObject, "shippingAddress");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.AddressErrors, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AddressErrors>>(JSObject, "shippingAddress", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AddressErrors>.Get(JSObject, "shippingAddress");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.AddressErrors>.Set(JSObject, "shippingAddress", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Error
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "error");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "error", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "error");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "error", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::System.Runtime.InteropServices.JavaScript.JSObject PaymentMethod
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "paymentMethod");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::System.Runtime.InteropServices.JavaScript.JSObject, global::Natrix.JSCore.Generics.JSObjectAccessor>(JSObject, "paymentMethod", value);
+        get => global::Natrix.JSCore.Generics.JSObjectAccessor.Get(JSObject, "paymentMethod");
+        set => global::Natrix.JSCore.Generics.JSObjectAccessor.Set(JSObject, "paymentMethod", value);
     }
 }
 

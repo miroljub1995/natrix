@@ -26,29 +26,29 @@ public partial class TextFormatInit: global::Natrix.JSCore.JSObjectProxy, global
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint RangeStart
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rangeStart");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rangeStart", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "rangeStart");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "rangeStart", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint RangeEnd
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rangeEnd");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "rangeEnd", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "rangeEnd");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "rangeEnd", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.UnderlineStyle UnderlineStyle
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.UnderlineStyle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.UnderlineStyle>>(JSObject, "underlineStyle");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.UnderlineStyle, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.UnderlineStyle>>(JSObject, "underlineStyle", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.UnderlineStyle>.Get(JSObject, "underlineStyle");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.UnderlineStyle>.Set(JSObject, "underlineStyle", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.UnderlineThickness UnderlineThickness
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<global::Natrix.StdWeb.UnderlineThickness, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.UnderlineThickness>>(JSObject, "underlineThickness");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<global::Natrix.StdWeb.UnderlineThickness, global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.UnderlineThickness>>(JSObject, "underlineThickness", value);
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.UnderlineThickness>.Get(JSObject, "underlineThickness");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.UnderlineThickness>.Set(JSObject, "underlineThickness", value);
     }
 }
 

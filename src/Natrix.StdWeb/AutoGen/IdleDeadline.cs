@@ -23,13 +23,13 @@ public partial class IdleDeadline: global::Natrix.JSCore.JSObjectProxy, global::
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallEmptyNonVoidFunctionProperty(JSObject, "timeRemaining", JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.PropertyAccessor.Get<double, global::Natrix.JSCore.Generics.DoubleAccessor>(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.DoubleAccessor.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool DidTimeout
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "didTimeout");
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "didTimeout");
     }
 }
 

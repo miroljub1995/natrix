@@ -26,50 +26,50 @@ public partial class KeyboardEventInit: global::Natrix.StdWeb.EventModifierInit,
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Key
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "key");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "key", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "key");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "key", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string Code
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "code");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<string, global::Natrix.JSCore.Generics.StringAccessor>(JSObject, "code", value);
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "code");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "code", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint Location
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "location");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "location", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "location");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "location", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Repeat
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "repeat");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "repeat", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "repeat");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "repeat", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool IsComposing
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isComposing");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<bool, global::Natrix.JSCore.Generics.BooleanAccessor>(JSObject, "isComposing", value);
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "isComposing");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "isComposing", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint CharCode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "charCode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "charCode", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "charCode");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "charCode", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint KeyCode
     {
-        get => global::Natrix.JSCore.Generics.PropertyAccessor.Get<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "keyCode");
-        set => global::Natrix.JSCore.Generics.PropertyAccessor.Set<uint, global::Natrix.JSCore.Generics.UInt32Accessor>(JSObject, "keyCode", value);
+        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "keyCode");
+        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "keyCode", value);
     }
 }
 
