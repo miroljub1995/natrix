@@ -22,7 +22,7 @@ jobs:
     # The server is an arm64 (Ampere) instance, and the docs host is published
     # with NativeAOT, which cannot cross-compile between architectures without a
     # cross toolchain. Building on an arm64 runner keeps it a native build.
-    runs-on: ubuntu-24.04-arm
+    runs-on: ubuntu-26.04-arm
 
     steps:
       - name: Checkout repository
@@ -45,6 +45,10 @@ jobs:
           cache-dependency-path: src/Natrix.TailwindCss.Generators/js/package-lock.json
 
       - name: Install NativeAOT prerequisites
+        # NativeAOT links the app with the system toolchain. The runner image
+        # ships clang but not the zlib headers; installing clang as well makes
+        # sure an unversioned `clang` is on PATH, which is what the linker step
+        # calls.
         run: sudo apt-get update && sudo apt-get install -y clang zlib1g-dev
 
       - name: Restore workloads
