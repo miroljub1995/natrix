@@ -48,6 +48,14 @@ public class DocsPage : BaseComponent<DocsPageProps, NoEvents, NoSlots, NoExpose
                                     Content = "width=device-width, initial-scale=1".ToConstSignal(),
                                 },
                             },
+                            new Meta
+                            {
+                                Props = new MetaProps
+                                {
+                                    Name = "description".ToConstSignal(),
+                                    Content = "Natrix is a .NET WebAssembly toolkit for building browser applications in C#, with reactive signals, generated Web API bindings and server-side rendering.".ToConstSignal(),
+                                },
+                            },
                             new Title
                             {
                                 Props = new TitleProps(),
