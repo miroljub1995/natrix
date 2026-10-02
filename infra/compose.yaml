@@ -1,12 +1,11 @@
 services:
   app:
     # Placeholder until the docs site has an image: answers every request with
-    # a description of it, which is enough to prove the nginx wiring end to end.
+    # a description of it, which is enough to prove the wiring end to end.
     # Multi-arch, so it runs on the arm64 (Ampere) instance.
     image: traefik/whoami:v1.10
     restart: unless-stopped
-    # Bound to loopback only. nginx on the host is the public entry point, and
-    # Docker's published ports bypass the host firewall, so publishing on all
-    # interfaces would expose the app directly, past nginx.
+    # Bound to loopback only. Docker's published ports bypass the host
+    # firewall, so publishing on all interfaces would expose the app directly.
     ports:
       - "127.0.0.1:8080:80"
