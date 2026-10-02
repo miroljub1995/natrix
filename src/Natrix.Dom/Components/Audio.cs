@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,106 +6,119 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class AudioProps : GlobalHtmlComponentProps<HTMLAudioElement>
 {
-    public IReadOnlySignal<string>? Src { get; init; }
-    public IReadOnlySignal<bool>? Autoplay { get; init; }
-    public IReadOnlySignal<bool>? Controls { get; init; }
-    public IReadOnlySignal<bool>? Loop { get; init; }
-    public IReadOnlySignal<bool>? Muted { get; init; }
-    public IReadOnlySignal<string>? Preload { get; init; }
-    public IReadOnlySignal<string?>? CrossOrigin { get; init; }
-    public IReadOnlySignal<bool>? DisableRemotePlayback { get; init; }
+    private static readonly object s_srcKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLAudioElement>> register)
+    public IReadOnlySignal<string>? Src
     {
-        base.RegisterClientEffects(register);
-
-        if (Src != null)
-        {
-            register(el => el.Src = Src.Value);
-        }
-
-        if (Autoplay != null)
-        {
-            register(el => el.Autoplay = Autoplay.Value);
-        }
-
-        if (Controls != null)
-        {
-            register(el => el.Controls = Controls.Value);
-        }
-
-        if (Loop != null)
-        {
-            register(el => el.Loop = Loop.Value);
-        }
-
-        if (Muted != null)
-        {
-            register(el => el.Muted = Muted.Value);
-        }
-
-        if (Preload != null)
-        {
-            register(el => el.Preload = Preload.Value);
-        }
-
-        if (CrossOrigin != null)
-        {
-            register(el => el.CrossOrigin = CrossOrigin.Value);
-        }
-
-        if (DisableRemotePlayback != null)
-        {
-            register(el => el.DisableRemotePlayback = DisableRemotePlayback.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_srcKey);
+        init => Set(
+            s_srcKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Src = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("src", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_autoplayKey = new();
+
+    public IReadOnlySignal<bool>? Autoplay
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<bool>>(s_autoplayKey);
+        init => Set(
+            s_autoplayKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Autoplay = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("autoplay", (IReadOnlySignal<bool>)s));
+    }
 
-        if (Src != null)
-        {
-            el.SetAttribute("src", Src);
-        }
+    private static readonly object s_controlsKey = new();
 
-        if (Autoplay != null)
-        {
-            el.SetBoolean("autoplay", Autoplay);
-        }
+    public IReadOnlySignal<bool>? Controls
+    {
+        get => Get<IReadOnlySignal<bool>>(s_controlsKey);
+        init => Set(
+            s_controlsKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Controls = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("controls", (IReadOnlySignal<bool>)s));
+    }
 
-        if (Controls != null)
-        {
-            el.SetBoolean("controls", Controls);
-        }
+    private static readonly object s_loopKey = new();
 
-        if (Loop != null)
-        {
-            el.SetBoolean("loop", Loop);
-        }
+    public IReadOnlySignal<bool>? Loop
+    {
+        get => Get<IReadOnlySignal<bool>>(s_loopKey);
+        init => Set(
+            s_loopKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Loop = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("loop", (IReadOnlySignal<bool>)s));
+    }
 
-        if (Muted != null)
-        {
-            el.SetBoolean("muted", Muted);
-        }
+    private static readonly object s_mutedKey = new();
 
-        if (Preload != null)
-        {
-            el.SetAttribute("preload", Preload);
-        }
+    public IReadOnlySignal<bool>? Muted
+    {
+        get => Get<IReadOnlySignal<bool>>(s_mutedKey);
+        init => Set(
+            s_mutedKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Muted = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("muted", (IReadOnlySignal<bool>)s));
+    }
 
-        if (CrossOrigin != null)
-        {
-            el.SetNullableString("crossorigin", CrossOrigin);
-        }
+    private static readonly object s_preloadKey = new();
 
-        if (DisableRemotePlayback != null)
-        {
-            el.SetBoolean("disableremoteplayback", DisableRemotePlayback);
-        }
+    public IReadOnlySignal<string>? Preload
+    {
+        get => Get<IReadOnlySignal<string>>(s_preloadKey);
+        init => Set(
+            s_preloadKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Preload = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("preload", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_crossOriginKey = new();
+
+    public IReadOnlySignal<string?>? CrossOrigin
+    {
+        get => Get<IReadOnlySignal<string?>>(s_crossOriginKey);
+        init => Set(
+            s_crossOriginKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.CrossOrigin = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("crossorigin", (IReadOnlySignal<string?>)s));
+    }
+
+    private static readonly object s_disableRemotePlaybackKey = new();
+
+    public IReadOnlySignal<bool>? DisableRemotePlayback
+    {
+        get => Get<IReadOnlySignal<bool>>(s_disableRemotePlaybackKey);
+        init => Set(
+            s_disableRemotePlaybackKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.DisableRemotePlayback = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("disableremoteplayback", (IReadOnlySignal<bool>)s));
     }
 }
 

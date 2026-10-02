@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,40 +6,35 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class ProgressProps : GlobalHtmlComponentProps<HTMLProgressElement>
 {
-    public IReadOnlySignal<double>? Value { get; init; }
-    public IReadOnlySignal<double>? Max { get; init; }
+    private static readonly object s_valueKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLProgressElement>> register)
+    public IReadOnlySignal<double>? Value
     {
-        base.RegisterClientEffects(register);
-
-        if (Value != null)
-        {
-            register(el => el.Value = Value.Value);
-        }
-
-        if (Max != null)
-        {
-            register(el => el.Max = Max.Value);
-        }
+        get => Get<IReadOnlySignal<double>>(s_valueKey);
+        init => Set(
+            s_valueKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Value = ((IReadOnlySignal<double>)s).Value
+                : null,
+            static (el, s) => el.SetDouble("value", (IReadOnlySignal<double>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_maxKey = new();
+
+    public IReadOnlySignal<double>? Max
     {
-        base.RegisterServerEffects(el);
-
-        if (Value != null)
-        {
-            el.SetDouble("value", Value);
-        }
-
-        if (Max != null)
-        {
-            el.SetDouble("max", Max);
-        }
+        get => Get<IReadOnlySignal<double>>(s_maxKey);
+        init => Set(
+            s_maxKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Max = ((IReadOnlySignal<double>)s).Value
+                : null,
+            static (el, s) => el.SetDouble("max", (IReadOnlySignal<double>)s));
     }
 }
 

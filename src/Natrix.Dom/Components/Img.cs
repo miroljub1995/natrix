@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,161 +6,189 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
 {
-    public IReadOnlySignal<string>? Alt { get; init; }
-    public IReadOnlySignal<string>? Src { get; init; }
-    public IReadOnlySignal<string>? Srcset { get; init; }
-    public IReadOnlySignal<string>? Sizes { get; init; }
-    public IReadOnlySignal<string?>? CrossOrigin { get; init; }
-    public IReadOnlySignal<string>? UseMap { get; init; }
-    public IReadOnlySignal<bool>? IsMap { get; init; }
-    public IReadOnlySignal<uint>? Width { get; init; }
-    public IReadOnlySignal<uint>? Height { get; init; }
-    public IReadOnlySignal<string>? Decoding { get; init; }
-    public IReadOnlySignal<string>? FetchPriority { get; init; }
-    public IReadOnlySignal<string>? Loading { get; init; }
-    public IReadOnlySignal<string>? ReferrerPolicy { get; init; }
+    private static readonly object s_altKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLImageElement>> register)
+    public IReadOnlySignal<string>? Alt
     {
-        base.RegisterClientEffects(register);
-
-        if (Alt != null)
-        {
-            register(el => el.Alt = Alt.Value);
-        }
-
-        if (Src != null)
-        {
-            register(el => el.Src = Src.Value);
-        }
-
-        if (Srcset != null)
-        {
-            register(el => el.Srcset = Srcset.Value);
-        }
-
-        if (Sizes != null)
-        {
-            register(el => el.Sizes = Sizes.Value);
-        }
-
-        if (CrossOrigin != null)
-        {
-            register(el => el.CrossOrigin = CrossOrigin.Value);
-        }
-
-        if (UseMap != null)
-        {
-            register(el => el.UseMap = UseMap.Value);
-        }
-
-        if (IsMap != null)
-        {
-            register(el => el.IsMap = IsMap.Value);
-        }
-
-        if (Width != null)
-        {
-            register(el => el.Width = Width.Value);
-        }
-
-        if (Height != null)
-        {
-            register(el => el.Height = Height.Value);
-        }
-
-        if (Decoding != null)
-        {
-            register(el => el.Decoding = Decoding.Value);
-        }
-
-        if (FetchPriority != null)
-        {
-            register(el => el.FetchPriority = FetchPriority.Value);
-        }
-
-        if (Loading != null)
-        {
-            register(el => el.Loading = Loading.Value);
-        }
-
-        if (ReferrerPolicy != null)
-        {
-            register(el => el.ReferrerPolicy = ReferrerPolicy.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_altKey);
+        init => Set(
+            s_altKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Alt = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("alt", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_srcKey = new();
+
+    public IReadOnlySignal<string>? Src
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<string>>(s_srcKey);
+        init => Set(
+            s_srcKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Src = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("src", (IReadOnlySignal<string>)s));
+    }
 
-        if (Alt != null)
-        {
-            el.SetAttribute("alt", Alt);
-        }
+    private static readonly object s_srcsetKey = new();
 
-        if (Src != null)
-        {
-            el.SetAttribute("src", Src);
-        }
+    public IReadOnlySignal<string>? Srcset
+    {
+        get => Get<IReadOnlySignal<string>>(s_srcsetKey);
+        init => Set(
+            s_srcsetKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Srcset = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("srcset", (IReadOnlySignal<string>)s));
+    }
 
-        if (Srcset != null)
-        {
-            el.SetAttribute("srcset", Srcset);
-        }
+    private static readonly object s_sizesKey = new();
 
-        if (Sizes != null)
-        {
-            el.SetAttribute("sizes", Sizes);
-        }
+    public IReadOnlySignal<string>? Sizes
+    {
+        get => Get<IReadOnlySignal<string>>(s_sizesKey);
+        init => Set(
+            s_sizesKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Sizes = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("sizes", (IReadOnlySignal<string>)s));
+    }
 
-        if (CrossOrigin != null)
-        {
-            el.SetNullableString("crossorigin", CrossOrigin);
-        }
+    private static readonly object s_crossOriginKey = new();
 
-        if (UseMap != null)
-        {
-            el.SetAttribute("usemap", UseMap);
-        }
+    public IReadOnlySignal<string?>? CrossOrigin
+    {
+        get => Get<IReadOnlySignal<string?>>(s_crossOriginKey);
+        init => Set(
+            s_crossOriginKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.CrossOrigin = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("crossorigin", (IReadOnlySignal<string?>)s));
+    }
 
-        if (IsMap != null)
-        {
-            el.SetBoolean("ismap", IsMap);
-        }
+    private static readonly object s_useMapKey = new();
 
-        if (Width != null)
-        {
-            el.SetUInt("width", Width);
-        }
+    public IReadOnlySignal<string>? UseMap
+    {
+        get => Get<IReadOnlySignal<string>>(s_useMapKey);
+        init => Set(
+            s_useMapKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.UseMap = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("usemap", (IReadOnlySignal<string>)s));
+    }
 
-        if (Height != null)
-        {
-            el.SetUInt("height", Height);
-        }
+    private static readonly object s_isMapKey = new();
 
-        if (Decoding != null)
-        {
-            el.SetAttribute("decoding", Decoding);
-        }
+    public IReadOnlySignal<bool>? IsMap
+    {
+        get => Get<IReadOnlySignal<bool>>(s_isMapKey);
+        init => Set(
+            s_isMapKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.IsMap = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("ismap", (IReadOnlySignal<bool>)s));
+    }
 
-        if (FetchPriority != null)
-        {
-            el.SetAttribute("fetchpriority", FetchPriority);
-        }
+    private static readonly object s_widthKey = new();
 
-        if (Loading != null)
-        {
-            el.SetAttribute("loading", Loading);
-        }
+    public IReadOnlySignal<uint>? Width
+    {
+        get => Get<IReadOnlySignal<uint>>(s_widthKey);
+        init => Set(
+            s_widthKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Width = ((IReadOnlySignal<uint>)s).Value
+                : null,
+            static (el, s) => el.SetUInt("width", (IReadOnlySignal<uint>)s));
+    }
 
-        if (ReferrerPolicy != null)
-        {
-            el.SetAttribute("referrerpolicy", ReferrerPolicy);
-        }
+    private static readonly object s_heightKey = new();
+
+    public IReadOnlySignal<uint>? Height
+    {
+        get => Get<IReadOnlySignal<uint>>(s_heightKey);
+        init => Set(
+            s_heightKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Height = ((IReadOnlySignal<uint>)s).Value
+                : null,
+            static (el, s) => el.SetUInt("height", (IReadOnlySignal<uint>)s));
+    }
+
+    private static readonly object s_decodingKey = new();
+
+    public IReadOnlySignal<string>? Decoding
+    {
+        get => Get<IReadOnlySignal<string>>(s_decodingKey);
+        init => Set(
+            s_decodingKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Decoding = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("decoding", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_fetchPriorityKey = new();
+
+    public IReadOnlySignal<string>? FetchPriority
+    {
+        get => Get<IReadOnlySignal<string>>(s_fetchPriorityKey);
+        init => Set(
+            s_fetchPriorityKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.FetchPriority = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("fetchpriority", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_loadingKey = new();
+
+    public IReadOnlySignal<string>? Loading
+    {
+        get => Get<IReadOnlySignal<string>>(s_loadingKey);
+        init => Set(
+            s_loadingKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Loading = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("loading", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_referrerPolicyKey = new();
+
+    public IReadOnlySignal<string>? ReferrerPolicy
+    {
+        get => Get<IReadOnlySignal<string>>(s_referrerPolicyKey);
+        init => Set(
+            s_referrerPolicyKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.ReferrerPolicy = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("referrerpolicy", (IReadOnlySignal<string>)s));
     }
 }
 

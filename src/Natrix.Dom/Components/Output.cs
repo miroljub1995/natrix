@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,62 +6,63 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class OutputProps : GlobalHtmlComponentProps<HTMLOutputElement>
 {
-    public IReadOnlySignal<string>? HtmlFor { get; init; }
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<string>? DefaultValue { get; init; }
-    public IReadOnlySignal<string>? Value { get; init; }
+    private static readonly object s_htmlForKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLOutputElement>> register)
+    public IReadOnlySignal<string>? HtmlFor
     {
-        base.RegisterClientEffects(register);
-
-        if (HtmlFor != null)
-        {
-            register(el => el.HtmlFor.Value = HtmlFor.Value);
-        }
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (DefaultValue != null)
-        {
-            register(el => el.DefaultValue = DefaultValue.Value);
-        }
-
-        if (Value != null)
-        {
-            register(el => el.Value = Value.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_htmlForKey);
+        init => Set(
+            s_htmlForKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.HtmlFor.Value = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("for", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_nameKey = new();
+
+    public IReadOnlySignal<string>? Name
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<string>>(s_nameKey);
+        init => Set(
+            s_nameKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Name = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("name", (IReadOnlySignal<string>)s));
+    }
 
-        if (HtmlFor != null)
-        {
-            el.SetAttribute("for", HtmlFor);
-        }
+    private static readonly object s_defaultValueKey = new();
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    public IReadOnlySignal<string>? DefaultValue
+    {
+        get => Get<IReadOnlySignal<string>>(s_defaultValueKey);
+        init => Set(
+            s_defaultValueKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.DefaultValue = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("value", (IReadOnlySignal<string>)s));
+    }
 
-        if (DefaultValue != null)
-        {
-            el.SetAttribute("value", DefaultValue);
-        }
+    private static readonly object s_valueKey = new();
 
-        if (Value != null)
-        {
-            el.SetAttribute("value", Value);
-        }
+    public IReadOnlySignal<string>? Value
+    {
+        get => Get<IReadOnlySignal<string>>(s_valueKey);
+        init => Set(
+            s_valueKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Value = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("value", (IReadOnlySignal<string>)s));
     }
 }
 

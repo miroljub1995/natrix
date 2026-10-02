@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,40 +6,35 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class BaseProps : GlobalHtmlComponentProps<HTMLBaseElement>
 {
-    public IReadOnlySignal<string>? Href { get; init; }
-    public IReadOnlySignal<string>? Target { get; init; }
+    private static readonly object s_hrefKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLBaseElement>> register)
+    public IReadOnlySignal<string>? Href
     {
-        base.RegisterClientEffects(register);
-
-        if (Href != null)
-        {
-            register(el => el.Href = Href.Value);
-        }
-
-        if (Target != null)
-        {
-            register(el => el.Target = Target.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_hrefKey);
+        init => Set(
+            s_hrefKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Href = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("href", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_targetKey = new();
+
+    public IReadOnlySignal<string>? Target
     {
-        base.RegisterServerEffects(el);
-
-        if (Href != null)
-        {
-            el.SetAttribute("href", Href);
-        }
-
-        if (Target != null)
-        {
-            el.SetAttribute("target", Target);
-        }
+        get => Get<IReadOnlySignal<string>>(s_targetKey);
+        init => Set(
+            s_targetKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Target = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("target", (IReadOnlySignal<string>)s));
     }
 }
 

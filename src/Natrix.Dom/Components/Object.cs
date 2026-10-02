@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,73 +6,77 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class ObjectProps : GlobalHtmlComponentProps<HTMLObjectElement>
 {
-    public new IReadOnlySignal<string>? Data { get; init; }
-    public IReadOnlySignal<string>? Type { get; init; }
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<string>? Width { get; init; }
-    public IReadOnlySignal<string>? Height { get; init; }
+    private static readonly object s_dataKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLObjectElement>> register)
+    public new IReadOnlySignal<string>? Data
     {
-        base.RegisterClientEffects(register);
-
-        if (Data != null)
-        {
-            register(el => el.Data = Data.Value);
-        }
-
-        if (Type != null)
-        {
-            register(el => el.Type = Type.Value);
-        }
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (Width != null)
-        {
-            register(el => el.Width = Width.Value);
-        }
-
-        if (Height != null)
-        {
-            register(el => el.Height = Height.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_dataKey);
+        init => Set(
+            s_dataKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Data = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("data", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_typeKey = new();
+
+    public IReadOnlySignal<string>? Type
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<string>>(s_typeKey);
+        init => Set(
+            s_typeKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Type = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("type", (IReadOnlySignal<string>)s));
+    }
 
-        if (Data != null)
-        {
-            el.SetAttribute("data", Data);
-        }
+    private static readonly object s_nameKey = new();
 
-        if (Type != null)
-        {
-            el.SetAttribute("type", Type);
-        }
+    public IReadOnlySignal<string>? Name
+    {
+        get => Get<IReadOnlySignal<string>>(s_nameKey);
+        init => Set(
+            s_nameKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Name = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("name", (IReadOnlySignal<string>)s));
+    }
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    private static readonly object s_widthKey = new();
 
-        if (Width != null)
-        {
-            el.SetAttribute("width", Width);
-        }
+    public IReadOnlySignal<string>? Width
+    {
+        get => Get<IReadOnlySignal<string>>(s_widthKey);
+        init => Set(
+            s_widthKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Width = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("width", (IReadOnlySignal<string>)s));
+    }
 
-        if (Height != null)
-        {
-            el.SetAttribute("height", Height);
-        }
+    private static readonly object s_heightKey = new();
+
+    public IReadOnlySignal<string>? Height
+    {
+        get => Get<IReadOnlySignal<string>>(s_heightKey);
+        init => Set(
+            s_heightKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Height = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("height", (IReadOnlySignal<string>)s));
     }
 }
 

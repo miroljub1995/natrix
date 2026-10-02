@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,73 +6,77 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class TrackProps : GlobalHtmlComponentProps<HTMLTrackElement>
 {
-    public IReadOnlySignal<string>? Kind { get; init; }
-    public IReadOnlySignal<string>? Src { get; init; }
-    public IReadOnlySignal<string>? Srclang { get; init; }
-    public IReadOnlySignal<string>? Label { get; init; }
-    public IReadOnlySignal<bool>? Default { get; init; }
+    private static readonly object s_kindKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLTrackElement>> register)
+    public IReadOnlySignal<string>? Kind
     {
-        base.RegisterClientEffects(register);
-
-        if (Kind != null)
-        {
-            register(el => el.Kind = Kind.Value);
-        }
-
-        if (Src != null)
-        {
-            register(el => el.Src = Src.Value);
-        }
-
-        if (Srclang != null)
-        {
-            register(el => el.Srclang = Srclang.Value);
-        }
-
-        if (Label != null)
-        {
-            register(el => el.Label = Label.Value);
-        }
-
-        if (Default != null)
-        {
-            register(el => el.Default = Default.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_kindKey);
+        init => Set(
+            s_kindKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Kind = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("kind", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_srcKey = new();
+
+    public IReadOnlySignal<string>? Src
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<string>>(s_srcKey);
+        init => Set(
+            s_srcKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Src = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("src", (IReadOnlySignal<string>)s));
+    }
 
-        if (Kind != null)
-        {
-            el.SetAttribute("kind", Kind);
-        }
+    private static readonly object s_srclangKey = new();
 
-        if (Src != null)
-        {
-            el.SetAttribute("src", Src);
-        }
+    public IReadOnlySignal<string>? Srclang
+    {
+        get => Get<IReadOnlySignal<string>>(s_srclangKey);
+        init => Set(
+            s_srclangKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Srclang = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("srclang", (IReadOnlySignal<string>)s));
+    }
 
-        if (Srclang != null)
-        {
-            el.SetAttribute("srclang", Srclang);
-        }
+    private static readonly object s_labelKey = new();
 
-        if (Label != null)
-        {
-            el.SetAttribute("label", Label);
-        }
+    public IReadOnlySignal<string>? Label
+    {
+        get => Get<IReadOnlySignal<string>>(s_labelKey);
+        init => Set(
+            s_labelKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Label = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("label", (IReadOnlySignal<string>)s));
+    }
 
-        if (Default != null)
-        {
-            el.SetBoolean("default", Default);
-        }
+    private static readonly object s_defaultKey = new();
+
+    public IReadOnlySignal<bool>? Default
+    {
+        get => Get<IReadOnlySignal<bool>>(s_defaultKey);
+        init => Set(
+            s_defaultKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Default = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("default", (IReadOnlySignal<bool>)s));
     }
 }
 

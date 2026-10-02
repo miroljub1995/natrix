@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,29 +6,21 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class LabelProps : GlobalHtmlComponentProps<HTMLLabelElement>
 {
-    public IReadOnlySignal<string>? HtmlFor { get; init; }
+    private static readonly object s_htmlForKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLLabelElement>> register)
+    public IReadOnlySignal<string>? HtmlFor
     {
-        base.RegisterClientEffects(register);
-
-        if (HtmlFor != null)
-        {
-            register(el => el.HtmlFor = HtmlFor.Value);
-        }
-    }
-
-    protected internal override void RegisterServerEffects(SsrElementNode el)
-    {
-        base.RegisterServerEffects(el);
-
-        if (HtmlFor != null)
-        {
-            el.SetAttribute("for", HtmlFor);
-        }
+        get => Get<IReadOnlySignal<string>>(s_htmlForKey);
+        init => Set(
+            s_htmlForKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.HtmlFor = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("for", (IReadOnlySignal<string>)s));
     }
 }
 

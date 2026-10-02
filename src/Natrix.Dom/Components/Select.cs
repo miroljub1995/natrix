@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,95 +6,105 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class SelectProps : GlobalHtmlComponentProps<HTMLSelectElement>
 {
-    public IReadOnlySignal<string>? Autocomplete { get; init; }
-    public IReadOnlySignal<bool>? Disabled { get; init; }
-    public IReadOnlySignal<bool>? Multiple { get; init; }
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<bool>? Required { get; init; }
-    public IReadOnlySignal<uint>? Size { get; init; }
-    public IReadOnlySignal<string>? Value { get; init; }
+    private static readonly object s_autocompleteKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLSelectElement>> register)
+    public IReadOnlySignal<string>? Autocomplete
     {
-        base.RegisterClientEffects(register);
-
-        if (Autocomplete != null)
-        {
-            register(el => el.Autocomplete = Autocomplete.Value);
-        }
-
-        if (Disabled != null)
-        {
-            register(el => el.Disabled = Disabled.Value);
-        }
-
-        if (Multiple != null)
-        {
-            register(el => el.Multiple = Multiple.Value);
-        }
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (Required != null)
-        {
-            register(el => el.Required = Required.Value);
-        }
-
-        if (Size != null)
-        {
-            register(el => el.Size = Size.Value);
-        }
-
-        if (Value != null)
-        {
-            register(el => el.Value = Value.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_autocompleteKey);
+        init => Set(
+            s_autocompleteKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Autocomplete = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("autocomplete", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_disabledKey = new();
+
+    public IReadOnlySignal<bool>? Disabled
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<bool>>(s_disabledKey);
+        init => Set(
+            s_disabledKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Disabled = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("disabled", (IReadOnlySignal<bool>)s));
+    }
 
-        if (Autocomplete != null)
-        {
-            el.SetAttribute("autocomplete", Autocomplete);
-        }
+    private static readonly object s_multipleKey = new();
 
-        if (Disabled != null)
-        {
-            el.SetBoolean("disabled", Disabled);
-        }
+    public IReadOnlySignal<bool>? Multiple
+    {
+        get => Get<IReadOnlySignal<bool>>(s_multipleKey);
+        init => Set(
+            s_multipleKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Multiple = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("multiple", (IReadOnlySignal<bool>)s));
+    }
 
-        if (Multiple != null)
-        {
-            el.SetBoolean("multiple", Multiple);
-        }
+    private static readonly object s_nameKey = new();
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    public IReadOnlySignal<string>? Name
+    {
+        get => Get<IReadOnlySignal<string>>(s_nameKey);
+        init => Set(
+            s_nameKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Name = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("name", (IReadOnlySignal<string>)s));
+    }
 
-        if (Required != null)
-        {
-            el.SetBoolean("required", Required);
-        }
+    private static readonly object s_requiredKey = new();
 
-        if (Size != null)
-        {
-            el.SetUInt("size", Size);
-        }
+    public IReadOnlySignal<bool>? Required
+    {
+        get => Get<IReadOnlySignal<bool>>(s_requiredKey);
+        init => Set(
+            s_requiredKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Required = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("required", (IReadOnlySignal<bool>)s));
+    }
 
-        if (Value != null)
-        {
-            el.SetAttribute("value", Value);
-        }
+    private static readonly object s_sizeKey = new();
+
+    public IReadOnlySignal<uint>? Size
+    {
+        get => Get<IReadOnlySignal<uint>>(s_sizeKey);
+        init => Set(
+            s_sizeKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Size = ((IReadOnlySignal<uint>)s).Value
+                : null,
+            static (el, s) => el.SetUInt("size", (IReadOnlySignal<uint>)s));
+    }
+
+    private static readonly object s_valueKey = new();
+
+    public IReadOnlySignal<string>? Value
+    {
+        get => Get<IReadOnlySignal<string>>(s_valueKey);
+        init => Set(
+            s_valueKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Value = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("value", (IReadOnlySignal<string>)s));
     }
 }
 

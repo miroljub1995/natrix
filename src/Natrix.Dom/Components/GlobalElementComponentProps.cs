@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
@@ -24,591 +25,736 @@ namespace Natrix.Dom.Components;
 /// no-op, while the attribute works everywhere.</item>
 /// </list>
 /// </remarks>
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class GlobalElementComponentProps<TElement> : BaseDomComponentProps<TElement>
     where TElement : Element
 {
-    public IReadOnlySignal<string?>? Role { get; init; }
-    public IReadOnlySignal<string?>? AriaActiveDescendant { get; init; }
-    public IReadOnlySignal<bool>? AriaAtomic { get; init; }
-    public IReadOnlySignal<string?>? AriaAutoComplete { get; init; }
-    public IReadOnlySignal<string?>? AriaBrailleLabel { get; init; }
-    public IReadOnlySignal<string?>? AriaBrailleRoleDescription { get; init; }
-    public IReadOnlySignal<bool>? AriaBusy { get; init; }
-    public IReadOnlySignal<string?>? AriaChecked { get; init; }
-    public IReadOnlySignal<int>? AriaColCount { get; init; }
-    public IReadOnlySignal<int>? AriaColIndex { get; init; }
-    public IReadOnlySignal<string?>? AriaColIndexText { get; init; }
-    public IReadOnlySignal<int>? AriaColSpan { get; init; }
-    public IReadOnlySignal<string?>? AriaControls { get; init; }
-    public IReadOnlySignal<string?>? AriaCurrent { get; init; }
-    public IReadOnlySignal<string?>? AriaDescribedBy { get; init; }
-    public IReadOnlySignal<string?>? AriaDescription { get; init; }
-    public IReadOnlySignal<string?>? AriaDetails { get; init; }
-    public IReadOnlySignal<bool>? AriaDisabled { get; init; }
-    public IReadOnlySignal<string?>? AriaErrorMessage { get; init; }
-    public IReadOnlySignal<string?>? AriaExpanded { get; init; }
-    public IReadOnlySignal<string?>? AriaFlowTo { get; init; }
-    public IReadOnlySignal<string?>? AriaHasPopup { get; init; }
-    public IReadOnlySignal<bool>? AriaHidden { get; init; }
-    public IReadOnlySignal<string?>? AriaInvalid { get; init; }
-    public IReadOnlySignal<string?>? AriaKeyShortcuts { get; init; }
-    public IReadOnlySignal<string?>? AriaLabel { get; init; }
-    public IReadOnlySignal<string?>? AriaLabelledBy { get; init; }
-    public IReadOnlySignal<int>? AriaLevel { get; init; }
-    public IReadOnlySignal<string?>? AriaLive { get; init; }
-    public IReadOnlySignal<bool>? AriaModal { get; init; }
-    public IReadOnlySignal<bool>? AriaMultiLine { get; init; }
-    public IReadOnlySignal<bool>? AriaMultiSelectable { get; init; }
-    public IReadOnlySignal<string?>? AriaOrientation { get; init; }
-    public IReadOnlySignal<string?>? AriaOwns { get; init; }
-    public IReadOnlySignal<string?>? AriaPlaceholder { get; init; }
-    public IReadOnlySignal<int>? AriaPosInSet { get; init; }
-    public IReadOnlySignal<string?>? AriaPressed { get; init; }
-    public IReadOnlySignal<bool>? AriaReadOnly { get; init; }
-    public IReadOnlySignal<string?>? AriaRelevant { get; init; }
-    public IReadOnlySignal<bool>? AriaRequired { get; init; }
-    public IReadOnlySignal<string?>? AriaRoleDescription { get; init; }
-    public IReadOnlySignal<int>? AriaRowCount { get; init; }
-    public IReadOnlySignal<int>? AriaRowIndex { get; init; }
-    public IReadOnlySignal<string?>? AriaRowIndexText { get; init; }
-    public IReadOnlySignal<int>? AriaRowSpan { get; init; }
-    public IReadOnlySignal<bool>? AriaSelected { get; init; }
-    public IReadOnlySignal<int>? AriaSetSize { get; init; }
-    public IReadOnlySignal<string?>? AriaSort { get; init; }
-    public IReadOnlySignal<double>? AriaValueMax { get; init; }
-    public IReadOnlySignal<double>? AriaValueMin { get; init; }
-    public IReadOnlySignal<double>? AriaValueNow { get; init; }
-    public IReadOnlySignal<string?>? AriaValueText { get; init; }
+    private static readonly object s_roleKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<TElement>> register)
+    public IReadOnlySignal<string?>? Role
     {
-        base.RegisterClientEffects(register);
-
-        if (Role != null)
-        {
-            register(el => el.Role = Role.Value);
-        }
-
-        if (AriaActiveDescendant != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-activedescendant", AriaActiveDescendant.Value));
-        }
-
-        if (AriaAtomic != null)
-        {
-            register(el => el.AriaAtomic = AriaAtomic.Value ? "true" : "false");
-        }
-
-        if (AriaAutoComplete != null)
-        {
-            register(el => el.AriaAutoComplete = AriaAutoComplete.Value);
-        }
-
-        if (AriaBrailleLabel != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-braillelabel", AriaBrailleLabel.Value));
-        }
-
-        if (AriaBrailleRoleDescription != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-brailleroledescription", AriaBrailleRoleDescription.Value));
-        }
-
-        if (AriaBusy != null)
-        {
-            register(el => el.AriaBusy = AriaBusy.Value ? "true" : "false");
-        }
-
-        if (AriaChecked != null)
-        {
-            register(el => el.AriaChecked = AriaChecked.Value);
-        }
-
-        if (AriaColCount != null)
-        {
-            register(el => el.AriaColCount = AriaColCount.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaColIndex != null)
-        {
-            register(el => el.AriaColIndex = AriaColIndex.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaColIndexText != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-colindextext", AriaColIndexText.Value));
-        }
-
-        if (AriaColSpan != null)
-        {
-            register(el => el.AriaColSpan = AriaColSpan.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaControls != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-controls", AriaControls.Value));
-        }
-
-        if (AriaCurrent != null)
-        {
-            register(el => el.AriaCurrent = AriaCurrent.Value);
-        }
-
-        if (AriaDescribedBy != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-describedby", AriaDescribedBy.Value));
-        }
-
-        if (AriaDescription != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-description", AriaDescription.Value));
-        }
-
-        if (AriaDetails != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-details", AriaDetails.Value));
-        }
-
-        if (AriaDisabled != null)
-        {
-            register(el => el.AriaDisabled = AriaDisabled.Value ? "true" : "false");
-        }
-
-        if (AriaErrorMessage != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-errormessage", AriaErrorMessage.Value));
-        }
-
-        if (AriaExpanded != null)
-        {
-            register(el => el.AriaExpanded = AriaExpanded.Value);
-        }
-
-        if (AriaFlowTo != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-flowto", AriaFlowTo.Value));
-        }
-
-        if (AriaHasPopup != null)
-        {
-            register(el => el.AriaHasPopup = AriaHasPopup.Value);
-        }
-
-        if (AriaHidden != null)
-        {
-            register(el => el.AriaHidden = AriaHidden.Value ? "true" : "false");
-        }
-
-        if (AriaInvalid != null)
-        {
-            register(el => el.AriaInvalid = AriaInvalid.Value);
-        }
-
-        if (AriaKeyShortcuts != null)
-        {
-            register(el => el.AriaKeyShortcuts = AriaKeyShortcuts.Value);
-        }
-
-        if (AriaLabel != null)
-        {
-            register(el => el.AriaLabel = AriaLabel.Value);
-        }
-
-        if (AriaLabelledBy != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-labelledby", AriaLabelledBy.Value));
-        }
-
-        if (AriaLevel != null)
-        {
-            register(el => el.AriaLevel = AriaLevel.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaLive != null)
-        {
-            register(el => el.AriaLive = AriaLive.Value);
-        }
-
-        if (AriaModal != null)
-        {
-            register(el => el.AriaModal = AriaModal.Value ? "true" : "false");
-        }
-
-        if (AriaMultiLine != null)
-        {
-            register(el => el.AriaMultiLine = AriaMultiLine.Value ? "true" : "false");
-        }
-
-        if (AriaMultiSelectable != null)
-        {
-            register(el => el.AriaMultiSelectable = AriaMultiSelectable.Value ? "true" : "false");
-        }
-
-        if (AriaOrientation != null)
-        {
-            register(el => el.AriaOrientation = AriaOrientation.Value);
-        }
-
-        if (AriaOwns != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-owns", AriaOwns.Value));
-        }
-
-        if (AriaPlaceholder != null)
-        {
-            register(el => el.AriaPlaceholder = AriaPlaceholder.Value);
-        }
-
-        if (AriaPosInSet != null)
-        {
-            register(el => el.AriaPosInSet = AriaPosInSet.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaPressed != null)
-        {
-            register(el => el.AriaPressed = AriaPressed.Value);
-        }
-
-        if (AriaReadOnly != null)
-        {
-            register(el => el.AriaReadOnly = AriaReadOnly.Value ? "true" : "false");
-        }
-
-        if (AriaRelevant != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-relevant", AriaRelevant.Value));
-        }
-
-        if (AriaRequired != null)
-        {
-            register(el => el.AriaRequired = AriaRequired.Value ? "true" : "false");
-        }
-
-        if (AriaRoleDescription != null)
-        {
-            register(el => el.AriaRoleDescription = AriaRoleDescription.Value);
-        }
-
-        if (AriaRowCount != null)
-        {
-            register(el => el.AriaRowCount = AriaRowCount.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaRowIndex != null)
-        {
-            register(el => el.AriaRowIndex = AriaRowIndex.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaRowIndexText != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-rowindextext", AriaRowIndexText.Value));
-        }
-
-        if (AriaRowSpan != null)
-        {
-            register(el => el.AriaRowSpan = AriaRowSpan.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaSelected != null)
-        {
-            register(el => el.AriaSelected = AriaSelected.Value ? "true" : "false");
-        }
-
-        if (AriaSetSize != null)
-        {
-            register(el => el.AriaSetSize = AriaSetSize.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaSort != null)
-        {
-            register(el => el.AriaSort = AriaSort.Value);
-        }
-
-        if (AriaValueMax != null)
-        {
-            register(el => el.AriaValueMax = AriaValueMax.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaValueMin != null)
-        {
-            register(el => el.AriaValueMin = AriaValueMin.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaValueNow != null)
-        {
-            register(el => el.AriaValueNow = AriaValueNow.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaValueText != null)
-        {
-            register(el => el.AriaValueText = AriaValueText.Value);
-        }
+        get => Get<IReadOnlySignal<string?>>(s_roleKey);
+        init => Set(
+            s_roleKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Role = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("role", (IReadOnlySignal<string?>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_ariaActiveDescendantKey = new();
+
+    public IReadOnlySignal<string?>? AriaActiveDescendant
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<string?>>(s_ariaActiveDescendantKey);
+        init => Set(
+            s_ariaActiveDescendantKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-activedescendant", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-activedescendant", (IReadOnlySignal<string?>)s));
+    }
 
-        if (Role != null)
-        {
-            el.SetNullableString("role", Role);
-        }
+    private static readonly object s_ariaAtomicKey = new();
 
-        if (AriaActiveDescendant != null)
-        {
-            el.SetNullableString("aria-activedescendant", AriaActiveDescendant);
-        }
+    public IReadOnlySignal<bool>? AriaAtomic
+    {
+        get => Get<IReadOnlySignal<bool>>(s_ariaAtomicKey);
+        init => Set(
+            s_ariaAtomicKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaAtomic = ((IReadOnlySignal<bool>)s).Value ? "true" : "false"
+                : null,
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-atomic", (IReadOnlySignal<bool>)s));
+    }
 
-        if (AriaAtomic != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-atomic", AriaAtomic);
-        }
+    private static readonly object s_ariaAutoCompleteKey = new();
 
-        if (AriaAutoComplete != null)
-        {
-            el.SetNullableString("aria-autocomplete", AriaAutoComplete);
-        }
+    public IReadOnlySignal<string?>? AriaAutoComplete
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaAutoCompleteKey);
+        init => Set(
+            s_ariaAutoCompleteKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaAutoComplete = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-autocomplete", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaBrailleLabel != null)
-        {
-            el.SetNullableString("aria-braillelabel", AriaBrailleLabel);
-        }
+    private static readonly object s_ariaBrailleLabelKey = new();
 
-        if (AriaBrailleRoleDescription != null)
-        {
-            el.SetNullableString("aria-brailleroledescription", AriaBrailleRoleDescription);
-        }
+    public IReadOnlySignal<string?>? AriaBrailleLabel
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaBrailleLabelKey);
+        init => Set(
+            s_ariaBrailleLabelKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-braillelabel", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-braillelabel", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaBusy != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-busy", AriaBusy);
-        }
+    private static readonly object s_ariaBrailleRoleDescriptionKey = new();
 
-        if (AriaChecked != null)
-        {
-            el.SetNullableString("aria-checked", AriaChecked);
-        }
+    public IReadOnlySignal<string?>? AriaBrailleRoleDescription
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaBrailleRoleDescriptionKey);
+        init => Set(
+            s_ariaBrailleRoleDescriptionKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-brailleroledescription", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-brailleroledescription", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaColCount != null)
-        {
-            el.SetInt("aria-colcount", AriaColCount);
-        }
+    private static readonly object s_ariaBusyKey = new();
 
-        if (AriaColIndex != null)
-        {
-            el.SetInt("aria-colindex", AriaColIndex);
-        }
+    public IReadOnlySignal<bool>? AriaBusy
+    {
+        get => Get<IReadOnlySignal<bool>>(s_ariaBusyKey);
+        init => Set(
+            s_ariaBusyKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaBusy = ((IReadOnlySignal<bool>)s).Value ? "true" : "false"
+                : null,
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-busy", (IReadOnlySignal<bool>)s));
+    }
 
-        if (AriaColIndexText != null)
-        {
-            el.SetNullableString("aria-colindextext", AriaColIndexText);
-        }
+    private static readonly object s_ariaCheckedKey = new();
 
-        if (AriaColSpan != null)
-        {
-            el.SetInt("aria-colspan", AriaColSpan);
-        }
+    public IReadOnlySignal<string?>? AriaChecked
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaCheckedKey);
+        init => Set(
+            s_ariaCheckedKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaChecked = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-checked", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaControls != null)
-        {
-            el.SetNullableString("aria-controls", AriaControls);
-        }
+    private static readonly object s_ariaColCountKey = new();
 
-        if (AriaCurrent != null)
-        {
-            el.SetNullableString("aria-current", AriaCurrent);
-        }
+    public IReadOnlySignal<int>? AriaColCount
+    {
+        get => Get<IReadOnlySignal<int>>(s_ariaColCountKey);
+        init => Set(
+            s_ariaColCountKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaColCount = ((IReadOnlySignal<int>)s).Value.ToString(CultureInfo.InvariantCulture)
+                : null,
+            static (el, s) => el.SetInt("aria-colcount", (IReadOnlySignal<int>)s));
+    }
 
-        if (AriaDescribedBy != null)
-        {
-            el.SetNullableString("aria-describedby", AriaDescribedBy);
-        }
+    private static readonly object s_ariaColIndexKey = new();
 
-        if (AriaDescription != null)
-        {
-            el.SetNullableString("aria-description", AriaDescription);
-        }
+    public IReadOnlySignal<int>? AriaColIndex
+    {
+        get => Get<IReadOnlySignal<int>>(s_ariaColIndexKey);
+        init => Set(
+            s_ariaColIndexKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaColIndex = ((IReadOnlySignal<int>)s).Value.ToString(CultureInfo.InvariantCulture)
+                : null,
+            static (el, s) => el.SetInt("aria-colindex", (IReadOnlySignal<int>)s));
+    }
 
-        if (AriaDetails != null)
-        {
-            el.SetNullableString("aria-details", AriaDetails);
-        }
+    private static readonly object s_ariaColIndexTextKey = new();
 
-        if (AriaDisabled != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-disabled", AriaDisabled);
-        }
+    public IReadOnlySignal<string?>? AriaColIndexText
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaColIndexTextKey);
+        init => Set(
+            s_ariaColIndexTextKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-colindextext", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-colindextext", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaErrorMessage != null)
-        {
-            el.SetNullableString("aria-errormessage", AriaErrorMessage);
-        }
+    private static readonly object s_ariaColSpanKey = new();
 
-        if (AriaExpanded != null)
-        {
-            el.SetNullableString("aria-expanded", AriaExpanded);
-        }
+    public IReadOnlySignal<int>? AriaColSpan
+    {
+        get => Get<IReadOnlySignal<int>>(s_ariaColSpanKey);
+        init => Set(
+            s_ariaColSpanKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaColSpan = ((IReadOnlySignal<int>)s).Value.ToString(CultureInfo.InvariantCulture)
+                : null,
+            static (el, s) => el.SetInt("aria-colspan", (IReadOnlySignal<int>)s));
+    }
 
-        if (AriaFlowTo != null)
-        {
-            el.SetNullableString("aria-flowto", AriaFlowTo);
-        }
+    private static readonly object s_ariaControlsKey = new();
 
-        if (AriaHasPopup != null)
-        {
-            el.SetNullableString("aria-haspopup", AriaHasPopup);
-        }
+    public IReadOnlySignal<string?>? AriaControls
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaControlsKey);
+        init => Set(
+            s_ariaControlsKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-controls", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-controls", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaHidden != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-hidden", AriaHidden);
-        }
+    private static readonly object s_ariaCurrentKey = new();
 
-        if (AriaInvalid != null)
-        {
-            el.SetNullableString("aria-invalid", AriaInvalid);
-        }
+    public IReadOnlySignal<string?>? AriaCurrent
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaCurrentKey);
+        init => Set(
+            s_ariaCurrentKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaCurrent = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-current", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaKeyShortcuts != null)
-        {
-            el.SetNullableString("aria-keyshortcuts", AriaKeyShortcuts);
-        }
+    private static readonly object s_ariaDescribedByKey = new();
 
-        if (AriaLabel != null)
-        {
-            el.SetNullableString("aria-label", AriaLabel);
-        }
+    public IReadOnlySignal<string?>? AriaDescribedBy
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaDescribedByKey);
+        init => Set(
+            s_ariaDescribedByKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-describedby", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-describedby", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaLabelledBy != null)
-        {
-            el.SetNullableString("aria-labelledby", AriaLabelledBy);
-        }
+    private static readonly object s_ariaDescriptionKey = new();
 
-        if (AriaLevel != null)
-        {
-            el.SetInt("aria-level", AriaLevel);
-        }
+    public IReadOnlySignal<string?>? AriaDescription
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaDescriptionKey);
+        init => Set(
+            s_ariaDescriptionKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-description", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-description", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaLive != null)
-        {
-            el.SetNullableString("aria-live", AriaLive);
-        }
+    private static readonly object s_ariaDetailsKey = new();
 
-        if (AriaModal != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-modal", AriaModal);
-        }
+    public IReadOnlySignal<string?>? AriaDetails
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaDetailsKey);
+        init => Set(
+            s_ariaDetailsKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-details", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-details", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaMultiLine != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-multiline", AriaMultiLine);
-        }
+    private static readonly object s_ariaDisabledKey = new();
 
-        if (AriaMultiSelectable != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-multiselectable", AriaMultiSelectable);
-        }
+    public IReadOnlySignal<bool>? AriaDisabled
+    {
+        get => Get<IReadOnlySignal<bool>>(s_ariaDisabledKey);
+        init => Set(
+            s_ariaDisabledKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaDisabled = ((IReadOnlySignal<bool>)s).Value ? "true" : "false"
+                : null,
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-disabled", (IReadOnlySignal<bool>)s));
+    }
 
-        if (AriaOrientation != null)
-        {
-            el.SetNullableString("aria-orientation", AriaOrientation);
-        }
+    private static readonly object s_ariaErrorMessageKey = new();
 
-        if (AriaOwns != null)
-        {
-            el.SetNullableString("aria-owns", AriaOwns);
-        }
+    public IReadOnlySignal<string?>? AriaErrorMessage
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaErrorMessageKey);
+        init => Set(
+            s_ariaErrorMessageKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-errormessage", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-errormessage", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaPlaceholder != null)
-        {
-            el.SetNullableString("aria-placeholder", AriaPlaceholder);
-        }
+    private static readonly object s_ariaExpandedKey = new();
 
-        if (AriaPosInSet != null)
-        {
-            el.SetInt("aria-posinset", AriaPosInSet);
-        }
+    public IReadOnlySignal<string?>? AriaExpanded
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaExpandedKey);
+        init => Set(
+            s_ariaExpandedKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaExpanded = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-expanded", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaPressed != null)
-        {
-            el.SetNullableString("aria-pressed", AriaPressed);
-        }
+    private static readonly object s_ariaFlowToKey = new();
 
-        if (AriaReadOnly != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-readonly", AriaReadOnly);
-        }
+    public IReadOnlySignal<string?>? AriaFlowTo
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaFlowToKey);
+        init => Set(
+            s_ariaFlowToKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-flowto", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-flowto", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaRelevant != null)
-        {
-            el.SetNullableString("aria-relevant", AriaRelevant);
-        }
+    private static readonly object s_ariaHasPopupKey = new();
 
-        if (AriaRequired != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-required", AriaRequired);
-        }
+    public IReadOnlySignal<string?>? AriaHasPopup
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaHasPopupKey);
+        init => Set(
+            s_ariaHasPopupKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaHasPopup = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-haspopup", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaRoleDescription != null)
-        {
-            el.SetNullableString("aria-roledescription", AriaRoleDescription);
-        }
+    private static readonly object s_ariaHiddenKey = new();
 
-        if (AriaRowCount != null)
-        {
-            el.SetInt("aria-rowcount", AriaRowCount);
-        }
+    public IReadOnlySignal<bool>? AriaHidden
+    {
+        get => Get<IReadOnlySignal<bool>>(s_ariaHiddenKey);
+        init => Set(
+            s_ariaHiddenKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaHidden = ((IReadOnlySignal<bool>)s).Value ? "true" : "false"
+                : null,
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-hidden", (IReadOnlySignal<bool>)s));
+    }
 
-        if (AriaRowIndex != null)
-        {
-            el.SetInt("aria-rowindex", AriaRowIndex);
-        }
+    private static readonly object s_ariaInvalidKey = new();
 
-        if (AriaRowIndexText != null)
-        {
-            el.SetNullableString("aria-rowindextext", AriaRowIndexText);
-        }
+    public IReadOnlySignal<string?>? AriaInvalid
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaInvalidKey);
+        init => Set(
+            s_ariaInvalidKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaInvalid = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-invalid", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaRowSpan != null)
-        {
-            el.SetInt("aria-rowspan", AriaRowSpan);
-        }
+    private static readonly object s_ariaKeyShortcutsKey = new();
 
-        if (AriaSelected != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-selected", AriaSelected);
-        }
+    public IReadOnlySignal<string?>? AriaKeyShortcuts
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaKeyShortcutsKey);
+        init => Set(
+            s_ariaKeyShortcutsKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaKeyShortcuts = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-keyshortcuts", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaSetSize != null)
-        {
-            el.SetInt("aria-setsize", AriaSetSize);
-        }
+    private static readonly object s_ariaLabelKey = new();
 
-        if (AriaSort != null)
-        {
-            el.SetNullableString("aria-sort", AriaSort);
-        }
+    public IReadOnlySignal<string?>? AriaLabel
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaLabelKey);
+        init => Set(
+            s_ariaLabelKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaLabel = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-label", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaValueMax != null)
-        {
-            el.SetDouble("aria-valuemax", AriaValueMax);
-        }
+    private static readonly object s_ariaLabelledByKey = new();
 
-        if (AriaValueMin != null)
-        {
-            el.SetDouble("aria-valuemin", AriaValueMin);
-        }
+    public IReadOnlySignal<string?>? AriaLabelledBy
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaLabelledByKey);
+        init => Set(
+            s_ariaLabelledByKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-labelledby", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-labelledby", (IReadOnlySignal<string?>)s));
+    }
 
-        if (AriaValueNow != null)
-        {
-            el.SetDouble("aria-valuenow", AriaValueNow);
-        }
+    private static readonly object s_ariaLevelKey = new();
 
-        if (AriaValueText != null)
-        {
-            el.SetNullableString("aria-valuetext", AriaValueText);
-        }
+    public IReadOnlySignal<int>? AriaLevel
+    {
+        get => Get<IReadOnlySignal<int>>(s_ariaLevelKey);
+        init => Set(
+            s_ariaLevelKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaLevel = ((IReadOnlySignal<int>)s).Value.ToString(CultureInfo.InvariantCulture)
+                : null,
+            static (el, s) => el.SetInt("aria-level", (IReadOnlySignal<int>)s));
+    }
+
+    private static readonly object s_ariaLiveKey = new();
+
+    public IReadOnlySignal<string?>? AriaLive
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaLiveKey);
+        init => Set(
+            s_ariaLiveKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaLive = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-live", (IReadOnlySignal<string?>)s));
+    }
+
+    private static readonly object s_ariaModalKey = new();
+
+    public IReadOnlySignal<bool>? AriaModal
+    {
+        get => Get<IReadOnlySignal<bool>>(s_ariaModalKey);
+        init => Set(
+            s_ariaModalKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaModal = ((IReadOnlySignal<bool>)s).Value ? "true" : "false"
+                : null,
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-modal", (IReadOnlySignal<bool>)s));
+    }
+
+    private static readonly object s_ariaMultiLineKey = new();
+
+    public IReadOnlySignal<bool>? AriaMultiLine
+    {
+        get => Get<IReadOnlySignal<bool>>(s_ariaMultiLineKey);
+        init => Set(
+            s_ariaMultiLineKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaMultiLine = ((IReadOnlySignal<bool>)s).Value ? "true" : "false"
+                : null,
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-multiline", (IReadOnlySignal<bool>)s));
+    }
+
+    private static readonly object s_ariaMultiSelectableKey = new();
+
+    public IReadOnlySignal<bool>? AriaMultiSelectable
+    {
+        get => Get<IReadOnlySignal<bool>>(s_ariaMultiSelectableKey);
+        init => Set(
+            s_ariaMultiSelectableKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaMultiSelectable = ((IReadOnlySignal<bool>)s).Value ? "true" : "false"
+                : null,
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-multiselectable", (IReadOnlySignal<bool>)s));
+    }
+
+    private static readonly object s_ariaOrientationKey = new();
+
+    public IReadOnlySignal<string?>? AriaOrientation
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaOrientationKey);
+        init => Set(
+            s_ariaOrientationKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaOrientation = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-orientation", (IReadOnlySignal<string?>)s));
+    }
+
+    private static readonly object s_ariaOwnsKey = new();
+
+    public IReadOnlySignal<string?>? AriaOwns
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaOwnsKey);
+        init => Set(
+            s_ariaOwnsKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-owns", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-owns", (IReadOnlySignal<string?>)s));
+    }
+
+    private static readonly object s_ariaPlaceholderKey = new();
+
+    public IReadOnlySignal<string?>? AriaPlaceholder
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaPlaceholderKey);
+        init => Set(
+            s_ariaPlaceholderKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaPlaceholder = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-placeholder", (IReadOnlySignal<string?>)s));
+    }
+
+    private static readonly object s_ariaPosInSetKey = new();
+
+    public IReadOnlySignal<int>? AriaPosInSet
+    {
+        get => Get<IReadOnlySignal<int>>(s_ariaPosInSetKey);
+        init => Set(
+            s_ariaPosInSetKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaPosInSet = ((IReadOnlySignal<int>)s).Value.ToString(CultureInfo.InvariantCulture)
+                : null,
+            static (el, s) => el.SetInt("aria-posinset", (IReadOnlySignal<int>)s));
+    }
+
+    private static readonly object s_ariaPressedKey = new();
+
+    public IReadOnlySignal<string?>? AriaPressed
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaPressedKey);
+        init => Set(
+            s_ariaPressedKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaPressed = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-pressed", (IReadOnlySignal<string?>)s));
+    }
+
+    private static readonly object s_ariaReadOnlyKey = new();
+
+    public IReadOnlySignal<bool>? AriaReadOnly
+    {
+        get => Get<IReadOnlySignal<bool>>(s_ariaReadOnlyKey);
+        init => Set(
+            s_ariaReadOnlyKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaReadOnly = ((IReadOnlySignal<bool>)s).Value ? "true" : "false"
+                : null,
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-readonly", (IReadOnlySignal<bool>)s));
+    }
+
+    private static readonly object s_ariaRelevantKey = new();
+
+    public IReadOnlySignal<string?>? AriaRelevant
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaRelevantKey);
+        init => Set(
+            s_ariaRelevantKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-relevant", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-relevant", (IReadOnlySignal<string?>)s));
+    }
+
+    private static readonly object s_ariaRequiredKey = new();
+
+    public IReadOnlySignal<bool>? AriaRequired
+    {
+        get => Get<IReadOnlySignal<bool>>(s_ariaRequiredKey);
+        init => Set(
+            s_ariaRequiredKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaRequired = ((IReadOnlySignal<bool>)s).Value ? "true" : "false"
+                : null,
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-required", (IReadOnlySignal<bool>)s));
+    }
+
+    private static readonly object s_ariaRoleDescriptionKey = new();
+
+    public IReadOnlySignal<string?>? AriaRoleDescription
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaRoleDescriptionKey);
+        init => Set(
+            s_ariaRoleDescriptionKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaRoleDescription = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-roledescription", (IReadOnlySignal<string?>)s));
+    }
+
+    private static readonly object s_ariaRowCountKey = new();
+
+    public IReadOnlySignal<int>? AriaRowCount
+    {
+        get => Get<IReadOnlySignal<int>>(s_ariaRowCountKey);
+        init => Set(
+            s_ariaRowCountKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaRowCount = ((IReadOnlySignal<int>)s).Value.ToString(CultureInfo.InvariantCulture)
+                : null,
+            static (el, s) => el.SetInt("aria-rowcount", (IReadOnlySignal<int>)s));
+    }
+
+    private static readonly object s_ariaRowIndexKey = new();
+
+    public IReadOnlySignal<int>? AriaRowIndex
+    {
+        get => Get<IReadOnlySignal<int>>(s_ariaRowIndexKey);
+        init => Set(
+            s_ariaRowIndexKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaRowIndex = ((IReadOnlySignal<int>)s).Value.ToString(CultureInfo.InvariantCulture)
+                : null,
+            static (el, s) => el.SetInt("aria-rowindex", (IReadOnlySignal<int>)s));
+    }
+
+    private static readonly object s_ariaRowIndexTextKey = new();
+
+    public IReadOnlySignal<string?>? AriaRowIndexText
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaRowIndexTextKey);
+        init => Set(
+            s_ariaRowIndexTextKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => SetOrRemoveAttribute(el, "aria-rowindextext", ((IReadOnlySignal<string?>)s).Value)
+                : null,
+            static (el, s) => el.SetNullableString("aria-rowindextext", (IReadOnlySignal<string?>)s));
+    }
+
+    private static readonly object s_ariaRowSpanKey = new();
+
+    public IReadOnlySignal<int>? AriaRowSpan
+    {
+        get => Get<IReadOnlySignal<int>>(s_ariaRowSpanKey);
+        init => Set(
+            s_ariaRowSpanKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaRowSpan = ((IReadOnlySignal<int>)s).Value.ToString(CultureInfo.InvariantCulture)
+                : null,
+            static (el, s) => el.SetInt("aria-rowspan", (IReadOnlySignal<int>)s));
+    }
+
+    private static readonly object s_ariaSelectedKey = new();
+
+    public IReadOnlySignal<bool>? AriaSelected
+    {
+        get => Get<IReadOnlySignal<bool>>(s_ariaSelectedKey);
+        init => Set(
+            s_ariaSelectedKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaSelected = ((IReadOnlySignal<bool>)s).Value ? "true" : "false"
+                : null,
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-selected", (IReadOnlySignal<bool>)s));
+    }
+
+    private static readonly object s_ariaSetSizeKey = new();
+
+    public IReadOnlySignal<int>? AriaSetSize
+    {
+        get => Get<IReadOnlySignal<int>>(s_ariaSetSizeKey);
+        init => Set(
+            s_ariaSetSizeKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaSetSize = ((IReadOnlySignal<int>)s).Value.ToString(CultureInfo.InvariantCulture)
+                : null,
+            static (el, s) => el.SetInt("aria-setsize", (IReadOnlySignal<int>)s));
+    }
+
+    private static readonly object s_ariaSortKey = new();
+
+    public IReadOnlySignal<string?>? AriaSort
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaSortKey);
+        init => Set(
+            s_ariaSortKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaSort = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-sort", (IReadOnlySignal<string?>)s));
+    }
+
+    private static readonly object s_ariaValueMaxKey = new();
+
+    public IReadOnlySignal<double>? AriaValueMax
+    {
+        get => Get<IReadOnlySignal<double>>(s_ariaValueMaxKey);
+        init => Set(
+            s_ariaValueMaxKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaValueMax = ((IReadOnlySignal<double>)s).Value.ToString(CultureInfo.InvariantCulture)
+                : null,
+            static (el, s) => el.SetDouble("aria-valuemax", (IReadOnlySignal<double>)s));
+    }
+
+    private static readonly object s_ariaValueMinKey = new();
+
+    public IReadOnlySignal<double>? AriaValueMin
+    {
+        get => Get<IReadOnlySignal<double>>(s_ariaValueMinKey);
+        init => Set(
+            s_ariaValueMinKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaValueMin = ((IReadOnlySignal<double>)s).Value.ToString(CultureInfo.InvariantCulture)
+                : null,
+            static (el, s) => el.SetDouble("aria-valuemin", (IReadOnlySignal<double>)s));
+    }
+
+    private static readonly object s_ariaValueNowKey = new();
+
+    public IReadOnlySignal<double>? AriaValueNow
+    {
+        get => Get<IReadOnlySignal<double>>(s_ariaValueNowKey);
+        init => Set(
+            s_ariaValueNowKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaValueNow = ((IReadOnlySignal<double>)s).Value.ToString(CultureInfo.InvariantCulture)
+                : null,
+            static (el, s) => el.SetDouble("aria-valuenow", (IReadOnlySignal<double>)s));
+    }
+
+    private static readonly object s_ariaValueTextKey = new();
+
+    public IReadOnlySignal<string?>? AriaValueText
+    {
+        get => Get<IReadOnlySignal<string?>>(s_ariaValueTextKey);
+        init => Set(
+            s_ariaValueTextKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AriaValueText = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("aria-valuetext", (IReadOnlySignal<string?>)s));
     }
 
     [SupportedOSPlatform("browser")]

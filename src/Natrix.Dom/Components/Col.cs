@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,29 +6,21 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class ColProps : GlobalHtmlComponentProps<HTMLTableColElement>
 {
-    public IReadOnlySignal<uint>? Span { get; init; }
+    private static readonly object s_spanKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLTableColElement>> register)
+    public IReadOnlySignal<uint>? Span
     {
-        base.RegisterClientEffects(register);
-
-        if (Span != null)
-        {
-            register(el => el.Span = Span.Value);
-        }
-    }
-
-    protected internal override void RegisterServerEffects(SsrElementNode el)
-    {
-        base.RegisterServerEffects(el);
-
-        if (Span != null)
-        {
-            el.SetUInt("span", Span);
-        }
+        get => Get<IReadOnlySignal<uint>>(s_spanKey);
+        init => Set(
+            s_spanKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Span = ((IReadOnlySignal<uint>)s).Value
+                : null,
+            static (el, s) => el.SetUInt("span", (IReadOnlySignal<uint>)s));
     }
 }
 

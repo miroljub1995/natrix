@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,29 +6,21 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class BlockquoteProps : GlobalHtmlComponentProps<HTMLQuoteElement>
 {
-    public IReadOnlySignal<string>? Cite { get; init; }
+    private static readonly object s_citeKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLQuoteElement>> register)
+    public IReadOnlySignal<string>? Cite
     {
-        base.RegisterClientEffects(register);
-
-        if (Cite != null)
-        {
-            register(el => el.Cite = Cite.Value);
-        }
-    }
-
-    protected internal override void RegisterServerEffects(SsrElementNode el)
-    {
-        base.RegisterServerEffects(el);
-
-        if (Cite != null)
-        {
-            el.SetAttribute("cite", Cite);
-        }
+        get => Get<IReadOnlySignal<string>>(s_citeKey);
+        init => Set(
+            s_citeKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Cite = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("cite", (IReadOnlySignal<string>)s));
     }
 }
 

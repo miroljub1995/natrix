@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,40 +6,35 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class DetailsProps : GlobalHtmlComponentProps<HTMLDetailsElement>
 {
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<bool>? Open { get; init; }
+    private static readonly object s_nameKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLDetailsElement>> register)
+    public IReadOnlySignal<string>? Name
     {
-        base.RegisterClientEffects(register);
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (Open != null)
-        {
-            register(el => el.Open = Open.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_nameKey);
+        init => Set(
+            s_nameKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Name = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("name", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_openKey = new();
+
+    public IReadOnlySignal<bool>? Open
     {
-        base.RegisterServerEffects(el);
-
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
-
-        if (Open != null)
-        {
-            el.SetBoolean("open", Open);
-        }
+        get => Get<IReadOnlySignal<bool>>(s_openKey);
+        init => Set(
+            s_openKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Open = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("open", (IReadOnlySignal<bool>)s));
     }
 }
 

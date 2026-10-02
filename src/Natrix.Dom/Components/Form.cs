@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,106 +6,119 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class FormProps : GlobalHtmlComponentProps<HTMLFormElement>
 {
-    public IReadOnlySignal<string>? Action { get; init; }
-    public IReadOnlySignal<string>? Autocomplete { get; init; }
-    public IReadOnlySignal<string>? Enctype { get; init; }
-    public IReadOnlySignal<string>? Method { get; init; }
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<bool>? NoValidate { get; init; }
-    public IReadOnlySignal<string>? Target { get; init; }
-    public IReadOnlySignal<string>? Rel { get; init; }
+    private static readonly object s_actionKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLFormElement>> register)
+    public IReadOnlySignal<string>? Action
     {
-        base.RegisterClientEffects(register);
-
-        if (Action != null)
-        {
-            register(el => el.Action = Action.Value);
-        }
-
-        if (Autocomplete != null)
-        {
-            register(el => el.Autocomplete = Autocomplete.Value);
-        }
-
-        if (Enctype != null)
-        {
-            register(el => el.Enctype = Enctype.Value);
-        }
-
-        if (Method != null)
-        {
-            register(el => el.Method = Method.Value);
-        }
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (NoValidate != null)
-        {
-            register(el => el.NoValidate = NoValidate.Value);
-        }
-
-        if (Target != null)
-        {
-            register(el => el.Target = Target.Value);
-        }
-
-        if (Rel != null)
-        {
-            register(el => el.Rel = Rel.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_actionKey);
+        init => Set(
+            s_actionKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Action = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("action", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_autocompleteKey = new();
+
+    public IReadOnlySignal<string>? Autocomplete
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<string>>(s_autocompleteKey);
+        init => Set(
+            s_autocompleteKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Autocomplete = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("autocomplete", (IReadOnlySignal<string>)s));
+    }
 
-        if (Action != null)
-        {
-            el.SetAttribute("action", Action);
-        }
+    private static readonly object s_enctypeKey = new();
 
-        if (Autocomplete != null)
-        {
-            el.SetAttribute("autocomplete", Autocomplete);
-        }
+    public IReadOnlySignal<string>? Enctype
+    {
+        get => Get<IReadOnlySignal<string>>(s_enctypeKey);
+        init => Set(
+            s_enctypeKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Enctype = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("enctype", (IReadOnlySignal<string>)s));
+    }
 
-        if (Enctype != null)
-        {
-            el.SetAttribute("enctype", Enctype);
-        }
+    private static readonly object s_methodKey = new();
 
-        if (Method != null)
-        {
-            el.SetAttribute("method", Method);
-        }
+    public IReadOnlySignal<string>? Method
+    {
+        get => Get<IReadOnlySignal<string>>(s_methodKey);
+        init => Set(
+            s_methodKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Method = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("method", (IReadOnlySignal<string>)s));
+    }
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    private static readonly object s_nameKey = new();
 
-        if (NoValidate != null)
-        {
-            el.SetBoolean("novalidate", NoValidate);
-        }
+    public IReadOnlySignal<string>? Name
+    {
+        get => Get<IReadOnlySignal<string>>(s_nameKey);
+        init => Set(
+            s_nameKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Name = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("name", (IReadOnlySignal<string>)s));
+    }
 
-        if (Target != null)
-        {
-            el.SetAttribute("target", Target);
-        }
+    private static readonly object s_noValidateKey = new();
 
-        if (Rel != null)
-        {
-            el.SetAttribute("rel", Rel);
-        }
+    public IReadOnlySignal<bool>? NoValidate
+    {
+        get => Get<IReadOnlySignal<bool>>(s_noValidateKey);
+        init => Set(
+            s_noValidateKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.NoValidate = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("novalidate", (IReadOnlySignal<bool>)s));
+    }
+
+    private static readonly object s_targetKey = new();
+
+    public IReadOnlySignal<string>? Target
+    {
+        get => Get<IReadOnlySignal<string>>(s_targetKey);
+        init => Set(
+            s_targetKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Target = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("target", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_relKey = new();
+
+    public IReadOnlySignal<string>? Rel
+    {
+        get => Get<IReadOnlySignal<string>>(s_relKey);
+        init => Set(
+            s_relKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Rel = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("rel", (IReadOnlySignal<string>)s));
     }
 }
 

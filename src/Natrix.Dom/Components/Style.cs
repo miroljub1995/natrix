@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.Components;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
@@ -7,51 +7,49 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class StyleProps : GlobalHtmlComponentProps<HTMLStyleElement>
 {
-    public IReadOnlySignal<bool>? Disabled { get; init; }
-    public IReadOnlySignal<string>? Media { get; init; }
-    public IReadOnlySignal<string>? Blocking { get; init; }
+    private static readonly object s_disabledKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLStyleElement>> register)
+    public IReadOnlySignal<bool>? Disabled
     {
-        base.RegisterClientEffects(register);
-
-        if (Disabled != null)
-        {
-            register(el => el.Disabled = Disabled.Value);
-        }
-
-        if (Media != null)
-        {
-            register(el => el.Media = Media.Value);
-        }
-
-        if (Blocking != null)
-        {
-            register(el => el.Blocking.Value = Blocking.Value);
-        }
+        get => Get<IReadOnlySignal<bool>>(s_disabledKey);
+        init => Set(
+            s_disabledKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Disabled = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("disabled", (IReadOnlySignal<bool>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_mediaKey = new();
+
+    public IReadOnlySignal<string>? Media
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<string>>(s_mediaKey);
+        init => Set(
+            s_mediaKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Media = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("media", (IReadOnlySignal<string>)s));
+    }
 
-        if (Disabled != null)
-        {
-            el.SetBoolean("disabled", Disabled);
-        }
+    private static readonly object s_blockingKey = new();
 
-        if (Media != null)
-        {
-            el.SetAttribute("media", Media);
-        }
-
-        if (Blocking != null)
-        {
-            el.SetAttribute("blocking", Blocking);
-        }
+    public IReadOnlySignal<string>? Blocking
+    {
+        get => Get<IReadOnlySignal<string>>(s_blockingKey);
+        init => Set(
+            s_blockingKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Blocking.Value = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("blocking", (IReadOnlySignal<string>)s));
     }
 }
 

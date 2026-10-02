@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,62 +6,63 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class MetaProps : GlobalHtmlComponentProps<HTMLMetaElement>
 {
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<string>? HttpEquiv { get; init; }
-    public IReadOnlySignal<string>? Content { get; init; }
-    public IReadOnlySignal<string>? Media { get; init; }
+    private static readonly object s_nameKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLMetaElement>> register)
+    public IReadOnlySignal<string>? Name
     {
-        base.RegisterClientEffects(register);
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (HttpEquiv != null)
-        {
-            register(el => el.HttpEquiv = HttpEquiv.Value);
-        }
-
-        if (Content != null)
-        {
-            register(el => el.Content = Content.Value);
-        }
-
-        if (Media != null)
-        {
-            register(el => el.Media = Media.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_nameKey);
+        init => Set(
+            s_nameKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Name = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("name", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_httpEquivKey = new();
+
+    public IReadOnlySignal<string>? HttpEquiv
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<string>>(s_httpEquivKey);
+        init => Set(
+            s_httpEquivKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.HttpEquiv = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("http-equiv", (IReadOnlySignal<string>)s));
+    }
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    private static readonly object s_contentKey = new();
 
-        if (HttpEquiv != null)
-        {
-            el.SetAttribute("http-equiv", HttpEquiv);
-        }
+    public IReadOnlySignal<string>? Content
+    {
+        get => Get<IReadOnlySignal<string>>(s_contentKey);
+        init => Set(
+            s_contentKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Content = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("content", (IReadOnlySignal<string>)s));
+    }
 
-        if (Content != null)
-        {
-            el.SetAttribute("content", Content);
-        }
+    private static readonly object s_mediaKey = new();
 
-        if (Media != null)
-        {
-            el.SetAttribute("media", Media);
-        }
+    public IReadOnlySignal<string>? Media
+    {
+        get => Get<IReadOnlySignal<string>>(s_mediaKey);
+        init => Set(
+            s_mediaKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Media = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("media", (IReadOnlySignal<string>)s));
     }
 }
 

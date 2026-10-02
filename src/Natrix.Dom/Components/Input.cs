@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,359 +6,441 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
 {
-    public IReadOnlySignal<string>? Accept { get; init; }
-    public IReadOnlySignal<string>? Alt { get; init; }
-    public IReadOnlySignal<string>? Autocomplete { get; init; }
-    public IReadOnlySignal<string>? Capture { get; init; }
-    public IReadOnlySignal<bool>? Checked { get; init; }
-    public IReadOnlySignal<bool>? DefaultChecked { get; init; }
-    public IReadOnlySignal<string>? DirName { get; init; }
-    public IReadOnlySignal<bool>? Disabled { get; init; }
-    public IReadOnlySignal<string>? FormAction { get; init; }
-    public IReadOnlySignal<string>? FormEnctype { get; init; }
-    public IReadOnlySignal<string>? FormMethod { get; init; }
-    public IReadOnlySignal<bool>? FormNoValidate { get; init; }
-    public IReadOnlySignal<string>? FormTarget { get; init; }
-    public IReadOnlySignal<uint>? Height { get; init; }
-    public IReadOnlySignal<string>? Max { get; init; }
-    public IReadOnlySignal<int>? MaxLength { get; init; }
-    public IReadOnlySignal<string>? Min { get; init; }
-    public IReadOnlySignal<int>? MinLength { get; init; }
-    public IReadOnlySignal<bool>? Multiple { get; init; }
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<string>? Pattern { get; init; }
-    public IReadOnlySignal<string>? Placeholder { get; init; }
-    public IReadOnlySignal<bool>? ReadOnly { get; init; }
-    public IReadOnlySignal<bool>? Required { get; init; }
-    public IReadOnlySignal<uint>? Size { get; init; }
-    public IReadOnlySignal<string>? Src { get; init; }
-    public IReadOnlySignal<string>? Step { get; init; }
-    public IReadOnlySignal<string>? Type { get; init; }
-    public IReadOnlySignal<string>? Value { get; init; }
-    public IReadOnlySignal<string>? DefaultValue { get; init; }
-    public IReadOnlySignal<uint>? Width { get; init; }
+    private static readonly object s_acceptKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLInputElement>> register)
+    public IReadOnlySignal<string>? Accept
     {
-        base.RegisterClientEffects(register);
-
-        if (Accept != null)
-        {
-            register(el => el.Accept = Accept.Value);
-        }
-
-        if (Alt != null)
-        {
-            register(el => el.Alt = Alt.Value);
-        }
-
-        if (Autocomplete != null)
-        {
-            register(el => el.Autocomplete = Autocomplete.Value);
-        }
-
-        if (Capture != null)
-        {
-            register(el => el.Capture = Capture.Value);
-        }
-
-        if (Checked != null)
-        {
-            register(el => el.Checked = Checked.Value);
-        }
-
-        if (DefaultChecked != null)
-        {
-            register(el => el.DefaultChecked = DefaultChecked.Value);
-        }
-
-        if (DirName != null)
-        {
-            register(el => el.DirName = DirName.Value);
-        }
-
-        if (Disabled != null)
-        {
-            register(el => el.Disabled = Disabled.Value);
-        }
-
-        if (FormAction != null)
-        {
-            register(el => el.FormAction = FormAction.Value);
-        }
-
-        if (FormEnctype != null)
-        {
-            register(el => el.FormEnctype = FormEnctype.Value);
-        }
-
-        if (FormMethod != null)
-        {
-            register(el => el.FormMethod = FormMethod.Value);
-        }
-
-        if (FormNoValidate != null)
-        {
-            register(el => el.FormNoValidate = FormNoValidate.Value);
-        }
-
-        if (FormTarget != null)
-        {
-            register(el => el.FormTarget = FormTarget.Value);
-        }
-
-        if (Height != null)
-        {
-            register(el => el.Height = Height.Value);
-        }
-
-        if (Max != null)
-        {
-            register(el => el.Max = Max.Value);
-        }
-
-        if (MaxLength != null)
-        {
-            register(el => el.MaxLength = MaxLength.Value);
-        }
-
-        if (Min != null)
-        {
-            register(el => el.Min = Min.Value);
-        }
-
-        if (MinLength != null)
-        {
-            register(el => el.MinLength = MinLength.Value);
-        }
-
-        if (Multiple != null)
-        {
-            register(el => el.Multiple = Multiple.Value);
-        }
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (Pattern != null)
-        {
-            register(el => el.Pattern = Pattern.Value);
-        }
-
-        if (Placeholder != null)
-        {
-            register(el => el.Placeholder = Placeholder.Value);
-        }
-
-        if (ReadOnly != null)
-        {
-            register(el => el.ReadOnly = ReadOnly.Value);
-        }
-
-        if (Required != null)
-        {
-            register(el => el.Required = Required.Value);
-        }
-
-        if (Size != null)
-        {
-            register(el => el.Size = Size.Value);
-        }
-
-        if (Src != null)
-        {
-            register(el => el.Src = Src.Value);
-        }
-
-        if (Step != null)
-        {
-            register(el => el.Step = Step.Value);
-        }
-
-        if (Type != null)
-        {
-            register(el => el.Type = Type.Value);
-        }
-
-        if (Value != null)
-        {
-            register(el => el.Value = Value.Value);
-        }
-
-        if (DefaultValue != null)
-        {
-            register(el => el.DefaultValue = DefaultValue.Value);
-        }
-
-        if (Width != null)
-        {
-            register(el => el.Width = Width.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_acceptKey);
+        init => Set(
+            s_acceptKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Accept = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("accept", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_altKey = new();
+
+    public IReadOnlySignal<string>? Alt
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<string>>(s_altKey);
+        init => Set(
+            s_altKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Alt = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("alt", (IReadOnlySignal<string>)s));
+    }
 
-        if (Accept != null)
-        {
-            el.SetAttribute("accept", Accept);
-        }
+    private static readonly object s_autocompleteKey = new();
 
-        if (Alt != null)
-        {
-            el.SetAttribute("alt", Alt);
-        }
+    public IReadOnlySignal<string>? Autocomplete
+    {
+        get => Get<IReadOnlySignal<string>>(s_autocompleteKey);
+        init => Set(
+            s_autocompleteKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Autocomplete = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("autocomplete", (IReadOnlySignal<string>)s));
+    }
 
-        if (Autocomplete != null)
-        {
-            el.SetAttribute("autocomplete", Autocomplete);
-        }
+    private static readonly object s_captureKey = new();
 
-        if (Capture != null)
-        {
-            el.SetAttribute("capture", Capture);
-        }
+    public IReadOnlySignal<string>? Capture
+    {
+        get => Get<IReadOnlySignal<string>>(s_captureKey);
+        init => Set(
+            s_captureKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Capture = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("capture", (IReadOnlySignal<string>)s));
+    }
 
-        if (Checked != null)
-        {
-            el.SetBoolean("checked", Checked);
-        }
+    private static readonly object s_checkedKey = new();
 
-        if (DefaultChecked != null)
-        {
-            el.SetBoolean("checked", DefaultChecked);
-        }
+    public IReadOnlySignal<bool>? Checked
+    {
+        get => Get<IReadOnlySignal<bool>>(s_checkedKey);
+        init => Set(
+            s_checkedKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Checked = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("checked", (IReadOnlySignal<bool>)s));
+    }
 
-        if (DirName != null)
-        {
-            el.SetAttribute("dirname", DirName);
-        }
+    private static readonly object s_defaultCheckedKey = new();
 
-        if (Disabled != null)
-        {
-            el.SetBoolean("disabled", Disabled);
-        }
+    public IReadOnlySignal<bool>? DefaultChecked
+    {
+        get => Get<IReadOnlySignal<bool>>(s_defaultCheckedKey);
+        init => Set(
+            s_defaultCheckedKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.DefaultChecked = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("checked", (IReadOnlySignal<bool>)s));
+    }
 
-        if (FormAction != null)
-        {
-            el.SetAttribute("formaction", FormAction);
-        }
+    private static readonly object s_dirNameKey = new();
 
-        if (FormEnctype != null)
-        {
-            el.SetAttribute("formenctype", FormEnctype);
-        }
+    public IReadOnlySignal<string>? DirName
+    {
+        get => Get<IReadOnlySignal<string>>(s_dirNameKey);
+        init => Set(
+            s_dirNameKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.DirName = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("dirname", (IReadOnlySignal<string>)s));
+    }
 
-        if (FormMethod != null)
-        {
-            el.SetAttribute("formmethod", FormMethod);
-        }
+    private static readonly object s_disabledKey = new();
 
-        if (FormNoValidate != null)
-        {
-            el.SetBoolean("formnovalidate", FormNoValidate);
-        }
+    public IReadOnlySignal<bool>? Disabled
+    {
+        get => Get<IReadOnlySignal<bool>>(s_disabledKey);
+        init => Set(
+            s_disabledKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Disabled = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("disabled", (IReadOnlySignal<bool>)s));
+    }
 
-        if (FormTarget != null)
-        {
-            el.SetAttribute("formtarget", FormTarget);
-        }
+    private static readonly object s_formActionKey = new();
 
-        if (Height != null)
-        {
-            el.SetUInt("height", Height);
-        }
+    public IReadOnlySignal<string>? FormAction
+    {
+        get => Get<IReadOnlySignal<string>>(s_formActionKey);
+        init => Set(
+            s_formActionKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.FormAction = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("formaction", (IReadOnlySignal<string>)s));
+    }
 
-        if (Max != null)
-        {
-            el.SetAttribute("max", Max);
-        }
+    private static readonly object s_formEnctypeKey = new();
 
-        if (MaxLength != null)
-        {
-            el.SetInt("maxlength", MaxLength);
-        }
+    public IReadOnlySignal<string>? FormEnctype
+    {
+        get => Get<IReadOnlySignal<string>>(s_formEnctypeKey);
+        init => Set(
+            s_formEnctypeKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.FormEnctype = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("formenctype", (IReadOnlySignal<string>)s));
+    }
 
-        if (Min != null)
-        {
-            el.SetAttribute("min", Min);
-        }
+    private static readonly object s_formMethodKey = new();
 
-        if (MinLength != null)
-        {
-            el.SetInt("minlength", MinLength);
-        }
+    public IReadOnlySignal<string>? FormMethod
+    {
+        get => Get<IReadOnlySignal<string>>(s_formMethodKey);
+        init => Set(
+            s_formMethodKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.FormMethod = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("formmethod", (IReadOnlySignal<string>)s));
+    }
 
-        if (Multiple != null)
-        {
-            el.SetBoolean("multiple", Multiple);
-        }
+    private static readonly object s_formNoValidateKey = new();
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    public IReadOnlySignal<bool>? FormNoValidate
+    {
+        get => Get<IReadOnlySignal<bool>>(s_formNoValidateKey);
+        init => Set(
+            s_formNoValidateKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.FormNoValidate = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("formnovalidate", (IReadOnlySignal<bool>)s));
+    }
 
-        if (Pattern != null)
-        {
-            el.SetAttribute("pattern", Pattern);
-        }
+    private static readonly object s_formTargetKey = new();
 
-        if (Placeholder != null)
-        {
-            el.SetAttribute("placeholder", Placeholder);
-        }
+    public IReadOnlySignal<string>? FormTarget
+    {
+        get => Get<IReadOnlySignal<string>>(s_formTargetKey);
+        init => Set(
+            s_formTargetKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.FormTarget = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("formtarget", (IReadOnlySignal<string>)s));
+    }
 
-        if (ReadOnly != null)
-        {
-            el.SetBoolean("readonly", ReadOnly);
-        }
+    private static readonly object s_heightKey = new();
 
-        if (Required != null)
-        {
-            el.SetBoolean("required", Required);
-        }
+    public IReadOnlySignal<uint>? Height
+    {
+        get => Get<IReadOnlySignal<uint>>(s_heightKey);
+        init => Set(
+            s_heightKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Height = ((IReadOnlySignal<uint>)s).Value
+                : null,
+            static (el, s) => el.SetUInt("height", (IReadOnlySignal<uint>)s));
+    }
 
-        if (Size != null)
-        {
-            el.SetUInt("size", Size);
-        }
+    private static readonly object s_maxKey = new();
 
-        if (Src != null)
-        {
-            el.SetAttribute("src", Src);
-        }
+    public IReadOnlySignal<string>? Max
+    {
+        get => Get<IReadOnlySignal<string>>(s_maxKey);
+        init => Set(
+            s_maxKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Max = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("max", (IReadOnlySignal<string>)s));
+    }
 
-        if (Step != null)
-        {
-            el.SetAttribute("step", Step);
-        }
+    private static readonly object s_maxLengthKey = new();
 
-        if (Type != null)
-        {
-            el.SetAttribute("type", Type);
-        }
+    public IReadOnlySignal<int>? MaxLength
+    {
+        get => Get<IReadOnlySignal<int>>(s_maxLengthKey);
+        init => Set(
+            s_maxLengthKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.MaxLength = ((IReadOnlySignal<int>)s).Value
+                : null,
+            static (el, s) => el.SetInt("maxlength", (IReadOnlySignal<int>)s));
+    }
 
-        if (Value != null)
-        {
-            el.SetAttribute("value", Value);
-        }
+    private static readonly object s_minKey = new();
 
-        if (DefaultValue != null)
-        {
-            el.SetAttribute("value", DefaultValue);
-        }
+    public IReadOnlySignal<string>? Min
+    {
+        get => Get<IReadOnlySignal<string>>(s_minKey);
+        init => Set(
+            s_minKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Min = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("min", (IReadOnlySignal<string>)s));
+    }
 
-        if (Width != null)
-        {
-            el.SetUInt("width", Width);
-        }
+    private static readonly object s_minLengthKey = new();
+
+    public IReadOnlySignal<int>? MinLength
+    {
+        get => Get<IReadOnlySignal<int>>(s_minLengthKey);
+        init => Set(
+            s_minLengthKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.MinLength = ((IReadOnlySignal<int>)s).Value
+                : null,
+            static (el, s) => el.SetInt("minlength", (IReadOnlySignal<int>)s));
+    }
+
+    private static readonly object s_multipleKey = new();
+
+    public IReadOnlySignal<bool>? Multiple
+    {
+        get => Get<IReadOnlySignal<bool>>(s_multipleKey);
+        init => Set(
+            s_multipleKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Multiple = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("multiple", (IReadOnlySignal<bool>)s));
+    }
+
+    private static readonly object s_nameKey = new();
+
+    public IReadOnlySignal<string>? Name
+    {
+        get => Get<IReadOnlySignal<string>>(s_nameKey);
+        init => Set(
+            s_nameKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Name = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("name", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_patternKey = new();
+
+    public IReadOnlySignal<string>? Pattern
+    {
+        get => Get<IReadOnlySignal<string>>(s_patternKey);
+        init => Set(
+            s_patternKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Pattern = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("pattern", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_placeholderKey = new();
+
+    public IReadOnlySignal<string>? Placeholder
+    {
+        get => Get<IReadOnlySignal<string>>(s_placeholderKey);
+        init => Set(
+            s_placeholderKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Placeholder = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("placeholder", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_readOnlyKey = new();
+
+    public IReadOnlySignal<bool>? ReadOnly
+    {
+        get => Get<IReadOnlySignal<bool>>(s_readOnlyKey);
+        init => Set(
+            s_readOnlyKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.ReadOnly = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("readonly", (IReadOnlySignal<bool>)s));
+    }
+
+    private static readonly object s_requiredKey = new();
+
+    public IReadOnlySignal<bool>? Required
+    {
+        get => Get<IReadOnlySignal<bool>>(s_requiredKey);
+        init => Set(
+            s_requiredKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Required = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("required", (IReadOnlySignal<bool>)s));
+    }
+
+    private static readonly object s_sizeKey = new();
+
+    public IReadOnlySignal<uint>? Size
+    {
+        get => Get<IReadOnlySignal<uint>>(s_sizeKey);
+        init => Set(
+            s_sizeKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Size = ((IReadOnlySignal<uint>)s).Value
+                : null,
+            static (el, s) => el.SetUInt("size", (IReadOnlySignal<uint>)s));
+    }
+
+    private static readonly object s_srcKey = new();
+
+    public IReadOnlySignal<string>? Src
+    {
+        get => Get<IReadOnlySignal<string>>(s_srcKey);
+        init => Set(
+            s_srcKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Src = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("src", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_stepKey = new();
+
+    public IReadOnlySignal<string>? Step
+    {
+        get => Get<IReadOnlySignal<string>>(s_stepKey);
+        init => Set(
+            s_stepKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Step = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("step", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_typeKey = new();
+
+    public IReadOnlySignal<string>? Type
+    {
+        get => Get<IReadOnlySignal<string>>(s_typeKey);
+        init => Set(
+            s_typeKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Type = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("type", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_valueKey = new();
+
+    public IReadOnlySignal<string>? Value
+    {
+        get => Get<IReadOnlySignal<string>>(s_valueKey);
+        init => Set(
+            s_valueKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Value = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("value", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_defaultValueKey = new();
+
+    public IReadOnlySignal<string>? DefaultValue
+    {
+        get => Get<IReadOnlySignal<string>>(s_defaultValueKey);
+        init => Set(
+            s_defaultValueKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.DefaultValue = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("value", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_widthKey = new();
+
+    public IReadOnlySignal<uint>? Width
+    {
+        get => Get<IReadOnlySignal<uint>>(s_widthKey);
+        init => Set(
+            s_widthKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Width = ((IReadOnlySignal<uint>)s).Value
+                : null,
+            static (el, s) => el.SetUInt("width", (IReadOnlySignal<uint>)s));
     }
 }
 

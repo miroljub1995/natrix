@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,29 +6,21 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class DialogProps : GlobalHtmlComponentProps<HTMLDialogElement>
 {
-    public IReadOnlySignal<bool>? Open { get; init; }
+    private static readonly object s_openKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLDialogElement>> register)
+    public IReadOnlySignal<bool>? Open
     {
-        base.RegisterClientEffects(register);
-
-        if (Open != null)
-        {
-            register(el => el.Open = Open.Value);
-        }
-    }
-
-    protected internal override void RegisterServerEffects(SsrElementNode el)
-    {
-        base.RegisterServerEffects(el);
-
-        if (Open != null)
-        {
-            el.SetBoolean("open", Open);
-        }
+        get => Get<IReadOnlySignal<bool>>(s_openKey);
+        init => Set(
+            s_openKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Open = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("open", (IReadOnlySignal<bool>)s));
     }
 }
 

@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,40 +6,35 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class DelProps : GlobalHtmlComponentProps<HTMLModElement>
 {
-    public IReadOnlySignal<string>? Cite { get; init; }
-    public IReadOnlySignal<string>? DateTime { get; init; }
+    private static readonly object s_citeKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLModElement>> register)
+    public IReadOnlySignal<string>? Cite
     {
-        base.RegisterClientEffects(register);
-
-        if (Cite != null)
-        {
-            register(el => el.Cite = Cite.Value);
-        }
-
-        if (DateTime != null)
-        {
-            register(el => el.DateTime = DateTime.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_citeKey);
+        init => Set(
+            s_citeKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Cite = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("cite", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_dateTimeKey = new();
+
+    public IReadOnlySignal<string>? DateTime
     {
-        base.RegisterServerEffects(el);
-
-        if (Cite != null)
-        {
-            el.SetAttribute("cite", Cite);
-        }
-
-        if (DateTime != null)
-        {
-            el.SetAttribute("datetime", DateTime);
-        }
+        get => Get<IReadOnlySignal<string>>(s_dateTimeKey);
+        init => Set(
+            s_dateTimeKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.DateTime = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("datetime", (IReadOnlySignal<string>)s));
     }
 }
 

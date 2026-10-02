@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,172 +6,203 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
 {
-    public IReadOnlySignal<string>? Href { get; init; }
-    public IReadOnlySignal<string?>? CrossOrigin { get; init; }
-    public IReadOnlySignal<string>? Rel { get; init; }
-    public IReadOnlySignal<string>? As { get; init; }
-    public IReadOnlySignal<string>? Media { get; init; }
-    public IReadOnlySignal<string>? Integrity { get; init; }
-    public IReadOnlySignal<string>? Hreflang { get; init; }
-    public IReadOnlySignal<string>? Type { get; init; }
-    public IReadOnlySignal<string>? ReferrerPolicy { get; init; }
-    public IReadOnlySignal<bool>? Disabled { get; init; }
-    public IReadOnlySignal<string>? FetchPriority { get; init; }
-    public IReadOnlySignal<string>? Blocking { get; init; }
-    public IReadOnlySignal<string>? ImageSizes { get; init; }
-    public IReadOnlySignal<string>? ImageSrcset { get; init; }
+    private static readonly object s_hrefKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLLinkElement>> register)
+    public IReadOnlySignal<string>? Href
     {
-        base.RegisterClientEffects(register);
-
-        if (Href != null)
-        {
-            register(el => el.Href = Href.Value);
-        }
-
-        if (CrossOrigin != null)
-        {
-            register(el => el.CrossOrigin = CrossOrigin.Value);
-        }
-
-        if (Rel != null)
-        {
-            register(el => el.Rel = Rel.Value);
-        }
-
-        if (As != null)
-        {
-            register(el => el.As = As.Value);
-        }
-
-        if (Media != null)
-        {
-            register(el => el.Media = Media.Value);
-        }
-
-        if (Integrity != null)
-        {
-            register(el => el.Integrity = Integrity.Value);
-        }
-
-        if (Hreflang != null)
-        {
-            register(el => el.Hreflang = Hreflang.Value);
-        }
-
-        if (Type != null)
-        {
-            register(el => el.Type = Type.Value);
-        }
-
-        if (ReferrerPolicy != null)
-        {
-            register(el => el.ReferrerPolicy = ReferrerPolicy.Value);
-        }
-
-        if (Disabled != null)
-        {
-            register(el => el.Disabled = Disabled.Value);
-        }
-
-        if (FetchPriority != null)
-        {
-            register(el => el.FetchPriority = FetchPriority.Value);
-        }
-
-        if (Blocking != null)
-        {
-            register(el => el.Blocking.Value = Blocking.Value);
-        }
-
-        if (ImageSizes != null)
-        {
-            register(el => el.ImageSizes = ImageSizes.Value);
-        }
-
-        if (ImageSrcset != null)
-        {
-            register(el => el.ImageSrcset = ImageSrcset.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_hrefKey);
+        init => Set(
+            s_hrefKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Href = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("href", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_crossOriginKey = new();
+
+    public IReadOnlySignal<string?>? CrossOrigin
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<string?>>(s_crossOriginKey);
+        init => Set(
+            s_crossOriginKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.CrossOrigin = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("crossorigin", (IReadOnlySignal<string?>)s));
+    }
 
-        if (Href != null)
-        {
-            el.SetAttribute("href", Href);
-        }
+    private static readonly object s_relKey = new();
 
-        if (CrossOrigin != null)
-        {
-            el.SetNullableString("crossorigin", CrossOrigin);
-        }
+    public IReadOnlySignal<string>? Rel
+    {
+        get => Get<IReadOnlySignal<string>>(s_relKey);
+        init => Set(
+            s_relKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Rel = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("rel", (IReadOnlySignal<string>)s));
+    }
 
-        if (Rel != null)
-        {
-            el.SetAttribute("rel", Rel);
-        }
+    private static readonly object s_asKey = new();
 
-        if (As != null)
-        {
-            el.SetAttribute("as", As);
-        }
+    public IReadOnlySignal<string>? As
+    {
+        get => Get<IReadOnlySignal<string>>(s_asKey);
+        init => Set(
+            s_asKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.As = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("as", (IReadOnlySignal<string>)s));
+    }
 
-        if (Media != null)
-        {
-            el.SetAttribute("media", Media);
-        }
+    private static readonly object s_mediaKey = new();
 
-        if (Integrity != null)
-        {
-            el.SetAttribute("integrity", Integrity);
-        }
+    public IReadOnlySignal<string>? Media
+    {
+        get => Get<IReadOnlySignal<string>>(s_mediaKey);
+        init => Set(
+            s_mediaKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Media = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("media", (IReadOnlySignal<string>)s));
+    }
 
-        if (Hreflang != null)
-        {
-            el.SetAttribute("hreflang", Hreflang);
-        }
+    private static readonly object s_integrityKey = new();
 
-        if (Type != null)
-        {
-            el.SetAttribute("type", Type);
-        }
+    public IReadOnlySignal<string>? Integrity
+    {
+        get => Get<IReadOnlySignal<string>>(s_integrityKey);
+        init => Set(
+            s_integrityKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Integrity = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("integrity", (IReadOnlySignal<string>)s));
+    }
 
-        if (ReferrerPolicy != null)
-        {
-            el.SetAttribute("referrerpolicy", ReferrerPolicy);
-        }
+    private static readonly object s_hreflangKey = new();
 
-        if (Disabled != null)
-        {
-            el.SetBoolean("disabled", Disabled);
-        }
+    public IReadOnlySignal<string>? Hreflang
+    {
+        get => Get<IReadOnlySignal<string>>(s_hreflangKey);
+        init => Set(
+            s_hreflangKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Hreflang = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("hreflang", (IReadOnlySignal<string>)s));
+    }
 
-        if (FetchPriority != null)
-        {
-            el.SetAttribute("fetchpriority", FetchPriority);
-        }
+    private static readonly object s_typeKey = new();
 
-        if (Blocking != null)
-        {
-            el.SetAttribute("blocking", Blocking);
-        }
+    public IReadOnlySignal<string>? Type
+    {
+        get => Get<IReadOnlySignal<string>>(s_typeKey);
+        init => Set(
+            s_typeKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Type = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("type", (IReadOnlySignal<string>)s));
+    }
 
-        if (ImageSizes != null)
-        {
-            el.SetAttribute("imagesizes", ImageSizes);
-        }
+    private static readonly object s_referrerPolicyKey = new();
 
-        if (ImageSrcset != null)
-        {
-            el.SetAttribute("imagesrcset", ImageSrcset);
-        }
+    public IReadOnlySignal<string>? ReferrerPolicy
+    {
+        get => Get<IReadOnlySignal<string>>(s_referrerPolicyKey);
+        init => Set(
+            s_referrerPolicyKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.ReferrerPolicy = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("referrerpolicy", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_disabledKey = new();
+
+    public IReadOnlySignal<bool>? Disabled
+    {
+        get => Get<IReadOnlySignal<bool>>(s_disabledKey);
+        init => Set(
+            s_disabledKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Disabled = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("disabled", (IReadOnlySignal<bool>)s));
+    }
+
+    private static readonly object s_fetchPriorityKey = new();
+
+    public IReadOnlySignal<string>? FetchPriority
+    {
+        get => Get<IReadOnlySignal<string>>(s_fetchPriorityKey);
+        init => Set(
+            s_fetchPriorityKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.FetchPriority = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("fetchpriority", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_blockingKey = new();
+
+    public IReadOnlySignal<string>? Blocking
+    {
+        get => Get<IReadOnlySignal<string>>(s_blockingKey);
+        init => Set(
+            s_blockingKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Blocking.Value = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("blocking", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_imageSizesKey = new();
+
+    public IReadOnlySignal<string>? ImageSizes
+    {
+        get => Get<IReadOnlySignal<string>>(s_imageSizesKey);
+        init => Set(
+            s_imageSizesKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.ImageSizes = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("imagesizes", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_imageSrcsetKey = new();
+
+    public IReadOnlySignal<string>? ImageSrcset
+    {
+        get => Get<IReadOnlySignal<string>>(s_imageSrcsetKey);
+        init => Set(
+            s_imageSrcsetKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.ImageSrcset = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("imagesrcset", (IReadOnlySignal<string>)s));
     }
 }
 

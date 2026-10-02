@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,29 +6,21 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class LiProps : GlobalHtmlComponentProps<HTMLLIElement>
 {
-    public IReadOnlySignal<int>? Value { get; init; }
+    private static readonly object s_valueKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLLIElement>> register)
+    public IReadOnlySignal<int>? Value
     {
-        base.RegisterClientEffects(register);
-
-        if (Value != null)
-        {
-            register(el => el.Value = Value.Value);
-        }
-    }
-
-    protected internal override void RegisterServerEffects(SsrElementNode el)
-    {
-        base.RegisterServerEffects(el);
-
-        if (Value != null)
-        {
-            el.SetInt("value", Value);
-        }
+        get => Get<IReadOnlySignal<int>>(s_valueKey);
+        init => Set(
+            s_valueKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Value = ((IReadOnlySignal<int>)s).Value
+                : null,
+            static (el, s) => el.SetInt("value", (IReadOnlySignal<int>)s));
     }
 }
 

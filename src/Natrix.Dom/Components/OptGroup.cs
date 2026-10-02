@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,40 +6,35 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class OptGroupProps : GlobalHtmlComponentProps<HTMLOptGroupElement>
 {
-    public IReadOnlySignal<bool>? Disabled { get; init; }
-    public IReadOnlySignal<string>? Label { get; init; }
+    private static readonly object s_disabledKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLOptGroupElement>> register)
+    public IReadOnlySignal<bool>? Disabled
     {
-        base.RegisterClientEffects(register);
-
-        if (Disabled != null)
-        {
-            register(el => el.Disabled = Disabled.Value);
-        }
-
-        if (Label != null)
-        {
-            register(el => el.Label = Label.Value);
-        }
+        get => Get<IReadOnlySignal<bool>>(s_disabledKey);
+        init => Set(
+            s_disabledKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Disabled = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("disabled", (IReadOnlySignal<bool>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_labelKey = new();
+
+    public IReadOnlySignal<string>? Label
     {
-        base.RegisterServerEffects(el);
-
-        if (Disabled != null)
-        {
-            el.SetBoolean("disabled", Disabled);
-        }
-
-        if (Label != null)
-        {
-            el.SetAttribute("label", Label);
-        }
+        get => Get<IReadOnlySignal<string>>(s_labelKey);
+        init => Set(
+            s_labelKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Label = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("label", (IReadOnlySignal<string>)s));
     }
 }
 

@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,51 +6,49 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class OlProps : GlobalHtmlComponentProps<HTMLOListElement>
 {
-    public IReadOnlySignal<bool>? Reversed { get; init; }
-    public IReadOnlySignal<int>? Start { get; init; }
-    public IReadOnlySignal<string>? Type { get; init; }
+    private static readonly object s_reversedKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLOListElement>> register)
+    public IReadOnlySignal<bool>? Reversed
     {
-        base.RegisterClientEffects(register);
-
-        if (Reversed != null)
-        {
-            register(el => el.Reversed = Reversed.Value);
-        }
-
-        if (Start != null)
-        {
-            register(el => el.Start = Start.Value);
-        }
-
-        if (Type != null)
-        {
-            register(el => el.Type = Type.Value);
-        }
+        get => Get<IReadOnlySignal<bool>>(s_reversedKey);
+        init => Set(
+            s_reversedKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Reversed = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("reversed", (IReadOnlySignal<bool>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_startKey = new();
+
+    public IReadOnlySignal<int>? Start
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<int>>(s_startKey);
+        init => Set(
+            s_startKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Start = ((IReadOnlySignal<int>)s).Value
+                : null,
+            static (el, s) => el.SetInt("start", (IReadOnlySignal<int>)s));
+    }
 
-        if (Reversed != null)
-        {
-            el.SetBoolean("reversed", Reversed);
-        }
+    private static readonly object s_typeKey = new();
 
-        if (Start != null)
-        {
-            el.SetInt("start", Start);
-        }
-
-        if (Type != null)
-        {
-            el.SetAttribute("type", Type);
-        }
+    public IReadOnlySignal<string>? Type
+    {
+        get => Get<IReadOnlySignal<string>>(s_typeKey);
+        init => Set(
+            s_typeKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Type = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("type", (IReadOnlySignal<string>)s));
     }
 }
 

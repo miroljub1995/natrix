@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,6 +6,7 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TElement>
     where TElement : HTMLElement
 {
@@ -18,326 +19,392 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
             _ => throw new ArgumentOutOfRangeException(),
         };
 
-    public IReadOnlySignal<string>? AccessKey { get; init; }
-    public IReadOnlySignal<string>? Autocapitalize { get; init; }
-    public IReadOnlySignal<bool>? Autocorrect { get; init; }
-    public IReadOnlySignal<bool>? Autofocus { get; init; }
-    public IReadOnlySignal<string>? Class { get; init; }
-    public IReadOnlySignal<string>? ContentEditable { get; init; }
-    public IReadOnlySignal<IDictionary<string, string>>? Data { get; init; }
-    public IReadOnlySignal<string>? Dir { get; init; }
-    public IReadOnlySignal<bool>? Draggable { get; init; }
-    public IReadOnlySignal<string>? EnterKeyHint { get; init; }
-    public IReadOnlySignal<HiddenOption>? Hidden { get; init; }
-    public IReadOnlySignal<string>? Id { get; init; }
-    public IReadOnlySignal<bool>? Inert { get; init; }
-    public IReadOnlySignal<string>? InputMode { get; init; }
-    public IReadOnlySignal<string>? Lang { get; init; }
-    public IReadOnlySignal<string>? Nonce { get; init; }
-    public IReadOnlySignal<string>? Part { get; init; }
-    public IReadOnlySignal<string?>? Popover { get; init; }
-    public IReadOnlySignal<string>? Slot { get; init; }
-    public IReadOnlySignal<bool>? Spellcheck { get; init; }
-    public IReadOnlySignal<string>? Style { get; init; }
-    public IReadOnlySignal<int>? TabIndex { get; init; }
-    public IReadOnlySignal<string>? Title { get; init; }
-    public IReadOnlySignal<bool>? Translate { get; init; }
-    public IReadOnlySignal<string>? VirtualKeyboardPolicy { get; init; }
-    public IReadOnlySignal<string>? WritingSuggestions { get; init; }
+    private static readonly object s_accessKeyKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<TElement>> register)
+    public IReadOnlySignal<string>? AccessKey
     {
-        base.RegisterClientEffects(register);
-
-        if (AccessKey != null)
-        {
-            register(el => el.AccessKey = AccessKey.Value);
-        }
-
-        if (Autocapitalize != null)
-        {
-            // Safari has no autocapitalize property, but iOS Safari honours the attribute.
-            register(el => el.SetAttribute("autocapitalize", Autocapitalize.Value));
-        }
-
-        if (Autocorrect != null)
-        {
-            register(el => el.Autocorrect = Autocorrect.Value);
-        }
-
-        if (Autofocus != null)
-        {
-            register(el => el.Autofocus = Autofocus.Value);
-        }
-
-        if (Class != null)
-        {
-            register(el => el.ClassList.Value = Class.Value);
-        }
-
-        if (ContentEditable != null)
-        {
-            register(el => el.ContentEditable = ContentEditable.Value);
-        }
-
-        if (Data != null)
-        {
-            register(el =>
-            {
-                var dict = Data.Value;
-                var nextAttrNames = new HashSet<string>(dict.Count);
-
-                foreach (var kvp in dict)
-                {
-                    var attrName = "data-" + kvp.Key;
-                    nextAttrNames.Add(attrName);
-                    el.SetAttribute(attrName, kvp.Value);
-                }
-
-                var attrNames = (string[])el.GetAttributeNames();
-                foreach (var attr in attrNames)
-                {
-                    if (attr.StartsWith("data-") && !nextAttrNames.Contains(attr))
-                        el.RemoveAttribute(attr);
-                }
-            });
-        }
-
-        if (Dir != null)
-        {
-            register(el => el.Dir = Dir.Value);
-        }
-
-        if (Draggable != null)
-        {
-            register(el => el.Draggable = Draggable.Value);
-        }
-
-        if (EnterKeyHint != null)
-        {
-            register(el => el.EnterKeyHint = EnterKeyHint.Value);
-        }
-
-        if (Hidden != null)
-        {
-            register(el => el.Hidden = Hidden.Value switch
-            {
-                HiddenOption.True => true,
-                HiddenOption.False => false,
-                HiddenOption.UntilFound => "until-found",
-                _ => throw new ArgumentOutOfRangeException(nameof(Hidden), Hidden.Value, null),
-            });
-        }
-
-        if (Id != null)
-        {
-            register(el => el.Id = Id.Value);
-        }
-
-        if (Inert != null)
-        {
-            register(el => el.Inert = Inert.Value);
-        }
-
-        if (InputMode != null)
-        {
-            register(el => el.InputMode = InputMode.Value);
-        }
-
-        if (Lang != null)
-        {
-            register(el => el.Lang = Lang.Value);
-        }
-
-        if (Nonce != null)
-        {
-            register(el => el.Nonce = Nonce.Value);
-        }
-
-        if (Part != null)
-        {
-            register(el => el.Part.Value = Part.Value);
-        }
-
-        if (Popover != null)
-        {
-            register(el => el.Popover = Popover.Value);
-        }
-
-        if (Slot != null)
-        {
-            register(el => el.Slot = Slot.Value);
-        }
-
-        if (Spellcheck != null)
-        {
-            register(el => el.Spellcheck = Spellcheck.Value);
-        }
-
-        if (Style != null)
-        {
-            register(el => el.Style.CssText = Style.Value);
-        }
-
-        if (TabIndex != null)
-        {
-            register(el => el.TabIndex = TabIndex.Value);
-        }
-
-        if (Title != null)
-        {
-            register(el => el.Title = Title.Value);
-        }
-
-        if (Translate != null)
-        {
-            register(el => el.Translate = Translate.Value);
-        }
-
-        if (VirtualKeyboardPolicy != null)
-        {
-            register(el => el.VirtualKeyboardPolicy = VirtualKeyboardPolicy.Value);
-        }
-
-        if (WritingSuggestions != null)
-        {
-            register(el => el.WritingSuggestions = WritingSuggestions.Value);
-        }
+        get => Get<IReadOnlySignal<string>>(s_accessKeyKey);
+        init => Set(
+            s_accessKeyKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.AccessKey = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("accesskey", (IReadOnlySignal<string>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_autocapitalizeKey = new();
+
+    public IReadOnlySignal<string>? Autocapitalize
     {
-        base.RegisterServerEffects(el);
+        get => Get<IReadOnlySignal<string>>(s_autocapitalizeKey);
+        init => Set(
+            s_autocapitalizeKey,
+            value,
+            // Safari has no autocapitalize property, but iOS Safari honours the attribute.
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.SetAttribute("autocapitalize", ((IReadOnlySignal<string>)s).Value)
+                : null,
+            static (el, s) => el.SetAttribute("autocapitalize", (IReadOnlySignal<string>)s));
+    }
 
-        if (AccessKey != null)
-        {
-            el.SetAttribute("accesskey", AccessKey);
-        }
+    private static readonly object s_autocorrectKey = new();
 
-        if (Autocapitalize != null)
-        {
-            el.SetAttribute("autocapitalize", Autocapitalize);
-        }
+    public IReadOnlySignal<bool>? Autocorrect
+    {
+        get => Get<IReadOnlySignal<bool>>(s_autocorrectKey);
+        init => Set(
+            s_autocorrectKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Autocorrect = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetEnumeratedBoolOnOff("autocorrect", (IReadOnlySignal<bool>)s));
+    }
 
-        if (Autocorrect != null)
-        {
-            el.SetEnumeratedBoolOnOff("autocorrect", Autocorrect);
-        }
+    private static readonly object s_autofocusKey = new();
 
-        if (Autofocus != null)
-        {
-            el.SetBoolean("autofocus", Autofocus);
-        }
+    public IReadOnlySignal<bool>? Autofocus
+    {
+        get => Get<IReadOnlySignal<bool>>(s_autofocusKey);
+        init => Set(
+            s_autofocusKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Autofocus = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("autofocus", (IReadOnlySignal<bool>)s));
+    }
 
-        if (Class != null)
-        {
-            el.SetAttribute("class", Class);
-        }
+    private static readonly object s_classKey = new();
 
-        if (ContentEditable != null)
-        {
-            el.SetAttribute("contenteditable", ContentEditable);
-        }
+    public IReadOnlySignal<string>? Class
+    {
+        get => Get<IReadOnlySignal<string>>(s_classKey);
+        init => Set(
+            s_classKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.ClassList.Value = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("class", (IReadOnlySignal<string>)s));
+    }
 
-        if (Data != null)
-        {
-            el.SetDataAttributes(Data);
-        }
+    private static readonly object s_contentEditableKey = new();
 
-        if (Dir != null)
-        {
-            el.SetAttribute("dir", Dir);
-        }
+    public IReadOnlySignal<string>? ContentEditable
+    {
+        get => Get<IReadOnlySignal<string>>(s_contentEditableKey);
+        init => Set(
+            s_contentEditableKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.ContentEditable = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("contenteditable", (IReadOnlySignal<string>)s));
+    }
 
-        if (Draggable != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("draggable", Draggable);
-        }
+    private static readonly object s_dataKey = new();
 
-        if (EnterKeyHint != null)
-        {
-            el.SetAttribute("enterkeyhint", EnterKeyHint);
-        }
+    public IReadOnlySignal<IDictionary<string, string>>? Data
+    {
+        get => Get<IReadOnlySignal<IDictionary<string, string>>>(s_dataKey);
+        init => Set(
+            s_dataKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) =>
+                {
+                    var dict = ((IReadOnlySignal<IDictionary<string, string>>)s).Value;
+                    var nextAttrNames = new HashSet<string>(dict.Count);
 
-        if (Hidden != null)
-        {
-            el.SetAttribute("hidden", Hidden, s_hiddenSelector);
-        }
+                    foreach (var kvp in dict)
+                    {
+                        var attrName = "data-" + kvp.Key;
+                        nextAttrNames.Add(attrName);
+                        el.SetAttribute(attrName, kvp.Value);
+                    }
 
-        if (Id != null)
-        {
-            el.SetAttribute("id", Id);
-        }
+                    var attrNames = (string[])el.GetAttributeNames();
+                    foreach (var attr in attrNames)
+                    {
+                        if (attr.StartsWith("data-") && !nextAttrNames.Contains(attr))
+                            el.RemoveAttribute(attr);
+                    }
+                }
+                : null,
+            static (el, s) => el.SetDataAttributes((IReadOnlySignal<IDictionary<string, string>>)s));
+    }
 
-        if (Inert != null)
-        {
-            el.SetBoolean("inert", Inert);
-        }
+    private static readonly object s_dirKey = new();
 
-        if (InputMode != null)
-        {
-            el.SetAttribute("inputmode", InputMode);
-        }
+    public IReadOnlySignal<string>? Dir
+    {
+        get => Get<IReadOnlySignal<string>>(s_dirKey);
+        init => Set(
+            s_dirKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Dir = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("dir", (IReadOnlySignal<string>)s));
+    }
 
-        if (Lang != null)
-        {
-            el.SetAttribute("lang", Lang);
-        }
+    private static readonly object s_draggableKey = new();
 
-        if (Nonce != null)
-        {
-            el.SetAttribute("nonce", Nonce);
-        }
+    public IReadOnlySignal<bool>? Draggable
+    {
+        get => Get<IReadOnlySignal<bool>>(s_draggableKey);
+        init => Set(
+            s_draggableKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Draggable = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("draggable", (IReadOnlySignal<bool>)s));
+    }
 
-        if (Part != null)
-        {
-            el.SetAttribute("part", Part);
-        }
+    private static readonly object s_enterKeyHintKey = new();
 
-        if (Popover != null)
-        {
-            el.SetNullableString("popover", Popover);
-        }
+    public IReadOnlySignal<string>? EnterKeyHint
+    {
+        get => Get<IReadOnlySignal<string>>(s_enterKeyHintKey);
+        init => Set(
+            s_enterKeyHintKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.EnterKeyHint = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("enterkeyhint", (IReadOnlySignal<string>)s));
+    }
 
-        if (Slot != null)
-        {
-            el.SetAttribute("slot", Slot);
-        }
+    private static readonly object s_hiddenKey = new();
 
-        if (Spellcheck != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("spellcheck", Spellcheck);
-        }
+    public IReadOnlySignal<HiddenOption>? Hidden
+    {
+        get => Get<IReadOnlySignal<HiddenOption>>(s_hiddenKey);
+        init => Set(
+            s_hiddenKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Hidden = ((IReadOnlySignal<HiddenOption>)s).Value switch
+                {
+                    HiddenOption.True => true,
+                    HiddenOption.False => false,
+                    HiddenOption.UntilFound => "until-found",
+                    _ => throw new ArgumentOutOfRangeException(nameof(Hidden), ((IReadOnlySignal<HiddenOption>)s).Value, null),
+                }
+                : null,
+            static (el, s) => el.SetAttribute("hidden", (IReadOnlySignal<HiddenOption>)s, s_hiddenSelector));
+    }
 
-        if (Style != null)
-        {
-            el.SetAttribute("style", Style);
-        }
+    private static readonly object s_idKey = new();
 
-        if (TabIndex != null)
-        {
-            el.SetInt("tabindex", TabIndex);
-        }
+    public IReadOnlySignal<string>? Id
+    {
+        get => Get<IReadOnlySignal<string>>(s_idKey);
+        init => Set(
+            s_idKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Id = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("id", (IReadOnlySignal<string>)s));
+    }
 
-        if (Title != null)
-        {
-            el.SetAttribute("title", Title);
-        }
+    private static readonly object s_inertKey = new();
 
-        if (Translate != null)
-        {
-            el.SetEnumeratedBoolYesNo("translate", Translate);
-        }
+    public IReadOnlySignal<bool>? Inert
+    {
+        get => Get<IReadOnlySignal<bool>>(s_inertKey);
+        init => Set(
+            s_inertKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Inert = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetBoolean("inert", (IReadOnlySignal<bool>)s));
+    }
 
-        if (VirtualKeyboardPolicy != null)
-        {
-            el.SetAttribute("virtualkeyboardpolicy", VirtualKeyboardPolicy);
-        }
+    private static readonly object s_inputModeKey = new();
 
-        if (WritingSuggestions != null)
-        {
-            el.SetAttribute("writingsuggestions", WritingSuggestions);
-        }
+    public IReadOnlySignal<string>? InputMode
+    {
+        get => Get<IReadOnlySignal<string>>(s_inputModeKey);
+        init => Set(
+            s_inputModeKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.InputMode = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("inputmode", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_langKey = new();
+
+    public IReadOnlySignal<string>? Lang
+    {
+        get => Get<IReadOnlySignal<string>>(s_langKey);
+        init => Set(
+            s_langKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Lang = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("lang", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_nonceKey = new();
+
+    public IReadOnlySignal<string>? Nonce
+    {
+        get => Get<IReadOnlySignal<string>>(s_nonceKey);
+        init => Set(
+            s_nonceKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Nonce = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("nonce", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_partKey = new();
+
+    public IReadOnlySignal<string>? Part
+    {
+        get => Get<IReadOnlySignal<string>>(s_partKey);
+        init => Set(
+            s_partKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Part.Value = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("part", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_popoverKey = new();
+
+    public IReadOnlySignal<string?>? Popover
+    {
+        get => Get<IReadOnlySignal<string?>>(s_popoverKey);
+        init => Set(
+            s_popoverKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Popover = ((IReadOnlySignal<string?>)s).Value
+                : null,
+            static (el, s) => el.SetNullableString("popover", (IReadOnlySignal<string?>)s));
+    }
+
+    private static readonly object s_slotKey = new();
+
+    public IReadOnlySignal<string>? Slot
+    {
+        get => Get<IReadOnlySignal<string>>(s_slotKey);
+        init => Set(
+            s_slotKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Slot = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("slot", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_spellcheckKey = new();
+
+    public IReadOnlySignal<bool>? Spellcheck
+    {
+        get => Get<IReadOnlySignal<bool>>(s_spellcheckKey);
+        init => Set(
+            s_spellcheckKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Spellcheck = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("spellcheck", (IReadOnlySignal<bool>)s));
+    }
+
+    private static readonly object s_styleKey = new();
+
+    public IReadOnlySignal<string>? Style
+    {
+        get => Get<IReadOnlySignal<string>>(s_styleKey);
+        init => Set(
+            s_styleKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Style.CssText = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("style", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_tabIndexKey = new();
+
+    public IReadOnlySignal<int>? TabIndex
+    {
+        get => Get<IReadOnlySignal<int>>(s_tabIndexKey);
+        init => Set(
+            s_tabIndexKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.TabIndex = ((IReadOnlySignal<int>)s).Value
+                : null,
+            static (el, s) => el.SetInt("tabindex", (IReadOnlySignal<int>)s));
+    }
+
+    private static readonly object s_titleKey = new();
+
+    public IReadOnlySignal<string>? Title
+    {
+        get => Get<IReadOnlySignal<string>>(s_titleKey);
+        init => Set(
+            s_titleKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Title = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("title", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_translateKey = new();
+
+    public IReadOnlySignal<bool>? Translate
+    {
+        get => Get<IReadOnlySignal<bool>>(s_translateKey);
+        init => Set(
+            s_translateKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Translate = ((IReadOnlySignal<bool>)s).Value
+                : null,
+            static (el, s) => el.SetEnumeratedBoolYesNo("translate", (IReadOnlySignal<bool>)s));
+    }
+
+    private static readonly object s_virtualKeyboardPolicyKey = new();
+
+    public IReadOnlySignal<string>? VirtualKeyboardPolicy
+    {
+        get => Get<IReadOnlySignal<string>>(s_virtualKeyboardPolicyKey);
+        init => Set(
+            s_virtualKeyboardPolicyKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.VirtualKeyboardPolicy = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("virtualkeyboardpolicy", (IReadOnlySignal<string>)s));
+    }
+
+    private static readonly object s_writingSuggestionsKey = new();
+
+    public IReadOnlySignal<string>? WritingSuggestions
+    {
+        get => Get<IReadOnlySignal<string>>(s_writingSuggestionsKey);
+        init => Set(
+            s_writingSuggestionsKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.WritingSuggestions = ((IReadOnlySignal<string>)s).Value
+                : null,
+            static (el, s) => el.SetAttribute("writingsuggestions", (IReadOnlySignal<string>)s));
     }
 }

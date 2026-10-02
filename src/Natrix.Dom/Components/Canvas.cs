@@ -1,4 +1,4 @@
-using System.Runtime.Versioning;
+using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,40 +6,35 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
+[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class CanvasProps : GlobalHtmlComponentProps<HTMLCanvasElement>
 {
-    public IReadOnlySignal<uint>? Width { get; init; }
-    public IReadOnlySignal<uint>? Height { get; init; }
+    private static readonly object s_widthKey = new();
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLCanvasElement>> register)
+    public IReadOnlySignal<uint>? Width
     {
-        base.RegisterClientEffects(register);
-
-        if (Width != null)
-        {
-            register(el => el.Width = Width.Value);
-        }
-
-        if (Height != null)
-        {
-            register(el => el.Height = Height.Value);
-        }
+        get => Get<IReadOnlySignal<uint>>(s_widthKey);
+        init => Set(
+            s_widthKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Width = ((IReadOnlySignal<uint>)s).Value
+                : null,
+            static (el, s) => el.SetUInt("width", (IReadOnlySignal<uint>)s));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static readonly object s_heightKey = new();
+
+    public IReadOnlySignal<uint>? Height
     {
-        base.RegisterServerEffects(el);
-
-        if (Width != null)
-        {
-            el.SetUInt("width", Width);
-        }
-
-        if (Height != null)
-        {
-            el.SetUInt("height", Height);
-        }
+        get => Get<IReadOnlySignal<uint>>(s_heightKey);
+        init => Set(
+            s_heightKey,
+            value,
+            OperatingSystem.IsBrowser()
+                ? static (el, s) => el.Height = ((IReadOnlySignal<uint>)s).Value
+                : null,
+            static (el, s) => el.SetUInt("height", (IReadOnlySignal<uint>)s));
     }
 }
 
