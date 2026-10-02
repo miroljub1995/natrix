@@ -1,4 +1,4 @@
-# <img src="icon.svg" alt="" width="32" height="32"> Natrix
+# <img src="icon.svg" alt="" width="24" height="24"> Natrix
 
 **Website and docs: [natrix.wiki](https://natrix.wiki)**
 
