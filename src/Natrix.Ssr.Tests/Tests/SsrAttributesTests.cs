@@ -8,7 +8,7 @@ using Natrix.Signals;
 namespace Natrix.Ssr.Tests.Tests;
 
 /// <summary>
-/// Tests for SSR attribute rendering: boolean, enumerated boolean, int, uint, double, nullable string, and enum-mapped attributes.
+/// Tests for SSR attribute rendering: boolean, enumerated boolean, int, uint, double, nullable string, enum-mapped and ARIA attributes.
 /// </summary>
 public class SsrAttributesTests
 {
@@ -377,6 +377,163 @@ public class SsrAttributesTests
         var output = await SsrHelpers.RenderAsync(root);
 
         await Assert.That(output).IsEqualTo("<div id=\"updated\"></div>");
+    }
+
+    // ── ARIA attributes ────────────────────────────────────────────────────────
+
+    [Test]
+    public async Task Aria_string_attribute_renders_value()
+    {
+        var root = new SsrRenderRoot();
+
+        using var _ = new NatrixHostBuilder()
+            .UseRootRenderer(root)
+            .UseRootComponent(() => new Div
+            {
+                Props = new DivProps { AriaLabel = new Signal<string?>("Close") },
+            })
+            .Build()
+            .Mount();
+
+        var output = await SsrHelpers.RenderAsync(root);
+
+        await Assert.That(output).IsEqualTo("<div aria-label=\"Close\"></div>");
+    }
+
+    [Test]
+    public async Task Aria_string_attribute_is_absent_when_null()
+    {
+        var root = new SsrRenderRoot();
+
+        using var _ = new NatrixHostBuilder()
+            .UseRootRenderer(root)
+            .UseRootComponent(() => new Div
+            {
+                Props = new DivProps { AriaLabel = new Signal<string?>(null) },
+            })
+            .Build()
+            .Mount();
+
+        var output = await SsrHelpers.RenderAsync(root);
+
+        await Assert.That(output).IsEqualTo("<div></div>");
+    }
+
+    [Test]
+    public async Task Aria_id_reference_attribute_renders_ids()
+    {
+        var root = new SsrRenderRoot();
+
+        using var _ = new NatrixHostBuilder()
+            .UseRootRenderer(root)
+            .UseRootComponent(() => new Div
+            {
+                Props = new DivProps { AriaLabelledBy = new Signal<string?>("title subtitle") },
+            })
+            .Build()
+            .Mount();
+
+        var output = await SsrHelpers.RenderAsync(root);
+
+        await Assert.That(output).IsEqualTo("<div aria-labelledby=\"title subtitle\"></div>");
+    }
+
+    [Test]
+    public async Task Aria_boolean_attribute_renders_true_and_false()
+    {
+        var root = new SsrRenderRoot();
+
+        using var _ = new NatrixHostBuilder()
+            .UseRootRenderer(root)
+            .UseRootComponent(() => new Div
+            {
+                Props = new DivProps { AriaHidden = new Signal<bool>(true), AriaModal = new Signal<bool>(false) },
+            })
+            .Build()
+            .Mount();
+
+        var output = await SsrHelpers.RenderAsync(root);
+
+        await Assert.That(output).IsEqualTo("<div aria-hidden=\"true\" aria-modal=\"false\"></div>");
+    }
+
+    [Test]
+    public async Task Aria_int_attribute_renders_value()
+    {
+        var root = new SsrRenderRoot();
+
+        using var _ = new NatrixHostBuilder()
+            .UseRootRenderer(root)
+            .UseRootComponent(() => new Div
+            {
+                Props = new DivProps { AriaLevel = new Signal<int>(2) },
+            })
+            .Build()
+            .Mount();
+
+        var output = await SsrHelpers.RenderAsync(root);
+
+        await Assert.That(output).IsEqualTo("<div aria-level=\"2\"></div>");
+    }
+
+    [Test]
+    public async Task Aria_double_attribute_renders_value()
+    {
+        var root = new SsrRenderRoot();
+
+        using var _ = new NatrixHostBuilder()
+            .UseRootRenderer(root)
+            .UseRootComponent(() => new Div
+            {
+                Props = new DivProps { AriaValueNow = new Signal<double>(0.5) },
+            })
+            .Build()
+            .Mount();
+
+        var output = await SsrHelpers.RenderAsync(root);
+
+        await Assert.That(output).IsEqualTo("<div aria-valuenow=\"0.5\"></div>");
+    }
+
+    [Test]
+    public async Task Aria_attribute_renders_on_button_alongside_role()
+    {
+        var root = new SsrRenderRoot();
+
+        using var _ = new NatrixHostBuilder()
+            .UseRootRenderer(root)
+            .UseRootComponent(() => new Button
+            {
+                Props = new ButtonProps { Role = new Signal<string?>("switch"), AriaChecked = new Signal<string?>("mixed") },
+            })
+            .Build()
+            .Mount();
+
+        var output = await SsrHelpers.RenderAsync(root);
+
+        await Assert.That(output).IsEqualTo("<button aria-checked=\"mixed\" role=\"switch\"></button>");
+    }
+
+    [Test]
+    public async Task Aria_attribute_is_reactive()
+    {
+        var root = new SsrRenderRoot();
+        var expanded = new Signal<string?>("false");
+
+        using var _ = new NatrixHostBuilder()
+            .UseRootRenderer(root)
+            .UseRootComponent(() => new Div
+            {
+                Props = new DivProps { AriaExpanded = expanded },
+            })
+            .Build()
+            .Mount();
+
+        expanded.Value = "true";
+
+        var output = await SsrHelpers.RenderAsync(root);
+
+        await Assert.That(output).IsEqualTo("<div aria-expanded=\"true\"></div>");
     }
 
     // ── Data attributes ────────────────────────────────────────────────────────
