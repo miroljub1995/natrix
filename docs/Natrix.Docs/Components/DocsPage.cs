@@ -40,6 +40,14 @@ public class DocsPage : BaseComponent<DocsPageProps, NoEvents, NoSlots, NoExpose
                                     Content = "text/html; charset=utf-8".ToConstSignal(),
                                 },
                             },
+                            new Meta
+                            {
+                                Props = new MetaProps
+                                {
+                                    Name = "viewport".ToConstSignal(),
+                                    Content = "width=device-width, initial-scale=1".ToConstSignal(),
+                                },
+                            },
                             new Title
                             {
                                 Props = new TitleProps(),
