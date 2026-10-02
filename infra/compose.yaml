@@ -2,11 +2,9 @@ services:
   app:
     # The docs site, published from main by .github/workflows/docs-image.yml.
     # Built for arm64, to match the Ampere instance.
+    # deploy.sh pulls it every 5 minutes, so a new `latest` replaces the
+    # running container; an unchanged image leaves it running.
     image: ghcr.io/miroljub1995/natrix-docs:latest
-    # Check the registry on every `docker compose up`, so the scheduled rerun of
-    # it on the server picks up a new `latest` and recreates the container. When
-    # the image has not changed the container is left running untouched.
-    pull_policy: always
     restart: unless-stopped
     # Bound to loopback only. Docker's published ports bypass the host
     # firewall, so publishing on all interfaces would expose the app directly.
