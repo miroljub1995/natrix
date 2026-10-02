@@ -1,0 +1,71 @@
+name: Docs Image
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+# A newer push supersedes an image that is still building: only `latest` matters
+# to the server, and it should point at the newest main.
+concurrency:
+  group: docs-image-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    name: Publish docs image
+    # The server is an arm64 (Ampere) instance, and the docs host is published
+    # with NativeAOT, which cannot cross-compile between architectures without a
+    # cross toolchain. Building on an arm64 runner keeps it a native build.
+    runs-on: ubuntu-24.04-arm
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v6
+        with:
+          global-json-file: global.json
+
+      - name: Setup Node.js
+        # The Tailwind generator builds its embedded JavaScript bundle from
+        # source; Resources/ is generated output, not committed.
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: src/Natrix.TailwindCss.Generators/js/package-lock.json
+
+      - name: Install NativeAOT prerequisites
+        run: sudo apt-get update && sudo apt-get install -y clang zlib1g-dev
+
+      - name: Restore workloads
+        # The docs client is AOT-compiled to WebAssembly.
+        run: dotnet workload restore docs/Natrix.Docs.Client/Natrix.Docs.Client.csproj
+
+      - name: Log in to GitHub Container Registry
+        # The SDK's container tooling reads the credentials this writes to
+        # ~/.docker/config.json.
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish image
+        # Registry, repository and the `latest` tag come from Natrix.Docs.csproj.
+        # The platform goes in as ContainerRuntimeIdentifier, not --os/--arch:
+        # see the comment on RuntimeIdentifier in Natrix.Docs.csproj.
+        run: >
+          dotnet publish docs/Natrix.Docs/Natrix.Docs.csproj
+          -c Release -f net10.0
+          -t:PublishContainer
+          -p:ContainerRuntimeIdentifier=linux-arm64
