@@ -1,11 +1,12 @@
 services:
   app:
-    # Placeholder until the docs site has an image: answers every request with
-    # a description of it, which is enough to prove the wiring end to end.
-    # Multi-arch, so it runs on the arm64 (Ampere) instance.
-    image: traefik/whoami:v1.10
+    # The docs site, published from main by .github/workflows/docs-image.yml.
+    # Built for arm64, to match the Ampere instance.
+    # deploy.sh pulls it every 5 minutes, so a new `latest` replaces the
+    # running container; an unchanged image leaves it running.
+    image: ghcr.io/miroljub1995/natrix-docs:latest
     restart: unless-stopped
     # Bound to loopback only. Docker's published ports bypass the host
     # firewall, so publishing on all interfaces would expose the app directly.
     ports:
-      - "127.0.0.1:8080:80"
+      - "127.0.0.1:8080:8080"

@@ -3,6 +3,30 @@
         <PublishAot>true</PublishAot>
     </PropertyGroup>
 
+    <!-- Container image for natrix.wiki, built with `dotnet publish -t:PublishContainer`
+         (see .github/workflows/docs-image.yml). PublishAot makes the SDK pick the
+         runtime-deps base image, so the image carries no .NET runtime. -->
+    <PropertyGroup>
+        <ContainerRegistry>ghcr.io</ContainerRegistry>
+        <ContainerRepository>miroljub1995/natrix-docs</ContainerRepository>
+        <!-- The server pulls `latest`. -->
+        <ContainerImageTags>latest</ContainerImageTags>
+        <!-- The platform the image targets, passed as ContainerRuntimeIdentifier
+             rather than with the CLI's runtime, os or arch options. Those set
+             RuntimeIdentifier globally, so it reaches the browser-wasm client too:
+             the client's restore then asks for a Mono runtime pack for that RID,
+             which does not exist, and the client and everything it references
+             drop out of this project's references. -->
+        <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == '' and '$(ContainerRuntimeIdentifier)' != ''">$(ContainerRuntimeIdentifier)</RuntimeIdentifier>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ContainerPort Include="8080" Type="tcp" />
+        <!-- Links the package to the repository on GitHub, so it inherits the
+             repository's visibility and shows up on its page. -->
+        <ContainerLabel Include="org.opencontainers.image.source" Value="https://github.com/miroljub1995/natrix" />
+    </ItemGroup>
+
     <ItemGroup>
         <ProjectReference Include="..\Natrix.Docs.Client\Natrix.Docs.Client.csproj" />
         <ProjectReference Include="..\Natrix.Docs.Contracts\Natrix.Docs.Contracts.csproj" />
