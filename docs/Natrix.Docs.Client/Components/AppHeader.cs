@@ -24,6 +24,8 @@ public class AppHeader : BaseComponent<AppHeaderProps, NoEvents, NoSlots, NoExpo
                 ? "flex flex-col gap-2 px-4 pb-4 md:hidden"
                 : "hidden");
 
+        var mobileMenuExpanded = new Computed<string?>(() => mobileMenuOpen.Value ? "true" : "false");
+
         return
         [
             new Header
@@ -87,6 +89,9 @@ public class AppHeader : BaseComponent<AppHeaderProps, NoEvents, NoSlots, NoExpo
                             {
                                 Props = new ButtonProps
                                 {
+                                    AriaLabel = "Toggle navigation menu".ToConstSignal(),
+                                    AriaExpanded = mobileMenuExpanded,
+                                    AriaControls = "mobile-menu".ToConstSignal(),
                                     Class = "md:hidden inline-flex items-center justify-center rounded-lg p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors".ToConstSignal(),
                                 },
                                 Events = new ButtonEvents
@@ -138,6 +143,7 @@ public class AppHeader : BaseComponent<AppHeaderProps, NoEvents, NoSlots, NoExpo
                     {
                         Props = new DivProps
                         {
+                            Id = "mobile-menu".ToConstSignal(),
                             Class = mobileMenuClass,
                         },
                         Children =

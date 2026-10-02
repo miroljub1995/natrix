@@ -6,7 +6,7 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-public class GlobalHtmlComponentProps<TElement> : BaseDomComponentProps<TElement>
+public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TElement>
     where TElement : HTMLElement
 {
     private static readonly Func<object, SsrAttributeValue?> s_hiddenSelector =
@@ -36,7 +36,6 @@ public class GlobalHtmlComponentProps<TElement> : BaseDomComponentProps<TElement
     public IReadOnlySignal<string>? Nonce { get; init; }
     public IReadOnlySignal<string>? Part { get; init; }
     public IReadOnlySignal<string?>? Popover { get; init; }
-    public IReadOnlySignal<string?>? Role { get; init; }
     public IReadOnlySignal<string>? Slot { get; init; }
     public IReadOnlySignal<bool>? Spellcheck { get; init; }
     public IReadOnlySignal<string>? Style { get; init; }
@@ -58,7 +57,8 @@ public class GlobalHtmlComponentProps<TElement> : BaseDomComponentProps<TElement
 
         if (Autocapitalize != null)
         {
-            register(el => el.Autocapitalize = Autocapitalize.Value);
+            // Safari has no autocapitalize property, but iOS Safari honours the attribute.
+            register(el => el.SetAttribute("autocapitalize", Autocapitalize.Value));
         }
 
         if (Autocorrect != null)
@@ -163,11 +163,6 @@ public class GlobalHtmlComponentProps<TElement> : BaseDomComponentProps<TElement
         if (Popover != null)
         {
             register(el => el.Popover = Popover.Value);
-        }
-
-        if (Role != null)
-        {
-            register(el => el.Role = Role.Value);
         }
 
         if (Slot != null)
@@ -303,11 +298,6 @@ public class GlobalHtmlComponentProps<TElement> : BaseDomComponentProps<TElement
         if (Popover != null)
         {
             el.SetNullableString("popover", Popover);
-        }
-
-        if (Role != null)
-        {
-            el.SetNullableString("role", Role);
         }
 
         if (Slot != null)
