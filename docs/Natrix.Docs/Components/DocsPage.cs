@@ -51,7 +51,7 @@ public class DocsPage : BaseComponent<DocsPageProps, NoEvents, NoSlots, NoExpose
                             new Title
                             {
                                 Props = new TitleProps(),
-                                Children = [new DomText { Text = "Natrix Docs (SSR)".ToConstSignal() }],
+                                Children = [new DomText { Text = "Natrix".ToConstSignal() }],
                             },
                             new Link
                             {
