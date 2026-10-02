@@ -68,6 +68,7 @@ public class AppHeader : BaseComponent<AppHeaderProps, NoEvents, NoSlots, NoExpo
                                         Props = new ImgProps
                                         {
                                             Src = WwwRoot.Assets_Icon_Svg.ToConstSignal(),
+                                            Alt = "".ToConstSignal(),
                                             Class = "h-8 w-8".ToConstSignal(),
                                         },
                                     },

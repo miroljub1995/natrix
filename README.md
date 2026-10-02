@@ -1,4 +1,6 @@
-# Natrix
+# <img src="icon.svg" alt="" width="32" height="32"> Natrix
+
+**Website and docs: [natrix.wiki](https://natrix.wiki)**
 
 Natrix is a .NET WebAssembly toolkit for building browser applications in C#. It combines a JavaScript interop foundation, generated browser API bindings, and an experimental component layer for reactive UI rendering.
 
@@ -18,7 +20,7 @@ The repository is split into a few focused projects:
 - [src/Natrix.StdWeb/README.md](src/Natrix.StdWeb/README.md) explains the generated browser API bindings and direct DOM-style usage.
 - [src/Natrix.Core/README.md](src/Natrix.Core/README.md) explains the component framework and rendering model.
 - [src/Natrix.Swr/README.md](src/Natrix.Swr/README.md) explains stale-while-revalidate data fetching.
-- [docs/Natrix.Docs](docs/Natrix.Docs/) is the documentation site, including runnable examples.
+- [docs/Natrix.Docs](docs/Natrix.Docs/) is the documentation site, including runnable examples, published at [natrix.wiki](https://natrix.wiki).
 
 ## Requirements
 

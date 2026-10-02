@@ -45,6 +45,15 @@ public class DocsPage : BaseComponent<DocsPageProps, NoEvents, NoSlots, NoExpose
                                 Props = new TitleProps(),
                                 Children = [new DomText { Text = "Natrix Docs (SSR)".ToConstSignal() }],
                             },
+                            new Link
+                            {
+                                Props = new LinkProps
+                                {
+                                    Rel = "icon".ToConstSignal(),
+                                    Type = "image/svg+xml".ToConstSignal(),
+                                    Href = WwwRoot.Assets_Icon_Svg.ToConstSignal(),
+                                },
+                            },
                             new MainScript(),
                             new HydrationStateScript(),
                             new TailwindCssStyle { Css = Styles.GetCss() },
