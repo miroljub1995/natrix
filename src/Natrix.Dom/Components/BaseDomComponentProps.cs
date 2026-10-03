@@ -11,9 +11,15 @@ namespace Natrix.Dom.Components;
 /// </summary>
 /// <remarks>
 /// Props are stored sparsely: only the props that were set get an entry, so an instance costs two
-/// references per set prop instead of one field per declared prop. Each prop is described by a static
+/// references per set prop instead of one field per declared prop. Each prop is described by a
 /// <see cref="PropDescriptor{TValue}"/> holding the lambdas that apply it on the client and on the server;
 /// an entry pairs that descriptor with the signal, and rendering just walks the entries.
+/// <para>
+/// A prop's descriptor lives in a static field of the class that declares the prop, and is created by
+/// its <c>init</c> accessor the first time the prop is set. Keeping the lambdas in the accessor, rather
+/// than in a static initializer, lets the trimmer drop a prop the app never sets, together with the
+/// element members its lambdas use.
+/// </para>
 /// </remarks>
 public abstract class BaseDomComponentProps<TElement>
     where TElement : Element
@@ -22,20 +28,39 @@ public abstract class BaseDomComponentProps<TElement>
 
     /// <summary>
     /// Returns the signal stored for <paramref name="prop"/>, or <c>null</c> if that prop was not set.
+    /// A <c>null</c> descriptor means the prop was never set on any instance.
     /// </summary>
-    private protected IReadOnlySignal<TValue>? Get<TValue>(PropDescriptor<TValue> prop)
+    private protected IReadOnlySignal<TValue>? Get<TValue>(PropDescriptor<TValue>? prop)
     {
+        if (prop is null)
+        {
+            return null;
+        }
+
         var index = IndexOf(prop);
         return index >= 0 ? (IReadOnlySignal<TValue>)_entries![index].Signal : null;
     }
 
     /// <summary>
-    /// Stores <paramref name="signal"/> for <paramref name="prop"/>, replacing any earlier value;
-    /// <c>null</c> removes the prop.
+    /// Stores <paramref name="signal"/> for the prop whose descriptor lives in <paramref name="prop"/>,
+    /// replacing any earlier value; <c>null</c> removes the prop.
     /// </summary>
-    private protected void Set<TValue>(PropDescriptor<TValue> prop, IReadOnlySignal<TValue>? signal)
+    /// <param name="prop">The prop's static descriptor field; created with <paramref name="create"/> on
+    /// first use. Creation is thread-safe, so every instance agrees on one descriptor.</param>
+    /// <param name="signal">The prop's signal.</param>
+    /// <param name="create">Creates the descriptor.</param>
+    private protected void Set<TValue>(
+        ref PropDescriptor<TValue>? prop,
+        IReadOnlySignal<TValue>? signal,
+        Func<PropDescriptor<TValue>> create)
     {
-        var index = IndexOf(prop);
+        if (signal is null && prop is null)
+        {
+            return;
+        }
+
+        var descriptor = LazyInitializer.EnsureInitialized(ref prop, create);
+        var index = IndexOf(descriptor);
 
         if (signal is null)
         {
@@ -47,7 +72,7 @@ public abstract class BaseDomComponentProps<TElement>
             return;
         }
 
-        var entry = new PropEntry(prop, signal);
+        var entry = new PropEntry(descriptor, signal);
         if (index >= 0)
         {
             _entries![index] = entry;
@@ -122,8 +147,8 @@ public abstract class BaseDomComponentProps<TElement>
     }
 
     /// <summary>
-    /// Describes a prop whose signal carries <typeparamref name="TValue"/>. Declared once per prop as a
-    /// static field of the props class that owns it.
+    /// Describes a prop whose signal carries <typeparamref name="TValue"/>. One per prop, kept in a static
+    /// field of the props class that declares it.
     /// </summary>
     /// <param name="client">Applies the signal's current value to the element. Only runs in the browser;
     /// its body guards browser-only calls with <see cref="OperatingSystem.IsBrowser"/>.</param>

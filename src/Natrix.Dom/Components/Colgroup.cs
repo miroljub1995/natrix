@@ -7,17 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class ColgroupProps : GlobalHtmlComponentProps<HTMLTableColElement>
 {
-    private static readonly PropDescriptor<uint> s_span = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Span = s.Value;
-        },
-        static (el, s) => el.SetUInt("span", s));
+    private static PropDescriptor<uint>? s_span;
 
     public IReadOnlySignal<uint>? Span
     {
         get => Get(s_span);
-        init => Set(s_span, value);
+        init => Set(ref s_span, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Span = s.Value;
+            },
+            static (el, s) => el.SetUInt("span", s)));
     }
 }
 

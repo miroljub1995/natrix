@@ -7,173 +7,173 @@ namespace Natrix.Dom.Components;
 
 public class VideoProps : GlobalHtmlComponentProps<HTMLVideoElement>
 {
-    private static readonly PropDescriptor<string> s_src = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Src = s.Value;
-        },
-        static (el, s) => el.SetAttribute("src", s));
+    private static PropDescriptor<string>? s_src;
 
     public IReadOnlySignal<string>? Src
     {
         get => Get(s_src);
-        init => Set(s_src, value);
+        init => Set(ref s_src, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+            },
+            static (el, s) => el.SetAttribute("src", s)));
     }
 
-    private static readonly PropDescriptor<bool> s_autoplay = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Autoplay = s.Value;
-        },
-        static (el, s) => el.SetBoolean("autoplay", s));
+    private static PropDescriptor<bool>? s_autoplay;
 
     public IReadOnlySignal<bool>? Autoplay
     {
         get => Get(s_autoplay);
-        init => Set(s_autoplay, value);
+        init => Set(ref s_autoplay, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Autoplay = s.Value;
+            },
+            static (el, s) => el.SetBoolean("autoplay", s)));
     }
 
-    private static readonly PropDescriptor<bool> s_controls = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Controls = s.Value;
-        },
-        static (el, s) => el.SetBoolean("controls", s));
+    private static PropDescriptor<bool>? s_controls;
 
     public IReadOnlySignal<bool>? Controls
     {
         get => Get(s_controls);
-        init => Set(s_controls, value);
+        init => Set(ref s_controls, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Controls = s.Value;
+            },
+            static (el, s) => el.SetBoolean("controls", s)));
     }
 
-    private static readonly PropDescriptor<bool> s_loop = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Loop = s.Value;
-        },
-        static (el, s) => el.SetBoolean("loop", s));
+    private static PropDescriptor<bool>? s_loop;
 
     public IReadOnlySignal<bool>? Loop
     {
         get => Get(s_loop);
-        init => Set(s_loop, value);
+        init => Set(ref s_loop, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Loop = s.Value;
+            },
+            static (el, s) => el.SetBoolean("loop", s)));
     }
 
-    private static readonly PropDescriptor<bool> s_muted = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Muted = s.Value;
-        },
-        static (el, s) => el.SetBoolean("muted", s));
+    private static PropDescriptor<bool>? s_muted;
 
     public IReadOnlySignal<bool>? Muted
     {
         get => Get(s_muted);
-        init => Set(s_muted, value);
+        init => Set(ref s_muted, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Muted = s.Value;
+            },
+            static (el, s) => el.SetBoolean("muted", s)));
     }
 
-    private static readonly PropDescriptor<string> s_preload = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Preload = s.Value;
-        },
-        static (el, s) => el.SetAttribute("preload", s));
+    private static PropDescriptor<string>? s_preload;
 
     public IReadOnlySignal<string>? Preload
     {
         get => Get(s_preload);
-        init => Set(s_preload, value);
+        init => Set(ref s_preload, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Preload = s.Value;
+            },
+            static (el, s) => el.SetAttribute("preload", s)));
     }
 
-    private static readonly PropDescriptor<string?> s_crossOrigin = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.CrossOrigin = s.Value;
-        },
-        static (el, s) => el.SetNullableString("crossorigin", s));
+    private static PropDescriptor<string?>? s_crossOrigin;
 
     public IReadOnlySignal<string?>? CrossOrigin
     {
         get => Get(s_crossOrigin);
-        init => Set(s_crossOrigin, value);
+        init => Set(ref s_crossOrigin, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.CrossOrigin = s.Value;
+            },
+            static (el, s) => el.SetNullableString("crossorigin", s)));
     }
 
-    private static readonly PropDescriptor<string> s_poster = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Poster = s.Value;
-        },
-        static (el, s) => el.SetAttribute("poster", s));
+    private static PropDescriptor<string>? s_poster;
 
     public IReadOnlySignal<string>? Poster
     {
         get => Get(s_poster);
-        init => Set(s_poster, value);
+        init => Set(ref s_poster, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Poster = s.Value;
+            },
+            static (el, s) => el.SetAttribute("poster", s)));
     }
 
-    private static readonly PropDescriptor<bool> s_playsInline = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.PlaysInline = s.Value;
-        },
-        static (el, s) => el.SetBoolean("playsinline", s));
+    private static PropDescriptor<bool>? s_playsInline;
 
     public IReadOnlySignal<bool>? PlaysInline
     {
         get => Get(s_playsInline);
-        init => Set(s_playsInline, value);
+        init => Set(ref s_playsInline, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.PlaysInline = s.Value;
+            },
+            static (el, s) => el.SetBoolean("playsinline", s)));
     }
 
-    private static readonly PropDescriptor<uint> s_width = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Width = s.Value;
-        },
-        static (el, s) => el.SetUInt("width", s));
+    private static PropDescriptor<uint>? s_width;
 
     public IReadOnlySignal<uint>? Width
     {
         get => Get(s_width);
-        init => Set(s_width, value);
+        init => Set(ref s_width, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Width = s.Value;
+            },
+            static (el, s) => el.SetUInt("width", s)));
     }
 
-    private static readonly PropDescriptor<uint> s_height = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Height = s.Value;
-        },
-        static (el, s) => el.SetUInt("height", s));
+    private static PropDescriptor<uint>? s_height;
 
     public IReadOnlySignal<uint>? Height
     {
         get => Get(s_height);
-        init => Set(s_height, value);
+        init => Set(ref s_height, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Height = s.Value;
+            },
+            static (el, s) => el.SetUInt("height", s)));
     }
 
-    private static readonly PropDescriptor<bool> s_disablePictureInPicture = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.DisablePictureInPicture = s.Value;
-        },
-        static (el, s) => el.SetBoolean("disablepictureinpicture", s));
+    private static PropDescriptor<bool>? s_disablePictureInPicture;
 
     public IReadOnlySignal<bool>? DisablePictureInPicture
     {
         get => Get(s_disablePictureInPicture);
-        init => Set(s_disablePictureInPicture, value);
+        init => Set(ref s_disablePictureInPicture, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.DisablePictureInPicture = s.Value;
+            },
+            static (el, s) => el.SetBoolean("disablepictureinpicture", s)));
     }
 
-    private static readonly PropDescriptor<bool> s_disableRemotePlayback = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.DisableRemotePlayback = s.Value;
-        },
-        static (el, s) => el.SetBoolean("disableremoteplayback", s));
+    private static PropDescriptor<bool>? s_disableRemotePlayback;
 
     public IReadOnlySignal<bool>? DisableRemotePlayback
     {
         get => Get(s_disableRemotePlayback);
-        init => Set(s_disableRemotePlayback, value);
+        init => Set(ref s_disableRemotePlayback, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.DisableRemotePlayback = s.Value;
+            },
+            static (el, s) => el.SetBoolean("disableremoteplayback", s)));
     }
 }
 

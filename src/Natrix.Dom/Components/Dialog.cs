@@ -7,17 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class DialogProps : GlobalHtmlComponentProps<HTMLDialogElement>
 {
-    private static readonly PropDescriptor<bool> s_open = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Open = s.Value;
-        },
-        static (el, s) => el.SetBoolean("open", s));
+    private static PropDescriptor<bool>? s_open;
 
     public IReadOnlySignal<bool>? Open
     {
         get => Get(s_open);
-        init => Set(s_open, value);
+        init => Set(ref s_open, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Open = s.Value;
+            },
+            static (el, s) => el.SetBoolean("open", s)));
     }
 }
 

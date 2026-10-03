@@ -7,17 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class LabelProps : GlobalHtmlComponentProps<HTMLLabelElement>
 {
-    private static readonly PropDescriptor<string> s_htmlFor = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.HtmlFor = s.Value;
-        },
-        static (el, s) => el.SetAttribute("for", s));
+    private static PropDescriptor<string>? s_htmlFor;
 
     public IReadOnlySignal<string>? HtmlFor
     {
         get => Get(s_htmlFor);
-        init => Set(s_htmlFor, value);
+        init => Set(ref s_htmlFor, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.HtmlFor = s.Value;
+            },
+            static (el, s) => el.SetAttribute("for", s)));
     }
 }
 

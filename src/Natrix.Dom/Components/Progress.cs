@@ -7,30 +7,30 @@ namespace Natrix.Dom.Components;
 
 public class ProgressProps : GlobalHtmlComponentProps<HTMLProgressElement>
 {
-    private static readonly PropDescriptor<double> s_value = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Value = s.Value;
-        },
-        static (el, s) => el.SetDouble("value", s));
+    private static PropDescriptor<double>? s_value;
 
     public IReadOnlySignal<double>? Value
     {
         get => Get(s_value);
-        init => Set(s_value, value);
+        init => Set(ref s_value, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+            },
+            static (el, s) => el.SetDouble("value", s)));
     }
 
-    private static readonly PropDescriptor<double> s_max = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Max = s.Value;
-        },
-        static (el, s) => el.SetDouble("max", s));
+    private static PropDescriptor<double>? s_max;
 
     public IReadOnlySignal<double>? Max
     {
         get => Get(s_max);
-        init => Set(s_max, value);
+        init => Set(ref s_max, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Max = s.Value;
+            },
+            static (el, s) => el.SetDouble("max", s)));
     }
 }
 

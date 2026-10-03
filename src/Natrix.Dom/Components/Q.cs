@@ -7,17 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class QProps : GlobalHtmlComponentProps<HTMLQuoteElement>
 {
-    private static readonly PropDescriptor<string> s_cite = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Cite = s.Value;
-        },
-        static (el, s) => el.SetAttribute("cite", s));
+    private static PropDescriptor<string>? s_cite;
 
     public IReadOnlySignal<string>? Cite
     {
         get => Get(s_cite);
-        init => Set(s_cite, value);
+        init => Set(ref s_cite, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Cite = s.Value;
+            },
+            static (el, s) => el.SetAttribute("cite", s)));
     }
 }
 

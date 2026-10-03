@@ -7,17 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class TimeProps : GlobalHtmlComponentProps<HTMLTimeElement>
 {
-    private static readonly PropDescriptor<string> s_dateTime = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.DateTime = s.Value;
-        },
-        static (el, s) => el.SetAttribute("datetime", s));
+    private static PropDescriptor<string>? s_dateTime;
 
     public IReadOnlySignal<string>? DateTime
     {
         get => Get(s_dateTime);
-        init => Set(s_dateTime, value);
+        init => Set(ref s_dateTime, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.DateTime = s.Value;
+            },
+            static (el, s) => el.SetAttribute("datetime", s)));
     }
 }
 

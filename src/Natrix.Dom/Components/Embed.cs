@@ -7,56 +7,56 @@ namespace Natrix.Dom.Components;
 
 public class EmbedProps : GlobalHtmlComponentProps<HTMLEmbedElement>
 {
-    private static readonly PropDescriptor<string> s_src = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Src = s.Value;
-        },
-        static (el, s) => el.SetAttribute("src", s));
+    private static PropDescriptor<string>? s_src;
 
     public IReadOnlySignal<string>? Src
     {
         get => Get(s_src);
-        init => Set(s_src, value);
+        init => Set(ref s_src, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+            },
+            static (el, s) => el.SetAttribute("src", s)));
     }
 
-    private static readonly PropDescriptor<string> s_type = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Type = s.Value;
-        },
-        static (el, s) => el.SetAttribute("type", s));
+    private static PropDescriptor<string>? s_type;
 
     public IReadOnlySignal<string>? Type
     {
         get => Get(s_type);
-        init => Set(s_type, value);
+        init => Set(ref s_type, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+            },
+            static (el, s) => el.SetAttribute("type", s)));
     }
 
-    private static readonly PropDescriptor<string> s_width = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Width = s.Value;
-        },
-        static (el, s) => el.SetAttribute("width", s));
+    private static PropDescriptor<string>? s_width;
 
     public IReadOnlySignal<string>? Width
     {
         get => Get(s_width);
-        init => Set(s_width, value);
+        init => Set(ref s_width, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Width = s.Value;
+            },
+            static (el, s) => el.SetAttribute("width", s)));
     }
 
-    private static readonly PropDescriptor<string> s_height = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Height = s.Value;
-        },
-        static (el, s) => el.SetAttribute("height", s));
+    private static PropDescriptor<string>? s_height;
 
     public IReadOnlySignal<string>? Height
     {
         get => Get(s_height);
-        init => Set(s_height, value);
+        init => Set(ref s_height, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Height = s.Value;
+            },
+            static (el, s) => el.SetAttribute("height", s)));
     }
 }
 

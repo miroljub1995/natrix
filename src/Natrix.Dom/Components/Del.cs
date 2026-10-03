@@ -7,30 +7,30 @@ namespace Natrix.Dom.Components;
 
 public class DelProps : GlobalHtmlComponentProps<HTMLModElement>
 {
-    private static readonly PropDescriptor<string> s_cite = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Cite = s.Value;
-        },
-        static (el, s) => el.SetAttribute("cite", s));
+    private static PropDescriptor<string>? s_cite;
 
     public IReadOnlySignal<string>? Cite
     {
         get => Get(s_cite);
-        init => Set(s_cite, value);
+        init => Set(ref s_cite, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Cite = s.Value;
+            },
+            static (el, s) => el.SetAttribute("cite", s)));
     }
 
-    private static readonly PropDescriptor<string> s_dateTime = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.DateTime = s.Value;
-        },
-        static (el, s) => el.SetAttribute("datetime", s));
+    private static PropDescriptor<string>? s_dateTime;
 
     public IReadOnlySignal<string>? DateTime
     {
         get => Get(s_dateTime);
-        init => Set(s_dateTime, value);
+        init => Set(ref s_dateTime, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.DateTime = s.Value;
+            },
+            static (el, s) => el.SetAttribute("datetime", s)));
     }
 }
 

@@ -8,134 +8,134 @@ namespace Natrix.Dom.Components;
 
 public class ScriptProps : GlobalHtmlComponentProps<HTMLScriptElement>
 {
-    private static readonly PropDescriptor<string> s_src = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Src = s.Value;
-        },
-        static (el, s) => el.SetAttribute("src", s));
+    private static PropDescriptor<string>? s_src;
 
     public IReadOnlySignal<string>? Src
     {
         get => Get(s_src);
-        init => Set(s_src, value);
+        init => Set(ref s_src, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+            },
+            static (el, s) => el.SetAttribute("src", s)));
     }
 
-    private static readonly PropDescriptor<string> s_type = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Type = s.Value;
-        },
-        static (el, s) => el.SetAttribute("type", s));
+    private static PropDescriptor<string>? s_type;
 
     public IReadOnlySignal<string>? Type
     {
         get => Get(s_type);
-        init => Set(s_type, value);
+        init => Set(ref s_type, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+            },
+            static (el, s) => el.SetAttribute("type", s)));
     }
 
-    private static readonly PropDescriptor<bool> s_noModule = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.NoModule = s.Value;
-        },
-        static (el, s) => el.SetBoolean("nomodule", s));
+    private static PropDescriptor<bool>? s_noModule;
 
     public IReadOnlySignal<bool>? NoModule
     {
         get => Get(s_noModule);
-        init => Set(s_noModule, value);
+        init => Set(ref s_noModule, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.NoModule = s.Value;
+            },
+            static (el, s) => el.SetBoolean("nomodule", s)));
     }
 
-    private static readonly PropDescriptor<bool> s_async = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Async = s.Value;
-        },
-        static (el, s) => el.SetBoolean("async", s));
+    private static PropDescriptor<bool>? s_async;
 
     public IReadOnlySignal<bool>? Async
     {
         get => Get(s_async);
-        init => Set(s_async, value);
+        init => Set(ref s_async, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Async = s.Value;
+            },
+            static (el, s) => el.SetBoolean("async", s)));
     }
 
-    private static readonly PropDescriptor<bool> s_defer = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Defer = s.Value;
-        },
-        static (el, s) => el.SetBoolean("defer", s));
+    private static PropDescriptor<bool>? s_defer;
 
     public IReadOnlySignal<bool>? Defer
     {
         get => Get(s_defer);
-        init => Set(s_defer, value);
+        init => Set(ref s_defer, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Defer = s.Value;
+            },
+            static (el, s) => el.SetBoolean("defer", s)));
     }
 
-    private static readonly PropDescriptor<string?> s_crossOrigin = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.CrossOrigin = s.Value;
-        },
-        static (el, s) => el.SetNullableString("crossorigin", s));
+    private static PropDescriptor<string?>? s_crossOrigin;
 
     public IReadOnlySignal<string?>? CrossOrigin
     {
         get => Get(s_crossOrigin);
-        init => Set(s_crossOrigin, value);
+        init => Set(ref s_crossOrigin, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.CrossOrigin = s.Value;
+            },
+            static (el, s) => el.SetNullableString("crossorigin", s)));
     }
 
-    private static readonly PropDescriptor<string> s_integrity = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Integrity = s.Value;
-        },
-        static (el, s) => el.SetAttribute("integrity", s));
+    private static PropDescriptor<string>? s_integrity;
 
     public IReadOnlySignal<string>? Integrity
     {
         get => Get(s_integrity);
-        init => Set(s_integrity, value);
+        init => Set(ref s_integrity, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Integrity = s.Value;
+            },
+            static (el, s) => el.SetAttribute("integrity", s)));
     }
 
-    private static readonly PropDescriptor<string> s_referrerPolicy = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.ReferrerPolicy = s.Value;
-        },
-        static (el, s) => el.SetAttribute("referrerpolicy", s));
+    private static PropDescriptor<string>? s_referrerPolicy;
 
     public IReadOnlySignal<string>? ReferrerPolicy
     {
         get => Get(s_referrerPolicy);
-        init => Set(s_referrerPolicy, value);
+        init => Set(ref s_referrerPolicy, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.ReferrerPolicy = s.Value;
+            },
+            static (el, s) => el.SetAttribute("referrerpolicy", s)));
     }
 
-    private static readonly PropDescriptor<string> s_fetchPriority = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.FetchPriority = s.Value;
-        },
-        static (el, s) => el.SetAttribute("fetchpriority", s));
+    private static PropDescriptor<string>? s_fetchPriority;
 
     public IReadOnlySignal<string>? FetchPriority
     {
         get => Get(s_fetchPriority);
-        init => Set(s_fetchPriority, value);
+        init => Set(ref s_fetchPriority, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.FetchPriority = s.Value;
+            },
+            static (el, s) => el.SetAttribute("fetchpriority", s)));
     }
 
-    private static readonly PropDescriptor<string> s_blocking = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Blocking.Value = s.Value;
-        },
-        static (el, s) => el.SetAttribute("blocking", s));
+    private static PropDescriptor<string>? s_blocking;
 
     public IReadOnlySignal<string>? Blocking
     {
         get => Get(s_blocking);
-        init => Set(s_blocking, value);
+        init => Set(ref s_blocking, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Blocking.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("blocking", s)));
     }
 }
 

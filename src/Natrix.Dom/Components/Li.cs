@@ -7,17 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class LiProps : GlobalHtmlComponentProps<HTMLLIElement>
 {
-    private static readonly PropDescriptor<int> s_value = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Value = s.Value;
-        },
-        static (el, s) => el.SetInt("value", s));
+    private static PropDescriptor<int>? s_value;
 
     public IReadOnlySignal<int>? Value
     {
         get => Get(s_value);
-        init => Set(s_value, value);
+        init => Set(ref s_value, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+            },
+            static (el, s) => el.SetInt("value", s)));
     }
 }
 

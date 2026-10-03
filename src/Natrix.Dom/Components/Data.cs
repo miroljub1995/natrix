@@ -7,17 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class DataProps : GlobalHtmlComponentProps<HTMLDataElement>
 {
-    private static readonly PropDescriptor<string> s_value = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Value = s.Value;
-        },
-        static (el, s) => el.SetAttribute("value", s));
+    private static PropDescriptor<string>? s_value;
 
     public IReadOnlySignal<string>? Value
     {
         get => Get(s_value);
-        init => Set(s_value, value);
+        init => Set(ref s_value, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("value", s)));
     }
 }
 

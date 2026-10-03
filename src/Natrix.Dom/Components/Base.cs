@@ -7,30 +7,30 @@ namespace Natrix.Dom.Components;
 
 public class BaseProps : GlobalHtmlComponentProps<HTMLBaseElement>
 {
-    private static readonly PropDescriptor<string> s_href = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Href = s.Value;
-        },
-        static (el, s) => el.SetAttribute("href", s));
+    private static PropDescriptor<string>? s_href;
 
     public IReadOnlySignal<string>? Href
     {
         get => Get(s_href);
-        init => Set(s_href, value);
+        init => Set(ref s_href, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Href = s.Value;
+            },
+            static (el, s) => el.SetAttribute("href", s)));
     }
 
-    private static readonly PropDescriptor<string> s_target = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Target = s.Value;
-        },
-        static (el, s) => el.SetAttribute("target", s));
+    private static PropDescriptor<string>? s_target;
 
     public IReadOnlySignal<string>? Target
     {
         get => Get(s_target);
-        init => Set(s_target, value);
+        init => Set(ref s_target, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Target = s.Value;
+            },
+            static (el, s) => el.SetAttribute("target", s)));
     }
 }
 

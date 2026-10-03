@@ -7,69 +7,69 @@ namespace Natrix.Dom.Components;
 
 public class TrackProps : GlobalHtmlComponentProps<HTMLTrackElement>
 {
-    private static readonly PropDescriptor<string> s_kind = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Kind = s.Value;
-        },
-        static (el, s) => el.SetAttribute("kind", s));
+    private static PropDescriptor<string>? s_kind;
 
     public IReadOnlySignal<string>? Kind
     {
         get => Get(s_kind);
-        init => Set(s_kind, value);
+        init => Set(ref s_kind, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Kind = s.Value;
+            },
+            static (el, s) => el.SetAttribute("kind", s)));
     }
 
-    private static readonly PropDescriptor<string> s_src = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Src = s.Value;
-        },
-        static (el, s) => el.SetAttribute("src", s));
+    private static PropDescriptor<string>? s_src;
 
     public IReadOnlySignal<string>? Src
     {
         get => Get(s_src);
-        init => Set(s_src, value);
+        init => Set(ref s_src, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+            },
+            static (el, s) => el.SetAttribute("src", s)));
     }
 
-    private static readonly PropDescriptor<string> s_srclang = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Srclang = s.Value;
-        },
-        static (el, s) => el.SetAttribute("srclang", s));
+    private static PropDescriptor<string>? s_srclang;
 
     public IReadOnlySignal<string>? Srclang
     {
         get => Get(s_srclang);
-        init => Set(s_srclang, value);
+        init => Set(ref s_srclang, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Srclang = s.Value;
+            },
+            static (el, s) => el.SetAttribute("srclang", s)));
     }
 
-    private static readonly PropDescriptor<string> s_label = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Label = s.Value;
-        },
-        static (el, s) => el.SetAttribute("label", s));
+    private static PropDescriptor<string>? s_label;
 
     public IReadOnlySignal<string>? Label
     {
         get => Get(s_label);
-        init => Set(s_label, value);
+        init => Set(ref s_label, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Label = s.Value;
+            },
+            static (el, s) => el.SetAttribute("label", s)));
     }
 
-    private static readonly PropDescriptor<bool> s_default = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Default = s.Value;
-        },
-        static (el, s) => el.SetBoolean("default", s));
+    private static PropDescriptor<bool>? s_default;
 
     public IReadOnlySignal<bool>? Default
     {
         get => Get(s_default);
-        init => Set(s_default, value);
+        init => Set(ref s_default, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Default = s.Value;
+            },
+            static (el, s) => el.SetBoolean("default", s)));
     }
 }
 

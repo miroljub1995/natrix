@@ -7,56 +7,56 @@ namespace Natrix.Dom.Components;
 
 public class OutputProps : GlobalHtmlComponentProps<HTMLOutputElement>
 {
-    private static readonly PropDescriptor<string> s_htmlFor = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.HtmlFor.Value = s.Value;
-        },
-        static (el, s) => el.SetAttribute("for", s));
+    private static PropDescriptor<string>? s_htmlFor;
 
     public IReadOnlySignal<string>? HtmlFor
     {
         get => Get(s_htmlFor);
-        init => Set(s_htmlFor, value);
+        init => Set(ref s_htmlFor, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.HtmlFor.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("for", s)));
     }
 
-    private static readonly PropDescriptor<string> s_name = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Name = s.Value;
-        },
-        static (el, s) => el.SetAttribute("name", s));
+    private static PropDescriptor<string>? s_name;
 
     public IReadOnlySignal<string>? Name
     {
         get => Get(s_name);
-        init => Set(s_name, value);
+        init => Set(ref s_name, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+            },
+            static (el, s) => el.SetAttribute("name", s)));
     }
 
-    private static readonly PropDescriptor<string> s_defaultValue = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.DefaultValue = s.Value;
-        },
-        static (el, s) => el.SetAttribute("value", s));
+    private static PropDescriptor<string>? s_defaultValue;
 
     public IReadOnlySignal<string>? DefaultValue
     {
         get => Get(s_defaultValue);
-        init => Set(s_defaultValue, value);
+        init => Set(ref s_defaultValue, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.DefaultValue = s.Value;
+            },
+            static (el, s) => el.SetAttribute("value", s)));
     }
 
-    private static readonly PropDescriptor<string> s_value = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Value = s.Value;
-        },
-        static (el, s) => el.SetAttribute("value", s));
+    private static PropDescriptor<string>? s_value;
 
     public IReadOnlySignal<string>? Value
     {
         get => Get(s_value);
-        init => Set(s_value, value);
+        init => Set(ref s_value, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("value", s)));
     }
 }
 

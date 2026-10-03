@@ -7,69 +7,69 @@ namespace Natrix.Dom.Components;
 
 public class OptionProps : GlobalHtmlComponentProps<HTMLOptionElement>
 {
-    private static readonly PropDescriptor<bool> s_disabled = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
-        },
-        static (el, s) => el.SetBoolean("disabled", s));
+    private static PropDescriptor<bool>? s_disabled;
 
     public IReadOnlySignal<bool>? Disabled
     {
         get => Get(s_disabled);
-        init => Set(s_disabled, value);
+        init => Set(ref s_disabled, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
+            },
+            static (el, s) => el.SetBoolean("disabled", s)));
     }
 
-    private static readonly PropDescriptor<string> s_label = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Label = s.Value;
-        },
-        static (el, s) => el.SetAttribute("label", s));
+    private static PropDescriptor<string>? s_label;
 
     public IReadOnlySignal<string>? Label
     {
         get => Get(s_label);
-        init => Set(s_label, value);
+        init => Set(ref s_label, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Label = s.Value;
+            },
+            static (el, s) => el.SetAttribute("label", s)));
     }
 
-    private static readonly PropDescriptor<bool> s_defaultSelected = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.DefaultSelected = s.Value;
-        },
-        static (el, s) => el.SetBoolean("selected", s));
+    private static PropDescriptor<bool>? s_defaultSelected;
 
     public IReadOnlySignal<bool>? DefaultSelected
     {
         get => Get(s_defaultSelected);
-        init => Set(s_defaultSelected, value);
+        init => Set(ref s_defaultSelected, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.DefaultSelected = s.Value;
+            },
+            static (el, s) => el.SetBoolean("selected", s)));
     }
 
-    private static readonly PropDescriptor<bool> s_selected = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Selected = s.Value;
-        },
-        static (el, s) => el.SetBoolean("selected", s));
+    private static PropDescriptor<bool>? s_selected;
 
     public IReadOnlySignal<bool>? Selected
     {
         get => Get(s_selected);
-        init => Set(s_selected, value);
+        init => Set(ref s_selected, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Selected = s.Value;
+            },
+            static (el, s) => el.SetBoolean("selected", s)));
     }
 
-    private static readonly PropDescriptor<string> s_value = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Value = s.Value;
-        },
-        static (el, s) => el.SetAttribute("value", s));
+    private static PropDescriptor<string>? s_value;
 
     public IReadOnlySignal<string>? Value
     {
         get => Get(s_value);
-        init => Set(s_value, value);
+        init => Set(ref s_value, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("value", s)));
     }
 }
 

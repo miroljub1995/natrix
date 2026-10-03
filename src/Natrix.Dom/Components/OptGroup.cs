@@ -7,30 +7,30 @@ namespace Natrix.Dom.Components;
 
 public class OptGroupProps : GlobalHtmlComponentProps<HTMLOptGroupElement>
 {
-    private static readonly PropDescriptor<bool> s_disabled = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
-        },
-        static (el, s) => el.SetBoolean("disabled", s));
+    private static PropDescriptor<bool>? s_disabled;
 
     public IReadOnlySignal<bool>? Disabled
     {
         get => Get(s_disabled);
-        init => Set(s_disabled, value);
+        init => Set(ref s_disabled, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
+            },
+            static (el, s) => el.SetBoolean("disabled", s)));
     }
 
-    private static readonly PropDescriptor<string> s_label = new(
-        static (el, s) =>
-        {
-            if (OperatingSystem.IsBrowser()) el.Label = s.Value;
-        },
-        static (el, s) => el.SetAttribute("label", s));
+    private static PropDescriptor<string>? s_label;
 
     public IReadOnlySignal<string>? Label
     {
         get => Get(s_label);
-        init => Set(s_label, value);
+        init => Set(ref s_label, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Label = s.Value;
+            },
+            static (el, s) => el.SetAttribute("label", s)));
     }
 }
 
