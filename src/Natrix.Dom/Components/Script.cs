@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.Components;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
@@ -7,13 +6,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class ScriptProps : GlobalHtmlComponentProps<HTMLScriptElement>
 {
     private static readonly PropDescriptor<string> s_src = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Src = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+        },
         static (el, s) => el.SetAttribute("src", s));
 
     public IReadOnlySignal<string>? Src
@@ -23,9 +22,10 @@ public class ScriptProps : GlobalHtmlComponentProps<HTMLScriptElement>
     }
 
     private static readonly PropDescriptor<string> s_type = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Type = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+        },
         static (el, s) => el.SetAttribute("type", s));
 
     public IReadOnlySignal<string>? Type
@@ -35,9 +35,10 @@ public class ScriptProps : GlobalHtmlComponentProps<HTMLScriptElement>
     }
 
     private static readonly PropDescriptor<bool> s_noModule = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.NoModule = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.NoModule = s.Value;
+        },
         static (el, s) => el.SetBoolean("nomodule", s));
 
     public IReadOnlySignal<bool>? NoModule
@@ -47,9 +48,10 @@ public class ScriptProps : GlobalHtmlComponentProps<HTMLScriptElement>
     }
 
     private static readonly PropDescriptor<bool> s_async = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Async = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Async = s.Value;
+        },
         static (el, s) => el.SetBoolean("async", s));
 
     public IReadOnlySignal<bool>? Async
@@ -59,9 +61,10 @@ public class ScriptProps : GlobalHtmlComponentProps<HTMLScriptElement>
     }
 
     private static readonly PropDescriptor<bool> s_defer = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Defer = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Defer = s.Value;
+        },
         static (el, s) => el.SetBoolean("defer", s));
 
     public IReadOnlySignal<bool>? Defer
@@ -71,9 +74,10 @@ public class ScriptProps : GlobalHtmlComponentProps<HTMLScriptElement>
     }
 
     private static readonly PropDescriptor<string?> s_crossOrigin = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.CrossOrigin = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.CrossOrigin = s.Value;
+        },
         static (el, s) => el.SetNullableString("crossorigin", s));
 
     public IReadOnlySignal<string?>? CrossOrigin
@@ -83,9 +87,10 @@ public class ScriptProps : GlobalHtmlComponentProps<HTMLScriptElement>
     }
 
     private static readonly PropDescriptor<string> s_integrity = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Integrity = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Integrity = s.Value;
+        },
         static (el, s) => el.SetAttribute("integrity", s));
 
     public IReadOnlySignal<string>? Integrity
@@ -95,9 +100,10 @@ public class ScriptProps : GlobalHtmlComponentProps<HTMLScriptElement>
     }
 
     private static readonly PropDescriptor<string> s_referrerPolicy = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.ReferrerPolicy = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.ReferrerPolicy = s.Value;
+        },
         static (el, s) => el.SetAttribute("referrerpolicy", s));
 
     public IReadOnlySignal<string>? ReferrerPolicy
@@ -107,9 +113,10 @@ public class ScriptProps : GlobalHtmlComponentProps<HTMLScriptElement>
     }
 
     private static readonly PropDescriptor<string> s_fetchPriority = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.FetchPriority = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.FetchPriority = s.Value;
+        },
         static (el, s) => el.SetAttribute("fetchpriority", s));
 
     public IReadOnlySignal<string>? FetchPriority
@@ -119,9 +126,10 @@ public class ScriptProps : GlobalHtmlComponentProps<HTMLScriptElement>
     }
 
     private static readonly PropDescriptor<string> s_blocking = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Blocking.Value = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Blocking.Value = s.Value;
+        },
         static (el, s) => el.SetAttribute("blocking", s));
 
     public IReadOnlySignal<string>? Blocking

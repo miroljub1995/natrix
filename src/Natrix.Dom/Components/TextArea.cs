@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,13 +5,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
 {
     private static readonly PropDescriptor<string> s_autocomplete = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Autocomplete = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Autocomplete = s.Value;
+        },
         static (el, s) => el.SetAttribute("autocomplete", s));
 
     public IReadOnlySignal<string>? Autocomplete
@@ -22,9 +21,10 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
     }
 
     private static readonly PropDescriptor<uint> s_cols = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Cols = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Cols = s.Value;
+        },
         static (el, s) => el.SetUInt("cols", s));
 
     public IReadOnlySignal<uint>? Cols
@@ -34,9 +34,10 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_dirName = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.DirName = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.DirName = s.Value;
+        },
         static (el, s) => el.SetAttribute("dirname", s));
 
     public IReadOnlySignal<string>? DirName
@@ -46,9 +47,10 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
     }
 
     private static readonly PropDescriptor<bool> s_disabled = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Disabled = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
+        },
         static (el, s) => el.SetBoolean("disabled", s));
 
     public IReadOnlySignal<bool>? Disabled
@@ -58,9 +60,10 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
     }
 
     private static readonly PropDescriptor<int> s_maxLength = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.MaxLength = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.MaxLength = s.Value;
+        },
         static (el, s) => el.SetInt("maxlength", s));
 
     public IReadOnlySignal<int>? MaxLength
@@ -70,9 +73,10 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
     }
 
     private static readonly PropDescriptor<int> s_minLength = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.MinLength = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.MinLength = s.Value;
+        },
         static (el, s) => el.SetInt("minlength", s));
 
     public IReadOnlySignal<int>? MinLength
@@ -82,9 +86,10 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_name = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Name = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+        },
         static (el, s) => el.SetAttribute("name", s));
 
     public IReadOnlySignal<string>? Name
@@ -94,9 +99,10 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_placeholder = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Placeholder = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Placeholder = s.Value;
+        },
         static (el, s) => el.SetAttribute("placeholder", s));
 
     public IReadOnlySignal<string>? Placeholder
@@ -106,9 +112,10 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
     }
 
     private static readonly PropDescriptor<bool> s_readOnly = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.ReadOnly = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.ReadOnly = s.Value;
+        },
         static (el, s) => el.SetBoolean("readonly", s));
 
     public IReadOnlySignal<bool>? ReadOnly
@@ -118,9 +125,10 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
     }
 
     private static readonly PropDescriptor<bool> s_required = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Required = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Required = s.Value;
+        },
         static (el, s) => el.SetBoolean("required", s));
 
     public IReadOnlySignal<bool>? Required
@@ -130,9 +138,10 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
     }
 
     private static readonly PropDescriptor<uint> s_rows = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Rows = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Rows = s.Value;
+        },
         static (el, s) => el.SetUInt("rows", s));
 
     public IReadOnlySignal<uint>? Rows
@@ -142,9 +151,10 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_wrap = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Wrap = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Wrap = s.Value;
+        },
         static (el, s) => el.SetAttribute("wrap", s));
 
     public IReadOnlySignal<string>? Wrap
@@ -154,9 +164,10 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_value = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Value = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+        },
         static (el, s) => el.SetAttribute("value", s));
 
     public IReadOnlySignal<string>? Value
@@ -166,9 +177,10 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_defaultValue = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.DefaultValue = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.DefaultValue = s.Value;
+        },
         static (el, s) => el.SetAttribute("value", s));
 
     public IReadOnlySignal<string>? DefaultValue

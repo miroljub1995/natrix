@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,13 +5,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class OutputProps : GlobalHtmlComponentProps<HTMLOutputElement>
 {
     private static readonly PropDescriptor<string> s_htmlFor = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.HtmlFor.Value = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.HtmlFor.Value = s.Value;
+        },
         static (el, s) => el.SetAttribute("for", s));
 
     public IReadOnlySignal<string>? HtmlFor
@@ -22,9 +21,10 @@ public class OutputProps : GlobalHtmlComponentProps<HTMLOutputElement>
     }
 
     private static readonly PropDescriptor<string> s_name = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Name = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+        },
         static (el, s) => el.SetAttribute("name", s));
 
     public IReadOnlySignal<string>? Name
@@ -34,9 +34,10 @@ public class OutputProps : GlobalHtmlComponentProps<HTMLOutputElement>
     }
 
     private static readonly PropDescriptor<string> s_defaultValue = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.DefaultValue = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.DefaultValue = s.Value;
+        },
         static (el, s) => el.SetAttribute("value", s));
 
     public IReadOnlySignal<string>? DefaultValue
@@ -46,9 +47,10 @@ public class OutputProps : GlobalHtmlComponentProps<HTMLOutputElement>
     }
 
     private static readonly PropDescriptor<string> s_value = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Value = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+        },
         static (el, s) => el.SetAttribute("value", s));
 
     public IReadOnlySignal<string>? Value

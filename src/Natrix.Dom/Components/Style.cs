@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.Components;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
@@ -7,13 +6,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class StyleProps : GlobalHtmlComponentProps<HTMLStyleElement>
 {
     private static readonly PropDescriptor<bool> s_disabled = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Disabled = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
+        },
         static (el, s) => el.SetBoolean("disabled", s));
 
     public IReadOnlySignal<bool>? Disabled
@@ -23,9 +22,10 @@ public class StyleProps : GlobalHtmlComponentProps<HTMLStyleElement>
     }
 
     private static readonly PropDescriptor<string> s_media = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Media = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Media = s.Value;
+        },
         static (el, s) => el.SetAttribute("media", s));
 
     public IReadOnlySignal<string>? Media
@@ -35,9 +35,10 @@ public class StyleProps : GlobalHtmlComponentProps<HTMLStyleElement>
     }
 
     private static readonly PropDescriptor<string> s_blocking = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Blocking.Value = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Blocking.Value = s.Value;
+        },
         static (el, s) => el.SetAttribute("blocking", s));
 
     public IReadOnlySignal<string>? Blocking

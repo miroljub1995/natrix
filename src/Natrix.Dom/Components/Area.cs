@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,13 +5,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class AreaProps : GlobalHtmlComponentProps<HTMLAreaElement>
 {
     private static readonly PropDescriptor<string> s_alt = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Alt = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Alt = s.Value;
+        },
         static (el, s) => el.SetAttribute("alt", s));
 
     public IReadOnlySignal<string>? Alt
@@ -22,9 +21,10 @@ public class AreaProps : GlobalHtmlComponentProps<HTMLAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_coords = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Coords = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Coords = s.Value;
+        },
         static (el, s) => el.SetAttribute("coords", s));
 
     public IReadOnlySignal<string>? Coords
@@ -34,9 +34,10 @@ public class AreaProps : GlobalHtmlComponentProps<HTMLAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_shape = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Shape = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Shape = s.Value;
+        },
         static (el, s) => el.SetAttribute("shape", s));
 
     public IReadOnlySignal<string>? Shape
@@ -46,9 +47,10 @@ public class AreaProps : GlobalHtmlComponentProps<HTMLAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_href = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Href = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Href = s.Value;
+        },
         static (el, s) => el.SetAttribute("href", s));
 
     public IReadOnlySignal<string>? Href
@@ -58,9 +60,10 @@ public class AreaProps : GlobalHtmlComponentProps<HTMLAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_target = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Target = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Target = s.Value;
+        },
         static (el, s) => el.SetAttribute("target", s));
 
     public IReadOnlySignal<string>? Target
@@ -70,9 +73,10 @@ public class AreaProps : GlobalHtmlComponentProps<HTMLAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_download = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Download = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Download = s.Value;
+        },
         static (el, s) => el.SetAttribute("download", s));
 
     public IReadOnlySignal<string>? Download
@@ -82,9 +86,10 @@ public class AreaProps : GlobalHtmlComponentProps<HTMLAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_ping = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Ping = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Ping = s.Value;
+        },
         static (el, s) => el.SetAttribute("ping", s));
 
     public IReadOnlySignal<string>? Ping
@@ -94,9 +99,10 @@ public class AreaProps : GlobalHtmlComponentProps<HTMLAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_rel = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Rel = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Rel = s.Value;
+        },
         static (el, s) => el.SetAttribute("rel", s));
 
     public IReadOnlySignal<string>? Rel
@@ -106,9 +112,10 @@ public class AreaProps : GlobalHtmlComponentProps<HTMLAreaElement>
     }
 
     private static readonly PropDescriptor<string> s_referrerPolicy = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.ReferrerPolicy = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.ReferrerPolicy = s.Value;
+        },
         static (el, s) => el.SetAttribute("referrerpolicy", s));
 
     public IReadOnlySignal<string>? ReferrerPolicy

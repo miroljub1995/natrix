@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,13 +5,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class ObjectProps : GlobalHtmlComponentProps<HTMLObjectElement>
 {
     private static readonly PropDescriptor<string> s_data = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Data = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Data = s.Value;
+        },
         static (el, s) => el.SetAttribute("data", s));
 
     public new IReadOnlySignal<string>? Data
@@ -22,9 +21,10 @@ public class ObjectProps : GlobalHtmlComponentProps<HTMLObjectElement>
     }
 
     private static readonly PropDescriptor<string> s_type = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Type = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+        },
         static (el, s) => el.SetAttribute("type", s));
 
     public IReadOnlySignal<string>? Type
@@ -34,9 +34,10 @@ public class ObjectProps : GlobalHtmlComponentProps<HTMLObjectElement>
     }
 
     private static readonly PropDescriptor<string> s_name = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Name = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+        },
         static (el, s) => el.SetAttribute("name", s));
 
     public IReadOnlySignal<string>? Name
@@ -46,9 +47,10 @@ public class ObjectProps : GlobalHtmlComponentProps<HTMLObjectElement>
     }
 
     private static readonly PropDescriptor<string> s_width = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Width = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Width = s.Value;
+        },
         static (el, s) => el.SetAttribute("width", s));
 
     public IReadOnlySignal<string>? Width
@@ -58,9 +60,10 @@ public class ObjectProps : GlobalHtmlComponentProps<HTMLObjectElement>
     }
 
     private static readonly PropDescriptor<string> s_height = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Height = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Height = s.Value;
+        },
         static (el, s) => el.SetAttribute("height", s));
 
     public IReadOnlySignal<string>? Height

@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,7 +5,6 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TElement>
     where TElement : HTMLElement
 {
@@ -20,9 +18,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
         };
 
     private static readonly PropDescriptor<string> s_accessKey = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.AccessKey = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.AccessKey = s.Value;
+        },
         static (el, s) => el.SetAttribute("accesskey", s));
 
     public IReadOnlySignal<string>? AccessKey
@@ -33,9 +32,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
 
     private static readonly PropDescriptor<string> s_autocapitalize = new(
         // Safari has no autocapitalize property, but iOS Safari honours the attribute.
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.SetAttribute("autocapitalize", s.Value)
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.SetAttribute("autocapitalize", s.Value);
+        },
         static (el, s) => el.SetAttribute("autocapitalize", s));
 
     public IReadOnlySignal<string>? Autocapitalize
@@ -45,9 +45,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<bool> s_autocorrect = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Autocorrect = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Autocorrect = s.Value;
+        },
         static (el, s) => el.SetEnumeratedBoolOnOff("autocorrect", s));
 
     public IReadOnlySignal<bool>? Autocorrect
@@ -57,9 +58,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<bool> s_autofocus = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Autofocus = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Autofocus = s.Value;
+        },
         static (el, s) => el.SetBoolean("autofocus", s));
 
     public IReadOnlySignal<bool>? Autofocus
@@ -69,9 +71,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_class = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.ClassList.Value = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.ClassList.Value = s.Value;
+        },
         static (el, s) => el.SetAttribute("class", s));
 
     public IReadOnlySignal<string>? Class
@@ -81,9 +84,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_contentEditable = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.ContentEditable = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.ContentEditable = s.Value;
+        },
         static (el, s) => el.SetAttribute("contenteditable", s));
 
     public IReadOnlySignal<string>? ContentEditable
@@ -93,27 +97,30 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<IDictionary<string, string>> s_data = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) =>
+        static (el, s) =>
+        {
+            if (!OperatingSystem.IsBrowser())
             {
-                var dict = s.Value;
-                var nextAttrNames = new HashSet<string>(dict.Count);
-
-                foreach (var kvp in dict)
-                {
-                    var attrName = "data-" + kvp.Key;
-                    nextAttrNames.Add(attrName);
-                    el.SetAttribute(attrName, kvp.Value);
-                }
-
-                var attrNames = (string[])el.GetAttributeNames();
-                foreach (var attr in attrNames)
-                {
-                    if (attr.StartsWith("data-") && !nextAttrNames.Contains(attr))
-                        el.RemoveAttribute(attr);
-                }
+                return;
             }
-            : null,
+
+            var dict = s.Value;
+            var nextAttrNames = new HashSet<string>(dict.Count);
+
+            foreach (var kvp in dict)
+            {
+                var attrName = "data-" + kvp.Key;
+                nextAttrNames.Add(attrName);
+                el.SetAttribute(attrName, kvp.Value);
+            }
+
+            var attrNames = (string[])el.GetAttributeNames();
+            foreach (var attr in attrNames)
+            {
+                if (attr.StartsWith("data-") && !nextAttrNames.Contains(attr))
+                    el.RemoveAttribute(attr);
+            }
+        },
         static (el, s) => el.SetDataAttributes(s));
 
     public IReadOnlySignal<IDictionary<string, string>>? Data
@@ -123,9 +130,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_dir = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Dir = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Dir = s.Value;
+        },
         static (el, s) => el.SetAttribute("dir", s));
 
     public IReadOnlySignal<string>? Dir
@@ -135,9 +143,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<bool> s_draggable = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Draggable = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Draggable = s.Value;
+        },
         static (el, s) => el.SetEnumeratedBoolTrueFalse("draggable", s));
 
     public IReadOnlySignal<bool>? Draggable
@@ -147,9 +156,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_enterKeyHint = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.EnterKeyHint = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.EnterKeyHint = s.Value;
+        },
         static (el, s) => el.SetAttribute("enterkeyhint", s));
 
     public IReadOnlySignal<string>? EnterKeyHint
@@ -159,15 +169,21 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<HiddenOption> s_hidden = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Hidden = s.Value switch
+        static (el, s) =>
+        {
+            if (!OperatingSystem.IsBrowser())
+            {
+                return;
+            }
+
+            el.Hidden = s.Value switch
             {
                 HiddenOption.True => true,
                 HiddenOption.False => false,
                 HiddenOption.UntilFound => "until-found",
                 _ => throw new ArgumentOutOfRangeException(nameof(Hidden), s.Value, null),
-            }
-            : null,
+            };
+        },
         static (el, s) => el.SetAttribute("hidden", s, s_hiddenSelector));
 
     public IReadOnlySignal<HiddenOption>? Hidden
@@ -177,9 +193,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_id = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Id = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Id = s.Value;
+        },
         static (el, s) => el.SetAttribute("id", s));
 
     public IReadOnlySignal<string>? Id
@@ -189,9 +206,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<bool> s_inert = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Inert = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Inert = s.Value;
+        },
         static (el, s) => el.SetBoolean("inert", s));
 
     public IReadOnlySignal<bool>? Inert
@@ -201,9 +219,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_inputMode = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.InputMode = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.InputMode = s.Value;
+        },
         static (el, s) => el.SetAttribute("inputmode", s));
 
     public IReadOnlySignal<string>? InputMode
@@ -213,9 +232,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_lang = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Lang = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Lang = s.Value;
+        },
         static (el, s) => el.SetAttribute("lang", s));
 
     public IReadOnlySignal<string>? Lang
@@ -225,9 +245,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_nonce = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Nonce = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Nonce = s.Value;
+        },
         static (el, s) => el.SetAttribute("nonce", s));
 
     public IReadOnlySignal<string>? Nonce
@@ -237,9 +258,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_part = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Part.Value = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Part.Value = s.Value;
+        },
         static (el, s) => el.SetAttribute("part", s));
 
     public IReadOnlySignal<string>? Part
@@ -249,9 +271,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string?> s_popover = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Popover = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Popover = s.Value;
+        },
         static (el, s) => el.SetNullableString("popover", s));
 
     public IReadOnlySignal<string?>? Popover
@@ -261,9 +284,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_slot = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Slot = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Slot = s.Value;
+        },
         static (el, s) => el.SetAttribute("slot", s));
 
     public IReadOnlySignal<string>? Slot
@@ -273,9 +297,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<bool> s_spellcheck = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Spellcheck = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Spellcheck = s.Value;
+        },
         static (el, s) => el.SetEnumeratedBoolTrueFalse("spellcheck", s));
 
     public IReadOnlySignal<bool>? Spellcheck
@@ -285,9 +310,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_style = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Style.CssText = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Style.CssText = s.Value;
+        },
         static (el, s) => el.SetAttribute("style", s));
 
     public IReadOnlySignal<string>? Style
@@ -297,9 +323,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<int> s_tabIndex = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.TabIndex = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.TabIndex = s.Value;
+        },
         static (el, s) => el.SetInt("tabindex", s));
 
     public IReadOnlySignal<int>? TabIndex
@@ -309,9 +336,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_title = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Title = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Title = s.Value;
+        },
         static (el, s) => el.SetAttribute("title", s));
 
     public IReadOnlySignal<string>? Title
@@ -321,9 +349,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<bool> s_translate = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Translate = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Translate = s.Value;
+        },
         static (el, s) => el.SetEnumeratedBoolYesNo("translate", s));
 
     public IReadOnlySignal<bool>? Translate
@@ -333,9 +362,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_virtualKeyboardPolicy = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.VirtualKeyboardPolicy = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.VirtualKeyboardPolicy = s.Value;
+        },
         static (el, s) => el.SetAttribute("virtualkeyboardpolicy", s));
 
     public IReadOnlySignal<string>? VirtualKeyboardPolicy
@@ -345,9 +375,10 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     }
 
     private static readonly PropDescriptor<string> s_writingSuggestions = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.WritingSuggestions = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.WritingSuggestions = s.Value;
+        },
         static (el, s) => el.SetAttribute("writingsuggestions", s));
 
     public IReadOnlySignal<string>? WritingSuggestions

@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,13 +5,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
 {
     private static readonly PropDescriptor<string> s_alt = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Alt = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Alt = s.Value;
+        },
         static (el, s) => el.SetAttribute("alt", s));
 
     public IReadOnlySignal<string>? Alt
@@ -22,9 +21,10 @@ public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
     }
 
     private static readonly PropDescriptor<string> s_src = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Src = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+        },
         static (el, s) => el.SetAttribute("src", s));
 
     public IReadOnlySignal<string>? Src
@@ -34,9 +34,10 @@ public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
     }
 
     private static readonly PropDescriptor<string> s_srcset = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Srcset = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Srcset = s.Value;
+        },
         static (el, s) => el.SetAttribute("srcset", s));
 
     public IReadOnlySignal<string>? Srcset
@@ -46,9 +47,10 @@ public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
     }
 
     private static readonly PropDescriptor<string> s_sizes = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Sizes = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Sizes = s.Value;
+        },
         static (el, s) => el.SetAttribute("sizes", s));
 
     public IReadOnlySignal<string>? Sizes
@@ -58,9 +60,10 @@ public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
     }
 
     private static readonly PropDescriptor<string?> s_crossOrigin = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.CrossOrigin = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.CrossOrigin = s.Value;
+        },
         static (el, s) => el.SetNullableString("crossorigin", s));
 
     public IReadOnlySignal<string?>? CrossOrigin
@@ -70,9 +73,10 @@ public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
     }
 
     private static readonly PropDescriptor<string> s_useMap = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.UseMap = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.UseMap = s.Value;
+        },
         static (el, s) => el.SetAttribute("usemap", s));
 
     public IReadOnlySignal<string>? UseMap
@@ -82,9 +86,10 @@ public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
     }
 
     private static readonly PropDescriptor<bool> s_isMap = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.IsMap = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.IsMap = s.Value;
+        },
         static (el, s) => el.SetBoolean("ismap", s));
 
     public IReadOnlySignal<bool>? IsMap
@@ -94,9 +99,10 @@ public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
     }
 
     private static readonly PropDescriptor<uint> s_width = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Width = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Width = s.Value;
+        },
         static (el, s) => el.SetUInt("width", s));
 
     public IReadOnlySignal<uint>? Width
@@ -106,9 +112,10 @@ public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
     }
 
     private static readonly PropDescriptor<uint> s_height = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Height = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Height = s.Value;
+        },
         static (el, s) => el.SetUInt("height", s));
 
     public IReadOnlySignal<uint>? Height
@@ -118,9 +125,10 @@ public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
     }
 
     private static readonly PropDescriptor<string> s_decoding = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Decoding = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Decoding = s.Value;
+        },
         static (el, s) => el.SetAttribute("decoding", s));
 
     public IReadOnlySignal<string>? Decoding
@@ -130,9 +138,10 @@ public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
     }
 
     private static readonly PropDescriptor<string> s_fetchPriority = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.FetchPriority = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.FetchPriority = s.Value;
+        },
         static (el, s) => el.SetAttribute("fetchpriority", s));
 
     public IReadOnlySignal<string>? FetchPriority
@@ -142,9 +151,10 @@ public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
     }
 
     private static readonly PropDescriptor<string> s_loading = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Loading = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Loading = s.Value;
+        },
         static (el, s) => el.SetAttribute("loading", s));
 
     public IReadOnlySignal<string>? Loading
@@ -154,9 +164,10 @@ public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
     }
 
     private static readonly PropDescriptor<string> s_referrerPolicy = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.ReferrerPolicy = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.ReferrerPolicy = s.Value;
+        },
         static (el, s) => el.SetAttribute("referrerpolicy", s));
 
     public IReadOnlySignal<string>? ReferrerPolicy

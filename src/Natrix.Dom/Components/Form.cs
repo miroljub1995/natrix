@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,13 +5,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class FormProps : GlobalHtmlComponentProps<HTMLFormElement>
 {
     private static readonly PropDescriptor<string> s_action = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Action = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Action = s.Value;
+        },
         static (el, s) => el.SetAttribute("action", s));
 
     public IReadOnlySignal<string>? Action
@@ -22,9 +21,10 @@ public class FormProps : GlobalHtmlComponentProps<HTMLFormElement>
     }
 
     private static readonly PropDescriptor<string> s_autocomplete = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Autocomplete = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Autocomplete = s.Value;
+        },
         static (el, s) => el.SetAttribute("autocomplete", s));
 
     public IReadOnlySignal<string>? Autocomplete
@@ -34,9 +34,10 @@ public class FormProps : GlobalHtmlComponentProps<HTMLFormElement>
     }
 
     private static readonly PropDescriptor<string> s_enctype = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Enctype = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Enctype = s.Value;
+        },
         static (el, s) => el.SetAttribute("enctype", s));
 
     public IReadOnlySignal<string>? Enctype
@@ -46,9 +47,10 @@ public class FormProps : GlobalHtmlComponentProps<HTMLFormElement>
     }
 
     private static readonly PropDescriptor<string> s_method = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Method = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Method = s.Value;
+        },
         static (el, s) => el.SetAttribute("method", s));
 
     public IReadOnlySignal<string>? Method
@@ -58,9 +60,10 @@ public class FormProps : GlobalHtmlComponentProps<HTMLFormElement>
     }
 
     private static readonly PropDescriptor<string> s_name = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Name = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+        },
         static (el, s) => el.SetAttribute("name", s));
 
     public IReadOnlySignal<string>? Name
@@ -70,9 +73,10 @@ public class FormProps : GlobalHtmlComponentProps<HTMLFormElement>
     }
 
     private static readonly PropDescriptor<bool> s_noValidate = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.NoValidate = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.NoValidate = s.Value;
+        },
         static (el, s) => el.SetBoolean("novalidate", s));
 
     public IReadOnlySignal<bool>? NoValidate
@@ -82,9 +86,10 @@ public class FormProps : GlobalHtmlComponentProps<HTMLFormElement>
     }
 
     private static readonly PropDescriptor<string> s_target = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Target = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Target = s.Value;
+        },
         static (el, s) => el.SetAttribute("target", s));
 
     public IReadOnlySignal<string>? Target
@@ -94,9 +99,10 @@ public class FormProps : GlobalHtmlComponentProps<HTMLFormElement>
     }
 
     private static readonly PropDescriptor<string> s_rel = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Rel = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Rel = s.Value;
+        },
         static (el, s) => el.SetAttribute("rel", s));
 
     public IReadOnlySignal<string>? Rel

@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,13 +5,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
 {
     private static readonly PropDescriptor<string> s_accept = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Accept = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Accept = s.Value;
+        },
         static (el, s) => el.SetAttribute("accept", s));
 
     public IReadOnlySignal<string>? Accept
@@ -22,9 +21,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_alt = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Alt = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Alt = s.Value;
+        },
         static (el, s) => el.SetAttribute("alt", s));
 
     public IReadOnlySignal<string>? Alt
@@ -34,9 +34,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_autocomplete = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Autocomplete = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Autocomplete = s.Value;
+        },
         static (el, s) => el.SetAttribute("autocomplete", s));
 
     public IReadOnlySignal<string>? Autocomplete
@@ -46,9 +47,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_capture = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Capture = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Capture = s.Value;
+        },
         static (el, s) => el.SetAttribute("capture", s));
 
     public IReadOnlySignal<string>? Capture
@@ -58,9 +60,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<bool> s_checked = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Checked = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Checked = s.Value;
+        },
         static (el, s) => el.SetBoolean("checked", s));
 
     public IReadOnlySignal<bool>? Checked
@@ -70,9 +73,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<bool> s_defaultChecked = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.DefaultChecked = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.DefaultChecked = s.Value;
+        },
         static (el, s) => el.SetBoolean("checked", s));
 
     public IReadOnlySignal<bool>? DefaultChecked
@@ -82,9 +86,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_dirName = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.DirName = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.DirName = s.Value;
+        },
         static (el, s) => el.SetAttribute("dirname", s));
 
     public IReadOnlySignal<string>? DirName
@@ -94,9 +99,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<bool> s_disabled = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Disabled = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
+        },
         static (el, s) => el.SetBoolean("disabled", s));
 
     public IReadOnlySignal<bool>? Disabled
@@ -106,9 +112,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_formAction = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.FormAction = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.FormAction = s.Value;
+        },
         static (el, s) => el.SetAttribute("formaction", s));
 
     public IReadOnlySignal<string>? FormAction
@@ -118,9 +125,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_formEnctype = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.FormEnctype = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.FormEnctype = s.Value;
+        },
         static (el, s) => el.SetAttribute("formenctype", s));
 
     public IReadOnlySignal<string>? FormEnctype
@@ -130,9 +138,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_formMethod = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.FormMethod = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.FormMethod = s.Value;
+        },
         static (el, s) => el.SetAttribute("formmethod", s));
 
     public IReadOnlySignal<string>? FormMethod
@@ -142,9 +151,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<bool> s_formNoValidate = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.FormNoValidate = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.FormNoValidate = s.Value;
+        },
         static (el, s) => el.SetBoolean("formnovalidate", s));
 
     public IReadOnlySignal<bool>? FormNoValidate
@@ -154,9 +164,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_formTarget = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.FormTarget = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.FormTarget = s.Value;
+        },
         static (el, s) => el.SetAttribute("formtarget", s));
 
     public IReadOnlySignal<string>? FormTarget
@@ -166,9 +177,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<uint> s_height = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Height = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Height = s.Value;
+        },
         static (el, s) => el.SetUInt("height", s));
 
     public IReadOnlySignal<uint>? Height
@@ -178,9 +190,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_max = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Max = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Max = s.Value;
+        },
         static (el, s) => el.SetAttribute("max", s));
 
     public IReadOnlySignal<string>? Max
@@ -190,9 +203,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<int> s_maxLength = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.MaxLength = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.MaxLength = s.Value;
+        },
         static (el, s) => el.SetInt("maxlength", s));
 
     public IReadOnlySignal<int>? MaxLength
@@ -202,9 +216,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_min = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Min = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Min = s.Value;
+        },
         static (el, s) => el.SetAttribute("min", s));
 
     public IReadOnlySignal<string>? Min
@@ -214,9 +229,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<int> s_minLength = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.MinLength = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.MinLength = s.Value;
+        },
         static (el, s) => el.SetInt("minlength", s));
 
     public IReadOnlySignal<int>? MinLength
@@ -226,9 +242,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<bool> s_multiple = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Multiple = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Multiple = s.Value;
+        },
         static (el, s) => el.SetBoolean("multiple", s));
 
     public IReadOnlySignal<bool>? Multiple
@@ -238,9 +255,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_name = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Name = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+        },
         static (el, s) => el.SetAttribute("name", s));
 
     public IReadOnlySignal<string>? Name
@@ -250,9 +268,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_pattern = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Pattern = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Pattern = s.Value;
+        },
         static (el, s) => el.SetAttribute("pattern", s));
 
     public IReadOnlySignal<string>? Pattern
@@ -262,9 +281,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_placeholder = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Placeholder = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Placeholder = s.Value;
+        },
         static (el, s) => el.SetAttribute("placeholder", s));
 
     public IReadOnlySignal<string>? Placeholder
@@ -274,9 +294,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<bool> s_readOnly = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.ReadOnly = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.ReadOnly = s.Value;
+        },
         static (el, s) => el.SetBoolean("readonly", s));
 
     public IReadOnlySignal<bool>? ReadOnly
@@ -286,9 +307,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<bool> s_required = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Required = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Required = s.Value;
+        },
         static (el, s) => el.SetBoolean("required", s));
 
     public IReadOnlySignal<bool>? Required
@@ -298,9 +320,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<uint> s_size = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Size = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Size = s.Value;
+        },
         static (el, s) => el.SetUInt("size", s));
 
     public IReadOnlySignal<uint>? Size
@@ -310,9 +333,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_src = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Src = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+        },
         static (el, s) => el.SetAttribute("src", s));
 
     public IReadOnlySignal<string>? Src
@@ -322,9 +346,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_step = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Step = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Step = s.Value;
+        },
         static (el, s) => el.SetAttribute("step", s));
 
     public IReadOnlySignal<string>? Step
@@ -334,9 +359,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_type = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Type = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+        },
         static (el, s) => el.SetAttribute("type", s));
 
     public IReadOnlySignal<string>? Type
@@ -346,9 +372,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_value = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Value = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+        },
         static (el, s) => el.SetAttribute("value", s));
 
     public IReadOnlySignal<string>? Value
@@ -358,9 +385,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<string> s_defaultValue = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.DefaultValue = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.DefaultValue = s.Value;
+        },
         static (el, s) => el.SetAttribute("value", s));
 
     public IReadOnlySignal<string>? DefaultValue
@@ -370,9 +398,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     }
 
     private static readonly PropDescriptor<uint> s_width = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Width = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Width = s.Value;
+        },
         static (el, s) => el.SetUInt("width", s));
 
     public IReadOnlySignal<uint>? Width

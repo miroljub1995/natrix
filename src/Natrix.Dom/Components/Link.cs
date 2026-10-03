@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,13 +5,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
 {
     private static readonly PropDescriptor<string> s_href = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Href = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Href = s.Value;
+        },
         static (el, s) => el.SetAttribute("href", s));
 
     public IReadOnlySignal<string>? Href
@@ -22,9 +21,10 @@ public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
     }
 
     private static readonly PropDescriptor<string?> s_crossOrigin = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.CrossOrigin = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.CrossOrigin = s.Value;
+        },
         static (el, s) => el.SetNullableString("crossorigin", s));
 
     public IReadOnlySignal<string?>? CrossOrigin
@@ -34,9 +34,10 @@ public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
     }
 
     private static readonly PropDescriptor<string> s_rel = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Rel = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Rel = s.Value;
+        },
         static (el, s) => el.SetAttribute("rel", s));
 
     public IReadOnlySignal<string>? Rel
@@ -46,9 +47,10 @@ public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
     }
 
     private static readonly PropDescriptor<string> s_as = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.As = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.As = s.Value;
+        },
         static (el, s) => el.SetAttribute("as", s));
 
     public IReadOnlySignal<string>? As
@@ -58,9 +60,10 @@ public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
     }
 
     private static readonly PropDescriptor<string> s_media = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Media = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Media = s.Value;
+        },
         static (el, s) => el.SetAttribute("media", s));
 
     public IReadOnlySignal<string>? Media
@@ -70,9 +73,10 @@ public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
     }
 
     private static readonly PropDescriptor<string> s_integrity = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Integrity = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Integrity = s.Value;
+        },
         static (el, s) => el.SetAttribute("integrity", s));
 
     public IReadOnlySignal<string>? Integrity
@@ -82,9 +86,10 @@ public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
     }
 
     private static readonly PropDescriptor<string> s_hreflang = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Hreflang = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Hreflang = s.Value;
+        },
         static (el, s) => el.SetAttribute("hreflang", s));
 
     public IReadOnlySignal<string>? Hreflang
@@ -94,9 +99,10 @@ public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
     }
 
     private static readonly PropDescriptor<string> s_type = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Type = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+        },
         static (el, s) => el.SetAttribute("type", s));
 
     public IReadOnlySignal<string>? Type
@@ -106,9 +112,10 @@ public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
     }
 
     private static readonly PropDescriptor<string> s_referrerPolicy = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.ReferrerPolicy = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.ReferrerPolicy = s.Value;
+        },
         static (el, s) => el.SetAttribute("referrerpolicy", s));
 
     public IReadOnlySignal<string>? ReferrerPolicy
@@ -118,9 +125,10 @@ public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
     }
 
     private static readonly PropDescriptor<bool> s_disabled = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Disabled = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
+        },
         static (el, s) => el.SetBoolean("disabled", s));
 
     public IReadOnlySignal<bool>? Disabled
@@ -130,9 +138,10 @@ public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
     }
 
     private static readonly PropDescriptor<string> s_fetchPriority = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.FetchPriority = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.FetchPriority = s.Value;
+        },
         static (el, s) => el.SetAttribute("fetchpriority", s));
 
     public IReadOnlySignal<string>? FetchPriority
@@ -142,9 +151,10 @@ public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
     }
 
     private static readonly PropDescriptor<string> s_blocking = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Blocking.Value = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Blocking.Value = s.Value;
+        },
         static (el, s) => el.SetAttribute("blocking", s));
 
     public IReadOnlySignal<string>? Blocking
@@ -154,9 +164,10 @@ public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
     }
 
     private static readonly PropDescriptor<string> s_imageSizes = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.ImageSizes = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.ImageSizes = s.Value;
+        },
         static (el, s) => el.SetAttribute("imagesizes", s));
 
     public IReadOnlySignal<string>? ImageSizes
@@ -166,9 +177,10 @@ public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
     }
 
     private static readonly PropDescriptor<string> s_imageSrcset = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.ImageSrcset = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.ImageSrcset = s.Value;
+        },
         static (el, s) => el.SetAttribute("imagesrcset", s));
 
     public IReadOnlySignal<string>? ImageSrcset

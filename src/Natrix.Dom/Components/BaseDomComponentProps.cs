@@ -125,16 +125,16 @@ public abstract class BaseDomComponentProps<TElement>
     /// Describes a prop whose signal carries <typeparamref name="TValue"/>. Declared once per prop as a
     /// static field of the props class that owns it.
     /// </summary>
-    /// <param name="client">Applies the signal's current value to the element. Only needed, and only
-    /// passed, in the browser.</param>
+    /// <param name="client">Applies the signal's current value to the element. Only runs in the browser;
+    /// its body guards browser-only calls with <see cref="OperatingSystem.IsBrowser"/>.</param>
     /// <param name="server">Binds the signal to the server-rendered element.</param>
     private protected sealed class PropDescriptor<TValue>(
-        Action<TElement, IReadOnlySignal<TValue>>? client,
+        Action<TElement, IReadOnlySignal<TValue>> client,
         Action<SsrElementNode, IReadOnlySignal<TValue>> server) : PropDescriptor
     {
         [SupportedOSPlatform("browser")]
         public override void ApplyClient(TElement el, object signal) =>
-            client!(el, (IReadOnlySignal<TValue>)signal);
+            client(el, (IReadOnlySignal<TValue>)signal);
 
         public override void ApplyServer(SsrElementNode el, object signal) =>
             server(el, (IReadOnlySignal<TValue>)signal);

@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,13 +5,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class AudioProps : GlobalHtmlComponentProps<HTMLAudioElement>
 {
     private static readonly PropDescriptor<string> s_src = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Src = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+        },
         static (el, s) => el.SetAttribute("src", s));
 
     public IReadOnlySignal<string>? Src
@@ -22,9 +21,10 @@ public class AudioProps : GlobalHtmlComponentProps<HTMLAudioElement>
     }
 
     private static readonly PropDescriptor<bool> s_autoplay = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Autoplay = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Autoplay = s.Value;
+        },
         static (el, s) => el.SetBoolean("autoplay", s));
 
     public IReadOnlySignal<bool>? Autoplay
@@ -34,9 +34,10 @@ public class AudioProps : GlobalHtmlComponentProps<HTMLAudioElement>
     }
 
     private static readonly PropDescriptor<bool> s_controls = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Controls = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Controls = s.Value;
+        },
         static (el, s) => el.SetBoolean("controls", s));
 
     public IReadOnlySignal<bool>? Controls
@@ -46,9 +47,10 @@ public class AudioProps : GlobalHtmlComponentProps<HTMLAudioElement>
     }
 
     private static readonly PropDescriptor<bool> s_loop = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Loop = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Loop = s.Value;
+        },
         static (el, s) => el.SetBoolean("loop", s));
 
     public IReadOnlySignal<bool>? Loop
@@ -58,9 +60,10 @@ public class AudioProps : GlobalHtmlComponentProps<HTMLAudioElement>
     }
 
     private static readonly PropDescriptor<bool> s_muted = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Muted = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Muted = s.Value;
+        },
         static (el, s) => el.SetBoolean("muted", s));
 
     public IReadOnlySignal<bool>? Muted
@@ -70,9 +73,10 @@ public class AudioProps : GlobalHtmlComponentProps<HTMLAudioElement>
     }
 
     private static readonly PropDescriptor<string> s_preload = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Preload = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Preload = s.Value;
+        },
         static (el, s) => el.SetAttribute("preload", s));
 
     public IReadOnlySignal<string>? Preload
@@ -82,9 +86,10 @@ public class AudioProps : GlobalHtmlComponentProps<HTMLAudioElement>
     }
 
     private static readonly PropDescriptor<string?> s_crossOrigin = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.CrossOrigin = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.CrossOrigin = s.Value;
+        },
         static (el, s) => el.SetNullableString("crossorigin", s));
 
     public IReadOnlySignal<string?>? CrossOrigin
@@ -94,9 +99,10 @@ public class AudioProps : GlobalHtmlComponentProps<HTMLAudioElement>
     }
 
     private static readonly PropDescriptor<bool> s_disableRemotePlayback = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.DisableRemotePlayback = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.DisableRemotePlayback = s.Value;
+        },
         static (el, s) => el.SetBoolean("disableremoteplayback", s));
 
     public IReadOnlySignal<bool>? DisableRemotePlayback

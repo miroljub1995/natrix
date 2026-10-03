@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,13 +5,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class ButtonProps : GlobalHtmlComponentProps<HTMLButtonElement>
 {
     private static readonly PropDescriptor<bool> s_disabled = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Disabled = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
+        },
         static (el, s) => el.SetBoolean("disabled", s));
 
     public IReadOnlySignal<bool>? Disabled
@@ -22,9 +21,10 @@ public class ButtonProps : GlobalHtmlComponentProps<HTMLButtonElement>
     }
 
     private static readonly PropDescriptor<string> s_name = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Name = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+        },
         static (el, s) => el.SetAttribute("name", s));
 
     public IReadOnlySignal<string>? Name
@@ -34,9 +34,10 @@ public class ButtonProps : GlobalHtmlComponentProps<HTMLButtonElement>
     }
 
     private static readonly PropDescriptor<string> s_type = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Type = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+        },
         static (el, s) => el.SetAttribute("type", s));
 
     public IReadOnlySignal<string>? Type
@@ -46,9 +47,10 @@ public class ButtonProps : GlobalHtmlComponentProps<HTMLButtonElement>
     }
 
     private static readonly PropDescriptor<string> s_value = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Value = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+        },
         static (el, s) => el.SetAttribute("value", s));
 
     public IReadOnlySignal<string>? Value
@@ -58,9 +60,10 @@ public class ButtonProps : GlobalHtmlComponentProps<HTMLButtonElement>
     }
 
     private static readonly PropDescriptor<string> s_formAction = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.FormAction = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.FormAction = s.Value;
+        },
         static (el, s) => el.SetAttribute("formaction", s));
 
     public IReadOnlySignal<string>? FormAction
@@ -70,9 +73,10 @@ public class ButtonProps : GlobalHtmlComponentProps<HTMLButtonElement>
     }
 
     private static readonly PropDescriptor<string> s_formEnctype = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.FormEnctype = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.FormEnctype = s.Value;
+        },
         static (el, s) => el.SetAttribute("formenctype", s));
 
     public IReadOnlySignal<string>? FormEnctype
@@ -82,9 +86,10 @@ public class ButtonProps : GlobalHtmlComponentProps<HTMLButtonElement>
     }
 
     private static readonly PropDescriptor<string> s_formMethod = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.FormMethod = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.FormMethod = s.Value;
+        },
         static (el, s) => el.SetAttribute("formmethod", s));
 
     public IReadOnlySignal<string>? FormMethod
@@ -94,9 +99,10 @@ public class ButtonProps : GlobalHtmlComponentProps<HTMLButtonElement>
     }
 
     private static readonly PropDescriptor<bool> s_formNoValidate = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.FormNoValidate = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.FormNoValidate = s.Value;
+        },
         static (el, s) => el.SetBoolean("formnovalidate", s));
 
     public IReadOnlySignal<bool>? FormNoValidate
@@ -106,9 +112,10 @@ public class ButtonProps : GlobalHtmlComponentProps<HTMLButtonElement>
     }
 
     private static readonly PropDescriptor<string> s_formTarget = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.FormTarget = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.FormTarget = s.Value;
+        },
         static (el, s) => el.SetAttribute("formtarget", s));
 
     public IReadOnlySignal<string>? FormTarget

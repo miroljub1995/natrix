@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,13 +5,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class ThProps : GlobalHtmlComponentProps<HTMLTableCellElement>
 {
     private static readonly PropDescriptor<uint> s_colSpan = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.ColSpan = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.ColSpan = s.Value;
+        },
         static (el, s) => el.SetUInt("colspan", s));
 
     public IReadOnlySignal<uint>? ColSpan
@@ -22,9 +21,10 @@ public class ThProps : GlobalHtmlComponentProps<HTMLTableCellElement>
     }
 
     private static readonly PropDescriptor<uint> s_rowSpan = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.RowSpan = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.RowSpan = s.Value;
+        },
         static (el, s) => el.SetUInt("rowspan", s));
 
     public IReadOnlySignal<uint>? RowSpan
@@ -34,9 +34,10 @@ public class ThProps : GlobalHtmlComponentProps<HTMLTableCellElement>
     }
 
     private static readonly PropDescriptor<string> s_headers = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Headers = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Headers = s.Value;
+        },
         static (el, s) => el.SetAttribute("headers", s));
 
     public IReadOnlySignal<string>? Headers
@@ -46,9 +47,10 @@ public class ThProps : GlobalHtmlComponentProps<HTMLTableCellElement>
     }
 
     private static readonly PropDescriptor<string> s_scope = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Scope = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Scope = s.Value;
+        },
         static (el, s) => el.SetAttribute("scope", s));
 
     public IReadOnlySignal<string>? Scope
@@ -58,9 +60,10 @@ public class ThProps : GlobalHtmlComponentProps<HTMLTableCellElement>
     }
 
     private static readonly PropDescriptor<string> s_abbr = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Abbr = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Abbr = s.Value;
+        },
         static (el, s) => el.SetAttribute("abbr", s));
 
     public IReadOnlySignal<string>? Abbr

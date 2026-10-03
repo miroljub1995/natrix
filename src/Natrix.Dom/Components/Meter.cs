@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,13 +5,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class MeterProps : GlobalHtmlComponentProps<HTMLMeterElement>
 {
     private static readonly PropDescriptor<double> s_value = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Value = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+        },
         static (el, s) => el.SetDouble("value", s));
 
     public IReadOnlySignal<double>? Value
@@ -22,9 +21,10 @@ public class MeterProps : GlobalHtmlComponentProps<HTMLMeterElement>
     }
 
     private static readonly PropDescriptor<double> s_min = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Min = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Min = s.Value;
+        },
         static (el, s) => el.SetDouble("min", s));
 
     public IReadOnlySignal<double>? Min
@@ -34,9 +34,10 @@ public class MeterProps : GlobalHtmlComponentProps<HTMLMeterElement>
     }
 
     private static readonly PropDescriptor<double> s_max = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Max = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Max = s.Value;
+        },
         static (el, s) => el.SetDouble("max", s));
 
     public IReadOnlySignal<double>? Max
@@ -46,9 +47,10 @@ public class MeterProps : GlobalHtmlComponentProps<HTMLMeterElement>
     }
 
     private static readonly PropDescriptor<double> s_low = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Low = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Low = s.Value;
+        },
         static (el, s) => el.SetDouble("low", s));
 
     public IReadOnlySignal<double>? Low
@@ -58,9 +60,10 @@ public class MeterProps : GlobalHtmlComponentProps<HTMLMeterElement>
     }
 
     private static readonly PropDescriptor<double> s_high = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.High = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.High = s.Value;
+        },
         static (el, s) => el.SetDouble("high", s));
 
     public IReadOnlySignal<double>? High
@@ -70,9 +73,10 @@ public class MeterProps : GlobalHtmlComponentProps<HTMLMeterElement>
     }
 
     private static readonly PropDescriptor<double> s_optimum = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Optimum = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Optimum = s.Value;
+        },
         static (el, s) => el.SetDouble("optimum", s));
 
     public IReadOnlySignal<double>? Optimum

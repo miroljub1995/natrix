@@ -1,4 +1,3 @@
-using System.Diagnostics.CodeAnalysis;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -6,13 +5,13 @@ using Natrix.StdWeb;
 
 namespace Natrix.Dom.Components;
 
-[SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class IFrameProps : GlobalHtmlComponentProps<HTMLIFrameElement>
 {
     private static readonly PropDescriptor<string> s_src = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Src = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+        },
         static (el, s) => el.SetAttribute("src", s));
 
     public IReadOnlySignal<string>? Src
@@ -22,9 +21,10 @@ public class IFrameProps : GlobalHtmlComponentProps<HTMLIFrameElement>
     }
 
     private static readonly PropDescriptor<string> s_name = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Name = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+        },
         static (el, s) => el.SetAttribute("name", s));
 
     public IReadOnlySignal<string>? Name
@@ -34,9 +34,10 @@ public class IFrameProps : GlobalHtmlComponentProps<HTMLIFrameElement>
     }
 
     private static readonly PropDescriptor<string> s_allow = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Allow = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Allow = s.Value;
+        },
         static (el, s) => el.SetAttribute("allow", s));
 
     public IReadOnlySignal<string>? Allow
@@ -46,9 +47,10 @@ public class IFrameProps : GlobalHtmlComponentProps<HTMLIFrameElement>
     }
 
     private static readonly PropDescriptor<bool> s_allowFullscreen = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.AllowFullscreen = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.AllowFullscreen = s.Value;
+        },
         static (el, s) => el.SetBoolean("allowfullscreen", s));
 
     public IReadOnlySignal<bool>? AllowFullscreen
@@ -58,9 +60,10 @@ public class IFrameProps : GlobalHtmlComponentProps<HTMLIFrameElement>
     }
 
     private static readonly PropDescriptor<string> s_width = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Width = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Width = s.Value;
+        },
         static (el, s) => el.SetAttribute("width", s));
 
     public IReadOnlySignal<string>? Width
@@ -70,9 +73,10 @@ public class IFrameProps : GlobalHtmlComponentProps<HTMLIFrameElement>
     }
 
     private static readonly PropDescriptor<string> s_height = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Height = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Height = s.Value;
+        },
         static (el, s) => el.SetAttribute("height", s));
 
     public IReadOnlySignal<string>? Height
@@ -82,9 +86,10 @@ public class IFrameProps : GlobalHtmlComponentProps<HTMLIFrameElement>
     }
 
     private static readonly PropDescriptor<string> s_referrerPolicy = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.ReferrerPolicy = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.ReferrerPolicy = s.Value;
+        },
         static (el, s) => el.SetAttribute("referrerpolicy", s));
 
     public IReadOnlySignal<string>? ReferrerPolicy
@@ -94,9 +99,10 @@ public class IFrameProps : GlobalHtmlComponentProps<HTMLIFrameElement>
     }
 
     private static readonly PropDescriptor<string> s_loading = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Loading = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Loading = s.Value;
+        },
         static (el, s) => el.SetAttribute("loading", s));
 
     public IReadOnlySignal<string>? Loading
@@ -106,9 +112,10 @@ public class IFrameProps : GlobalHtmlComponentProps<HTMLIFrameElement>
     }
 
     private static readonly PropDescriptor<string> s_sandbox = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Sandbox.Value = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Sandbox.Value = s.Value;
+        },
         static (el, s) => el.SetAttribute("sandbox", s));
 
     public IReadOnlySignal<string>? Sandbox
@@ -118,9 +125,10 @@ public class IFrameProps : GlobalHtmlComponentProps<HTMLIFrameElement>
     }
 
     private static readonly PropDescriptor<string> s_srcDoc = new(
-        OperatingSystem.IsBrowser()
-            ? static (el, s) => el.Srcdoc = s.Value
-            : null,
+        static (el, s) =>
+        {
+            if (OperatingSystem.IsBrowser()) el.Srcdoc = s.Value;
+        },
         static (el, s) => el.SetAttribute("srcdoc", s));
 
     public IReadOnlySignal<string>? SrcDoc
