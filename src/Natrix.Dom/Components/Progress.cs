@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,38 +7,30 @@ namespace Natrix.Dom.Components;
 
 public class ProgressProps : GlobalHtmlComponentProps<HTMLProgressElement>
 {
-    public IReadOnlySignal<double>? Value { get; init; }
-    public IReadOnlySignal<double>? Max { get; init; }
+    private static PropDescriptor<double>? s_value;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLProgressElement>> register)
+    public IReadOnlySignal<double>? Value
     {
-        base.RegisterClientEffects(register);
-
-        if (Value != null)
-        {
-            register(el => el.Value = Value.Value);
-        }
-
-        if (Max != null)
-        {
-            register(el => el.Max = Max.Value);
-        }
+        get => Get(s_value);
+        init => Set(ref s_value, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+            },
+            static (el, s) => el.SetDouble("value", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<double>? s_max;
+
+    public IReadOnlySignal<double>? Max
     {
-        base.RegisterServerEffects(el);
-
-        if (Value != null)
-        {
-            el.SetDouble("value", Value);
-        }
-
-        if (Max != null)
-        {
-            el.SetDouble("max", Max);
-        }
+        get => Get(s_max);
+        init => Set(ref s_max, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Max = s.Value;
+            },
+            static (el, s) => el.SetDouble("max", s)));
     }
 }
 

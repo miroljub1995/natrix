@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,126 +7,134 @@ namespace Natrix.Dom.Components;
 
 public class IFrameProps : GlobalHtmlComponentProps<HTMLIFrameElement>
 {
-    public IReadOnlySignal<string>? Src { get; init; }
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<string>? Allow { get; init; }
-    public IReadOnlySignal<bool>? AllowFullscreen { get; init; }
-    public IReadOnlySignal<string>? Width { get; init; }
-    public IReadOnlySignal<string>? Height { get; init; }
-    public IReadOnlySignal<string>? ReferrerPolicy { get; init; }
-    public IReadOnlySignal<string>? Loading { get; init; }
-    public IReadOnlySignal<string>? Sandbox { get; init; }
-    public IReadOnlySignal<string>? SrcDoc { get; init; }
+    private static PropDescriptor<string>? s_src;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLIFrameElement>> register)
+    public IReadOnlySignal<string>? Src
     {
-        base.RegisterClientEffects(register);
-
-        if (Src != null)
-        {
-            register(el => el.Src = Src.Value);
-        }
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (Allow != null)
-        {
-            register(el => el.Allow = Allow.Value);
-        }
-
-        if (AllowFullscreen != null)
-        {
-            register(el => el.AllowFullscreen = AllowFullscreen.Value);
-        }
-
-        if (Width != null)
-        {
-            register(el => el.Width = Width.Value);
-        }
-
-        if (Height != null)
-        {
-            register(el => el.Height = Height.Value);
-        }
-
-        if (ReferrerPolicy != null)
-        {
-            register(el => el.ReferrerPolicy = ReferrerPolicy.Value);
-        }
-
-        if (Loading != null)
-        {
-            register(el => el.Loading = Loading.Value);
-        }
-
-        if (Sandbox != null)
-        {
-            register(el => el.Sandbox.Value = Sandbox.Value);
-        }
-
-        if (SrcDoc != null)
-        {
-            register(el => el.Srcdoc = SrcDoc.Value);
-        }
+        get => Get(s_src);
+        init => Set(ref s_src, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+            },
+            static (el, s) => el.SetAttribute("src", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_name;
+
+    public IReadOnlySignal<string>? Name
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_name);
+        init => Set(ref s_name, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+            },
+            static (el, s) => el.SetAttribute("name", s)));
+    }
 
-        if (Src != null)
-        {
-            el.SetAttribute("src", Src);
-        }
+    private static PropDescriptor<string>? s_allow;
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    public IReadOnlySignal<string>? Allow
+    {
+        get => Get(s_allow);
+        init => Set(ref s_allow, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Allow = s.Value;
+            },
+            static (el, s) => el.SetAttribute("allow", s)));
+    }
 
-        if (Allow != null)
-        {
-            el.SetAttribute("allow", Allow);
-        }
+    private static PropDescriptor<bool>? s_allowFullscreen;
 
-        if (AllowFullscreen != null)
-        {
-            el.SetBoolean("allowfullscreen", AllowFullscreen);
-        }
+    public IReadOnlySignal<bool>? AllowFullscreen
+    {
+        get => Get(s_allowFullscreen);
+        init => Set(ref s_allowFullscreen, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AllowFullscreen = s.Value;
+            },
+            static (el, s) => el.SetBoolean("allowfullscreen", s)));
+    }
 
-        if (Width != null)
-        {
-            el.SetAttribute("width", Width);
-        }
+    private static PropDescriptor<string>? s_width;
 
-        if (Height != null)
-        {
-            el.SetAttribute("height", Height);
-        }
+    public IReadOnlySignal<string>? Width
+    {
+        get => Get(s_width);
+        init => Set(ref s_width, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Width = s.Value;
+            },
+            static (el, s) => el.SetAttribute("width", s)));
+    }
 
-        if (ReferrerPolicy != null)
-        {
-            el.SetAttribute("referrerpolicy", ReferrerPolicy);
-        }
+    private static PropDescriptor<string>? s_height;
 
-        if (Loading != null)
-        {
-            el.SetAttribute("loading", Loading);
-        }
+    public IReadOnlySignal<string>? Height
+    {
+        get => Get(s_height);
+        init => Set(ref s_height, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Height = s.Value;
+            },
+            static (el, s) => el.SetAttribute("height", s)));
+    }
 
-        if (Sandbox != null)
-        {
-            el.SetAttribute("sandbox", Sandbox);
-        }
+    private static PropDescriptor<string>? s_referrerPolicy;
 
-        if (SrcDoc != null)
-        {
-            el.SetAttribute("srcdoc", SrcDoc);
-        }
+    public IReadOnlySignal<string>? ReferrerPolicy
+    {
+        get => Get(s_referrerPolicy);
+        init => Set(ref s_referrerPolicy, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.ReferrerPolicy = s.Value;
+            },
+            static (el, s) => el.SetAttribute("referrerpolicy", s)));
+    }
+
+    private static PropDescriptor<string>? s_loading;
+
+    public IReadOnlySignal<string>? Loading
+    {
+        get => Get(s_loading);
+        init => Set(ref s_loading, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Loading = s.Value;
+            },
+            static (el, s) => el.SetAttribute("loading", s)));
+    }
+
+    private static PropDescriptor<string>? s_sandbox;
+
+    public IReadOnlySignal<string>? Sandbox
+    {
+        get => Get(s_sandbox);
+        init => Set(ref s_sandbox, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Sandbox.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("sandbox", s)));
+    }
+
+    private static PropDescriptor<string>? s_srcDoc;
+
+    public IReadOnlySignal<string>? SrcDoc
+    {
+        get => Get(s_srcDoc);
+        init => Set(ref s_srcDoc, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Srcdoc = s.Value;
+            },
+            static (el, s) => el.SetAttribute("srcdoc", s)));
     }
 }
 

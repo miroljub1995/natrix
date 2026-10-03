@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,104 +7,108 @@ namespace Natrix.Dom.Components;
 
 public class AProps : GlobalHtmlComponentProps<HTMLAnchorElement>
 {
-    public IReadOnlySignal<string>? Href { get; init; }
-    public IReadOnlySignal<string>? Target { get; init; }
-    public IReadOnlySignal<string>? Rel { get; init; }
-    public IReadOnlySignal<string>? Download { get; init; }
-    public IReadOnlySignal<string>? Hreflang { get; init; }
-    public IReadOnlySignal<string>? Ping { get; init; }
-    public IReadOnlySignal<string>? ReferrerPolicy { get; init; }
-    public IReadOnlySignal<string>? Type { get; init; }
+    private static PropDescriptor<string>? s_href;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLAnchorElement>> register)
+    public IReadOnlySignal<string>? Href
     {
-        base.RegisterClientEffects(register);
-
-        if (Href != null)
-        {
-            register(el => el.Href = Href.Value);
-        }
-
-        if (Target != null)
-        {
-            register(el => el.Target = Target.Value);
-        }
-
-        if (Rel != null)
-        {
-            register(el => el.Rel = Rel.Value);
-        }
-
-        if (Download != null)
-        {
-            register(el => el.Download = Download.Value);
-        }
-
-        if (Hreflang != null)
-        {
-            register(el => el.Hreflang = Hreflang.Value);
-        }
-
-        if (Ping != null)
-        {
-            register(el => el.Ping = Ping.Value);
-        }
-
-        if (ReferrerPolicy != null)
-        {
-            register(el => el.ReferrerPolicy = ReferrerPolicy.Value);
-        }
-
-        if (Type != null)
-        {
-            register(el => el.Type = Type.Value);
-        }
+        get => Get(s_href);
+        init => Set(ref s_href, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Href = s.Value;
+            },
+            static (el, s) => el.SetAttribute("href", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_target;
+
+    public IReadOnlySignal<string>? Target
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_target);
+        init => Set(ref s_target, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Target = s.Value;
+            },
+            static (el, s) => el.SetAttribute("target", s)));
+    }
 
-        if (Href != null)
-        {
-            el.SetAttribute("href", Href);
-        }
+    private static PropDescriptor<string>? s_rel;
 
-        if (Target != null)
-        {
-            el.SetAttribute("target", Target);
-        }
+    public IReadOnlySignal<string>? Rel
+    {
+        get => Get(s_rel);
+        init => Set(ref s_rel, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Rel = s.Value;
+            },
+            static (el, s) => el.SetAttribute("rel", s)));
+    }
 
-        if (Rel != null)
-        {
-            el.SetAttribute("rel", Rel);
-        }
+    private static PropDescriptor<string>? s_download;
 
-        if (Download != null)
-        {
-            el.SetAttribute("download", Download);
-        }
+    public IReadOnlySignal<string>? Download
+    {
+        get => Get(s_download);
+        init => Set(ref s_download, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Download = s.Value;
+            },
+            static (el, s) => el.SetAttribute("download", s)));
+    }
 
-        if (Hreflang != null)
-        {
-            el.SetAttribute("hreflang", Hreflang);
-        }
+    private static PropDescriptor<string>? s_hreflang;
 
-        if (Ping != null)
-        {
-            el.SetAttribute("ping", Ping);
-        }
+    public IReadOnlySignal<string>? Hreflang
+    {
+        get => Get(s_hreflang);
+        init => Set(ref s_hreflang, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Hreflang = s.Value;
+            },
+            static (el, s) => el.SetAttribute("hreflang", s)));
+    }
 
-        if (ReferrerPolicy != null)
-        {
-            el.SetAttribute("referrerpolicy", ReferrerPolicy);
-        }
+    private static PropDescriptor<string>? s_ping;
 
-        if (Type != null)
-        {
-            el.SetAttribute("type", Type);
-        }
+    public IReadOnlySignal<string>? Ping
+    {
+        get => Get(s_ping);
+        init => Set(ref s_ping, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Ping = s.Value;
+            },
+            static (el, s) => el.SetAttribute("ping", s)));
+    }
+
+    private static PropDescriptor<string>? s_referrerPolicy;
+
+    public IReadOnlySignal<string>? ReferrerPolicy
+    {
+        get => Get(s_referrerPolicy);
+        init => Set(ref s_referrerPolicy, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.ReferrerPolicy = s.Value;
+            },
+            static (el, s) => el.SetAttribute("referrerpolicy", s)));
+    }
+
+    private static PropDescriptor<string>? s_type;
+
+    public IReadOnlySignal<string>? Type
+    {
+        get => Get(s_type);
+        init => Set(ref s_type, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+            },
+            static (el, s) => el.SetAttribute("type", s)));
     }
 }
 

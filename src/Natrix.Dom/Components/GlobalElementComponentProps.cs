@@ -27,588 +27,680 @@ namespace Natrix.Dom.Components;
 public class GlobalElementComponentProps<TElement> : BaseDomComponentProps<TElement>
     where TElement : Element
 {
-    public IReadOnlySignal<string?>? Role { get; init; }
-    public IReadOnlySignal<string?>? AriaActiveDescendant { get; init; }
-    public IReadOnlySignal<bool>? AriaAtomic { get; init; }
-    public IReadOnlySignal<string?>? AriaAutoComplete { get; init; }
-    public IReadOnlySignal<string?>? AriaBrailleLabel { get; init; }
-    public IReadOnlySignal<string?>? AriaBrailleRoleDescription { get; init; }
-    public IReadOnlySignal<bool>? AriaBusy { get; init; }
-    public IReadOnlySignal<string?>? AriaChecked { get; init; }
-    public IReadOnlySignal<int>? AriaColCount { get; init; }
-    public IReadOnlySignal<int>? AriaColIndex { get; init; }
-    public IReadOnlySignal<string?>? AriaColIndexText { get; init; }
-    public IReadOnlySignal<int>? AriaColSpan { get; init; }
-    public IReadOnlySignal<string?>? AriaControls { get; init; }
-    public IReadOnlySignal<string?>? AriaCurrent { get; init; }
-    public IReadOnlySignal<string?>? AriaDescribedBy { get; init; }
-    public IReadOnlySignal<string?>? AriaDescription { get; init; }
-    public IReadOnlySignal<string?>? AriaDetails { get; init; }
-    public IReadOnlySignal<bool>? AriaDisabled { get; init; }
-    public IReadOnlySignal<string?>? AriaErrorMessage { get; init; }
-    public IReadOnlySignal<string?>? AriaExpanded { get; init; }
-    public IReadOnlySignal<string?>? AriaFlowTo { get; init; }
-    public IReadOnlySignal<string?>? AriaHasPopup { get; init; }
-    public IReadOnlySignal<bool>? AriaHidden { get; init; }
-    public IReadOnlySignal<string?>? AriaInvalid { get; init; }
-    public IReadOnlySignal<string?>? AriaKeyShortcuts { get; init; }
-    public IReadOnlySignal<string?>? AriaLabel { get; init; }
-    public IReadOnlySignal<string?>? AriaLabelledBy { get; init; }
-    public IReadOnlySignal<int>? AriaLevel { get; init; }
-    public IReadOnlySignal<string?>? AriaLive { get; init; }
-    public IReadOnlySignal<bool>? AriaModal { get; init; }
-    public IReadOnlySignal<bool>? AriaMultiLine { get; init; }
-    public IReadOnlySignal<bool>? AriaMultiSelectable { get; init; }
-    public IReadOnlySignal<string?>? AriaOrientation { get; init; }
-    public IReadOnlySignal<string?>? AriaOwns { get; init; }
-    public IReadOnlySignal<string?>? AriaPlaceholder { get; init; }
-    public IReadOnlySignal<int>? AriaPosInSet { get; init; }
-    public IReadOnlySignal<string?>? AriaPressed { get; init; }
-    public IReadOnlySignal<bool>? AriaReadOnly { get; init; }
-    public IReadOnlySignal<string?>? AriaRelevant { get; init; }
-    public IReadOnlySignal<bool>? AriaRequired { get; init; }
-    public IReadOnlySignal<string?>? AriaRoleDescription { get; init; }
-    public IReadOnlySignal<int>? AriaRowCount { get; init; }
-    public IReadOnlySignal<int>? AriaRowIndex { get; init; }
-    public IReadOnlySignal<string?>? AriaRowIndexText { get; init; }
-    public IReadOnlySignal<int>? AriaRowSpan { get; init; }
-    public IReadOnlySignal<bool>? AriaSelected { get; init; }
-    public IReadOnlySignal<int>? AriaSetSize { get; init; }
-    public IReadOnlySignal<string?>? AriaSort { get; init; }
-    public IReadOnlySignal<double>? AriaValueMax { get; init; }
-    public IReadOnlySignal<double>? AriaValueMin { get; init; }
-    public IReadOnlySignal<double>? AriaValueNow { get; init; }
-    public IReadOnlySignal<string?>? AriaValueText { get; init; }
+    private static PropDescriptor<string?>? s_role;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<TElement>> register)
+    public IReadOnlySignal<string?>? Role
     {
-        base.RegisterClientEffects(register);
-
-        if (Role != null)
-        {
-            register(el => el.Role = Role.Value);
-        }
-
-        if (AriaActiveDescendant != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-activedescendant", AriaActiveDescendant.Value));
-        }
-
-        if (AriaAtomic != null)
-        {
-            register(el => el.AriaAtomic = AriaAtomic.Value ? "true" : "false");
-        }
-
-        if (AriaAutoComplete != null)
-        {
-            register(el => el.AriaAutoComplete = AriaAutoComplete.Value);
-        }
-
-        if (AriaBrailleLabel != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-braillelabel", AriaBrailleLabel.Value));
-        }
-
-        if (AriaBrailleRoleDescription != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-brailleroledescription", AriaBrailleRoleDescription.Value));
-        }
-
-        if (AriaBusy != null)
-        {
-            register(el => el.AriaBusy = AriaBusy.Value ? "true" : "false");
-        }
-
-        if (AriaChecked != null)
-        {
-            register(el => el.AriaChecked = AriaChecked.Value);
-        }
-
-        if (AriaColCount != null)
-        {
-            register(el => el.AriaColCount = AriaColCount.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaColIndex != null)
-        {
-            register(el => el.AriaColIndex = AriaColIndex.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaColIndexText != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-colindextext", AriaColIndexText.Value));
-        }
-
-        if (AriaColSpan != null)
-        {
-            register(el => el.AriaColSpan = AriaColSpan.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaControls != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-controls", AriaControls.Value));
-        }
-
-        if (AriaCurrent != null)
-        {
-            register(el => el.AriaCurrent = AriaCurrent.Value);
-        }
-
-        if (AriaDescribedBy != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-describedby", AriaDescribedBy.Value));
-        }
-
-        if (AriaDescription != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-description", AriaDescription.Value));
-        }
-
-        if (AriaDetails != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-details", AriaDetails.Value));
-        }
-
-        if (AriaDisabled != null)
-        {
-            register(el => el.AriaDisabled = AriaDisabled.Value ? "true" : "false");
-        }
-
-        if (AriaErrorMessage != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-errormessage", AriaErrorMessage.Value));
-        }
-
-        if (AriaExpanded != null)
-        {
-            register(el => el.AriaExpanded = AriaExpanded.Value);
-        }
-
-        if (AriaFlowTo != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-flowto", AriaFlowTo.Value));
-        }
-
-        if (AriaHasPopup != null)
-        {
-            register(el => el.AriaHasPopup = AriaHasPopup.Value);
-        }
-
-        if (AriaHidden != null)
-        {
-            register(el => el.AriaHidden = AriaHidden.Value ? "true" : "false");
-        }
-
-        if (AriaInvalid != null)
-        {
-            register(el => el.AriaInvalid = AriaInvalid.Value);
-        }
-
-        if (AriaKeyShortcuts != null)
-        {
-            register(el => el.AriaKeyShortcuts = AriaKeyShortcuts.Value);
-        }
-
-        if (AriaLabel != null)
-        {
-            register(el => el.AriaLabel = AriaLabel.Value);
-        }
-
-        if (AriaLabelledBy != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-labelledby", AriaLabelledBy.Value));
-        }
-
-        if (AriaLevel != null)
-        {
-            register(el => el.AriaLevel = AriaLevel.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaLive != null)
-        {
-            register(el => el.AriaLive = AriaLive.Value);
-        }
-
-        if (AriaModal != null)
-        {
-            register(el => el.AriaModal = AriaModal.Value ? "true" : "false");
-        }
-
-        if (AriaMultiLine != null)
-        {
-            register(el => el.AriaMultiLine = AriaMultiLine.Value ? "true" : "false");
-        }
-
-        if (AriaMultiSelectable != null)
-        {
-            register(el => el.AriaMultiSelectable = AriaMultiSelectable.Value ? "true" : "false");
-        }
-
-        if (AriaOrientation != null)
-        {
-            register(el => el.AriaOrientation = AriaOrientation.Value);
-        }
-
-        if (AriaOwns != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-owns", AriaOwns.Value));
-        }
-
-        if (AriaPlaceholder != null)
-        {
-            register(el => el.AriaPlaceholder = AriaPlaceholder.Value);
-        }
-
-        if (AriaPosInSet != null)
-        {
-            register(el => el.AriaPosInSet = AriaPosInSet.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaPressed != null)
-        {
-            register(el => el.AriaPressed = AriaPressed.Value);
-        }
-
-        if (AriaReadOnly != null)
-        {
-            register(el => el.AriaReadOnly = AriaReadOnly.Value ? "true" : "false");
-        }
-
-        if (AriaRelevant != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-relevant", AriaRelevant.Value));
-        }
-
-        if (AriaRequired != null)
-        {
-            register(el => el.AriaRequired = AriaRequired.Value ? "true" : "false");
-        }
-
-        if (AriaRoleDescription != null)
-        {
-            register(el => el.AriaRoleDescription = AriaRoleDescription.Value);
-        }
-
-        if (AriaRowCount != null)
-        {
-            register(el => el.AriaRowCount = AriaRowCount.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaRowIndex != null)
-        {
-            register(el => el.AriaRowIndex = AriaRowIndex.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaRowIndexText != null)
-        {
-            register(el => SetOrRemoveAttribute(el, "aria-rowindextext", AriaRowIndexText.Value));
-        }
-
-        if (AriaRowSpan != null)
-        {
-            register(el => el.AriaRowSpan = AriaRowSpan.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaSelected != null)
-        {
-            register(el => el.AriaSelected = AriaSelected.Value ? "true" : "false");
-        }
-
-        if (AriaSetSize != null)
-        {
-            register(el => el.AriaSetSize = AriaSetSize.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaSort != null)
-        {
-            register(el => el.AriaSort = AriaSort.Value);
-        }
-
-        if (AriaValueMax != null)
-        {
-            register(el => el.AriaValueMax = AriaValueMax.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaValueMin != null)
-        {
-            register(el => el.AriaValueMin = AriaValueMin.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaValueNow != null)
-        {
-            register(el => el.AriaValueNow = AriaValueNow.Value.ToString(CultureInfo.InvariantCulture));
-        }
-
-        if (AriaValueText != null)
-        {
-            register(el => el.AriaValueText = AriaValueText.Value);
-        }
+        get => Get(s_role);
+        init => Set(ref s_role, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Role = s.Value;
+            },
+            static (el, s) => el.SetNullableString("role", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string?>? s_ariaActiveDescendant;
+
+    public IReadOnlySignal<string?>? AriaActiveDescendant
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_ariaActiveDescendant);
+        init => Set(ref s_ariaActiveDescendant, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-activedescendant", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-activedescendant", s)));
+    }
 
-        if (Role != null)
-        {
-            el.SetNullableString("role", Role);
-        }
+    private static PropDescriptor<bool>? s_ariaAtomic;
 
-        if (AriaActiveDescendant != null)
-        {
-            el.SetNullableString("aria-activedescendant", AriaActiveDescendant);
-        }
+    public IReadOnlySignal<bool>? AriaAtomic
+    {
+        get => Get(s_ariaAtomic);
+        init => Set(ref s_ariaAtomic, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaAtomic = s.Value ? "true" : "false";
+            },
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-atomic", s)));
+    }
 
-        if (AriaAtomic != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-atomic", AriaAtomic);
-        }
+    private static PropDescriptor<string?>? s_ariaAutoComplete;
 
-        if (AriaAutoComplete != null)
-        {
-            el.SetNullableString("aria-autocomplete", AriaAutoComplete);
-        }
+    public IReadOnlySignal<string?>? AriaAutoComplete
+    {
+        get => Get(s_ariaAutoComplete);
+        init => Set(ref s_ariaAutoComplete, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaAutoComplete = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-autocomplete", s)));
+    }
 
-        if (AriaBrailleLabel != null)
-        {
-            el.SetNullableString("aria-braillelabel", AriaBrailleLabel);
-        }
+    private static PropDescriptor<string?>? s_ariaBrailleLabel;
 
-        if (AriaBrailleRoleDescription != null)
-        {
-            el.SetNullableString("aria-brailleroledescription", AriaBrailleRoleDescription);
-        }
+    public IReadOnlySignal<string?>? AriaBrailleLabel
+    {
+        get => Get(s_ariaBrailleLabel);
+        init => Set(ref s_ariaBrailleLabel, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-braillelabel", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-braillelabel", s)));
+    }
 
-        if (AriaBusy != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-busy", AriaBusy);
-        }
+    private static PropDescriptor<string?>? s_ariaBrailleRoleDescription;
 
-        if (AriaChecked != null)
-        {
-            el.SetNullableString("aria-checked", AriaChecked);
-        }
+    public IReadOnlySignal<string?>? AriaBrailleRoleDescription
+    {
+        get => Get(s_ariaBrailleRoleDescription);
+        init => Set(ref s_ariaBrailleRoleDescription, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-brailleroledescription", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-brailleroledescription", s)));
+    }
 
-        if (AriaColCount != null)
-        {
-            el.SetInt("aria-colcount", AriaColCount);
-        }
+    private static PropDescriptor<bool>? s_ariaBusy;
 
-        if (AriaColIndex != null)
-        {
-            el.SetInt("aria-colindex", AriaColIndex);
-        }
+    public IReadOnlySignal<bool>? AriaBusy
+    {
+        get => Get(s_ariaBusy);
+        init => Set(ref s_ariaBusy, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaBusy = s.Value ? "true" : "false";
+            },
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-busy", s)));
+    }
 
-        if (AriaColIndexText != null)
-        {
-            el.SetNullableString("aria-colindextext", AriaColIndexText);
-        }
+    private static PropDescriptor<string?>? s_ariaChecked;
 
-        if (AriaColSpan != null)
-        {
-            el.SetInt("aria-colspan", AriaColSpan);
-        }
+    public IReadOnlySignal<string?>? AriaChecked
+    {
+        get => Get(s_ariaChecked);
+        init => Set(ref s_ariaChecked, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaChecked = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-checked", s)));
+    }
 
-        if (AriaControls != null)
-        {
-            el.SetNullableString("aria-controls", AriaControls);
-        }
+    private static PropDescriptor<int>? s_ariaColCount;
 
-        if (AriaCurrent != null)
-        {
-            el.SetNullableString("aria-current", AriaCurrent);
-        }
+    public IReadOnlySignal<int>? AriaColCount
+    {
+        get => Get(s_ariaColCount);
+        init => Set(ref s_ariaColCount, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaColCount = s.Value.ToString(CultureInfo.InvariantCulture);
+            },
+            static (el, s) => el.SetInt("aria-colcount", s)));
+    }
 
-        if (AriaDescribedBy != null)
-        {
-            el.SetNullableString("aria-describedby", AriaDescribedBy);
-        }
+    private static PropDescriptor<int>? s_ariaColIndex;
 
-        if (AriaDescription != null)
-        {
-            el.SetNullableString("aria-description", AriaDescription);
-        }
+    public IReadOnlySignal<int>? AriaColIndex
+    {
+        get => Get(s_ariaColIndex);
+        init => Set(ref s_ariaColIndex, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaColIndex = s.Value.ToString(CultureInfo.InvariantCulture);
+            },
+            static (el, s) => el.SetInt("aria-colindex", s)));
+    }
 
-        if (AriaDetails != null)
-        {
-            el.SetNullableString("aria-details", AriaDetails);
-        }
+    private static PropDescriptor<string?>? s_ariaColIndexText;
 
-        if (AriaDisabled != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-disabled", AriaDisabled);
-        }
+    public IReadOnlySignal<string?>? AriaColIndexText
+    {
+        get => Get(s_ariaColIndexText);
+        init => Set(ref s_ariaColIndexText, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-colindextext", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-colindextext", s)));
+    }
 
-        if (AriaErrorMessage != null)
-        {
-            el.SetNullableString("aria-errormessage", AriaErrorMessage);
-        }
+    private static PropDescriptor<int>? s_ariaColSpan;
 
-        if (AriaExpanded != null)
-        {
-            el.SetNullableString("aria-expanded", AriaExpanded);
-        }
+    public IReadOnlySignal<int>? AriaColSpan
+    {
+        get => Get(s_ariaColSpan);
+        init => Set(ref s_ariaColSpan, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaColSpan = s.Value.ToString(CultureInfo.InvariantCulture);
+            },
+            static (el, s) => el.SetInt("aria-colspan", s)));
+    }
 
-        if (AriaFlowTo != null)
-        {
-            el.SetNullableString("aria-flowto", AriaFlowTo);
-        }
+    private static PropDescriptor<string?>? s_ariaControls;
 
-        if (AriaHasPopup != null)
-        {
-            el.SetNullableString("aria-haspopup", AriaHasPopup);
-        }
+    public IReadOnlySignal<string?>? AriaControls
+    {
+        get => Get(s_ariaControls);
+        init => Set(ref s_ariaControls, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-controls", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-controls", s)));
+    }
 
-        if (AriaHidden != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-hidden", AriaHidden);
-        }
+    private static PropDescriptor<string?>? s_ariaCurrent;
 
-        if (AriaInvalid != null)
-        {
-            el.SetNullableString("aria-invalid", AriaInvalid);
-        }
+    public IReadOnlySignal<string?>? AriaCurrent
+    {
+        get => Get(s_ariaCurrent);
+        init => Set(ref s_ariaCurrent, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaCurrent = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-current", s)));
+    }
 
-        if (AriaKeyShortcuts != null)
-        {
-            el.SetNullableString("aria-keyshortcuts", AriaKeyShortcuts);
-        }
+    private static PropDescriptor<string?>? s_ariaDescribedBy;
 
-        if (AriaLabel != null)
-        {
-            el.SetNullableString("aria-label", AriaLabel);
-        }
+    public IReadOnlySignal<string?>? AriaDescribedBy
+    {
+        get => Get(s_ariaDescribedBy);
+        init => Set(ref s_ariaDescribedBy, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-describedby", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-describedby", s)));
+    }
 
-        if (AriaLabelledBy != null)
-        {
-            el.SetNullableString("aria-labelledby", AriaLabelledBy);
-        }
+    private static PropDescriptor<string?>? s_ariaDescription;
 
-        if (AriaLevel != null)
-        {
-            el.SetInt("aria-level", AriaLevel);
-        }
+    public IReadOnlySignal<string?>? AriaDescription
+    {
+        get => Get(s_ariaDescription);
+        init => Set(ref s_ariaDescription, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-description", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-description", s)));
+    }
 
-        if (AriaLive != null)
-        {
-            el.SetNullableString("aria-live", AriaLive);
-        }
+    private static PropDescriptor<string?>? s_ariaDetails;
 
-        if (AriaModal != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-modal", AriaModal);
-        }
+    public IReadOnlySignal<string?>? AriaDetails
+    {
+        get => Get(s_ariaDetails);
+        init => Set(ref s_ariaDetails, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-details", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-details", s)));
+    }
 
-        if (AriaMultiLine != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-multiline", AriaMultiLine);
-        }
+    private static PropDescriptor<bool>? s_ariaDisabled;
 
-        if (AriaMultiSelectable != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-multiselectable", AriaMultiSelectable);
-        }
+    public IReadOnlySignal<bool>? AriaDisabled
+    {
+        get => Get(s_ariaDisabled);
+        init => Set(ref s_ariaDisabled, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaDisabled = s.Value ? "true" : "false";
+            },
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-disabled", s)));
+    }
 
-        if (AriaOrientation != null)
-        {
-            el.SetNullableString("aria-orientation", AriaOrientation);
-        }
+    private static PropDescriptor<string?>? s_ariaErrorMessage;
 
-        if (AriaOwns != null)
-        {
-            el.SetNullableString("aria-owns", AriaOwns);
-        }
+    public IReadOnlySignal<string?>? AriaErrorMessage
+    {
+        get => Get(s_ariaErrorMessage);
+        init => Set(ref s_ariaErrorMessage, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-errormessage", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-errormessage", s)));
+    }
 
-        if (AriaPlaceholder != null)
-        {
-            el.SetNullableString("aria-placeholder", AriaPlaceholder);
-        }
+    private static PropDescriptor<string?>? s_ariaExpanded;
 
-        if (AriaPosInSet != null)
-        {
-            el.SetInt("aria-posinset", AriaPosInSet);
-        }
+    public IReadOnlySignal<string?>? AriaExpanded
+    {
+        get => Get(s_ariaExpanded);
+        init => Set(ref s_ariaExpanded, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaExpanded = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-expanded", s)));
+    }
 
-        if (AriaPressed != null)
-        {
-            el.SetNullableString("aria-pressed", AriaPressed);
-        }
+    private static PropDescriptor<string?>? s_ariaFlowTo;
 
-        if (AriaReadOnly != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-readonly", AriaReadOnly);
-        }
+    public IReadOnlySignal<string?>? AriaFlowTo
+    {
+        get => Get(s_ariaFlowTo);
+        init => Set(ref s_ariaFlowTo, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-flowto", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-flowto", s)));
+    }
 
-        if (AriaRelevant != null)
-        {
-            el.SetNullableString("aria-relevant", AriaRelevant);
-        }
+    private static PropDescriptor<string?>? s_ariaHasPopup;
 
-        if (AriaRequired != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-required", AriaRequired);
-        }
+    public IReadOnlySignal<string?>? AriaHasPopup
+    {
+        get => Get(s_ariaHasPopup);
+        init => Set(ref s_ariaHasPopup, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaHasPopup = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-haspopup", s)));
+    }
 
-        if (AriaRoleDescription != null)
-        {
-            el.SetNullableString("aria-roledescription", AriaRoleDescription);
-        }
+    private static PropDescriptor<bool>? s_ariaHidden;
 
-        if (AriaRowCount != null)
-        {
-            el.SetInt("aria-rowcount", AriaRowCount);
-        }
+    public IReadOnlySignal<bool>? AriaHidden
+    {
+        get => Get(s_ariaHidden);
+        init => Set(ref s_ariaHidden, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaHidden = s.Value ? "true" : "false";
+            },
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-hidden", s)));
+    }
 
-        if (AriaRowIndex != null)
-        {
-            el.SetInt("aria-rowindex", AriaRowIndex);
-        }
+    private static PropDescriptor<string?>? s_ariaInvalid;
 
-        if (AriaRowIndexText != null)
-        {
-            el.SetNullableString("aria-rowindextext", AriaRowIndexText);
-        }
+    public IReadOnlySignal<string?>? AriaInvalid
+    {
+        get => Get(s_ariaInvalid);
+        init => Set(ref s_ariaInvalid, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaInvalid = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-invalid", s)));
+    }
 
-        if (AriaRowSpan != null)
-        {
-            el.SetInt("aria-rowspan", AriaRowSpan);
-        }
+    private static PropDescriptor<string?>? s_ariaKeyShortcuts;
 
-        if (AriaSelected != null)
-        {
-            el.SetEnumeratedBoolTrueFalse("aria-selected", AriaSelected);
-        }
+    public IReadOnlySignal<string?>? AriaKeyShortcuts
+    {
+        get => Get(s_ariaKeyShortcuts);
+        init => Set(ref s_ariaKeyShortcuts, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaKeyShortcuts = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-keyshortcuts", s)));
+    }
 
-        if (AriaSetSize != null)
-        {
-            el.SetInt("aria-setsize", AriaSetSize);
-        }
+    private static PropDescriptor<string?>? s_ariaLabel;
 
-        if (AriaSort != null)
-        {
-            el.SetNullableString("aria-sort", AriaSort);
-        }
+    public IReadOnlySignal<string?>? AriaLabel
+    {
+        get => Get(s_ariaLabel);
+        init => Set(ref s_ariaLabel, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaLabel = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-label", s)));
+    }
 
-        if (AriaValueMax != null)
-        {
-            el.SetDouble("aria-valuemax", AriaValueMax);
-        }
+    private static PropDescriptor<string?>? s_ariaLabelledBy;
 
-        if (AriaValueMin != null)
-        {
-            el.SetDouble("aria-valuemin", AriaValueMin);
-        }
+    public IReadOnlySignal<string?>? AriaLabelledBy
+    {
+        get => Get(s_ariaLabelledBy);
+        init => Set(ref s_ariaLabelledBy, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-labelledby", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-labelledby", s)));
+    }
 
-        if (AriaValueNow != null)
-        {
-            el.SetDouble("aria-valuenow", AriaValueNow);
-        }
+    private static PropDescriptor<int>? s_ariaLevel;
 
-        if (AriaValueText != null)
-        {
-            el.SetNullableString("aria-valuetext", AriaValueText);
-        }
+    public IReadOnlySignal<int>? AriaLevel
+    {
+        get => Get(s_ariaLevel);
+        init => Set(ref s_ariaLevel, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaLevel = s.Value.ToString(CultureInfo.InvariantCulture);
+            },
+            static (el, s) => el.SetInt("aria-level", s)));
+    }
+
+    private static PropDescriptor<string?>? s_ariaLive;
+
+    public IReadOnlySignal<string?>? AriaLive
+    {
+        get => Get(s_ariaLive);
+        init => Set(ref s_ariaLive, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaLive = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-live", s)));
+    }
+
+    private static PropDescriptor<bool>? s_ariaModal;
+
+    public IReadOnlySignal<bool>? AriaModal
+    {
+        get => Get(s_ariaModal);
+        init => Set(ref s_ariaModal, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaModal = s.Value ? "true" : "false";
+            },
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-modal", s)));
+    }
+
+    private static PropDescriptor<bool>? s_ariaMultiLine;
+
+    public IReadOnlySignal<bool>? AriaMultiLine
+    {
+        get => Get(s_ariaMultiLine);
+        init => Set(ref s_ariaMultiLine, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaMultiLine = s.Value ? "true" : "false";
+            },
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-multiline", s)));
+    }
+
+    private static PropDescriptor<bool>? s_ariaMultiSelectable;
+
+    public IReadOnlySignal<bool>? AriaMultiSelectable
+    {
+        get => Get(s_ariaMultiSelectable);
+        init => Set(ref s_ariaMultiSelectable, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaMultiSelectable = s.Value ? "true" : "false";
+            },
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-multiselectable", s)));
+    }
+
+    private static PropDescriptor<string?>? s_ariaOrientation;
+
+    public IReadOnlySignal<string?>? AriaOrientation
+    {
+        get => Get(s_ariaOrientation);
+        init => Set(ref s_ariaOrientation, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaOrientation = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-orientation", s)));
+    }
+
+    private static PropDescriptor<string?>? s_ariaOwns;
+
+    public IReadOnlySignal<string?>? AriaOwns
+    {
+        get => Get(s_ariaOwns);
+        init => Set(ref s_ariaOwns, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-owns", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-owns", s)));
+    }
+
+    private static PropDescriptor<string?>? s_ariaPlaceholder;
+
+    public IReadOnlySignal<string?>? AriaPlaceholder
+    {
+        get => Get(s_ariaPlaceholder);
+        init => Set(ref s_ariaPlaceholder, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaPlaceholder = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-placeholder", s)));
+    }
+
+    private static PropDescriptor<int>? s_ariaPosInSet;
+
+    public IReadOnlySignal<int>? AriaPosInSet
+    {
+        get => Get(s_ariaPosInSet);
+        init => Set(ref s_ariaPosInSet, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaPosInSet = s.Value.ToString(CultureInfo.InvariantCulture);
+            },
+            static (el, s) => el.SetInt("aria-posinset", s)));
+    }
+
+    private static PropDescriptor<string?>? s_ariaPressed;
+
+    public IReadOnlySignal<string?>? AriaPressed
+    {
+        get => Get(s_ariaPressed);
+        init => Set(ref s_ariaPressed, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaPressed = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-pressed", s)));
+    }
+
+    private static PropDescriptor<bool>? s_ariaReadOnly;
+
+    public IReadOnlySignal<bool>? AriaReadOnly
+    {
+        get => Get(s_ariaReadOnly);
+        init => Set(ref s_ariaReadOnly, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaReadOnly = s.Value ? "true" : "false";
+            },
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-readonly", s)));
+    }
+
+    private static PropDescriptor<string?>? s_ariaRelevant;
+
+    public IReadOnlySignal<string?>? AriaRelevant
+    {
+        get => Get(s_ariaRelevant);
+        init => Set(ref s_ariaRelevant, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-relevant", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-relevant", s)));
+    }
+
+    private static PropDescriptor<bool>? s_ariaRequired;
+
+    public IReadOnlySignal<bool>? AriaRequired
+    {
+        get => Get(s_ariaRequired);
+        init => Set(ref s_ariaRequired, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaRequired = s.Value ? "true" : "false";
+            },
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-required", s)));
+    }
+
+    private static PropDescriptor<string?>? s_ariaRoleDescription;
+
+    public IReadOnlySignal<string?>? AriaRoleDescription
+    {
+        get => Get(s_ariaRoleDescription);
+        init => Set(ref s_ariaRoleDescription, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaRoleDescription = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-roledescription", s)));
+    }
+
+    private static PropDescriptor<int>? s_ariaRowCount;
+
+    public IReadOnlySignal<int>? AriaRowCount
+    {
+        get => Get(s_ariaRowCount);
+        init => Set(ref s_ariaRowCount, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaRowCount = s.Value.ToString(CultureInfo.InvariantCulture);
+            },
+            static (el, s) => el.SetInt("aria-rowcount", s)));
+    }
+
+    private static PropDescriptor<int>? s_ariaRowIndex;
+
+    public IReadOnlySignal<int>? AriaRowIndex
+    {
+        get => Get(s_ariaRowIndex);
+        init => Set(ref s_ariaRowIndex, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaRowIndex = s.Value.ToString(CultureInfo.InvariantCulture);
+            },
+            static (el, s) => el.SetInt("aria-rowindex", s)));
+    }
+
+    private static PropDescriptor<string?>? s_ariaRowIndexText;
+
+    public IReadOnlySignal<string?>? AriaRowIndexText
+    {
+        get => Get(s_ariaRowIndexText);
+        init => Set(ref s_ariaRowIndexText, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) SetOrRemoveAttribute(el, "aria-rowindextext", s.Value);
+            },
+            static (el, s) => el.SetNullableString("aria-rowindextext", s)));
+    }
+
+    private static PropDescriptor<int>? s_ariaRowSpan;
+
+    public IReadOnlySignal<int>? AriaRowSpan
+    {
+        get => Get(s_ariaRowSpan);
+        init => Set(ref s_ariaRowSpan, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaRowSpan = s.Value.ToString(CultureInfo.InvariantCulture);
+            },
+            static (el, s) => el.SetInt("aria-rowspan", s)));
+    }
+
+    private static PropDescriptor<bool>? s_ariaSelected;
+
+    public IReadOnlySignal<bool>? AriaSelected
+    {
+        get => Get(s_ariaSelected);
+        init => Set(ref s_ariaSelected, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaSelected = s.Value ? "true" : "false";
+            },
+            static (el, s) => el.SetEnumeratedBoolTrueFalse("aria-selected", s)));
+    }
+
+    private static PropDescriptor<int>? s_ariaSetSize;
+
+    public IReadOnlySignal<int>? AriaSetSize
+    {
+        get => Get(s_ariaSetSize);
+        init => Set(ref s_ariaSetSize, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaSetSize = s.Value.ToString(CultureInfo.InvariantCulture);
+            },
+            static (el, s) => el.SetInt("aria-setsize", s)));
+    }
+
+    private static PropDescriptor<string?>? s_ariaSort;
+
+    public IReadOnlySignal<string?>? AriaSort
+    {
+        get => Get(s_ariaSort);
+        init => Set(ref s_ariaSort, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaSort = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-sort", s)));
+    }
+
+    private static PropDescriptor<double>? s_ariaValueMax;
+
+    public IReadOnlySignal<double>? AriaValueMax
+    {
+        get => Get(s_ariaValueMax);
+        init => Set(ref s_ariaValueMax, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaValueMax = s.Value.ToString(CultureInfo.InvariantCulture);
+            },
+            static (el, s) => el.SetDouble("aria-valuemax", s)));
+    }
+
+    private static PropDescriptor<double>? s_ariaValueMin;
+
+    public IReadOnlySignal<double>? AriaValueMin
+    {
+        get => Get(s_ariaValueMin);
+        init => Set(ref s_ariaValueMin, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaValueMin = s.Value.ToString(CultureInfo.InvariantCulture);
+            },
+            static (el, s) => el.SetDouble("aria-valuemin", s)));
+    }
+
+    private static PropDescriptor<double>? s_ariaValueNow;
+
+    public IReadOnlySignal<double>? AriaValueNow
+    {
+        get => Get(s_ariaValueNow);
+        init => Set(ref s_ariaValueNow, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaValueNow = s.Value.ToString(CultureInfo.InvariantCulture);
+            },
+            static (el, s) => el.SetDouble("aria-valuenow", s)));
+    }
+
+    private static PropDescriptor<string?>? s_ariaValueText;
+
+    public IReadOnlySignal<string?>? AriaValueText
+    {
+        get => Get(s_ariaValueText);
+        init => Set(ref s_ariaValueText, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.AriaValueText = s.Value;
+            },
+            static (el, s) => el.SetNullableString("aria-valuetext", s)));
     }
 
     [SupportedOSPlatform("browser")]

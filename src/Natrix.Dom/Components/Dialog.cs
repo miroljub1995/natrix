@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,27 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class DialogProps : GlobalHtmlComponentProps<HTMLDialogElement>
 {
-    public IReadOnlySignal<bool>? Open { get; init; }
+    private static PropDescriptor<bool>? s_open;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLDialogElement>> register)
+    public IReadOnlySignal<bool>? Open
     {
-        base.RegisterClientEffects(register);
-
-        if (Open != null)
-        {
-            register(el => el.Open = Open.Value);
-        }
-    }
-
-    protected internal override void RegisterServerEffects(SsrElementNode el)
-    {
-        base.RegisterServerEffects(el);
-
-        if (Open != null)
-        {
-            el.SetBoolean("open", Open);
-        }
+        get => Get(s_open);
+        init => Set(ref s_open, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Open = s.Value;
+            },
+            static (el, s) => el.SetBoolean("open", s)));
     }
 }
 

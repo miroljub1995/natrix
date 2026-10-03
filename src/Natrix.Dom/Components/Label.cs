@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,27 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class LabelProps : GlobalHtmlComponentProps<HTMLLabelElement>
 {
-    public IReadOnlySignal<string>? HtmlFor { get; init; }
+    private static PropDescriptor<string>? s_htmlFor;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLLabelElement>> register)
+    public IReadOnlySignal<string>? HtmlFor
     {
-        base.RegisterClientEffects(register);
-
-        if (HtmlFor != null)
-        {
-            register(el => el.HtmlFor = HtmlFor.Value);
-        }
-    }
-
-    protected internal override void RegisterServerEffects(SsrElementNode el)
-    {
-        base.RegisterServerEffects(el);
-
-        if (HtmlFor != null)
-        {
-            el.SetAttribute("for", HtmlFor);
-        }
+        get => Get(s_htmlFor);
+        init => Set(ref s_htmlFor, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.HtmlFor = s.Value;
+            },
+            static (el, s) => el.SetAttribute("for", s)));
     }
 }
 

@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,71 +7,69 @@ namespace Natrix.Dom.Components;
 
 public class ThProps : GlobalHtmlComponentProps<HTMLTableCellElement>
 {
-    public IReadOnlySignal<uint>? ColSpan { get; init; }
-    public IReadOnlySignal<uint>? RowSpan { get; init; }
-    public IReadOnlySignal<string>? Headers { get; init; }
-    public IReadOnlySignal<string>? Scope { get; init; }
-    public IReadOnlySignal<string>? Abbr { get; init; }
+    private static PropDescriptor<uint>? s_colSpan;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLTableCellElement>> register)
+    public IReadOnlySignal<uint>? ColSpan
     {
-        base.RegisterClientEffects(register);
-
-        if (ColSpan != null)
-        {
-            register(el => el.ColSpan = ColSpan.Value);
-        }
-
-        if (RowSpan != null)
-        {
-            register(el => el.RowSpan = RowSpan.Value);
-        }
-
-        if (Headers != null)
-        {
-            register(el => el.Headers = Headers.Value);
-        }
-
-        if (Scope != null)
-        {
-            register(el => el.Scope = Scope.Value);
-        }
-
-        if (Abbr != null)
-        {
-            register(el => el.Abbr = Abbr.Value);
-        }
+        get => Get(s_colSpan);
+        init => Set(ref s_colSpan, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.ColSpan = s.Value;
+            },
+            static (el, s) => el.SetUInt("colspan", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<uint>? s_rowSpan;
+
+    public IReadOnlySignal<uint>? RowSpan
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_rowSpan);
+        init => Set(ref s_rowSpan, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.RowSpan = s.Value;
+            },
+            static (el, s) => el.SetUInt("rowspan", s)));
+    }
 
-        if (ColSpan != null)
-        {
-            el.SetUInt("colspan", ColSpan);
-        }
+    private static PropDescriptor<string>? s_headers;
 
-        if (RowSpan != null)
-        {
-            el.SetUInt("rowspan", RowSpan);
-        }
+    public IReadOnlySignal<string>? Headers
+    {
+        get => Get(s_headers);
+        init => Set(ref s_headers, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Headers = s.Value;
+            },
+            static (el, s) => el.SetAttribute("headers", s)));
+    }
 
-        if (Headers != null)
-        {
-            el.SetAttribute("headers", Headers);
-        }
+    private static PropDescriptor<string>? s_scope;
 
-        if (Scope != null)
-        {
-            el.SetAttribute("scope", Scope);
-        }
+    public IReadOnlySignal<string>? Scope
+    {
+        get => Get(s_scope);
+        init => Set(ref s_scope, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Scope = s.Value;
+            },
+            static (el, s) => el.SetAttribute("scope", s)));
+    }
 
-        if (Abbr != null)
-        {
-            el.SetAttribute("abbr", Abbr);
-        }
+    private static PropDescriptor<string>? s_abbr;
+
+    public IReadOnlySignal<string>? Abbr
+    {
+        get => Get(s_abbr);
+        init => Set(ref s_abbr, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Abbr = s.Value;
+            },
+            static (el, s) => el.SetAttribute("abbr", s)));
     }
 }
 

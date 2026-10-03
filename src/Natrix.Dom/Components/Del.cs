@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,38 +7,30 @@ namespace Natrix.Dom.Components;
 
 public class DelProps : GlobalHtmlComponentProps<HTMLModElement>
 {
-    public IReadOnlySignal<string>? Cite { get; init; }
-    public IReadOnlySignal<string>? DateTime { get; init; }
+    private static PropDescriptor<string>? s_cite;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLModElement>> register)
+    public IReadOnlySignal<string>? Cite
     {
-        base.RegisterClientEffects(register);
-
-        if (Cite != null)
-        {
-            register(el => el.Cite = Cite.Value);
-        }
-
-        if (DateTime != null)
-        {
-            register(el => el.DateTime = DateTime.Value);
-        }
+        get => Get(s_cite);
+        init => Set(ref s_cite, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Cite = s.Value;
+            },
+            static (el, s) => el.SetAttribute("cite", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_dateTime;
+
+    public IReadOnlySignal<string>? DateTime
     {
-        base.RegisterServerEffects(el);
-
-        if (Cite != null)
-        {
-            el.SetAttribute("cite", Cite);
-        }
-
-        if (DateTime != null)
-        {
-            el.SetAttribute("datetime", DateTime);
-        }
+        get => Get(s_dateTime);
+        init => Set(ref s_dateTime, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.DateTime = s.Value;
+            },
+            static (el, s) => el.SetAttribute("datetime", s)));
     }
 }
 

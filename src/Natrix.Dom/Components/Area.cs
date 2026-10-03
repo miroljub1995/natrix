@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,115 +7,121 @@ namespace Natrix.Dom.Components;
 
 public class AreaProps : GlobalHtmlComponentProps<HTMLAreaElement>
 {
-    public IReadOnlySignal<string>? Alt { get; init; }
-    public IReadOnlySignal<string>? Coords { get; init; }
-    public IReadOnlySignal<string>? Shape { get; init; }
-    public IReadOnlySignal<string>? Href { get; init; }
-    public IReadOnlySignal<string>? Target { get; init; }
-    public IReadOnlySignal<string>? Download { get; init; }
-    public IReadOnlySignal<string>? Ping { get; init; }
-    public IReadOnlySignal<string>? Rel { get; init; }
-    public IReadOnlySignal<string>? ReferrerPolicy { get; init; }
+    private static PropDescriptor<string>? s_alt;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLAreaElement>> register)
+    public IReadOnlySignal<string>? Alt
     {
-        base.RegisterClientEffects(register);
-
-        if (Alt != null)
-        {
-            register(el => el.Alt = Alt.Value);
-        }
-
-        if (Coords != null)
-        {
-            register(el => el.Coords = Coords.Value);
-        }
-
-        if (Shape != null)
-        {
-            register(el => el.Shape = Shape.Value);
-        }
-
-        if (Href != null)
-        {
-            register(el => el.Href = Href.Value);
-        }
-
-        if (Target != null)
-        {
-            register(el => el.Target = Target.Value);
-        }
-
-        if (Download != null)
-        {
-            register(el => el.Download = Download.Value);
-        }
-
-        if (Ping != null)
-        {
-            register(el => el.Ping = Ping.Value);
-        }
-
-        if (Rel != null)
-        {
-            register(el => el.Rel = Rel.Value);
-        }
-
-        if (ReferrerPolicy != null)
-        {
-            register(el => el.ReferrerPolicy = ReferrerPolicy.Value);
-        }
+        get => Get(s_alt);
+        init => Set(ref s_alt, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Alt = s.Value;
+            },
+            static (el, s) => el.SetAttribute("alt", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_coords;
+
+    public IReadOnlySignal<string>? Coords
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_coords);
+        init => Set(ref s_coords, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Coords = s.Value;
+            },
+            static (el, s) => el.SetAttribute("coords", s)));
+    }
 
-        if (Alt != null)
-        {
-            el.SetAttribute("alt", Alt);
-        }
+    private static PropDescriptor<string>? s_shape;
 
-        if (Coords != null)
-        {
-            el.SetAttribute("coords", Coords);
-        }
+    public IReadOnlySignal<string>? Shape
+    {
+        get => Get(s_shape);
+        init => Set(ref s_shape, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Shape = s.Value;
+            },
+            static (el, s) => el.SetAttribute("shape", s)));
+    }
 
-        if (Shape != null)
-        {
-            el.SetAttribute("shape", Shape);
-        }
+    private static PropDescriptor<string>? s_href;
 
-        if (Href != null)
-        {
-            el.SetAttribute("href", Href);
-        }
+    public IReadOnlySignal<string>? Href
+    {
+        get => Get(s_href);
+        init => Set(ref s_href, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Href = s.Value;
+            },
+            static (el, s) => el.SetAttribute("href", s)));
+    }
 
-        if (Target != null)
-        {
-            el.SetAttribute("target", Target);
-        }
+    private static PropDescriptor<string>? s_target;
 
-        if (Download != null)
-        {
-            el.SetAttribute("download", Download);
-        }
+    public IReadOnlySignal<string>? Target
+    {
+        get => Get(s_target);
+        init => Set(ref s_target, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Target = s.Value;
+            },
+            static (el, s) => el.SetAttribute("target", s)));
+    }
 
-        if (Ping != null)
-        {
-            el.SetAttribute("ping", Ping);
-        }
+    private static PropDescriptor<string>? s_download;
 
-        if (Rel != null)
-        {
-            el.SetAttribute("rel", Rel);
-        }
+    public IReadOnlySignal<string>? Download
+    {
+        get => Get(s_download);
+        init => Set(ref s_download, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Download = s.Value;
+            },
+            static (el, s) => el.SetAttribute("download", s)));
+    }
 
-        if (ReferrerPolicy != null)
-        {
-            el.SetAttribute("referrerpolicy", ReferrerPolicy);
-        }
+    private static PropDescriptor<string>? s_ping;
+
+    public IReadOnlySignal<string>? Ping
+    {
+        get => Get(s_ping);
+        init => Set(ref s_ping, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Ping = s.Value;
+            },
+            static (el, s) => el.SetAttribute("ping", s)));
+    }
+
+    private static PropDescriptor<string>? s_rel;
+
+    public IReadOnlySignal<string>? Rel
+    {
+        get => Get(s_rel);
+        init => Set(ref s_rel, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Rel = s.Value;
+            },
+            static (el, s) => el.SetAttribute("rel", s)));
+    }
+
+    private static PropDescriptor<string>? s_referrerPolicy;
+
+    public IReadOnlySignal<string>? ReferrerPolicy
+    {
+        get => Get(s_referrerPolicy);
+        init => Set(ref s_referrerPolicy, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.ReferrerPolicy = s.Value;
+            },
+            static (el, s) => el.SetAttribute("referrerpolicy", s)));
     }
 }
 

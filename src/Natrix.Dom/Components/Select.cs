@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,93 +7,95 @@ namespace Natrix.Dom.Components;
 
 public class SelectProps : GlobalHtmlComponentProps<HTMLSelectElement>
 {
-    public IReadOnlySignal<string>? Autocomplete { get; init; }
-    public IReadOnlySignal<bool>? Disabled { get; init; }
-    public IReadOnlySignal<bool>? Multiple { get; init; }
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<bool>? Required { get; init; }
-    public IReadOnlySignal<uint>? Size { get; init; }
-    public IReadOnlySignal<string>? Value { get; init; }
+    private static PropDescriptor<string>? s_autocomplete;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLSelectElement>> register)
+    public IReadOnlySignal<string>? Autocomplete
     {
-        base.RegisterClientEffects(register);
-
-        if (Autocomplete != null)
-        {
-            register(el => el.Autocomplete = Autocomplete.Value);
-        }
-
-        if (Disabled != null)
-        {
-            register(el => el.Disabled = Disabled.Value);
-        }
-
-        if (Multiple != null)
-        {
-            register(el => el.Multiple = Multiple.Value);
-        }
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (Required != null)
-        {
-            register(el => el.Required = Required.Value);
-        }
-
-        if (Size != null)
-        {
-            register(el => el.Size = Size.Value);
-        }
-
-        if (Value != null)
-        {
-            register(el => el.Value = Value.Value);
-        }
+        get => Get(s_autocomplete);
+        init => Set(ref s_autocomplete, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Autocomplete = s.Value;
+            },
+            static (el, s) => el.SetAttribute("autocomplete", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<bool>? s_disabled;
+
+    public IReadOnlySignal<bool>? Disabled
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_disabled);
+        init => Set(ref s_disabled, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
+            },
+            static (el, s) => el.SetBoolean("disabled", s)));
+    }
 
-        if (Autocomplete != null)
-        {
-            el.SetAttribute("autocomplete", Autocomplete);
-        }
+    private static PropDescriptor<bool>? s_multiple;
 
-        if (Disabled != null)
-        {
-            el.SetBoolean("disabled", Disabled);
-        }
+    public IReadOnlySignal<bool>? Multiple
+    {
+        get => Get(s_multiple);
+        init => Set(ref s_multiple, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Multiple = s.Value;
+            },
+            static (el, s) => el.SetBoolean("multiple", s)));
+    }
 
-        if (Multiple != null)
-        {
-            el.SetBoolean("multiple", Multiple);
-        }
+    private static PropDescriptor<string>? s_name;
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    public IReadOnlySignal<string>? Name
+    {
+        get => Get(s_name);
+        init => Set(ref s_name, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+            },
+            static (el, s) => el.SetAttribute("name", s)));
+    }
 
-        if (Required != null)
-        {
-            el.SetBoolean("required", Required);
-        }
+    private static PropDescriptor<bool>? s_required;
 
-        if (Size != null)
-        {
-            el.SetUInt("size", Size);
-        }
+    public IReadOnlySignal<bool>? Required
+    {
+        get => Get(s_required);
+        init => Set(ref s_required, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Required = s.Value;
+            },
+            static (el, s) => el.SetBoolean("required", s)));
+    }
 
-        if (Value != null)
-        {
-            el.SetAttribute("value", Value);
-        }
+    private static PropDescriptor<uint>? s_size;
+
+    public IReadOnlySignal<uint>? Size
+    {
+        get => Get(s_size);
+        init => Set(ref s_size, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Size = s.Value;
+            },
+            static (el, s) => el.SetUInt("size", s)));
+    }
+
+    private static PropDescriptor<string>? s_value;
+
+    public IReadOnlySignal<string>? Value
+    {
+        get => Get(s_value);
+        init => Set(ref s_value, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("value", s)));
     }
 }
 

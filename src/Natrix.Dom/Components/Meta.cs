@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,60 +7,56 @@ namespace Natrix.Dom.Components;
 
 public class MetaProps : GlobalHtmlComponentProps<HTMLMetaElement>
 {
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<string>? HttpEquiv { get; init; }
-    public IReadOnlySignal<string>? Content { get; init; }
-    public IReadOnlySignal<string>? Media { get; init; }
+    private static PropDescriptor<string>? s_name;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLMetaElement>> register)
+    public IReadOnlySignal<string>? Name
     {
-        base.RegisterClientEffects(register);
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (HttpEquiv != null)
-        {
-            register(el => el.HttpEquiv = HttpEquiv.Value);
-        }
-
-        if (Content != null)
-        {
-            register(el => el.Content = Content.Value);
-        }
-
-        if (Media != null)
-        {
-            register(el => el.Media = Media.Value);
-        }
+        get => Get(s_name);
+        init => Set(ref s_name, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+            },
+            static (el, s) => el.SetAttribute("name", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_httpEquiv;
+
+    public IReadOnlySignal<string>? HttpEquiv
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_httpEquiv);
+        init => Set(ref s_httpEquiv, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.HttpEquiv = s.Value;
+            },
+            static (el, s) => el.SetAttribute("http-equiv", s)));
+    }
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    private static PropDescriptor<string>? s_content;
 
-        if (HttpEquiv != null)
-        {
-            el.SetAttribute("http-equiv", HttpEquiv);
-        }
+    public IReadOnlySignal<string>? Content
+    {
+        get => Get(s_content);
+        init => Set(ref s_content, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Content = s.Value;
+            },
+            static (el, s) => el.SetAttribute("content", s)));
+    }
 
-        if (Content != null)
-        {
-            el.SetAttribute("content", Content);
-        }
+    private static PropDescriptor<string>? s_media;
 
-        if (Media != null)
-        {
-            el.SetAttribute("media", Media);
-        }
+    public IReadOnlySignal<string>? Media
+    {
+        get => Get(s_media);
+        init => Set(ref s_media, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Media = s.Value;
+            },
+            static (el, s) => el.SetAttribute("media", s)));
     }
 }
 

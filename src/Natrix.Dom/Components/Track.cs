@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,71 +7,69 @@ namespace Natrix.Dom.Components;
 
 public class TrackProps : GlobalHtmlComponentProps<HTMLTrackElement>
 {
-    public IReadOnlySignal<string>? Kind { get; init; }
-    public IReadOnlySignal<string>? Src { get; init; }
-    public IReadOnlySignal<string>? Srclang { get; init; }
-    public IReadOnlySignal<string>? Label { get; init; }
-    public IReadOnlySignal<bool>? Default { get; init; }
+    private static PropDescriptor<string>? s_kind;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLTrackElement>> register)
+    public IReadOnlySignal<string>? Kind
     {
-        base.RegisterClientEffects(register);
-
-        if (Kind != null)
-        {
-            register(el => el.Kind = Kind.Value);
-        }
-
-        if (Src != null)
-        {
-            register(el => el.Src = Src.Value);
-        }
-
-        if (Srclang != null)
-        {
-            register(el => el.Srclang = Srclang.Value);
-        }
-
-        if (Label != null)
-        {
-            register(el => el.Label = Label.Value);
-        }
-
-        if (Default != null)
-        {
-            register(el => el.Default = Default.Value);
-        }
+        get => Get(s_kind);
+        init => Set(ref s_kind, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Kind = s.Value;
+            },
+            static (el, s) => el.SetAttribute("kind", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_src;
+
+    public IReadOnlySignal<string>? Src
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_src);
+        init => Set(ref s_src, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+            },
+            static (el, s) => el.SetAttribute("src", s)));
+    }
 
-        if (Kind != null)
-        {
-            el.SetAttribute("kind", Kind);
-        }
+    private static PropDescriptor<string>? s_srclang;
 
-        if (Src != null)
-        {
-            el.SetAttribute("src", Src);
-        }
+    public IReadOnlySignal<string>? Srclang
+    {
+        get => Get(s_srclang);
+        init => Set(ref s_srclang, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Srclang = s.Value;
+            },
+            static (el, s) => el.SetAttribute("srclang", s)));
+    }
 
-        if (Srclang != null)
-        {
-            el.SetAttribute("srclang", Srclang);
-        }
+    private static PropDescriptor<string>? s_label;
 
-        if (Label != null)
-        {
-            el.SetAttribute("label", Label);
-        }
+    public IReadOnlySignal<string>? Label
+    {
+        get => Get(s_label);
+        init => Set(ref s_label, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Label = s.Value;
+            },
+            static (el, s) => el.SetAttribute("label", s)));
+    }
 
-        if (Default != null)
-        {
-            el.SetBoolean("default", Default);
-        }
+    private static PropDescriptor<bool>? s_default;
+
+    public IReadOnlySignal<bool>? Default
+    {
+        get => Get(s_default);
+        init => Set(ref s_default, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Default = s.Value;
+            },
+            static (el, s) => el.SetBoolean("default", s)));
     }
 }
 

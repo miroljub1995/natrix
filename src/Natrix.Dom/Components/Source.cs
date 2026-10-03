@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,93 +7,95 @@ namespace Natrix.Dom.Components;
 
 public class SourceProps : GlobalHtmlComponentProps<HTMLSourceElement>
 {
-    public IReadOnlySignal<string>? Src { get; init; }
-    public IReadOnlySignal<string>? Type { get; init; }
-    public IReadOnlySignal<string>? Srcset { get; init; }
-    public IReadOnlySignal<string>? Sizes { get; init; }
-    public IReadOnlySignal<string>? Media { get; init; }
-    public IReadOnlySignal<uint>? Width { get; init; }
-    public IReadOnlySignal<uint>? Height { get; init; }
+    private static PropDescriptor<string>? s_src;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLSourceElement>> register)
+    public IReadOnlySignal<string>? Src
     {
-        base.RegisterClientEffects(register);
-
-        if (Src != null)
-        {
-            register(el => el.Src = Src.Value);
-        }
-
-        if (Type != null)
-        {
-            register(el => el.Type = Type.Value);
-        }
-
-        if (Srcset != null)
-        {
-            register(el => el.Srcset = Srcset.Value);
-        }
-
-        if (Sizes != null)
-        {
-            register(el => el.Sizes = Sizes.Value);
-        }
-
-        if (Media != null)
-        {
-            register(el => el.Media = Media.Value);
-        }
-
-        if (Width != null)
-        {
-            register(el => el.Width = Width.Value);
-        }
-
-        if (Height != null)
-        {
-            register(el => el.Height = Height.Value);
-        }
+        get => Get(s_src);
+        init => Set(ref s_src, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+            },
+            static (el, s) => el.SetAttribute("src", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_type;
+
+    public IReadOnlySignal<string>? Type
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_type);
+        init => Set(ref s_type, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+            },
+            static (el, s) => el.SetAttribute("type", s)));
+    }
 
-        if (Src != null)
-        {
-            el.SetAttribute("src", Src);
-        }
+    private static PropDescriptor<string>? s_srcset;
 
-        if (Type != null)
-        {
-            el.SetAttribute("type", Type);
-        }
+    public IReadOnlySignal<string>? Srcset
+    {
+        get => Get(s_srcset);
+        init => Set(ref s_srcset, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Srcset = s.Value;
+            },
+            static (el, s) => el.SetAttribute("srcset", s)));
+    }
 
-        if (Srcset != null)
-        {
-            el.SetAttribute("srcset", Srcset);
-        }
+    private static PropDescriptor<string>? s_sizes;
 
-        if (Sizes != null)
-        {
-            el.SetAttribute("sizes", Sizes);
-        }
+    public IReadOnlySignal<string>? Sizes
+    {
+        get => Get(s_sizes);
+        init => Set(ref s_sizes, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Sizes = s.Value;
+            },
+            static (el, s) => el.SetAttribute("sizes", s)));
+    }
 
-        if (Media != null)
-        {
-            el.SetAttribute("media", Media);
-        }
+    private static PropDescriptor<string>? s_media;
 
-        if (Width != null)
-        {
-            el.SetUInt("width", Width);
-        }
+    public IReadOnlySignal<string>? Media
+    {
+        get => Get(s_media);
+        init => Set(ref s_media, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Media = s.Value;
+            },
+            static (el, s) => el.SetAttribute("media", s)));
+    }
 
-        if (Height != null)
-        {
-            el.SetUInt("height", Height);
-        }
+    private static PropDescriptor<uint>? s_width;
+
+    public IReadOnlySignal<uint>? Width
+    {
+        get => Get(s_width);
+        init => Set(ref s_width, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Width = s.Value;
+            },
+            static (el, s) => el.SetUInt("width", s)));
+    }
+
+    private static PropDescriptor<uint>? s_height;
+
+    public IReadOnlySignal<uint>? Height
+    {
+        get => Get(s_height);
+        init => Set(ref s_height, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Height = s.Value;
+            },
+            static (el, s) => el.SetUInt("height", s)));
     }
 }
 

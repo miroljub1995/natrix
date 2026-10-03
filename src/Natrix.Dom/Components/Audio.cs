@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,104 +7,108 @@ namespace Natrix.Dom.Components;
 
 public class AudioProps : GlobalHtmlComponentProps<HTMLAudioElement>
 {
-    public IReadOnlySignal<string>? Src { get; init; }
-    public IReadOnlySignal<bool>? Autoplay { get; init; }
-    public IReadOnlySignal<bool>? Controls { get; init; }
-    public IReadOnlySignal<bool>? Loop { get; init; }
-    public IReadOnlySignal<bool>? Muted { get; init; }
-    public IReadOnlySignal<string>? Preload { get; init; }
-    public IReadOnlySignal<string?>? CrossOrigin { get; init; }
-    public IReadOnlySignal<bool>? DisableRemotePlayback { get; init; }
+    private static PropDescriptor<string>? s_src;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLAudioElement>> register)
+    public IReadOnlySignal<string>? Src
     {
-        base.RegisterClientEffects(register);
-
-        if (Src != null)
-        {
-            register(el => el.Src = Src.Value);
-        }
-
-        if (Autoplay != null)
-        {
-            register(el => el.Autoplay = Autoplay.Value);
-        }
-
-        if (Controls != null)
-        {
-            register(el => el.Controls = Controls.Value);
-        }
-
-        if (Loop != null)
-        {
-            register(el => el.Loop = Loop.Value);
-        }
-
-        if (Muted != null)
-        {
-            register(el => el.Muted = Muted.Value);
-        }
-
-        if (Preload != null)
-        {
-            register(el => el.Preload = Preload.Value);
-        }
-
-        if (CrossOrigin != null)
-        {
-            register(el => el.CrossOrigin = CrossOrigin.Value);
-        }
-
-        if (DisableRemotePlayback != null)
-        {
-            register(el => el.DisableRemotePlayback = DisableRemotePlayback.Value);
-        }
+        get => Get(s_src);
+        init => Set(ref s_src, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+            },
+            static (el, s) => el.SetAttribute("src", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<bool>? s_autoplay;
+
+    public IReadOnlySignal<bool>? Autoplay
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_autoplay);
+        init => Set(ref s_autoplay, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Autoplay = s.Value;
+            },
+            static (el, s) => el.SetBoolean("autoplay", s)));
+    }
 
-        if (Src != null)
-        {
-            el.SetAttribute("src", Src);
-        }
+    private static PropDescriptor<bool>? s_controls;
 
-        if (Autoplay != null)
-        {
-            el.SetBoolean("autoplay", Autoplay);
-        }
+    public IReadOnlySignal<bool>? Controls
+    {
+        get => Get(s_controls);
+        init => Set(ref s_controls, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Controls = s.Value;
+            },
+            static (el, s) => el.SetBoolean("controls", s)));
+    }
 
-        if (Controls != null)
-        {
-            el.SetBoolean("controls", Controls);
-        }
+    private static PropDescriptor<bool>? s_loop;
 
-        if (Loop != null)
-        {
-            el.SetBoolean("loop", Loop);
-        }
+    public IReadOnlySignal<bool>? Loop
+    {
+        get => Get(s_loop);
+        init => Set(ref s_loop, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Loop = s.Value;
+            },
+            static (el, s) => el.SetBoolean("loop", s)));
+    }
 
-        if (Muted != null)
-        {
-            el.SetBoolean("muted", Muted);
-        }
+    private static PropDescriptor<bool>? s_muted;
 
-        if (Preload != null)
-        {
-            el.SetAttribute("preload", Preload);
-        }
+    public IReadOnlySignal<bool>? Muted
+    {
+        get => Get(s_muted);
+        init => Set(ref s_muted, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Muted = s.Value;
+            },
+            static (el, s) => el.SetBoolean("muted", s)));
+    }
 
-        if (CrossOrigin != null)
-        {
-            el.SetNullableString("crossorigin", CrossOrigin);
-        }
+    private static PropDescriptor<string>? s_preload;
 
-        if (DisableRemotePlayback != null)
-        {
-            el.SetBoolean("disableremoteplayback", DisableRemotePlayback);
-        }
+    public IReadOnlySignal<string>? Preload
+    {
+        get => Get(s_preload);
+        init => Set(ref s_preload, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Preload = s.Value;
+            },
+            static (el, s) => el.SetAttribute("preload", s)));
+    }
+
+    private static PropDescriptor<string?>? s_crossOrigin;
+
+    public IReadOnlySignal<string?>? CrossOrigin
+    {
+        get => Get(s_crossOrigin);
+        init => Set(ref s_crossOrigin, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.CrossOrigin = s.Value;
+            },
+            static (el, s) => el.SetNullableString("crossorigin", s)));
+    }
+
+    private static PropDescriptor<bool>? s_disableRemotePlayback;
+
+    public IReadOnlySignal<bool>? DisableRemotePlayback
+    {
+        get => Get(s_disableRemotePlayback);
+        init => Set(ref s_disableRemotePlayback, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.DisableRemotePlayback = s.Value;
+            },
+            static (el, s) => el.SetBoolean("disableremoteplayback", s)));
     }
 }
 

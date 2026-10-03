@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,115 +7,121 @@ namespace Natrix.Dom.Components;
 
 public class ButtonProps : GlobalHtmlComponentProps<HTMLButtonElement>
 {
-    public IReadOnlySignal<bool>? Disabled { get; init; }
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<string>? Type { get; init; }
-    public IReadOnlySignal<string>? Value { get; init; }
-    public IReadOnlySignal<string>? FormAction { get; init; }
-    public IReadOnlySignal<string>? FormEnctype { get; init; }
-    public IReadOnlySignal<string>? FormMethod { get; init; }
-    public IReadOnlySignal<bool>? FormNoValidate { get; init; }
-    public IReadOnlySignal<string>? FormTarget { get; init; }
+    private static PropDescriptor<bool>? s_disabled;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLButtonElement>> register)
+    public IReadOnlySignal<bool>? Disabled
     {
-        base.RegisterClientEffects(register);
-
-        if (Disabled != null)
-        {
-            register(el => el.Disabled = Disabled.Value);
-        }
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (Type != null)
-        {
-            register(el => el.Type = Type.Value);
-        }
-
-        if (Value != null)
-        {
-            register(el => el.Value = Value.Value);
-        }
-
-        if (FormAction != null)
-        {
-            register(el => el.FormAction = FormAction.Value);
-        }
-
-        if (FormEnctype != null)
-        {
-            register(el => el.FormEnctype = FormEnctype.Value);
-        }
-
-        if (FormMethod != null)
-        {
-            register(el => el.FormMethod = FormMethod.Value);
-        }
-
-        if (FormNoValidate != null)
-        {
-            register(el => el.FormNoValidate = FormNoValidate.Value);
-        }
-
-        if (FormTarget != null)
-        {
-            register(el => el.FormTarget = FormTarget.Value);
-        }
+        get => Get(s_disabled);
+        init => Set(ref s_disabled, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
+            },
+            static (el, s) => el.SetBoolean("disabled", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_name;
+
+    public IReadOnlySignal<string>? Name
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_name);
+        init => Set(ref s_name, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+            },
+            static (el, s) => el.SetAttribute("name", s)));
+    }
 
-        if (Disabled != null)
-        {
-            el.SetBoolean("disabled", Disabled);
-        }
+    private static PropDescriptor<string>? s_type;
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    public IReadOnlySignal<string>? Type
+    {
+        get => Get(s_type);
+        init => Set(ref s_type, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+            },
+            static (el, s) => el.SetAttribute("type", s)));
+    }
 
-        if (Type != null)
-        {
-            el.SetAttribute("type", Type);
-        }
+    private static PropDescriptor<string>? s_value;
 
-        if (Value != null)
-        {
-            el.SetAttribute("value", Value);
-        }
+    public IReadOnlySignal<string>? Value
+    {
+        get => Get(s_value);
+        init => Set(ref s_value, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("value", s)));
+    }
 
-        if (FormAction != null)
-        {
-            el.SetAttribute("formaction", FormAction);
-        }
+    private static PropDescriptor<string>? s_formAction;
 
-        if (FormEnctype != null)
-        {
-            el.SetAttribute("formenctype", FormEnctype);
-        }
+    public IReadOnlySignal<string>? FormAction
+    {
+        get => Get(s_formAction);
+        init => Set(ref s_formAction, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.FormAction = s.Value;
+            },
+            static (el, s) => el.SetAttribute("formaction", s)));
+    }
 
-        if (FormMethod != null)
-        {
-            el.SetAttribute("formmethod", FormMethod);
-        }
+    private static PropDescriptor<string>? s_formEnctype;
 
-        if (FormNoValidate != null)
-        {
-            el.SetBoolean("formnovalidate", FormNoValidate);
-        }
+    public IReadOnlySignal<string>? FormEnctype
+    {
+        get => Get(s_formEnctype);
+        init => Set(ref s_formEnctype, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.FormEnctype = s.Value;
+            },
+            static (el, s) => el.SetAttribute("formenctype", s)));
+    }
 
-        if (FormTarget != null)
-        {
-            el.SetAttribute("formtarget", FormTarget);
-        }
+    private static PropDescriptor<string>? s_formMethod;
+
+    public IReadOnlySignal<string>? FormMethod
+    {
+        get => Get(s_formMethod);
+        init => Set(ref s_formMethod, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.FormMethod = s.Value;
+            },
+            static (el, s) => el.SetAttribute("formmethod", s)));
+    }
+
+    private static PropDescriptor<bool>? s_formNoValidate;
+
+    public IReadOnlySignal<bool>? FormNoValidate
+    {
+        get => Get(s_formNoValidate);
+        init => Set(ref s_formNoValidate, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.FormNoValidate = s.Value;
+            },
+            static (el, s) => el.SetBoolean("formnovalidate", s)));
+    }
+
+    private static PropDescriptor<string>? s_formTarget;
+
+    public IReadOnlySignal<string>? FormTarget
+    {
+        get => Get(s_formTarget);
+        init => Set(ref s_formTarget, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.FormTarget = s.Value;
+            },
+            static (el, s) => el.SetAttribute("formtarget", s)));
     }
 }
 

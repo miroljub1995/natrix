@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,27 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class SlotProps : GlobalHtmlComponentProps<HTMLSlotElement>
 {
-    public IReadOnlySignal<string>? Name { get; init; }
+    private static PropDescriptor<string>? s_name;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLSlotElement>> register)
+    public IReadOnlySignal<string>? Name
     {
-        base.RegisterClientEffects(register);
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-    }
-
-    protected internal override void RegisterServerEffects(SsrElementNode el)
-    {
-        base.RegisterServerEffects(el);
-
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+        get => Get(s_name);
+        init => Set(ref s_name, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+            },
+            static (el, s) => el.SetAttribute("name", s)));
     }
 }
 
