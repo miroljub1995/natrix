@@ -9,18 +9,16 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class TimeProps : GlobalHtmlComponentProps<HTMLTimeElement>
 {
-    private static readonly object s_dateTimeKey = new();
+    private static readonly PropDescriptor<string> s_dateTime = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.DateTime = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("datetime", s));
 
     public IReadOnlySignal<string>? DateTime
     {
-        get => Get<IReadOnlySignal<string>>(s_dateTimeKey);
-        init => Set(
-            s_dateTimeKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.DateTime = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("datetime", (IReadOnlySignal<string>)s));
+        get => Get(s_dateTime);
+        init => Set(s_dateTime, value);
     }
 }
 

@@ -9,18 +9,16 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class DialogProps : GlobalHtmlComponentProps<HTMLDialogElement>
 {
-    private static readonly object s_openKey = new();
+    private static readonly PropDescriptor<bool> s_open = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Open = s.Value
+            : null,
+        static (el, s) => el.SetBoolean("open", s));
 
     public IReadOnlySignal<bool>? Open
     {
-        get => Get<IReadOnlySignal<bool>>(s_openKey);
-        init => Set(
-            s_openKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Open = ((IReadOnlySignal<bool>)s).Value
-                : null,
-            static (el, s) => el.SetBoolean("open", (IReadOnlySignal<bool>)s));
+        get => Get(s_open);
+        init => Set(s_open, value);
     }
 }
 

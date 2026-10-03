@@ -9,74 +9,64 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class OptionProps : GlobalHtmlComponentProps<HTMLOptionElement>
 {
-    private static readonly object s_disabledKey = new();
+    private static readonly PropDescriptor<bool> s_disabled = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Disabled = s.Value
+            : null,
+        static (el, s) => el.SetBoolean("disabled", s));
 
     public IReadOnlySignal<bool>? Disabled
     {
-        get => Get<IReadOnlySignal<bool>>(s_disabledKey);
-        init => Set(
-            s_disabledKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Disabled = ((IReadOnlySignal<bool>)s).Value
-                : null,
-            static (el, s) => el.SetBoolean("disabled", (IReadOnlySignal<bool>)s));
+        get => Get(s_disabled);
+        init => Set(s_disabled, value);
     }
 
-    private static readonly object s_labelKey = new();
+    private static readonly PropDescriptor<string> s_label = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Label = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("label", s));
 
     public IReadOnlySignal<string>? Label
     {
-        get => Get<IReadOnlySignal<string>>(s_labelKey);
-        init => Set(
-            s_labelKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Label = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("label", (IReadOnlySignal<string>)s));
+        get => Get(s_label);
+        init => Set(s_label, value);
     }
 
-    private static readonly object s_defaultSelectedKey = new();
+    private static readonly PropDescriptor<bool> s_defaultSelected = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.DefaultSelected = s.Value
+            : null,
+        static (el, s) => el.SetBoolean("selected", s));
 
     public IReadOnlySignal<bool>? DefaultSelected
     {
-        get => Get<IReadOnlySignal<bool>>(s_defaultSelectedKey);
-        init => Set(
-            s_defaultSelectedKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.DefaultSelected = ((IReadOnlySignal<bool>)s).Value
-                : null,
-            static (el, s) => el.SetBoolean("selected", (IReadOnlySignal<bool>)s));
+        get => Get(s_defaultSelected);
+        init => Set(s_defaultSelected, value);
     }
 
-    private static readonly object s_selectedKey = new();
+    private static readonly PropDescriptor<bool> s_selected = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Selected = s.Value
+            : null,
+        static (el, s) => el.SetBoolean("selected", s));
 
     public IReadOnlySignal<bool>? Selected
     {
-        get => Get<IReadOnlySignal<bool>>(s_selectedKey);
-        init => Set(
-            s_selectedKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Selected = ((IReadOnlySignal<bool>)s).Value
-                : null,
-            static (el, s) => el.SetBoolean("selected", (IReadOnlySignal<bool>)s));
+        get => Get(s_selected);
+        init => Set(s_selected, value);
     }
 
-    private static readonly object s_valueKey = new();
+    private static readonly PropDescriptor<string> s_value = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Value = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("value", s));
 
     public IReadOnlySignal<string>? Value
     {
-        get => Get<IReadOnlySignal<string>>(s_valueKey);
-        init => Set(
-            s_valueKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Value = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("value", (IReadOnlySignal<string>)s));
+        get => Get(s_value);
+        init => Set(s_value, value);
     }
 }
 

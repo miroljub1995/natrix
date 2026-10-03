@@ -9,74 +9,64 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class ThProps : GlobalHtmlComponentProps<HTMLTableCellElement>
 {
-    private static readonly object s_colSpanKey = new();
+    private static readonly PropDescriptor<uint> s_colSpan = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.ColSpan = s.Value
+            : null,
+        static (el, s) => el.SetUInt("colspan", s));
 
     public IReadOnlySignal<uint>? ColSpan
     {
-        get => Get<IReadOnlySignal<uint>>(s_colSpanKey);
-        init => Set(
-            s_colSpanKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.ColSpan = ((IReadOnlySignal<uint>)s).Value
-                : null,
-            static (el, s) => el.SetUInt("colspan", (IReadOnlySignal<uint>)s));
+        get => Get(s_colSpan);
+        init => Set(s_colSpan, value);
     }
 
-    private static readonly object s_rowSpanKey = new();
+    private static readonly PropDescriptor<uint> s_rowSpan = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.RowSpan = s.Value
+            : null,
+        static (el, s) => el.SetUInt("rowspan", s));
 
     public IReadOnlySignal<uint>? RowSpan
     {
-        get => Get<IReadOnlySignal<uint>>(s_rowSpanKey);
-        init => Set(
-            s_rowSpanKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.RowSpan = ((IReadOnlySignal<uint>)s).Value
-                : null,
-            static (el, s) => el.SetUInt("rowspan", (IReadOnlySignal<uint>)s));
+        get => Get(s_rowSpan);
+        init => Set(s_rowSpan, value);
     }
 
-    private static readonly object s_headersKey = new();
+    private static readonly PropDescriptor<string> s_headers = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Headers = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("headers", s));
 
     public IReadOnlySignal<string>? Headers
     {
-        get => Get<IReadOnlySignal<string>>(s_headersKey);
-        init => Set(
-            s_headersKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Headers = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("headers", (IReadOnlySignal<string>)s));
+        get => Get(s_headers);
+        init => Set(s_headers, value);
     }
 
-    private static readonly object s_scopeKey = new();
+    private static readonly PropDescriptor<string> s_scope = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Scope = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("scope", s));
 
     public IReadOnlySignal<string>? Scope
     {
-        get => Get<IReadOnlySignal<string>>(s_scopeKey);
-        init => Set(
-            s_scopeKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Scope = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("scope", (IReadOnlySignal<string>)s));
+        get => Get(s_scope);
+        init => Set(s_scope, value);
     }
 
-    private static readonly object s_abbrKey = new();
+    private static readonly PropDescriptor<string> s_abbr = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Abbr = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("abbr", s));
 
     public IReadOnlySignal<string>? Abbr
     {
-        get => Get<IReadOnlySignal<string>>(s_abbrKey);
-        init => Set(
-            s_abbrKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Abbr = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("abbr", (IReadOnlySignal<string>)s));
+        get => Get(s_abbr);
+        init => Set(s_abbr, value);
     }
 }
 

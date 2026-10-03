@@ -1,5 +1,6 @@
 using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
+using Natrix.Signals;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.StdWeb;
 
@@ -9,9 +10,10 @@ namespace Natrix.Dom.Components;
 /// Base for DOM component props.
 /// </summary>
 /// <remarks>
-/// Props are stored sparsely: only the props that were set get an entry, so an instance costs a few
-/// references per set prop instead of one field per declared prop. Each prop's setter passes its key
-/// and the static lambdas that apply it on the client and on the server; rendering just walks the entries.
+/// Props are stored sparsely: only the props that were set get an entry, so an instance costs two
+/// references per set prop instead of one field per declared prop. Each prop is described by a static
+/// <see cref="PropDescriptor{TValue}"/> holding the lambdas that apply it on the client and on the server;
+/// an entry pairs that descriptor with the signal, and rendering just walks the entries.
 /// </remarks>
 public abstract class BaseDomComponentProps<TElement>
     where TElement : Element
@@ -19,30 +21,21 @@ public abstract class BaseDomComponentProps<TElement>
     private List<PropEntry>? _entries;
 
     /// <summary>
-    /// Returns the signal stored under <paramref name="key"/>, or <c>null</c> if that prop was not set.
+    /// Returns the signal stored for <paramref name="prop"/>, or <c>null</c> if that prop was not set.
     /// </summary>
-    private protected T? Get<T>(object key)
-        where T : class
+    private protected IReadOnlySignal<TValue>? Get<TValue>(PropDescriptor<TValue> prop)
     {
-        var index = IndexOf(key);
-        return index >= 0 ? (T)_entries![index].Signal : null;
+        var index = IndexOf(prop);
+        return index >= 0 ? (IReadOnlySignal<TValue>)_entries![index].Signal : null;
     }
 
     /// <summary>
-    /// Stores <paramref name="signal"/> under <paramref name="key"/>, replacing any earlier value.
+    /// Stores <paramref name="signal"/> for <paramref name="prop"/>, replacing any earlier value;
+    /// <c>null</c> removes the prop.
     /// </summary>
-    /// <param name="key">Identifies the prop; a static object owned by the prop's declaring class.</param>
-    /// <param name="signal">The prop's signal; <c>null</c> removes the prop.</param>
-    /// <param name="clientEffect">Applies the signal's current value to the element. Only needed, and only
-    /// passed, in the browser.</param>
-    /// <param name="serverEffect">Binds the signal to the server-rendered element.</param>
-    private protected void Set(
-        object key,
-        object? signal,
-        Action<TElement, object>? clientEffect,
-        Action<SsrElementNode, object> serverEffect)
+    private protected void Set<TValue>(PropDescriptor<TValue> prop, IReadOnlySignal<TValue>? signal)
     {
-        var index = IndexOf(key);
+        var index = IndexOf(prop);
 
         if (signal is null)
         {
@@ -54,7 +47,7 @@ public abstract class BaseDomComponentProps<TElement>
             return;
         }
 
-        var entry = new PropEntry(key, signal, clientEffect, serverEffect);
+        var entry = new PropEntry(prop, signal);
         if (index >= 0)
         {
             _entries![index] = entry;
@@ -75,9 +68,9 @@ public abstract class BaseDomComponentProps<TElement>
 
         foreach (var entry in _entries)
         {
-            var clientEffect = entry.ClientEffect!;
+            var prop = entry.Prop;
             var signal = entry.Signal;
-            register(el => clientEffect(el, signal));
+            register(el => prop.ApplyClient(el, signal));
         }
     }
 
@@ -90,17 +83,17 @@ public abstract class BaseDomComponentProps<TElement>
 
         foreach (var entry in _entries)
         {
-            entry.ServerEffect(el, entry.Signal);
+            entry.Prop.ApplyServer(el, entry.Signal);
         }
     }
 
-    private int IndexOf(object key)
+    private int IndexOf(PropDescriptor prop)
     {
         if (_entries is not null)
         {
             for (var i = 0; i < _entries.Count; i++)
             {
-                if (ReferenceEquals(_entries[i].Key, key))
+                if (ReferenceEquals(_entries[i].Prop, prop))
                 {
                     return i;
                 }
@@ -110,15 +103,40 @@ public abstract class BaseDomComponentProps<TElement>
         return -1;
     }
 
-    private readonly struct PropEntry(
-        object key,
-        object signal,
-        Action<TElement, object>? clientEffect,
-        Action<SsrElementNode, object> serverEffect)
+    private readonly struct PropEntry(PropDescriptor prop, object signal)
     {
-        public readonly object Key = key;
+        public readonly PropDescriptor Prop = prop;
         public readonly object Signal = signal;
-        public readonly Action<TElement, object>? ClientEffect = clientEffect;
-        public readonly Action<SsrElementNode, object> ServerEffect = serverEffect;
+    }
+
+    /// <summary>
+    /// Identifies a prop and applies its signal to an element; untyped so entries of any value type
+    /// share one list.
+    /// </summary>
+    private protected abstract class PropDescriptor
+    {
+        [SupportedOSPlatform("browser")]
+        public abstract void ApplyClient(TElement el, object signal);
+
+        public abstract void ApplyServer(SsrElementNode el, object signal);
+    }
+
+    /// <summary>
+    /// Describes a prop whose signal carries <typeparamref name="TValue"/>. Declared once per prop as a
+    /// static field of the props class that owns it.
+    /// </summary>
+    /// <param name="client">Applies the signal's current value to the element. Only needed, and only
+    /// passed, in the browser.</param>
+    /// <param name="server">Binds the signal to the server-rendered element.</param>
+    private protected sealed class PropDescriptor<TValue>(
+        Action<TElement, IReadOnlySignal<TValue>>? client,
+        Action<SsrElementNode, IReadOnlySignal<TValue>> server) : PropDescriptor
+    {
+        [SupportedOSPlatform("browser")]
+        public override void ApplyClient(TElement el, object signal) =>
+            client!(el, (IReadOnlySignal<TValue>)signal);
+
+        public override void ApplyServer(SsrElementNode el, object signal) =>
+            server(el, (IReadOnlySignal<TValue>)signal);
     }
 }

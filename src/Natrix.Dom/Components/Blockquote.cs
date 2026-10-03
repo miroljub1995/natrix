@@ -9,18 +9,16 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class BlockquoteProps : GlobalHtmlComponentProps<HTMLQuoteElement>
 {
-    private static readonly object s_citeKey = new();
+    private static readonly PropDescriptor<string> s_cite = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Cite = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("cite", s));
 
     public IReadOnlySignal<string>? Cite
     {
-        get => Get<IReadOnlySignal<string>>(s_citeKey);
-        init => Set(
-            s_citeKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Cite = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("cite", (IReadOnlySignal<string>)s));
+        get => Get(s_cite);
+        init => Set(s_cite, value);
     }
 }
 

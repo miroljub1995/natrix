@@ -9,32 +9,28 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class ProgressProps : GlobalHtmlComponentProps<HTMLProgressElement>
 {
-    private static readonly object s_valueKey = new();
+    private static readonly PropDescriptor<double> s_value = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Value = s.Value
+            : null,
+        static (el, s) => el.SetDouble("value", s));
 
     public IReadOnlySignal<double>? Value
     {
-        get => Get<IReadOnlySignal<double>>(s_valueKey);
-        init => Set(
-            s_valueKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Value = ((IReadOnlySignal<double>)s).Value
-                : null,
-            static (el, s) => el.SetDouble("value", (IReadOnlySignal<double>)s));
+        get => Get(s_value);
+        init => Set(s_value, value);
     }
 
-    private static readonly object s_maxKey = new();
+    private static readonly PropDescriptor<double> s_max = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Max = s.Value
+            : null,
+        static (el, s) => el.SetDouble("max", s));
 
     public IReadOnlySignal<double>? Max
     {
-        get => Get<IReadOnlySignal<double>>(s_maxKey);
-        init => Set(
-            s_maxKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Max = ((IReadOnlySignal<double>)s).Value
-                : null,
-            static (el, s) => el.SetDouble("max", (IReadOnlySignal<double>)s));
+        get => Get(s_max);
+        init => Set(s_max, value);
     }
 }
 

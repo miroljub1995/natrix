@@ -9,18 +9,16 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class SlotProps : GlobalHtmlComponentProps<HTMLSlotElement>
 {
-    private static readonly object s_nameKey = new();
+    private static readonly PropDescriptor<string> s_name = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Name = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("name", s));
 
     public IReadOnlySignal<string>? Name
     {
-        get => Get<IReadOnlySignal<string>>(s_nameKey);
-        init => Set(
-            s_nameKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Name = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("name", (IReadOnlySignal<string>)s));
+        get => Get(s_name);
+        init => Set(s_name, value);
     }
 }
 

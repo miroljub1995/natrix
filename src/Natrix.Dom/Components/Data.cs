@@ -9,18 +9,16 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class DataProps : GlobalHtmlComponentProps<HTMLDataElement>
 {
-    private static readonly object s_valueKey = new();
+    private static readonly PropDescriptor<string> s_value = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Value = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("value", s));
 
     public IReadOnlySignal<string>? Value
     {
-        get => Get<IReadOnlySignal<string>>(s_valueKey);
-        init => Set(
-            s_valueKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Value = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("value", (IReadOnlySignal<string>)s));
+        get => Get(s_value);
+        init => Set(s_value, value);
     }
 }
 

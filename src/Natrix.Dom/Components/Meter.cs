@@ -9,88 +9,76 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class MeterProps : GlobalHtmlComponentProps<HTMLMeterElement>
 {
-    private static readonly object s_valueKey = new();
+    private static readonly PropDescriptor<double> s_value = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Value = s.Value
+            : null,
+        static (el, s) => el.SetDouble("value", s));
 
     public IReadOnlySignal<double>? Value
     {
-        get => Get<IReadOnlySignal<double>>(s_valueKey);
-        init => Set(
-            s_valueKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Value = ((IReadOnlySignal<double>)s).Value
-                : null,
-            static (el, s) => el.SetDouble("value", (IReadOnlySignal<double>)s));
+        get => Get(s_value);
+        init => Set(s_value, value);
     }
 
-    private static readonly object s_minKey = new();
+    private static readonly PropDescriptor<double> s_min = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Min = s.Value
+            : null,
+        static (el, s) => el.SetDouble("min", s));
 
     public IReadOnlySignal<double>? Min
     {
-        get => Get<IReadOnlySignal<double>>(s_minKey);
-        init => Set(
-            s_minKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Min = ((IReadOnlySignal<double>)s).Value
-                : null,
-            static (el, s) => el.SetDouble("min", (IReadOnlySignal<double>)s));
+        get => Get(s_min);
+        init => Set(s_min, value);
     }
 
-    private static readonly object s_maxKey = new();
+    private static readonly PropDescriptor<double> s_max = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Max = s.Value
+            : null,
+        static (el, s) => el.SetDouble("max", s));
 
     public IReadOnlySignal<double>? Max
     {
-        get => Get<IReadOnlySignal<double>>(s_maxKey);
-        init => Set(
-            s_maxKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Max = ((IReadOnlySignal<double>)s).Value
-                : null,
-            static (el, s) => el.SetDouble("max", (IReadOnlySignal<double>)s));
+        get => Get(s_max);
+        init => Set(s_max, value);
     }
 
-    private static readonly object s_lowKey = new();
+    private static readonly PropDescriptor<double> s_low = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Low = s.Value
+            : null,
+        static (el, s) => el.SetDouble("low", s));
 
     public IReadOnlySignal<double>? Low
     {
-        get => Get<IReadOnlySignal<double>>(s_lowKey);
-        init => Set(
-            s_lowKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Low = ((IReadOnlySignal<double>)s).Value
-                : null,
-            static (el, s) => el.SetDouble("low", (IReadOnlySignal<double>)s));
+        get => Get(s_low);
+        init => Set(s_low, value);
     }
 
-    private static readonly object s_highKey = new();
+    private static readonly PropDescriptor<double> s_high = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.High = s.Value
+            : null,
+        static (el, s) => el.SetDouble("high", s));
 
     public IReadOnlySignal<double>? High
     {
-        get => Get<IReadOnlySignal<double>>(s_highKey);
-        init => Set(
-            s_highKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.High = ((IReadOnlySignal<double>)s).Value
-                : null,
-            static (el, s) => el.SetDouble("high", (IReadOnlySignal<double>)s));
+        get => Get(s_high);
+        init => Set(s_high, value);
     }
 
-    private static readonly object s_optimumKey = new();
+    private static readonly PropDescriptor<double> s_optimum = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Optimum = s.Value
+            : null,
+        static (el, s) => el.SetDouble("optimum", s));
 
     public IReadOnlySignal<double>? Optimum
     {
-        get => Get<IReadOnlySignal<double>>(s_optimumKey);
-        init => Set(
-            s_optimumKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Optimum = ((IReadOnlySignal<double>)s).Value
-                : null,
-            static (el, s) => el.SetDouble("optimum", (IReadOnlySignal<double>)s));
+        get => Get(s_optimum);
+        init => Set(s_optimum, value);
     }
 }
 

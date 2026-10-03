@@ -9,32 +9,28 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class OptGroupProps : GlobalHtmlComponentProps<HTMLOptGroupElement>
 {
-    private static readonly object s_disabledKey = new();
+    private static readonly PropDescriptor<bool> s_disabled = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Disabled = s.Value
+            : null,
+        static (el, s) => el.SetBoolean("disabled", s));
 
     public IReadOnlySignal<bool>? Disabled
     {
-        get => Get<IReadOnlySignal<bool>>(s_disabledKey);
-        init => Set(
-            s_disabledKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Disabled = ((IReadOnlySignal<bool>)s).Value
-                : null,
-            static (el, s) => el.SetBoolean("disabled", (IReadOnlySignal<bool>)s));
+        get => Get(s_disabled);
+        init => Set(s_disabled, value);
     }
 
-    private static readonly object s_labelKey = new();
+    private static readonly PropDescriptor<string> s_label = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Label = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("label", s));
 
     public IReadOnlySignal<string>? Label
     {
-        get => Get<IReadOnlySignal<string>>(s_labelKey);
-        init => Set(
-            s_labelKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Label = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("label", (IReadOnlySignal<string>)s));
+        get => Get(s_label);
+        init => Set(s_label, value);
     }
 }
 

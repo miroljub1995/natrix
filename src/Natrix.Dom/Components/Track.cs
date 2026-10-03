@@ -9,74 +9,64 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class TrackProps : GlobalHtmlComponentProps<HTMLTrackElement>
 {
-    private static readonly object s_kindKey = new();
+    private static readonly PropDescriptor<string> s_kind = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Kind = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("kind", s));
 
     public IReadOnlySignal<string>? Kind
     {
-        get => Get<IReadOnlySignal<string>>(s_kindKey);
-        init => Set(
-            s_kindKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Kind = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("kind", (IReadOnlySignal<string>)s));
+        get => Get(s_kind);
+        init => Set(s_kind, value);
     }
 
-    private static readonly object s_srcKey = new();
+    private static readonly PropDescriptor<string> s_src = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Src = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("src", s));
 
     public IReadOnlySignal<string>? Src
     {
-        get => Get<IReadOnlySignal<string>>(s_srcKey);
-        init => Set(
-            s_srcKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Src = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("src", (IReadOnlySignal<string>)s));
+        get => Get(s_src);
+        init => Set(s_src, value);
     }
 
-    private static readonly object s_srclangKey = new();
+    private static readonly PropDescriptor<string> s_srclang = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Srclang = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("srclang", s));
 
     public IReadOnlySignal<string>? Srclang
     {
-        get => Get<IReadOnlySignal<string>>(s_srclangKey);
-        init => Set(
-            s_srclangKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Srclang = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("srclang", (IReadOnlySignal<string>)s));
+        get => Get(s_srclang);
+        init => Set(s_srclang, value);
     }
 
-    private static readonly object s_labelKey = new();
+    private static readonly PropDescriptor<string> s_label = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Label = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("label", s));
 
     public IReadOnlySignal<string>? Label
     {
-        get => Get<IReadOnlySignal<string>>(s_labelKey);
-        init => Set(
-            s_labelKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Label = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("label", (IReadOnlySignal<string>)s));
+        get => Get(s_label);
+        init => Set(s_label, value);
     }
 
-    private static readonly object s_defaultKey = new();
+    private static readonly PropDescriptor<bool> s_default = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Default = s.Value
+            : null,
+        static (el, s) => el.SetBoolean("default", s));
 
     public IReadOnlySignal<bool>? Default
     {
-        get => Get<IReadOnlySignal<bool>>(s_defaultKey);
-        init => Set(
-            s_defaultKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Default = ((IReadOnlySignal<bool>)s).Value
-                : null,
-            static (el, s) => el.SetBoolean("default", (IReadOnlySignal<bool>)s));
+        get => Get(s_default);
+        init => Set(s_default, value);
     }
 }
 

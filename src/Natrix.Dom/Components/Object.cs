@@ -9,74 +9,64 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class ObjectProps : GlobalHtmlComponentProps<HTMLObjectElement>
 {
-    private static readonly object s_dataKey = new();
+    private static readonly PropDescriptor<string> s_data = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Data = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("data", s));
 
     public new IReadOnlySignal<string>? Data
     {
-        get => Get<IReadOnlySignal<string>>(s_dataKey);
-        init => Set(
-            s_dataKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Data = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("data", (IReadOnlySignal<string>)s));
+        get => Get(s_data);
+        init => Set(s_data, value);
     }
 
-    private static readonly object s_typeKey = new();
+    private static readonly PropDescriptor<string> s_type = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Type = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("type", s));
 
     public IReadOnlySignal<string>? Type
     {
-        get => Get<IReadOnlySignal<string>>(s_typeKey);
-        init => Set(
-            s_typeKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Type = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("type", (IReadOnlySignal<string>)s));
+        get => Get(s_type);
+        init => Set(s_type, value);
     }
 
-    private static readonly object s_nameKey = new();
+    private static readonly PropDescriptor<string> s_name = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Name = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("name", s));
 
     public IReadOnlySignal<string>? Name
     {
-        get => Get<IReadOnlySignal<string>>(s_nameKey);
-        init => Set(
-            s_nameKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Name = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("name", (IReadOnlySignal<string>)s));
+        get => Get(s_name);
+        init => Set(s_name, value);
     }
 
-    private static readonly object s_widthKey = new();
+    private static readonly PropDescriptor<string> s_width = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Width = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("width", s));
 
     public IReadOnlySignal<string>? Width
     {
-        get => Get<IReadOnlySignal<string>>(s_widthKey);
-        init => Set(
-            s_widthKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Width = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("width", (IReadOnlySignal<string>)s));
+        get => Get(s_width);
+        init => Set(s_width, value);
     }
 
-    private static readonly object s_heightKey = new();
+    private static readonly PropDescriptor<string> s_height = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Height = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("height", s));
 
     public IReadOnlySignal<string>? Height
     {
-        get => Get<IReadOnlySignal<string>>(s_heightKey);
-        init => Set(
-            s_heightKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Height = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("height", (IReadOnlySignal<string>)s));
+        get => Get(s_height);
+        init => Set(s_height, value);
     }
 }
 

@@ -9,18 +9,16 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class LiProps : GlobalHtmlComponentProps<HTMLLIElement>
 {
-    private static readonly object s_valueKey = new();
+    private static readonly PropDescriptor<int> s_value = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Value = s.Value
+            : null,
+        static (el, s) => el.SetInt("value", s));
 
     public IReadOnlySignal<int>? Value
     {
-        get => Get<IReadOnlySignal<int>>(s_valueKey);
-        init => Set(
-            s_valueKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Value = ((IReadOnlySignal<int>)s).Value
-                : null,
-            static (el, s) => el.SetInt("value", (IReadOnlySignal<int>)s));
+        get => Get(s_value);
+        init => Set(s_value, value);
     }
 }
 

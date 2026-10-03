@@ -9,438 +9,376 @@ namespace Natrix.Dom.Components;
 [SuppressMessage("Interoperability", "CA1416:Validate platform compatibility", Justification = "Client effects are only created behind OperatingSystem.IsBrowser().")]
 public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
 {
-    private static readonly object s_acceptKey = new();
+    private static readonly PropDescriptor<string> s_accept = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Accept = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("accept", s));
 
     public IReadOnlySignal<string>? Accept
     {
-        get => Get<IReadOnlySignal<string>>(s_acceptKey);
-        init => Set(
-            s_acceptKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Accept = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("accept", (IReadOnlySignal<string>)s));
+        get => Get(s_accept);
+        init => Set(s_accept, value);
     }
 
-    private static readonly object s_altKey = new();
+    private static readonly PropDescriptor<string> s_alt = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Alt = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("alt", s));
 
     public IReadOnlySignal<string>? Alt
     {
-        get => Get<IReadOnlySignal<string>>(s_altKey);
-        init => Set(
-            s_altKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Alt = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("alt", (IReadOnlySignal<string>)s));
+        get => Get(s_alt);
+        init => Set(s_alt, value);
     }
 
-    private static readonly object s_autocompleteKey = new();
+    private static readonly PropDescriptor<string> s_autocomplete = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Autocomplete = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("autocomplete", s));
 
     public IReadOnlySignal<string>? Autocomplete
     {
-        get => Get<IReadOnlySignal<string>>(s_autocompleteKey);
-        init => Set(
-            s_autocompleteKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Autocomplete = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("autocomplete", (IReadOnlySignal<string>)s));
+        get => Get(s_autocomplete);
+        init => Set(s_autocomplete, value);
     }
 
-    private static readonly object s_captureKey = new();
+    private static readonly PropDescriptor<string> s_capture = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Capture = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("capture", s));
 
     public IReadOnlySignal<string>? Capture
     {
-        get => Get<IReadOnlySignal<string>>(s_captureKey);
-        init => Set(
-            s_captureKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Capture = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("capture", (IReadOnlySignal<string>)s));
+        get => Get(s_capture);
+        init => Set(s_capture, value);
     }
 
-    private static readonly object s_checkedKey = new();
+    private static readonly PropDescriptor<bool> s_checked = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Checked = s.Value
+            : null,
+        static (el, s) => el.SetBoolean("checked", s));
 
     public IReadOnlySignal<bool>? Checked
     {
-        get => Get<IReadOnlySignal<bool>>(s_checkedKey);
-        init => Set(
-            s_checkedKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Checked = ((IReadOnlySignal<bool>)s).Value
-                : null,
-            static (el, s) => el.SetBoolean("checked", (IReadOnlySignal<bool>)s));
+        get => Get(s_checked);
+        init => Set(s_checked, value);
     }
 
-    private static readonly object s_defaultCheckedKey = new();
+    private static readonly PropDescriptor<bool> s_defaultChecked = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.DefaultChecked = s.Value
+            : null,
+        static (el, s) => el.SetBoolean("checked", s));
 
     public IReadOnlySignal<bool>? DefaultChecked
     {
-        get => Get<IReadOnlySignal<bool>>(s_defaultCheckedKey);
-        init => Set(
-            s_defaultCheckedKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.DefaultChecked = ((IReadOnlySignal<bool>)s).Value
-                : null,
-            static (el, s) => el.SetBoolean("checked", (IReadOnlySignal<bool>)s));
+        get => Get(s_defaultChecked);
+        init => Set(s_defaultChecked, value);
     }
 
-    private static readonly object s_dirNameKey = new();
+    private static readonly PropDescriptor<string> s_dirName = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.DirName = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("dirname", s));
 
     public IReadOnlySignal<string>? DirName
     {
-        get => Get<IReadOnlySignal<string>>(s_dirNameKey);
-        init => Set(
-            s_dirNameKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.DirName = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("dirname", (IReadOnlySignal<string>)s));
+        get => Get(s_dirName);
+        init => Set(s_dirName, value);
     }
 
-    private static readonly object s_disabledKey = new();
+    private static readonly PropDescriptor<bool> s_disabled = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Disabled = s.Value
+            : null,
+        static (el, s) => el.SetBoolean("disabled", s));
 
     public IReadOnlySignal<bool>? Disabled
     {
-        get => Get<IReadOnlySignal<bool>>(s_disabledKey);
-        init => Set(
-            s_disabledKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Disabled = ((IReadOnlySignal<bool>)s).Value
-                : null,
-            static (el, s) => el.SetBoolean("disabled", (IReadOnlySignal<bool>)s));
+        get => Get(s_disabled);
+        init => Set(s_disabled, value);
     }
 
-    private static readonly object s_formActionKey = new();
+    private static readonly PropDescriptor<string> s_formAction = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.FormAction = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("formaction", s));
 
     public IReadOnlySignal<string>? FormAction
     {
-        get => Get<IReadOnlySignal<string>>(s_formActionKey);
-        init => Set(
-            s_formActionKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.FormAction = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("formaction", (IReadOnlySignal<string>)s));
+        get => Get(s_formAction);
+        init => Set(s_formAction, value);
     }
 
-    private static readonly object s_formEnctypeKey = new();
+    private static readonly PropDescriptor<string> s_formEnctype = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.FormEnctype = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("formenctype", s));
 
     public IReadOnlySignal<string>? FormEnctype
     {
-        get => Get<IReadOnlySignal<string>>(s_formEnctypeKey);
-        init => Set(
-            s_formEnctypeKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.FormEnctype = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("formenctype", (IReadOnlySignal<string>)s));
+        get => Get(s_formEnctype);
+        init => Set(s_formEnctype, value);
     }
 
-    private static readonly object s_formMethodKey = new();
+    private static readonly PropDescriptor<string> s_formMethod = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.FormMethod = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("formmethod", s));
 
     public IReadOnlySignal<string>? FormMethod
     {
-        get => Get<IReadOnlySignal<string>>(s_formMethodKey);
-        init => Set(
-            s_formMethodKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.FormMethod = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("formmethod", (IReadOnlySignal<string>)s));
+        get => Get(s_formMethod);
+        init => Set(s_formMethod, value);
     }
 
-    private static readonly object s_formNoValidateKey = new();
+    private static readonly PropDescriptor<bool> s_formNoValidate = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.FormNoValidate = s.Value
+            : null,
+        static (el, s) => el.SetBoolean("formnovalidate", s));
 
     public IReadOnlySignal<bool>? FormNoValidate
     {
-        get => Get<IReadOnlySignal<bool>>(s_formNoValidateKey);
-        init => Set(
-            s_formNoValidateKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.FormNoValidate = ((IReadOnlySignal<bool>)s).Value
-                : null,
-            static (el, s) => el.SetBoolean("formnovalidate", (IReadOnlySignal<bool>)s));
+        get => Get(s_formNoValidate);
+        init => Set(s_formNoValidate, value);
     }
 
-    private static readonly object s_formTargetKey = new();
+    private static readonly PropDescriptor<string> s_formTarget = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.FormTarget = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("formtarget", s));
 
     public IReadOnlySignal<string>? FormTarget
     {
-        get => Get<IReadOnlySignal<string>>(s_formTargetKey);
-        init => Set(
-            s_formTargetKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.FormTarget = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("formtarget", (IReadOnlySignal<string>)s));
+        get => Get(s_formTarget);
+        init => Set(s_formTarget, value);
     }
 
-    private static readonly object s_heightKey = new();
+    private static readonly PropDescriptor<uint> s_height = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Height = s.Value
+            : null,
+        static (el, s) => el.SetUInt("height", s));
 
     public IReadOnlySignal<uint>? Height
     {
-        get => Get<IReadOnlySignal<uint>>(s_heightKey);
-        init => Set(
-            s_heightKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Height = ((IReadOnlySignal<uint>)s).Value
-                : null,
-            static (el, s) => el.SetUInt("height", (IReadOnlySignal<uint>)s));
+        get => Get(s_height);
+        init => Set(s_height, value);
     }
 
-    private static readonly object s_maxKey = new();
+    private static readonly PropDescriptor<string> s_max = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Max = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("max", s));
 
     public IReadOnlySignal<string>? Max
     {
-        get => Get<IReadOnlySignal<string>>(s_maxKey);
-        init => Set(
-            s_maxKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Max = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("max", (IReadOnlySignal<string>)s));
+        get => Get(s_max);
+        init => Set(s_max, value);
     }
 
-    private static readonly object s_maxLengthKey = new();
+    private static readonly PropDescriptor<int> s_maxLength = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.MaxLength = s.Value
+            : null,
+        static (el, s) => el.SetInt("maxlength", s));
 
     public IReadOnlySignal<int>? MaxLength
     {
-        get => Get<IReadOnlySignal<int>>(s_maxLengthKey);
-        init => Set(
-            s_maxLengthKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.MaxLength = ((IReadOnlySignal<int>)s).Value
-                : null,
-            static (el, s) => el.SetInt("maxlength", (IReadOnlySignal<int>)s));
+        get => Get(s_maxLength);
+        init => Set(s_maxLength, value);
     }
 
-    private static readonly object s_minKey = new();
+    private static readonly PropDescriptor<string> s_min = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Min = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("min", s));
 
     public IReadOnlySignal<string>? Min
     {
-        get => Get<IReadOnlySignal<string>>(s_minKey);
-        init => Set(
-            s_minKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Min = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("min", (IReadOnlySignal<string>)s));
+        get => Get(s_min);
+        init => Set(s_min, value);
     }
 
-    private static readonly object s_minLengthKey = new();
+    private static readonly PropDescriptor<int> s_minLength = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.MinLength = s.Value
+            : null,
+        static (el, s) => el.SetInt("minlength", s));
 
     public IReadOnlySignal<int>? MinLength
     {
-        get => Get<IReadOnlySignal<int>>(s_minLengthKey);
-        init => Set(
-            s_minLengthKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.MinLength = ((IReadOnlySignal<int>)s).Value
-                : null,
-            static (el, s) => el.SetInt("minlength", (IReadOnlySignal<int>)s));
+        get => Get(s_minLength);
+        init => Set(s_minLength, value);
     }
 
-    private static readonly object s_multipleKey = new();
+    private static readonly PropDescriptor<bool> s_multiple = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Multiple = s.Value
+            : null,
+        static (el, s) => el.SetBoolean("multiple", s));
 
     public IReadOnlySignal<bool>? Multiple
     {
-        get => Get<IReadOnlySignal<bool>>(s_multipleKey);
-        init => Set(
-            s_multipleKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Multiple = ((IReadOnlySignal<bool>)s).Value
-                : null,
-            static (el, s) => el.SetBoolean("multiple", (IReadOnlySignal<bool>)s));
+        get => Get(s_multiple);
+        init => Set(s_multiple, value);
     }
 
-    private static readonly object s_nameKey = new();
+    private static readonly PropDescriptor<string> s_name = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Name = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("name", s));
 
     public IReadOnlySignal<string>? Name
     {
-        get => Get<IReadOnlySignal<string>>(s_nameKey);
-        init => Set(
-            s_nameKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Name = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("name", (IReadOnlySignal<string>)s));
+        get => Get(s_name);
+        init => Set(s_name, value);
     }
 
-    private static readonly object s_patternKey = new();
+    private static readonly PropDescriptor<string> s_pattern = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Pattern = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("pattern", s));
 
     public IReadOnlySignal<string>? Pattern
     {
-        get => Get<IReadOnlySignal<string>>(s_patternKey);
-        init => Set(
-            s_patternKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Pattern = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("pattern", (IReadOnlySignal<string>)s));
+        get => Get(s_pattern);
+        init => Set(s_pattern, value);
     }
 
-    private static readonly object s_placeholderKey = new();
+    private static readonly PropDescriptor<string> s_placeholder = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Placeholder = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("placeholder", s));
 
     public IReadOnlySignal<string>? Placeholder
     {
-        get => Get<IReadOnlySignal<string>>(s_placeholderKey);
-        init => Set(
-            s_placeholderKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Placeholder = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("placeholder", (IReadOnlySignal<string>)s));
+        get => Get(s_placeholder);
+        init => Set(s_placeholder, value);
     }
 
-    private static readonly object s_readOnlyKey = new();
+    private static readonly PropDescriptor<bool> s_readOnly = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.ReadOnly = s.Value
+            : null,
+        static (el, s) => el.SetBoolean("readonly", s));
 
     public IReadOnlySignal<bool>? ReadOnly
     {
-        get => Get<IReadOnlySignal<bool>>(s_readOnlyKey);
-        init => Set(
-            s_readOnlyKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.ReadOnly = ((IReadOnlySignal<bool>)s).Value
-                : null,
-            static (el, s) => el.SetBoolean("readonly", (IReadOnlySignal<bool>)s));
+        get => Get(s_readOnly);
+        init => Set(s_readOnly, value);
     }
 
-    private static readonly object s_requiredKey = new();
+    private static readonly PropDescriptor<bool> s_required = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Required = s.Value
+            : null,
+        static (el, s) => el.SetBoolean("required", s));
 
     public IReadOnlySignal<bool>? Required
     {
-        get => Get<IReadOnlySignal<bool>>(s_requiredKey);
-        init => Set(
-            s_requiredKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Required = ((IReadOnlySignal<bool>)s).Value
-                : null,
-            static (el, s) => el.SetBoolean("required", (IReadOnlySignal<bool>)s));
+        get => Get(s_required);
+        init => Set(s_required, value);
     }
 
-    private static readonly object s_sizeKey = new();
+    private static readonly PropDescriptor<uint> s_size = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Size = s.Value
+            : null,
+        static (el, s) => el.SetUInt("size", s));
 
     public IReadOnlySignal<uint>? Size
     {
-        get => Get<IReadOnlySignal<uint>>(s_sizeKey);
-        init => Set(
-            s_sizeKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Size = ((IReadOnlySignal<uint>)s).Value
-                : null,
-            static (el, s) => el.SetUInt("size", (IReadOnlySignal<uint>)s));
+        get => Get(s_size);
+        init => Set(s_size, value);
     }
 
-    private static readonly object s_srcKey = new();
+    private static readonly PropDescriptor<string> s_src = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Src = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("src", s));
 
     public IReadOnlySignal<string>? Src
     {
-        get => Get<IReadOnlySignal<string>>(s_srcKey);
-        init => Set(
-            s_srcKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Src = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("src", (IReadOnlySignal<string>)s));
+        get => Get(s_src);
+        init => Set(s_src, value);
     }
 
-    private static readonly object s_stepKey = new();
+    private static readonly PropDescriptor<string> s_step = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Step = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("step", s));
 
     public IReadOnlySignal<string>? Step
     {
-        get => Get<IReadOnlySignal<string>>(s_stepKey);
-        init => Set(
-            s_stepKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Step = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("step", (IReadOnlySignal<string>)s));
+        get => Get(s_step);
+        init => Set(s_step, value);
     }
 
-    private static readonly object s_typeKey = new();
+    private static readonly PropDescriptor<string> s_type = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Type = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("type", s));
 
     public IReadOnlySignal<string>? Type
     {
-        get => Get<IReadOnlySignal<string>>(s_typeKey);
-        init => Set(
-            s_typeKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Type = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("type", (IReadOnlySignal<string>)s));
+        get => Get(s_type);
+        init => Set(s_type, value);
     }
 
-    private static readonly object s_valueKey = new();
+    private static readonly PropDescriptor<string> s_value = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Value = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("value", s));
 
     public IReadOnlySignal<string>? Value
     {
-        get => Get<IReadOnlySignal<string>>(s_valueKey);
-        init => Set(
-            s_valueKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Value = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("value", (IReadOnlySignal<string>)s));
+        get => Get(s_value);
+        init => Set(s_value, value);
     }
 
-    private static readonly object s_defaultValueKey = new();
+    private static readonly PropDescriptor<string> s_defaultValue = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.DefaultValue = s.Value
+            : null,
+        static (el, s) => el.SetAttribute("value", s));
 
     public IReadOnlySignal<string>? DefaultValue
     {
-        get => Get<IReadOnlySignal<string>>(s_defaultValueKey);
-        init => Set(
-            s_defaultValueKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.DefaultValue = ((IReadOnlySignal<string>)s).Value
-                : null,
-            static (el, s) => el.SetAttribute("value", (IReadOnlySignal<string>)s));
+        get => Get(s_defaultValue);
+        init => Set(s_defaultValue, value);
     }
 
-    private static readonly object s_widthKey = new();
+    private static readonly PropDescriptor<uint> s_width = new(
+        OperatingSystem.IsBrowser()
+            ? static (el, s) => el.Width = s.Value
+            : null,
+        static (el, s) => el.SetUInt("width", s));
 
     public IReadOnlySignal<uint>? Width
     {
-        get => Get<IReadOnlySignal<uint>>(s_widthKey);
-        init => Set(
-            s_widthKey,
-            value,
-            OperatingSystem.IsBrowser()
-                ? static (el, s) => el.Width = ((IReadOnlySignal<uint>)s).Value
-                : null,
-            static (el, s) => el.SetUInt("width", (IReadOnlySignal<uint>)s));
+        get => Get(s_width);
+        init => Set(s_width, value);
     }
 }
 
