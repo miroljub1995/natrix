@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,27 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class ColProps : GlobalHtmlComponentProps<HTMLTableColElement>
 {
-    public IReadOnlySignal<uint>? Span { get; init; }
+    private static PropDescriptor<uint>? s_span;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLTableColElement>> register)
+    public IReadOnlySignal<uint>? Span
     {
-        base.RegisterClientEffects(register);
-
-        if (Span != null)
-        {
-            register(el => el.Span = Span.Value);
-        }
-    }
-
-    protected internal override void RegisterServerEffects(SsrElementNode el)
-    {
-        base.RegisterServerEffects(el);
-
-        if (Span != null)
-        {
-            el.SetUInt("span", Span);
-        }
+        get => Get(s_span);
+        init => Set(ref s_span, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Span = s.Value;
+            },
+            static (el, s) => el.SetUInt("span", s)));
     }
 }
 

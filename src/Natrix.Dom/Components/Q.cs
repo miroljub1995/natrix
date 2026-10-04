@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,27 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class QProps : GlobalHtmlComponentProps<HTMLQuoteElement>
 {
-    public IReadOnlySignal<string>? Cite { get; init; }
+    private static PropDescriptor<string>? s_cite;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLQuoteElement>> register)
+    public IReadOnlySignal<string>? Cite
     {
-        base.RegisterClientEffects(register);
-
-        if (Cite != null)
-        {
-            register(el => el.Cite = Cite.Value);
-        }
-    }
-
-    protected internal override void RegisterServerEffects(SsrElementNode el)
-    {
-        base.RegisterServerEffects(el);
-
-        if (Cite != null)
-        {
-            el.SetAttribute("cite", Cite);
-        }
+        get => Get(s_cite);
+        init => Set(ref s_cite, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Cite = s.Value;
+            },
+            static (el, s) => el.SetAttribute("cite", s)));
     }
 }
 

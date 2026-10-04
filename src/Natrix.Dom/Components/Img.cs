@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,159 +7,173 @@ namespace Natrix.Dom.Components;
 
 public class ImgProps : GlobalHtmlComponentProps<HTMLImageElement>
 {
-    public IReadOnlySignal<string>? Alt { get; init; }
-    public IReadOnlySignal<string>? Src { get; init; }
-    public IReadOnlySignal<string>? Srcset { get; init; }
-    public IReadOnlySignal<string>? Sizes { get; init; }
-    public IReadOnlySignal<string?>? CrossOrigin { get; init; }
-    public IReadOnlySignal<string>? UseMap { get; init; }
-    public IReadOnlySignal<bool>? IsMap { get; init; }
-    public IReadOnlySignal<uint>? Width { get; init; }
-    public IReadOnlySignal<uint>? Height { get; init; }
-    public IReadOnlySignal<string>? Decoding { get; init; }
-    public IReadOnlySignal<string>? FetchPriority { get; init; }
-    public IReadOnlySignal<string>? Loading { get; init; }
-    public IReadOnlySignal<string>? ReferrerPolicy { get; init; }
+    private static PropDescriptor<string>? s_alt;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLImageElement>> register)
+    public IReadOnlySignal<string>? Alt
     {
-        base.RegisterClientEffects(register);
-
-        if (Alt != null)
-        {
-            register(el => el.Alt = Alt.Value);
-        }
-
-        if (Src != null)
-        {
-            register(el => el.Src = Src.Value);
-        }
-
-        if (Srcset != null)
-        {
-            register(el => el.Srcset = Srcset.Value);
-        }
-
-        if (Sizes != null)
-        {
-            register(el => el.Sizes = Sizes.Value);
-        }
-
-        if (CrossOrigin != null)
-        {
-            register(el => el.CrossOrigin = CrossOrigin.Value);
-        }
-
-        if (UseMap != null)
-        {
-            register(el => el.UseMap = UseMap.Value);
-        }
-
-        if (IsMap != null)
-        {
-            register(el => el.IsMap = IsMap.Value);
-        }
-
-        if (Width != null)
-        {
-            register(el => el.Width = Width.Value);
-        }
-
-        if (Height != null)
-        {
-            register(el => el.Height = Height.Value);
-        }
-
-        if (Decoding != null)
-        {
-            register(el => el.Decoding = Decoding.Value);
-        }
-
-        if (FetchPriority != null)
-        {
-            register(el => el.FetchPriority = FetchPriority.Value);
-        }
-
-        if (Loading != null)
-        {
-            register(el => el.Loading = Loading.Value);
-        }
-
-        if (ReferrerPolicy != null)
-        {
-            register(el => el.ReferrerPolicy = ReferrerPolicy.Value);
-        }
+        get => Get(s_alt);
+        init => Set(ref s_alt, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Alt = s.Value;
+            },
+            static (el, s) => el.SetAttribute("alt", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_src;
+
+    public IReadOnlySignal<string>? Src
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_src);
+        init => Set(ref s_src, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+            },
+            static (el, s) => el.SetAttribute("src", s)));
+    }
 
-        if (Alt != null)
-        {
-            el.SetAttribute("alt", Alt);
-        }
+    private static PropDescriptor<string>? s_srcset;
 
-        if (Src != null)
-        {
-            el.SetAttribute("src", Src);
-        }
+    public IReadOnlySignal<string>? Srcset
+    {
+        get => Get(s_srcset);
+        init => Set(ref s_srcset, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Srcset = s.Value;
+            },
+            static (el, s) => el.SetAttribute("srcset", s)));
+    }
 
-        if (Srcset != null)
-        {
-            el.SetAttribute("srcset", Srcset);
-        }
+    private static PropDescriptor<string>? s_sizes;
 
-        if (Sizes != null)
-        {
-            el.SetAttribute("sizes", Sizes);
-        }
+    public IReadOnlySignal<string>? Sizes
+    {
+        get => Get(s_sizes);
+        init => Set(ref s_sizes, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Sizes = s.Value;
+            },
+            static (el, s) => el.SetAttribute("sizes", s)));
+    }
 
-        if (CrossOrigin != null)
-        {
-            el.SetNullableString("crossorigin", CrossOrigin);
-        }
+    private static PropDescriptor<string?>? s_crossOrigin;
 
-        if (UseMap != null)
-        {
-            el.SetAttribute("usemap", UseMap);
-        }
+    public IReadOnlySignal<string?>? CrossOrigin
+    {
+        get => Get(s_crossOrigin);
+        init => Set(ref s_crossOrigin, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.CrossOrigin = s.Value;
+            },
+            static (el, s) => el.SetNullableString("crossorigin", s)));
+    }
 
-        if (IsMap != null)
-        {
-            el.SetBoolean("ismap", IsMap);
-        }
+    private static PropDescriptor<string>? s_useMap;
 
-        if (Width != null)
-        {
-            el.SetUInt("width", Width);
-        }
+    public IReadOnlySignal<string>? UseMap
+    {
+        get => Get(s_useMap);
+        init => Set(ref s_useMap, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.UseMap = s.Value;
+            },
+            static (el, s) => el.SetAttribute("usemap", s)));
+    }
 
-        if (Height != null)
-        {
-            el.SetUInt("height", Height);
-        }
+    private static PropDescriptor<bool>? s_isMap;
 
-        if (Decoding != null)
-        {
-            el.SetAttribute("decoding", Decoding);
-        }
+    public IReadOnlySignal<bool>? IsMap
+    {
+        get => Get(s_isMap);
+        init => Set(ref s_isMap, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.IsMap = s.Value;
+            },
+            static (el, s) => el.SetBoolean("ismap", s)));
+    }
 
-        if (FetchPriority != null)
-        {
-            el.SetAttribute("fetchpriority", FetchPriority);
-        }
+    private static PropDescriptor<uint>? s_width;
 
-        if (Loading != null)
-        {
-            el.SetAttribute("loading", Loading);
-        }
+    public IReadOnlySignal<uint>? Width
+    {
+        get => Get(s_width);
+        init => Set(ref s_width, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Width = s.Value;
+            },
+            static (el, s) => el.SetUInt("width", s)));
+    }
 
-        if (ReferrerPolicy != null)
-        {
-            el.SetAttribute("referrerpolicy", ReferrerPolicy);
-        }
+    private static PropDescriptor<uint>? s_height;
+
+    public IReadOnlySignal<uint>? Height
+    {
+        get => Get(s_height);
+        init => Set(ref s_height, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Height = s.Value;
+            },
+            static (el, s) => el.SetUInt("height", s)));
+    }
+
+    private static PropDescriptor<string>? s_decoding;
+
+    public IReadOnlySignal<string>? Decoding
+    {
+        get => Get(s_decoding);
+        init => Set(ref s_decoding, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Decoding = s.Value;
+            },
+            static (el, s) => el.SetAttribute("decoding", s)));
+    }
+
+    private static PropDescriptor<string>? s_fetchPriority;
+
+    public IReadOnlySignal<string>? FetchPriority
+    {
+        get => Get(s_fetchPriority);
+        init => Set(ref s_fetchPriority, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.FetchPriority = s.Value;
+            },
+            static (el, s) => el.SetAttribute("fetchpriority", s)));
+    }
+
+    private static PropDescriptor<string>? s_loading;
+
+    public IReadOnlySignal<string>? Loading
+    {
+        get => Get(s_loading);
+        init => Set(ref s_loading, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Loading = s.Value;
+            },
+            static (el, s) => el.SetAttribute("loading", s)));
+    }
+
+    private static PropDescriptor<string>? s_referrerPolicy;
+
+    public IReadOnlySignal<string>? ReferrerPolicy
+    {
+        get => Get(s_referrerPolicy);
+        init => Set(ref s_referrerPolicy, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.ReferrerPolicy = s.Value;
+            },
+            static (el, s) => el.SetAttribute("referrerpolicy", s)));
     }
 }
 

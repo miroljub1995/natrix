@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,60 +7,56 @@ namespace Natrix.Dom.Components;
 
 public class OutputProps : GlobalHtmlComponentProps<HTMLOutputElement>
 {
-    public IReadOnlySignal<string>? HtmlFor { get; init; }
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<string>? DefaultValue { get; init; }
-    public IReadOnlySignal<string>? Value { get; init; }
+    private static PropDescriptor<string>? s_htmlFor;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLOutputElement>> register)
+    public IReadOnlySignal<string>? HtmlFor
     {
-        base.RegisterClientEffects(register);
-
-        if (HtmlFor != null)
-        {
-            register(el => el.HtmlFor.Value = HtmlFor.Value);
-        }
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (DefaultValue != null)
-        {
-            register(el => el.DefaultValue = DefaultValue.Value);
-        }
-
-        if (Value != null)
-        {
-            register(el => el.Value = Value.Value);
-        }
+        get => Get(s_htmlFor);
+        init => Set(ref s_htmlFor, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.HtmlFor.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("for", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_name;
+
+    public IReadOnlySignal<string>? Name
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_name);
+        init => Set(ref s_name, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+            },
+            static (el, s) => el.SetAttribute("name", s)));
+    }
 
-        if (HtmlFor != null)
-        {
-            el.SetAttribute("for", HtmlFor);
-        }
+    private static PropDescriptor<string>? s_defaultValue;
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    public IReadOnlySignal<string>? DefaultValue
+    {
+        get => Get(s_defaultValue);
+        init => Set(ref s_defaultValue, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.DefaultValue = s.Value;
+            },
+            static (el, s) => el.SetAttribute("value", s)));
+    }
 
-        if (DefaultValue != null)
-        {
-            el.SetAttribute("value", DefaultValue);
-        }
+    private static PropDescriptor<string>? s_value;
 
-        if (Value != null)
-        {
-            el.SetAttribute("value", Value);
-        }
+    public IReadOnlySignal<string>? Value
+    {
+        get => Get(s_value);
+        init => Set(ref s_value, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("value", s)));
     }
 }
 

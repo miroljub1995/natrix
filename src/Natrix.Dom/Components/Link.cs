@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,170 +7,186 @@ namespace Natrix.Dom.Components;
 
 public class LinkProps : GlobalHtmlComponentProps<HTMLLinkElement>
 {
-    public IReadOnlySignal<string>? Href { get; init; }
-    public IReadOnlySignal<string?>? CrossOrigin { get; init; }
-    public IReadOnlySignal<string>? Rel { get; init; }
-    public IReadOnlySignal<string>? As { get; init; }
-    public IReadOnlySignal<string>? Media { get; init; }
-    public IReadOnlySignal<string>? Integrity { get; init; }
-    public IReadOnlySignal<string>? Hreflang { get; init; }
-    public IReadOnlySignal<string>? Type { get; init; }
-    public IReadOnlySignal<string>? ReferrerPolicy { get; init; }
-    public IReadOnlySignal<bool>? Disabled { get; init; }
-    public IReadOnlySignal<string>? FetchPriority { get; init; }
-    public IReadOnlySignal<string>? Blocking { get; init; }
-    public IReadOnlySignal<string>? ImageSizes { get; init; }
-    public IReadOnlySignal<string>? ImageSrcset { get; init; }
+    private static PropDescriptor<string>? s_href;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLLinkElement>> register)
+    public IReadOnlySignal<string>? Href
     {
-        base.RegisterClientEffects(register);
-
-        if (Href != null)
-        {
-            register(el => el.Href = Href.Value);
-        }
-
-        if (CrossOrigin != null)
-        {
-            register(el => el.CrossOrigin = CrossOrigin.Value);
-        }
-
-        if (Rel != null)
-        {
-            register(el => el.Rel = Rel.Value);
-        }
-
-        if (As != null)
-        {
-            register(el => el.As = As.Value);
-        }
-
-        if (Media != null)
-        {
-            register(el => el.Media = Media.Value);
-        }
-
-        if (Integrity != null)
-        {
-            register(el => el.Integrity = Integrity.Value);
-        }
-
-        if (Hreflang != null)
-        {
-            register(el => el.Hreflang = Hreflang.Value);
-        }
-
-        if (Type != null)
-        {
-            register(el => el.Type = Type.Value);
-        }
-
-        if (ReferrerPolicy != null)
-        {
-            register(el => el.ReferrerPolicy = ReferrerPolicy.Value);
-        }
-
-        if (Disabled != null)
-        {
-            register(el => el.Disabled = Disabled.Value);
-        }
-
-        if (FetchPriority != null)
-        {
-            register(el => el.FetchPriority = FetchPriority.Value);
-        }
-
-        if (Blocking != null)
-        {
-            register(el => el.Blocking.Value = Blocking.Value);
-        }
-
-        if (ImageSizes != null)
-        {
-            register(el => el.ImageSizes = ImageSizes.Value);
-        }
-
-        if (ImageSrcset != null)
-        {
-            register(el => el.ImageSrcset = ImageSrcset.Value);
-        }
+        get => Get(s_href);
+        init => Set(ref s_href, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Href = s.Value;
+            },
+            static (el, s) => el.SetAttribute("href", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string?>? s_crossOrigin;
+
+    public IReadOnlySignal<string?>? CrossOrigin
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_crossOrigin);
+        init => Set(ref s_crossOrigin, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.CrossOrigin = s.Value;
+            },
+            static (el, s) => el.SetNullableString("crossorigin", s)));
+    }
 
-        if (Href != null)
-        {
-            el.SetAttribute("href", Href);
-        }
+    private static PropDescriptor<string>? s_rel;
 
-        if (CrossOrigin != null)
-        {
-            el.SetNullableString("crossorigin", CrossOrigin);
-        }
+    public IReadOnlySignal<string>? Rel
+    {
+        get => Get(s_rel);
+        init => Set(ref s_rel, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Rel = s.Value;
+            },
+            static (el, s) => el.SetAttribute("rel", s)));
+    }
 
-        if (Rel != null)
-        {
-            el.SetAttribute("rel", Rel);
-        }
+    private static PropDescriptor<string>? s_as;
 
-        if (As != null)
-        {
-            el.SetAttribute("as", As);
-        }
+    public IReadOnlySignal<string>? As
+    {
+        get => Get(s_as);
+        init => Set(ref s_as, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.As = s.Value;
+            },
+            static (el, s) => el.SetAttribute("as", s)));
+    }
 
-        if (Media != null)
-        {
-            el.SetAttribute("media", Media);
-        }
+    private static PropDescriptor<string>? s_media;
 
-        if (Integrity != null)
-        {
-            el.SetAttribute("integrity", Integrity);
-        }
+    public IReadOnlySignal<string>? Media
+    {
+        get => Get(s_media);
+        init => Set(ref s_media, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Media = s.Value;
+            },
+            static (el, s) => el.SetAttribute("media", s)));
+    }
 
-        if (Hreflang != null)
-        {
-            el.SetAttribute("hreflang", Hreflang);
-        }
+    private static PropDescriptor<string>? s_integrity;
 
-        if (Type != null)
-        {
-            el.SetAttribute("type", Type);
-        }
+    public IReadOnlySignal<string>? Integrity
+    {
+        get => Get(s_integrity);
+        init => Set(ref s_integrity, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Integrity = s.Value;
+            },
+            static (el, s) => el.SetAttribute("integrity", s)));
+    }
 
-        if (ReferrerPolicy != null)
-        {
-            el.SetAttribute("referrerpolicy", ReferrerPolicy);
-        }
+    private static PropDescriptor<string>? s_hreflang;
 
-        if (Disabled != null)
-        {
-            el.SetBoolean("disabled", Disabled);
-        }
+    public IReadOnlySignal<string>? Hreflang
+    {
+        get => Get(s_hreflang);
+        init => Set(ref s_hreflang, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Hreflang = s.Value;
+            },
+            static (el, s) => el.SetAttribute("hreflang", s)));
+    }
 
-        if (FetchPriority != null)
-        {
-            el.SetAttribute("fetchpriority", FetchPriority);
-        }
+    private static PropDescriptor<string>? s_type;
 
-        if (Blocking != null)
-        {
-            el.SetAttribute("blocking", Blocking);
-        }
+    public IReadOnlySignal<string>? Type
+    {
+        get => Get(s_type);
+        init => Set(ref s_type, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+            },
+            static (el, s) => el.SetAttribute("type", s)));
+    }
 
-        if (ImageSizes != null)
-        {
-            el.SetAttribute("imagesizes", ImageSizes);
-        }
+    private static PropDescriptor<string>? s_referrerPolicy;
 
-        if (ImageSrcset != null)
-        {
-            el.SetAttribute("imagesrcset", ImageSrcset);
-        }
+    public IReadOnlySignal<string>? ReferrerPolicy
+    {
+        get => Get(s_referrerPolicy);
+        init => Set(ref s_referrerPolicy, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.ReferrerPolicy = s.Value;
+            },
+            static (el, s) => el.SetAttribute("referrerpolicy", s)));
+    }
+
+    private static PropDescriptor<bool>? s_disabled;
+
+    public IReadOnlySignal<bool>? Disabled
+    {
+        get => Get(s_disabled);
+        init => Set(ref s_disabled, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
+            },
+            static (el, s) => el.SetBoolean("disabled", s)));
+    }
+
+    private static PropDescriptor<string>? s_fetchPriority;
+
+    public IReadOnlySignal<string>? FetchPriority
+    {
+        get => Get(s_fetchPriority);
+        init => Set(ref s_fetchPriority, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.FetchPriority = s.Value;
+            },
+            static (el, s) => el.SetAttribute("fetchpriority", s)));
+    }
+
+    private static PropDescriptor<string>? s_blocking;
+
+    public IReadOnlySignal<string>? Blocking
+    {
+        get => Get(s_blocking);
+        init => Set(ref s_blocking, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Blocking.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("blocking", s)));
+    }
+
+    private static PropDescriptor<string>? s_imageSizes;
+
+    public IReadOnlySignal<string>? ImageSizes
+    {
+        get => Get(s_imageSizes);
+        init => Set(ref s_imageSizes, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.ImageSizes = s.Value;
+            },
+            static (el, s) => el.SetAttribute("imagesizes", s)));
+    }
+
+    private static PropDescriptor<string>? s_imageSrcset;
+
+    public IReadOnlySignal<string>? ImageSrcset
+    {
+        get => Get(s_imageSrcset);
+        init => Set(ref s_imageSrcset, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.ImageSrcset = s.Value;
+            },
+            static (el, s) => el.SetAttribute("imagesrcset", s)));
     }
 }
 

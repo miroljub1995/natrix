@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,27 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class TimeProps : GlobalHtmlComponentProps<HTMLTimeElement>
 {
-    public IReadOnlySignal<string>? DateTime { get; init; }
+    private static PropDescriptor<string>? s_dateTime;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLTimeElement>> register)
+    public IReadOnlySignal<string>? DateTime
     {
-        base.RegisterClientEffects(register);
-
-        if (DateTime != null)
-        {
-            register(el => el.DateTime = DateTime.Value);
-        }
-    }
-
-    protected internal override void RegisterServerEffects(SsrElementNode el)
-    {
-        base.RegisterServerEffects(el);
-
-        if (DateTime != null)
-        {
-            el.SetAttribute("datetime", DateTime);
-        }
+        get => Get(s_dateTime);
+        init => Set(ref s_dateTime, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.DateTime = s.Value;
+            },
+            static (el, s) => el.SetAttribute("datetime", s)));
     }
 }
 

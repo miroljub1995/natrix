@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,170 +7,186 @@ namespace Natrix.Dom.Components;
 
 public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
 {
-    public IReadOnlySignal<string>? Autocomplete { get; init; }
-    public IReadOnlySignal<uint>? Cols { get; init; }
-    public IReadOnlySignal<string>? DirName { get; init; }
-    public IReadOnlySignal<bool>? Disabled { get; init; }
-    public IReadOnlySignal<int>? MaxLength { get; init; }
-    public IReadOnlySignal<int>? MinLength { get; init; }
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<string>? Placeholder { get; init; }
-    public IReadOnlySignal<bool>? ReadOnly { get; init; }
-    public IReadOnlySignal<bool>? Required { get; init; }
-    public IReadOnlySignal<uint>? Rows { get; init; }
-    public IReadOnlySignal<string>? Wrap { get; init; }
-    public IReadOnlySignal<string>? Value { get; init; }
-    public IReadOnlySignal<string>? DefaultValue { get; init; }
+    private static PropDescriptor<string>? s_autocomplete;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLTextAreaElement>> register)
+    public IReadOnlySignal<string>? Autocomplete
     {
-        base.RegisterClientEffects(register);
-
-        if (Autocomplete != null)
-        {
-            register(el => el.Autocomplete = Autocomplete.Value);
-        }
-
-        if (Cols != null)
-        {
-            register(el => el.Cols = Cols.Value);
-        }
-
-        if (DirName != null)
-        {
-            register(el => el.DirName = DirName.Value);
-        }
-
-        if (Disabled != null)
-        {
-            register(el => el.Disabled = Disabled.Value);
-        }
-
-        if (MaxLength != null)
-        {
-            register(el => el.MaxLength = MaxLength.Value);
-        }
-
-        if (MinLength != null)
-        {
-            register(el => el.MinLength = MinLength.Value);
-        }
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (Placeholder != null)
-        {
-            register(el => el.Placeholder = Placeholder.Value);
-        }
-
-        if (ReadOnly != null)
-        {
-            register(el => el.ReadOnly = ReadOnly.Value);
-        }
-
-        if (Required != null)
-        {
-            register(el => el.Required = Required.Value);
-        }
-
-        if (Rows != null)
-        {
-            register(el => el.Rows = Rows.Value);
-        }
-
-        if (Wrap != null)
-        {
-            register(el => el.Wrap = Wrap.Value);
-        }
-
-        if (Value != null)
-        {
-            register(el => el.Value = Value.Value);
-        }
-
-        if (DefaultValue != null)
-        {
-            register(el => el.DefaultValue = DefaultValue.Value);
-        }
+        get => Get(s_autocomplete);
+        init => Set(ref s_autocomplete, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Autocomplete = s.Value;
+            },
+            static (el, s) => el.SetAttribute("autocomplete", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<uint>? s_cols;
+
+    public IReadOnlySignal<uint>? Cols
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_cols);
+        init => Set(ref s_cols, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Cols = s.Value;
+            },
+            static (el, s) => el.SetUInt("cols", s)));
+    }
 
-        if (Autocomplete != null)
-        {
-            el.SetAttribute("autocomplete", Autocomplete);
-        }
+    private static PropDescriptor<string>? s_dirName;
 
-        if (Cols != null)
-        {
-            el.SetUInt("cols", Cols);
-        }
+    public IReadOnlySignal<string>? DirName
+    {
+        get => Get(s_dirName);
+        init => Set(ref s_dirName, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.DirName = s.Value;
+            },
+            static (el, s) => el.SetAttribute("dirname", s)));
+    }
 
-        if (DirName != null)
-        {
-            el.SetAttribute("dirname", DirName);
-        }
+    private static PropDescriptor<bool>? s_disabled;
 
-        if (Disabled != null)
-        {
-            el.SetBoolean("disabled", Disabled);
-        }
+    public IReadOnlySignal<bool>? Disabled
+    {
+        get => Get(s_disabled);
+        init => Set(ref s_disabled, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
+            },
+            static (el, s) => el.SetBoolean("disabled", s)));
+    }
 
-        if (MaxLength != null)
-        {
-            el.SetInt("maxlength", MaxLength);
-        }
+    private static PropDescriptor<int>? s_maxLength;
 
-        if (MinLength != null)
-        {
-            el.SetInt("minlength", MinLength);
-        }
+    public IReadOnlySignal<int>? MaxLength
+    {
+        get => Get(s_maxLength);
+        init => Set(ref s_maxLength, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.MaxLength = s.Value;
+            },
+            static (el, s) => el.SetInt("maxlength", s)));
+    }
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    private static PropDescriptor<int>? s_minLength;
 
-        if (Placeholder != null)
-        {
-            el.SetAttribute("placeholder", Placeholder);
-        }
+    public IReadOnlySignal<int>? MinLength
+    {
+        get => Get(s_minLength);
+        init => Set(ref s_minLength, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.MinLength = s.Value;
+            },
+            static (el, s) => el.SetInt("minlength", s)));
+    }
 
-        if (ReadOnly != null)
-        {
-            el.SetBoolean("readonly", ReadOnly);
-        }
+    private static PropDescriptor<string>? s_name;
 
-        if (Required != null)
-        {
-            el.SetBoolean("required", Required);
-        }
+    public IReadOnlySignal<string>? Name
+    {
+        get => Get(s_name);
+        init => Set(ref s_name, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+            },
+            static (el, s) => el.SetAttribute("name", s)));
+    }
 
-        if (Rows != null)
-        {
-            el.SetUInt("rows", Rows);
-        }
+    private static PropDescriptor<string>? s_placeholder;
 
-        if (Wrap != null)
-        {
-            el.SetAttribute("wrap", Wrap);
-        }
+    public IReadOnlySignal<string>? Placeholder
+    {
+        get => Get(s_placeholder);
+        init => Set(ref s_placeholder, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Placeholder = s.Value;
+            },
+            static (el, s) => el.SetAttribute("placeholder", s)));
+    }
 
-        if (Value != null)
-        {
-            el.SetAttribute("value", Value);
-        }
+    private static PropDescriptor<bool>? s_readOnly;
 
-        if (DefaultValue != null)
-        {
-            el.SetAttribute("value", DefaultValue);
-        }
+    public IReadOnlySignal<bool>? ReadOnly
+    {
+        get => Get(s_readOnly);
+        init => Set(ref s_readOnly, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.ReadOnly = s.Value;
+            },
+            static (el, s) => el.SetBoolean("readonly", s)));
+    }
+
+    private static PropDescriptor<bool>? s_required;
+
+    public IReadOnlySignal<bool>? Required
+    {
+        get => Get(s_required);
+        init => Set(ref s_required, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Required = s.Value;
+            },
+            static (el, s) => el.SetBoolean("required", s)));
+    }
+
+    private static PropDescriptor<uint>? s_rows;
+
+    public IReadOnlySignal<uint>? Rows
+    {
+        get => Get(s_rows);
+        init => Set(ref s_rows, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Rows = s.Value;
+            },
+            static (el, s) => el.SetUInt("rows", s)));
+    }
+
+    private static PropDescriptor<string>? s_wrap;
+
+    public IReadOnlySignal<string>? Wrap
+    {
+        get => Get(s_wrap);
+        init => Set(ref s_wrap, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Wrap = s.Value;
+            },
+            static (el, s) => el.SetAttribute("wrap", s)));
+    }
+
+    private static PropDescriptor<string>? s_value;
+
+    public IReadOnlySignal<string>? Value
+    {
+        get => Get(s_value);
+        init => Set(ref s_value, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("value", s)));
+    }
+
+    private static PropDescriptor<string>? s_defaultValue;
+
+    public IReadOnlySignal<string>? DefaultValue
+    {
+        get => Get(s_defaultValue);
+        init => Set(ref s_defaultValue, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.DefaultValue = s.Value;
+            },
+            static (el, s) => el.SetAttribute("value", s)));
     }
 }
 

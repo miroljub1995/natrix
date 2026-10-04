@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,71 +7,69 @@ namespace Natrix.Dom.Components;
 
 public class ObjectProps : GlobalHtmlComponentProps<HTMLObjectElement>
 {
-    public new IReadOnlySignal<string>? Data { get; init; }
-    public IReadOnlySignal<string>? Type { get; init; }
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<string>? Width { get; init; }
-    public IReadOnlySignal<string>? Height { get; init; }
+    private static PropDescriptor<string>? s_data;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLObjectElement>> register)
+    public new IReadOnlySignal<string>? Data
     {
-        base.RegisterClientEffects(register);
-
-        if (Data != null)
-        {
-            register(el => el.Data = Data.Value);
-        }
-
-        if (Type != null)
-        {
-            register(el => el.Type = Type.Value);
-        }
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (Width != null)
-        {
-            register(el => el.Width = Width.Value);
-        }
-
-        if (Height != null)
-        {
-            register(el => el.Height = Height.Value);
-        }
+        get => Get(s_data);
+        init => Set(ref s_data, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Data = s.Value;
+            },
+            static (el, s) => el.SetAttribute("data", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_type;
+
+    public IReadOnlySignal<string>? Type
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_type);
+        init => Set(ref s_type, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+            },
+            static (el, s) => el.SetAttribute("type", s)));
+    }
 
-        if (Data != null)
-        {
-            el.SetAttribute("data", Data);
-        }
+    private static PropDescriptor<string>? s_name;
 
-        if (Type != null)
-        {
-            el.SetAttribute("type", Type);
-        }
+    public IReadOnlySignal<string>? Name
+    {
+        get => Get(s_name);
+        init => Set(ref s_name, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+            },
+            static (el, s) => el.SetAttribute("name", s)));
+    }
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    private static PropDescriptor<string>? s_width;
 
-        if (Width != null)
-        {
-            el.SetAttribute("width", Width);
-        }
+    public IReadOnlySignal<string>? Width
+    {
+        get => Get(s_width);
+        init => Set(ref s_width, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Width = s.Value;
+            },
+            static (el, s) => el.SetAttribute("width", s)));
+    }
 
-        if (Height != null)
-        {
-            el.SetAttribute("height", Height);
-        }
+    private static PropDescriptor<string>? s_height;
+
+    public IReadOnlySignal<string>? Height
+    {
+        get => Get(s_height);
+        init => Set(ref s_height, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Height = s.Value;
+            },
+            static (el, s) => el.SetAttribute("height", s)));
     }
 }
 

@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,38 +7,30 @@ namespace Natrix.Dom.Components;
 
 public class CanvasProps : GlobalHtmlComponentProps<HTMLCanvasElement>
 {
-    public IReadOnlySignal<uint>? Width { get; init; }
-    public IReadOnlySignal<uint>? Height { get; init; }
+    private static PropDescriptor<uint>? s_width;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLCanvasElement>> register)
+    public IReadOnlySignal<uint>? Width
     {
-        base.RegisterClientEffects(register);
-
-        if (Width != null)
-        {
-            register(el => el.Width = Width.Value);
-        }
-
-        if (Height != null)
-        {
-            register(el => el.Height = Height.Value);
-        }
+        get => Get(s_width);
+        init => Set(ref s_width, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Width = s.Value;
+            },
+            static (el, s) => el.SetUInt("width", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<uint>? s_height;
+
+    public IReadOnlySignal<uint>? Height
     {
-        base.RegisterServerEffects(el);
-
-        if (Width != null)
-        {
-            el.SetUInt("width", Width);
-        }
-
-        if (Height != null)
-        {
-            el.SetUInt("height", Height);
-        }
+        get => Get(s_height);
+        init => Set(ref s_height, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Height = s.Value;
+            },
+            static (el, s) => el.SetUInt("height", s)));
     }
 }
 

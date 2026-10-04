@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,49 +7,43 @@ namespace Natrix.Dom.Components;
 
 public class OlProps : GlobalHtmlComponentProps<HTMLOListElement>
 {
-    public IReadOnlySignal<bool>? Reversed { get; init; }
-    public IReadOnlySignal<int>? Start { get; init; }
-    public IReadOnlySignal<string>? Type { get; init; }
+    private static PropDescriptor<bool>? s_reversed;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLOListElement>> register)
+    public IReadOnlySignal<bool>? Reversed
     {
-        base.RegisterClientEffects(register);
-
-        if (Reversed != null)
-        {
-            register(el => el.Reversed = Reversed.Value);
-        }
-
-        if (Start != null)
-        {
-            register(el => el.Start = Start.Value);
-        }
-
-        if (Type != null)
-        {
-            register(el => el.Type = Type.Value);
-        }
+        get => Get(s_reversed);
+        init => Set(ref s_reversed, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Reversed = s.Value;
+            },
+            static (el, s) => el.SetBoolean("reversed", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<int>? s_start;
+
+    public IReadOnlySignal<int>? Start
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_start);
+        init => Set(ref s_start, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Start = s.Value;
+            },
+            static (el, s) => el.SetInt("start", s)));
+    }
 
-        if (Reversed != null)
-        {
-            el.SetBoolean("reversed", Reversed);
-        }
+    private static PropDescriptor<string>? s_type;
 
-        if (Start != null)
-        {
-            el.SetInt("start", Start);
-        }
-
-        if (Type != null)
-        {
-            el.SetAttribute("type", Type);
-        }
+    public IReadOnlySignal<string>? Type
+    {
+        get => Get(s_type);
+        init => Set(ref s_type, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+            },
+            static (el, s) => el.SetAttribute("type", s)));
     }
 }
 

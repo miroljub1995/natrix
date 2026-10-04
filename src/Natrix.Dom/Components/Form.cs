@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,104 +7,108 @@ namespace Natrix.Dom.Components;
 
 public class FormProps : GlobalHtmlComponentProps<HTMLFormElement>
 {
-    public IReadOnlySignal<string>? Action { get; init; }
-    public IReadOnlySignal<string>? Autocomplete { get; init; }
-    public IReadOnlySignal<string>? Enctype { get; init; }
-    public IReadOnlySignal<string>? Method { get; init; }
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<bool>? NoValidate { get; init; }
-    public IReadOnlySignal<string>? Target { get; init; }
-    public IReadOnlySignal<string>? Rel { get; init; }
+    private static PropDescriptor<string>? s_action;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLFormElement>> register)
+    public IReadOnlySignal<string>? Action
     {
-        base.RegisterClientEffects(register);
-
-        if (Action != null)
-        {
-            register(el => el.Action = Action.Value);
-        }
-
-        if (Autocomplete != null)
-        {
-            register(el => el.Autocomplete = Autocomplete.Value);
-        }
-
-        if (Enctype != null)
-        {
-            register(el => el.Enctype = Enctype.Value);
-        }
-
-        if (Method != null)
-        {
-            register(el => el.Method = Method.Value);
-        }
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (NoValidate != null)
-        {
-            register(el => el.NoValidate = NoValidate.Value);
-        }
-
-        if (Target != null)
-        {
-            register(el => el.Target = Target.Value);
-        }
-
-        if (Rel != null)
-        {
-            register(el => el.Rel = Rel.Value);
-        }
+        get => Get(s_action);
+        init => Set(ref s_action, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Action = s.Value;
+            },
+            static (el, s) => el.SetAttribute("action", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_autocomplete;
+
+    public IReadOnlySignal<string>? Autocomplete
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_autocomplete);
+        init => Set(ref s_autocomplete, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Autocomplete = s.Value;
+            },
+            static (el, s) => el.SetAttribute("autocomplete", s)));
+    }
 
-        if (Action != null)
-        {
-            el.SetAttribute("action", Action);
-        }
+    private static PropDescriptor<string>? s_enctype;
 
-        if (Autocomplete != null)
-        {
-            el.SetAttribute("autocomplete", Autocomplete);
-        }
+    public IReadOnlySignal<string>? Enctype
+    {
+        get => Get(s_enctype);
+        init => Set(ref s_enctype, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Enctype = s.Value;
+            },
+            static (el, s) => el.SetAttribute("enctype", s)));
+    }
 
-        if (Enctype != null)
-        {
-            el.SetAttribute("enctype", Enctype);
-        }
+    private static PropDescriptor<string>? s_method;
 
-        if (Method != null)
-        {
-            el.SetAttribute("method", Method);
-        }
+    public IReadOnlySignal<string>? Method
+    {
+        get => Get(s_method);
+        init => Set(ref s_method, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Method = s.Value;
+            },
+            static (el, s) => el.SetAttribute("method", s)));
+    }
 
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
+    private static PropDescriptor<string>? s_name;
 
-        if (NoValidate != null)
-        {
-            el.SetBoolean("novalidate", NoValidate);
-        }
+    public IReadOnlySignal<string>? Name
+    {
+        get => Get(s_name);
+        init => Set(ref s_name, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+            },
+            static (el, s) => el.SetAttribute("name", s)));
+    }
 
-        if (Target != null)
-        {
-            el.SetAttribute("target", Target);
-        }
+    private static PropDescriptor<bool>? s_noValidate;
 
-        if (Rel != null)
-        {
-            el.SetAttribute("rel", Rel);
-        }
+    public IReadOnlySignal<bool>? NoValidate
+    {
+        get => Get(s_noValidate);
+        init => Set(ref s_noValidate, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.NoValidate = s.Value;
+            },
+            static (el, s) => el.SetBoolean("novalidate", s)));
+    }
+
+    private static PropDescriptor<string>? s_target;
+
+    public IReadOnlySignal<string>? Target
+    {
+        get => Get(s_target);
+        init => Set(ref s_target, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Target = s.Value;
+            },
+            static (el, s) => el.SetAttribute("target", s)));
+    }
+
+    private static PropDescriptor<string>? s_rel;
+
+    public IReadOnlySignal<string>? Rel
+    {
+        get => Get(s_rel);
+        init => Set(ref s_rel, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Rel = s.Value;
+            },
+            static (el, s) => el.SetAttribute("rel", s)));
     }
 }
 

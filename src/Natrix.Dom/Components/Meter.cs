@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,82 +7,82 @@ namespace Natrix.Dom.Components;
 
 public class MeterProps : GlobalHtmlComponentProps<HTMLMeterElement>
 {
-    public IReadOnlySignal<double>? Value { get; init; }
-    public IReadOnlySignal<double>? Min { get; init; }
-    public IReadOnlySignal<double>? Max { get; init; }
-    public IReadOnlySignal<double>? Low { get; init; }
-    public IReadOnlySignal<double>? High { get; init; }
-    public IReadOnlySignal<double>? Optimum { get; init; }
+    private static PropDescriptor<double>? s_value;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLMeterElement>> register)
+    public IReadOnlySignal<double>? Value
     {
-        base.RegisterClientEffects(register);
-
-        if (Value != null)
-        {
-            register(el => el.Value = Value.Value);
-        }
-
-        if (Min != null)
-        {
-            register(el => el.Min = Min.Value);
-        }
-
-        if (Max != null)
-        {
-            register(el => el.Max = Max.Value);
-        }
-
-        if (Low != null)
-        {
-            register(el => el.Low = Low.Value);
-        }
-
-        if (High != null)
-        {
-            register(el => el.High = High.Value);
-        }
-
-        if (Optimum != null)
-        {
-            register(el => el.Optimum = Optimum.Value);
-        }
+        get => Get(s_value);
+        init => Set(ref s_value, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+            },
+            static (el, s) => el.SetDouble("value", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<double>? s_min;
+
+    public IReadOnlySignal<double>? Min
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_min);
+        init => Set(ref s_min, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Min = s.Value;
+            },
+            static (el, s) => el.SetDouble("min", s)));
+    }
 
-        if (Value != null)
-        {
-            el.SetDouble("value", Value);
-        }
+    private static PropDescriptor<double>? s_max;
 
-        if (Min != null)
-        {
-            el.SetDouble("min", Min);
-        }
+    public IReadOnlySignal<double>? Max
+    {
+        get => Get(s_max);
+        init => Set(ref s_max, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Max = s.Value;
+            },
+            static (el, s) => el.SetDouble("max", s)));
+    }
 
-        if (Max != null)
-        {
-            el.SetDouble("max", Max);
-        }
+    private static PropDescriptor<double>? s_low;
 
-        if (Low != null)
-        {
-            el.SetDouble("low", Low);
-        }
+    public IReadOnlySignal<double>? Low
+    {
+        get => Get(s_low);
+        init => Set(ref s_low, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Low = s.Value;
+            },
+            static (el, s) => el.SetDouble("low", s)));
+    }
 
-        if (High != null)
-        {
-            el.SetDouble("high", High);
-        }
+    private static PropDescriptor<double>? s_high;
 
-        if (Optimum != null)
-        {
-            el.SetDouble("optimum", Optimum);
-        }
+    public IReadOnlySignal<double>? High
+    {
+        get => Get(s_high);
+        init => Set(ref s_high, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.High = s.Value;
+            },
+            static (el, s) => el.SetDouble("high", s)));
+    }
+
+    private static PropDescriptor<double>? s_optimum;
+
+    public IReadOnlySignal<double>? Optimum
+    {
+        get => Get(s_optimum);
+        init => Set(ref s_optimum, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Optimum = s.Value;
+            },
+            static (el, s) => el.SetDouble("optimum", s)));
     }
 }
 

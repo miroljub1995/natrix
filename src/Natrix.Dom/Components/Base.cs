@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,38 +7,30 @@ namespace Natrix.Dom.Components;
 
 public class BaseProps : GlobalHtmlComponentProps<HTMLBaseElement>
 {
-    public IReadOnlySignal<string>? Href { get; init; }
-    public IReadOnlySignal<string>? Target { get; init; }
+    private static PropDescriptor<string>? s_href;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLBaseElement>> register)
+    public IReadOnlySignal<string>? Href
     {
-        base.RegisterClientEffects(register);
-
-        if (Href != null)
-        {
-            register(el => el.Href = Href.Value);
-        }
-
-        if (Target != null)
-        {
-            register(el => el.Target = Target.Value);
-        }
+        get => Get(s_href);
+        init => Set(ref s_href, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Href = s.Value;
+            },
+            static (el, s) => el.SetAttribute("href", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_target;
+
+    public IReadOnlySignal<string>? Target
     {
-        base.RegisterServerEffects(el);
-
-        if (Href != null)
-        {
-            el.SetAttribute("href", Href);
-        }
-
-        if (Target != null)
-        {
-            el.SetAttribute("target", Target);
-        }
+        get => Get(s_target);
+        init => Set(ref s_target, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Target = s.Value;
+            },
+            static (el, s) => el.SetAttribute("target", s)));
     }
 }
 

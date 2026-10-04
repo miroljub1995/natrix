@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,38 +7,30 @@ namespace Natrix.Dom.Components;
 
 public class DetailsProps : GlobalHtmlComponentProps<HTMLDetailsElement>
 {
-    public IReadOnlySignal<string>? Name { get; init; }
-    public IReadOnlySignal<bool>? Open { get; init; }
+    private static PropDescriptor<string>? s_name;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLDetailsElement>> register)
+    public IReadOnlySignal<string>? Name
     {
-        base.RegisterClientEffects(register);
-
-        if (Name != null)
-        {
-            register(el => el.Name = Name.Value);
-        }
-
-        if (Open != null)
-        {
-            register(el => el.Open = Open.Value);
-        }
+        get => Get(s_name);
+        init => Set(ref s_name, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Name = s.Value;
+            },
+            static (el, s) => el.SetAttribute("name", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<bool>? s_open;
+
+    public IReadOnlySignal<bool>? Open
     {
-        base.RegisterServerEffects(el);
-
-        if (Name != null)
-        {
-            el.SetAttribute("name", Name);
-        }
-
-        if (Open != null)
-        {
-            el.SetBoolean("open", Open);
-        }
+        get => Get(s_open);
+        init => Set(ref s_open, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Open = s.Value;
+            },
+            static (el, s) => el.SetBoolean("open", s)));
     }
 }
 

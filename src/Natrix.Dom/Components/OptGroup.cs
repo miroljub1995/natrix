@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,38 +7,30 @@ namespace Natrix.Dom.Components;
 
 public class OptGroupProps : GlobalHtmlComponentProps<HTMLOptGroupElement>
 {
-    public IReadOnlySignal<bool>? Disabled { get; init; }
-    public IReadOnlySignal<string>? Label { get; init; }
+    private static PropDescriptor<bool>? s_disabled;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLOptGroupElement>> register)
+    public IReadOnlySignal<bool>? Disabled
     {
-        base.RegisterClientEffects(register);
-
-        if (Disabled != null)
-        {
-            register(el => el.Disabled = Disabled.Value);
-        }
-
-        if (Label != null)
-        {
-            register(el => el.Label = Label.Value);
-        }
+        get => Get(s_disabled);
+        init => Set(ref s_disabled, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Disabled = s.Value;
+            },
+            static (el, s) => el.SetBoolean("disabled", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_label;
+
+    public IReadOnlySignal<string>? Label
     {
-        base.RegisterServerEffects(el);
-
-        if (Disabled != null)
-        {
-            el.SetBoolean("disabled", Disabled);
-        }
-
-        if (Label != null)
-        {
-            el.SetAttribute("label", Label);
-        }
+        get => Get(s_label);
+        init => Set(ref s_label, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Label = s.Value;
+            },
+            static (el, s) => el.SetAttribute("label", s)));
     }
 }
 

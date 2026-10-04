@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.Components;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
@@ -9,126 +8,134 @@ namespace Natrix.Dom.Components;
 
 public class ScriptProps : GlobalHtmlComponentProps<HTMLScriptElement>
 {
-    public IReadOnlySignal<string>? Src { get; init; }
-    public IReadOnlySignal<string>? Type { get; init; }
-    public IReadOnlySignal<bool>? NoModule { get; init; }
-    public IReadOnlySignal<bool>? Async { get; init; }
-    public IReadOnlySignal<bool>? Defer { get; init; }
-    public IReadOnlySignal<string?>? CrossOrigin { get; init; }
-    public IReadOnlySignal<string>? Integrity { get; init; }
-    public IReadOnlySignal<string>? ReferrerPolicy { get; init; }
-    public IReadOnlySignal<string>? FetchPriority { get; init; }
-    public IReadOnlySignal<string>? Blocking { get; init; }
+    private static PropDescriptor<string>? s_src;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLScriptElement>> register)
+    public IReadOnlySignal<string>? Src
     {
-        base.RegisterClientEffects(register);
-
-        if (Src != null)
-        {
-            register(el => el.Src = Src.Value);
-        }
-
-        if (Type != null)
-        {
-            register(el => el.Type = Type.Value);
-        }
-
-        if (NoModule != null)
-        {
-            register(el => el.NoModule = NoModule.Value);
-        }
-
-        if (Async != null)
-        {
-            register(el => el.Async = Async.Value);
-        }
-
-        if (Defer != null)
-        {
-            register(el => el.Defer = Defer.Value);
-        }
-
-        if (CrossOrigin != null)
-        {
-            register(el => el.CrossOrigin = CrossOrigin.Value);
-        }
-
-        if (Integrity != null)
-        {
-            register(el => el.Integrity = Integrity.Value);
-        }
-
-        if (ReferrerPolicy != null)
-        {
-            register(el => el.ReferrerPolicy = ReferrerPolicy.Value);
-        }
-
-        if (FetchPriority != null)
-        {
-            register(el => el.FetchPriority = FetchPriority.Value);
-        }
-
-        if (Blocking != null)
-        {
-            register(el => el.Blocking.Value = Blocking.Value);
-        }
+        get => Get(s_src);
+        init => Set(ref s_src, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Src = s.Value;
+            },
+            static (el, s) => el.SetAttribute("src", s)));
     }
 
-    protected internal override void RegisterServerEffects(SsrElementNode el)
+    private static PropDescriptor<string>? s_type;
+
+    public IReadOnlySignal<string>? Type
     {
-        base.RegisterServerEffects(el);
+        get => Get(s_type);
+        init => Set(ref s_type, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Type = s.Value;
+            },
+            static (el, s) => el.SetAttribute("type", s)));
+    }
 
-        if (Src != null)
-        {
-            el.SetAttribute("src", Src);
-        }
+    private static PropDescriptor<bool>? s_noModule;
 
-        if (Type != null)
-        {
-            el.SetAttribute("type", Type);
-        }
+    public IReadOnlySignal<bool>? NoModule
+    {
+        get => Get(s_noModule);
+        init => Set(ref s_noModule, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.NoModule = s.Value;
+            },
+            static (el, s) => el.SetBoolean("nomodule", s)));
+    }
 
-        if (NoModule != null)
-        {
-            el.SetBoolean("nomodule", NoModule);
-        }
+    private static PropDescriptor<bool>? s_async;
 
-        if (Async != null)
-        {
-            el.SetBoolean("async", Async);
-        }
+    public IReadOnlySignal<bool>? Async
+    {
+        get => Get(s_async);
+        init => Set(ref s_async, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Async = s.Value;
+            },
+            static (el, s) => el.SetBoolean("async", s)));
+    }
 
-        if (Defer != null)
-        {
-            el.SetBoolean("defer", Defer);
-        }
+    private static PropDescriptor<bool>? s_defer;
 
-        if (CrossOrigin != null)
-        {
-            el.SetNullableString("crossorigin", CrossOrigin);
-        }
+    public IReadOnlySignal<bool>? Defer
+    {
+        get => Get(s_defer);
+        init => Set(ref s_defer, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Defer = s.Value;
+            },
+            static (el, s) => el.SetBoolean("defer", s)));
+    }
 
-        if (Integrity != null)
-        {
-            el.SetAttribute("integrity", Integrity);
-        }
+    private static PropDescriptor<string?>? s_crossOrigin;
 
-        if (ReferrerPolicy != null)
-        {
-            el.SetAttribute("referrerpolicy", ReferrerPolicy);
-        }
+    public IReadOnlySignal<string?>? CrossOrigin
+    {
+        get => Get(s_crossOrigin);
+        init => Set(ref s_crossOrigin, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.CrossOrigin = s.Value;
+            },
+            static (el, s) => el.SetNullableString("crossorigin", s)));
+    }
 
-        if (FetchPriority != null)
-        {
-            el.SetAttribute("fetchpriority", FetchPriority);
-        }
+    private static PropDescriptor<string>? s_integrity;
 
-        if (Blocking != null)
-        {
-            el.SetAttribute("blocking", Blocking);
-        }
+    public IReadOnlySignal<string>? Integrity
+    {
+        get => Get(s_integrity);
+        init => Set(ref s_integrity, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Integrity = s.Value;
+            },
+            static (el, s) => el.SetAttribute("integrity", s)));
+    }
+
+    private static PropDescriptor<string>? s_referrerPolicy;
+
+    public IReadOnlySignal<string>? ReferrerPolicy
+    {
+        get => Get(s_referrerPolicy);
+        init => Set(ref s_referrerPolicy, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.ReferrerPolicy = s.Value;
+            },
+            static (el, s) => el.SetAttribute("referrerpolicy", s)));
+    }
+
+    private static PropDescriptor<string>? s_fetchPriority;
+
+    public IReadOnlySignal<string>? FetchPriority
+    {
+        get => Get(s_fetchPriority);
+        init => Set(ref s_fetchPriority, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.FetchPriority = s.Value;
+            },
+            static (el, s) => el.SetAttribute("fetchpriority", s)));
+    }
+
+    private static PropDescriptor<string>? s_blocking;
+
+    public IReadOnlySignal<string>? Blocking
+    {
+        get => Get(s_blocking);
+        init => Set(ref s_blocking, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Blocking.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("blocking", s)));
     }
 }
 

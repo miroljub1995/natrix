@@ -1,4 +1,3 @@
-using System.Runtime.Versioning;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -8,27 +7,17 @@ namespace Natrix.Dom.Components;
 
 public class DataProps : GlobalHtmlComponentProps<HTMLDataElement>
 {
-    public IReadOnlySignal<string>? Value { get; init; }
+    private static PropDescriptor<string>? s_value;
 
-    [SupportedOSPlatform("browser")]
-    protected internal override void RegisterClientEffects(Action<Action<HTMLDataElement>> register)
+    public IReadOnlySignal<string>? Value
     {
-        base.RegisterClientEffects(register);
-
-        if (Value != null)
-        {
-            register(el => el.Value = Value.Value);
-        }
-    }
-
-    protected internal override void RegisterServerEffects(SsrElementNode el)
-    {
-        base.RegisterServerEffects(el);
-
-        if (Value != null)
-        {
-            el.SetAttribute("value", Value);
-        }
+        get => Get(s_value);
+        init => Set(ref s_value, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.Value = s.Value;
+            },
+            static (el, s) => el.SetAttribute("value", s)));
     }
 }
 
