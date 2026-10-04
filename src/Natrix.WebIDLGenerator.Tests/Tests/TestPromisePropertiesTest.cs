@@ -94,8 +94,25 @@ public class TestPromisePropertiesTest() : BaseTest<TestPromiseProperties>("test
         var sut = GetSut();
 
         await Assert.That(sut.TestTaskToPromiseValue).IsNull();
-        sut.TestTaskToPromise = Task.Delay(1000).ContinueWith(_ => 17);
-        await Task.Delay(1100);
+
+        // The test completes the task itself instead of racing a timer, so the result
+        // does not depend on how busy the browser is.
+        var source = new TaskCompletionSource();
+        sut.TestTaskToPromise = source.Task.ContinueWith(_ => 17);
+
+        // Give the browser a turn; the promise must stay pending until the task completes.
+        await Task.Delay(50);
+        await Assert.That(sut.TestTaskToPromiseValue).IsNull();
+
+        source.SetResult();
+
+        // The JavaScript side stores the value from a then() callback, which runs on a later
+        // turn of the event loop. The deadline only bounds a broken run.
+        var deadline = DateTime.UtcNow.AddSeconds(10);
+        while (sut.TestTaskToPromiseValue is null && DateTime.UtcNow < deadline)
+        {
+            await Task.Delay(10);
+        }
 
         await Assert.That(sut.TestTaskToPromiseValue).IsEqualTo(17);
     }
