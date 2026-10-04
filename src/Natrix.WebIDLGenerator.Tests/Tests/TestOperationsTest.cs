@@ -21,7 +21,7 @@ public class TestOperationsTest() : BaseTest<TestOperations>("testOperations")
 
         var result = sut.BoolOperation();
 
-        await Assert.That(result).IsEqualTo(true);
+        await Assert.That(result).IsTrue();
     }
 
     [Test]
@@ -81,7 +81,7 @@ public class TestOperationsTest() : BaseTest<TestOperations>("testOperations")
 
         var result = sut.NullableReturnOperation(true);
 
-        await Assert.That(result).IsEqualTo(null);
+        await Assert.That(result).IsNull();
     }
 
     [Test]

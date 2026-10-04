@@ -5,16 +5,16 @@
 
   <ItemGroup>
     <PackageVersion Include="Verify.SourceGenerators" Version="2.5.0" />
-    <PackageVersion Include="Verify.TUnit" Version="30.20.1" />
+    <PackageVersion Include="Verify.TUnit" Version="32.0.1" />
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="4.14.0" />
     <PackageVersion Include="ChromeForTesting" Version="152.0.7977.82046" />
     <PackageVersion Include="PuppeteerSharp" Version="25.8.0" />
     <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="9.0.3" />
     <PackageVersion Include="System.Text.Json" Version="9.0.5" />
     <PackageVersion Include="System.CommandLine" Version="2.0.12" />
-    <PackageVersion Include="TUnit" Version="0.70.7" />
-    <PackageVersion Include="Microsoft.Testing.Platform" Version="1.9.0" />
-    <PackageVersion Include="Microsoft.Testing.Platform.ServerMode.Client.Sources" Version="2.4.0" />
+    <PackageVersion Include="TUnit" Version="1.72.16" />
+    <PackageVersion Include="Microsoft.Testing.Platform" Version="2.4.1" />
+    <PackageVersion Include="Microsoft.Testing.Platform.ServerMode.Client.Sources" Version="2.4.1" />
     <PackageVersion Include="Jint" Version="4.16.4" />
     <!-- Jint's parser. Keep it at the version Jint itself depends on. -->
     <PackageVersion Include="Acornima" Version="1.7.0" />

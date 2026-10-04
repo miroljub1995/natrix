@@ -66,7 +66,9 @@ internal static class TestEventMapper
             FailedTestNodeStateProperty f => (TestStates.Failed, f.Explanation, f.Exception),
             ErrorTestNodeStateProperty e => (TestStates.Error, e.Explanation, e.Exception),
             TimeoutTestNodeStateProperty t => (TestStates.Timeout, t.Explanation, t.Exception),
-            CancelledTestNodeStateProperty c => (TestStates.Cancelled, c.Explanation, c.Exception),
-            _ => (TestStates.Discovered, null, null),
+            // Any other state is a final result the bridge has no mapping for, such as the
+            // platform's obsolete cancelled state, which frameworks may still report. It is
+            // relayed as an error so the test cannot silently fall back to discovered.
+            _ => (TestStates.Error, state.Explanation ?? $"Unrecognized test state '{state.GetType().Name}'.", null),
         };
 }

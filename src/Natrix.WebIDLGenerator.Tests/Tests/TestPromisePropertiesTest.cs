@@ -30,7 +30,7 @@ public class TestPromisePropertiesTest() : BaseTest<TestPromiseProperties>("test
     {
         var sut = GetSut();
 
-        await Assert.That(sut.PromisePropertyLongNullable).IsEqualTo(null);
+        await Assert.That(sut.PromisePropertyLongNullable).IsNull();
 
         sut.PromisePropertyLongNullable = Task.FromResult(50);
         var result = await sut.PromisePropertyLongNullable!;
@@ -42,7 +42,7 @@ public class TestPromisePropertiesTest() : BaseTest<TestPromiseProperties>("test
     {
         var sut = GetSut();
 
-        await Assert.That(sut.PromisePropertyLongReadOnlyNullableAsNull).IsEqualTo(null);
+        await Assert.That(sut.PromisePropertyLongReadOnlyNullableAsNull).IsNull();
 
         var result = await sut.PromisePropertyLongReadOnlyNullableAsNotNull!;
         await Assert.That(result).IsEqualTo(126);
@@ -79,12 +79,9 @@ public class TestPromisePropertiesTest() : BaseTest<TestPromiseProperties>("test
         var promiseTask = (Task<int>)sut.PromisePropertyLongDelayed;
         await Assert.That(promiseTask.IsCompleted).IsFalse();
 
-        var timeoutTask = Task.Delay(2000);
-        var completedTask = await Task.WhenAny(promiseTask, timeoutTask);
-
-        await Assert.That(ReferenceEquals(completedTask, promiseTask)).IsTrue();
-
-        var result = await promiseTask;
+        // The timeout only bounds a broken run. A tight one races the browser's single
+        // thread, which other tests in the run share, rather than the promise.
+        var result = await promiseTask.WaitAsync(TimeSpan.FromSeconds(30));
         await Assert.That(result).IsEqualTo(99);
     }
 
@@ -94,8 +91,25 @@ public class TestPromisePropertiesTest() : BaseTest<TestPromiseProperties>("test
         var sut = GetSut();
 
         await Assert.That(sut.TestTaskToPromiseValue).IsNull();
-        sut.TestTaskToPromise = Task.Delay(1000).ContinueWith(_ => 17);
-        await Task.Delay(1100);
+
+        // The test completes the task itself instead of racing a timer, so the result
+        // does not depend on how busy the browser is.
+        var source = new TaskCompletionSource();
+        sut.TestTaskToPromise = source.Task.ContinueWith(_ => 17);
+
+        // Give the browser a turn; the promise must stay pending until the task completes.
+        await Task.Delay(50);
+        await Assert.That(sut.TestTaskToPromiseValue).IsNull();
+
+        source.SetResult();
+
+        // The JavaScript side stores the value from a then() callback, which runs on a later
+        // turn of the event loop. The deadline only bounds a broken run.
+        var deadline = DateTime.UtcNow.AddSeconds(10);
+        while (sut.TestTaskToPromiseValue is null && DateTime.UtcNow < deadline)
+        {
+            await Task.Delay(10);
+        }
 
         await Assert.That(sut.TestTaskToPromiseValue).IsEqualTo(17);
     }

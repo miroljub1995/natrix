@@ -820,7 +820,7 @@ public class SwrResourceTests
 
         completion.SetResult("Ada");
 
-        await Assert.That(rendered).IsEquivalentTo(new[] { "loading", "Ada" });
+        await Assert.That(rendered).IsEquivalentTo(new[] { "loading", "Ada" }, EqualityComparer<string>.Default);
     }
 
     [Test]
@@ -836,7 +836,7 @@ public class SwrResourceTests
             () => ("user", 42),
             (key, _) => { seen.Add(key); return Task.FromResult($"{key.Item1}-{key.Item2}"); }));
 
-        await Assert.That(seen).IsEquivalentTo(new[] { ("user", 42) });
+        await Assert.That(seen).IsEquivalentTo(new[] { ("user", 42) }, EqualityComparer<(string, int)>.Default);
         await Assert.That(resource!.Data.Value).IsEqualTo("user-42");
     }
 
@@ -855,7 +855,7 @@ public class SwrResourceTests
         id.Value = 2;
         app.Pump();
 
-        await Assert.That(fetcher).IsEquivalentTo(new[] { 1, 2 });
+        await Assert.That(fetcher).IsEquivalentTo(new[] { 1, 2 }, EqualityComparer<int>.Default);
         await Assert.That(resource!.Data.Value).IsEqualTo("user-2");
     }
 
@@ -971,7 +971,7 @@ public class SwrResourceTests
         id.Value = 7;
         app.Pump();
 
-        await Assert.That(keys).IsEquivalentTo(new int?[] { null, 7 });
+        await Assert.That(keys).IsEquivalentTo(new int?[] { null, 7 }, EqualityComparer<int?>.Default);
         await Assert.That(resource!.Data.Value).IsEqualTo("user-7");
     }
 }

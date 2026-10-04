@@ -1,4 +1,5 @@
 using System.Text.Json;
+using Microsoft.Testing.Platform.Extensions;
 using Microsoft.Testing.Platform.Extensions.Messages;
 using Microsoft.Testing.Platform.Extensions.TestHost;
 using Natrix.Browser.TestHost.Protocol;

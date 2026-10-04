@@ -75,7 +75,7 @@ public class IfTests
         await Assert.That(h.MountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["then"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(h.UnmountedCounts).IsEmpty();
     }
 
@@ -89,7 +89,7 @@ public class IfTests
         await Assert.That(h.MountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["else"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(h.UnmountedCounts).IsEmpty();
     }
 
@@ -117,11 +117,11 @@ public class IfTests
         {
             ["then"] = 1,
             ["else"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(h.UnmountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["then"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]
@@ -139,7 +139,7 @@ public class IfTests
         await Assert.That(h.UnmountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["else"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]
@@ -156,12 +156,12 @@ public class IfTests
         {
             ["then"] = 2,
             ["else"] = 2,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(h.UnmountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["then"] = 2,
             ["else"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]
@@ -216,7 +216,7 @@ public class IfTests
         await Assert.That(mounted).IsEquivalentTo(new Dictionary<string, int>
         {
             ["then"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(unmounted).IsEmpty();
     }
 
@@ -232,7 +232,7 @@ public class IfTests
         await Assert.That(h.UnmountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["then"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]
@@ -247,7 +247,7 @@ public class IfTests
         await Assert.That(h.MountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["then"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(h.UnmountedCounts).IsEmpty();
     }
 
@@ -303,7 +303,7 @@ public class IfTests
         await Assert.That(mounted).IsEquivalentTo(new Dictionary<string, int>
         {
             ["inner-then"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(unmounted).IsEmpty();
 
         // Flip inner first to ensure nested toggling works while parent is active.
@@ -313,11 +313,11 @@ public class IfTests
         {
             ["inner-then"] = 1,
             ["inner-else"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(unmounted).IsEquivalentTo(new Dictionary<string, int>
         {
             ["inner-then"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
 
         // Tear down the parent branch — the nested child's currently active
         // branch ("inner-else") must be unmounted as part of the cascade.
@@ -328,7 +328,7 @@ public class IfTests
         {
             ["inner-then"] = 1,
             ["inner-else"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
 
         // Bring the parent back — nested If is constructed fresh and mounts
         // its current ("inner-else") branch.
@@ -338,7 +338,7 @@ public class IfTests
         {
             ["inner-then"] = 1,
             ["inner-else"] = 2,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]
@@ -351,7 +351,7 @@ public class IfTests
         await Assert.That(h.UnmountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["then"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]
@@ -406,12 +406,12 @@ public class IfTests
         {
             ["even"] = 2,
             ["odd"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(unmounted).IsEquivalentTo(new Dictionary<string, int>
         {
             ["even"] = 1,
             ["odd"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]
