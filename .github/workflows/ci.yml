@@ -13,12 +13,12 @@ on:
       - ready_for_review
 
   # Pushes to main deliberately do not build. Every merge arrives through a
-  # pull request that already ran this matrix against the same content, so the
+  # pull request that already ran these tests against the same content, so the
   # post-merge run almost always repeats work that was just done.
   workflow_dispatch:
 
 # Draft pull requests are skipped: work in progress does not need to burn CI
-# minutes on every push. The full matrix runs on the `ready_for_review` event
+# minutes on every push. The tests run on the `ready_for_review` event
 # and on every push to the branch afterwards. Skipped jobs still report a
 # neutral "skipped" conclusion, which branch protection accepts as satisfied,
 # so a draft PR is not blocked by checks that never ran.
@@ -36,34 +36,21 @@ concurrency:
 
 jobs:
   tests:
-    name: Tests (${{ matrix.os }})
+    # The name is what branch protection requires; keep it stable. It still
+    # carries "(ubuntu-latest)" from when there was one job per OS.
+    name: Tests (ubuntu-latest)
     if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      # One job per operating system, so branch protection needs three required
-      # checks instead of one per (project, TFM) pair.
-      #
-      # Linux runs the whole solution: `dotnet test` on the solution builds every
-      # project (which is why there is no separate build job) and then runs every
-      # test project for every TFM it targets, including the browser-wasm ones in
-      # headless Chromium.
-      #
-      # Everything is portable managed code, but the Tailwind generator resolves
-      # stylesheet paths with host-dependent case sensitivity and separators, so
-      # its tests also run on Windows and macOS. Only that project runs there, on
-      # one TFM: the wasm AOT builds would only add minutes. What this does *not*
-      # cover is a .NET Framework compiler host, since `dotnet test` on Windows
-      # runs VBCSCompiler on modern .NET. That needs MSBuild.exe or devenv.exe
-      # from a Visual Studio install.
-      matrix:
-        include:
-          - os: ubuntu-latest
-            test: dotnet test Natrix.slnx -c Release
-          - os: windows-latest
-            test: dotnet test src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj -c Release -f net10.0
-          - os: macos-latest
-            test: dotnet test src/Natrix.TailwindCss.Tests/Natrix.TailwindCss.Tests.csproj -c Release -f net10.0
+    runs-on: ubuntu-latest
+    # Linux only. `dotnet test` on the solution builds every project, so there is
+    # no separate build job, and then runs every test project for every TFM it
+    # targets, including the browser-wasm ones in headless Chromium.
+    #
+    # Windows and macOS jobs used to run the Tailwind generator's tests, because
+    # it loaded a native V8 library per OS. It now runs on Jint, which is
+    # managed code, so those jobs repeated what Linux already covers. What is
+    # still OS-specific is Natrix.Browser.TestHost (the Chrome download, the
+    # native launcher), which only Linux exercises here. It is not shipped, so
+    # it matters only to contributors on other systems.
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -88,10 +75,8 @@ jobs:
           cache-dependency-path: src/Natrix.TailwindCss.Generators/js/package-lock.json
 
       - name: Restore workloads
-        # Only the browser-wasm projects need the wasm-tools workload, and they
-        # only run on Linux.
-        if: matrix.os == 'ubuntu-latest'
+        # The browser-wasm projects need the wasm-tools workload.
         run: dotnet workload restore Natrix.slnx
 
       - name: Test
-        run: ${{ matrix.test }}
+        run: dotnet test Natrix.slnx -c Release
