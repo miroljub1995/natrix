@@ -123,7 +123,8 @@ internal sealed class BrowserTestFramework(IServiceProvider serviceProvider)
                 if (selected.Length == 0)
                 {
                     await _output.DisplayAsync(this, new TextOutputDeviceData(
-                        $"None of the {requestedUids.Count} selected tests exist in the current build; rebuild and rediscover."));
+                        $"None of the {requestedUids.Count} selected tests exist in the current build; rebuild and rediscover."),
+                        context.CancellationToken);
                     return;
                 }
 
@@ -162,7 +163,7 @@ internal sealed class BrowserTestFramework(IServiceProvider serviceProvider)
                     await PublishAsync(context, request.Session.SessionUid, testEvent, forceDiscovered: false);
                 }
             },
-            text => _output.DisplayAsync(this, new TextOutputDeviceData(text)),
+            text => _output.DisplayAsync(this, new TextOutputDeviceData(text), context.CancellationToken),
             context.CancellationToken);
 
         // The engine's own exit code is authoritative for anything the results do not
@@ -234,7 +235,7 @@ internal sealed class BrowserTestFramework(IServiceProvider serviceProvider)
     {
         if (_forwardAllConsole)
         {
-            _ = _output.DisplayAsync(this, new TextOutputDeviceData("[discovery] " + message));
+            _ = _output.DisplayAsync(this, new TextOutputDeviceData("[discovery] " + message), CancellationToken.None);
         }
     }
 
@@ -252,7 +253,11 @@ internal sealed class BrowserTestFramework(IServiceProvider serviceProvider)
             TestStates.Failed => new FailedTestNodeStateProperty(exception ?? new BrowserTestException("Exception", testEvent.Explanation ?? "Failed", null), testEvent.Explanation),
             TestStates.Error => new ErrorTestNodeStateProperty(exception ?? new BrowserTestException("Exception", testEvent.Explanation ?? "Error", null), testEvent.Explanation),
             TestStates.Timeout => new TimeoutTestNodeStateProperty(exception ?? new BrowserTestException("Exception", testEvent.Explanation ?? "Timeout", null), testEvent.Explanation),
+            // Relays the state the engine reported; the platform marks it obsolete for frameworks
+            // that originate cancellations, which the bridge does not.
+#pragma warning disable MTP0001
             TestStates.Cancelled => new CancelledTestNodeStateProperty(exception ?? new BrowserTestException("Exception", testEvent.Explanation ?? "Cancelled", null), testEvent.Explanation),
+#pragma warning restore MTP0001
             _ => DiscoveredTestNodeStateProperty.CachedInstance,
         };
     }

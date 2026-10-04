@@ -66,7 +66,10 @@ internal static class TestEventMapper
             FailedTestNodeStateProperty f => (TestStates.Failed, f.Explanation, f.Exception),
             ErrorTestNodeStateProperty e => (TestStates.Error, e.Explanation, e.Exception),
             TimeoutTestNodeStateProperty t => (TestStates.Timeout, t.Explanation, t.Exception),
+            // Obsolete in the platform, but frameworks built against older versions still report it.
+#pragma warning disable MTP0001
             CancelledTestNodeStateProperty c => (TestStates.Cancelled, c.Explanation, c.Exception),
+#pragma warning restore MTP0001
             _ => (TestStates.Discovered, null, null),
         };
 }

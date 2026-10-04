@@ -497,7 +497,7 @@ public class AppFeaturesTests
             .Build()
             .Mount();
 
-        await Assert.That(order).IsEquivalentTo(new[] { "first", "second" });
+        await Assert.That(order).IsEquivalentTo(new[] { "first", "second" }, EqualityComparer<string>.Default);
         await Assert.That(observed).IsEqualTo(new Counter(2));
     }
 

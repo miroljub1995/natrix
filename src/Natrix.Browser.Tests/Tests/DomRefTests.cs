@@ -293,7 +293,7 @@ public class DomRefTests
 
         // Only the initial null observation: publishing a torn-down element would leave
         // the ref pointing at a detached node for good.
-        await Assert.That(observed).IsEquivalentTo(new List<bool> { false });
+        await Assert.That(observed).IsEquivalentTo(new List<bool> { false }, EqualityComparer<bool>.Default);
         await Assert.That(elementRef.Value).IsNull();
     }
 

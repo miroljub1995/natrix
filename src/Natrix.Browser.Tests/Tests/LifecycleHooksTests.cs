@@ -162,7 +162,7 @@ public class LifecycleHooksTests
                     body: () => [CreateProbe(mounted: _ => order.Add("inner"))]),
             ])).Mount();
 
-        await Assert.That(order).IsEquivalentTo(new List<string> { "inner", "middle", "outer" });
+        await Assert.That(order).IsEquivalentTo(new List<string> { "inner", "middle", "outer" }, EqualityComparer<string>.Default);
     }
 
     [Test]
@@ -247,7 +247,7 @@ public class LifecycleHooksTests
 
         // "b" is mounted by "a" and must be appended after the already-queued "c"
         // rather than running nested inside "a".
-        await Assert.That(order).IsEquivalentTo(new List<string> { "a", "c", "b" });
+        await Assert.That(order).IsEquivalentTo(new List<string> { "a", "c", "b" }, EqualityComparer<string>.Default);
     }
 
     [Test]

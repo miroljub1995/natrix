@@ -90,7 +90,7 @@ public class ForEachTests
             ["a"] = 1,
             ["b"] = 1,
             ["c"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(h.UnmountedCounts).IsEmpty();
     }
 
@@ -108,7 +108,7 @@ public class ForEachTests
             ["a"] = 1,
             ["b"] = 1,
             ["c"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(h.UnmountedCounts).IsEmpty();
     }
 
@@ -156,7 +156,7 @@ public class ForEachTests
         await Assert.That(h.UnmountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["a"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         // 'b' and 'c' must NOT have been remounted
         await Assert.That(h.MountedCounts["b"]).IsEqualTo(1);
         await Assert.That(h.MountedCounts["c"]).IsEqualTo(1);
@@ -174,7 +174,7 @@ public class ForEachTests
         await Assert.That(h.UnmountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["b"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(h.MountedCounts["a"]).IsEqualTo(1);
         await Assert.That(h.MountedCounts["c"]).IsEqualTo(1);
     }
@@ -191,7 +191,7 @@ public class ForEachTests
         await Assert.That(h.UnmountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["c"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(h.MountedCounts["a"]).IsEqualTo(1);
         await Assert.That(h.MountedCounts["b"]).IsEqualTo(1);
     }
@@ -219,7 +219,7 @@ public class ForEachTests
             ["a"] = 1,
             ["b"] = 1,
             ["c"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]
@@ -235,7 +235,7 @@ public class ForEachTests
         {
             ["a"] = 1,
             ["b"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]
@@ -258,7 +258,7 @@ public class ForEachTests
             ["a"] = 1,
             ["b"] = 1,
             ["c"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]
@@ -297,7 +297,7 @@ public class ForEachTests
             ["a"] = 1,
             ["b"] = 1,
             ["c"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     // -------------------------------------------------------------------------
@@ -512,12 +512,12 @@ public class ForEachTests
         {
             ["a"] = 1,
             ["b"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(mountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["a"] = 1,
             ["b"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(unmountedCounts).IsEmpty();
     }
 
@@ -576,7 +576,7 @@ public class ForEachTests
             ["a"] = 1,
             ["b"] = 1,
             ["c"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(unmounted).IsEmpty();
 
         // Flip condition to false — ForEach should be unmounted, all items unmounted.
@@ -589,7 +589,7 @@ public class ForEachTests
             ["a"] = 1,
             ["b"] = 1,
             ["c"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]
@@ -644,7 +644,7 @@ public class ForEachTests
         {
             ["a"] = 1,
             ["b"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
         await Assert.That(container.TextContent).IsEqualTo("a2b2");
     }
 }

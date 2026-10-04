@@ -59,7 +59,7 @@ public class HydrationStateFeatureTests
         var feature = new ServerHydrationStateFeature();
 
         await Assert.That(feature.Dehydrate().Count).IsEqualTo(1);
-        await Assert.That((bool?)feature.Dehydrate()["hydrate"]).IsEqualTo(true);
+        await Assert.That((bool?)feature.Dehydrate()["hydrate"]).IsTrue();
     }
 
     [Test]
@@ -106,10 +106,10 @@ public class HydrationStateFeatureTests
         var result = feature.Dehydrate();
 
         await Assert.That(result.Count).IsEqualTo(3);
-        await Assert.That((bool?)result["hydrate"]).IsEqualTo(true);
+        await Assert.That((bool?)result["hydrate"]).IsTrue();
         await Assert.That((int?)result["first"]).IsEqualTo(1);
         await Assert.That((int?)result["last"]).IsEqualTo(3);
-        await Assert.That(result.ContainsKey("middle")).IsEqualTo(false);
+        await Assert.That(result.ContainsKey("middle")).IsFalse();
     }
 
     [Test]

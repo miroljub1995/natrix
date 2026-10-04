@@ -10,8 +10,8 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.BoolProperty).IsEqualTo(true);
-        await Assert.That(sut.BoolProperty = false).IsEqualTo(false);
+        await Assert.That(sut.BoolProperty).IsTrue();
+        await Assert.That(sut.BoolProperty = false).IsFalse();
     }
 
     [Test]
@@ -19,7 +19,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.BoolPropertyReadOnly).IsEqualTo(true);
+        await Assert.That(sut.BoolPropertyReadOnly).IsTrue();
         await Assert.That(PropertyIsReadOnly(nameof(TestProperties.BoolPropertyReadOnly))).IsTrue();
     }
 
@@ -28,9 +28,9 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.BoolPropertyNullable).IsEqualTo(null);
-        await Assert.That(sut.BoolPropertyNullable = true).IsEqualTo(true);
-        await Assert.That(sut.BoolPropertyNullable = false).IsEqualTo(false);
+        await Assert.That(sut.BoolPropertyNullable).IsNull();
+        await Assert.That(sut.BoolPropertyNullable = true).IsTrue();
+        await Assert.That(sut.BoolPropertyNullable = false).IsFalse();
     }
 
     [Test]
@@ -38,9 +38,9 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.BoolPropertyReadOnlyNullableAsNull).IsEqualTo(null);
-        await Assert.That(sut.BoolPropertyReadOnlyNullableAsTrue).IsEqualTo(true);
-        await Assert.That(sut.BoolPropertyReadOnlyNullableAsFalse).IsEqualTo(false);
+        await Assert.That(sut.BoolPropertyReadOnlyNullableAsNull).IsNull();
+        await Assert.That(sut.BoolPropertyReadOnlyNullableAsTrue).IsTrue();
+        await Assert.That(sut.BoolPropertyReadOnlyNullableAsFalse).IsFalse();
     }
 
     // Byte
@@ -67,7 +67,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.BytePropertyNullable).IsEqualTo(null);
+        await Assert.That(sut.BytePropertyNullable).IsNull();
         await Assert.That(sut.BytePropertyNullable = 1).IsEqualTo<byte?>(1);
     }
 
@@ -76,7 +76,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.BytePropertyReadOnlyNullableAsNull).IsEqualTo(null);
+        await Assert.That(sut.BytePropertyReadOnlyNullableAsNull).IsNull();
         await Assert.That(sut.BytePropertyReadOnlyNullableAsNotNull).IsEqualTo<byte?>(3);
     }
 
@@ -104,7 +104,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.SignedBytePropertyNullable).IsEqualTo(null);
+        await Assert.That(sut.SignedBytePropertyNullable).IsNull();
         await Assert.That(sut.SignedBytePropertyNullable = 1).IsEqualTo<sbyte?>(1);
         await Assert.That(sut.SignedBytePropertyNullable = -1).IsEqualTo<sbyte?>(-1);
     }
@@ -114,7 +114,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.SignedBytePropertyReadOnlyNullableAsNull).IsEqualTo(null);
+        await Assert.That(sut.SignedBytePropertyReadOnlyNullableAsNull).IsNull();
         await Assert.That(sut.SignedBytePropertyReadOnlyNullableAsNotNull).IsEqualTo<sbyte?>(3);
     }
 
@@ -142,7 +142,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.ShortPropertyNullable).IsEqualTo(null);
+        await Assert.That(sut.ShortPropertyNullable).IsNull();
         await Assert.That(sut.ShortPropertyNullable = 1).IsEqualTo<short?>(1);
         await Assert.That(sut.ShortPropertyNullable = -1).IsEqualTo<short?>(-1);
     }
@@ -152,7 +152,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.ShortPropertyReadOnlyNullableAsNull).IsEqualTo(null);
+        await Assert.That(sut.ShortPropertyReadOnlyNullableAsNull).IsNull();
         await Assert.That(sut.ShortPropertyReadOnlyNullableAsNotNull).IsEqualTo<short?>(3);
     }
 
@@ -180,7 +180,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.UnsignedShortPropertyNullable).IsEqualTo(null);
+        await Assert.That(sut.UnsignedShortPropertyNullable).IsNull();
         await Assert.That(sut.UnsignedShortPropertyNullable = 1).IsEqualTo<ushort?>(1);
     }
 
@@ -189,7 +189,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.UnsignedShortPropertyReadOnlyNullableAsNull).IsEqualTo(null);
+        await Assert.That(sut.UnsignedShortPropertyReadOnlyNullableAsNull).IsNull();
         await Assert.That(sut.UnsignedShortPropertyReadOnlyNullableAsNotNull).IsEqualTo<ushort?>(3);
     }
 
@@ -218,7 +218,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.Int32PropertyNullable).IsEqualTo(null);
+        await Assert.That(sut.Int32PropertyNullable).IsNull();
         await Assert.That(sut.Int32PropertyNullable = 1).IsEqualTo(1);
         await Assert.That(sut.Int32PropertyNullable = -1).IsEqualTo(-1);
     }
@@ -228,7 +228,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.Int32PropertyReadOnlyNullableAsNull).IsEqualTo(null);
+        await Assert.That(sut.Int32PropertyReadOnlyNullableAsNull).IsNull();
         await Assert.That(sut.Int32PropertyReadOnlyNullableAsNotNull).IsEqualTo(3);
     }
 
@@ -256,7 +256,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.UnsignedInt32PropertyNullable).IsEqualTo(null);
+        await Assert.That(sut.UnsignedInt32PropertyNullable).IsNull();
         await Assert.That(sut.UnsignedInt32PropertyNullable = 1).IsEqualTo<uint?>(1);
     }
 
@@ -265,7 +265,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.UnsignedInt32PropertyReadOnlyNullableAsNull).IsEqualTo(null);
+        await Assert.That(sut.UnsignedInt32PropertyReadOnlyNullableAsNull).IsNull();
         await Assert.That(sut.UnsignedInt32PropertyReadOnlyNullableAsNotNull).IsEqualTo<uint?>(3);
     }
 
@@ -294,7 +294,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.Int64PropertyNullable).IsEqualTo(null);
+        await Assert.That(sut.Int64PropertyNullable).IsNull();
         await Assert.That(sut.Int64PropertyNullable = 10_000_000_000L).IsEqualTo(10_000_000_000L);
         await Assert.That(sut.Int64PropertyNullable = -10_000_000_000L).IsEqualTo(-10_000_000_000L);
     }
@@ -304,7 +304,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.Int64PropertyReadOnlyNullableAsNull).IsEqualTo(null);
+        await Assert.That(sut.Int64PropertyReadOnlyNullableAsNull).IsNull();
         await Assert.That(sut.Int64PropertyReadOnlyNullableAsNotNull).IsEqualTo(3L);
     }
 
@@ -332,7 +332,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.UnsignedInt64PropertyNullable).IsEqualTo(null);
+        await Assert.That(sut.UnsignedInt64PropertyNullable).IsNull();
         await Assert.That(sut.UnsignedInt64PropertyNullable = 10_000_000_000UL).IsEqualTo(10_000_000_000UL);
     }
 
@@ -341,7 +341,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.UnsignedInt64PropertyReadOnlyNullableAsNull).IsEqualTo(null);
+        await Assert.That(sut.UnsignedInt64PropertyReadOnlyNullableAsNull).IsNull();
         await Assert.That(sut.UnsignedInt64PropertyReadOnlyNullableAsNotNull).IsEqualTo(3UL);
     }
 
@@ -369,7 +369,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.DoublePropertyNullable).IsEqualTo(null);
+        await Assert.That(sut.DoublePropertyNullable).IsNull();
         await Assert.That(sut.DoublePropertyNullable = 1.2).IsEqualTo(1.2);
     }
 
@@ -378,7 +378,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.DoublePropertyReadOnlyNullableAsNull).IsEqualTo(null);
+        await Assert.That(sut.DoublePropertyReadOnlyNullableAsNull).IsNull();
         await Assert.That(sut.DoublePropertyReadOnlyNullableAsNotNull).IsEqualTo(2.4);
     }
 
@@ -406,7 +406,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.StringPropertyNullable).IsEqualTo(null);
+        await Assert.That(sut.StringPropertyNullable).IsNull();
         await Assert.That(sut.StringPropertyNullable = "some new string").IsEqualTo("some new string");
         await Assert.That(sut.StringPropertyNullable = string.Empty).IsEqualTo(string.Empty);
     }
@@ -416,7 +416,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.StringPropertyReadOnlyNullableAsNull).IsEqualTo(null);
+        await Assert.That(sut.StringPropertyReadOnlyNullableAsNull).IsNull();
         await Assert.That(sut.StringPropertyReadOnlyNullableAsNotNull).IsEqualTo("this is not null string");
         await Assert.That(sut.StringPropertyReadOnlyNullableAsEmpty).IsEqualTo("");
     }
@@ -446,7 +446,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.BigIntPropertyNullable).IsEqualTo(null);
+        await Assert.That(sut.BigIntPropertyNullable).IsNull();
         await Assert.That(sut.BigIntPropertyNullable = BigInteger.Parse("123456789012345678901234567890"))
             .IsEqualTo(BigInteger.Parse("123456789012345678901234567890"));
     }
@@ -456,7 +456,7 @@ public class TestPropertiesTest() : BaseTest<TestProperties>("testProperties")
     {
         var sut = GetSut();
 
-        await Assert.That(sut.BigIntPropertyReadOnlyNullableAsNull).IsEqualTo(null);
+        await Assert.That(sut.BigIntPropertyReadOnlyNullableAsNull).IsNull();
         await Assert.That(sut.BigIntPropertyReadOnlyNullableAsNotNull)
             .IsEqualTo(BigInteger.Parse("123456789012345678901234567890"));
     }

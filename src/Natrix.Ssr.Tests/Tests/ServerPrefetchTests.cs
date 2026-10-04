@@ -187,7 +187,7 @@ public class ServerPrefetchTests
 
         await prefetch.WaitForCompletionAsync();
 
-        await Assert.That(ran).IsEquivalentTo(new[] { "first", "second", "third" });
+        await Assert.That(ran).IsEquivalentTo(new[] { "first", "second", "third" }, EqualityComparer<string>.Default);
     });
 
     [Test]
@@ -238,7 +238,7 @@ public class ServerPrefetchTests
 
         await prefetch.WaitForCompletionAsync();
 
-        await Assert.That(ran).IsEquivalentTo(new[] { "outer", "inner" });
+        await Assert.That(ran).IsEquivalentTo(new[] { "outer", "inner" }, EqualityComparer<string>.Default);
         var output = await SsrHelpers.RenderAsync(root);
         await Assert.That(output).IsEqualTo("<!--[--><!--[--><div><!--[-->ready<!--]--></div><!--]--><!--]-->");
     });
@@ -338,7 +338,7 @@ public class ServerPrefetchTests
         var ex = await Assert.ThrowsAsync<AggregateException>(
             async () => await prefetch.WaitForCompletionAsync());
 
-        await Assert.That(ran).IsEquivalentTo(new[] { "a", "b", "c" });
+        await Assert.That(ran).IsEquivalentTo(new[] { "a", "b", "c" }, EqualityComparer<string>.Default);
         await Assert.That(ex!.InnerExceptions.Count).IsEqualTo(2);
         await Assert.That(ex.InnerExceptions[0].Message).IsEqualTo("a-failed");
         await Assert.That(ex.InnerExceptions[1].Message).IsEqualTo("c-failed");

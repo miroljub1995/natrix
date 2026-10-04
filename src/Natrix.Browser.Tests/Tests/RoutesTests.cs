@@ -91,7 +91,7 @@ public class RoutesTests
         await Assert.That(h.MountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["home"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]
@@ -137,7 +137,7 @@ public class RoutesTests
         await Assert.That(h.UnmountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["home"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]
@@ -248,7 +248,7 @@ public class RoutesTests
         await Assert.That(h.UnmountedCounts).IsEquivalentTo(new Dictionary<string, int>
         {
             ["dashboard"] = 1,
-        });
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
     }
 
     [Test]

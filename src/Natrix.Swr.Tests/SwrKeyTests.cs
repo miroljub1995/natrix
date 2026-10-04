@@ -29,7 +29,7 @@ public class SwrKeyTests
         await Assert.That(key.Segment<string>(0)).IsEqualTo("user");
         await Assert.That(key.Segment<string>(2)).IsEqualTo("posts");
         await Assert.That(key.Select(segment => segment.Value).ToArray())
-            .IsEquivalentTo(new object?[] { "user", "42", "posts" });
+            .IsEquivalentTo(new object?[] { "user", "42", "posts" }, EqualityComparer<object?>.Default);
     }
 
     [Test]

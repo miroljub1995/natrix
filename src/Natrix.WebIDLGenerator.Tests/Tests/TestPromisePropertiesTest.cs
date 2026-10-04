@@ -30,7 +30,7 @@ public class TestPromisePropertiesTest() : BaseTest<TestPromiseProperties>("test
     {
         var sut = GetSut();
 
-        await Assert.That(sut.PromisePropertyLongNullable).IsEqualTo(null);
+        await Assert.That(sut.PromisePropertyLongNullable).IsNull();
 
         sut.PromisePropertyLongNullable = Task.FromResult(50);
         var result = await sut.PromisePropertyLongNullable!;
@@ -42,7 +42,7 @@ public class TestPromisePropertiesTest() : BaseTest<TestPromiseProperties>("test
     {
         var sut = GetSut();
 
-        await Assert.That(sut.PromisePropertyLongReadOnlyNullableAsNull).IsEqualTo(null);
+        await Assert.That(sut.PromisePropertyLongReadOnlyNullableAsNull).IsNull();
 
         var result = await sut.PromisePropertyLongReadOnlyNullableAsNotNull!;
         await Assert.That(result).IsEqualTo(126);
