@@ -1,32 +1,27 @@
-using Natrix.TailwindCss.Engine.Abstractions;
-
 namespace Natrix.TailwindCss.Tests;
 
 /// <summary>
-/// Exercises the ClearScript layer directly.
+/// Exercises the JavaScript engine directly.
 /// </summary>
 /// <remarks>
-/// Without this, a missing or unloadable native payload shows up as every
-/// generator test failing with a Tailwind-shaped error message rather than the
-/// real cause.
+/// Without this, a bundle Jint cannot run shows up as every generator test
+/// failing with a Tailwind-shaped error message rather than the real cause.
 /// </remarks>
 public class TailwindEngineTests
 {
     private const string Entry = """@import "tailwindcss";""";
 
-    private static string EngineDir => Harness.EngineDir;
-
     private static readonly string IndexCss =
-        File.ReadAllText(Path.Combine(Harness.EngineDir, "css", "index.css"));
+        File.ReadAllText(Path.Combine(Harness.TailwindCssDir, "index.css"));
 
     private static StylesheetResult Resolve(string id, string _) => id == "tailwindcss"
         ? StylesheetResult.Found("index.css", "", IndexCss)
         : StylesheetResult.NotFound($"unexpected import '{id}'");
 
     [Test]
-    public async Task CompilesCssThroughV8()
+    public async Task CompilesCssThroughJint()
     {
-        var result = TailwindCompiler.Compile(EngineDir, Entry, basePath: "", ["flex", "p-4"], Resolve);
+        var result = TailwindCompiler.Compile(Entry, basePath: "", ["flex", "p-4"], Resolve);
 
         await Assert.That(result.Status).IsEqualTo(CompileStatus.Success);
         await Assert.That(result.Payload).Contains(".flex");
@@ -37,8 +32,8 @@ public class TailwindEngineTests
     public async Task EmitsExactlyTheCandidatesGiven()
     {
         // Each call is independent: nothing from a previous build leaks in.
-        var wide = TailwindCompiler.Compile(EngineDir, Entry, basePath: "", ["flex", "p-4"], Resolve);
-        var narrow = TailwindCompiler.Compile(EngineDir, Entry, basePath: "", ["flex"], Resolve);
+        var wide = TailwindCompiler.Compile(Entry, basePath: "", ["flex", "p-4"], Resolve);
+        var narrow = TailwindCompiler.Compile(Entry, basePath: "", ["flex"], Resolve);
 
         await Assert.That(wide.Payload).Contains(".p-4");
         await Assert.That(narrow.Payload).Contains(".flex");
@@ -49,7 +44,6 @@ public class TailwindEngineTests
     public async Task ReportsStylesheetErrorsWithoutThrowing()
     {
         var result = TailwindCompiler.Compile(
-            EngineDir,
             """@import "does-not-exist";""",
             basePath: "",
             ["flex"],
@@ -60,13 +54,13 @@ public class TailwindEngineTests
     }
 
     [Test]
-    public async Task ReusesTheEngineAcrossCompilations()
+    public async Task ReusesTheParsedBundleAcrossCompilations()
     {
-        // The V8 runtime and the parsed bundle are process-wide; reloading them
-        // per compilation would dominate the generator's cost in an IDE.
+        // The parsed bundle is process-wide; re-parsing 272 KB per compilation
+        // would dominate the generator's cost in an IDE.
         for (var i = 0; i < 3; i++)
         {
-            var result = TailwindCompiler.Compile(EngineDir, Entry, basePath: "", [$"p-{i + 1}"], Resolve);
+            var result = TailwindCompiler.Compile(Entry, basePath: "", [$"p-{i + 1}"], Resolve);
 
             await Assert.That(result.Status).IsEqualTo(CompileStatus.Success);
             await Assert.That(result.Payload).Contains($".p-{i + 1}");
@@ -74,15 +68,62 @@ public class TailwindEngineTests
     }
 
     [Test]
-    public async Task ResolvesTheRuntimeIdentifierForThisHost()
+    public async Task CompilesConcurrently()
     {
-        var arm64 = System.Runtime.InteropServices.RuntimeInformation.ProcessArchitecture
-            == System.Runtime.InteropServices.Architecture.Arm64;
+        // No lock: each compilation has an engine of its own and only the parsed
+        // bundle is shared. Results must not bleed between threads.
+        var results = await Task.WhenAll(Enumerable.Range(1, 8).Select(i => Task.Run(() =>
+            (Index: i, Result: TailwindCompiler.Compile(Entry, basePath: "", [$"p-{i}"], Resolve)))));
 
-        var expected = OperatingSystem.IsMacOS() ? (arm64 ? "osx-arm64" : "osx-x64")
-            : OperatingSystem.IsLinux() ? (arm64 ? "linux-arm64" : "linux-x64")
-            : arm64 ? "win-arm64" : "win-x64";
+        foreach (var (index, result) in results)
+        {
+            await Assert.That(result.Status).IsEqualTo(CompileStatus.Success);
+            await Assert.That(result.Payload).Contains($".p-{index}");
+            await Assert.That(result.Payload).DoesNotContain($".p-{index % 8 + 1} ");
+        }
+    }
 
-        await Assert.That(TailwindCompiler.GetRuntimeIdentifier()).IsEqualTo(expected);
+    [Test]
+    public async Task StopsWhenCancelled()
+    {
+        // Roslyn cancels a generator run as soon as the source changes again.
+        using var cancelled = new CancellationTokenSource();
+        await cancelled.CancelAsync();
+
+        await Assert.That(() => TailwindCompiler.Compile(Entry, basePath: "", ["flex"], Resolve, cancelled.Token))
+            .Throws<OperationCanceledException>();
+    }
+
+    [Test]
+    public async Task RunawayRecursionIsAnErrorNotAStackOverflow()
+    {
+        // Jint recurses on the CLR stack and has no guard of its own, and a stack
+        // overflow cannot be caught: it would kill the compiler server. The call
+        // depth limit has to trip long before the compiler thread's stack runs
+        // out. This recursion is deliberately heavier per frame than Tailwind's.
+        // If this test crashes the test host, MaxCallDepth is too high for
+        // StackSize.
+        const string Runaway = """
+            function f(n) {
+                const o = { a: [1, 2, 3].map(x => x + n) };
+                return [o].map(v => f(n + 1) + v.a[0])[0];
+            }
+            f(0);
+            """;
+
+        var outcome = TailwindCompiler.OnCompilerThread(() =>
+        {
+            try
+            {
+                TailwindCompiler.CreateEngine(CancellationToken.None).Evaluate(Runaway);
+                return "returned";
+            }
+            catch (Jint.Runtime.RecursionDepthOverflowException)
+            {
+                return "limited";
+            }
+        });
+
+        await Assert.That(outcome).IsEqualTo("limited");
     }
 }

@@ -8,7 +8,7 @@ namespace Natrix.TailwindCss.Generators;
 /// </summary>
 /// <remarks>
 /// Only the JavaScript is embedded. Tailwind's stylesheets ship as real files
-/// under <c>tools/tailwind/css/</c> and reach the generator as AdditionalFiles
+/// under <c>tools/tailwindcss/</c> and reach the generator as AdditionalFiles
 /// like any other stylesheet, so they are resolved by the same code path as a
 /// project's own CSS. Refresh both with
 /// <c>cd js &amp;&amp; npm ci &amp;&amp; npm run bundle</c>.
@@ -19,7 +19,7 @@ internal static class TailwindResources
 
     private static readonly Lazy<string> LazyBundleJs = new(Read);
 
-    /// <summary>The bundled Tailwind compiler, as plain JavaScript for a bare V8 isolate.</summary>
+    /// <summary>The bundled Tailwind compiler, as a plain JavaScript script for Jint.</summary>
     public static string BundleJs => LazyBundleJs.Value;
 
     private static string Read()

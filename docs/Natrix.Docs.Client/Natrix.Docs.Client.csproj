@@ -2,8 +2,8 @@
     <PropertyGroup>
         <RunAOTCompilation>true</RunAOTCompilation>
         <!-- Referencing the generator project directly rather than the package,
-             so point at the engine payload staged in its build output. -->
-        <NatrixTailwindEngineDir>$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)', '..', '..', 'src', 'Natrix.TailwindCss.Generators', 'bin', '$(Configuration)', 'netstandard2.0', 'tailwind'))</NatrixTailwindEngineDir>
+             so point at Tailwind's stylesheets staged in its build output. -->
+        <NatrixTailwindCssDir>$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)', '..', '..', 'src', 'Natrix.TailwindCss.Generators', 'bin', '$(Configuration)', 'netstandard2.0', 'tailwindcss'))</NatrixTailwindCssDir>
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,15 +18,10 @@
         <ProjectReference Include="..\Natrix.Docs.Contracts\Natrix.Docs.Contracts.csproj" />
         <ProjectReference Include="..\..\src\Natrix.Swr\Natrix.Swr.csproj" />
         <ProjectReference Include="..\..\src\Natrix.TailwindCss\Natrix.TailwindCss.csproj" />
+        <!-- The generator hands its dependencies (Jint) over with it; see
+             GetNatrixAnalyzerDependencyTargetPaths in its project file. -->
         <ProjectReference
             Include="..\..\src\Natrix.TailwindCss.Generators\Natrix.TailwindCss.Generators.csproj"
-            OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-        <!-- The generator's contract assembly. OutputItemType="Analyzer" supplies
-             only the referenced project's own output, so a generator's
-             dependencies have to be listed alongside it or Roslyn cannot load it.
-             The package handles this by shipping both into analyzers/dotnet/cs. -->
-        <ProjectReference
-            Include="..\..\src\Natrix.TailwindCss.Engine.Abstractions\Natrix.TailwindCss.Engine.Abstractions.csproj"
             OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     </ItemGroup>
 

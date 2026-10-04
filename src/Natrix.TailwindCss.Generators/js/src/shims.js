@@ -1,6 +1,6 @@
-// Shims for running Tailwind's browser bundle under a bare V8 isolate.
+// Shims for running Tailwind's browser bundle in Jint.
 //
-// ClearScript gives us a plain V8 context: ECMAScript built-ins and nothing
+// Jint gives us a plain ECMAScript realm: the built-ins and nothing
 // else. Tailwind's dist reaches for exactly two non-ECMAScript globals, so this
 // is the complete list. If a Tailwind upgrade adds more, the bundle will throw a
 // ReferenceError on the first compile and the generator surfaces it as TWCSS001.

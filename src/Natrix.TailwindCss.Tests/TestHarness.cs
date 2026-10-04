@@ -50,12 +50,12 @@ internal static class Harness
     public const string ProjectDir = "/proj";
 
     /// <summary>
-    /// Where the engine and native V8 binaries live, injected by the build so the
-    /// tests do not need their own copy of the payload.
+    /// Where Tailwind's own stylesheets are staged, injected by the build: the same
+    /// files the package ships.
     /// </summary>
-    public static readonly string EngineDir = typeof(Harness).Assembly
+    public static readonly string TailwindCssDir = typeof(Harness).Assembly
         .GetCustomAttributes<AssemblyMetadataAttribute>()
-        .First(attribute => attribute.Key == "TailwindEngineDir")
+        .First(attribute => attribute.Key == "TailwindCssDir")
         .Value!;
 
     /// <summary>
@@ -79,12 +79,6 @@ internal static class Harness
             options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
 
     /// <summary>
-    /// Tailwind's own stylesheets, exactly as the packaged targets file supplies
-    /// them: real files carrying <c>TailwindModule="tailwindcss"</c> on the entry.
-    /// </summary>
-    private static readonly string TailwindCssDir = Path.Combine(EngineDir, "css");
-
-    /// <summary>
     /// The module ids for each shipped stylesheet, mirroring what the targets file
     /// declares: every subpath both with and without the extension, and the bare
     /// package name for index.css.
@@ -99,6 +93,10 @@ internal static class Harness
                 return name == "index" ? $"tailwindcss,{ids}" : ids;
             });
 
+    /// <summary>
+    /// Tailwind's own stylesheets, exactly as the packaged targets file supplies
+    /// them: real files carrying <c>TailwindModule="tailwindcss"</c> on the entry.
+    /// </summary>
     private static IEnumerable<AdditionalText> TailwindModuleTexts() =>
         Directory.EnumerateFiles(TailwindCssDir, "*.css")
             .Select(path => (AdditionalText)new InMemoryAdditionalText(
@@ -109,12 +107,7 @@ internal static class Harness
             generators: [new TailwindCssGenerator().AsSourceGenerator()],
             additionalTexts: ToAdditionalTexts(stylesheets),
             parseOptions: null,
-            optionsProvider: new TestOptionsProvider(
-                new Dictionary<string, string>
-                {
-                    ["build_property.NatrixTailwindEngineDir"] = EngineDir,
-                },
-                TailwindModules()),
+            optionsProvider: new TestOptionsProvider([], TailwindModules()),
             driverOptions: new GeneratorDriverOptions(
                 IncrementalGeneratorOutputKind.None,
                 trackIncrementalGeneratorSteps: true));

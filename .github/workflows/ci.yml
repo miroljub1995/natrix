@@ -49,15 +49,13 @@ jobs:
       # test project for every TFM it targets, including the browser-wasm ones in
       # headless Chromium.
       #
-      # Everything is portable managed code except the Tailwind generator: it
-      # loads a per-RID native V8 library, picks its ClearScript flavor from the
-      # compiler host's runtime, and resolves stylesheet paths with host-dependent
-      # case sensitivity. So its tests also run on Windows and macOS. Only that
-      # project runs there, on one TFM: the test host's framework does not change
-      # which engine flavor is selected, and the wasm AOT builds would only add
-      # minutes. What this still does *not* cover is the `net462` flavor, since
-      # `dotnet test` on Windows runs VBCSCompiler on modern .NET. That needs
-      # MSBuild.exe or devenv.exe from a Visual Studio install.
+      # Everything is portable managed code, but the Tailwind generator resolves
+      # stylesheet paths with host-dependent case sensitivity and separators, so
+      # its tests also run on Windows and macOS. Only that project runs there, on
+      # one TFM: the wasm AOT builds would only add minutes. What this does *not*
+      # cover is a .NET Framework compiler host, since `dotnet test` on Windows
+      # runs VBCSCompiler on modern .NET. That needs MSBuild.exe or devenv.exe
+      # from a Visual Studio install.
       matrix:
         include:
           - os: ubuntu-latest

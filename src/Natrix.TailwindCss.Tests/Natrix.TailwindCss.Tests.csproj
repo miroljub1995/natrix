@@ -16,6 +16,9 @@
     <PackageReference Include="TUnit" />
     <PackageReference Include="Verify.TUnit" />
     <PackageReference Include="Verify.SourceGenerators" />
+    <!-- The generator keeps Jint to itself (PrivateAssets="all"), so the test
+         host, which runs the generator in-process, brings its own copy. -->
+    <PackageReference Include="Jint" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,16 +27,12 @@
     <ProjectReference Include="..\Natrix.TailwindCss\Natrix.TailwindCss.csproj" />
   </ItemGroup>
 
-  <!--
-    Point the tests at the payload staged in the generator's own output instead of
-    copying a quarter of a gigabyte of native V8 into every test configuration.
-    This is the same property the packaged targets file sets for consumers, so the
-    tests exercise the production lookup path.
-  -->
+  <!-- Tailwind's own stylesheets, as staged in the generator's output: the same
+       files the package ships and the targets file hands to consumers. -->
   <ItemGroup>
     <AssemblyAttribute Include="System.Reflection.AssemblyMetadataAttribute">
-      <_Parameter1>TailwindEngineDir</_Parameter1>
-      <_Parameter2>$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)', '..', 'Natrix.TailwindCss.Generators', 'bin', '$(Configuration)', 'netstandard2.0', 'tailwind'))</_Parameter2>
+      <_Parameter1>TailwindCssDir</_Parameter1>
+      <_Parameter2>$([MSBuild]::NormalizeDirectory('$(MSBuildProjectDirectory)', '..', 'Natrix.TailwindCss.Generators', 'bin', '$(Configuration)', 'netstandard2.0', 'tailwindcss'))</_Parameter2>
     </AssemblyAttribute>
   </ItemGroup>
 

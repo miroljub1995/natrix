@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
-using Natrix.TailwindCss.Engine.Abstractions;
+using System.Threading;
+using Jint;
+using Jint.Native;
+using Jint.Runtime;
 
 namespace Natrix.TailwindCss.Generators;
 
@@ -35,126 +36,187 @@ internal enum CompileStatus
     /// <summary>Tailwind rejected the input: bad CSS, unresolved import, unsupported plugin.</summary>
     StylesheetError,
 
-    /// <summary>V8 could not be loaded or initialised on this machine.</summary>
+    /// <summary>The JavaScript engine itself failed: the bundle did not parse, or a limit was hit.</summary>
     EngineError,
 }
 
 /// <summary>
-/// Calls the Tailwind engine, which lives in a separate assembly loaded by
-/// reflection.
+/// Runs the bundled Tailwind CSS compiler in Jint, a JavaScript interpreter written
+/// in .NET.
 /// </summary>
 /// <remarks>
-/// Reflection is used exactly once, to construct the engine; everything after
-/// that goes through <see cref="ITailwindEngine"/>. The analyzer never names a
-/// ClearScript type, which is what keeps it loadable on both compiler hosts.
+/// The bundle is parsed once per process and shared. Every build gets a fresh
+/// <see cref="Engine"/>: that costs well under a millisecond, keeps each compilation
+/// independent, and leaves the parsed script as the only shared state, which Jint
+/// allows. So concurrent generator runs need no lock.
 /// </remarks>
 internal static class TailwindCompiler
 {
-    private const string EngineTypeName = "Natrix.TailwindCss.Engine.TailwindEngine";
+    /// <summary>
+    /// The deepest JavaScript call stack allowed. Tailwind 4.3 needs 9.
+    /// </summary>
+    /// <remarks>
+    /// Jint has no stack guard of its own: it recurses on the CLR stack, a few KB
+    /// per JavaScript frame, and an overflow is not catchable, so it would take the
+    /// whole compiler server down. This limit turns runaway recursion into an
+    /// error well before <see cref="StackSize"/> runs out. Measured with a
+    /// deliberately frame-heavy recursion: 256 fits in 1 MB, and a 16 MB stack
+    /// holds 2048.
+    /// </remarks>
+    internal const int MaxCallDepth = 256;
 
-    private static readonly object Gate = new();
+    /// <summary>
+    /// The stack every compilation runs on. Fixed rather than inherited, because
+    /// the compiler host's threads differ: a Windows thread-pool thread has 1 MB.
+    /// </summary>
+    private const int StackSize = 16 * 1024 * 1024;
 
-    private static ITailwindEngine? _engine;
-    private static string? _engineLoadError;
+    private static readonly Lazy<Prepared<Acornima.Ast.Script>> Bundle = new(
+        static () => Engine.PrepareScript(TailwindResources.BundleJs, "tailwind.bundle.js"),
+        LazyThreadSafetyMode.ExecutionAndPublication);
 
     /// <summary>
     /// Compiles <paramref name="css"/> into a stylesheet containing the utilities
     /// used by <paramref name="candidates"/>.
     /// </summary>
+    /// <exception cref="OperationCanceledException"><paramref name="cancellationToken"/> was cancelled.</exception>
     public static CompileResult Compile(
-        string payloadDir,
         string css,
         string basePath,
         IReadOnlyList<string> candidates,
-        Func<string, string, StylesheetResult> loadStylesheet)
+        Func<string, string, StylesheetResult> loadStylesheet,
+        CancellationToken cancellationToken = default)
     {
-        lock (Gate)
-        {
-            try
-            {
-                var css2 = GetEngine(payloadDir).Build(
-                    NativeDirectory(payloadDir),
-                    TailwindResources.BundleJs,
-                    css,
-                    basePath,
-                    candidates as string[] ?? candidates.ToArray(),
-                    loadStylesheet);
-
-                return CompileResult.Success(css2);
-            }
-            catch (TailwindStylesheetException ex)
-            {
-                return CompileResult.StylesheetError(ex.Message);
-            }
-            catch (TailwindEngineException ex)
-            {
-                return CompileResult.EngineError(ex.Message);
-            }
-            catch (Exception ex)
-            {
-                return CompileResult.EngineError(Describe(ex));
-            }
-        }
-    }
-
-    private static ITailwindEngine GetEngine(string payloadDir)
-    {
-        if (_engine is not null)
-            return _engine;
-
-        // A missing payload fails the same way every time; remember it rather
-        // than probing the filesystem once per attributed method per keystroke.
-        if (_engineLoadError is not null)
-            throw new TailwindEngineException(_engineLoadError);
-
         try
         {
-            ClearScriptLoader.Install(payloadDir);
-
-            var assembly = ClearScriptLoader.LoadEngine()
-                ?? throw new TailwindEngineException(
-                    $"The Tailwind CSS engine was not found under '{payloadDir}'.");
-
-            var type = assembly.GetType(EngineTypeName)
-                ?? throw new TailwindEngineException(
-                    $"'{EngineTypeName}' was not found in {assembly.FullName}.");
-
-            _engine = (ITailwindEngine)Activator.CreateInstance(type);
-            return _engine;
+            return OnCompilerThread(() => CompileOnThisThread(css, basePath, candidates, loadStylesheet, cancellationToken));
+        }
+        catch (OperationCanceledException)
+        {
+            throw new OperationCanceledException(cancellationToken);
         }
         catch (Exception ex)
         {
-            _engineLoadError = Describe(ex);
-            throw new TailwindEngineException(_engineLoadError, ex);
+            return CompileResult.EngineError(ex.Message);
         }
     }
 
-    private static string NativeDirectory(string payloadDir) =>
-        Path.Combine(payloadDir, "runtimes", GetRuntimeIdentifier(), "native");
-
-    /// <summary>The RID whose native V8 library this process can load.</summary>
-    internal static string GetRuntimeIdentifier()
+    /// <summary>
+    /// Runs <paramref name="work"/> on a thread with <see cref="StackSize"/> of
+    /// stack, rethrowing whatever it throws.
+    /// </summary>
+    /// <remarks>A thread per compilation costs about 0.1 ms against a ~90 ms compile.</remarks>
+    internal static T OnCompilerThread<T>(Func<T> work)
     {
-        var arm64 = RuntimeInformation.ProcessArchitecture == Architecture.Arm64;
+        T result = default!;
+        Exception? failure = null;
 
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-            return arm64 ? "osx-arm64" : "osx-x64";
-
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-            return arm64 ? "linux-arm64" : "linux-x64";
-
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+        var thread = new Thread(
+            () =>
+            {
+                try
+                {
+                    result = work();
+                }
+                catch (Exception ex)
+                {
+                    failure = ex;
+                }
+            },
+            StackSize)
         {
-            // Windows on ARM runs x64 processes under emulation, and
-            // ProcessArchitecture reports what the process actually is, so an
-            // emulated compiler host correctly asks for win-x64.
-            return arm64 ? "win-arm64" : "win-x64";
-        }
+            IsBackground = true,
+            Name = "Natrix.TailwindCss compiler",
+        };
 
-        throw new PlatformNotSupportedException(
-            $"Tailwind CSS compilation is not supported on {RuntimeInformation.OSDescription}.");
+        thread.Start();
+        thread.Join();
+
+        if (failure is not null)
+            System.Runtime.ExceptionServices.ExceptionDispatchInfo.Capture(failure).Throw();
+
+        return result;
     }
 
-    private static string Describe(Exception ex) =>
-        ex.InnerException is null ? ex.Message : ex.Message + " -> " + ex.InnerException.Message;
+    /// <summary>An engine with the limits every compilation runs under.</summary>
+    internal static Engine CreateEngine(CancellationToken cancellationToken) =>
+        new(options => options
+            .LimitRecursion(MaxCallDepth)
+            // Roslyn cancels a generator run as soon as the source changes
+            // again, so an IDE never waits for a compile it no longer needs.
+            .CancellationToken(cancellationToken));
+
+    private static CompileResult CompileOnThisThread(
+        string css,
+        string basePath,
+        IReadOnlyList<string> candidates,
+        Func<string, string, StylesheetResult> loadStylesheet,
+        CancellationToken cancellationToken)
+    {
+        Prepared<Acornima.Ast.Script> bundle;
+        try
+        {
+            bundle = Bundle.Value;
+        }
+        catch (Exception ex)
+        {
+            return CompileResult.EngineError("The Tailwind bundle could not be parsed: " + ex.Message);
+        }
+
+        try
+        {
+            var engine = CreateEngine(cancellationToken);
+
+            engine.Execute(bundle);
+
+            var candidateArray = new JsArray(engine, candidates.Select(static candidate => (JsValue)candidate).ToArray());
+
+            // The entry point is async, but it needs only microtasks (see
+            // entry.js), which unwrapping drains. A timer or real I/O in that path
+            // would leave the promise pending and fail here.
+            var result = engine
+                .Invoke("natrixTailwindBuild", css, basePath, candidateArray, loadStylesheet)
+                .UnwrapIfPromise();
+
+            return result.IsString()
+                ? CompileResult.Success(result.AsString())
+                : CompileResult.StylesheetError("Tailwind returned no CSS.");
+        }
+        catch (ExecutionCanceledException)
+        {
+            throw new OperationCanceledException(cancellationToken);
+        }
+        catch (JavaScriptException ex)
+        {
+            return CompileResult.StylesheetError(Describe(ex.Error, ex.Message));
+        }
+        catch (PromiseRejectedException ex)
+        {
+            return CompileResult.StylesheetError(Describe(ex.RejectedValue, ex.Message));
+        }
+        catch (RecursionDepthOverflowException)
+        {
+            return CompileResult.EngineError(
+                $"Tailwind exceeded the JavaScript call depth limit of {MaxCallDepth}.");
+        }
+        catch (Exception ex)
+        {
+            return CompileResult.EngineError(ex.InnerException is null
+                ? ex.Message
+                : ex.Message + " -> " + ex.InnerException.Message);
+        }
+    }
+
+    /// <summary>The message of a thrown JavaScript value: an Error's message, or the value itself.</summary>
+    private static string Describe(JsValue thrown, string fallback)
+    {
+        if (thrown.IsObject())
+        {
+            var message = thrown.AsObject().Get("message");
+            if (message.IsString())
+                return message.AsString();
+        }
+
+        return thrown.IsUndefined() || thrown.IsNull() ? fallback : thrown.ToString();
+    }
 }
