@@ -20,8 +20,9 @@ Tailwind CSS integration.
 
 - **Tailwind CSS generator** — `src/Natrix.TailwindCss.Generators/CLAUDE.md`.
   Loaded automatically when working in that directory. Read it before touching
-  any of the five `Natrix.TailwindCss*` projects: the subsystem is split the way
-  it is for constraints that are not obvious from the code. Diagrams live
+  any of the three `Natrix.TailwindCss*` projects: it runs Tailwind's JavaScript
+  in Jint inside the compiler, under constraints that are not obvious from the
+  code. Diagrams live
   alongside it in `src/Natrix.TailwindCss.Generators/ARCHITECTURE.md`.
 
 - **Browser-WASM tests** — `Natrix.Browser.Tests` and

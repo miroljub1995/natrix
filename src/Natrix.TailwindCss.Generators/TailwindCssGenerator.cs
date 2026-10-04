@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -43,10 +42,10 @@ public class TailwindCssGenerator : IIncrementalGenerator
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true);
 
-    private static readonly DiagnosticDescriptor EngineUnavailable = new(
+    private static readonly DiagnosticDescriptor EngineFailed = new(
         id: "TWCSS003",
-        title: "Tailwind CSS engine unavailable",
-        messageFormat: "The Tailwind CSS engine could not be initialized for '{0}': {1}",
+        title: "Tailwind CSS engine failed",
+        messageFormat: "The Tailwind CSS engine failed: {0}",
         category: "TailwindCss",
         defaultSeverity: DiagnosticSeverity.Error,
         isEnabledByDefault: true);
@@ -114,13 +113,6 @@ public class TailwindCssGenerator : IIncrementalGenerator
                 .ToImmutableArray()))
             .WithTrackingName(TrackingNames.Candidates);
 
-        var engineDir = context.AnalyzerConfigOptionsProvider
-            .Select(static (provider, _) =>
-            {
-                provider.GlobalOptions.TryGetValue("build_property.NatrixTailwindEngineDir", out var dir);
-                return dir ?? "";
-            });
-
         // Every .css file the project exposes as an AdditionalFile. Reading them
         // through this provider is what makes Roslyn re-run the generator when
         // one of them changes.
@@ -162,11 +154,10 @@ public class TailwindCssGenerator : IIncrementalGenerator
             .WithTrackingName(TrackingNames.Methods);
 
         context.RegisterSourceOutput(
-            methods.Combine(stylesheets).Combine(candidates).Combine(engineDir),
+            methods.Combine(stylesheets).Combine(candidates),
             static (spc, source) => Execute(
                 spc,
-                source.Left.Left.Left!,
-                source.Left.Left.Right,
+                source.Left.Left!,
                 source.Left.Right,
                 source.Right));
     }
@@ -248,8 +239,7 @@ public class TailwindCssGenerator : IIncrementalGenerator
         SourceProductionContext spc,
         MethodInfo info,
         EquatableArray<Stylesheet> stylesheets,
-        EquatableArray<string> candidates,
-        string engineDir)
+        EquatableArray<string> candidates)
     {
         var location = info.Location?.ToLocation() ?? Location.None;
 
@@ -273,17 +263,17 @@ public class TailwindCssGenerator : IIncrementalGenerator
         // for every file the resolver hands back afterwards. From here on the
         // resolver only ever sees the base Tailwind passes it.
         var result = TailwindCompiler.Compile(
-            ResolveEngineDir(engineDir),
             entryCss,
             StylesheetResolver.DirectoryOf(entryPath),
             candidates.AsImmutableArray(),
-            resolver.Load);
+            resolver.Load,
+            spc.CancellationToken);
 
         switch (result.Status)
         {
             case CompileStatus.EngineError:
                 spc.ReportDiagnostic(Diagnostic.Create(
-                    EngineUnavailable, location, SafeRuntimeIdentifier(), result.Payload));
+                    EngineFailed, location, result.Payload));
                 return;
 
             case CompileStatus.StylesheetError:
@@ -361,34 +351,6 @@ public class TailwindCssGenerator : IIncrementalGenerator
             body += "\n";
 
         return fence + "\n" + body + fence;
-    }
-
-    /// <summary>
-    /// Falls back to a directory next to this assembly when MSBuild did not
-    /// supply one, which is how the generator's own tests find the payload.
-    /// </summary>
-    private static string ResolveEngineDir(string engineDir)
-    {
-        if (engineDir.Length > 0)
-            return engineDir;
-
-#pragma warning disable IL3000 // Analyzers always run from a real file on disk.
-        var assemblyDir = Path.GetDirectoryName(typeof(TailwindCssGenerator).Assembly.Location);
-#pragma warning restore IL3000
-
-        return assemblyDir is null ? "" : Path.Combine(assemblyDir, "tailwind");
-    }
-
-    private static string SafeRuntimeIdentifier()
-    {
-        try
-        {
-            return TailwindCompiler.GetRuntimeIdentifier();
-        }
-        catch (PlatformNotSupportedException)
-        {
-            return "unsupported platform";
-        }
     }
 
     private static bool UsesSourceDirective(string css) => css

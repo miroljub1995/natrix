@@ -26,7 +26,7 @@ await esbuild.build({
   entryPoints: [join(here, "src", "entry.js")],
   outfile: bundlePath,
   bundle: true,
-  // IIFE, not ESM: ClearScript executes this as a classic script, and entry.js
+  // IIFE, not ESM: Jint executes this as a classic script, and entry.js
   // publishes its entry point on globalThis itself.
   format: "iife",
   // Same export condition @tailwindcss/browser uses, which is what keeps the

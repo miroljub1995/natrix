@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using Natrix.TailwindCss.Engine.Abstractions;
 
 namespace Natrix.TailwindCss.Generators;
 

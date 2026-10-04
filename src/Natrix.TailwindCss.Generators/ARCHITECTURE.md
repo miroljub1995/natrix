@@ -5,60 +5,41 @@ reasoning. This file is just the two pictures worth drawing.
 
 `[GeneratedTailwindCss("Styles/app.css")]` turns a partial method into the
 compiled Tailwind stylesheet for that entry file. The generator runs the real
-Tailwind compiler — the actual JavaScript, bundled by esbuild and executed in a
-V8 isolate via ClearScript — during the build.
+Tailwind compiler — the actual JavaScript, bundled by esbuild and executed in
+Jint, a JavaScript interpreter written in .NET — during the build.
 
 ## Runtime layering
 
 A source generator runs inside the compiler host, and that host is not always
-the same runtime. The whole project split falls out of that one fact:
-Roslyn requires the analyzer to be `netstandard2.0` (RS1041), ClearScript ships
-no `netstandard2.0` asset, and .NET Framework cannot load its `netstandard2.1`
-one. So the analyzer cannot reference ClearScript in either direction.
+the same runtime. Roslyn therefore requires the analyzer to be `netstandard2.0`
+(RS1041). Jint has a `netstandard2.0` build and is pure managed code, so the
+whole engine is two ordinary analyzer dependencies sitting beside the analyzer:
+the same files on every host, OS and architecture.
 
 ```mermaid
 flowchart TD
     FX["MSBuild.exe / devenv.exe<br/>.NET Framework 4.7.x<br/><i>Visual Studio</i>"]
     MOD["VBCSCompiler<br/>.NET 8+<br/><i>dotnet build · Rider · VS Code</i>"]
 
-    AN["<b>Natrix.TailwindCss.Generators.dll</b><br/>netstandard2.0<br/>one build, both hosts"]
-    AB["<b>Engine.Abstractions.dll</b><br/>netstandard2.0 · ITailwindEngine<br/>exactly one copy, beside the analyzer"]
-
-    E462["<b>engine/net462/</b><br/>Engine + ClearScript + 14 facades<br/>17 assemblies"]
-    E80["<b>engine/net8.0/</b><br/>Engine + ClearScript + Newtonsoft.Json<br/>4 assemblies"]
-
-    NAT["<b>ClearScriptV8.{rid}</b> .dylib / .so / .dll<br/>one per build-host RID · 34 MB each"]
+    AN["<b>Natrix.TailwindCss.Generators.dll</b><br/>netstandard2.0 · embeds the 272 KB Tailwind bundle"]
+    JI["<b>Jint.dll</b> + <b>Acornima.dll</b><br/>netstandard2.0 · JavaScript interpreter and its parser"]
+    HOST["<b>System.Memory</b>, <b>…CompilerServices.Unsafe</b><br/>supplied by the compiler host, not shipped"]
 
     FX -->|loads as analyzer| AN
     MOD -->|loads as analyzer| AN
-
-    AN -->|references| AB
-    AN -.->|"reflection: host is .NET Framework"| E462
-    AN -.->|"reflection: host is modern .NET"| E80
-
-    E462 -->|implements| AB
-    E80 -->|implements| AB
-
-    E462 -->|P/Invoke| NAT
-    E80 -->|P/Invoke| NAT
+    AN -->|references| JI
+    JI -->|depends on| HOST
 ```
 
-The dotted arrows are the reflection boundary: the analyzer holds no
-compile-time reference to ClearScript, and `ClearScriptLoader` picks a flavor at
-load time from `RuntimeInformation.FrameworkDescription`. Nothing managed from
-ClearScript is ever resolved by the compiler host itself.
+All three of our files ship in `analyzers/dotnet/cs/`. Each compilation runs on a
+dedicated 16 MB thread under a JavaScript call-depth limit, because Jint
+interprets on the CLR stack and an overflow would kill the compiler server.
 
-Reflection is used exactly once — `Activator.CreateInstance` on the engine type,
-cast to `ITailwindEngine` — and every later call is a plain interface call. That
-only works because the contract assembly is loaded once: it ships beside the
-analyzer and is excluded from both flavor directories, or the interface would have
-two identities and the cast would fail.
-
-`net462` carries 17 assemblies to `net8.0`'s 4 because ClearScript's .NET
-Framework asset depends on `Microsoft.Bcl.AsyncInterfaces`, `System.Memory`,
-`System.ValueTuple` and friends. They are shipped by globbing the engine
-project's real build output — hand-listing them is how one goes missing and
-Visual Studio fails at runtime.
+This used to be a much bigger picture. Until October 2026 the engine was V8 via
+ClearScript: a bridge assembly built for two host runtimes and loaded by
+reflection, a contract assembly that had to load exactly once, and a native V8
+library per RID — about a quarter of a gigabyte. CLAUDE.md's *History* records
+why it went.
 
 ## How a stylesheet becomes a string
 
@@ -69,16 +50,16 @@ flowchart LR
     EMB["<b>package stylesheets</b><br/>AdditionalFiles + TailwindModule<br/>index · theme · preflight · utilities"]
 
     PIPE["<b>Roslyn pipeline</b><br/>EquatableArray · sorted · deduplicated"]
-    V8["<b>V8 isolate</b><br/>await compile(css) → build(candidates)<br/>272 KB bundle"]
+    JS["<b>Jint engine</b>, fresh per build<br/>await compile(css) → build(candidates)<br/>bundle parsed once per process"]
     OUT["<b>GetCss()</b><br/>raw string literal"]
 
     CSS --> PIPE
     LIT --> PIPE
     EMB --> PIPE
 
-    PIPE -->|"css, base, candidates"| V8
-    V8 -.->|"loadStylesheet(id, base)"| PIPE
-    V8 -->|"Promise → Task&lt;string&gt;"| OUT
+    PIPE -->|"css, base, candidates"| JS
+    JS -.->|"loadStylesheet(id, base)"| PIPE
+    JS -->|"promise, awaited"| OUT
 ```
 
 The dotted arrow is the load-bearing one. Tailwind calls back into C# for every
@@ -122,8 +103,8 @@ callers cannot.
 
 ## What triggers a recompile
 
-The generated CSS is produced by combining four pipeline values — the attributed
-method, the stylesheet set, the candidate set, and the engine directory. Roslyn
+The generated CSS is produced by combining three pipeline values — the attributed
+method, the stylesheet set, and the candidate set. Roslyn
 compares each by value, so **the Tailwind compiler runs again whenever any one of
 them differs**, and skips entirely when none do. In an IDE this is evaluated on
 essentially every keystroke.
@@ -139,9 +120,8 @@ Every row below is pinned down by a test in `IncrementalityTests`.
 | A string literal that introduces a **new** whitespace-separated token | The candidate set changed |
 | Editing anything **above the attribute in its own file** | The model carries the attribute's text span for diagnostics, and inserting a line shifts it |
 | The attribute argument, method name, accessibility, `static`, or return type | All part of the method model |
-| `NatrixTailwindEngineDir` | It is combined into the output |
 | Moving the file the attribute is declared in | The entry stylesheet is resolved against that file's directory, so the same attribute text means a different stylesheet |
-| A Tailwind version bump | Rebuilds the embedded bundle, so the analyzer assembly itself changes |
+| A Tailwind or Jint version bump | Changes the analyzer or its dependencies |
 
 ### Skips the compiler
 
@@ -154,17 +134,22 @@ Every row below is pinned down by a test in `IncrementalityTests`.
 
 ### How much it costs
 
-Every trigger costs a full compile: measured warm on a ~28-class candidate set
-against the full Tailwind index, `compile()` takes about **28 ms** and `build()`
-about **11 ms**. Both sit behind a one-time ~800 ms V8 runtime construction per
-compiler process; the runtime and the parsed bundle are shared across every
-compilation, so only the ~39 ms is per-run.
+Every trigger costs a full compile. Measured warm on the docs app (440
+candidates, the full Tailwind index), that is about **90–100 ms**, nearly all of it
+Tailwind's own `compile()` and `build()` running in the interpreter. A fresh
+engine and re-running the bundle in it cost under a millisecond. The first compile
+in a process takes about 1.2 s, mostly warming up Jint and parsing the bundle,
+which is then shared by every later compilation. V8 was about 6× faster warm
+(~13–17 ms) at the same cold cost; that trade is recorded in CLAUDE.md.
 
-Caching the parse across runs is deliberately *not* done. Tailwind's `build()` is
-incremental — it returns the union of every candidate it has ever seen — so a
-reused compilation keeps emitting classes deleted from the source unless the
-candidate set is guarded for growth. That guard worked, but the subtlety was not
-worth ~28 ms.
+Caching Tailwind's compiled stylesheet across runs is deliberately *not* done.
+Tailwind's `build()` is incremental — it returns the union of every candidate it
+has ever seen — so a reused compilation keeps emitting classes deleted from the
+source unless the candidate set is guarded for growth. That guard worked, but the
+subtlety was not worth it.
+
+In an IDE a superseded compile does not finish: Roslyn's cancellation token
+reaches Jint, so a run started by one keystroke stops when the next one arrives.
 
 The case to watch is the first row: because the stylesheet set is all-or-nothing,
 a large vendored `.css` in the set makes every edit to it re-run Tailwind even
@@ -181,10 +166,10 @@ so the fix is simply to list less:
 
 | | |
 | --- | --- |
-| Projects | `Natrix.TailwindCss` (package shell, no source) · `Natrix.TailwindCss.Generators` (`netstandard2.0`) · `Natrix.TailwindCss.Engine.Abstractions` (`netstandard2.0`, the contract) · `Natrix.TailwindCss.Engine` (`net462;net8.0`) · `…Generators.Tests` |
-| Build-host RIDs | `osx-arm64` `osx-x64` `linux-arm64` `linux-x64` `win-x64` `win-arm64` |
-| Key packages | `Microsoft.CodeAnalysis.CSharp` · `Microsoft.ClearScript.V8` · `Microsoft.ClearScript.V8.Native.*` · npm `tailwindcss`, `esbuild` |
-| Package layout | `analyzers/dotnet/cs/` (analyzer) · `build/`+`buildTransitive/` (targets) · `tools/tailwind/` (engine + natives, deliberately **not** under `analyzers/`) |
+| Projects | `Natrix.TailwindCss` (the package; its only code is the hot-reload runtime) · `Natrix.TailwindCss.Generators` (`netstandard2.0`) · `Natrix.TailwindCss.Tests` |
+| Build hosts | Anything .NET runs on — nothing native, nothing per RID |
+| Key packages | `Microsoft.CodeAnalysis.CSharp` · `Jint` · `Acornima` · npm `tailwindcss`, `esbuild` |
+| Package layout | `analyzers/dotnet/cs/` (analyzer, Jint, Acornima) · `build/`+`buildTransitive/` (targets) · `tools/tailwindcss/` (Tailwind's stylesheets) |
 
 Everything else — the constraints, the MSBuild traps, the diagnostics, and the
-alternatives already evaluated and rejected — is in [`CLAUDE.md`](CLAUDE.md).
+history of what was tried and replaced — is in [`CLAUDE.md`](CLAUDE.md).
