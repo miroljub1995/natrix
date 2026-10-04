@@ -79,12 +79,9 @@ public class TestPromisePropertiesTest() : BaseTest<TestPromiseProperties>("test
         var promiseTask = (Task<int>)sut.PromisePropertyLongDelayed;
         await Assert.That(promiseTask.IsCompleted).IsFalse();
 
-        var timeoutTask = Task.Delay(2000);
-        var completedTask = await Task.WhenAny(promiseTask, timeoutTask);
-
-        await Assert.That(ReferenceEquals(completedTask, promiseTask)).IsTrue();
-
-        var result = await promiseTask;
+        // The timeout only bounds a broken run. A tight one races the browser's single
+        // thread, which other tests in the run share, rather than the promise.
+        var result = await promiseTask.WaitAsync(TimeSpan.FromSeconds(30));
         await Assert.That(result).IsEqualTo(99);
     }
 
