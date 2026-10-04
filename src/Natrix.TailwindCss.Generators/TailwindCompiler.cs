@@ -71,6 +71,14 @@ internal static class TailwindCompiler
     /// </summary>
     private const int StackSize = 16 * 1024 * 1024;
 
+    /// <summary>
+    /// How long one compilation may take, including waiting for its promise. A
+    /// warm compile takes ~90 ms and a cold one ~1.2 s; this only ends one that
+    /// would otherwise never finish, which a command-line build has no other way
+    /// to stop.
+    /// </summary>
+    internal static readonly TimeSpan Timeout = TimeSpan.FromSeconds(30);
+
     private static readonly Lazy<Prepared<Acornima.Ast.Script>> Bundle = new(
         static () => Engine.PrepareScript(TailwindResources.BundleJs, "tailwind.bundle.js"),
         LazyThreadSafetyMode.ExecutionAndPublication);
@@ -105,7 +113,10 @@ internal static class TailwindCompiler
     /// Runs <paramref name="work"/> on a thread with <see cref="StackSize"/> of
     /// stack, rethrowing whatever it throws.
     /// </summary>
-    /// <remarks>A thread per compilation costs about 0.1 ms against a ~90 ms compile.</remarks>
+    /// <remarks>
+    /// A new thread per compilation costs ~45 µs against a ~90 ms compile. Not the
+    /// thread pool: its stack size is the compiler host's, not ours to raise.
+    /// </remarks>
     internal static T OnCompilerThread<T>(Func<T> work)
     {
         T result = default!;
@@ -139,11 +150,14 @@ internal static class TailwindCompiler
     }
 
     /// <summary>An engine with the limits every compilation runs under.</summary>
+    /// <remarks>
+    /// The token stops execution as well as waiting. Roslyn cancels a generator run
+    /// as soon as the source changes again, so an IDE never waits for a compile it
+    /// no longer needs.
+    /// </remarks>
     internal static Engine CreateEngine(CancellationToken cancellationToken) =>
         new(options => options
             .LimitRecursion(MaxCallDepth)
-            // Roslyn cancels a generator run as soon as the source changes
-            // again, so an IDE never waits for a compile it no longer needs.
             .CancellationToken(cancellationToken));
 
     private static CompileResult CompileOnThisThread(
@@ -163,28 +177,64 @@ internal static class TailwindCompiler
             return CompileResult.EngineError("The Tailwind bundle could not be parsed: " + ex.Message);
         }
 
+        return Run(
+            engine =>
+            {
+                engine.Execute(bundle);
+
+                var candidateArray = new JsArray(engine, candidates.Select(static candidate => (JsValue)candidate).ToArray());
+                return engine.Invoke("natrixTailwindBuild", css, basePath, candidateArray, loadStylesheet);
+            },
+            Timeout,
+            cancellationToken);
+    }
+
+    /// <summary>
+    /// Creates an engine, lets <paramref name="start"/> call into it, and waits for
+    /// the value it returns to settle if it is a promise.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// The wait is real, not a check: <c>UnwrapIfPromise</c> runs the engine's
+    /// pending jobs on this thread and blocks until the promise settles, so work
+    /// the host finishes later (a <see cref="System.Threading.Tasks.Task"/> handed
+    /// back to JavaScript, say) is awaited, and its continuations still run on this
+    /// thread and its stack. Waiting asynchronously would gain nothing: the generator
+    /// is synchronous, and an <c>await</c> could resume the engine on a thread-pool
+    /// thread without <see cref="StackSize"/>.
+    /// </para>
+    /// <para>
+    /// One deadline bounds both executing and waiting: Roslyn's token, or
+    /// <paramref name="timeout"/>, whichever comes first. The overload taking a
+    /// token is used because it waits as long as the token allows; the
+    /// parameterless one gives up after a fixed 10 seconds of its own.
+    /// </para>
+    /// <para>
+    /// What the engine cannot provide is a timer: Jint has no <c>setTimeout</c>. A
+    /// Tailwind that started using one would fail with a <c>ReferenceError</c>
+    /// (<c>TWCSS001</c>), not hang, and would need a shim in <c>shims.js</c>.
+    /// </para>
+    /// </remarks>
+    internal static CompileResult Run(Func<Engine, JsValue> start, TimeSpan timeout, CancellationToken cancellationToken)
+    {
+        using var deadline = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        deadline.CancelAfter(timeout);
+
         try
         {
-            var engine = CreateEngine(cancellationToken);
-
-            engine.Execute(bundle);
-
-            var candidateArray = new JsArray(engine, candidates.Select(static candidate => (JsValue)candidate).ToArray());
-
-            // The entry point is async, but it needs only microtasks (see
-            // entry.js), which unwrapping drains. A timer or real I/O in that path
-            // would leave the promise pending and fail here.
-            var result = engine
-                .Invoke("natrixTailwindBuild", css, basePath, candidateArray, loadStylesheet)
-                .UnwrapIfPromise();
+            var result = start(CreateEngine(deadline.Token)).UnwrapIfPromise(deadline.Token);
 
             return result.IsString()
                 ? CompileResult.Success(result.AsString())
                 : CompileResult.StylesheetError("Tailwind returned no CSS.");
         }
-        catch (ExecutionCanceledException)
+        catch (Exception ex) when (ex is ExecutionCanceledException or OperationCanceledException)
         {
-            throw new OperationCanceledException(cancellationToken);
+            if (cancellationToken.IsCancellationRequested)
+                throw new OperationCanceledException(cancellationToken);
+
+            return CompileResult.EngineError(
+                $"Tailwind did not finish within {timeout.TotalSeconds:0.###} s.");
         }
         catch (JavaScriptException ex)
         {

@@ -17,7 +17,7 @@ compiler** — the actual JavaScript, bundled by esbuild — during the build, i
 | --- | --- | --- |
 | `Natrix.TailwindCss` | `net9.0;net10.0` | The shipped package. Assembles the analyzer, its two dependencies, the targets and Tailwind's stylesheets, and carries the only runtime code in the subsystem: `HotReload/`, which pushes a regenerated stylesheet into the browser. That is why it — and only it — references `Natrix.Core` and `Natrix.StdWeb`. |
 | `Natrix.TailwindCss.Generators` | `netstandard2.0` | The incremental generator: Roslyn pipeline, stylesheet resolution, embedded Tailwind bundle, and `TailwindCompiler`, which runs the bundle in Jint. |
-| `Natrix.TailwindCss.Tests` | `net9.0;net10.0` | TUnit + Verify. 72 tests, covering the generator and the package's runtime half. |
+| `Natrix.TailwindCss.Tests` | `net9.0;net10.0` | TUnit + Verify. 76 tests, covering the generator and the package's runtime half. |
 
 Plus `src/Natrix.TailwindCss.Generators/js/` — the esbuild bundle sources
 (`tailwindcss` and `esbuild` are the only npm dependencies).
@@ -63,8 +63,14 @@ runaway recursion into a `TWCSS003` error long before `StackSize` (16 MB) runs o
 Measured with a deliberately frame-heavy recursion: a limit of 512 overflowed even a
 1.5 MB stack, 256 fit in 1 MB, and 16 MB held 2048. Tailwind 4.3 itself needs a
 depth of 9 and runs on a 64 KB stack. The stack is fixed rather than inherited
-because hosts differ (a Windows thread-pool thread has 1 MB), and a thread costs
-about 0.1 ms against a ~90 ms compile.
+because hosts differ (a Windows thread-pool thread has 1 MB). A new thread per
+compile costs ~45 µs against a ~90 ms compile (a thread-pool hop is ~2 µs). Do not
+move compiles onto the thread pool: its stack size belongs to the compiler host and
+cannot be raised from an analyzer, so the call-depth limit would have to be tuned
+to a stack we cannot see, and getting that wrong kills the compiler server. A
+long-lived worker thread with a queue would save the same ~45 µs at the cost of
+the queue, cross-thread exception plumbing and a thread that lives as long as the
+server.
 `RunawayRecursionIsAnErrorNotAStackOverflow` guards the pair: raise the limit too
 far, or drop the thread, and it crashes the test host rather than passing.
 
@@ -84,12 +90,17 @@ were deleted from the source. A previous attempt guarded this with a "reuse only
 while the candidate set grows" check; it worked, but the subtlety was not worth
 the cost.
 
-**Cancellation reaches the engine.** Roslyn cancels a generator run as soon as the
-source changes again, and `spc.CancellationToken` is handed to Jint, so an IDE
-never waits for a compile it no longer needs. Jint reports it as
-`ExecutionCanceledException`; `TailwindCompiler` turns that back into
-`OperationCanceledException`, which is what Roslyn expects. Swallowing it as a
-`TWCSS003` would report a spurious error.
+**One deadline bounds every compilation: Roslyn's token or 30 seconds.**
+`TailwindCompiler.Run` links `spc.CancellationToken` with `Timeout` and hands the
+result to Jint both as the engine's cancellation constraint and as the token the
+promise is awaited with. So an IDE never waits for a compile it no longer needs,
+and a command-line build, which has no cancellation at all, cannot hang on an
+infinite loop or a promise that never settles; it gets `TWCSS003` instead. A
+cancelled token surfaces as `OperationCanceledException`, which is what Roslyn
+expects. Only a timeout becomes `TWCSS003`, because swallowing a cancellation
+would report a spurious error. `StopsAnInfiniteLoopAtTheDeadline`,
+`GivesUpOnAPromiseThatNeverSettles` and `StopsWaitingWhenCancelled` cover the
+three outcomes.
 
 **Nothing crosses the boundary as JSON.** `css` and `base` are passed as strings,
 the candidates as a real JavaScript array (`JsArray`), and an `@import` is
@@ -98,11 +109,20 @@ answered with a `StylesheetResult` host object read as `result.Error` /
 throwing, because a .NET exception thrown inside a callback unwinds through the
 engine instead of becoming a JavaScript error Tailwind can report.
 
-**The entry point is `async` and the host unwraps its promise.** `UnwrapIfPromise`
-drains the microtask queue and returns the settled value. That is enough only
-because nothing in the chain needs a macrotask: `compile()` awaits just the
-synchronous host callback. Introducing a timer or real I/O into that path would
-leave the promise pending, and the compile would fail.
+**The entry point is `async`, and its promise is genuinely awaited.**
+`UnwrapIfPromise(token)` runs the engine's pending jobs and blocks until the
+promise settles. A promise that is still pending after the microtasks have run is
+waited for, not treated as an error, so if Tailwind (or our entry point) ever
+awaits work the host finishes later, such as a `Task` returned to JavaScript, it
+just works. `AwaitsWorkTheHostFinishesLater` pins this down, including that the
+JavaScript after the `await` resumes on the compiler thread. Use the overload
+that takes a token: the parameterless one gives up after a fixed 10 seconds that
+`Constraints.PromiseTimeout` does not change. Do not switch to
+`UnwrapIfPromiseAsync`: the generator is synchronous, so it would only block on the
+`Task`, and an `await` could resume the engine on a thread-pool thread without the
+16 MB stack. The one kind of async Jint cannot provide is a timer: there is no
+`setTimeout`. A Tailwind that started using one would fail with a `ReferenceError`
+(`TWCSS001`) rather than hang, and would need a timer shim in `shims.js`.
 
 **The bundle targets ES2022, and Jint is not V8.** Every Verify snapshot was
 byte-identical when the engine moved from V8 to Jint, but Jint is an independent

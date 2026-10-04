@@ -1,3 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
+
 namespace Natrix.TailwindCss.Tests;
 
 /// <summary>
@@ -125,5 +127,72 @@ public class TailwindEngineTests
         });
 
         await Assert.That(outcome).IsEqualTo("limited");
+    }
+
+    [Test]
+    [UnconditionalSuppressMessage("Trimming", "IL2026", Justification = "Tests are never trimmed.")]
+    [UnconditionalSuppressMessage("Trimming", "IL2111", Justification = "Tests are never trimmed.")]
+    public async Task AwaitsWorkTheHostFinishesLater()
+    {
+        // A promise still pending once the microtasks have run is waited for, not
+        // an error, and what JavaScript does after the await still runs on the
+        // compiler thread, with its stack.
+        var (result, compilerThread) = TailwindCompiler.OnCompilerThread(() =>
+            (TailwindCompiler.Run(
+                engine =>
+                {
+                    engine.SetValue("later", new Func<Task<string>>(async () =>
+                    {
+                        await Task.Delay(200);
+                        return "done";
+                    }));
+                    engine.SetValue("thread", new Func<int>(() => Environment.CurrentManagedThreadId));
+                    return engine.Evaluate("(async () => (await later()) + ':' + thread())()");
+                },
+                TimeSpan.FromSeconds(30),
+                CancellationToken.None),
+            Environment.CurrentManagedThreadId));
+
+        await Assert.That(result.Status).IsEqualTo(CompileStatus.Success);
+        await Assert.That(result.Payload).IsEqualTo($"done:{compilerThread}");
+    }
+
+    [Test]
+    public async Task GivesUpOnAPromiseThatNeverSettles()
+    {
+        var result = TailwindCompiler.Run(
+            engine => engine.Evaluate("new Promise(() => {})"),
+            TimeSpan.FromMilliseconds(300),
+            CancellationToken.None);
+
+        await Assert.That(result.Status).IsEqualTo(CompileStatus.EngineError);
+        await Assert.That(result.Payload).Contains("did not finish");
+    }
+
+    [Test]
+    public async Task StopsAnInfiniteLoopAtTheDeadline()
+    {
+        // A command-line build has no cancellation, so the deadline is all that
+        // keeps a runaway script from hanging it.
+        var result = TailwindCompiler.Run(
+            engine => engine.Evaluate("for (;;) {}"),
+            TimeSpan.FromMilliseconds(300),
+            CancellationToken.None);
+
+        await Assert.That(result.Status).IsEqualTo(CompileStatus.EngineError);
+        await Assert.That(result.Payload).Contains("did not finish");
+    }
+
+    [Test]
+    public async Task StopsWaitingWhenCancelled()
+    {
+        // Cancellation while waiting is still cancellation, not a timeout error.
+        using var cancellation = new CancellationTokenSource(TimeSpan.FromMilliseconds(300));
+
+        await Assert.That(() => TailwindCompiler.Run(
+                engine => engine.Evaluate("new Promise(() => {})"),
+                TimeSpan.FromSeconds(30),
+                cancellation.Token))
+            .Throws<OperationCanceledException>();
     }
 }

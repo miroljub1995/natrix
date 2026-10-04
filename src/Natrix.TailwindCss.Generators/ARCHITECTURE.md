@@ -59,7 +59,7 @@ flowchart LR
 
     PIPE -->|"css, base, candidates"| JS
     JS -.->|"loadStylesheet(id, base)"| PIPE
-    JS -->|"promise, unwrapped"| OUT
+    JS -->|"promise, awaited"| OUT
 ```
 
 The dotted arrow is the load-bearing one. Tailwind calls back into C# for every

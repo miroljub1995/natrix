@@ -3,10 +3,9 @@ import { compile } from "tailwindcss";
 
 // The single entry point the C# host calls.
 //
-// It is `async`, and the host unwraps the returned promise directly. That works
-// because `compile()` only ever awaits `loadStylesheet`, a synchronous host
-// callback: the whole chain is microtasks with no macrotask, and Jint drains them
-// when the host unwraps the promise.
+// It is `async`, and the host awaits the returned promise: Jint runs its pending
+// jobs and waits until it settles, so this may await host work that finishes
+// later. Jint has no timers, though, so nothing here may use `setTimeout`.
 //
 // Everything crosses the boundary as a plain value: strings, an array of
 // candidates, and a host object per resolved import. No JSON in either direction.
