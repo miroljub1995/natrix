@@ -253,11 +253,6 @@ internal sealed class BrowserTestFramework(IServiceProvider serviceProvider)
             TestStates.Failed => new FailedTestNodeStateProperty(exception ?? new BrowserTestException("Exception", testEvent.Explanation ?? "Failed", null), testEvent.Explanation),
             TestStates.Error => new ErrorTestNodeStateProperty(exception ?? new BrowserTestException("Exception", testEvent.Explanation ?? "Error", null), testEvent.Explanation),
             TestStates.Timeout => new TimeoutTestNodeStateProperty(exception ?? new BrowserTestException("Exception", testEvent.Explanation ?? "Timeout", null), testEvent.Explanation),
-            // Relays the state the engine reported; the platform marks it obsolete for frameworks
-            // that originate cancellations, which the bridge does not.
-#pragma warning disable MTP0001
-            TestStates.Cancelled => new CancelledTestNodeStateProperty(exception ?? new BrowserTestException("Exception", testEvent.Explanation ?? "Cancelled", null), testEvent.Explanation),
-#pragma warning restore MTP0001
             _ => DiscoveredTestNodeStateProperty.CachedInstance,
         };
     }

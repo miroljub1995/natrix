@@ -58,7 +58,6 @@ public static class TestStates
     public const string Error = "error";
     public const string Skipped = "skipped";
     public const string Timeout = "timeout";
-    public const string Cancelled = "cancelled";
 }
 
 [JsonSourceGenerationOptions(DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull)]
