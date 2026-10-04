@@ -106,9 +106,9 @@ jobs:
           dotnet pack Natrix.slnx -c Release -o artifacts/nuget
 
       - name: Check package size
-        # Natrix.TailwindCss carries the native V8 library for every supported
-        # build host. nuget.org rejects anything over 250 MB, so fail here rather
-        # than at push time; the fix is per-RID sub-packages.
+        # nuget.org rejects anything over 250 MB, so fail here rather than at
+        # push time. Natrix.TailwindCss used to come close, carrying a native V8
+        # library per build host; since the move to Jint it is about 1 MB.
         if: steps.release_check.outputs.exists != 'true'
         shell: bash
         run: |

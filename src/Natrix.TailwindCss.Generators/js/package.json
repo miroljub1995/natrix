@@ -2,7 +2,7 @@
   "name": "natrix-tailwindcss-bundle",
   "version": "1.0.0",
   "private": true,
-  "description": "Bundles Tailwind CSS into a single plain-JS file executed by ClearScript V8 inside the Natrix source generator.",
+  "description": "Bundles Tailwind CSS into a single plain-JS file executed by Jint inside the Natrix source generator.",
   "type": "module",
   "license": "MIT",
   "scripts": {

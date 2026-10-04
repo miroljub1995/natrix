@@ -2,17 +2,15 @@
 
   <PropertyGroup>
     <!--
-      Where the Tailwind engine, native V8 binaries and Tailwind's own stylesheets
-      live. In the package this file is imported from build/ or buildTransitive/,
-      so the payload sits at ../tools/tailwind/. Projects in this repository that
-      import the file directly set the property themselves.
+      Where Tailwind's own stylesheets live. In the package this file is imported
+      from build/ or buildTransitive/, so they sit at ../tools/tailwindcss/.
+      Projects in this repository that import the file directly set the property
+      themselves.
     -->
-    <NatrixTailwindEngineDir Condition="'$(NatrixTailwindEngineDir)' == ''">$([MSBuild]::NormalizeDirectory('$(MSBuildThisFileDirectory)..', 'tools', 'tailwind'))</NatrixTailwindEngineDir>
+    <NatrixTailwindCssDir Condition="'$(NatrixTailwindCssDir)' == ''">$([MSBuild]::NormalizeDirectory('$(MSBuildThisFileDirectory)..', 'tools', 'tailwindcss'))</NatrixTailwindCssDir>
   </PropertyGroup>
 
   <ItemGroup>
-    <CompilerVisibleProperty Include="NatrixTailwindEngineDir" />
-
     <!--
       The module ids a stylesheet is exported as, comma-separated, so
       `@import "<id>"` resolves to it. Matching is exact: this is an exports list,
@@ -55,13 +53,13 @@
     including metadata belonging to some unrelated analyzer.
   -->
   <ItemGroup>
-    <AdditionalFiles Include="$(NatrixTailwindEngineDir)css\index.css"
+    <AdditionalFiles Include="$(NatrixTailwindCssDir)index.css"
                      TailwindModule="tailwindcss,tailwindcss/index,tailwindcss/index.css" />
-    <AdditionalFiles Include="$(NatrixTailwindEngineDir)css\theme.css"
+    <AdditionalFiles Include="$(NatrixTailwindCssDir)theme.css"
                      TailwindModule="tailwindcss/theme,tailwindcss/theme.css" />
-    <AdditionalFiles Include="$(NatrixTailwindEngineDir)css\preflight.css"
+    <AdditionalFiles Include="$(NatrixTailwindCssDir)preflight.css"
                      TailwindModule="tailwindcss/preflight,tailwindcss/preflight.css" />
-    <AdditionalFiles Include="$(NatrixTailwindEngineDir)css\utilities.css"
+    <AdditionalFiles Include="$(NatrixTailwindCssDir)utilities.css"
                      TailwindModule="tailwindcss/utilities,tailwindcss/utilities.css" />
   </ItemGroup>
 

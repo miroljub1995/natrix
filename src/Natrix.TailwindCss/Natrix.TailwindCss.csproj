@@ -39,16 +39,22 @@
     <NatrixGeneratorOutputDir>..\Natrix.TailwindCss.Generators\bin\$(Configuration)\netstandard2.0</NatrixGeneratorOutputDir>
   </PropertyGroup>
 
-  <!-- The analyzer and the engine contract it casts to. The contract ships here,
-       and only here, so exactly one copy is ever loaded. -->
+  <!--
+    The analyzer and its two dependencies, Jint and its parser Acornima. They sit
+    side by side in analyzers/dotnet/cs, which is where Roslyn looks for an
+    analyzer's dependencies. Natrix.TailwindCss.Generators stages all three in its
+    output.
+  -->
   <ItemGroup>
     <None Include="$(NatrixGeneratorOutputDir)\Natrix.TailwindCss.Generators.dll"
           Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
-    <None Include="$(NatrixGeneratorOutputDir)\Natrix.TailwindCss.Engine.Abstractions.dll"
+    <None Include="$(NatrixGeneratorOutputDir)\Jint.dll"
+          Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(NatrixGeneratorOutputDir)\Acornima.dll"
           Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
   </ItemGroup>
 
-  <!-- Bundle targets so generator runtime path is configured transitively for consumers -->
+  <!-- The targets hand Tailwind's stylesheets to the generator, transitively too. -->
   <ItemGroup>
     <None Include="..\Natrix.TailwindCss.Generators\targets\Natrix.TailwindCss.Generators.targets"
           Pack="true" PackagePath="build/Natrix.TailwindCss.targets" Visible="false" />
@@ -57,32 +63,24 @@
   </ItemGroup>
 
   <!--
-    The Tailwind engine: ClearScript for both compiler-host runtimes, plus the
-    native V8 library per RID. Packed straight from the layout the generator's
-    build already produced, so the tree is defined in one place.
+    Tailwind's own stylesheets, as real files the targets file hands to the
+    generator as AdditionalFiles. Under tools/, not content/, so they never end up
+    in a consumer's output.
 
-    Under tools/ rather than analyzers/ on purpose: NuGet hands every assembly
-    below analyzers/ to Roslyn as an analyzer, which would try to load ClearScript
-    into a compiler that cannot run it.
-  -->
-  <!--
     Globbed inside a target rather than a top-level ItemGroup: on a clean tree the
     generator has not been built when this project is evaluated, and a top-level
-    glob would match nothing and silently produce a package with no engine in it.
-
-    NuGet preserves %(RecursiveDir) under PackagePath on its own; repeating it
-    would nest the tree inside itself.
+    glob would match nothing and silently produce a package without them.
   -->
   <!-- _GetPackageFiles, not GenerateNuspec: the latter runs after package files
        have already been collected, so items added there are silently dropped. -->
-  <Target Name="AddTailwindPayloadToPackage" BeforeTargets="_GetPackageFiles">
+  <Target Name="AddTailwindStylesheetsToPackage" BeforeTargets="_GetPackageFiles">
     <ItemGroup>
-      <None Include="$(NatrixGeneratorOutputDir)\tailwind\**\*"
-            Pack="true" PackagePath="tools/tailwind" Visible="false" />
+      <None Include="$(NatrixGeneratorOutputDir)\tailwindcss\*.css"
+            Pack="true" PackagePath="tools/tailwindcss" Visible="false" />
     </ItemGroup>
 
-    <Error Condition="!Exists('$(NatrixGeneratorOutputDir)\tailwind\engine')"
-           Text="The Tailwind engine payload is missing from $(NatrixGeneratorOutputDir). Build Natrix.TailwindCss.Generators before packing." />
+    <Error Condition="!Exists('$(NatrixGeneratorOutputDir)\tailwindcss\index.css')"
+           Text="Tailwind's stylesheets are missing from $(NatrixGeneratorOutputDir). Build Natrix.TailwindCss.Generators before packing." />
   </Target>
 
 </Project>

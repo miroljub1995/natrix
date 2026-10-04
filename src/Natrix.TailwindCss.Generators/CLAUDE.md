@@ -1,31 +1,28 @@
 # Tailwind CSS Source Generator
 
-Covers five projects that are one subsystem: `Natrix.TailwindCss` (the package),
-`Natrix.TailwindCss.Generators` (this one), `Natrix.TailwindCss.Engine.Abstractions`
-(the contract), `Natrix.TailwindCss.Engine` (the ClearScript bridge) and
-`Natrix.TailwindCss.Tests`. Read this before changing any of them.
-[`ARCHITECTURE.md`](ARCHITECTURE.md) has the same structure as diagrams if you
-prefer to see it.
+Covers three projects that are one subsystem: `Natrix.TailwindCss` (the package),
+`Natrix.TailwindCss.Generators` (this one) and `Natrix.TailwindCss.Tests`. Read
+this before changing any of them. [`ARCHITECTURE.md`](ARCHITECTURE.md) has the
+same structure as diagrams if you prefer to see it.
 
 `[GeneratedTailwindCss("Styles/app.css")]` turns a partial method into the compiled
 Tailwind stylesheet for that entry file. The generator runs the **real Tailwind
-compiler** — the actual JavaScript, bundled by esbuild and executed in a V8 isolate
-via ClearScript — during the build. Consumers need no Node, no CLI and no watcher.
+compiler** — the actual JavaScript, bundled by esbuild — during the build, in
+[Jint](https://github.com/sebastienros/jint), a JavaScript interpreter written in
+.NET. Consumers need no Node, no CLI and no watcher.
 
 ## Projects
 
 | Project | Target frameworks | Role |
 | --- | --- | --- |
-| `Natrix.TailwindCss` | `net9.0;net10.0` | The shipped package. Assembles the analyzer, targets and engine payload, and carries the only runtime code in the subsystem: `HotReload/`, which pushes a regenerated stylesheet into the browser. That is why it — and only it — references `Natrix.Core` and `Natrix.StdWeb`. |
-| `Natrix.TailwindCss.Generators` | `netstandard2.0` | The incremental generator: Roslyn pipeline, stylesheet resolution, embedded Tailwind bundle. |
-| `Natrix.TailwindCss.Engine.Abstractions` | `netstandard2.0` | `ITailwindEngine`, `StylesheetResult` and the two exception types. |
-| `Natrix.TailwindCss.Engine` | `net462;net8.0` | The bridge. The **only** code that names a ClearScript type. Built once per compiler-host runtime. |
-| `Natrix.TailwindCss.Tests` | `net9.0;net10.0` | TUnit + Verify. 70 tests, covering the generator and the package's runtime half. |
+| `Natrix.TailwindCss` | `net9.0;net10.0` | The shipped package. Assembles the analyzer, its two dependencies, the targets and Tailwind's stylesheets, and carries the only runtime code in the subsystem: `HotReload/`, which pushes a regenerated stylesheet into the browser. That is why it — and only it — references `Natrix.Core` and `Natrix.StdWeb`. |
+| `Natrix.TailwindCss.Generators` | `netstandard2.0` | The incremental generator: Roslyn pipeline, stylesheet resolution, embedded Tailwind bundle, and `TailwindCompiler`, which runs the bundle in Jint. |
+| `Natrix.TailwindCss.Tests` | `net9.0;net10.0` | TUnit + Verify. 76 tests, covering the generator and the package's runtime half. |
 
 Plus `src/Natrix.TailwindCss.Generators/js/` — the esbuild bundle sources
 (`tailwindcss` and `esbuild` are the only npm dependencies).
 
-## Why it is split this way
+## Why it is built this way
 
 A source generator does not run in the application's process. It runs inside the
 compiler host, and that host is **not always the same runtime**:
@@ -33,78 +30,106 @@ compiler host, and that host is **not always the same runtime**:
 - `dotnet build`, Rider, VS Code → VBCSCompiler on modern .NET
 - Visual Studio → `devenv.exe` / `MSBuild.exe` on .NET Framework 4.7.x
 
-That is why Roslyn's **RS1041** requires generators to target `netstandard2.0`, and
-it is on by default — not something this repo opted into.
-
-ClearScript has **no `netstandard2.0` asset**, and .NET Framework cannot load its
-`netstandard2.1` one. So the analyzer cannot reference ClearScript in either
-direction. Hence the bridge: built for both host runtimes and reflection-loaded,
-with a public surface of BCL types plus the two contract types
-(`ITailwindEngine.Build` takes `string`, `string[]` and a
-`Func<string, string, StylesheetResult>`). Type identity unifies across the load
-boundary because those contract types come from a single assembly that loads
-exactly once — see the rule below.
+That is why Roslyn's **RS1041** requires generators to target `netstandard2.0`.
+Jint has a `netstandard2.0` build and is pure managed code, so it is an ordinary
+analyzer dependency: referenced directly, shipped beside the analyzer in
+`analyzers/dotnet/cs/`, and the same on every host and platform. There is nothing
+native, nothing per RID, and no reflection boundary. Until October 2026 the engine
+was V8 through ClearScript, which needed all three; see *History* for why it went.
 
 ## Rules that are easy to break
 
-**The analyzer must never reference a ClearScript type.** It references only
-`Natrix.TailwindCss.Engine.Abstractions`; reflection is used exactly once, to
-`Activator.CreateInstance` the engine type and cast it to `ITailwindEngine`.
-Everything after that is a normal interface call. (Before the contract existed
-this needed a `[MethodImpl(MethodImplOptions.NoInlining)]` boundary, because the
-JIT resolves assembly references when it compiles the *method that mentions the
-type*. Naming a ClearScript type in the analyzer would bring that hazard back.)
+**Jint and Acornima ship beside the analyzer, and nothing else does.** The
+generator references both with `PrivateAssets="all"`, so neither flows into a
+consuming app (the browser app would otherwise ship a JavaScript interpreter it
+never calls). Three mechanisms deliver them to Roslyn, one per kind of consumer:
+the package packs both into `analyzers/dotnet/cs/`;
+`GetNatrixAnalyzerDependencyTargetPaths` hands them to an in-repo
+`OutputItemType="Analyzer"` project reference, which otherwise receives only the
+generator itself; and `StageTailwindStylesheets` copies both into the generator's
+`bin/`, which the package packs from. The test project runs the generator
+in-process, so it references Jint itself. Acornima's `netstandard2.0` build also
+needs `System.Memory` and `System.Runtime.CompilerServices.Unsafe`. Those are
+deliberately *not* shipped: every compiler host already has them, because Roslyn
+depends on them, and a second copy beside the analyzer is how binding conflicts
+start. Bump `Jint` and `Acornima` together in `Directory.Packages.props`; Acornima
+must stay at the version Jint depends on.
 
-**Exactly one copy of the contract assembly may ever load.** It ships in
-`analyzers/dotnet/cs/` beside the analyzer and is explicitly excluded from both
-engine flavor directories. A second copy would give `ITailwindEngine` two
-identities and the cast in `TailwindCompiler` would throw `InvalidCastException`.
-The exclusion lives in `StageTailwindPayload`; the packaged-consumer test is what
-proves it end to end.
+**Every compilation runs on its own 16 MB thread under a call-depth limit.** Jint
+interprets on the CLR stack, a few KB per JavaScript frame, and has no stack guard
+of its own. A stack overflow cannot be caught, so in VBCSCompiler it would kill the
+compiler server for every project on the machine. `MaxCallDepth` (256) turns
+runaway recursion into a `TWCSS003` error long before `StackSize` (16 MB) runs out.
+Measured with a deliberately frame-heavy recursion: a limit of 512 overflowed even a
+1.5 MB stack, 256 fit in 1 MB, and 16 MB held 2048. Tailwind 4.3 itself needs a
+depth of 9 and runs on a 64 KB stack. The stack is fixed rather than inherited
+because hosts differ (a Windows thread-pool thread has 1 MB). A new thread per
+compile costs ~45 µs against a ~90 ms compile (a thread-pool hop is ~2 µs). Do not
+move compiles onto the thread pool: its stack size belongs to the compiler host and
+cannot be raised from an analyzer, so the call-depth limit would have to be tuned
+to a stack we cannot see, and getting that wrong kills the compiler server. A
+long-lived worker thread with a queue would save the same ~45 µs at the cost of
+the queue, cross-thread exception plumbing and a thread that lives as long as the
+server.
+`RunawayRecursionIsAnErrorNotAStackOverflow` guards the pair: raise the limit too
+far, or drop the thread, and it crashes the test host rather than passing.
 
-**Each compilation is independent — do not cache the parsed stylesheet.** It is
-tempting, because `compile()` costs roughly 28 ms against 11 ms for `build()`
-warm. It is also wrong: Tailwind's `build()` is incremental and returns the
-*union* of every candidate it has ever seen, so a reused compilation keeps
-emitting classes that were deleted from the source. A previous attempt guarded
-this with a "reuse only while the candidate set grows" check; it worked, but the
-subtlety was not worth the ~28 ms.
+**The parsed bundle is shared; the engine is not.** `Engine.PrepareScript` runs
+once per process, and every compilation gets a fresh `Engine`, executes the
+prepared bundle in it and calls the entry point. Creating the engine and running
+the bundle costs under a millisecond, and a prepared script is safe to share
+between engines and threads. So there is no lock, and concurrent generator runs
+(one per attributed method, or several projects in one server) compile in
+parallel. `CompilesConcurrently` covers it.
 
-**Do not add periodic recycling of the V8 runtime.** It looks prudent and is not:
-measured over 400 consecutive builds the isolate's heap is flat (~31-34 MB used,
-~71-87 MB total), because each build's engine is disposed and `MaxOldSpaceSize`
-caps the rest. The one-time ~830 ms cost is loading the native library, not
-constructing the runtime — a second `V8Runtime` costs ~0 ms — so neither the fear
-nor the cost estimate that motivated it held up.
+**Each compilation is independent — do not cache Tailwind's compiled
+stylesheet.** It is tempting, because `compile()` is most of the cost. It is also
+wrong: Tailwind's `build()` is incremental and returns the *union* of every
+candidate it has ever seen, so a reused compilation keeps emitting classes that
+were deleted from the source. A previous attempt guarded this with a "reuse only
+while the candidate set grows" check; it worked, but the subtlety was not worth
+the cost.
 
-**Nothing crosses the boundary as JSON.** `css`, `base` and the candidate array
-are marshalled directly, and an `@import` is answered with a `StylesheetResult`
-host object read as `result.Error` / `result.Path` in JavaScript. The candidate
-array arrives as a host array, hence `Array.from(candidates)` before handing it
-to Tailwind.
+**One deadline bounds every compilation: Roslyn's token or 30 seconds.**
+`TailwindCompiler.Run` links `spc.CancellationToken` with `Timeout` and hands the
+result to Jint both as the engine's cancellation constraint and as the token the
+promise is awaited with. So an IDE never waits for a compile it no longer needs,
+and a command-line build, which has no cancellation at all, cannot hang on an
+infinite loop or a promise that never settles; it gets `TWCSS003` instead. A
+cancelled token surfaces as `OperationCanceledException`, which is what Roslyn
+expects. Only a timeout becomes `TWCSS003`, because swallowing a cancellation
+would report a spurious error. `StopsAnInfiniteLoopAtTheDeadline`,
+`GivesUpOnAPromiseThatNeverSettles` and `StopsWaitingWhenCancelled` cover the
+three outcomes.
 
-**The entry point is `async` and its promise is converted to a `Task`.**
-`V8ScriptEngineFlags.EnableTaskPromiseConversion` plus `GetAwaiter().GetResult()`
-replaces the old poll-a-state-object loop. Blocking is safe only because nothing
-in the chain needs a macrotask — `compile()` awaits just the synchronous host
-callback, so the promise is already settled when `Invoke` returns. Introducing a
-timer or real I/O into that path would deadlock.
+**Nothing crosses the boundary as JSON.** `css` and `base` are passed as strings,
+the candidates as a real JavaScript array (`JsArray`), and an `@import` is
+answered with a `StylesheetResult` host object read as `result.Error` /
+`result.Path` in JavaScript. `StylesheetResult` carries a failure rather than
+throwing, because a .NET exception thrown inside a callback unwinds through the
+engine instead of becoming a JavaScript error Tailwind can report.
 
-**Never hand-list the engine's assemblies.** `StageTailwindPayload` globs the
-engine's real build output (`CopyLocalLockFileAssemblies=true`). ClearScript's
-`net462` asset needs `Microsoft.Bcl.AsyncInterfaces`, `System.Memory`,
-`System.ValueTuple` and ~11 more facades — 17 assemblies versus 4 for `net8.0`.
-A curated list silently omits one and Visual Studio fails at runtime.
-`ClearScriptLoader` correspondingly resolves *anything* present in the flavor
-directory rather than matching a fixed allowlist.
+**The entry point is `async`, and its promise is genuinely awaited.**
+`UnwrapIfPromise(token)` runs the engine's pending jobs and blocks until the
+promise settles. A promise that is still pending after the microtasks have run is
+waited for, not treated as an error, so if Tailwind (or our entry point) ever
+awaits work the host finishes later, such as a `Task` returned to JavaScript, it
+just works. `AwaitsWorkTheHostFinishesLater` pins this down, including that the
+JavaScript after the `await` resumes on the compiler thread. Use the overload
+that takes a token: the parameterless one gives up after a fixed 10 seconds that
+`Constraints.PromiseTimeout` does not change. Do not switch to
+`UnwrapIfPromiseAsync`: the generator is synchronous, so it would only block on the
+`Task`, and an `await` could resume the engine on a thread-pool thread without the
+16 MB stack. The one kind of async Jint cannot provide is a timer: there is no
+`setTimeout`. A Tailwind that started using one would fail with a `ReferenceError`
+(`TWCSS001`) rather than hang, and would need a timer shim in `shims.js`.
 
-**`HostSettings.AuxiliarySearchPath` is not sufficient** for the native V8 library.
-ClearScript uses it to decide the library exists, then `dlopen`s it by bare name,
-which only ever finds the application directory — i.e. the compiler host. The
-native must be injected via `NativeLibrary.SetDllImportResolver` (`net8.0`) or a
-pre-emptive `LoadLibrary` (`net462`). See `NativeV8Loader`. This is why the modern
-flavor is `net8.0` rather than `netstandard2.1`: that API does not exist in
-netstandard.
+**The bundle targets ES2022, and Jint is not V8.** Every Verify snapshot was
+byte-identical when the engine moved from V8 to Jint, but Jint is an independent
+ECMAScript implementation, and Tailwind leans hard on regular expressions, which
+Jint translates to .NET ones. A Tailwind upgrade can reach a corner Jint handles
+differently. The snapshots are the guard, and `CompilesCssThroughJint` keeps an
+engine failure from masquerading as a Tailwind one.
 
 **Combining `AnalyzerConfigOptionsProvider` into the per-file pipeline is safe
 only because the `Select` projects to an equatable value.** That provider has no
@@ -123,7 +148,7 @@ out unequal and the expensive Tailwind compile re-runs on every keystroke.
 breaks caching; use the `LocationInfo` record and rebuild via `Location.Create`.
 
 **Tailwind's own stylesheets are not special-cased.** They ship as real files in
-`tools/tailwind/css/`, and the targets file hands them to the generator as
+`tools/tailwindcss/`, and the targets file hands them to the generator as
 `AdditionalFiles` carrying `TailwindModule` metadata. Nothing in the resolver
 mentions Tailwind; any CSS package is exposed the same way. Only the JavaScript
 bundle is still an embedded resource.
@@ -188,7 +213,9 @@ bin/obj, wwwroot and tooling caches out without maintaining an exclusion list.
 
 **Stylesheet resolution must never touch the filesystem.** Every import is answered
 from the `AdditionalFiles` snapshot Roslyn supplied. That is exactly what makes
-editing a `.css` file re-run generation, and it keeps RS1035 honest.
+editing a `.css` file re-run generation. The generator touches no files at all,
+so RS1035 (no file I/O in analyzers) is enforced, not suppressed — keep it that
+way.
 
 **The pipeline carries every `.css` file; only imported ones reach the output.**
 All of them are read into memory and held in the `Stylesheets` step, while
@@ -203,35 +230,24 @@ the project would make every keystroke pay for it.
 ### MSBuild specifics
 
 **Globs over generated output belong inside a target, not a top-level `ItemGroup`.**
-On a clean tree the engine has not been built when the project is evaluated, so a
-top-level glob matches nothing and silently produces an empty payload. Both
-`StageTailwindPayload` and `AddTailwindPayloadToPackage` glob at execution time and
-`Error` if the result is empty.
+On a clean tree the bundle has not been built when the project is evaluated, so a
+top-level glob matches nothing and silently produces an empty result. Both
+`StageTailwindStylesheets` and `AddTailwindStylesheetsToPackage` glob at execution
+time and `Error` if the result is empty.
 
 **The pack hook is `BeforeTargets="_GetPackageFiles"`**, not `GenerateNuspec` —
 the latter runs *after* package files have been collected, so items added there are
-dropped and you get a package with no engine in it.
+dropped and you get a package without Tailwind's stylesheets.
 
-**Central Package Management does not cover `PackageDownload`.** Its version must be
-literal, so `$(ClearScriptVersion)` in `Directory.Packages.props` is the source of
-truth and the `PackageVersion` entry consumes it. The reverse is not expressible:
-MSBuild evaluates *every property before any item*, so a property can never read
-`@(PackageVersion)`.
+**Staging uses `Copy`, not `None` with `CopyToOutputDirectory`**, which would flow
+transitively into every referencing project's output. `StageTailwindStylesheets`
+is also guarded on `'$(TargetFramework)' != ''`, because the cross-targeting outer
+build leaves `$(OutDir)` empty and would drop the files into the source tree.
 
-**The engine is built via an `MSBuild` task, not a `ProjectReference`**, because both
-TFMs are needed and a `ProjectReference` resolves exactly one. The `Restore` call
-passes `RemoveProperties="TargetFramework"` — otherwise this project's TFM flows in
-as a global property and ClearScript is resolved against `netstandard2.0`.
-
-**Payload staging uses `Copy`, not `None` with `CopyToOutputDirectory`**, which would
-flow transitively into every referencing project's output — a quarter of a gigabyte
-each time. `StageTailwindPayload` is also guarded on `'$(TargetFramework)' != ''`,
-because the cross-targeting outer build leaves `$(OutDir)` empty and would drop the
-payload into the source tree.
-
-**The engine payload lives under `tools/`, never `analyzers/`.** NuGet hands every
-assembly below `analyzers/` to Roslyn as an analyzer, which would try to load
-ClearScript into a compiler that cannot run it.
+**Tailwind's stylesheets ship under `tools/tailwindcss/`**, not `content/` or
+`contentFiles/`, so they never land in a consumer's output. The targets file points
+`NatrixTailwindCssDir` there; in-repo consumers set it to the generator's
+`bin/<Configuration>/netstandard2.0/tailwindcss/`.
 
 ## Building
 
@@ -244,10 +260,9 @@ version.
 To bump Tailwind: change the version in `js/package.json`, run `npm install` to
 refresh the lockfile, commit the lockfile. The next build reinstalls and rebundles.
 The Verify snapshots embed the version banner (`/*! tailwindcss v4.3.0 */`), so they
-will fail until re-accepted — that is intended, it puts the upgrade in review.
-
-Shipped build-host RIDs: `osx-arm64`, `osx-x64`, `linux-arm64`, `linux-x64`,
-`win-x64`, `win-arm64`. Anything else gets a `TWCSS003` diagnostic.
+will fail until re-accepted — that is intended, it puts the upgrade in review. Read
+any other snapshot difference as a possible Jint incompatibility, not just a
+Tailwind change.
 
 ## Diagnostics
 
@@ -255,7 +270,7 @@ Shipped build-host RIDs: `osx-arm64`, `osx-x64`, `linux-arm64`, `linux-x64`,
 | --- | --- |
 | `TWCSS001` | Tailwind rejected the stylesheet — syntax error, unresolved `@import`, or `@plugin`/`@config` |
 | `TWCSS002` | Entry stylesheet not among the project's stylesheets |
-| `TWCSS003` | The engine could not start on this build host |
+| `TWCSS003` | The JavaScript engine failed — the bundle did not parse, or the call-depth limit was hit |
 | `TWCSS004` | `@source` ignored; candidates come from string literals |
 | `TWCSS005` | The annotated method must be `partial`, return `string`, take no parameters |
 
@@ -267,24 +282,43 @@ when writing tests or docs: a class list embedded in markup
 (`"""<div class="flex">"""`) yields `class="flex`, not `flex`, so class lists want
 their own literal; and names assembled at runtime (`"p-" + size`) cannot be seen.
 
-## Already evaluated — do not redo
+## History — do not redo
 
-**Hosting ClearScript in a NativeAOT library** with `[UnmanagedCallersOnly]` exports,
-P/Invoked from the analyzer. It *works*, including marshalling the host delegate.
-Rejected because NativeAOT cannot cross-compile (six RIDs would need a three-OS CI
-matrix and no single machine could produce a package), the AOT library *adds to*
-rather than replaces the 34 MB native, and ILC reports an `IL3054` generic-recursion
-abort in ClearScript's `V8FastProxy` types.
+**V8 through ClearScript, replaced by Jint in October 2026.** The generator used to
+run the bundle in V8. ClearScript has no `netstandard2.0` asset, so that took a
+separate bridge assembly built for `net462` and `net8.0`, reflection-loaded from a
+payload directory, a contract assembly that had to load exactly once, a native
+library per RID injected through `NativeLibrary.SetDllImportResolver`, and a
+package of roughly a quarter of a gigabyte. The breaking point was a compiler-server
+hang. VBCSCompiler is shared by every worktree and configuration, and Roslyn loads
+each analyzer path into its own load context, so each copy loaded its own V8
+native. On macOS the second one wedged the server permanently. The dylib exports
+~5,900 weak `v8::` symbols, dyld binds weak definitions to the first image that
+provides them, so the second copy ran partly on the first copy's code, faulted, and
+the CLR re-dispatched the fault forever. One copy survived 60 builds; the first
+build that loaded a second copy hung, every time. Making the engine process-wide
+fixed it but added a cross-version contract between analyzer copies. Jint removes
+the whole class of problem. Measured on the docs app (440 candidates) before
+switching: byte-identical output; cold start about equal (~1.2 s, Jint warm-up and
+parse versus native load); warm builds ~90–100 ms on Jint versus ~13–17 ms on V8.
+The ~80 ms per recompile was judged worth deleting the bridge, the payload and
+every native-loading rule. Going back to V8 means solving one-native-per-process
+first.
 
-**Multi-targeting the analyzer** (`net462;net8.0`) with `@(Analyzer)` injected from
-the targets file by `$(MSBuildRuntimeType)`. Possible — NuGet's
-`analyzers/{framework}/{language}` path only accepts `dotnet`, so the convention
-cannot select per host — but it trades a tested loader for an unverified assumption
-that `$(MSBuildRuntimeType)` tracks the compiler host's runtime.
+**Hosting ClearScript in a NativeAOT library** was evaluated while V8 was still the
+engine, and rejected: NativeAOT cannot cross-compile, the AOT library added to the
+34 MB native rather than replacing it, and ILC aborted on ClearScript's generic
+recursion (`IL3054`). It is moot now.
 
 ## Unverified
 
-The `net462` flavor is built, packaged and complete, but has not been exercised on a
-real .NET Framework compiler host. **Visual Studio and Rider on Windows are the gap.**
-If the assembly-loading shim ever misbehaves there, that is the trigger to revisit
-the alternatives above.
+**A .NET Framework compiler host (Visual Studio, Rider on Windows) has not run the
+generator.** Jint's `netstandard2.0` build should load there like any analyzer
+dependency, with `System.Memory` and `System.Runtime.CompilerServices.Unsafe`
+coming from the host, but nobody has watched it happen. If those two ever fail to
+bind there, shipping them beside the analyzer is the first thing to try.
+
+**Large applications.** The ~90 ms figure is for 440 candidates. `build()` grows
+with the candidate count, and a project with thousands of distinct string tokens
+has not been measured. In an IDE that cost is paid whenever a string literal
+changes.
