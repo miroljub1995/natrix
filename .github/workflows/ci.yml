@@ -36,9 +36,9 @@ concurrency:
 
 jobs:
   tests:
-    # The name is what branch protection requires; keep it stable. It still
-    # carries "(ubuntu-latest)" from when there was one job per OS.
-    name: Tests (ubuntu-latest)
+    # The name is the check the "CI" ruleset requires; renaming the job means
+    # updating the ruleset too.
+    name: Tests
     if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     # Linux only. `dotnet test` on the solution builds every project, so there is
