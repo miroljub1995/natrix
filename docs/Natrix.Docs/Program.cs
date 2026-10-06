@@ -1,3 +1,4 @@
+using System.Security;
 using System.Text;
 using System.Text.Json;
 using Microsoft.AspNetCore.Http.Json;
@@ -14,6 +15,8 @@ using Natrix.Ssr.Features.HydrationState;
 using Natrix.Core.Features.Routing;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.RenderRoot;
+using Natrix.Docs.Client;
+using Natrix.Docs.Client.Components;
 using Natrix.Docs.Client.Components.Examples.DataFetching;
 using Natrix.Docs.Components;
 using Natrix.Docs.Contracts;
@@ -34,6 +37,31 @@ builder.Services.ConfigureHttpJsonOptions(options =>
 var app = builder.Build();
 
 app.MapStaticAssets();
+
+app.MapGet("/robots.txt", () => Results.Text(
+    $"""
+    User-agent: *
+    Disallow: /api/
+
+    Sitemap: {Site.Origin}/sitemap.xml
+
+    """,
+    "text/plain; charset=utf-8"));
+
+app.MapGet("/sitemap.xml", () =>
+{
+    var sitemap = new StringBuilder();
+    sitemap.AppendLine("""<?xml version="1.0" encoding="UTF-8"?>""");
+    sitemap.AppendLine("""<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">""");
+    foreach (var path in Site.Paths)
+    {
+        sitemap.AppendLine($"  <url><loc>{SecurityElement.Escape(Site.CanonicalUrl(path))}</loc></url>");
+    }
+
+    sitemap.AppendLine("</urlset>");
+
+    return Results.Text(sitemap.ToString(), "application/xml; charset=utf-8");
+});
 
 // The endpoint the data fetching example reads, deliberately slow enough that the loading and
 // revalidating states are visible.
@@ -84,6 +112,7 @@ app.MapFallback(httpContext => SsrEventLoop.RunAsync(async () =>
     var navigation = new ServerNavigationFeature(requestPath);
     var root = new SsrRenderRoot();
     var prefetch = new ServerPrefetchFeature(httpContext.RequestAborted);
+    var status = new PageStatus();
 
     using var _ = new NatrixHostBuilder()
         .UseRootRenderer(root)
@@ -100,6 +129,7 @@ app.MapFallback(httpContext => SsrEventLoop.RunAsync(async () =>
         .SetFeature<IServerHydrationStateFeature>(new ServerHydrationStateFeature())
         .SetFeature<INavigationFeature>(navigation)
         .SetFeature(httpContext)
+        .SetFeature(status)
         .UseRootComponent(() => new DocsPage { Props = new DocsPageProps() })
         .Build()
         .Mount();
@@ -112,7 +142,8 @@ app.MapFallback(httpContext => SsrEventLoop.RunAsync(async () =>
         return;
     }
 
-    httpContext.Response.Headers.ContentType = "text/html";
+    httpContext.Response.StatusCode = status.StatusCode.Value;
+    httpContext.Response.Headers.ContentType = "text/html; charset=utf-8";
     await httpContext.Response.BodyWriter.WriteAsync(Encoding.UTF8.GetBytes("<!DOCTYPE html>"));
     await root.WriteAsync(httpContext.Response.BodyWriter, cancellationToken: httpContext.RequestAborted);
     await httpContext.Response.BodyWriter.FlushAsync(httpContext.RequestAborted);

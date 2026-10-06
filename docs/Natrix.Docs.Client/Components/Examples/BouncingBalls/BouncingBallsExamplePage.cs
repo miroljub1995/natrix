@@ -18,6 +18,7 @@ public class BouncingBallsExamplePage : BaseComponent<NoProps, NoEvents, NoSlots
                     Title = "Canvas".ToConstSignal(),
                     Id = "canvas-example".ToConstSignal(),
                     Description = "A bouncing balls animation showing how to reach the raw Canvas API through a component Ref, and how to drive requestAnimationFrame from OnMounted while cleaning it up on unmount. The simulation lives in a plain class so it stays testable and platform independent.".ToConstSignal(),
+                    MetaDescription = "Drive the HTML Canvas API from C# with Natrix: bouncing balls drawn through a component ref, animated with requestAnimationFrame, cleaned up on unmount.".ToConstSignal(),
                     GitHubUrl = "https://github.com/miroljub1995/natrix/tree/main/docs/Natrix.Docs.Client/Components/Examples/BouncingBalls".ToConstSignal(),
                 },
                 Slots = new ExamplePageSlots

@@ -1,5 +1,7 @@
 using Natrix.Composables.Dom.Head;
 using Natrix.Core.Components;
+using Natrix.Core.Features;
+using Natrix.Core.Features.Routing;
 using Natrix.Dom.Components;
 using Natrix.Ssr.Features.HydrationState;
 using Natrix.Ssr.HotReload;
@@ -17,9 +19,40 @@ public class DocsPageProps
 
 public class DocsPage : BaseComponent<DocsPageProps, NoEvents, NoSlots, NoExpose>
 {
+    // Tells search engines what the site is, and that it is about an open-source C# library,
+    // which they can show as a rich result. The same on every page.
+    private static readonly string StructuredData = $$"""
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "{{Site.Origin}}/#website",
+              "name": "{{Site.Name}}",
+              "url": "{{Site.Origin}}/",
+              "description": "{{Site.Description}}",
+              "inLanguage": "en"
+            },
+            {
+              "@type": "SoftwareSourceCode",
+              "name": "{{Site.Name}}",
+              "description": "{{Site.Description}}",
+              "url": "{{Site.Origin}}/",
+              "codeRepository": "https://github.com/miroljub1995/natrix",
+              "programmingLanguage": "C#",
+              "runtimePlatform": ".NET",
+              "license": "https://opensource.org/licenses/MIT"
+            }
+          ]
+        }
+        """;
+
     protected override IComponent[] Setup(out NoExpose exposed)
     {
         exposed = default;
+
+        var navigation = AppFeatures.Features.GetRequired<INavigationFeature>();
+        var status = AppFeatures.Features.GetRequired<PageStatus>();
 
         return
         [
@@ -49,16 +82,25 @@ public class DocsPage : BaseComponent<DocsPageProps, NoEvents, NoSlots, NoExpose
                                     Content = "width=device-width, initial-scale=1".ToConstSignal(),
                                 },
                             },
-                            new Meta
-                            {
-                                Props = new MetaProps
-                                {
-                                    Name = "description".ToConstSignal(),
-                                    Content = "Natrix is a .NET WebAssembly toolkit for building browser applications in C#, with reactive signals, generated Web API bindings and server-side rendering.".ToConstSignal(),
-                                },
-                            },
-                            // The title the page's components set with UseHead.
+                            // The title, description and Open Graph tags the page's components set
+                            // with UseHead.
                             new HeadTags { Props = new NoProps() },
+                            // Only for a page that exists: a 404 has no URL to be known by.
+                            new If
+                            {
+                                Condition = new Computed<bool>(() => status.StatusCode.Value == 200),
+                                Then = () =>
+                                [
+                                    new Link
+                                    {
+                                        Props = new LinkProps
+                                        {
+                                            Rel = "canonical".ToConstSignal(),
+                                            Href = new Computed<string>(() => Site.CanonicalUrl(navigation.CurrentPath.Value)),
+                                        },
+                                    },
+                                ],
+                            },
                             new Link
                             {
                                 Props = new LinkProps
@@ -67,6 +109,19 @@ public class DocsPage : BaseComponent<DocsPageProps, NoEvents, NoSlots, NoExpose
                                     Type = "image/svg+xml".ToConstSignal(),
                                     Href = WwwRoot.Assets_Icon_Svg.ToConstSignal(),
                                 },
+                            },
+                            new Link
+                            {
+                                Props = new LinkProps
+                                {
+                                    Rel = "apple-touch-icon".ToConstSignal(),
+                                    Href = WwwRoot.Assets_Apple_Touch_Icon_Png.ToConstSignal(),
+                                },
+                            },
+                            new Script
+                            {
+                                Props = new ScriptProps { Type = "application/ld+json".ToConstSignal() },
+                                Children = [new DomText { Text = StructuredData.ToConstSignal() }],
                             },
                             new MainScript(),
                             new HydrationStateScript(),

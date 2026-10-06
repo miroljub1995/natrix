@@ -1,8 +1,6 @@
-using Natrix.Composables.Dom.Head;
 using Natrix.Core.Components;
 using Natrix.Dom.Components;
 using Natrix.Signals;
-using static Natrix.Composables.Dom.DomComposables;
 
 namespace Natrix.Docs.Client.Components;
 
@@ -11,6 +9,12 @@ public class ExamplePageProps
     public required IReadOnlySignal<string> Title { get; init; }
     public required IReadOnlySignal<string> Id { get; init; }
     public required IReadOnlySignal<string> Description { get; init; }
+
+    /// <summary>
+    /// What search results show for the page — shorter than <see cref="Description"/>, about 155
+    /// characters at most.
+    /// </summary>
+    public required IReadOnlySignal<string> MetaDescription { get; init; }
     public required IReadOnlySignal<string> GitHubUrl { get; init; }
 }
 
@@ -25,7 +29,7 @@ public class ExamplePage : BaseComponent<ExamplePageProps, NoEvents, ExamplePage
     {
         exposed = default;
 
-        UseHead(new HeadInput { Title = Props.Title });
+        Site.UsePageHead(Props.Title, Props.MetaDescription);
 
         return
         [

@@ -18,6 +18,7 @@ public class TodoExamplePage : BaseComponent<NoProps, NoEvents, NoSlots, NoExpos
                     Title = "Todo List".ToConstSignal(),
                     Id = "todo-example".ToConstSignal(),
                     Description = "An interactive todo list split into small reusable components. It shows reactive state with Signal, keyed list rendering with ForEach, conditional rendering with If, and how a child component reports back through generated events.".ToConstSignal(),
+                    MetaDescription = "A todo list in C# with Natrix: reactive state with signals, keyed list rendering with ForEach, conditional rendering and typed component events.".ToConstSignal(),
                     GitHubUrl = "https://github.com/miroljub1995/natrix/tree/main/docs/Natrix.Docs.Client/Components/Examples/Todo".ToConstSignal(),
                 },
                 Slots = new ExamplePageSlots

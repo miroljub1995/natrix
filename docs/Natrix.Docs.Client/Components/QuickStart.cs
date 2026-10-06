@@ -1,8 +1,6 @@
-using Natrix.Composables.Dom.Head;
 using Natrix.Core.Components;
 using Natrix.Dom.Components;
 using Natrix.Signals;
-using static Natrix.Composables.Dom.DomComposables;
 
 namespace Natrix.Docs.Client.Components;
 
@@ -14,7 +12,10 @@ public class QuickStart : BaseComponent<QuickStartProps, NoEvents, NoSlots, NoEx
     {
         exposed = default;
 
-        UseHead(new HeadInput { Title = "Quick Start".ToConstSignal() });
+        Site.UsePageHead(
+            "Quick Start",
+            "Create your first Natrix app: install the wasm-tools workload and the Natrix templates, "
+            + "then scaffold a C# WebAssembly app with server-side rendering.");
 
         return
         [
@@ -56,7 +57,7 @@ public class QuickStart : BaseComponent<QuickStartProps, NoEvents, NoSlots, NoEx
                             {
                                 Class = "mb-4 text-gray-600 dark:text-white".ToConstSignal(),
                             },
-                            Children = [new DomText { Text = "In this section we will introduce you to scaffold an Natrix application on your local machine.".ToConstSignal() }],
+                            Children = [new DomText { Text = "This section walks you through scaffolding a Natrix application and running it on your local machine.".ToConstSignal() }],
                         },
                         new Prerequisites
                         {

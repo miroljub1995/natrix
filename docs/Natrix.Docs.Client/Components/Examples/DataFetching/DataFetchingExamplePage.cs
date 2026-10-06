@@ -27,6 +27,7 @@ public class DataFetchingExamplePage : BaseComponent<NoProps, NoEvents, NoSlots,
                         + "per component and fetches them in parallel; Grace sits in both pairs, so she is "
                         + "fetched once for the two of them. The third card is client-only, left for the "
                         + "browser to load after the page arrives.").ToConstSignal(),
+                    MetaDescription = "Stale-while-revalidate data fetching in C# with Natrix.Swr: prefetched during server-side rendering, with loading, retry and error states in the browser.".ToConstSignal(),
                     GitHubUrl = "https://github.com/miroljub1995/natrix/tree/main/docs/Natrix.Docs.Client/Components/Examples/DataFetching".ToConstSignal(),
                 },
                 Slots = new ExamplePageSlots
