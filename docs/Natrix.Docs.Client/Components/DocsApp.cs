@@ -39,7 +39,7 @@ public class DocsApp : BaseComponent<DocsAppProps, NoEvents, NoSlots, NoExpose>
                     {
                         Props = new MainProps
                         {
-                            Class = "flex-1 px-4 sm:px-8 py-8".ToConstSignal(),
+                            Class = "min-w-0 flex-1 px-4 sm:px-8 py-8".ToConstSignal(),
                         },
                         Children =
                         [
