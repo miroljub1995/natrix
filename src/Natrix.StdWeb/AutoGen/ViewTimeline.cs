@@ -16,13 +16,6 @@ public partial class ViewTimeline: global::Natrix.StdWeb.ScrollTimeline, global:
         global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<ViewTimeline>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
-    public static global::Natrix.StdWeb.ViewTimeline New()
-    {
-        global::System.Runtime.InteropServices.JavaScript.JSObject ___res_2 = global::Natrix.JSCore.Extensions.JSConstructorExtensions.ConstructObjectEmpty(global::System.Runtime.InteropServices.JavaScript.JSHost.GlobalThis, "ViewTimeline");
-        return new global::Natrix.StdWeb.ViewTimeline(___res_2);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatformAttribute("browser")]
     public static global::Natrix.StdWeb.ViewTimeline New(global::Natrix.StdWeb.ViewTimelineOptions options)
     {
         int ___argsArrayLength_3 = 1;

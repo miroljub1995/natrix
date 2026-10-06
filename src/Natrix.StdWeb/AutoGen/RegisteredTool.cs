@@ -45,10 +45,10 @@ public partial class RegisteredTool: global::Natrix.JSCore.JSObjectProxy, global
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public string InputSchema
+    public global::System.Runtime.InteropServices.JavaScript.JSObject InputSchema
     {
-        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "inputSchema");
-        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "inputSchema", value);
+        get => global::Natrix.JSCore.Generics.JSObjectAccessor.Get(JSObject, "inputSchema");
+        set => global::Natrix.JSCore.Generics.JSObjectAccessor.Set(JSObject, "inputSchema", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

@@ -28,6 +28,12 @@ public partial class ShadowRoot: global::Natrix.StdWeb.DocumentFragment, global:
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool Serializable
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "serializable");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.SlotAssignmentMode SlotAssignment
     {
         get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.SlotAssignmentMode>.Get(JSObject, "slotAssignment");
@@ -37,12 +43,6 @@ public partial class ShadowRoot: global::Natrix.StdWeb.DocumentFragment, global:
     public bool Clonable
     {
         get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "clonable");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool Serializable
-    {
-        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "serializable");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

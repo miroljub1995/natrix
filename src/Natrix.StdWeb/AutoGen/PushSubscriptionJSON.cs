@@ -38,10 +38,10 @@ public partial class PushSubscriptionJSON: global::Natrix.JSCore.JSObjectProxy, 
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.JSCore.Generics.Record<string, global::Natrix.JSCore.Generics.StringAccessor> Keys
+    public global::Natrix.StdWeb.PushSubscriptionKeys Keys
     {
-        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.JSCore.Generics.StringAccessor>>.Get(JSObject, "keys");
-        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.Record<string, global::Natrix.JSCore.Generics.StringAccessor>>.Set(JSObject, "keys", value);
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PushSubscriptionKeys>.Get(JSObject, "keys");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.PushSubscriptionKeys>.Set(JSObject, "keys", value);
     }
 }
 

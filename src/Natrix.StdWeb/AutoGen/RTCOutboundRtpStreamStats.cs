@@ -94,13 +94,6 @@ public partial class RTCOutboundRtpStreamStats: global::Natrix.StdWeb.RTCSentRtp
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public ulong TotalEncodedBytesTarget
-    {
-        get => global::Natrix.JSCore.Generics.UInt64Accessor.Get(JSObject, "totalEncodedBytesTarget");
-        set => global::Natrix.JSCore.Generics.UInt64Accessor.Set(JSObject, "totalEncodedBytesTarget", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public uint FrameWidth
     {
         get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "frameWidth");

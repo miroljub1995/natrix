@@ -85,6 +85,13 @@ public partial class SanitizerConfig: global::Natrix.JSCore.JSObjectProxy, globa
         get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "dataAttributes");
         set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "dataAttributes", value);
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool JavascriptURLs
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "javascriptURLs");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "javascriptURLs", value);
+    }
 }
 
 #nullable disable

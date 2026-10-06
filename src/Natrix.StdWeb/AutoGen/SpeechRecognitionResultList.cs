@@ -22,7 +22,7 @@ public partial class SpeechRecognitionResultList: global::Natrix.JSCore.JSObject
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.SpeechRecognitionResult Item(uint index)
+    public global::Natrix.StdWeb.SpeechRecognitionResult? Item(uint index)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -38,7 +38,7 @@ public partial class SpeechRecognitionResultList: global::Natrix.JSCore.JSObject
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "item", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechRecognitionResult>.Get(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.SpeechRecognitionResult>.Get(___resOwner_1.JSObject, "value");
     }
 }
 

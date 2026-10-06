@@ -29,7 +29,7 @@ public partial class SpeechGrammarList: global::Natrix.JSCore.JSObjectProxy, glo
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.SpeechGrammar Item(uint index)
+    public global::Natrix.StdWeb.SpeechGrammar? Item(uint index)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -45,11 +45,11 @@ public partial class SpeechGrammarList: global::Natrix.JSCore.JSObjectProxy, glo
         global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyNonVoidFunctionProperty(JSObject, "item", JSObject, ___argsArray_0.JSObject, ___resOwner_1.JSObject);
 
         // Return Value
-        return global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SpeechGrammar>.Get(___resOwner_1.JSObject, "value");
+        return global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.SpeechGrammar>.Get(___resOwner_1.JSObject, "value");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void AddFromURI(string src)
+    public void AddFromUri(string src)
     {
         int ___argsArrayLength_2 = 1;
 
@@ -60,11 +60,11 @@ public partial class SpeechGrammarList: global::Natrix.JSCore.JSObjectProxy, glo
         ___marshalledValue_3 = src;
         global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsStringV2(___argsArray_0.JSObject, 0, ___marshalledValue_3);
 
-        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "addFromURI", JSObject, ___argsArray_0.JSObject);
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "addFromUri", JSObject, ___argsArray_0.JSObject);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public void AddFromURI(string src, float weight)
+    public void AddFromUri(string src, float weight)
     {
         int ___argsArrayLength_2 = 2;
 
@@ -80,7 +80,7 @@ public partial class SpeechGrammarList: global::Natrix.JSCore.JSObjectProxy, glo
         ___marshalledValue_4 = Convert.ToDouble(weight);
         global::Natrix.JSCore.Extensions.JSObjectPropertyExtensions.SetPropertyAsDoubleV2(___argsArray_0.JSObject, 1, ___marshalledValue_4);
 
-        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "addFromURI", JSObject, ___argsArray_0.JSObject);
+        global::Natrix.JSCore.Extensions.JSFunctionExtensions.CallNonEmptyVoidFunctionProperty(JSObject, "addFromUri", JSObject, ___argsArray_0.JSObject);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

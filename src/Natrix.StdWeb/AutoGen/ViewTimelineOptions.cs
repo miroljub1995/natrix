@@ -24,7 +24,7 @@ public partial class ViewTimelineOptions: global::Natrix.JSCore.JSObjectProxy, g
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.Element Subject
+    public required global::Natrix.StdWeb.Element Subject
     {
         get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>.Get(JSObject, "subject");
         set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Element>.Set(JSObject, "subject", value);

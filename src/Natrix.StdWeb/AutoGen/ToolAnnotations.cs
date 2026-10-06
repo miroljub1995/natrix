@@ -36,6 +36,20 @@ public partial class ToolAnnotations: global::Natrix.JSCore.JSObjectProxy, globa
         get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "untrustedContentHint");
         set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "untrustedContentHint", value);
     }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool ConsequentialHint
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "consequentialHint");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "consequentialHint", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool Debugging
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "debugging");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "debugging", value);
+    }
 }
 
 #nullable disable
