@@ -10,8 +10,8 @@ and serves `docs/Natrix.Docs.Client` (a WebAssembly app) which then hydrates
 it. Most of the framework — Signals, SSR, hydration, SWR, Tailwind — shows up
 here, so it is the place to see a framework change working end to end.
 
-Routes: `/`, `/quick-start`, `/examples/todo`, `/examples/canvas`,
-`/examples/data-fetching`. API: `/api/users/{id}` (ids: `ada`, `grace`,
+Routes: `/`, `/docs/quick-start`, `/docs/examples/todo`,
+`/docs/examples/canvas`, `/docs/examples/data-fetching`. API: `/api/users/{id}` (ids: `ada`, `grace`,
 `linus`, `alan`, `margaret`; 500 ms delay) and `/api/failing/users/{id}`
 (always 503).
 
@@ -62,7 +62,7 @@ for i in $(seq 1 60); do curl -sf -o /dev/null https://localhost:5100/ && break;
 
 ```bash
 curl -s -o /dev/null -w '%{http_code}\n' https://localhost:5100/
-curl -s https://localhost:5100/examples/data-fetching | grep -c 'Ada Lovelace'
+curl -s https://localhost:5100/docs/examples/data-fetching | grep -c 'Ada Lovelace'
 curl -s https://localhost:5100/api/users/ada
 ```
 
@@ -75,7 +75,7 @@ into the HTML), and `{"name":"Ada Lovelace",...}`. The page `<title>` is
 SSR output looks complete before the client is live, so **a page that renders
 is not proof the WASM side works** — interact with it.
 
-Open `https://localhost:5100/examples/todo` in the built-in browser. A Debug
+Open `https://localhost:5100/docs/examples/todo` in the built-in browser. A Debug
 build downloads ~200 `_framework/*` files, so input for the first few seconds
 lands on inert SSR markup and is silently ignored. Wait until
 `typeof globalThis.getDotnetRuntime === 'function'` (via `javascript_tool`),
@@ -86,7 +86,7 @@ or just wait ~5 s, then:
    check `read_console_messages` and `read_network_requests` for a failed
    `_framework/` load.
 
-For data fetching, open `/examples/data-fetching` and switch users in the
+For data fetching, open `/docs/examples/data-fetching` and switch users in the
 picker; the card shows a loading state for ~500 ms, then the profile.
 
 ## 5. Stop
