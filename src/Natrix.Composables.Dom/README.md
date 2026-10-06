@@ -21,7 +21,7 @@ server render.
 
 ## UseHead
 
-Sets the document title from the components that are mounted, on the server and in the browser —
+Sets the document title and meta tags from the components that are mounted, on the server and in the browser —
 the equivalent of unhead's `useHead`, which VueUse builds on.
 
 ### Setup
@@ -81,6 +81,47 @@ UseHead(new HeadInput { Title = "Todo".ToConstSignal() });
 UseHead(new HeadInput { Title = "Natrix".ToConstSignal(), TitleTemplate = title => title });
 ```
 
+### Meta tags
+
+`Meta` contributes `<meta>` tags, resolved the way unhead resolves them. Each is identified by
+exactly one of `Name`, `Property` (Open Graph) or `HttpEquiv`, and each key resolves on its own: the
+latest call with non-`null` content for it wins, so a page can replace its layout's description and
+leave the rest alone.
+
+A call can repeat the keys that take a list — `og:image`, `og:video`, `og:audio`, `twitter:image`,
+`article:tag` and the like, plus the structured properties under them (`og:image:width`, …). The
+winning call contributes all of its tags for such a key, replacing an earlier call's list as a whole.
+For any other key a call's last tag counts. Tags are written in the order the winning calls listed
+them, so each `og:image:width` stays after its `og:image`.
+
+```csharp
+// Layout
+UseHead(new HeadInput
+{
+    Meta =
+    [
+        new HeadMeta { Name = "description", Content = "Reactive UIs in .NET".ToConstSignal() },
+        new HeadMeta { Property = "og:site_name", Content = "Natrix".ToConstSignal() },
+    ],
+});
+
+// Page — replaces the description, keeps the site name
+UseHead(new HeadInput
+{
+    Meta =
+    [
+        new HeadMeta { Name = "description", Content = new Computed<string?>(() => todo.Value.Summary) },
+        new HeadMeta { Property = "og:image", Content = "/todo-1.png".ToConstSignal() },
+        new HeadMeta { Property = "og:image:width", Content = "1200".ToConstSignal() },
+        new HeadMeta { Property = "og:image", Content = "/todo-2.png".ToConstSignal() },
+        new HeadMeta { Property = "og:image:width", Content = "800".ToConstSignal() },
+    ],
+});
+```
+
 In the browser, the title the document had when the host mounted is shown while no component sets
-one and put back when the host is disposed. On a server-rendered page that is the title the server
-wrote, so hydrating changes nothing the visitor can see.
+one and put back when the host is disposed. Meta tags work the same way: the tags the
+document already has for a key are reused first and get their content back once no component sets
+it, and tags the head added are removed. If a key resolves to fewer tags than the document had, the
+extra ones lose their `content` until then. On a server-rendered page that is what the server wrote, so hydrating changes nothing the
+visitor can see.

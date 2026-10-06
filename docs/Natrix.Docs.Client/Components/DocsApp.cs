@@ -1,5 +1,6 @@
 using Natrix.Composables.Dom.Head;
 using Natrix.Core.Components;
+using Natrix.Core.Features;
 using Natrix.Dom.Components;
 using Natrix.Core.Features.Routing;
 using Natrix.Docs.Client.Components.Examples.BouncingBalls;
@@ -18,8 +19,36 @@ public class DocsApp : BaseComponent<DocsAppProps, NoEvents, NoSlots, NoExpose>
     {
         exposed = default;
 
-        // Pages set only their own part of the title; the site name is added here, once.
-        UseHead(new HeadInput { TitleTemplate = title => $"{title} · Natrix" });
+        var navigation = AppFeatures.Features.Get<INavigationFeature>()
+            ?? throw new InvalidOperationException("INavigationFeature is not registered.");
+
+        // What every page shares. Pages set only their own part of the title, the site name is
+        // added here, once; a page that sets no description of its own gets the site's.
+        UseHead(new HeadInput
+        {
+            TitleTemplate = title => $"{title} · {Site.Name}",
+            Meta =
+            [
+                new HeadMeta { Name = "description", Content = Site.Description.ToConstSignal() },
+                new HeadMeta { Property = "og:site_name", Content = Site.Name.ToConstSignal() },
+                new HeadMeta { Property = "og:type", Content = "website".ToConstSignal() },
+                new HeadMeta { Property = "og:locale", Content = "en_US".ToConstSignal() },
+                new HeadMeta
+                {
+                    Property = "og:url",
+                    Content = new Computed<string?>(() => Site.CanonicalUrl(navigation.CurrentPath.Value)),
+                },
+                new HeadMeta { Property = "og:title", Content = Site.Name.ToConstSignal() },
+                new HeadMeta { Property = "og:description", Content = Site.Description.ToConstSignal() },
+                new HeadMeta { Property = "og:image", Content = Site.SocialImageUrl.ToConstSignal() },
+                new HeadMeta { Property = "og:image:type", Content = "image/png".ToConstSignal() },
+                new HeadMeta { Property = "og:image:width", Content = "1200".ToConstSignal() },
+                new HeadMeta { Property = "og:image:height", Content = "630".ToConstSignal() },
+                new HeadMeta { Property = "og:image:alt", Content = Site.SocialImageAlt.ToConstSignal() },
+                // X reads the Open Graph tags for everything but the card size.
+                new HeadMeta { Name = "twitter:card", Content = "summary_large_image".ToConstSignal() },
+            ],
+        });
 
         return
         [
@@ -76,6 +105,12 @@ public class DocsApp : BaseComponent<DocsAppProps, NoEvents, NoSlots, NoExpose>
                                     {
                                         Pattern = "/examples/data-fetching",
                                         Render = () => [new DataFetchingExamplePage { Props = new NoProps() }],
+                                    },
+                                    // Last, so it only gets what no page above claims.
+                                    new Route
+                                    {
+                                        Pattern = "/{**path}",
+                                        Render = () => [new NotFoundPage { Props = new NoProps() }],
                                     },
                                 ],
                             },

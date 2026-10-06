@@ -28,12 +28,19 @@ public static partial class DomComposables
     /// </para>
     /// </remarks>
     /// <exception cref="InvalidOperationException">
-    /// Called outside <c>Setup</c>, or the host registered neither <c>UseServerHead</c> nor
-    /// <c>UseClientHead</c>.
+    /// Called outside <c>Setup</c>, the host registered neither <c>UseServerHead</c> nor
+    /// <c>UseClientHead</c>, or a <see cref="HeadMeta"/> does not set exactly one of its
+    /// <c>Name</c>, <c>Property</c> and <c>HttpEquiv</c>.
     /// </exception>
     public static void UseHead(HeadInput input)
     {
         ArgumentNullException.ThrowIfNull(input);
+
+        // Fail at the call, not later while the head resolves.
+        foreach (var meta in input.Meta ?? [])
+        {
+            _ = meta.Key;
+        }
 
         var manager = AppFeatures.Features.GetRequired<HeadManager>();
 

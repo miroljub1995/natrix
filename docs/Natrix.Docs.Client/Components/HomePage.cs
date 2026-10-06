@@ -72,8 +72,12 @@ public class HomePage : BaseComponent<HomePageProps, NoEvents, NoSlots, NoExpose
     {
         exposed = default;
 
-        // The site name on its own, rather than "Natrix · Natrix".
-        UseHead(new HeadInput { Title = "Natrix".ToConstSignal(), TitleTemplate = title => title });
+        // The site name leads, rather than trailing as "… · Natrix".
+        UseHead(new HeadInput { TitleTemplate = title => title });
+        Site.UsePageHead(
+            "Natrix – Reactive web UIs in C# on WebAssembly",
+            "Build reactive web UIs in C#. Natrix runs .NET on WebAssembly, renders on the server "
+            + "first and updates the DOM with fine-grained signals.");
 
         return
         [
