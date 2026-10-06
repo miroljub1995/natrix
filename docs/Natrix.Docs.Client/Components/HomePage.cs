@@ -14,7 +14,6 @@ public class HomePageProps { }
 
 public class HomePage : BaseComponent<HomePageProps, NoEvents, NoSlots, NoExpose>
 {
-    private const string GitHubUrl = "https://github.com/miroljub1995/natrix";
     private const string InstallCommand = "dotnet new install Natrix.Templates";
 
     private const string SectionHeadingClass =
@@ -60,11 +59,11 @@ public class HomePage : BaseComponent<HomePageProps, NoEvents, NoSlots, NoExpose
 
     private static readonly Example[] Examples =
     [
-        new("Todo List", "/examples/todo", "Signals · ForEach · If",
+        new("Todo List", "/docs/examples/todo", "Signals · ForEach · If",
             "State, keyed list rendering, conditional rendering and child components reporting back through generated events."),
-        new("Canvas", "/examples/canvas", "Refs · Canvas API · Lifecycle",
+        new("Canvas", "/docs/examples/canvas", "Refs · Canvas API · Lifecycle",
             "Bouncing balls on the raw Canvas API, driven by requestAnimationFrame and cleaned up when the component unmounts."),
-        new("Data Fetching", "/examples/data-fetching", "SWR · Server prefetch",
+        new("Data Fetching", "/docs/examples/data-fetching", "SWR · Server prefetch",
             "Stale-while-revalidate over a real endpoint: prefetched on the server, with loading, retry and error states."),
     ];
 
@@ -178,7 +177,7 @@ public class HomePage : BaseComponent<HomePageProps, NoEvents, NoSlots, NoExpose
                     {
                         Props = new RouterLinkProps
                         {
-                            Href = "/quick-start",
+                            Href = "/docs/quick-start",
                             Class = "inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg bg-indigo-600 px-6 py-3 font-semibold text-white shadow-lg shadow-indigo-600/25 hover:bg-indigo-500 transition-colors",
                         },
                         Slots = new RouterLinkSlots { Default = () => [Text("Get started  →")] },
@@ -187,7 +186,7 @@ public class HomePage : BaseComponent<HomePageProps, NoEvents, NoSlots, NoExpose
                     {
                         Props = new RouterLinkProps
                         {
-                            Href = "/examples/todo",
+                            Href = "/docs/examples/todo",
                             Class = "inline-flex w-full sm:w-auto items-center justify-center rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-6 py-3 font-semibold text-gray-900 dark:text-white hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors",
                         },
                         Slots = new RouterLinkSlots { Default = () => [Text("See the examples")] },
@@ -196,7 +195,7 @@ public class HomePage : BaseComponent<HomePageProps, NoEvents, NoSlots, NoExpose
                     {
                         Props = new AProps
                         {
-                            Href = GitHubUrl.ToConstSignal(),
+                            Href = Site.GitHubUrl.ToConstSignal(),
                             Class = "inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-lg px-6 py-3 font-semibold text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors".ToConstSignal(),
                         },
                         Children =
@@ -589,7 +588,7 @@ public class HomePage : BaseComponent<HomePageProps, NoEvents, NoSlots, NoExpose
                                             {
                                                 Props = new RouterLinkProps
                                                 {
-                                                    Href = "/quick-start",
+                                                    Href = "/docs/quick-start",
                                                     Class = "inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-gray-950 hover:bg-gray-200 transition-colors",
                                                 },
                                                 Slots = new RouterLinkSlots { Default = () => [Text("Read the Quick Start  →")] },
@@ -598,7 +597,7 @@ public class HomePage : BaseComponent<HomePageProps, NoEvents, NoSlots, NoExpose
                                             {
                                                 Props = new AProps
                                                 {
-                                                    Href = GitHubUrl.ToConstSignal(),
+                                                    Href = Site.GitHubUrl.ToConstSignal(),
                                                     Class = "inline-flex items-center justify-center rounded-lg border border-white/20 px-6 py-3 font-semibold text-white hover:bg-white/10 transition-colors".ToConstSignal(),
                                                 },
                                                 Children = [Text("Browse the source")],

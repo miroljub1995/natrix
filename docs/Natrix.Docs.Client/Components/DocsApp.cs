@@ -19,8 +19,7 @@ public class DocsApp : BaseComponent<DocsAppProps, NoEvents, NoSlots, NoExpose>
     {
         exposed = default;
 
-        var navigation = AppFeatures.Features.Get<INavigationFeature>()
-            ?? throw new InvalidOperationException("INavigationFeature is not registered.");
+        var navigation = AppFeatures.Features.GetRequired<INavigationFeature>();
 
         // What every page shares. Pages set only their own part of the title, the site name is
         // added here, once; a page that sets no description of its own gets the site's.
@@ -60,32 +59,25 @@ public class DocsApp : BaseComponent<DocsAppProps, NoEvents, NoSlots, NoExpose>
             {
                 Props = new DivProps
                 {
-                    Class = "flex min-h-[calc(100vh-4rem)] bg-white dark:bg-gray-950".ToConstSignal(),
+                    Class = "min-h-[calc(100vh-4rem)] bg-white dark:bg-gray-950".ToConstSignal(),
                 },
                 Children =
                 [
-                    new Sidebar
+                    new Routes
                     {
-                        Props = new NoProps(),
-                    },
-                    // Main content
-                    new Main
-                    {
-                        Props = new MainProps
-                        {
-                            Class = "min-w-0 flex-1 px-4 sm:px-8 py-8".ToConstSignal(),
-                        },
-                        Children =
+                        Items =
                         [
-                            new Routes
+                            new Route
                             {
-                                Items =
+                                Pattern = "/",
+                                Render = () => [PageMain(new HomePage { Props = new HomePageProps() })],
+                            },
+                            new Route
+                            {
+                                Pattern = "/docs",
+                                Render = () => [new DocsLayout { Props = new NoProps() }],
+                                Children =
                                 [
-                                    new Route
-                                    {
-                                        Pattern = "/",
-                                        Render = () => [new HomePage { Props = new HomePageProps() }],
-                                    },
                                     new Route
                                     {
                                         Pattern = "/quick-start",
@@ -106,7 +98,7 @@ public class DocsApp : BaseComponent<DocsAppProps, NoEvents, NoSlots, NoExpose>
                                         Pattern = "/examples/data-fetching",
                                         Render = () => [new DataFetchingExamplePage { Props = new NoProps() }],
                                     },
-                                    // Last, so it only gets what no page above claims.
+                                    // A docs path no page claims keeps the sidebar, to find the page it meant.
                                     new Route
                                     {
                                         Pattern = "/{**path}",
@@ -114,10 +106,25 @@ public class DocsApp : BaseComponent<DocsAppProps, NoEvents, NoSlots, NoExpose>
                                     },
                                 ],
                             },
+                            // Last, so it only gets what no page above claims.
+                            new Route
+                            {
+                                Pattern = "/{**path}",
+                                Render = () => [PageMain(new NotFoundPage { Props = new NoProps() })],
+                            },
                         ],
                     },
                 ],
             },
         ];
     }
+
+    private static Main PageMain(IComponent page) => new()
+    {
+        Props = new MainProps
+        {
+            Class = "min-w-0 px-4 sm:px-8 py-8".ToConstSignal(),
+        },
+        Children = [page],
+    };
 }
