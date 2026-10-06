@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Text;
@@ -83,7 +84,7 @@ public class StaticAssetsGeneratorTests
         var compilation = CSharpCompilation.Create(
             assemblyName: assemblyName,
             syntaxTrees: [CSharpSyntaxTree.ParseText(source)],
-            references: [MetadataReference.CreateFromFile(typeof(object).Assembly.Location)],
+            references: [MetadataReference.CreateFromFile(Path.Combine(RuntimeEnvironment.GetRuntimeDirectory(), "System.Private.CoreLib.dll"))],
             options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
 
         var additionalText = new InMemoryAdditionalText(

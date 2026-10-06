@@ -1,10 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <!-- Assembly.Location is fine here: tests never run as a single-file app. -->
-    <WarningsNotAsErrors>$(WarningsNotAsErrors);IL3000</WarningsNotAsErrors>
-  </PropertyGroup>
-
   <!-- The tests used to sit in Natrix.TailwindCss.Generators.Tests and pick the generator's
        types up by parent-namespace lookup. They no longer do. -->
   <ItemGroup>
