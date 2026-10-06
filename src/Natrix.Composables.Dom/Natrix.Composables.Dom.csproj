@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <!-- NuGet Package Configuration -->
+        <IsPackable>true</IsPackable>
+        <PackageId>Natrix.Composables.Dom</PackageId>
+        <Authors>miroljub1995</Authors>
+        <Description>DOM composables for Natrix components, in the spirit of VueUse — starting with UseHead, which manages the document head on the server and in the browser.</Description>
+        <PackageTags>webassembly;wasm;dotnet;composables;head;ssr;reactive;natrix</PackageTags>
+        <PackageProjectUrl>https://github.com/miroljub1995/natrix</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/miroljub1995/natrix</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>icon.png</PackageIcon>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="README.md" Pack="true" PackagePath="\" />
+        <None Include="..\..\icon.png" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Natrix.Dom\Natrix.Dom.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser" />
+    </ItemGroup>
+
+</Project>

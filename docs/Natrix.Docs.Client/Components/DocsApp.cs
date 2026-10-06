@@ -1,3 +1,4 @@
+using Natrix.Composables.Dom.Head;
 using Natrix.Core.Components;
 using Natrix.Dom.Components;
 using Natrix.Core.Features.Routing;
@@ -5,6 +6,7 @@ using Natrix.Docs.Client.Components.Examples.BouncingBalls;
 using Natrix.Docs.Client.Components.Examples.DataFetching;
 using Natrix.Docs.Client.Components.Examples.Todo;
 using Natrix.Signals;
+using static Natrix.Composables.Dom.DomComposables;
 
 namespace Natrix.Docs.Client.Components;
 
@@ -15,6 +17,9 @@ public class DocsApp : BaseComponent<DocsAppProps, NoEvents, NoSlots, NoExpose>
     protected override IComponent[] Setup(out NoExpose exposed)
     {
         exposed = default;
+
+        // Pages set only their own part of the title; the site name is added here, once.
+        UseHead(new HeadInput { TitleTemplate = title => $"{title} · Natrix" });
 
         return
         [

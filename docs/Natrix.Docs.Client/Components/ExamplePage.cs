@@ -1,6 +1,8 @@
+using Natrix.Composables.Dom.Head;
 using Natrix.Core.Components;
 using Natrix.Dom.Components;
 using Natrix.Signals;
+using static Natrix.Composables.Dom.DomComposables;
 
 namespace Natrix.Docs.Client.Components;
 
@@ -22,6 +24,8 @@ public class ExamplePage : BaseComponent<ExamplePageProps, NoEvents, ExamplePage
     protected override IComponent[] Setup(out NoExpose exposed)
     {
         exposed = default;
+
+        UseHead(new HeadInput { Title = Props.Title });
 
         return
         [
