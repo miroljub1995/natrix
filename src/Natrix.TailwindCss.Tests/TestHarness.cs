@@ -1,5 +1,6 @@
 using System.Collections.Immutable;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -75,7 +76,7 @@ internal static class Harness
         CSharpCompilation.Create(
             assemblyName: "TestAssembly",
             syntaxTrees: trees,
-            references: [MetadataReference.CreateFromFile(typeof(object).Assembly.Location)],
+            references: [MetadataReference.CreateFromFile(Path.Combine(RuntimeEnvironment.GetRuntimeDirectory(), "System.Private.CoreLib.dll"))],
             options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
 
     /// <summary>

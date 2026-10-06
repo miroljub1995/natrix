@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using static VerifyTUnit.Verifier;
@@ -10,7 +11,7 @@ public class GeneratedEventsGeneratorTests
         CSharpCompilation.Create(
             assemblyName: "TestAssembly",
             syntaxTrees: [CSharpSyntaxTree.ParseText(source)],
-            references: [MetadataReference.CreateFromFile(typeof(object).Assembly.Location)],
+            references: [MetadataReference.CreateFromFile(Path.Combine(RuntimeEnvironment.GetRuntimeDirectory(), "System.Private.CoreLib.dll"))],
             options: new CSharpCompilationOptions(OutputKind.DynamicallyLinkedLibrary));
 
     [Test]
