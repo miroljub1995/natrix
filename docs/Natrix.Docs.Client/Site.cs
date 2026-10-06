@@ -25,9 +25,11 @@ public static class Site
 
     public const string SocialImageAlt = "Natrix — reactive web UIs, written in C#.";
 
-    /// <summary>Every page there is, as the sidebar lists them.</summary>
+    public const string GitHubUrl = "https://github.com/miroljub1995/natrix";
+
+    /// <summary>Every page there is: the home page, and the docs as the sidebar lists them.</summary>
     public static IEnumerable<string> Paths =>
-        NavItems.Groups.SelectMany(group => group.Items).Select(item => item.Href);
+        NavItems.Groups.SelectMany(group => group.Items).Select(item => item.Href).Prepend("/");
 
     /// <summary>
     /// The one URL a page is known by: on <see cref="Origin"/>, without a trailing slash or query.

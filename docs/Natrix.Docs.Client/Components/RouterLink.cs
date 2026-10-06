@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices.JavaScript;
+using System.Runtime.Versioning;
 using Natrix.Core.Components;
 using Natrix.Core.Features;
 using Natrix.Core.Features.Routing;
@@ -30,8 +31,7 @@ public class RouterLink : BaseComponent<RouterLinkProps, NoEvents, RouterLinkSlo
     {
         exposed = default;
 
-        var navigation = AppFeatures.Features.Get<INavigationFeature>()
-            ?? throw new InvalidOperationException("INavigationFeature is not registered.");
+        var navigation = AppFeatures.Features.GetRequired<INavigationFeature>();
 
         return
         [
@@ -49,19 +49,26 @@ public class RouterLink : BaseComponent<RouterLinkProps, NoEvents, RouterLinkSlo
                         if (!OperatingSystem.IsBrowser()) return;
                         e.PreventDefault();
                         navigation.PushAsync(Props.Href);
-
-                        // A new page starts at the top, as it would on a full load. Through scrollTop
-                        // rather than scrollTo(): the binding follows the spec in expecting a promise
-                        // back, and browsers still return undefined.
-                        var scrolling = JSObjectProxyFactory.GetProxy<Window>(JSHost.GlobalThis).Document.ScrollingElement;
-                        if (scrolling is not null)
-                        {
-                            scrolling.ScrollTop = 0;
-                        }
+                        ScrollToTop();
                     },
                 },
                 Children = Slots?.Default() ?? [],
             },
         ];
+    }
+
+    /// <summary>
+    /// Starts a page navigated to in place at the top, as it would on a full load. Through
+    /// scrollTop rather than scrollTo(): the binding follows the spec in expecting a promise back,
+    /// and browsers still return undefined.
+    /// </summary>
+    [SupportedOSPlatform("browser")]
+    internal static void ScrollToTop()
+    {
+        var scrolling = JSObjectProxyFactory.GetProxy<Window>(JSHost.GlobalThis).Document.ScrollingElement;
+        if (scrolling is not null)
+        {
+            scrolling.ScrollTop = 0;
+        }
     }
 }

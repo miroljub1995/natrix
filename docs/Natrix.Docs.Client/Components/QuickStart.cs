@@ -13,7 +13,6 @@ public class QuickStartProps { }
 
 public class QuickStart : BaseComponent<QuickStartProps, NoEvents, NoSlots, NoExpose>
 {
-    private const string GitHubUrl = "https://github.com/miroljub1995/natrix";
 
     private const string HeadingAnchorClass =
         "absolute -left-6 opacity-0 group-hover:opacity-100 text-indigo-400 dark:text-indigo-500 no-underline transition-opacity";
@@ -147,11 +146,11 @@ public class QuickStart : BaseComponent<QuickStartProps, NoEvents, NoSlots, NoEx
 
     private static readonly NextStep[] NextSteps =
     [
-        new("Todo List", "/examples/todo", "Signals · ForEach · If",
+        new("Todo List", "/docs/examples/todo", "Signals · ForEach · If",
             "Keyed lists, conditional rendering and child components that report back through events."),
-        new("Canvas", "/examples/canvas", "Refs · Canvas API · Lifecycle",
+        new("Canvas", "/docs/examples/canvas", "Refs · Canvas API · Lifecycle",
             "Drive the raw Canvas API from C#, and clean up when the component unmounts."),
-        new("Data Fetching", "/examples/data-fetching", "SWR · Server prefetch",
+        new("Data Fetching", "/docs/examples/data-fetching", "SWR · Server prefetch",
             "Fetch on the server, ship the data in the page, and revalidate in the background."),
     ];
 
@@ -753,7 +752,7 @@ public class QuickStart : BaseComponent<QuickStartProps, NoEvents, NoSlots, NoEx
                     {
                         Props = new AProps
                         {
-                            Href = GitHubUrl.ToConstSignal(),
+                            Href = Site.GitHubUrl.ToConstSignal(),
                             Class = "group flex flex-col rounded-xl border border-gray-200 dark:border-gray-800 bg-gray-950 p-5 text-white transition hover:-translate-y-0.5 hover:border-indigo-500 hover:shadow-lg hover:shadow-indigo-500/10".ToConstSignal(),
                         },
                         Children =

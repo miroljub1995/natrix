@@ -3,28 +3,29 @@ using Natrix.Dom.Components;
 using Natrix.Core.Features;
 using Natrix.Core.Features.Routing;
 using Natrix.Signals;
+using Natrix.StdWeb;
 
 namespace Natrix.Docs.Client.Components;
 
 public class AppHeaderProps { }
 
+/// <summary>
+/// The bar on every page: the brand, and the site's sections, which fit beside it at any width,
+/// so there is no menu to open. The docs' own pages are in their sidebar.
+/// </summary>
 public class AppHeader : BaseComponent<AppHeaderProps, NoEvents, NoSlots, NoExpose>
 {
+    private const string LinkClass =
+        "rounded-lg px-2 sm:px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors";
+
+    private const string ActiveLinkClass =
+        "rounded-lg px-2 sm:px-3 py-2 text-sm font-medium text-indigo-600 dark:text-indigo-400";
+
     protected override IComponent[] Setup(out NoExpose exposed)
     {
         exposed = default;
 
-        var navigation = AppFeatures.Features.Get<INavigationFeature>()
-            ?? throw new InvalidOperationException("INavigationFeature is not registered.");
-
-        var mobileMenuOpen = new Signal<bool>(false);
-
-        var mobileMenuClass = new Computed<string>(() =>
-            mobileMenuOpen.Value
-                ? "flex flex-col gap-2 px-4 pb-4 md:hidden"
-                : "hidden");
-
-        var mobileMenuExpanded = new Computed<string?>(() => mobileMenuOpen.Value ? "true" : "false");
+        var navigation = AppFeatures.Features.GetRequired<INavigationFeature>();
 
         return
         [
@@ -36,12 +37,11 @@ public class AppHeader : BaseComponent<AppHeaderProps, NoEvents, NoSlots, NoExpo
                 },
                 Children =
                 [
-                    // Top bar
                     new Div
                     {
                         Props = new DivProps
                         {
-                            Class = "flex items-center justify-between h-16 px-4 sm:px-6".ToConstSignal(),
+                            Class = "mx-auto flex max-w-7xl items-center justify-between gap-4 h-16 px-4 sm:px-6".ToConstSignal(),
                         },
                         Children =
                         [
@@ -55,13 +55,7 @@ public class AppHeader : BaseComponent<AppHeaderProps, NoEvents, NoSlots, NoExpo
                                 },
                                 Events = new AEvents
                                 {
-                                    OnClick = (e) =>
-                                    {
-                                        if (!OperatingSystem.IsBrowser()) return;
-                                        e.PreventDefault();
-                                        mobileMenuOpen.Value = false;
-                                        navigation.PushAsync("/");
-                                    },
+                                    OnClick = (e) => Navigate(e, navigation, "/"),
                                 },
                                 Children =
                                 [
@@ -84,52 +78,42 @@ public class AppHeader : BaseComponent<AppHeaderProps, NoEvents, NoSlots, NoExpo
                                     },
                                 ],
                             },
-                            // Mobile burger button
-                            new Button
+                            new Nav
                             {
-                                Props = new ButtonProps
+                                Props = new NavProps
                                 {
-                                    AriaLabel = "Toggle navigation menu".ToConstSignal(),
-                                    AriaExpanded = mobileMenuExpanded,
-                                    AriaControls = "mobile-menu".ToConstSignal(),
-                                    Class = "md:hidden inline-flex items-center justify-center rounded-lg p-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors".ToConstSignal(),
-                                },
-                                Events = new ButtonEvents
-                                {
-                                    OnClick = (_) =>
-                                    {
-                                        mobileMenuOpen.Value = !mobileMenuOpen.Value;
-                                    },
+                                    AriaLabel = "Main".ToConstSignal(),
+                                    Class = "flex items-center gap-1 sm:gap-2".ToConstSignal(),
                                 },
                                 Children =
                                 [
+                                    SectionLink(navigation, "Docs", "/docs/quick-start",
+                                        path => path.StartsWith("/docs/", StringComparison.Ordinal)),
                                     new Span
                                     {
                                         Props = new SpanProps
                                         {
-                                            Class = "flex flex-col gap-1 w-5".ToConstSignal(),
+                                            Class = "mx-1 h-5 w-px bg-gray-200 dark:bg-gray-700".ToConstSignal(),
+                                            AriaHidden = true.ToConstSignal(),
+                                        },
+                                    },
+                                    new A
+                                    {
+                                        Props = new AProps
+                                        {
+                                            Href = Site.GitHubUrl.ToConstSignal(),
+                                            Title = "Natrix on GitHub".ToConstSignal(),
+                                            Class = "inline-flex rounded-lg p-2 opacity-70 hover:opacity-100 transition-opacity".ToConstSignal(),
                                         },
                                         Children =
                                         [
-                                            new Span
+                                            new Img
                                             {
-                                                Props = new SpanProps
+                                                Props = new ImgProps
                                                 {
-                                                    Class = "block h-0.5 w-full bg-current rounded-full".ToConstSignal(),
-                                                },
-                                            },
-                                            new Span
-                                            {
-                                                Props = new SpanProps
-                                                {
-                                                    Class = "block h-0.5 w-full bg-current rounded-full".ToConstSignal(),
-                                                },
-                                            },
-                                            new Span
-                                            {
-                                                Props = new SpanProps
-                                                {
-                                                    Class = "block h-0.5 w-full bg-current rounded-full".ToConstSignal(),
+                                                    Src = WwwRoot.Assets_Github_Mark_Svg.ToConstSignal(),
+                                                    Alt = "GitHub".ToConstSignal(),
+                                                    Class = "h-5 w-5 dark:invert".ToConstSignal(),
                                                 },
                                             },
                                         ],
@@ -138,32 +122,37 @@ public class AppHeader : BaseComponent<AppHeaderProps, NoEvents, NoSlots, NoExpo
                             },
                         ],
                     },
-                    // Mobile menu
-                    new Div
-                    {
-                        Props = new DivProps
-                        {
-                            Id = "mobile-menu".ToConstSignal(),
-                            Class = mobileMenuClass,
-                        },
-                        Children =
-                        [
-                            new NavItems
-                            {
-                                Props = new NavItemsProps
-                                {
-                                    LinkClass = "block px-3 py-2 rounded-lg text-base font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors",
-                                    ActiveLinkClass = "block px-3 py-2 rounded-lg text-base font-medium text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950 transition-colors",
-                                },
-                                Events = new NavItemsEvents
-                                {
-                                    OnNavigate = () => mobileMenuOpen.Value = false,
-                                },
-                            },
-                        ],
-                    },
                 ],
             },
         ];
+    }
+
+    /// <summary>A link to a section, marked current on any of the section's pages.</summary>
+    private static A SectionLink(INavigationFeature navigation, string label, string href, Func<string, bool> isInSection)
+    {
+        var isActive = new Computed<bool>(() => isInSection(navigation.CurrentPath.Value));
+
+        return new A
+        {
+            Props = new AProps
+            {
+                Href = href.ToConstSignal(),
+                Class = new Computed<string>(() => isActive.Value ? ActiveLinkClass : LinkClass),
+                AriaCurrent = new Computed<string?>(() => isActive.Value ? "true" : null),
+            },
+            Events = new AEvents
+            {
+                OnClick = (e) => Navigate(e, navigation, href),
+            },
+            Children = [new DomText { Text = label.ToConstSignal() }],
+        };
+    }
+
+    private static void Navigate(MouseEvent e, INavigationFeature navigation, string href)
+    {
+        if (!OperatingSystem.IsBrowser()) return;
+        e.PreventDefault();
+        navigation.PushAsync(href);
+        RouterLink.ScrollToTop();
     }
 }
