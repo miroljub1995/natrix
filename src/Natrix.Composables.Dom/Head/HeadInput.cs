@@ -31,4 +31,27 @@ public sealed class HeadInput
     /// as it is passes <c>title =&gt; title</c>. Signals read inside it are tracked.
     /// </summary>
     public Func<string, string>? TitleTemplate { get; init; }
+
+    /// <summary>
+    /// Meta tags, resolved the way unhead resolves them. For each <c>name</c>, <c>property</c> or
+    /// <c>http-equiv</c>, the latest call that gives it content wins, so a page can replace its
+    /// layout's <c>description</c> and leave the rest alone. A tag whose content is <c>null</c>
+    /// contributes nothing.
+    /// </summary>
+    /// <remarks>
+    /// <para>
+    /// A call can repeat the keys that take a list — <c>og:image</c>, <c>og:video</c>,
+    /// <c>og:audio</c>, <c>og:locale:alternate</c>, <c>twitter:image</c>, <c>article:tag</c>,
+    /// <c>article:author</c>, <c>book:tag</c>, <c>book:author</c>, <c>author</c>,
+    /// <c>theme-color</c>, <c>google-site-verification</c>, and the structured properties under the
+    /// media ones (<c>og:image:width</c>, ...). The winning call contributes all of its tags for
+    /// such a key, replacing an earlier call's set as a whole. For any other key, the call's last
+    /// tag counts.
+    /// </para>
+    /// <para>
+    /// Tags are written in the order the winning calls were made and listed them, so structured
+    /// properties stay after the <c>og:image</c> they describe.
+    /// </para>
+    /// </remarks>
+    public IReadOnlyList<HeadMeta>? Meta { get; init; }
 }

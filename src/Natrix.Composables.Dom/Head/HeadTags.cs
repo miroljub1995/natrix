@@ -6,7 +6,7 @@ using Natrix.Signals;
 namespace Natrix.Composables.Dom.Head;
 
 /// <summary>
-/// Renders the head that <see cref="DomComposables.UseHead"/> calls resolve to. Place it inside
+/// Renders the title and meta tags that <see cref="DomComposables.UseHead"/> calls resolve to. Place it inside
 /// the server-rendered <c>&lt;head&gt;</c>, in place of the tags it manages:
 /// <code>
 /// new Head { Props = new HeadProps(), Children = [new Meta { … }, new HeadTags { Props = new NoProps() }] }
@@ -27,7 +27,8 @@ public sealed class HeadTags : BaseComponent<NoProps, NoEvents, NoSlots, NoExpos
     {
         exposed = default;
 
-        var title = AppFeatures.Features.GetRequired<HeadManager>().Title;
+        var manager = AppFeatures.Features.GetRequired<HeadManager>();
+        var title = manager.Title;
 
         return
         [
@@ -43,6 +44,30 @@ public sealed class HeadTags : BaseComponent<NoProps, NoEvents, NoSlots, NoExpos
                     },
                 ],
             },
+            new ForEach<ResolvedHeadMeta, (HeadMetaKey, int)>
+            {
+                Items = manager.Meta,
+                Key = meta => (meta.Key, meta.Occurrence),
+                ElementSetup = meta => [CreateMeta(meta)],
+            },
         ];
+    }
+
+    // Keyed by the identifying attribute, so it is fixed for the tag's lifetime; only the content
+    // follows the signal.
+    private static Meta CreateMeta(IReadOnlySignal<ResolvedHeadMeta> meta)
+    {
+        var id = meta.Value.Key.Value.ToConstSignal();
+        var content = new Computed<string>(() => meta.Value.Content);
+
+        return new Meta
+        {
+            Props = meta.Value.Key.Attribute switch
+            {
+                "name" => new MetaProps { Name = id, Content = content },
+                "property" => new MetaProps { Property = id, Content = content },
+                _ => new MetaProps { HttpEquiv = id, Content = content },
+            },
+        };
     }
 }

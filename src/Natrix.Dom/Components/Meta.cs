@@ -20,6 +20,23 @@ public class MetaProps : GlobalHtmlComponentProps<HTMLMetaElement>
             static (el, s) => el.SetAttribute("name", s)));
     }
 
+    private static PropDescriptor<string>? s_property;
+
+    /// <summary>
+    /// The RDFa <c>property</c> attribute Open Graph uses (<c>og:title</c>). It has no reflected
+    /// property, so the client sets the attribute.
+    /// </summary>
+    public IReadOnlySignal<string>? Property
+    {
+        get => Get(s_property);
+        init => Set(ref s_property, value, static () => new(
+            static (el, s) =>
+            {
+                if (OperatingSystem.IsBrowser()) el.SetAttribute("property", s.Value);
+            },
+            static (el, s) => el.SetAttribute("property", s)));
+    }
+
     private static PropDescriptor<string>? s_httpEquiv;
 
     public IReadOnlySignal<string>? HttpEquiv
