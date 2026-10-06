@@ -4,7 +4,7 @@
         <IsPackable>true</IsPackable>
         <PackageId>Natrix.Composables.Dom</PackageId>
         <Authors>miroljub1995</Authors>
-        <Description>DOM composables for Natrix components, in the spirit of VueUse — starting with UseHead, which manages the document head on the server and in the browser.</Description>
+        <Description>DOM composables for Natrix components, in the spirit of VueUse.</Description>
         <PackageTags>webassembly;wasm;dotnet;composables;head;ssr;reactive;natrix</PackageTags>
         <PackageProjectUrl>https://github.com/miroljub1995/natrix</PackageProjectUrl>
         <RepositoryUrl>https://github.com/miroljub1995/natrix</RepositoryUrl>
