@@ -38,7 +38,7 @@ public partial class PropertyDefinition: global::Natrix.JSCore.JSObjectProxy, gl
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public required bool Inherits
+    public bool Inherits
     {
         get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "inherits");
         set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "inherits", value);

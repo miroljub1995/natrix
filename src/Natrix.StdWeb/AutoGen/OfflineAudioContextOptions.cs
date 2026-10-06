@@ -31,10 +31,10 @@ public partial class OfflineAudioContextOptions: global::Natrix.JSCore.JSObjectP
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public required uint Length
+    public uint? Length
     {
-        get => global::Natrix.JSCore.Generics.UInt32Accessor.Get(JSObject, "length");
-        set => global::Natrix.JSCore.Generics.UInt32Accessor.Set(JSObject, "length", value);
+        get => global::Natrix.JSCore.Generics.NullableUInt32Accessor.Get(JSObject, "length");
+        set => global::Natrix.JSCore.Generics.NullableUInt32Accessor.Set(JSObject, "length", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

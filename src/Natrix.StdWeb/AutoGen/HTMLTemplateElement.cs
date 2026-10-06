@@ -29,6 +29,13 @@ public partial class HTMLTemplateElement: global::Natrix.StdWeb.HTMLElement, glo
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public string HtmlFor
+    {
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "htmlFor");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "htmlFor", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ShadowRootMode
     {
         get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "shadowRootMode");
@@ -43,6 +50,13 @@ public partial class HTMLTemplateElement: global::Natrix.StdWeb.HTMLElement, glo
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool ShadowRootSerializable
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "shadowRootSerializable");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "shadowRootSerializable", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ShadowRootSlotAssignment
     {
         get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "shadowRootSlotAssignment");
@@ -54,13 +68,6 @@ public partial class HTMLTemplateElement: global::Natrix.StdWeb.HTMLElement, glo
     {
         get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "shadowRootClonable");
         set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "shadowRootClonable", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public bool ShadowRootSerializable
-    {
-        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "shadowRootSerializable");
-        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "shadowRootSerializable", value);
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

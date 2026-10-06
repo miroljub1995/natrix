@@ -16,6 +16,12 @@ public partial class WorkerNavigator: global::Natrix.JSCore.JSObjectProxy, globa
         global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<WorkerNavigator>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.HID Hid
+    {
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HID>.Get(JSObject, "hid");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.MediaCapabilities MediaCapabilities
     {
         get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaCapabilities>.Get(JSObject, "mediaCapabilities");
@@ -37,12 +43,6 @@ public partial class WorkerNavigator: global::Natrix.JSCore.JSObjectProxy, globa
     public global::Natrix.StdWeb.ServiceWorkerContainer ServiceWorker
     {
         get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ServiceWorkerContainer>.Get(JSObject, "serviceWorker");
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.HID Hid
-    {
-        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.HID>.Get(JSObject, "hid");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]

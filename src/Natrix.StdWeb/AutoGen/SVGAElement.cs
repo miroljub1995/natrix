@@ -49,24 +49,16 @@ public partial class SVGAElement: global::Natrix.StdWeb.SVGGraphicsElement, glob
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public string Hreflang
-    {
-        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "hreflang");
-        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "hreflang", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public string Type
-    {
-        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "type");
-        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "type", value);
-    }
-
-    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public string ReferrerPolicy
     {
         get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "referrerPolicy");
         set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "referrerPolicy", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.SVGAnimatedString Href
+    {
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGAnimatedString>.Get(JSObject, "href");
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
@@ -139,9 +131,17 @@ public partial class SVGAElement: global::Natrix.StdWeb.SVGGraphicsElement, glob
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
-    public global::Natrix.StdWeb.SVGAnimatedString Href
+    public string Hreflang
     {
-        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.SVGAnimatedString>.Get(JSObject, "href");
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "hreflang");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "hreflang", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public string Type
+    {
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "type");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "type", value);
     }
 }
 

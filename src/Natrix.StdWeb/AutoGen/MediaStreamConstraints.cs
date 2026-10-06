@@ -24,6 +24,13 @@ public partial class MediaStreamConstraints: global::Natrix.JSCore.JSObjectProxy
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.GetUserMediaSemantics Semantics
+    {
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GetUserMediaSemantics>.Get(JSObject, "semantics");
+        set => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GetUserMediaSemantics>.Set(JSObject, "semantics", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>> Video
     {
         get => global::Natrix.JSCore.Generics.UnionAccessor<global::Natrix.JSCore.Generics.Union<bool, global::Natrix.StdWeb.MediaTrackConstraints, global::Natrix.JSCore.Generics.BooleanAccessor, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.MediaTrackConstraints>>>.Get(JSObject, "video");

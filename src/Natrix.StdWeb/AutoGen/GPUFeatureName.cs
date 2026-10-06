@@ -13,6 +13,7 @@ public sealed partial class GPUFeatureName: global::Natrix.JSCore.IJSEnum<GPUFea
         _value = value;
     }
 
+    public static readonly GPUFeatureName Atomic_vec2u_min_max = new("atomic-vec2u-min-max");
     public static readonly GPUFeatureName Core_features_and_limits = new("core-features-and-limits");
     public static readonly GPUFeatureName Depth_clip_control = new("depth-clip-control");
     public static readonly GPUFeatureName Depth32float_stencil8 = new("depth32float-stencil8");
@@ -36,11 +37,13 @@ public sealed partial class GPUFeatureName: global::Natrix.JSCore.IJSEnum<GPUFea
     public static readonly GPUFeatureName Primitive_index = new("primitive-index");
     public static readonly GPUFeatureName Texture_component_swizzle = new("texture-component-swizzle");
     public static readonly GPUFeatureName Subgroup_size_control = new("subgroup-size-control");
+    public static readonly GPUFeatureName Texture_compression_unaligned = new("texture-compression-unaligned");
 
     public override string ToString() => _value;
 
     public static GPUFeatureName Create(string value) => value switch
     {
+        "atomic-vec2u-min-max" => Atomic_vec2u_min_max,
         "core-features-and-limits" => Core_features_and_limits,
         "depth-clip-control" => Depth_clip_control,
         "depth32float-stencil8" => Depth32float_stencil8,
@@ -64,6 +67,7 @@ public sealed partial class GPUFeatureName: global::Natrix.JSCore.IJSEnum<GPUFea
         "primitive-index" => Primitive_index,
         "texture-component-swizzle" => Texture_component_swizzle,
         "subgroup-size-control" => Subgroup_size_control,
+        "texture-compression-unaligned" => Texture_compression_unaligned,
         _ => throw new ArgumentException($"Invalid value \"{value}\" for GPUFeatureName", nameof(value)),
     };
 }

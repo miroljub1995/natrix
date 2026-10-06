@@ -23,7 +23,26 @@ public partial class VideoFrameMetadata: global::Natrix.JSCore.JSObjectProxy, gl
     {
     }
 
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Segment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Segment>> Segments
+    {
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Segment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Segment>>>.Get(JSObject, "segments");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.JSCore.Generics.JSArray<global::Natrix.StdWeb.Segment, global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.Segment>>>.Set(JSObject, "segments", value);
+    }
 
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.BackgroundBlur BackgroundBlur
+    {
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundBlur>.Get(JSObject, "backgroundBlur");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.BackgroundBlur>.Set(JSObject, "backgroundBlur", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.ImageBitmap BackgroundSegmentationMask
+    {
+        get => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageBitmap>.Get(JSObject, "backgroundSegmentationMask");
+        set => global::Natrix.JSCore.Generics.ProxyAccessor<global::Natrix.StdWeb.ImageBitmap>.Set(JSObject, "backgroundSegmentationMask", value);
+    }
 }
 
 #nullable disable

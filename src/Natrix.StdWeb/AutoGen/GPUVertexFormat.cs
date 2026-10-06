@@ -54,6 +54,7 @@ public sealed partial class GPUVertexFormat: global::Natrix.JSCore.IJSEnum<GPUVe
     public static readonly GPUVertexFormat Sint32x4 = new("sint32x4");
     public static readonly GPUVertexFormat Unorm10_10_10_2 = new("unorm10-10-10-2");
     public static readonly GPUVertexFormat Unorm8x4_bgra = new("unorm8x4-bgra");
+    public static readonly GPUVertexFormat Snorm10_10_10_2 = new("snorm10-10-10-2");
 
     public override string ToString() => _value;
 
@@ -100,6 +101,7 @@ public sealed partial class GPUVertexFormat: global::Natrix.JSCore.IJSEnum<GPUVe
         "sint32x4" => Sint32x4,
         "unorm10-10-10-2" => Unorm10_10_10_2,
         "unorm8x4-bgra" => Unorm8x4_bgra,
+        "snorm10-10-10-2" => Snorm10_10_10_2,
         _ => throw new ArgumentException($"Invalid value \"{value}\" for GPUVertexFormat", nameof(value)),
     };
 }

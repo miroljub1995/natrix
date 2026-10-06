@@ -68,6 +68,12 @@ public partial class MediaDevices: global::Natrix.StdWeb.EventTarget, global::Na
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public global::Natrix.StdWeb.GetUserMediaSemantics DefaultSemantics
+    {
+        get => global::Natrix.JSCore.Generics.EnumAccessor<global::Natrix.StdWeb.GetUserMediaSemantics>.Get(JSObject, "defaultSemantics");
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public void SetSupportedCaptureActions(global::Natrix.JSCore.Generics.JSArray<string, global::Natrix.JSCore.Generics.StringAccessor> actions)
     {
         int ___argsArrayLength_2 = 1;

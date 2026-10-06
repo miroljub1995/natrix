@@ -15,7 +15,9 @@ public sealed partial class LanguageModelSamplingMode: global::Natrix.JSCore.IJS
 
     public static readonly LanguageModelSamplingMode Most_predictable = new("most-predictable");
     public static readonly LanguageModelSamplingMode Predictable = new("predictable");
+    public static readonly LanguageModelSamplingMode Slightly_predictable = new("slightly-predictable");
     public static readonly LanguageModelSamplingMode Balanced = new("balanced");
+    public static readonly LanguageModelSamplingMode Slightly_creative = new("slightly-creative");
     public static readonly LanguageModelSamplingMode Creative = new("creative");
     public static readonly LanguageModelSamplingMode Most_creative = new("most-creative");
 
@@ -25,7 +27,9 @@ public sealed partial class LanguageModelSamplingMode: global::Natrix.JSCore.IJS
     {
         "most-predictable" => Most_predictable,
         "predictable" => Predictable,
+        "slightly-predictable" => Slightly_predictable,
         "balanced" => Balanced,
+        "slightly-creative" => Slightly_creative,
         "creative" => Creative,
         "most-creative" => Most_creative,
         _ => throw new ArgumentException($"Invalid value \"{value}\" for LanguageModelSamplingMode", nameof(value)),

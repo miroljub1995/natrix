@@ -16,6 +16,20 @@ public partial class HTMLElement: global::Natrix.StdWeb.Element, global::Natrix.
         global::Natrix.JSCore.JSObjectProxyFactory.GetProxy<HTMLElement>(obj);
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public string ContainerTiming
+    {
+        get => global::Natrix.JSCore.Generics.StringAccessor.Get(JSObject, "containerTiming");
+        set => global::Natrix.JSCore.Generics.StringAccessor.Set(JSObject, "containerTiming", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool ContainerTimingIgnore
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "containerTimingIgnore");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "containerTimingIgnore", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public global::Natrix.StdWeb.Element? ScrollParent
     {
         get => global::Natrix.JSCore.Generics.NullableProxyAccessor<global::Natrix.StdWeb.Element>.Get(JSObject, "scrollParent");

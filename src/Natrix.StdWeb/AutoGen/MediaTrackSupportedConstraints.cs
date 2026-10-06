@@ -143,6 +143,62 @@ public partial class MediaTrackSupportedConstraints: global::Natrix.JSCore.JSObj
     }
 
     [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool PowerEfficient
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "powerEfficient");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "powerEfficient", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool PowerEfficientPixelFormat
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "powerEfficientPixelFormat");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "powerEfficientPixelFormat", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool GestureReactions
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "gestureReactions");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "gestureReactions", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool FaceFraming
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "faceFraming");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "faceFraming", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool EyeGazeCorrection
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "eyeGazeCorrection");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "eyeGazeCorrection", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool VoiceIsolation
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "voiceIsolation");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "voiceIsolation", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool HumanFaceDetectionMode
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "humanFaceDetectionMode");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "humanFaceDetectionMode", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
+    public bool BackgroundSegmentationMask
+    {
+        get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "backgroundSegmentationMask");
+        set => global::Natrix.JSCore.Generics.BooleanAccessor.Set(JSObject, "backgroundSegmentationMask", value);
+    }
+
+    [global::System.Runtime.Versioning.SupportedOSPlatform("browser")]
     public bool Width
     {
         get => global::Natrix.JSCore.Generics.BooleanAccessor.Get(JSObject, "width");
