@@ -3,6 +3,7 @@ using System.Text.Json;
 using Natrix.Browser;
 using Natrix.Browser.Components;
 using Natrix.Browser.Features.Routing;
+using Natrix.Composables.Dom.Head;
 using Natrix.Core;
 using Natrix.Browser.Features.HydrationState;
 using Natrix.Browser.Abstractions.Features.HydrationState;
@@ -51,6 +52,7 @@ var _ = new NatrixHostBuilder()
     .UseRootElement(appElement)
     .UseTeleport()
     .UseLifecycleHooks()
+    .UseClientHead()
     .SetFeature(serializerOptions)
     // Picks up the options registered above, so the values the server prefetched arrive with the
     // page instead of being fetched again.

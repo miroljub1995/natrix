@@ -1,3 +1,4 @@
+using Natrix.Composables.Dom.Head;
 using Natrix.Core.Components;
 using Natrix.Dom.Components;
 using Natrix.Ssr.Features.HydrationState;
@@ -56,11 +57,8 @@ public class DocsPage : BaseComponent<DocsPageProps, NoEvents, NoSlots, NoExpose
                                     Content = "Natrix is a .NET WebAssembly toolkit for building browser applications in C#, with reactive signals, generated Web API bindings and server-side rendering.".ToConstSignal(),
                                 },
                             },
-                            new Title
-                            {
-                                Props = new TitleProps(),
-                                Children = [new DomText { Text = "Natrix".ToConstSignal() }],
-                            },
+                            // The title the page's components set with UseHead.
+                            new HeadTags { Props = new NoProps() },
                             new Link
                             {
                                 Props = new LinkProps

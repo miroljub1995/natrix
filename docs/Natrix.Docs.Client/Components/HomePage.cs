@@ -1,10 +1,12 @@
 using System.Runtime.InteropServices.JavaScript;
+using Natrix.Composables.Dom.Head;
 using Natrix.Core.Components;
 using Natrix.Docs.Client.Components.Home;
 using Natrix.Dom.Components;
 using Natrix.JSCore;
 using Natrix.Signals;
 using Natrix.StdWeb;
+using static Natrix.Composables.Dom.DomComposables;
 
 namespace Natrix.Docs.Client.Components;
 
@@ -69,6 +71,9 @@ public class HomePage : BaseComponent<HomePageProps, NoEvents, NoSlots, NoExpose
     protected override IComponent[] Setup(out NoExpose exposed)
     {
         exposed = default;
+
+        // The site name on its own, rather than "Natrix · Natrix".
+        UseHead(new HeadInput { Title = "Natrix".ToConstSignal(), TitleTemplate = title => title });
 
         return
         [

@@ -1,6 +1,8 @@
+using Natrix.Composables.Dom.Head;
 using Natrix.Core.Components;
 using Natrix.Dom.Components;
 using Natrix.Signals;
+using static Natrix.Composables.Dom.DomComposables;
 
 namespace Natrix.Docs.Client.Components;
 
@@ -11,6 +13,8 @@ public class QuickStart : BaseComponent<QuickStartProps, NoEvents, NoSlots, NoEx
     protected override IComponent[] Setup(out NoExpose exposed)
     {
         exposed = default;
+
+        UseHead(new HeadInput { Title = "Quick Start".ToConstSignal() });
 
         return
         [

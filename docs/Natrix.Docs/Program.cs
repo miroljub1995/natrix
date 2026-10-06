@@ -2,6 +2,7 @@ using System.Text;
 using System.Text.Json;
 using Microsoft.AspNetCore.Http.Json;
 using Microsoft.Extensions.Options;
+using Natrix.Composables.Dom.Head;
 using Natrix.Core;
 using Natrix.Core.Features;
 using Natrix.Ssr;
@@ -87,6 +88,7 @@ app.MapFallback(httpContext => SsrEventLoop.RunAsync(async () =>
     using var _ = new NatrixHostBuilder()
         .UseRootRenderer(root)
         .UseTeleport()
+        .UseServerHead()
         .SetFeature(serializerOptions)
         // A cache per request - never a shared one, which would hand one visitor's data to the
         // next. Resources prefetch into it while the tree renders, and it is serialized into the
