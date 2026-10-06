@@ -32,7 +32,7 @@ public partial class CSharpCode : BaseComponent<CSharpCodeProps, NoEvents, NoSlo
         (?<comment>//[^\n]*)
         |(?<string>\$?"(?:[^"\\\n]|\\.)*")
         |(?<number>\b\d+\b)
-        |(?<keyword>\b(?:public|private|protected|internal|class|partial|static|override|out|var|new|return|default|using|namespace|void|int|string|bool|true|false|null|await|async)\b)
+        |(?<keyword>\b(?:public|private|protected|internal|readonly|class|partial|static|override|out|var|new|return|default|using|namespace|void|int|string|bool|true|false|null|await|async)\b)
         |(?<method>\b[A-Z]\w*(?=\())
         |(?<plain>(?<=\.)[A-Z]\w*|\b[A-Z]\w*(?=\s*=[^=>]))
         |(?<type>\b[A-Z]\w*)
@@ -68,7 +68,7 @@ public partial class CSharpCode : BaseComponent<CSharpCodeProps, NoEvents, NoSlo
                             {
                                 Props = new SpanProps
                                 {
-                                    Class = "ml-3 font-mono text-xs text-gray-400".ToConstSignal(),
+                                    Class = "ml-3 min-w-0 truncate font-mono text-xs text-gray-400".ToConstSignal(),
                                 },
                                 Children = [new DomText { Text = Props.FileName.ToConstSignal() }],
                             },
@@ -101,7 +101,7 @@ public partial class CSharpCode : BaseComponent<CSharpCodeProps, NoEvents, NoSlo
     {
         Props = new SpanProps
         {
-            Class = $"h-3 w-3 rounded-full {color}".ToConstSignal(),
+            Class = ("h-3 w-3 shrink-0 rounded-full " + color).ToConstSignal(),
         },
     };
 

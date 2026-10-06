@@ -47,7 +47,7 @@ app.MapFallback(httpContext => SsrEventLoop.RunAsync(async () =>
         return;
     }
 
-    httpContext.Response.Headers.ContentType = "text/html";
+    httpContext.Response.Headers.ContentType = "text/html; charset=utf-8";
     await httpContext.Response.BodyWriter.WriteAsync(Encoding.UTF8.GetBytes("<!DOCTYPE html>"));
     await root.WriteAsync(httpContext.Response.BodyWriter, cancellationToken: httpContext.RequestAborted);
     await httpContext.Response.BodyWriter.FlushAsync(httpContext.RequestAborted);
