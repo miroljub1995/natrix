@@ -40,10 +40,10 @@
   </PropertyGroup>
 
   <!--
-    The analyzer and its two dependencies, Jint and its parser Acornima. They sit
-    side by side in analyzers/dotnet/cs, which is where Roslyn looks for an
-    analyzer's dependencies. Natrix.TailwindCss.Generators stages all three in its
-    output.
+    The analyzer and its three dependencies: Jint, its parser Acornima, and the
+    NUglify CSS minifier. They sit side by side in analyzers/dotnet/cs, which is
+    where Roslyn looks for an analyzer's dependencies.
+    Natrix.TailwindCss.Generators stages all four in its output.
   -->
   <ItemGroup>
     <None Include="$(NatrixGeneratorOutputDir)\Natrix.TailwindCss.Generators.dll"
@@ -51,6 +51,8 @@
     <None Include="$(NatrixGeneratorOutputDir)\Jint.dll"
           Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
     <None Include="$(NatrixGeneratorOutputDir)\Acornima.dll"
+          Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
+    <None Include="$(NatrixGeneratorOutputDir)\NUglify.dll"
           Pack="true" PackagePath="analyzers/dotnet/cs" Visible="false" />
   </ItemGroup>
 

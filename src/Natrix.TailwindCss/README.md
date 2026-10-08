@@ -46,6 +46,13 @@ inside `Styles/` would just say `app.css`.
 `Styles.GetCss()` now returns the compiled CSS. Render it into a `<style>`
 element, or serve it however you like.
 
+The CSS is minified unless `DEBUG` is defined, so a Release build gets the
+minified stylesheet and a Debug build a readable one, with no configuration. The
+minifier is [NUglify](https://github.com/trullock/NUglify), not the Lightning CSS
+pass behind the Tailwind CLI's `--minify`: the output is equivalent but not
+byte-identical, and Lightning's syntax lowering and vendor prefixing are not
+applied.
+
 Every stylesheet you listed is available to `@import`, and editing any of them
 re-runs the compilation:
 
@@ -193,6 +200,7 @@ This is exactly how `tailwindcss` itself is provided.
 | `TWCSS003` | The Tailwind engine could not start on this platform |
 | `TWCSS004` | `@source` is ignored; candidates come from string literals |
 | `TWCSS005` | The annotated method must be `partial`, return `string`, and take no parameters |
+| `TWCSS006` | Warning: the stylesheet could not be minified and is emitted unminified |
 
 ## Limitations
 

@@ -15,9 +15,9 @@ compiler** — the actual JavaScript, bundled by esbuild — during the build, i
 
 | Project | Target frameworks | Role |
 | --- | --- | --- |
-| `Natrix.TailwindCss` | `net9.0;net10.0` | The shipped package. Assembles the analyzer, its two dependencies, the targets and Tailwind's stylesheets, and carries the only runtime code in the subsystem: `HotReload/`, which pushes a regenerated stylesheet into the browser. That is why it — and only it — references `Natrix.Core` and `Natrix.StdWeb`. |
-| `Natrix.TailwindCss.Generators` | `netstandard2.0` | The incremental generator: Roslyn pipeline, stylesheet resolution, embedded Tailwind bundle, and `TailwindCompiler`, which runs the bundle in Jint. |
-| `Natrix.TailwindCss.Tests` | `net9.0;net10.0` | TUnit + Verify. 76 tests, covering the generator and the package's runtime half. |
+| `Natrix.TailwindCss` | `net9.0;net10.0` | The shipped package. Assembles the analyzer, its three dependencies, the targets and Tailwind's stylesheets, and carries the only runtime code in the subsystem: `HotReload/`, which pushes a regenerated stylesheet into the browser. That is why it — and only it — references `Natrix.Core` and `Natrix.StdWeb`. |
+| `Natrix.TailwindCss.Generators` | `netstandard2.0` | The incremental generator: Roslyn pipeline, stylesheet resolution, embedded Tailwind bundle, `TailwindCompiler`, which runs the bundle in Jint, and `CssMinifier`. |
+| `Natrix.TailwindCss.Tests` | `net9.0;net10.0` | TUnit + Verify. 83 tests, covering the generator and the package's runtime half. |
 
 Plus `src/Natrix.TailwindCss.Generators/js/` — the esbuild bundle sources
 (`tailwindcss` and `esbuild` are the only npm dependencies).
@@ -39,17 +39,19 @@ was V8 through ClearScript, which needed all three; see *History* for why it wen
 
 ## Rules that are easy to break
 
-**Jint and Acornima ship beside the analyzer, and nothing else does.** The
-generator references both with `PrivateAssets="all"`, so neither flows into a
-consuming app (the browser app would otherwise ship a JavaScript interpreter it
+**Jint, Acornima and NUglify ship beside the analyzer, and nothing else does.**
+The generator references all three with `PrivateAssets="all"`, so none flows into
+a consuming app (the browser app would otherwise ship a JavaScript interpreter it
 never calls). Three mechanisms deliver them to Roslyn, one per kind of consumer:
-the package packs both into `analyzers/dotnet/cs/`;
+the package packs them into `analyzers/dotnet/cs/`;
 `GetNatrixAnalyzerDependencyTargetPaths` hands them to an in-repo
 `OutputItemType="Analyzer"` project reference, which otherwise receives only the
-generator itself; and `StageTailwindStylesheets` copies both into the generator's
-`bin/`, which the package packs from. The test project runs the generator
-in-process, so it references Jint itself. Acornima's `netstandard2.0` build also
-needs `System.Memory` and `System.Runtime.CompilerServices.Unsafe`. Those are
+generator itself; and `StageTailwindStylesheets` copies them into the generator's
+`bin/`, which the package packs from. The last two read the
+`NatrixAnalyzerDependency` items, the package lists each file itself, so a new
+dependency needs both. The test project runs the generator in-process, so it
+references Jint and NUglify itself. Acornima's `netstandard2.0` build also needs
+`System.Memory` and `System.Runtime.CompilerServices.Unsafe`. Those are
 deliberately *not* shipped: every compiler host already has them, because Roslyn
 depends on them, and a second copy beside the analyzer is how binding conflicts
 start. Bump `Jint` and `Acornima` together in `Directory.Packages.props`; Acornima
@@ -130,6 +132,24 @@ ECMAScript implementation, and Tailwind leans hard on regular expressions, which
 Jint translates to .NET ones. A Tailwind upgrade can reach a corner Jint handles
 differently. The snapshots are the guard, and `CompilesCssThroughJint` keeps an
 engine failure from masquerading as a Tailwind one.
+
+**The output is minified unless `DEBUG` is defined.** Tailwind's CLI minifies
+with Lightning CSS, which is native (Rust) and so cannot run in the compiler for
+the reasons in *History*. NUglify stands in: pure managed, `netstandard2.0`, no
+dependencies. The switch is `DEBUG` in the parse options rather than an MSBuild
+property, so a Release build minifies with no configuration and a Debug build,
+where hot reload runs, keeps the CSS readable. `ParseOptionsProvider` is projected
+to a `bool` before it joins the pipeline, so changing any other parse option does
+not re-run the output step (`CachesWhenAnotherParseOptionChanges`). Minifying runs
+after the compile, outside Jint, on the compiler thread; on the docs app it costs
+~10 ms warm and ~110 ms on first use, against the ~90 ms compile. If NUglify cannot
+parse the stylesheet (it rejects some valid CSS, such as a `{}` block as a custom
+property value) the CSS is emitted unminified with a `TWCSS006` warning rather
+than failing the build. Checked on the docs app by parsing both stylesheets in
+Chromium: the same 895 rules, differing only in two places that Lightning CSS
+rewrites the same way (`initial-value: 0px` → `0` in `@property`, `red` → `#f00`
+in `@supports`). The tests run Debug by default (`Harness.Debug`), so every
+snapshot except `MinifiesWhenDebugIsNotDefined` shows readable CSS.
 
 **Combining `AnalyzerConfigOptionsProvider` into the per-file pipeline is safe
 only because the `Select` projects to an equatable value.** That provider has no
@@ -273,6 +293,7 @@ Tailwind change.
 | `TWCSS003` | The JavaScript engine failed — the bundle did not parse, or the call-depth limit was hit |
 | `TWCSS004` | `@source` ignored; candidates come from string literals |
 | `TWCSS005` | The annotated method must be `partial`, return `string`, take no parameters |
+| `TWCSS006` | Warning: NUglify could not minify the stylesheet, so it is emitted unminified |
 
 ## Candidate collection
 

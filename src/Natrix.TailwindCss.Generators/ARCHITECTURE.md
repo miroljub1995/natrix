@@ -29,9 +29,10 @@ flowchart TD
     MOD -->|loads as analyzer| AN
     AN -->|references| JI
     JI -->|depends on| HOST
+    AN -->|references| NU["<b>NUglify.dll</b><br/>netstandard2.0 · CSS minifier, used when DEBUG is not defined"]
 ```
 
-All three of our files ship in `analyzers/dotnet/cs/`. Each compilation runs on a
+All four of our files ship in `analyzers/dotnet/cs/`. Each compilation runs on a
 dedicated 16 MB thread under a JavaScript call-depth limit, because Jint
 interprets on the CLR stack and an overflow would kill the compiler server.
 
@@ -51,6 +52,7 @@ flowchart LR
 
     PIPE["<b>Roslyn pipeline</b><br/>EquatableArray · sorted · deduplicated"]
     JS["<b>Jint engine</b>, fresh per build<br/>await compile(css) → build(candidates)<br/>bundle parsed once per process"]
+    MIN["<b>NUglify</b><br/>minify, unless DEBUG is defined"]
     OUT["<b>GetCss()</b><br/>raw string literal"]
 
     CSS --> PIPE
@@ -59,7 +61,8 @@ flowchart LR
 
     PIPE -->|"css, base, candidates"| JS
     JS -.->|"loadStylesheet(id, base)"| PIPE
-    JS -->|"promise, awaited"| OUT
+    JS -->|"promise, awaited"| MIN
+    MIN --> OUT
 ```
 
 The dotted arrow is the load-bearing one. Tailwind calls back into C# for every
@@ -121,7 +124,8 @@ Every row below is pinned down by a test in `IncrementalityTests`.
 | Editing anything **above the attribute in its own file** | The model carries the attribute's text span for diagnostics, and inserting a line shifts it |
 | The attribute argument, method name, accessibility, `static`, or return type | All part of the method model |
 | Moving the file the attribute is declared in | The entry stylesheet is resolved against that file's directory, so the same attribute text means a different stylesheet |
-| A Tailwind or Jint version bump | Changes the analyzer or its dependencies |
+| Defining or undefining `DEBUG` | Switches minification; no other parse option counts |
+| A Tailwind, Jint or NUglify version bump | Changes the analyzer or its dependencies |
 
 ### Skips the compiler
 
@@ -168,8 +172,8 @@ so the fix is simply to list less:
 | --- | --- |
 | Projects | `Natrix.TailwindCss` (the package; its only code is the hot-reload runtime) · `Natrix.TailwindCss.Generators` (`netstandard2.0`) · `Natrix.TailwindCss.Tests` |
 | Build hosts | Anything .NET runs on — nothing native, nothing per RID |
-| Key packages | `Microsoft.CodeAnalysis.CSharp` · `Jint` · `Acornima` · npm `tailwindcss`, `esbuild` |
-| Package layout | `analyzers/dotnet/cs/` (analyzer, Jint, Acornima) · `build/`+`buildTransitive/` (targets) · `tools/tailwindcss/` (Tailwind's stylesheets) |
+| Key packages | `Microsoft.CodeAnalysis.CSharp` · `Jint` · `Acornima` · `NUglify` · npm `tailwindcss`, `esbuild` |
+| Package layout | `analyzers/dotnet/cs/` (analyzer, Jint, Acornima, NUglify) · `build/`+`buildTransitive/` (targets) · `tools/tailwindcss/` (Tailwind's stylesheets) |
 
 Everything else — the constraints, the MSBuild traps, the diagnostics, and the
 history of what was tried and replaced — is in [`CLAUDE.md`](CLAUDE.md).

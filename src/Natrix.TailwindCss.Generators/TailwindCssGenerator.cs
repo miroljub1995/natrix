@@ -17,6 +17,7 @@ internal static class TrackingNames
     public const string Candidates = nameof(Candidates);
     public const string Stylesheets = nameof(Stylesheets);
     public const string Methods = nameof(Methods);
+    public const string Minify = nameof(Minify);
 }
 
 [Generator]
@@ -65,6 +66,14 @@ public class TailwindCssGenerator : IIncrementalGenerator
         messageFormat: "'{0}' must be a partial method that returns string and takes no parameters",
         category: "TailwindCss",
         defaultSeverity: DiagnosticSeverity.Error,
+        isEnabledByDefault: true);
+
+    private static readonly DiagnosticDescriptor MinificationFailed = new(
+        id: "TWCSS006",
+        title: "Tailwind CSS minification failed",
+        messageFormat: "The compiled stylesheet could not be minified and is emitted as is: {0}",
+        category: "TailwindCss",
+        defaultSeverity: DiagnosticSeverity.Warning,
         isEnabledByDefault: true);
 
     public void Initialize(IncrementalGeneratorInitializationContext context)
@@ -153,11 +162,19 @@ public class TailwindCssGenerator : IIncrementalGenerator
             .Where(static info => info is not null)
             .WithTrackingName(TrackingNames.Methods);
 
+        // Minify unless DEBUG is defined, which is how a Release build differs
+        // from a Debug one by default. Projected to a bool so that only toggling
+        // DEBUG, not any other parse option, invalidates the output.
+        var minify = context.ParseOptionsProvider
+            .Select(static (options, _) => !options.PreprocessorSymbolNames.Contains("DEBUG"))
+            .WithTrackingName(TrackingNames.Minify);
+
         context.RegisterSourceOutput(
-            methods.Combine(stylesheets).Combine(candidates),
+            methods.Combine(stylesheets).Combine(candidates).Combine(minify),
             static (spc, source) => Execute(
                 spc,
-                source.Left.Left!,
+                source.Left.Left.Left!,
+                source.Left.Left.Right,
                 source.Left.Right,
                 source.Right));
     }
@@ -239,7 +256,8 @@ public class TailwindCssGenerator : IIncrementalGenerator
         SourceProductionContext spc,
         MethodInfo info,
         EquatableArray<Stylesheet> stylesheets,
-        EquatableArray<string> candidates)
+        EquatableArray<string> candidates,
+        bool minify)
     {
         var location = info.Location?.ToLocation() ?? Location.None;
 
@@ -285,7 +303,11 @@ public class TailwindCssGenerator : IIncrementalGenerator
         if (UsesSourceDirective(entryCss) || resolver.Served.Any(UsesSourceDirective))
             spc.ReportDiagnostic(Diagnostic.Create(SourceDirectiveIgnored, location));
 
-        spc.AddSource(HintName(info), SourceText.From(Render(info, result.Payload), Encoding.UTF8));
+        var css = result.Payload;
+        if (minify && !CssMinifier.TryMinify(css, out css, out var error))
+            spc.ReportDiagnostic(Diagnostic.Create(MinificationFailed, location, error));
+
+        spc.AddSource(HintName(info), SourceText.From(Render(info, css), Encoding.UTF8));
     }
 
     private static string Render(MethodInfo info, string css)
