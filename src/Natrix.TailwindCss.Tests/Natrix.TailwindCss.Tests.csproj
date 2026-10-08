@@ -11,9 +11,10 @@
     <PackageReference Include="TUnit" />
     <PackageReference Include="Verify.TUnit" />
     <PackageReference Include="Verify.SourceGenerators" />
-    <!-- The generator keeps Jint to itself (PrivateAssets="all"), so the test
-         host, which runs the generator in-process, brings its own copy. -->
+    <!-- The generator keeps Jint and NUglify to itself (PrivateAssets="all"), so
+         the test host, which runs the generator in-process, brings its own copies. -->
     <PackageReference Include="Jint" />
+    <PackageReference Include="NUglify" />
   </ItemGroup>
 
   <ItemGroup>

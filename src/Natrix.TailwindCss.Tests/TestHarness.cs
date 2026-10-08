@@ -103,11 +103,26 @@ internal static class Harness
             .Select(path => (AdditionalText)new InMemoryAdditionalText(
                 path.Replace('\\', '/'), File.ReadAllText(path)));
 
+    /// <summary>A Debug build: DEBUG is defined, so the CSS is emitted as Tailwind wrote it.</summary>
+    public static readonly CSharpParseOptions Debug = new(preprocessorSymbols: ["DEBUG"]);
+
+    /// <summary>A Release build: no DEBUG, so the CSS is minified.</summary>
+    public static readonly CSharpParseOptions Release = new();
+
+    /// <summary>
+    /// A Debug driver, so that snapshots and assertions read the CSS as Tailwind
+    /// wrote it. Minification has its own tests, which use <see cref="Release"/>.
+    /// </summary>
     public static GeneratorDriver CreateDriver(params (string Path, string Text)[] stylesheets) =>
+        CreateDriver(Debug, stylesheets);
+
+    public static GeneratorDriver CreateDriver(
+        CSharpParseOptions parseOptions,
+        params (string Path, string Text)[] stylesheets) =>
         CSharpGeneratorDriver.Create(
             generators: [new TailwindCssGenerator().AsSourceGenerator()],
             additionalTexts: ToAdditionalTexts(stylesheets),
-            parseOptions: null,
+            parseOptions: parseOptions,
             optionsProvider: new TestOptionsProvider([], TailwindModules()),
             driverOptions: new GeneratorDriverOptions(
                 IncrementalGeneratorOutputKind.None,

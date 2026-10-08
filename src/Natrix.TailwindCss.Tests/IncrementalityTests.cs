@@ -192,4 +192,34 @@ public class IncrementalityTests
 
         await Assert.That(AllCached(Harness.StepReasons(driver, TrackingNames.Candidates))).IsTrue();
     }
+
+    [Test]
+    public async Task RecompilesWhenDebugIsToggled()
+    {
+        var compilation = Harness.CreateCompilation(Source);
+        var driver = Harness.CreateDriver(("Styles/app.css", AppCss)).RunGenerators(compilation);
+        var before = Harness.GeneratedCss(driver, "MyApp.Styles.GetCss.g.cs");
+
+        driver = driver.WithUpdatedParseOptions(Harness.Release).RunGenerators(compilation);
+
+        await Assert.That(Harness.StepReasons(driver, TrackingNames.Minify))
+            .Contains(IncrementalStepRunReason.Modified);
+
+        var after = Harness.GeneratedCss(driver, "MyApp.Styles.GetCss.g.cs");
+        await Assert.That(after.Length).IsLessThan(before.Length);
+    }
+
+    [Test]
+    public async Task CachesWhenAnotherParseOptionChanges()
+    {
+        var compilation = Harness.CreateCompilation(Source);
+        var driver = Harness.CreateDriver(("Styles/app.css", AppCss)).RunGenerators(compilation);
+
+        // Still DEBUG, so the minify flag projects to the same value.
+        driver = driver
+            .WithUpdatedParseOptions(Harness.Debug.WithPreprocessorSymbols("DEBUG", "TRACE"))
+            .RunGenerators(compilation);
+
+        await Assert.That(AllCached(Harness.StepReasons(driver, TrackingNames.Minify))).IsTrue();
+    }
 }

@@ -34,9 +34,19 @@
     <PackageReference Include="Acornima" PrivateAssets="all" GeneratePathProperty="true" />
   </ItemGroup>
 
+  <!--
+    The CSS minifier applied when DEBUG is not defined. Pure managed code with a
+    netstandard2.0 build and no dependencies, so it travels exactly like Jint.
+    Tailwind's own minifier, Lightning CSS, is native and cannot.
+  -->
+  <ItemGroup>
+    <PackageReference Include="NUglify" PrivateAssets="all" GeneratePathProperty="true" />
+  </ItemGroup>
+
   <ItemGroup>
     <NatrixAnalyzerDependency Include="$(PkgJint)/lib/netstandard2.0/Jint.dll" />
     <NatrixAnalyzerDependency Include="$(PkgAcornima)/lib/netstandard2.0/Acornima.dll" />
+    <NatrixAnalyzerDependency Include="$(PkgNUglify)/lib/netstandard2.0/NUglify.dll" />
   </ItemGroup>
 
   <!--

@@ -18,5 +18,7 @@
     <PackageVersion Include="Jint" Version="4.16.4" />
     <!-- Jint's parser. Keep it at the version Jint itself depends on. -->
     <PackageVersion Include="Acornima" Version="1.7.0" />
+    <!-- Minifies the generated stylesheet in builds without DEBUG. -->
+    <PackageVersion Include="NUglify" Version="1.23.3" />
   </ItemGroup>
 </Project>
