@@ -1,3 +1,4 @@
+using System.Text.Json.Nodes;
 using Natrix.Composables.Dom.Head;
 using Natrix.Core.Components;
 using Natrix.Core.Features;
@@ -21,31 +22,33 @@ public class DocsPage : BaseComponent<DocsPageProps, NoEvents, NoSlots, NoExpose
 {
     // Tells search engines what the site is, and that it is about an open-source C# library,
     // which they can show as a rich result. The same on every page.
-    private static readonly string StructuredData = $$"""
-        {
-          "@context": "https://schema.org",
-          "@graph": [
+    // Serialized rather than interpolated so the values are escaped: the default encoder also
+    // writes '<' as <, so nothing in them can close the <script> early.
+    private static readonly string StructuredData = new JsonObject
+    {
+        ["@context"] = "https://schema.org",
+        ["@graph"] = new JsonArray(
+            new JsonObject
             {
-              "@type": "WebSite",
-              "@id": "{{Site.Origin}}/#website",
-              "name": "{{Site.Name}}",
-              "url": "{{Site.Origin}}/",
-              "description": "{{Site.Description}}",
-              "inLanguage": "en"
+                ["@type"] = "WebSite",
+                ["@id"] = $"{Site.Origin}/#website",
+                ["name"] = Site.Name,
+                ["url"] = $"{Site.Origin}/",
+                ["description"] = Site.Description,
+                ["inLanguage"] = "en",
             },
+            new JsonObject
             {
-              "@type": "SoftwareSourceCode",
-              "name": "{{Site.Name}}",
-              "description": "{{Site.Description}}",
-              "url": "{{Site.Origin}}/",
-              "codeRepository": "https://github.com/miroljub1995/natrix",
-              "programmingLanguage": "C#",
-              "runtimePlatform": ".NET",
-              "license": "https://opensource.org/licenses/MIT"
-            }
-          ]
-        }
-        """;
+                ["@type"] = "SoftwareSourceCode",
+                ["name"] = Site.Name,
+                ["description"] = Site.Description,
+                ["url"] = $"{Site.Origin}/",
+                ["codeRepository"] = "https://github.com/miroljub1995/natrix",
+                ["programmingLanguage"] = "C#",
+                ["runtimePlatform"] = ".NET",
+                ["license"] = "https://opensource.org/licenses/MIT",
+            }),
+    }.ToJsonString();
 
     protected override IComponent[] Setup(out NoExpose exposed)
     {
