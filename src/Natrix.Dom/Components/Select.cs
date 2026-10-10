@@ -89,7 +89,7 @@ public class SelectProps : GlobalHtmlComponentProps<HTMLSelectElement>
     private static PropDescriptor<string>? s_value;
 
     /// <summary>
-    /// Selects the option whose value attribute equals this, or the first enabled option if none
+    /// Selects the option whose value equals this, or the first enabled option if none
     /// does. Set either this or <see cref="Values"/>.
     /// </summary>
     /// <remarks>
@@ -117,7 +117,7 @@ public class SelectProps : GlobalHtmlComponentProps<HTMLSelectElement>
     private static PropDescriptor<IReadOnlyList<string>>? s_values;
 
     /// <summary>
-    /// Selects every option whose value attribute is in this list, for a <see cref="Multiple"/>
+    /// Selects every option whose value is in this list, for a <see cref="Multiple"/>
     /// select. Set either this or <see cref="Value"/>.
     /// </summary>
     /// <remarks>Applied like <see cref="Value"/>. Assign a new list to change it.</remarks>
@@ -145,16 +145,16 @@ public class SelectProps : GlobalHtmlComponentProps<HTMLSelectElement>
         }
     }
 
-    // Options are matched on their value attribute, as the server matches OptionProps.Value, rather than
-    // on the value property, which falls back to the option's text.
+    // An option's value is its value attribute or, without one, its text, as in HTML: the value property
+    // on the client, SsrOptionValue on the server.
 
     [SupportedOSPlatform("browser")]
-    private static void SelectOption(HTMLSelectElement el, string value)
+    internal static void SelectOption(HTMLSelectElement el, string value)
     {
         var options = el.Options;
         for (uint i = 0; i < options.Length; i++)
         {
-            if (options.Item(i) is HTMLOptionElement option && option.GetAttribute("value") == value)
+            if (options.Item(i) is HTMLOptionElement option && option.Value == value)
             {
                 option.Selected = true;
                 return;
@@ -173,14 +173,14 @@ public class SelectProps : GlobalHtmlComponentProps<HTMLSelectElement>
     }
 
     [SupportedOSPlatform("browser")]
-    private static void SelectOptions(HTMLSelectElement el, IReadOnlyList<string> values)
+    internal static void SelectOptions(HTMLSelectElement el, IReadOnlyList<string> values)
     {
         var options = el.Options;
         for (uint i = 0; i < options.Length; i++)
         {
             if (options.Item(i) is HTMLOptionElement option)
             {
-                option.Selected = option.GetAttribute("value") is { } value && values.Contains(value);
+                option.Selected = values.Contains(option.Value);
             }
         }
     }
@@ -227,7 +227,19 @@ public class SelectProps : GlobalHtmlComponentProps<HTMLSelectElement>
         }
     }
 
-    private static string? SsrOptionValue(SsrElementNode option) => option.GetAttribute("value")?.Value;
+    private static string SsrOptionValue(SsrElementNode option) =>
+        option.GetAttribute("value")?.Value ?? StripAndCollapseWhitespace(SsrText(option));
+
+    private static string SsrText(ISsrNode node) => node is SsrTextNode text
+        ? text.TextContent?.Value ?? string.Empty
+        : string.Concat(node.GetChildNodes().Select(SsrText));
+
+    /// <summary>
+    /// What HTML does to an option's text to get its value: trims ASCII whitespace and collapses runs
+    /// of it into a single space.
+    /// </summary>
+    private static string StripAndCollapseWhitespace(string text) =>
+        string.Join(' ', text.Split([' ', '\t', '\n', '\f', '\r'], StringSplitOptions.RemoveEmptyEntries));
 
     private abstract class SsrSelection
     {
@@ -251,7 +263,7 @@ public class SelectProps : GlobalHtmlComponentProps<HTMLSelectElement>
     private sealed class SsrMultipleSelection(IReadOnlySignal<IReadOnlyList<string>> values) : SsrSelection
     {
         public override bool IsSelected(SsrElementNode option) =>
-            SsrOptionValue(option) is { } value && values.Value.Contains(value);
+            values.Value.Contains(SsrOptionValue(option));
     }
 }
 

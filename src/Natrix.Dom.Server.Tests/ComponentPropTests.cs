@@ -197,6 +197,18 @@ public class ComponentPropTests
     }
 
     [Test]
+    public async Task Matches_option_without_a_value_on_its_text()
+    {
+        var html = await SsrRenderer.RenderAsync(() => new Select
+        {
+            Props = new SelectProps { Value = new Signal<string>("Dark green") },
+            Children = [TextOption("Red"), TextOption("  Dark \n  green ")],
+        });
+
+        await Assert.That(html).IsEqualTo("<select><option>Red</option><option selected>  Dark \n  green </option></select>");
+    }
+
+    [Test]
     public async Task Selects_option_rendered_by_a_nested_component()
     {
         var html = await SsrRenderer.RenderAsync(() => new Select
@@ -235,6 +247,8 @@ public class ComponentPropTests
             Values = new Signal<IReadOnlyList<string>>(["a"]),
         }).Throws<InvalidOperationException>();
     }
+
+    private static Option TextOption(string text) => new() { Children = [new DomText { Text = new Signal<string>(text) }] };
 
     private static Option Option(string value, bool selected = false, bool disabled = false) => new()
     {
