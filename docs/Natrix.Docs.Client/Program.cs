@@ -48,7 +48,7 @@ var userApi = new UserApi(
     new HttpClient { BaseAddress = new Uri($"{window.Location.Origin}/") },
     serializerOptions);
 
-var _ = new NatrixHostBuilder()
+using var _ = new NatrixHostBuilder()
     .UseRootElement(appElement)
     .UseTeleport()
     .UseLifecycleHooks()
