@@ -12,6 +12,15 @@ internal static class InputUi
     public const string FieldClass =
         "block w-full min-w-0 rounded-md border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-3 py-2 text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/20";
 
+    /// <summary>
+    /// <see cref="FieldClass"/> for the date and time types. iOS Safari draws these with a
+    /// native control as wide as its content, which ignores <c>width</c> and overflows a narrow
+    /// screen. Dropping the native appearance lets the field fit; <c>text-left</c> keeps the value
+    /// against the left edge, where Safari would otherwise centre it (preflight has the value
+    /// inherit the alignment, and keep a line's height while empty).
+    /// </summary>
+    public const string DateTimeFieldClass = FieldClass + " appearance-none text-left";
+
     public const string ChoiceClass =
         "h-4 w-4 shrink-0 accent-indigo-600";
 
@@ -66,7 +75,7 @@ internal static class InputUi
                     Id = id.ToConstSignal(),
                     Type = type.ToConstSignal(),
                     Value = value,
-                    Class = FieldClass.ToConstSignal(),
+                    Class = DateTimeFieldClass.ToConstSignal(),
                 },
                 Events = new InputEvents { OnInput = value.ToDomEvent() },
             }),
