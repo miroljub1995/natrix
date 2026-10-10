@@ -47,6 +47,7 @@ public class RouterLink : BaseComponent<RouterLinkProps, NoEvents, RouterLinkSlo
                     OnClick = (e) =>
                     {
                         if (!OperatingSystem.IsBrowser()) return;
+                        if (!IsPlainClick(e)) return;
                         e.PreventDefault();
                         navigation.PushAsync(Props.Href);
                         ScrollToTop();
@@ -56,6 +57,14 @@ public class RouterLink : BaseComponent<RouterLinkProps, NoEvents, RouterLinkSlo
             },
         ];
     }
+
+    /// <summary>
+    /// Whether a click on a link is one to navigate in place: a plain primary-button click. With
+    /// a modifier (new tab, new window, download) or another button, the browser handles it.
+    /// </summary>
+    [SupportedOSPlatform("browser")]
+    internal static bool IsPlainClick(MouseEvent e) =>
+        e.Button == 0 && !e.CtrlKey && !e.MetaKey && !e.ShiftKey && !e.AltKey;
 
     /// <summary>
     /// Starts a page navigated to in place at the top, as it would on a full load. Through
