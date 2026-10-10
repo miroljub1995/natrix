@@ -355,4 +355,88 @@ public class RoutesTests
 
         await Assert.That(h.Container.TextContent).IsEqualTo("root:index");
     }
+
+    private static Route[] DocsRoutes(Dictionary<string, int> m, Dictionary<string, int> u) =>
+    [
+        new Route
+        {
+            Pattern = "/docs",
+            Render = () =>
+            [
+                new Span
+                {
+                    Children = [new DomText { Text = new Computed<string>(() => "layout:") }],
+                },
+                new Outlet(),
+            ],
+            Children =
+            [
+                Route.Redirect("/", "/docs/quick-start"),
+                new Route
+                {
+                    Pattern = "/quick-start",
+                    Render = () => BuildPage("quick-start", m, u),
+                },
+                new Route
+                {
+                    Pattern = "/other",
+                    Render = () => BuildPage("other", m, u),
+                },
+                new Route
+                {
+                    Pattern = "/{**path}",
+                    Render = () => BuildPage("not-found", m, u),
+                },
+            ],
+        },
+    ];
+
+    [Test]
+    public async Task Redirect_route_renders_target_and_replaces_url()
+    {
+        using var h = BuildHost("/docs", DocsRoutes);
+
+        await Assert.That(h.Container.TextContent).IsEqualTo("layout:quick-start");
+        await Assert.That(h.Navigation.CurrentPath.Value).IsEqualTo("/docs/quick-start");
+        await Assert.That(string.Join(" ", h.Navigation.History)).IsEqualTo("/docs/quick-start");
+        await Assert.That(h.MountedCounts).IsEquivalentTo(new Dictionary<string, int>
+        {
+            ["quick-start"] = 1,
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
+    }
+
+    [Test]
+    public async Task Navigating_to_redirect_route_replaces_the_history_entry()
+    {
+        using var h = BuildHost("/docs/other", DocsRoutes);
+
+        await h.Navigation.PushAsync("/docs");
+
+        await Assert.That(h.Container.TextContent).IsEqualTo("layout:quick-start");
+        await Assert.That(h.Navigation.CurrentPath.Value).IsEqualTo("/docs/quick-start");
+        // Back from the target returns to the page before it, not to /docs.
+        await Assert.That(string.Join(" ", h.Navigation.History)).IsEqualTo("/docs/other /docs/quick-start");
+        // The target mounts once, and nothing - the catch-all included - mounts on the way.
+        await Assert.That(h.MountedCounts).IsEquivalentTo(new Dictionary<string, int>
+        {
+            ["other"] = 1,
+            ["quick-start"] = 1,
+        }, EqualityComparer<KeyValuePair<string, int>>.Default);
+    }
+
+    [Test]
+    public async Task Redirect_loop_throws()
+    {
+        await Assert.That(() => BuildHost("/a", (_, _) =>
+        [
+            Route.Redirect("/a", "/b"),
+            Route.Redirect("/b", "/a"),
+        ])).Throws<InvalidOperationException>();
+    }
+
+    [Test]
+    public async Task Redirect_target_must_be_absolute()
+    {
+        await Assert.That(() => Route.Redirect("/", "quick-start")).Throws<ArgumentException>();
+    }
 }

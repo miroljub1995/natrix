@@ -7,7 +7,7 @@ namespace Natrix.Browser.Features.Routing;
 
 /// <summary>
 /// Client-side implementation of <see cref="INavigationFeature"/>.
-/// Uses <c>history.pushState</c> for navigation and listens to <c>popstate</c>
+/// Uses <c>history.pushState</c> and <c>history.replaceState</c> for navigation and listens to <c>popstate</c>
 /// to handle back/forward browser buttons.
 /// </summary>
 [SupportedOSPlatform("browser")]
@@ -36,6 +36,16 @@ public sealed class ClientNavigationFeature : INavigationFeature
             return Task.CompletedTask;
 
         _window.History.PushState(null, "", path);
+        _currentPath.Value = path;
+        return Task.CompletedTask;
+    }
+
+    public Task ReplaceAsync(string path)
+    {
+        if (_currentPath.Value == path)
+            return Task.CompletedTask;
+
+        _window.History.ReplaceState(null, "", path);
         _currentPath.Value = path;
         return Task.CompletedTask;
     }

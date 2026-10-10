@@ -20,4 +20,11 @@ public interface INavigationFeature
     /// On the server, this records the path so the host can return a 302 redirect.
     /// </summary>
     Task PushAsync(string path);
+
+    /// <summary>
+    /// Navigates to the specified path, replacing the current history entry instead of adding one.
+    /// On the client, this performs a client-side navigation with <c>history.replaceState</c>.
+    /// On the server, this records the path so the host can return a redirect, as <see cref="PushAsync"/> does.
+    /// </summary>
+    Task ReplaceAsync(string path);
 }
