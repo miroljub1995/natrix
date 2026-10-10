@@ -54,7 +54,7 @@ public class EventTests
         var (container, host) = DomRenderer.Mount(() => new Select
         {
             Props = new SelectProps { Value = value },
-            Events = new SelectEvents { OnInput = value.ToDomInputEvent() },
+            Events = new SelectEvents { OnInput = value.ToDomEvent() },
             Children = [Option("a"), Option("b")],
         });
         using var _ = host;

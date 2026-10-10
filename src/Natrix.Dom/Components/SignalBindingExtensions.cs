@@ -8,11 +8,8 @@ public static class SignalBindingExtensions
 {
     /// <summary>
     /// Binds the value of the event's input, textarea or select to <paramref name="signal"/>, for
-    /// <c>OnInput</c>. The same handler as <see cref="ToDomEvent(ISignal{string}, bool)"/>.
+    /// <c>OnInput</c> or <c>OnChange</c>.
     /// </summary>
-    public static Action<Event>? ToDomInputEvent(this ISignal<string> signal, bool reset = true) =>
-        signal.ToDomEvent(reset);
-
     public static Action<Event>? ToDomEvent(this ISignal<string> signal, bool reset = true)
     {
         if (!OperatingSystem.IsBrowser())
