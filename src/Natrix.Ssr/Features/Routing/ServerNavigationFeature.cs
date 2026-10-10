@@ -6,7 +6,7 @@ namespace Natrix.Ssr.Features.Routing;
 /// <summary>
 /// SSR implementation of <see cref="INavigationFeature"/>.
 /// The path is constant for the lifetime of the request.
-/// When <see cref="PushAsync"/> is called, the redirect location is stored
+/// When <see cref="PushAsync"/> or <see cref="ReplaceAsync"/> is called, the redirect location is stored
 /// in <see cref="RedirectLocation"/> so the server middleware can return a 302 response.
 /// </summary>
 public sealed class ServerNavigationFeature : INavigationFeature
@@ -30,4 +30,10 @@ public sealed class ServerNavigationFeature : INavigationFeature
         RedirectLocation = path;
         return Task.CompletedTask;
     }
+
+    /// <summary>
+    /// Records the redirect exactly as <see cref="PushAsync"/> does: a response has no history
+    /// entry to replace.
+    /// </summary>
+    public Task ReplaceAsync(string path) => PushAsync(path);
 }

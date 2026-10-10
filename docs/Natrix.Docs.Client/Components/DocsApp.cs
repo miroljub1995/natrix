@@ -79,6 +79,8 @@ public class DocsApp : BaseComponent<DocsAppProps, NoEvents, NoSlots, NoExpose>
                                 Render = () => [new DocsLayout { Props = new NoProps() }],
                                 Children =
                                 [
+                                    // /docs has no page of its own; it opens the first one in the sidebar.
+                                    Route.Redirect("/", "/docs/quick-start"),
                                     new Route
                                     {
                                         Pattern = "/quick-start",

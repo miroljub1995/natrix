@@ -16,6 +16,13 @@ public class Routes : IComponent
 {
     public required Route[] Items { get; init; }
 
+    /// <summary>
+    /// How many redirect routes one navigation may pass through before matching gives up, so a
+    /// redirect loop fails loudly instead of hanging the page.
+    /// </summary>
+    private const int MaxRedirects = 8;
+
+    private readonly EffectScope _effectScope = new();
     private ComposedComponent? _composed;
 
     public void Mount(IRenderSlot slot)
@@ -31,13 +38,33 @@ public class Routes : IComponent
 
         var routes = Items;
 
-        // Single reactive computation that walks the entire route tree
-        // and returns a linked chain of RouteMatch, or null if no
-        // complete match exists.
-        var matchedRoute = new Computed<RouteMatch?>(() =>
+        // Single reactive computation that walks the entire route tree and
+        // follows redirect routes to the page they point at. Because the
+        // redirect is resolved here, the target renders straight away: the
+        // tree never mounts, and so never flashes, an intermediate branch.
+        var resolution = new Computed<RouteResolution>(
+            () => Resolve(routes, navigation.CurrentPath.Value));
+
+        // A linked chain of RouteMatch, or null if no complete match exists.
+        var matchedRoute = new Computed<RouteMatch?>(() => resolution.Value.Match);
+
+        _effectScope.Run(() =>
         {
-            var pathSegments = ParsePathSegments(navigation.CurrentPath.Value);
-            return MatchRouteTree(routes, pathSegments);
+            // The URL still names the redirect route's path; replace it, so the
+            // address bar, links that highlight the current page, and the server's
+            // redirect response all agree with what is rendered. A replace rather
+            // than a push keeps Back from returning to a URL that bounces forward.
+            new Effect(_ =>
+            {
+                var redirectPath = resolution.Value.RedirectPath;
+
+                using var untracked = new UntrackedScope();
+
+                if (redirectPath is not null)
+                {
+                    navigation.ReplaceAsync(redirectPath);
+                }
+            });
         });
 
         var ifComponents = BuildRouteBranches(routes, matchedRoute);
@@ -49,6 +76,7 @@ public class Routes : IComponent
     {
         _composed?.Unmount();
         _composed = null;
+        _effectScope.Dispose();
     }
 
     /// <summary>
@@ -81,6 +109,39 @@ public class Routes : IComponent
         }
 
         return components;
+    }
+
+    /// <summary>
+    /// Matches <paramref name="path"/>, following redirect routes until a route that renders
+    /// matches, or none does.
+    /// </summary>
+    private static RouteResolution Resolve(Route[] routes, string path)
+    {
+        string? redirectPath = null;
+
+        for (var redirects = 0; ; redirects++)
+        {
+            var match = MatchRouteTree(routes, ParsePathSegments(path));
+            var leaf = match;
+            while (leaf?.ChildMatch is not null)
+            {
+                leaf = leaf.ChildMatch;
+            }
+
+            if (leaf?.Route.RedirectTo is not { } target)
+            {
+                return new RouteResolution(match, redirectPath);
+            }
+
+            if (redirects == MaxRedirects)
+            {
+                throw new InvalidOperationException(
+                    $"Redirect routes sent '{path}' through more than {MaxRedirects} redirects; check them for a loop.");
+            }
+
+            path = target;
+            redirectPath = target;
+        }
     }
 
     /// <summary>
@@ -131,4 +192,10 @@ public class Routes : IComponent
 
     private static string[] ParsePathSegments(string path) =>
         path.Trim('/').Split('/', StringSplitOptions.RemoveEmptyEntries);
+
+    /// <summary>
+    /// What a path resolves to: the match to render, and the path a redirect route sent it to,
+    /// or <c>null</c> when it matched without one.
+    /// </summary>
+    private sealed record RouteResolution(RouteMatch? Match, string? RedirectPath);
 }
