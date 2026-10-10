@@ -16,6 +16,13 @@ public class TelInputDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpose>
                 exposed = default;
 
                 var phone = new Signal<string>("");
+                var formatted = new Computed<string>(() =>
+                {
+                    var digits = new string([.. phone.Value.Where(char.IsDigit)]);
+                    return digits.Length == 10
+                        ? $"({digits[..3]}) {digits[3..6]}-{digits[6..]}"
+                        : $"{digits.Length} of 10 digits";
+                });
 
                 return
                 [
@@ -32,18 +39,9 @@ public class TelInputDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpose>
                     new P
                     {
                         Props = new PProps(),
-                        Children = [new DomText { Text = new Computed<string>(() => Format(phone.Value)) }],
+                        Children = [new DomText { Text = formatted }],
                     },
                 ];
-            }
-
-            // Plain C#. The Computed above calls it again whenever phone changes.
-            private static string Format(string value)
-            {
-                var digits = new string([.. value.Where(char.IsDigit)]);
-                return digits.Length == 10
-                    ? $"({digits[..3]}) {digits[3..6]}-{digits[6..]}"
-                    : $"{digits.Length} of 10 digits";
             }
         }
         """;
@@ -53,6 +51,13 @@ public class TelInputDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpose>
         exposed = default;
 
         var phone = new Signal<string>("");
+        var formatted = new Computed<string>(() =>
+        {
+            var digits = new string([.. phone.Value.Where(char.IsDigit)]);
+            return digits.Length == 10
+                ? $"({digits[..3]}) {digits[3..6]}-{digits[6..]}"
+                : $"{digits.Length} of 10 digits";
+        });
 
         return
         [
@@ -69,16 +74,8 @@ public class TelInputDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExpose>
                     },
                     Events = new InputEvents { OnInput = phone.ToDomEvent() },
                 }),
-                Result(new Computed<string>(() => Format(phone.Value))),
+                Result(formatted),
                 Hint("On a phone, this field opens the dial pad.".ToConstSignal())),
         ];
-    }
-
-    private static string Format(string value)
-    {
-        var digits = new string([.. value.Where(char.IsDigit)]);
-        return digits.Length == 10
-            ? $"({digits[..3]}) {digits[3..6]}-{digits[6..]}"
-            : $"{digits.Length} of 10 digits";
     }
 }

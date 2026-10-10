@@ -23,7 +23,7 @@ public class InputsExamplePage : BaseComponent<NoProps, NoEvents, NoSlots, NoExp
             "The value is parsed with System.Uri on every keystroke: the same .NET code that rendered the first result on the server.",
             () => new UrlInputDemo { Props = new NoProps() }),
         new("tel", "Telephone", "<input type=\"tel\">", "PhoneField.cs", TelInputDemo.Source,
-            "A tel field is free text, but on phones it brings up the dial pad. Formatting is an ordinary C# method, called by the Computed that reads the signal.",
+            "A tel field is free text, but on phones it brings up the dial pad. The formatting lives in a Computed, which runs again whenever the signal changes.",
             () => new TelInputDemo { Props = new NoProps() }),
         new("search", "Search", "<input type=\"search\">", "LanguageSearch.cs", SearchInputDemo.Source,
             "A filter over a list, rendered with a keyed ForEach. Languages that stay in the results keep their elements; only the ones that come and go are added or removed.",

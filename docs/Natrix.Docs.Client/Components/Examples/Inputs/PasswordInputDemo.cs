@@ -114,7 +114,7 @@ public class PasswordInputDemo : BaseComponent<NoProps, NoEvents, NoSlots, NoExp
                             Props = new ButtonProps
                             {
                                 Type = "button".ToConstSignal(),
-                                Class = "shrink-0 rounded-md border border-gray-300 dark:border-gray-600 px-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors".ToConstSignal(),
+                                Class = "w-16 shrink-0 rounded-md border border-gray-300 dark:border-gray-600 px-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:border-indigo-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors".ToConstSignal(),
                             },
                             Events = new ButtonEvents { OnClick = _ => visible.Value = !visible.Value },
                             Children = [new DomText { Text = new Computed<string>(() => visible.Value ? "Hide" : "Show") }],
