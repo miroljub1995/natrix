@@ -144,6 +144,11 @@ app.MapFallback(httpContext => SsrEventLoop.RunAsync(async () =>
 
     httpContext.Response.StatusCode = status.StatusCode.Value;
     httpContext.Response.Headers.ContentType = "text/html; charset=utf-8";
+    // The client hydrates this markup node for node, so nothing between here and the browser may
+    // rewrite it. Cloudflare's Email Obfuscation, for one, turns "you@example.com" in the inputs
+    // example's source listing into an <a>, and hydration then finds an element where it expects
+    // text. no-transform is the header Cloudflare honours to leave the HTML alone.
+    httpContext.Response.Headers.CacheControl = "no-transform";
     await httpContext.Response.BodyWriter.WriteAsync(Encoding.UTF8.GetBytes("<!DOCTYPE html>"));
     await root.WriteAsync(httpContext.Response.BodyWriter, cancellationToken: httpContext.RequestAborted);
     await httpContext.Response.BodyWriter.FlushAsync(httpContext.RequestAborted);
