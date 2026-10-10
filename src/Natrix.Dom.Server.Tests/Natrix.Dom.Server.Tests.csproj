@@ -4,13 +4,9 @@
         <PackageReference Include="TUnit"/>
     </ItemGroup>
 
-    <!-- The cases are shared with Natrix.Dom.Browser.Tests, so both render the same components. -->
-    <ItemGroup>
-        <Compile Include="..\Natrix.Dom.TestCases\**\*.cs" LinkBase="TestCases"/>
-    </ItemGroup>
-
     <ItemGroup>
         <ProjectReference Include="..\Natrix.Ssr\Natrix.Ssr.csproj"/>
+        <ProjectReference Include="..\Natrix.Dom.TestCases\Natrix.Dom.TestCases.csproj"/>
     </ItemGroup>
 
 </Project>

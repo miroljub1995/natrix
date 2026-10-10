@@ -19,13 +19,9 @@
     </ItemGroup>
     <Import Project="..\Natrix.Browser.TestHost\build\Natrix.Browser.TestHost.targets"/>
 
-    <!-- The cases are shared with Natrix.Dom.Server.Tests, so both render the same components. -->
-    <ItemGroup>
-        <Compile Include="..\Natrix.Dom.TestCases\**\*.cs" LinkBase="TestCases"/>
-    </ItemGroup>
-
     <ItemGroup>
         <ProjectReference Include="..\Natrix.Browser\Natrix.Browser.csproj"/>
+        <ProjectReference Include="..\Natrix.Dom.TestCases\Natrix.Dom.TestCases.csproj"/>
     </ItemGroup>
 
 </Project>
