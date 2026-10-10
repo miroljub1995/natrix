@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+@layer base {
+    /* Mobile browsers zoom on a double tap, so tapping a button quickly (the
+       counter, the canvas demo) zooms the page in and out. `manipulation` turns
+       off only that gesture: panning and pinch-zoom still work. It is set on
+       every element because the effective value stops at the nearest scroll
+       container, and in the base layer so a `touch-*` utility still wins. */
+    * {
+        touch-action: manipulation;
+    }
+}
