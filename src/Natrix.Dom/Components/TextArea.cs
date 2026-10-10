@@ -1,3 +1,4 @@
+using Natrix.Core.Components;
 using Natrix.Core.RenderRoot;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
@@ -173,7 +174,8 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
             {
                 if (OperatingSystem.IsBrowser()) el.Value = s.Value;
             },
-            static (el, s) => el.SetAttribute("value", s)));
+            // Written as the content on the server; see GetChildren.
+            static (_, _) => { }));
     }
 
     private static PropDescriptor<string>? s_defaultValue;
@@ -186,7 +188,8 @@ public class TextAreaProps : GlobalHtmlComponentProps<HTMLTextAreaElement>
             {
                 if (OperatingSystem.IsBrowser()) el.DefaultValue = s.Value;
             },
-            static (el, s) => el.SetAttribute("value", s)));
+            // Written as the content on the server; see GetChildren.
+            static (_, _) => { }));
     }
 }
 
@@ -196,4 +199,18 @@ public class TextAreaEvents : HtmlElementComponentEvents<HTMLTextAreaElement>
 
 public class TextArea() : BaseNonVoidDomComponent<HTMLTextAreaElement, TextAreaProps, TextAreaEvents>("textarea")
 {
+    /// <summary>
+    /// A textarea's value is its text content, so the server writes the first of <c>Value</c>,
+    /// <c>DefaultValue</c> and the children, as React does.
+    /// </summary>
+    protected override IComponent[]? GetChildren(bool isSsr)
+    {
+        if (!isSsr)
+        {
+            return base.GetChildren(isSsr);
+        }
+
+        var text = Props?.Value ?? Props?.DefaultValue;
+        return text is null ? base.GetChildren(isSsr) : [new DomText { Text = text }];
+    }
 }

@@ -10,5 +10,5 @@ public abstract class BaseVoidDomComponent<TElement, TProps, TEvents>(string tag
     where TEvents : BaseDomComponentEvents<TElement>
 {
     protected override bool IsVoid => true;
-    protected override IComponent[]? GetChildren() => null;
+    protected override IComponent[]? GetChildren(bool isSsr) => null;
 }

@@ -13,5 +13,5 @@ public abstract class BaseNonVoidDomComponent<TElement, TProps, TEvents>(string 
 
     public IComponent[] Children { get; init; } = [];
 
-    protected override IComponent[]? GetChildren() => Children;
+    protected override IComponent[]? GetChildren(bool isSsr) => Children;
 }
