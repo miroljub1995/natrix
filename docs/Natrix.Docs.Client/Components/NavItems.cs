@@ -32,6 +32,7 @@ public class NavItems : BaseComponent<NoProps, NavItemsEvents, NoSlots, NoExpose
             new("Todo List", "/docs/examples/todo"),
             new("Canvas", "/docs/examples/canvas"),
             new("Data Fetching", "/docs/examples/data-fetching"),
+            new("Form Inputs", "/docs/examples/inputs"),
         ]),
     ];
 

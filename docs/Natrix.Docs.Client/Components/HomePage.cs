@@ -259,69 +259,18 @@ public class HomePage : BaseComponent<HomePageProps, NoEvents, NoSlots, NoExpose
                             },
                         ],
                     },
-                    new Div
+                    new LivePanel
                     {
-                        Props = new DivProps
+                        Props = new LivePanelProps
                         {
-                            Class = "flex flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-950 lg:col-span-2".ToConstSignal(),
+                            Label = "Live. This is .NET, running in your browser.",
+                            Caption = "Counter.cs is the whole component, minus the styling. Its first render came from the server; each click now updates two text nodes and nothing else.",
+                            ExtraClass = "lg:col-span-2",
                         },
-                        Children =
-                        [
-                            new Div
-                            {
-                                Props = new DivProps
-                                {
-                                    Class = "flex items-center gap-2 border-b border-gray-200 dark:border-gray-800 px-4 py-3 text-xs font-medium text-gray-500 dark:text-gray-400".ToConstSignal(),
-                                },
-                                Children =
-                                [
-                                    new Span
-                                    {
-                                        Props = new SpanProps
-                                        {
-                                            Class = "relative flex h-2 w-2".ToConstSignal(),
-                                        },
-                                        Children =
-                                        [
-                                            new Span
-                                            {
-                                                Props = new SpanProps
-                                                {
-                                                    Class = "absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75".ToConstSignal(),
-                                                },
-                                            },
-                                            new Span
-                                            {
-                                                Props = new SpanProps
-                                                {
-                                                    Class = "relative inline-flex h-2 w-2 rounded-full bg-emerald-500".ToConstSignal(),
-                                                },
-                                            },
-                                        ],
-                                    },
-                                    Text("Live. This is .NET, running in your browser."),
-                                ],
-                            },
-                            new Div
-                            {
-                                Props = new DivProps
-                                {
-                                    Class = "flex-1".ToConstSignal(),
-                                },
-                                Children = [new LiveCounter { Props = new NoProps() }],
-                            },
-                            new P
-                            {
-                                Props = new PProps
-                                {
-                                    Class = "border-t border-gray-200 dark:border-gray-800 px-4 py-3 text-xs leading-relaxed text-gray-500 dark:text-gray-400".ToConstSignal(),
-                                },
-                                Children =
-                                [
-                                    Text("Counter.cs is the whole component, minus the styling. Its first render came from the server; each click now updates two text nodes and nothing else."),
-                                ],
-                            },
-                        ],
+                        Slots = new LivePanelSlots
+                        {
+                            Default = () => [new LiveCounter { Props = new NoProps() }],
+                        },
                     },
                 ],
             },

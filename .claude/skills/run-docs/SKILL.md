@@ -1,6 +1,6 @@
 ---
 name: run-docs
-description: Build, launch and drive the Natrix docs app (docs/Natrix.Docs, SSR host + WebAssembly client) to see a change working in the real app. Use when asked to run, start, screenshot or check the docs site or its examples (Todo, Canvas, Data Fetching).
+description: Build, launch and drive the Natrix docs app (docs/Natrix.Docs, SSR host + WebAssembly client) to see a change working in the real app. Use when asked to run, start, screenshot or check the docs site or its examples (Todo, Canvas, Data Fetching, Form Inputs).
 ---
 
 # Run the docs app
@@ -11,7 +11,7 @@ it. Most of the framework — Signals, SSR, hydration, SWR, Tailwind — shows u
 here, so it is the place to see a framework change working end to end.
 
 Routes: `/`, `/docs/quick-start`, `/docs/examples/todo`,
-`/docs/examples/canvas`, `/docs/examples/data-fetching`. API: `/api/users/{id}` (ids: `ada`, `grace`,
+`/docs/examples/canvas`, `/docs/examples/data-fetching`, `/docs/examples/inputs`. API: `/api/users/{id}` (ids: `ada`, `grace`,
 `linus`, `alan`, `margaret`; 500 ms delay) and `/api/failing/users/{id}`
 (always 503).
 

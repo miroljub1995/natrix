@@ -32,7 +32,7 @@ public partial class CSharpCode : BaseComponent<CSharpCodeProps, NoEvents, NoSlo
         (?<comment>//[^\n]*)
         |(?<string>\$?"(?:[^"\\\n]|\\.)*")
         |(?<number>\b\d+\b)
-        |(?<keyword>\b(?:public|private|protected|internal|readonly|class|partial|static|override|out|var|new|return|default|using|namespace|void|int|string|bool|true|false|null|await|async)\b)
+        |(?<keyword>\b(?:public|private|protected|internal|readonly|class|partial|static|override|out|var|new|return|default|using|namespace|void|int|uint|long|double|string|bool|true|false|null|await|async|if|else|is|not|foreach|in)\b)
         |(?<method>\b[A-Z]\w*(?=\())
         |(?<plain>(?<=\.)[A-Z]\w*|\b[A-Z]\w*(?=\s*=[^=>]))
         |(?<type>\b[A-Z]\w*)
