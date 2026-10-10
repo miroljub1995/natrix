@@ -1,3 +1,4 @@
+using System.Collections.Concurrent;
 using Natrix.Core.Components;
 using Natrix.Core.Features;
 using Natrix.Core.RenderRoot;
@@ -6,6 +7,14 @@ namespace Natrix.Core;
 
 public sealed class NatrixHost
 {
+    /// <summary>
+    /// Every host that is mounted and not yet disposed. Signals hold their consumers weakly, so a
+    /// mounted tree is otherwise reachable only through whatever event handler happens to capture
+    /// part of it, and a collection can take the rest - effects included - out from under a
+    /// running app. The caller is not relied on to hold the returned handle: a Program that ends
+    /// in <c>await Task.Delay(Timeout.Infinite)</c> roots nothing.
+    /// </summary>
+    private static readonly ConcurrentDictionary<MountedHost, byte> Mounted = new();
     private readonly Func<IComponent> _rootComponentFactory;
     private readonly IRenderRoot _renderRoot;
     private readonly IFeatureCollection _rootFeatures;
@@ -46,6 +55,18 @@ public sealed class NatrixHost
 
             new Signals.Effect(onCleanup => onCleanup(() => rootComponent.Unmount()));
         });
-        return scope;
+
+        var mounted = new MountedHost(scope);
+        Mounted.TryAdd(mounted, 0);
+        return mounted;
+    }
+
+    private sealed class MountedHost(Signals.EffectScope scope) : IDisposable
+    {
+        public void Dispose()
+        {
+            Mounted.TryRemove(this, out _);
+            scope.Dispose();
+        }
     }
 }

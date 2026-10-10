@@ -56,6 +56,7 @@ public class AppHeader : BaseComponent<AppHeaderProps, NoEvents, NoSlots, NoExpo
                                     OnClick = (e) =>
                                     {
                                         if (!OperatingSystem.IsBrowser()) return;
+                                        if (!NavItems.IsPlainClick(e)) return;
                                         e.PreventDefault();
                                         mobileMenuOpen.Value = false;
                                         navigation.PushAsync("/");

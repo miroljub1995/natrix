@@ -767,4 +767,60 @@ public class EffectScopeTest
         signal.Value = 5;
         await Assert.That(runCount).IsEqualTo(3);
     }
+
+    [Test]
+    public async Task ShouldOwnScopesCreatedWhenEffectReRuns()
+    {
+        var branch = new Signal<int>(0);
+        var inner = new Signal<string>("test");
+        var scope = new EffectScope();
+
+        // Held here so a collection cannot take the inner effect: signals reference their
+        // consumers weakly, and a detached scope would otherwise pass by being collected.
+        EffectScope? branchScope = null;
+        var innerRunCount = 0;
+        scope.Run(() =>
+        {
+            new Effect(_ =>
+            {
+                if (branch.Value == 0)
+                {
+                    return;
+                }
+
+                // Created on a re-run, the way an If mounts a branch after a click.
+                branchScope = new EffectScope();
+                branchScope.Run(() =>
+                {
+                    new Effect(_ =>
+                    {
+                        var __ = inner.Value;
+                        innerRunCount++;
+                    });
+                });
+            });
+        });
+
+        // Written with no scope active, the way a click handler writes it. Cleared explicitly:
+        // the ambient scope is thread-local, and another test may have left one on this thread.
+        var ambient = EffectScopeContext.Active;
+        EffectScopeContext.Active = null;
+        try
+        {
+            branch.Value = 1;
+        }
+        finally
+        {
+            EffectScopeContext.Active = ambient;
+        }
+
+        await Assert.That(innerRunCount).IsEqualTo(1);
+
+        // Disposing the outer scope has to reach the branch scope through the effect's scope.
+        scope.Dispose();
+        inner.Value = "new test";
+
+        await Assert.That(innerRunCount).IsEqualTo(1);
+        GC.KeepAlive(branchScope);
+    }
 }

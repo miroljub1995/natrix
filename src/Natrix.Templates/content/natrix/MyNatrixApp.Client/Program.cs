@@ -26,7 +26,7 @@ var appElement = window.Document.GetElementById("app")
 
 var hydration = new ClientHydrationStateFeature();
 
-var _ = new NatrixHostBuilder()
+using var _ = new NatrixHostBuilder()
     .UseRootElement(appElement)
     .UseTeleport()
     .UseLifecycleHooks()
