@@ -1,8 +1,10 @@
+using System.Runtime.Versioning;
 using Natrix.Core.Components;
 using Natrix.Dom.Components;
 using Natrix.Core.Features;
 using Natrix.Core.Features.Routing;
 using Natrix.Signals;
+using Natrix.StdWeb;
 
 namespace MyNatrixApp.Client.Components;
 
@@ -54,6 +56,7 @@ public class NavItems : BaseComponent<NavItemsProps, NavItemsEvents, NoSlots, No
                     OnClick = (e) =>
                     {
                         if (!OperatingSystem.IsBrowser()) return;
+                        if (!IsPlainClick(e)) return;
                         e.PreventDefault();
                         Events?.Navigate();
                         navigation.PushAsync(item.Href);
@@ -63,4 +66,12 @@ public class NavItems : BaseComponent<NavItemsProps, NavItemsEvents, NoSlots, No
             };
         }).ToArray();
     }
+
+    /// <summary>
+    /// Whether a click on a link is one to navigate in place: a plain primary-button click. With
+    /// a modifier (new tab, new window, download) or another button, the browser handles it.
+    /// </summary>
+    [SupportedOSPlatform("browser")]
+    internal static bool IsPlainClick(MouseEvent e) =>
+        e.Button == 0 && !e.CtrlKey && !e.MetaKey && !e.ShiftKey && !e.AltKey;
 }
