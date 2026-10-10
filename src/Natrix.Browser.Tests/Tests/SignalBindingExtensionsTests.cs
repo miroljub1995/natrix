@@ -8,7 +8,7 @@ namespace Natrix.Browser.Tests;
 public class SignalBindingExtensionsTests
 {
     [Test]
-    public async Task ToDomInputEvent_updates_signal_on_input_event()
+    public async Task ToDomEvent_updates_signal_on_input_event()
     {
         var container = DomHelpers.CreateContainer();
         var text = new Signal<string>("");
@@ -21,7 +21,7 @@ public class SignalBindingExtensionsTests
                 Props = new InputProps { Value = text },
                 Events = new InputEvents
                 {
-                    OnInput = text.ToDomInputEvent(),
+                    OnInput = text.ToDomEvent(),
                 },
             })
             .Build()
@@ -35,7 +35,7 @@ public class SignalBindingExtensionsTests
     }
 
     [Test]
-    public async Task ToDomInputEvent_resets_dom_value_to_signal_value()
+    public async Task ToDomEvent_resets_dom_value_to_signal_value()
     {
         var container = DomHelpers.CreateContainer();
         var text = new Signal<string>("", new StringLengthComparer());
@@ -48,7 +48,7 @@ public class SignalBindingExtensionsTests
                 Props = new InputProps { Value = text },
                 Events = new InputEvents
                 {
-                    OnInput = text.ToDomInputEvent(reset: true),
+                    OnInput = text.ToDomEvent(reset: true),
                 },
             })
             .Build()
@@ -82,7 +82,7 @@ public class SignalBindingExtensionsTests
     }
 
     [Test]
-    public async Task ToDomInputEvent_without_reset_does_not_write_back()
+    public async Task ToDomEvent_without_reset_does_not_write_back()
     {
         var text = new Signal<string>("");
         var container = DomHelpers.CreateContainer();
@@ -95,7 +95,7 @@ public class SignalBindingExtensionsTests
                 Props = new InputProps { Value = text },
                 Events = new InputEvents
                 {
-                    OnInput = text.ToDomInputEvent(reset: false),
+                    OnInput = text.ToDomEvent(reset: false),
                 },
             })
             .Build()
@@ -136,7 +136,7 @@ public class SignalBindingExtensionsTests
     }
 
     [Test]
-    public async Task ToDomInputEvent_works_with_textarea()
+    public async Task ToDomEvent_works_with_textarea()
     {
         var container = DomHelpers.CreateContainer();
         var text = new Signal<string>("");
@@ -149,7 +149,7 @@ public class SignalBindingExtensionsTests
                 Props = new TextAreaProps { Value = text },
                 Events = new TextAreaEvents
                 {
-                    OnInput = text.ToDomInputEvent(),
+                    OnInput = text.ToDomEvent(),
                 },
             })
             .Build()

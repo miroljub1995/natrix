@@ -85,7 +85,11 @@ public class ElementComponentEvents<TElement> : BaseDomComponentEvents<TElement>
     public Action<Event>? OnBeforeMatch { get; init; }
     public Action<Event>? OnBeforeXrSelect { get; init; }
     public Action<ContentVisibilityAutoStateChangeEvent>? OnContentVisibilityAutoStateChange { get; init; }
-    public Action<InputEvent>? OnInput { get; init; }
+    /// <summary>
+    /// An <see cref="InputEvent"/> only when text is edited; checkboxes, radios, ranges, selects and
+    /// other controls fire a plain <see cref="Event"/>, so check with <c>is InputEvent</c>.
+    /// </summary>
+    public Action<Event>? OnInput { get; init; }
     public Action<SecurityPolicyViolationEvent>? OnSecurityPolicyViolation { get; init; }
     public Action<WheelEvent>? OnWheel { get; init; }
 
