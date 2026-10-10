@@ -22,7 +22,11 @@ public class HtmlElementComponentEvents<TElement> : ElementComponentEvents<TElem
     // Other events
     public Action<Event>? OnChange { get; init; }
     public Action<CommandEvent>? OnCommand { get; init; }
-    public Action<ErrorEvent>? OnError { get; init; }
+    /// <summary>
+    /// A plain <see cref="Event"/> when a resource (image, script, stylesheet, media) fails to load;
+    /// <see cref="ErrorEvent"/> is only for script errors, on the window and in workers.
+    /// </summary>
+    public Action<Event>? OnError { get; init; }
     public Action<Event>? OnLoad { get; init; }
     public Action<SubmitEvent>? OnSubmit { get; init; }
 

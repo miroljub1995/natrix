@@ -6,15 +6,12 @@ namespace Natrix.Dom.Components;
 
 public static class SignalBindingExtensions
 {
-    public static Action<InputEvent>? ToDomInputEvent(this ISignal<string> signal, bool reset = true)
-    {
-        if (!OperatingSystem.IsBrowser())
-        {
-            return null;
-        }
-
-        return CreateInputEventHandler(signal, reset);
-    }
+    /// <summary>
+    /// Binds the value of the event's input, textarea or select to <paramref name="signal"/>, for
+    /// <c>OnInput</c>. The same handler as <see cref="ToDomEvent(ISignal{string}, bool)"/>.
+    /// </summary>
+    public static Action<Event>? ToDomInputEvent(this ISignal<string> signal, bool reset = true) =>
+        signal.ToDomEvent(reset);
 
     public static Action<Event>? ToDomEvent(this ISignal<string> signal, bool reset = true)
     {
@@ -27,7 +24,7 @@ public static class SignalBindingExtensions
     }
 
     /// <summary>
-    /// Binds the selected values of a <see cref="Multiple"/> select to <paramref name="signal"/>, for
+    /// Binds the selected values of a <see cref="SelectProps.Multiple"/> select to <paramref name="signal"/>, for
     /// <c>OnChange</c>. Each change assigns a new list.
     /// </summary>
     /// <param name="reset">Re-applies the signal's value to the options afterwards, so a value the
@@ -65,22 +62,6 @@ public static class SignalBindingExtensions
             {
                 SelectProps.SelectOptions(select, signal.Value);
             }
-        };
-    }
-
-    [SupportedOSPlatform("browser")]
-    private static Action<InputEvent> CreateInputEventHandler(ISignal<string> signal, bool reset)
-    {
-        return ev =>
-        {
-            var target = ev.Target;
-
-            if (target is null)
-            {
-                return;
-            }
-
-            BindValue(target, signal, reset);
         };
     }
 
