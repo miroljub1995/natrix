@@ -108,6 +108,7 @@ public class NavItems : BaseComponent<NoProps, NavItemsEvents, NoSlots, NoExpose
                         OnClick = (e) =>
                         {
                             if (!OperatingSystem.IsBrowser()) return;
+                            if (!RouterLink.IsPlainClick(e)) return;
                             e.PreventDefault();
                             Events?.Navigate();
                             navigation.PushAsync(item.Href);

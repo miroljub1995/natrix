@@ -151,6 +151,7 @@ public class AppHeader : BaseComponent<AppHeaderProps, NoEvents, NoSlots, NoExpo
     private static void Navigate(MouseEvent e, INavigationFeature navigation, string href)
     {
         if (!OperatingSystem.IsBrowser()) return;
+        if (!RouterLink.IsPlainClick(e)) return;
         e.PreventDefault();
         navigation.PushAsync(href);
         RouterLink.ScrollToTop();
