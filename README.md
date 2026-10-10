@@ -1,37 +1,91 @@
-# <img src="icon.svg" alt="" width="24" height="24"> Natrix
+<a href="https://natrix.wiki"><img src="docs/Natrix.Docs.Client/wwwroot/assets/og-image.png" alt="Natrix — reactive web UIs, written in C#." width="100%"></a>
 
 **Website and docs: [natrix.wiki](https://natrix.wiki)**
 
-Natrix is a .NET WebAssembly toolkit for building browser applications in C#. It combines a JavaScript interop foundation, generated browser API bindings, and an experimental component layer for reactive UI rendering.
+Natrix is a .NET framework for building web UIs in C# that run in the browser on WebAssembly. Pages render on the server first, then fine-grained signals update exactly the DOM nodes that changed. There's no virtual DOM, no Razor and no JavaScript to write, and Tailwind CSS is compiled at build time.
 
-The repository is split into a few focused projects:
+## Getting started
 
-- [src/Natrix.JSCore](src/Natrix.JSCore/) provides the JavaScript proxy system, type marshalling, and low-level interop utilities.
-- [src/Natrix.StdWeb](src/Natrix.StdWeb/) contains generated C# bindings for standard Web APIs such as DOM, Fetch, Canvas, WebGL, and related browser interfaces.
-- [src/Natrix.Core](src/Natrix.Core/) contains the component model, DOM components, render roots, and feature infrastructure.
-- [src/Natrix.Ssr](src/Natrix.Ssr/) contains server-side rendering helpers for ASP.NET Core hosted Natrix applications.
-- [src/Natrix.CoreExample](src/Natrix.CoreExample/) is a browser WebAssembly client app that exercises the Core component layer.
-- [src/Natrix.Signals](src/Natrix.Signals/) provides reactive primitives used by the component layer.
-- [src/Natrix.Swr](src/Natrix.Swr/) provides stale-while-revalidate data fetching for components, ported from React SWR.
-- [src/Natrix.Composables.Dom](src/Natrix.Composables.Dom/) provides VueUse-style composables for components, starting with `UseHead` for the document title.
-- [src/Natrix.WebIDLGenerator](src/Natrix.WebIDLGenerator/) generates C# bindings from WebIDL definitions.
+Install the template and create an app. It writes a server project and a WebAssembly client project into the current directory:
+
+```bash
+dotnet new install Natrix.Templates
+mkdir MyNatrixApp && cd MyNatrixApp
+dotnet new natrix -n MyNatrixApp
+dotnet run --project MyNatrixApp/MyNatrixApp.csproj
+```
+
+The app comes with server-side rendering, client-side routing and Tailwind CSS already wired up. The [Quick Start](https://natrix.wiki/docs/quick-start) walks through it.
+
+A component is a C# class. `Setup` runs once, and from then on only the parts that read a signal update:
+
+```csharp
+public class Counter : BaseComponent<NoProps, NoEvents, NoSlots, NoExpose>
+{
+    protected override IComponent[] Setup(out NoExpose exposed)
+    {
+        exposed = default;
+
+        var count = new Signal<int>(0);
+        var doubled = new Computed<int>(() => count.Value * 2);
+
+        return
+        [
+            new Button
+            {
+                Props = new ButtonProps(),
+                Events = new ButtonEvents { OnClick = _ => count.Value++ },
+                Children = [new DomText { Text = "Click me".ToConstSignal() }],
+            },
+            new P
+            {
+                Props = new PProps(),
+                Children = [new DomText { Text = new Computed<string>(
+                    () => $"{count.Value} × 2 = {doubled.Value}") }],
+            },
+        ];
+    }
+}
+```
+
+## Packages
+
+**Building apps**
+
+- [Natrix.Core](src/Natrix.Core/): the component model, rendering, routing and source generators.
+- [Natrix.Signals](src/Natrix.Signals/): the reactive primitives (`Signal`, `Computed`, `Effect`) that drive updates.
+- [Natrix.Dom](src/Natrix.Dom/): typed components for HTML elements (`Div`, `A`, `Input`, `Select` and the rest), rendering both in the browser and on the server.
+- [Natrix.Browser](src/Natrix.Browser/): the browser render root and host integration for the WebAssembly client.
+- [Natrix.Ssr](src/Natrix.Ssr/): server-side rendering for ASP.NET Core hosts, including hydration state and server prefetching.
+- [Natrix.TailwindCss](src/Natrix.TailwindCss/): Tailwind CSS compiled by a source generator at build time, with no Node, npm or CLI needed.
+- [Natrix.Swr](src/Natrix.Swr/): stale-while-revalidate data fetching, ported from React SWR.
+- [Natrix.Composables.Dom](src/Natrix.Composables.Dom/): VueUse-style composables, such as `UseHead` for the document title and meta tags.
+- [Natrix.Templates](src/Natrix.Templates/): the `dotnet new natrix` template.
+
+**Browser APIs and interop**
+
+- [Natrix.StdWeb](src/Natrix.StdWeb/): strongly typed C# bindings for standard Web APIs such as the DOM, Fetch, Canvas and WebGL, generated from the W3C WebIDL specifications by [Natrix.WebIDLGenerator](src/Natrix.WebIDLGenerator/).
+- [Natrix.JSCore](src/Natrix.JSCore/): the JavaScript proxy system, type marshalling and low-level interop that StdWeb is built on.
 
 ## Documentation
 
-- [src/Natrix.StdWeb/README.md](src/Natrix.StdWeb/README.md) explains the generated browser API bindings and direct DOM-style usage.
-- [src/Natrix.Core/README.md](src/Natrix.Core/README.md) explains the component framework and rendering model.
-- [src/Natrix.Swr/README.md](src/Natrix.Swr/README.md) explains stale-while-revalidate data fetching.
-- [src/Natrix.Composables.Dom/README.md](src/Natrix.Composables.Dom/README.md) explains the composables and `UseHead`.
-- [docs/Natrix.Docs](docs/Natrix.Docs/) is the documentation site, including runnable examples, published at [natrix.wiki](https://natrix.wiki).
+- [natrix.wiki](https://natrix.wiki) is the documentation site, with runnable examples. Its source is in [docs/](docs/).
+- [Natrix.Core](src/Natrix.Core/README.md) explains the component framework and rendering model.
+- [Natrix.TailwindCss](src/Natrix.TailwindCss/README.md) explains the build-time Tailwind integration.
+- [Natrix.StdWeb](src/Natrix.StdWeb/README.md) explains the generated browser API bindings.
+- [Natrix.Swr](src/Natrix.Swr/README.md) explains stale-while-revalidate data fetching.
+- [Natrix.Composables.Dom](src/Natrix.Composables.Dom/README.md) explains the composables and `UseHead`.
 
 ## Requirements
 
 - .NET 9.0 or later
-- Browser with WebAssembly support
+- A browser with WebAssembly support
+
+Building this repository also needs Node.js and npm on `PATH`: the Tailwind generator bundles its JavaScript from source during the build. Apps that use the packages don't need either.
 
 ## Status
 
-Natrix is under active development. APIs may change as the core abstractions, generated bindings, and packaging mature.
+Natrix is under active development and APIs may still change between releases.
 
 ## License
 
