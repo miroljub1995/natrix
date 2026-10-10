@@ -57,14 +57,21 @@ public class Effect : IEffect
 
     private void RunFun()
     {
+        // Every run happens in the scope that owns this effect, not only the first. A re-run is
+        // triggered from wherever the signal was written - a click handler, a continuation -
+        // and a scope created there would otherwise be parented to whatever happens to be
+        // ambient, or to nothing, cutting it off from the tree that owns and roots it.
         var oldConsumer = ConsumerContext.Active;
+        var oldScope = EffectScopeContext.Active;
         ConsumerContext.Active = this;
+        EffectScopeContext.Active = _scope;
         try
         {
             _fn(_cleanupFns.Add);
         }
         finally
         {
+            EffectScopeContext.Active = oldScope;
             ConsumerContext.Active = oldConsumer;
         }
     }
