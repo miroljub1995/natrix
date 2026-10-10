@@ -5,6 +5,7 @@ using Natrix.Dom.Components;
 using Natrix.Core.Features.Routing;
 using Natrix.Docs.Client.Components.Examples.BouncingBalls;
 using Natrix.Docs.Client.Components.Examples.DataFetching;
+using Natrix.Docs.Client.Components.Examples.Inputs;
 using Natrix.Docs.Client.Components.Examples.Todo;
 using Natrix.Signals;
 using static Natrix.Composables.Dom.DomComposables;
@@ -97,6 +98,11 @@ public class DocsApp : BaseComponent<DocsAppProps, NoEvents, NoSlots, NoExpose>
                                     {
                                         Pattern = "/examples/data-fetching",
                                         Render = () => [new DataFetchingExamplePage { Props = new NoProps() }],
+                                    },
+                                    new Route
+                                    {
+                                        Pattern = "/examples/inputs",
+                                        Render = () => [new InputsExamplePage { Props = new NoProps() }],
                                     },
                                     // A docs path no page claims keeps the sidebar, to find the page it meant.
                                     new Route
