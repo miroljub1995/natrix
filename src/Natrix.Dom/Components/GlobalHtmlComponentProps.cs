@@ -1,4 +1,5 @@
 using Natrix.Core.RenderRoot;
+using Natrix.JSCore.Generics;
 using Natrix.Ssr.Abstractions.RenderRoot;
 using Natrix.Signals;
 using Natrix.StdWeb;
@@ -315,9 +316,14 @@ public class GlobalHtmlComponentProps<TElement> : GlobalElementComponentProps<TE
     {
         get => Get(s_style);
         init => Set(ref s_style, value, static () => new(
+            // The generated binding types `style` as CSSStyleProperties, but Chrome still returns a
+            // CSSStyleDeclaration, which the typed accessor refuses. Read it as its base type instead.
             static (el, s) =>
             {
-                if (OperatingSystem.IsBrowser()) el.Style.CssText = s.Value;
+                if (OperatingSystem.IsBrowser())
+                {
+                    ProxyAccessor<CSSStyleDeclaration>.Get(el.JSObject, "style").CssText = s.Value;
+                }
             },
             static (el, s) => el.SetAttribute("style", s)));
     }

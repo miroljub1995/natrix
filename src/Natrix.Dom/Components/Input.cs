@@ -52,9 +52,10 @@ public class InputProps : GlobalHtmlComponentProps<HTMLInputElement>
     {
         get => Get(s_capture);
         init => Set(ref s_capture, value, static () => new(
+            // Desktop Chrome has no capture property, but mobile browsers honour the attribute.
             static (el, s) =>
             {
-                if (OperatingSystem.IsBrowser()) el.Capture = s.Value;
+                if (OperatingSystem.IsBrowser()) el.SetAttribute("capture", s.Value);
             },
             static (el, s) => el.SetAttribute("capture", s)));
     }

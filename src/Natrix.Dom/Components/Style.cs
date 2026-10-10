@@ -54,9 +54,9 @@ public class StyleEvents : HtmlElementComponentEvents<HTMLStyleElement>
 
 public class Style() : BaseNonVoidDomComponent<HTMLStyleElement, StyleProps, StyleEvents>("style")
 {
-    protected override IComponent[]? GetChildren()
+    protected override IComponent[]? GetChildren(bool isSsr)
     {
-        var children = base.GetChildren();
+        var children = base.GetChildren(isSsr);
 
         return children is { Length: > 0 }
             ? [new SsrRawTextScope { Children = children }]

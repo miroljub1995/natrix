@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <!-- Cases shared by Natrix.Dom.Server.Tests and Natrix.Dom.Browser.Tests, so both render the same components. -->
+
+    <ItemGroup>
+        <ProjectReference Include="..\Natrix.Dom\Natrix.Dom.csproj"/>
+    </ItemGroup>
+
+</Project>

@@ -14,8 +14,42 @@ public sealed class SsrElementNode : ISsrNode
 
     public ISsrRenderRoot? ChildRoot { get; set; }
 
+    /// <summary>
+    /// Sets the attribute <paramref name="name"/>, replacing an earlier one of the same name.
+    /// </summary>
+    /// <param name="value">State handed to <paramref name="selector"/>, usually a signal.</param>
+    /// <param name="selector">Computes the attribute when the page is written; <c>null</c> omits it.</param>
     public void SetAttribute(string name, object value, Func<object, SsrAttributeValue?> selector)
-        => _attributes.Add((name, value, selector));
+    {
+        var index = _attributes.FindIndex(a => a.Name == name);
+        if (index >= 0)
+        {
+            _attributes[index] = (name, value, selector);
+        }
+        else
+        {
+            _attributes.Add((name, value, selector));
+        }
+    }
+
+    /// <summary>
+    /// The current value of the attribute <paramref name="name"/> set with
+    /// <see cref="SetAttribute"/>, or <c>null</c> when it is absent.
+    /// </summary>
+    public SsrAttributeValue? GetAttribute(string name)
+    {
+        foreach (var (attributeName, value, selector) in _attributes)
+        {
+            if (attributeName == name)
+            {
+                return selector(value);
+            }
+        }
+
+        return null;
+    }
+
+    public IEnumerable<ISsrNode> GetChildNodes() => ChildRoot?.GetNodes() ?? [];
 
     public void SetMultiAttribute(object value, Func<object, IEnumerable<(string Name, SsrAttributeValue? Value)>> selector)
         => _multiAttributes.Add((value, selector));

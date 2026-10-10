@@ -15,4 +15,6 @@ public sealed class SsrCommentNode : ISsrNode
         Encoding.UTF8.GetBytes("-->", writer);
         return ValueTask.CompletedTask;
     }
+
+    public IEnumerable<ISsrNode> GetChildNodes() => [];
 }

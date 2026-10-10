@@ -145,9 +145,9 @@ public class ScriptEvents : HtmlElementComponentEvents<HTMLScriptElement>
 
 public class Script() : BaseNonVoidDomComponent<HTMLScriptElement, ScriptProps, ScriptEvents>("script")
 {
-    protected override IComponent[]? GetChildren()
+    protected override IComponent[]? GetChildren(bool isSsr)
     {
-        var children = base.GetChildren();
+        var children = base.GetChildren(isSsr);
 
         return children is { Length: > 0 }
             ? [new SsrRawTextScope { Children = children }]

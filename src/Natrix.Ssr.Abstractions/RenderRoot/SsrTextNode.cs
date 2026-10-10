@@ -30,4 +30,6 @@ public sealed class SsrTextNode : ISsrNode
 
         return ValueTask.CompletedTask;
     }
+
+    public IEnumerable<ISsrNode> GetChildNodes() => [];
 }

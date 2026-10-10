@@ -19,6 +19,9 @@
     <Project Path="src/Natrix.Core/Natrix.Core.csproj" />
     <Project Path="src/Natrix.CoreExample/Natrix.CoreExample.csproj" />
     <Project Path="src/Natrix.Dom/Natrix.Dom.csproj" />
+    <Project Path="src/Natrix.Dom.Browser.Tests/Natrix.Dom.Browser.Tests.csproj" />
+    <Project Path="src/Natrix.Dom.Server.Tests/Natrix.Dom.Server.Tests.csproj" />
+    <Project Path="src/Natrix.Dom.TestCases/Natrix.Dom.TestCases.csproj" />
     <Project Path="src/Natrix.JSCore/Natrix.JSCore.csproj" />
     <Project Path="src/Natrix.Signals.Tests/Natrix.Signals.Tests.csproj" />
     <Project Path="src/Natrix.Signals/Natrix.Signals.csproj" />

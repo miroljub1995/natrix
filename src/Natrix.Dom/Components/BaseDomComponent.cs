@@ -1,4 +1,5 @@
 using System.Runtime.InteropServices.JavaScript;
+using System.Runtime.Versioning;
 using Natrix.Core;
 using Natrix.Core.Components;
 using Natrix.Core.Features;
@@ -21,7 +22,13 @@ public abstract class BaseDomComponent<TElement, TProps, TEvents>(string tagName
     private readonly List<Action> _eventCleanups = [];
     private bool _isUnmounted;
 
-    protected abstract IComponent[]? GetChildren();
+    /// <summary>
+    /// The children to mount.
+    /// </summary>
+    /// <param name="isSsr">Whether they are being rendered on the server. Elements whose content
+    /// comes from a prop on the client, such as a <c>textarea</c>'s value, render that prop as their
+    /// content there instead.</param>
+    protected abstract IComponent[]? GetChildren(bool isSsr);
 
     protected abstract bool IsVoid { get; }
 
@@ -49,10 +56,10 @@ public abstract class BaseDomComponent<TElement, TProps, TEvents>(string tagName
         var pass = AppFeatures.Current?.Get<ILifecycleHooksFeature>();
         var ownedPass = pass?.TryBeginPass() == true ? pass : null;
 
-        var children = GetChildren();
-
         if (slot is IDomRenderSlot domRenderSlot)
         {
+            var children = GetChildren(isSsr: false);
+
             if (!OperatingSystem.IsBrowser())
             {
                 throw new PlatformNotSupportedException();
@@ -76,10 +83,7 @@ public abstract class BaseDomComponent<TElement, TProps, TEvents>(string tagName
                     .CreateElement(tagName);
             }
 
-            var props = Props;
-            Action<TElement> combinedEffect = static _ => { };
-            props?.RegisterClientEffects(action => combinedEffect += action);
-            new Effect(_ => combinedEffect(element));
+            ApplyProps(element, afterChildren: false);
 
             var events = Events;
             events?.RegisterClientEffects(effect => _eventCleanups.Add(effect(element)));
@@ -98,6 +102,8 @@ public abstract class BaseDomComponent<TElement, TProps, TEvents>(string tagName
                 childrenRoot.EndHydration();
             }
 
+            ApplyProps(element, afterChildren: true);
+
             if (existingNode is null)
             {
                 domRenderSlot.Populate(element);
@@ -107,10 +113,11 @@ public abstract class BaseDomComponent<TElement, TProps, TEvents>(string tagName
         }
         else if (slot is ISsrRenderSlot ssrRenderSlot)
         {
+            var children = GetChildren(isSsr: true);
             var node = new SsrElementNode { TagName = tagName, IsVoid = IsVoid };
 
             var props = Props;
-            props?.RegisterServerEffects(node);
+            props?.RegisterServerEffects(node, afterChildren: false);
 
             if (!IsVoid && children?.Length > 0)
             {
@@ -119,12 +126,25 @@ public abstract class BaseDomComponent<TElement, TProps, TEvents>(string tagName
                 _childrenComposed.Mount(childrenRoot.CreateFirstSlot());
             }
 
+            props?.RegisterServerEffects(node, afterChildren: true);
+
             ssrRenderSlot.Populate(node);
         }
 
         _slot = slot;
 
         ownedPass?.EndPassAndFlush();
+    }
+
+    [SupportedOSPlatform("browser")]
+    private void ApplyProps(TElement element, bool afterChildren)
+    {
+        Action<TElement>? combinedEffect = null;
+        Props?.RegisterClientEffects(action => combinedEffect += action, afterChildren);
+        if (combinedEffect is not null)
+        {
+            new Effect(_ => combinedEffect(element));
+        }
     }
 
     /// <summary>

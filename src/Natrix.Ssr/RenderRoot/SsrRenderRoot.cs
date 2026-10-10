@@ -45,6 +45,17 @@ public sealed class SsrRenderRoot : ISsrRenderRoot, IRenderRoot
     /// of their names rather than insertion order. Useful for deterministic
     /// snapshot tests; the underlying storage is a hash dictionary.
     /// </param>
+    public IEnumerable<ISsrNode> GetNodes()
+    {
+        foreach (var slot in _slots)
+        {
+            if (slot is { Node: { } node })
+            {
+                yield return node;
+            }
+        }
+    }
+
     public async ValueTask WriteAsync(PipeWriter writer, bool sortAttributes = false, CancellationToken cancellationToken = default)
     {
         foreach (var slot in _slots)

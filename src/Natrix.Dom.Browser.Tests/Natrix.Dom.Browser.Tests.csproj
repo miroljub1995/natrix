@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
+        <RunAOTCompilation>true</RunAOTCompilation>
+        <PublishTrimmed>true</PublishTrimmed>
+        <TrimMode>full</TrimMode>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="TUnit"/>
+    </ItemGroup>
+
+    <!-- The project hosts itself: see Program.cs and Natrix.Browser.TestHost. -->
+    <ItemGroup>
+        <ProjectReference Include="..\Natrix.Browser.TestHost\Natrix.Browser.TestHost.csproj"/>
+    </ItemGroup>
+    <Import Project="..\Natrix.Browser.TestHost\build\Natrix.Browser.TestHost.targets"/>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Natrix.Browser\Natrix.Browser.csproj"/>
+        <ProjectReference Include="..\Natrix.Dom.TestCases\Natrix.Dom.TestCases.csproj"/>
+    </ItemGroup>
+
+</Project>

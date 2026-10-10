@@ -83,8 +83,11 @@ public abstract class BaseDomComponentProps<TElement>
         }
     }
 
+    /// <param name="register">Receives each prop's client effect.</param>
+    /// <param name="afterChildren">Registers the props applied once the children are mounted, rather
+    /// than the ones applied before.</param>
     [SupportedOSPlatform("browser")]
-    internal void RegisterClientEffects(Action<Action<TElement>> register)
+    internal void RegisterClientEffects(Action<Action<TElement>> register, bool afterChildren)
     {
         if (_entries is null)
         {
@@ -94,12 +97,20 @@ public abstract class BaseDomComponentProps<TElement>
         foreach (var entry in _entries)
         {
             var prop = entry.Prop;
+            if (prop.AfterChildren != afterChildren)
+            {
+                continue;
+            }
+
             var signal = entry.Signal;
             register(el => prop.ApplyClient(el, signal));
         }
     }
 
-    internal void RegisterServerEffects(SsrElementNode el)
+    /// <param name="el">The server-rendered element.</param>
+    /// <param name="afterChildren">Applies the props applied once the children are mounted, rather
+    /// than the ones applied before.</param>
+    internal void RegisterServerEffects(SsrElementNode el, bool afterChildren)
     {
         if (_entries is null)
         {
@@ -108,7 +119,10 @@ public abstract class BaseDomComponentProps<TElement>
 
         foreach (var entry in _entries)
         {
-            entry.Prop.ApplyServer(el, entry.Signal);
+            if (entry.Prop.AfterChildren == afterChildren)
+            {
+                entry.Prop.ApplyServer(el, entry.Signal);
+            }
         }
     }
 
@@ -138,8 +152,15 @@ public abstract class BaseDomComponentProps<TElement>
     /// Identifies a prop and applies its signal to an element; untyped so entries of any value type
     /// share one list.
     /// </summary>
-    private protected abstract class PropDescriptor
+    private protected abstract class PropDescriptor(bool afterChildren)
     {
+        /// <summary>
+        /// Whether the prop is applied once the children are mounted, on the client and on the
+        /// server, for props that act on them, such as a <c>select</c>'s value picking one of its
+        /// options.
+        /// </summary>
+        public bool AfterChildren => afterChildren;
+
         [SupportedOSPlatform("browser")]
         public abstract void ApplyClient(TElement el, object signal);
 
@@ -153,9 +174,11 @@ public abstract class BaseDomComponentProps<TElement>
     /// <param name="client">Applies the signal's current value to the element. Only runs in the browser;
     /// its body guards browser-only calls with <see cref="OperatingSystem.IsBrowser"/>.</param>
     /// <param name="server">Binds the signal to the server-rendered element.</param>
+    /// <param name="afterChildren">See <see cref="PropDescriptor.AfterChildren"/>.</param>
     private protected sealed class PropDescriptor<TValue>(
         Action<TElement, IReadOnlySignal<TValue>> client,
-        Action<SsrElementNode, IReadOnlySignal<TValue>> server) : PropDescriptor
+        Action<SsrElementNode, IReadOnlySignal<TValue>> server,
+        bool afterChildren = false) : PropDescriptor(afterChildren)
     {
         [SupportedOSPlatform("browser")]
         public override void ApplyClient(TElement el, object signal) =>
